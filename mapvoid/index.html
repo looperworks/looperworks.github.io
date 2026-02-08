@@ -1628,7 +1628,7 @@ let searchDebounce = null;
 // ── Load external JSON data if available ──
 async function loadExternalData() {
   try {
-    const resp = await fetch('firms.json');
+    const resp = await fetch('firms.json?v=' + Date.now());
     if (resp.ok) {
       const externalFirms = await resp.json();
       if (Array.isArray(externalFirms) && externalFirms.length > 0) {
