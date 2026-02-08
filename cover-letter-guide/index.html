@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architecture Cover Letter Guide</title>
+
+    <style>
+        /* Font Faces */
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Book.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-BookItalic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-MediumItalic.otf') format('opentype');
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-BoldItalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Black.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-BlackItalic.otf') format('opentype');
+            font-weight: 900;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #333;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* Layout Structure */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 60px 40px;
+            position: fixed;
+            left: 0;
+            top: 48px;
+            height: calc(100vh - 48px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sidebar-header {
+            margin-bottom: 50px;
+        }
+
+        .sidebar-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .sidebar-subtitle {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.6;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-tagline {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e8c547;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .sidebar-nav {
+            flex: 1;
+            margin-bottom: 30px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 12px 0;
+            font-size: 13px;
+            font-weight: 500;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            padding-left: 12px;
+            opacity: 0.7;
+        }
+
+        .nav-item:hover {
+            opacity: 1;
+            color: #e8c547;
+        }
+
+        .nav-item.active {
+            opacity: 1;
+            color: #e8c547;
+            border-left-color: #e8c547;
+        }
+
+        .nav-number {
+            font-weight: 700;
+            color: #e8c547;
+            margin-right: 8px;
+        }
+
+        /* Sidebar Footer */
+        .sidebar-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 68px;
+            left: 20px;
+            z-index: 200;
+            background: #1a1a1a;
+            border: none;
+            color: #e8c547;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 320px;
+            flex: 1;
+            background: #ffffff;
+        }
+
+        .content-inner {
+            max-width: 900px;
+            padding: 80px 60px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 40px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 0;
+            padding: 20px 0;
+            transition: background 0.2s ease;
+        }
+
+        .section-header:hover {
+            opacity: 0.85;
+        }
+
+        .section-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #e8c547;
+            line-height: 1;
+            min-width: 70px;
+        }
+
+        .section-header-content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .section-toggle {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e8c547;
+            cursor: pointer;
+            user-select: none;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .section-toggle.collapsed {
+            transform: rotate(0deg);
+        }
+
+        .section-toggle.expanded {
+            transform: rotate(0deg);
+        }
+
+        .section-body {
+            display: none;
+            padding-left: 70px;
+            padding-top: 20px;
+        }
+
+        .section-body.visible {
+            display: block;
+        }
+
+        .section-body p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .section-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Subtitles */
+        .subtitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: 28px;
+            margin-bottom: 16px;
+        }
+
+        /* Special Boxes */
+        .box {
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .box p {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-insight {
+            background: #fef9e6;
+            border-left: 4px solid #e8c547;
+        }
+
+        .pro-tip {
+            background: #f5f5f5;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .common-mistake {
+            background: #ffe6e6;
+            border-left: 4px solid #d32f2f;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        thead {
+            background: #f9f9f9;
+        }
+
+        th {
+            padding: 16px 12px;
+            text-align: left;
+            font-weight: 700;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e8e8e8;
+        }
+
+        td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* Before/After Comparison */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .comparison-box {
+            padding: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .comparison-label {
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .before {
+            background: #fff0f0;
+            border: 1px solid #ffcccc;
+        }
+
+        .after {
+            background: #f0fff0;
+            border: 1px solid #ccffcc;
+        }
+
+        /* Do/Don't Table */
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .do-dont-box {
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .do-section {
+            background: #f0fff0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .dont-section {
+            background: #ffe6e6;
+            border-left: 4px solid #d32f2f;
+        }
+
+        .do-dont-label {
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .do-dont-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .do-dont-item:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .dont-section .do-dont-item:before {
+            content: '✕';
+            color: #d32f2f;
+        }
+
+        .do-section .do-dont-item:before {
+            color: #4caf50;
+        }
+
+        /* Blockquote */
+        .blockquote {
+            font-style: italic;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 4px solid #e8c547;
+            margin: 24px 0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Checklists */
+        .checklist {
+            margin: 24px 0;
+        }
+
+        .checklist-group {
+            margin-bottom: 24px;
+        }
+
+        .checklist-group-title {
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 4px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: #e8c547;
+            flex-shrink: 0;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+            color: #333;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + label {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+
+        /* Reference Card */
+        .reference-card {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 4px;
+            margin: 24px 0;
+        }
+
+        .reference-card-item {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .reference-card-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .reference-card-title {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e8c547;
+            margin-bottom: 8px;
+        }
+
+        .reference-card-text {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .golden-rule {
+            background: #e8c547;
+            color: #1a1a1a;
+            padding: 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .reference-footer {
+            font-size: 12px;
+            opacity: 0.6;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            padding: 20px 0;
+            z-index: 50;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid #e8c547;
+            background: transparent;
+            color: #e8c547;
+            font-family: 'Circular Std', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e8c547;
+            color: #1a1a1a;
+        }
+
+        /* Three-Step Strategy */
+        .strategy-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .strategy-step {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 4px solid #e8c547;
+        }
+
+        .strategy-step-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .strategy-step-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Lists */
+        .section-body ul {
+            margin: 20px 0 20px 20px;
+        }
+
+        .section-body li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .section-body ol {
+            margin: 20px 0 20px 20px;
+        }
+
+        /* Email Template */
+        .email-template {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 24px 0;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 48px;
+                left: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                padding: 40px 30px;
+                z-index: 150;
+                max-height: 100vh;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .content-inner {
+                padding: 40px 24px;
+                padding-top: 60px;
+            }
+
+            .section-number {
+                font-size: 36px;
+                min-width: 50px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .section-body {
+                padding-left: 50px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .do-dont {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background: #0d0d0d;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 2000;
+            font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .top-nav-brand {
+            font-size: 14px;
+            font-weight: 500;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        .top-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .top-nav-link {
+            font-size: 13px;
+            font-weight: 400;
+            color: #777;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+            padding: 4px 0;
+        }
+        .top-nav-link:hover {
+            color: #e8c547;
+        }
+        .top-nav-link.active {
+            color: #e8c547;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .top-nav {
+                padding: 0 16px;
+            }
+            .top-nav-links {
+                gap: 16px;
+            }
+            .top-nav-link {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-brand">looperworks</div>
+        <div class="top-nav-links">
+            <a href="../" class="top-nav-link">Home</a>
+            <a href="../portfolio-guide/" class="top-nav-link">Portfolio</a>
+            <a href="../resume-guide/" class="top-nav-link">Resume</a>
+            <a href="../cover-letter-guide/" class="top-nav-link active">Cover Letter</a>
+            <a href="../mapvoid/" class="top-nav-link">Job Search</a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h1 class="sidebar-title">The Architecture Cover Letter Guide</h1>
+                    <p class="sidebar-subtitle">A paragraph-by-paragraph manual for writing cover letters that get interviews in architecture and landscape architecture.</p>
+                    <p class="sidebar-tagline">Based on real student examples and faculty critique</p>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#section-1" class="nav-item" data-section="1">
+                        <span class="nav-number">1</span>Why It Matters
+                    </a>
+                    <a href="#section-2" class="nav-item" data-section="2">
+                        <span class="nav-number">2</span>Five-Paragraph Structure
+                    </a>
+                    <a href="#section-3" class="nav-item" data-section="3">
+                        <span class="nav-number">3</span>The Opening Hook
+                    </a>
+                    <a href="#section-4" class="nav-item" data-section="4">
+                        <span class="nav-number">4</span>Your Design Philosophy
+                    </a>
+                    <a href="#section-5" class="nav-item" data-section="5">
+                        <span class="nav-number">5</span>Technical Skills
+                    </a>
+                    <a href="#section-6" class="nav-item" data-section="6">
+                        <span class="nav-number">6</span>Collaboration
+                    </a>
+                    <a href="#section-7" class="nav-item" data-section="7">
+                        <span class="nav-number">7</span>The Closing
+                    </a>
+                    <a href="#section-8" class="nav-item" data-section="8">
+                        <span class="nav-number">8</span>Visual Design
+                    </a>
+                    <a href="#section-9" class="nav-item" data-section="9">
+                        <span class="nav-number">9</span>Quantifying Impact
+                    </a>
+                    <a href="#section-10" class="nav-item" data-section="10">
+                        <span class="nav-number">10</span>Firm Type & Career Stage
+                    </a>
+                    <a href="#section-11" class="nav-item" data-section="11">
+                        <span class="nav-number">11</span>Digital Pipeline
+                    </a>
+                    <a href="#section-12" class="nav-item" data-section="12">
+                        <span class="nav-number">12</span>Case Study
+                    </a>
+                    <a href="#section-13" class="nav-item" data-section="13">
+                        <span class="nav-number">13</span>Self-Editing Checklist
+                    </a>
+                    <a href="#section-14" class="nav-item" data-section="14">
+                        <span class="nav-number">14</span>Quick Reference Card
+                    </a>
+                </nav>
+
+                <div class="sidebar-footer">
+                    Morgan State University — School of Architecture + Planning
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-inner">
+                <!-- Controls -->
+                <div class="controls">
+                    <button class="btn" id="expandAllBtn">Expand All</button>
+                    <button class="btn" id="collapseAllBtn">Collapse All</button>
+                </div>
+
+                <!-- SECTION 1 -->
+                <section id="section-1" class="section">
+                    <div class="section-header" data-toggle="1">
+                        <div class="section-number">1</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Why Your Cover Letter Matters More Than You Think</h2>
+                            <div class="section-toggle expanded" data-toggle="1">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="1">
+                        <p>In architecture and landscape architecture, your portfolio shows what you can design. Your resume lists where you have been. But your cover letter is the only document that answers the question every hiring manager actually cares about: Why this firm? Why now? Why you?</p>
+
+                        <p>A strong cover letter does not summarize your resume. It does not recite your course list. It does not open with "I am writing to express my strong interest." Instead, it tells a brief, specific story about the intersection between your values and the firm's work, backed by evidence that you have the skills to contribute from day one.</p>
+
+                        <div class="box key-insight">
+                            <p><strong>KEY INSIGHT:</strong> Firms in architecture and landscape architecture receive hundreds of applications for every open position. Partners and hiring managers typically spend 30 to 60 seconds scanning a cover letter before deciding whether to look at the portfolio. Your letter must earn that next click in the first two sentences.</p>
+                        </div>
+
+                        <h3 class="subtitle">What This Guide Will Teach You</h3>
+                        <p>This manual breaks the cover letter into five distinct paragraphs, each with a specific job to do. For every paragraph, you will learn what it should accomplish, the most common mistakes students make, and how to revise weak drafts into strong ones. The examples and critique notes throughout this guide come from real student applications and faculty review, so the advice is grounded in what actually happens when students apply to firms.</p>
+
+                        <h3 class="subtitle">The Five Paragraphs at a Glance</h3>
+                        <ol>
+                            <li><strong>Opening Hook</strong> — Why this firm, specifically?</li>
+                            <li><strong>Design Philosophy</strong> — What drives your work?</li>
+                            <li><strong>Technical Skills</strong> — What can you do, and where have you proven it?</li>
+                            <li><strong>Collaboration</strong> — What are you like to work with?</li>
+                            <li><strong>Closing</strong> — What happens next?</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- SECTION 2 -->
+                <section id="section-2" class="section">
+                    <div class="section-header" data-toggle="2">
+                        <div class="section-number">2</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">The Five-Paragraph Architecture Cover Letter</h2>
+                            <div class="section-toggle expanded" data-toggle="2">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="2">
+                        <p>Every paragraph in your cover letter has a job. If a paragraph is not doing its job, it is taking up space that could be used to make your case. The structure below is not a rigid formula but rather a framework: it ensures you cover every essential element without rambling, repeating yourself, or leaving gaps.</p>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Paragraph</th>
+                                        <th>Purpose</th>
+                                        <th>Key Question It Answers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>1. Opening</strong></td>
+                                        <td>Connect yourself to the firm's specific work</td>
+                                        <td>"Why do you want to work HERE?"</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>2. Philosophy</strong></td>
+                                        <td>Show alignment between your values and theirs</td>
+                                        <td>"How do you think about design?"</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>3. Skills</strong></td>
+                                        <td>Demonstrate capability with evidence</td>
+                                        <td>"What can you actually do for us?"</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>4. Collaboration</strong></td>
+                                        <td>Reveal your working style and interpersonal skills</td>
+                                        <td>"What are you like on a team?"</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>5. Closing</strong></td>
+                                        <td>Leave a confident, forward-looking impression</td>
+                                        <td>"What do you want to happen next?"</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="box pro-tip">
+                            <p><strong>PRO TIP:</strong> A common instinct is to write your cover letter as one long block of text or to treat it like a personal statement. Resist this. Distinct paragraphs with clear purposes make it easy for a hiring manager to scan quickly and find the information they need. White space is your friend.</p>
+                        </div>
+
+                        <h3 class="subtitle">Before We Dive In: The Mindset Shift</h3>
+                        <p>Most students write cover letters that are about themselves: their interests, their courses, their goals. Strong cover letters flip this perspective. They are fundamentally about the firm and how you fit into what the firm is trying to accomplish. Every sentence should pass this test: does this help the reader understand why hiring me makes their team stronger?</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 3 -->
+                <section id="section-3" class="section">
+                    <div class="section-header" data-toggle="3">
+                        <div class="section-number">3</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Paragraph 1: The Opening Hook</h2>
+                            <div class="section-toggle expanded" data-toggle="3">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="3">
+                        <p><strong>The Job of This Paragraph:</strong> Make the reader believe you have done your homework on their firm. Name a specific project, initiative, or design philosophy that drew you to them. This paragraph exists to answer one question: Why this firm and not the 50 others you could apply to?</p>
+
+                        <h3 class="subtitle">What Goes Wrong</h3>
+                        <p>The opening paragraph is where most student cover letters fail immediately. The most common mistake is leading with a generic declaration of interest that could apply to any firm in the country. When a hiring manager reads "I am writing to express my strong interest in the position," they learn nothing about you, your knowledge of the firm, or why they should keep reading.</p>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> Phrases like "I am writing to express my strong interest," "I deeply admire your work," and "I have always been passionate about" are red flags. They signal a form letter. If you could swap in a different firm name and the sentence still works, the sentence is too generic.</p>
+                        </div>
+
+                        <h3 class="subtitle">The Anatomy of a Weak Opening</h3>
+                        <p>Here is a pattern that appears in the vast majority of student cover letters. It follows a predictable, forgettable formula:</p>
+
+                        <div class="blockquote">
+                            I am writing to express my strong interest in the Entry-Level Landscape Designer position at [Firm Name]. As a recent graduate with a degree in Landscape Architecture, I deeply admire [Firm Name]'s commitment to innovative design.
+                        </div>
+
+                        <p>This opening has three problems. First, it leads with a procedural statement about the act of writing rather than saying anything substantive. Second, "deeply admire" is emotional language without evidence. Third, "commitment to innovative design" could describe any firm and reveals no actual research.</p>
+
+                        <h3 class="subtitle">How to Fix It</h3>
+                        <p>A strong opening names a specific project, publication, or initiative by the firm and connects it to something concrete in your own experience or values. The reader should think: this person has actually looked at our work.</p>
+
+                        <div class="comparison">
+                            <div class="comparison-box before">
+                                <span class="comparison-label">Before</span>
+                                <p>I am writing to express my strong interest in the Entry-Level Landscape Designer position at Confluence. I deeply admire your commitment to creating meaningful landscapes.</p>
+                            </div>
+                            <div class="comparison-box after">
+                                <span class="comparison-label">After</span>
+                                <p>Confluence's restoration work on the Scioto Greenways project caught my attention because it treats stormwater infrastructure as a design opportunity rather than an engineering constraint. That approach mirrors the direction of my capstone thesis at Morgan State, where I designed a multi-functional green corridor for the Fairfield neighborhood.</p>
+                            </div>
+                        </div>
+
+                        <h3 class="subtitle">The Research Requirement</h3>
+                        <p>You cannot write a good opening without research. Before drafting paragraph one, spend at least 20 minutes on the firm's website. Look at their project pages, read any published writing by principals, check their social media, and search for press coverage or award mentions. You are looking for one specific detail you can reference with genuine understanding.</p>
+
+                        <div class="do-dont">
+                            <div class="do-dont-box do-section">
+                                <span class="do-dont-label">✓ Do</span>
+                                <div class="do-dont-item">Name a specific project by the firm</div>
+                                <div class="do-dont-item">Connect the project to your own work or values</div>
+                                <div class="do-dont-item">Show you understand WHY the project matters</div>
+                                <div class="do-dont-item">Open with the firm, not with yourself</div>
+                            </div>
+                            <div class="do-dont-box dont-section">
+                                <span class="do-dont-label">✕ Don't</span>
+                                <div class="do-dont-item">Say "I am writing to express my interest"</div>
+                                <div class="do-dont-item">Use "deeply admire" or "have always been passionate"</div>
+                                <div class="do-dont-item">Describe the firm in generic terms</div>
+                                <div class="do-dont-item">Lead with your degree or graduation date</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4 -->
+                <section id="section-4" class="section">
+                    <div class="section-header" data-toggle="4">
+                        <div class="section-number">4</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Paragraph 2: Your Design Philosophy</h2>
+                            <div class="section-toggle expanded" data-toggle="4">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="4">
+                        <p><strong>The Job of This Paragraph:</strong> Show that your design values align with the firm's approach. This is where you briefly articulate what you care about as a designer and connect it to the kind of work the firm does. It is a bridge between who you are and where you want to be.</p>
+
+                        <h3 class="subtitle">What Goes Wrong</h3>
+                        <p>Students often treat this paragraph as a chance to drop impressive-sounding concepts or name-drop frameworks without demonstrating genuine understanding. The result is writing that sounds conceptually relevant but is structurally weak. Phrases like "I am passionate about sustainability" or "I believe in human-centered design" are so broad that they carry no meaning in context.</p>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> Name-dropping a concept, framework, or movement (such as biophilic design, New Urbanism, or a research initiative like PaRx) without explaining how it has shaped your actual design work signals that you are decorating your letter with vocabulary rather than demonstrating comprehension. Reviewers notice this immediately.</p>
+                        </div>
+
+                        <h3 class="subtitle">What This Paragraph Should Do</h3>
+                        <p>Your design philosophy paragraph should do three things in roughly three to four sentences. First, state a design value or approach you hold. Second, anchor it in a specific project or experience where you applied it. Third, connect it to the firm's work or ethos. The key is specificity: not "I care about sustainability" but "In my studio project for a flood-prone neighborhood in East Baltimore, I prioritized green infrastructure strategies that could be maintained by residents rather than requiring municipal intervention."</p>
+
+                        <div class="comparison">
+                            <div class="comparison-box before">
+                                <span class="comparison-label">Before</span>
+                                <p>My design philosophy centers on creating spaces that foster community well-being and environmental stewardship. I am deeply committed to sustainable landscape practices and believe in the transformative power of design.</p>
+                            </div>
+                            <div class="comparison-box after">
+                                <span class="comparison-label">After</span>
+                                <p>My design work consistently returns to one question: how can a landscape perform ecologically while also becoming a place people want to spend time in? In my Fairfield capstone, I tested this by designing rain gardens that double as seating areas and community gathering nodes, an approach I see reflected in how Confluence treats infrastructure as public amenity.</p>
+                            </div>
+                        </div>
+
+                        <div class="box pro-tip">
+                            <p><strong>PRO TIP:</strong> Your design philosophy should not sound like an artist statement. It should sound like a working designer explaining what they prioritize and why. Keep it grounded in decisions you have actually made in projects, not abstract ideals you aspire to.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5 -->
+                <section id="section-5" class="section">
+                    <div class="section-header" data-toggle="5">
+                        <div class="section-number">5</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Paragraph 3: Technical Skills in Context</h2>
+                            <div class="section-toggle expanded" data-toggle="5">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="5">
+                        <p><strong>The Job of This Paragraph:</strong> Demonstrate what you can do, not by listing tools, but by showing how you have used them to solve real design problems. This is where you prove you can contribute from the first week.</p>
+
+                        <h3 class="subtitle">What Goes Wrong</h3>
+                        <p>The most common failure in paragraph three is what reviewers call "resume language disguised as prose." Students take their skills list from their resume, rearrange it into a sentence, and present it as a paragraph. The result reads like a bulleted list forced into paragraph form, with no hierarchy, no context, and no indication of proficiency level.</p>
+
+                        <div class="blockquote">
+                            I am proficient in AutoCAD, SketchUp, Rhino, Adobe Creative Suite, GIS, Revit, Lumion, and hand drafting. I also have experience with site analysis, grading, and planting design.
+                        </div>
+
+                        <p>This tells the reviewer nothing they could not learn from your resume. Worse, listing eight tools at the same level of emphasis makes it impossible to tell which ones you actually excel at. It also misses the point: firms want to know not just which tools you can open, but what you have built with them.</p>
+
+                        <h3 class="subtitle">How to Fix It</h3>
+                        <p>Choose two or three skills that are most relevant to the position you are applying for and embed them in the context of a project. Instead of saying "I am proficient in GIS," say what you did with GIS and what it produced. The formula is: tool + project + outcome.</p>
+
+                        <div class="comparison">
+                            <div class="comparison-box before">
+                                <span class="comparison-label">Before</span>
+                                <p>I have proficiency in AutoCAD, SketchUp, Revit, Rhino, Adobe Creative Suite, and GIS. I also have experience with site analysis and planting design.</p>
+                            </div>
+                            <div class="comparison-box after">
+                                <span class="comparison-label">After</span>
+                                <p>During my internship at Smith Landscape Studio, I used GIS to map soil permeability across a 12-acre brownfield site, which informed our grading strategy and reduced the projected stormwater runoff by 30%. I produced the final presentation renderings in Lumion, a tool I taught myself to meet the client's visualization expectations.</p>
+                            </div>
+                        </div>
+
+                        <h3 class="subtitle">Hierarchy Matters</h3>
+                        <p>Not all skills are equal and your letter should reflect that. Lead with the skill most relevant to the job posting. If the posting emphasizes Revit experience, open this paragraph with a Revit-centered example. Secondary skills can be mentioned more briefly. The goal is a clear signal of what you do best, not a comprehensive inventory.</p>
+
+                        <div class="do-dont">
+                            <div class="do-dont-box do-section">
+                                <span class="do-dont-label">✓ Do</span>
+                                <div class="do-dont-item">Lead with the skill most relevant to the posting</div>
+                                <div class="do-dont-item">Embed skills in project context (tool + project + outcome)</div>
+                                <div class="do-dont-item">Show hierarchy: go deep on 2–3 tools</div>
+                                <div class="do-dont-item">Mention proficiency or learning curve when relevant</div>
+                            </div>
+                            <div class="do-dont-box dont-section">
+                                <span class="do-dont-label">✕ Don't</span>
+                                <div class="do-dont-item">List every tool you have ever opened</div>
+                                <div class="do-dont-item">Say "proficient in" without evidence</div>
+                                <div class="do-dont-item">Treat all skills as equally important</div>
+                                <div class="do-dont-item">Repeat what is already on your resume</div>
+                            </div>
+                        </div>
+
+                        <h3 class="subtitle">A Note for Landscape Architecture Students</h3>
+                        <p>Landscape architecture has its own technical vocabulary that your cover letter should reflect. Where an architecture student might emphasize Revit and BIM coordination, a landscape architecture student should highlight tools and knowledge specific to the discipline: GIS and spatial analysis, grading and drainage design, planting design and plant identification, stormwater management and green infrastructure, ecological restoration, and site inventory methods. When describing projects, use the language of the field: watershed, bioswale, native planting palette, pervious surfaces, habitat corridor, site programming. These terms signal to a landscape architecture firm that you understand the discipline at a professional level, not just as a design exercise.</p>
+
+                        <div class="box key-insight">
+                            <p><strong>KEY INSIGHT:</strong> If you are applying to a firm that does both architecture and landscape architecture, emphasize the interdisciplinary overlap: site analysis that informed building placement, stormwater strategies that shaped the ground plane, or planting designs that responded to the building's microclimate. Show that you understand how landscape and building work together.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6 -->
+                <section id="section-6" class="section">
+                    <div class="section-header" data-toggle="6">
+                        <div class="section-number">6</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Paragraph 4: Collaboration and Soft Skills</h2>
+                            <div class="section-toggle expanded" data-toggle="6">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="6">
+                        <p><strong>The Job of This Paragraph:</strong> Show the reader what you are like to work with. Architecture is team-based work. This paragraph demonstrates your ability to collaborate, communicate, and contribute to a team dynamic.</p>
+
+                        <h3 class="subtitle">What Goes Wrong</h3>
+                        <p>This is consistently the weakest paragraph in student cover letters. Students fill it with generic, unsupported claims about their personality traits: "I thrive in fast-paced environments," "I am a strong communicator," "I bring leadership and a positive attitude." These are filler sentences. They carry no evidence, no specificity, and no credibility. Every applicant claims to be a team player. The question is whether you can prove it.</p>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> If your fourth paragraph contains the words "fast-paced," "multitasking," "leadership skills," or "positive attitude" without a supporting story, it is almost certainly the weakest part of your letter. These are the most overused and least convincing claims in cover letter writing.</p>
+                        </div>
+
+                        <h3 class="subtitle">The Evidence-Based Approach</h3>
+                        <p>Instead of declaring traits, tell a brief story that demonstrates them. A single specific example is worth more than five adjectives. Describe a moment from a studio project, an internship, or a team-based class where you navigated a challenge, resolved a disagreement, managed a deadline, or taught yourself something new to help the team. Let the reader draw the conclusion about your character.</p>
+
+                        <div class="comparison">
+                            <div class="comparison-box before">
+                                <span class="comparison-label">Before</span>
+                                <p>I am a strong communicator who thrives in fast-paced, collaborative environments. I bring leadership skills, attention to detail, and a passion for learning.</p>
+                            </div>
+                            <div class="comparison-box after">
+                                <span class="comparison-label">After</span>
+                                <p>In my capstone studio, our four-person team hit a critical disagreement about whether to prioritize vehicular access or pedestrian connectivity on the site. I organized a pin-up session where each team member presented their rationale to our community partner, which led us to a hybrid solution that satisfied both the client and our design goals. That experience taught me that the best design outcomes often come from structured disagreement, not consensus.</p>
+                            </div>
+                        </div>
+
+                        <h3 class="subtitle">What Counts as a Soft Skill Story</h3>
+                        <p>Good soft-skill evidence comes from real situations. Think about moments when you: adapted to unexpected feedback from a client or critic, helped a teammate learn a tool or technique, took responsibility for a part of the project that was falling behind, communicated a complex design idea to a non-design audience, or navigated cultural or disciplinary differences in a team. One well-told story beats a list of adjectives.</p>
+
+                        <div class="box pro-tip">
+                            <p><strong>PRO TIP:</strong> If you cannot think of a story for this paragraph, you may not need it. A four-paragraph letter that is strong throughout is better than a five-paragraph letter with a weak fourth section. Consider folding a brief collaboration detail into your skills paragraph instead.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 7 -->
+                <section id="section-7" class="section">
+                    <div class="section-header" data-toggle="7">
+                        <div class="section-number">7</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Paragraph 5: The Closing That Leaves an Impression</h2>
+                            <div class="section-toggle expanded" data-toggle="7">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="7">
+                        <p><strong>The Job of This Paragraph:</strong> End with confidence and a clear next step. Reinforce your value, express genuine enthusiasm, and make it easy for the firm to contact you. The closing is your last impression. Do not waste it on politeness alone.</p>
+
+                        <h3 class="subtitle">What Goes Wrong</h3>
+                        <p>Most student closings are passive and formulaic. They use phrases like "It would be a pleasure to discuss my qualifications further" or "I look forward to hearing from you at your earliest convenience." These closings feel like the writer ran out of things to say. They do not reinforce your value, and the overly polite language actually undercuts your credibility by making you sound uncertain about whether you deserve the opportunity.</p>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> The phrase "It would be a pleasure to discuss my qualifications" is one of the most common closing lines in cover letters and one of the least effective. It is passive, tentative, and tells the reader nothing new. Similarly, "Thank you for your time and consideration" is polite but empty. Your closing should do work, not just be courteous.</p>
+                        </div>
+
+                        <h3 class="subtitle">How to Write a Strong Closing</h3>
+                        <p>A strong closing does three things. First, it briefly reinforces the specific value you bring (one sentence, referencing something from earlier in the letter). Second, it names a concrete next step: will you follow up? Would you welcome a phone call? Can you share additional portfolio samples? Third, it ends with confidence, not with hedging. You are not begging for an opportunity. You are offering your skills to a firm whose work you respect.</p>
+
+                        <div class="comparison">
+                            <div class="comparison-box before">
+                                <span class="comparison-label">Before</span>
+                                <p>Thank you for your time and consideration. It would be a pleasure to discuss my qualifications further. I look forward to hearing from you at your earliest convenience.</p>
+                            </div>
+                            <div class="comparison-box after">
+                                <span class="comparison-label">After</span>
+                                <p>I would welcome the chance to discuss how my experience with community-engaged design and ecological site analysis could contribute to Confluence's upcoming park and greenway projects. I have attached my portfolio and am available to share additional work samples or references at any time.</p>
+                            </div>
+                        </div>
+
+                        <div class="do-dont">
+                            <div class="do-dont-box do-section">
+                                <span class="do-dont-label">✓ Do</span>
+                                <div class="do-dont-item">Reinforce one specific value you bring</div>
+                                <div class="do-dont-item">Name a concrete next step</div>
+                                <div class="do-dont-item">Reference the firm's current or upcoming work</div>
+                                <div class="do-dont-item">End with confident, direct language</div>
+                            </div>
+                            <div class="do-dont-box dont-section">
+                                <span class="do-dont-label">✕ Don't</span>
+                                <div class="do-dont-item">Say "It would be a pleasure to discuss"</div>
+                                <div class="do-dont-item">Use "at your earliest convenience"</div>
+                                <div class="do-dont-item">Thank them excessively for their time</div>
+                                <div class="do-dont-item">End with vague hopes about hearing back</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 8 -->
+                <section id="section-8" class="section">
+                    <div class="section-header" data-toggle="8">
+                        <div class="section-number">8</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">The Visual Design of Your Cover Letter</h2>
+                            <div class="section-toggle expanded" data-toggle="8">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="8">
+                        <p>Your cover letter is a design project. Every margin, every font choice, every line break communicates something to the reader. In architecture and landscape architecture, hiring managers expect your application materials to reflect your understanding of visual hierarchy, typography, and layout. A poorly formatted cover letter signals either a lack of design awareness or a lack of care—neither makes a strong case for hiring you.</p>
+
+                        <h3 class="subtitle">Your Letter as Visual Communication</h3>
+                        <p>Think of your cover letter the same way you would approach designing a poster or a wayfinding system. Typography, white space, alignment, and hierarchy are not decorative—they are functional. They guide the reader through your argument and make it easy to understand your key points.</p>
+
+                        <h3 class="subtitle">Grid Systems and Manuscript Design</h3>
+                        <p>In professional manuscript design, the foundation is the grid system. For a cover letter, the grid is simple: a single, well-proportioned column on a standard letter page with generous margins on all sides. A typical industry-standard approach uses 1-inch margins on all sides, leaving a clean text column about 6.5 inches wide.</p>
+
+                        <div class="box key-insight">
+                            <p><strong>KEY INSIGHT:</strong> The ideal cover letter is one page, 200–450 words, in 10–12 point type with 1-inch margins. This constraint forces you to be concise. Every word must earn its place.</p>
+                        </div>
+
+                        <h3 class="subtitle">Typography and Professional Voice</h3>
+                        <p>Font choice communicates. Serif fonts like Garamond convey tradition, formality, and expertise. Sans-serif fonts like Helvetica, Roboto, or Arial feel contemporary, clean, and modern. There is no universally "correct" choice, but there is a right choice for each firm you apply to.</p>
+
+                        <p><strong>Font Selection Strategy:</strong> For traditional firms: Garamond, Times New Roman, or Minion Pro (serif). For contemporary/tech-forward firms: Helvetica, Roboto, or Open Sans (sans-serif). As a safe default: Calibri or Arial. Never use Comic Sans, Papyrus, or novelty fonts.</p>
+
+                        <h3 class="subtitle">Consistency Across Application Materials</h3>
+                        <p>Your cover letter, resume, and portfolio introduction should form a cohesive visual system. If your resume uses Garamond in 11 points with left-aligned text and 1-inch margins, your cover letter should follow the same conventions.</p>
+
+                        <div class="do-dont">
+                            <div class="do-dont-box do-section">
+                                <span class="do-dont-label">✓ Do</span>
+                                <div class="do-dont-item">Match fonts and formatting across resume, letter, and portfolio</div>
+                                <div class="do-dont-item">Use consistent margins and line spacing</div>
+                                <div class="do-dont-item">Maintain the same color palette (if using color)</div>
+                                <div class="do-dont-item">Apply the same hierarchy system throughout</div>
+                            </div>
+                            <div class="do-dont-box dont-section">
+                                <span class="do-dont-label">✕ Don't</span>
+                                <div class="do-dont-item">Use different fonts or sizes in different documents</div>
+                                <div class="do-dont-item">Mix serif and sans-serif randomly</div>
+                                <div class="do-dont-item">Change margins or spacing between pages</div>
+                                <div class="do-dont-item">Treat each document as a separate design project</div>
+                            </div>
+                        </div>
+
+                        <h3 class="subtitle">Formatting Standards</h3>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Element</th>
+                                        <th>Specification</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Page length</td>
+                                        <td>1 page maximum</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Word count</td>
+                                        <td>200–450 words</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Font size</td>
+                                        <td>10–12 points</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Margins</td>
+                                        <td>1 inch on all sides</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paragraph count</td>
+                                        <td>3–5 paragraphs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Line spacing</td>
+                                        <td>1.15–1.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>File format</td>
+                                        <td>PDF (never Word doc)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Font choice</td>
+                                        <td>Serif or sans-serif (professional)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="box pro-tip">
+                            <p><strong>PRO TIP:</strong> After you write your cover letter, print it out and look at it from across the room. Squint at it. Does it feel like a single cohesive whole, or does it feel scattered and busy? If you cannot scan the key ideas in 5 seconds, your layout needs work.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 9 -->
+                <section id="section-9" class="section">
+                    <div class="section-header" data-toggle="9">
+                        <div class="section-number">9</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Quantifying Your Impact</h2>
+                            <div class="section-toggle expanded" data-toggle="9">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="9">
+                        <p>Numbers are a universal language. They transform vague claims into measurable proof. "I supervised a team" is generic. "I supervised a team of 20 across four concurrent projects" is specific, credible, and memorable.</p>
+
+                        <p>Quantification is most relevant in paragraph three (Technical Skills) and paragraph four (Collaboration), but it can strengthen any section.</p>
+
+                        <h3 class="subtitle">Beyond Duties: The Shift to Results</h3>
+                        <p>Do not simply list the duties you performed. Instead, describe the measurable outcome of your work.</p>
+
+                        <div class="comparison">
+                            <div class="comparison-box before">
+                                <span class="comparison-label">Before</span>
+                                <p>Conducted GIS analysis for site evaluation and created construction documents using AutoCAD.</p>
+                            </div>
+                            <div class="comparison-box after">
+                                <span class="comparison-label">After</span>
+                                <p>Conducted GIS analysis to map soil permeability across a 12-acre site, which informed our grading strategy and reduced projected stormwater runoff by 30%. Produced all construction documents in AutoCAD, bringing the project from 60% design development to 100% construction documents in 6 weeks.</p>
+                            </div>
+                        </div>
+
+                        <h3 class="subtitle">The Impact Formula</h3>
+                        <p><strong>Action + Context + Measurable Outcome</strong></p>
+                        <ul>
+                            <li><strong>Action:</strong> What did you do? (verb + activity)</li>
+                            <li><strong>Context:</strong> In what situation? (project, timeline, constraints)</li>
+                            <li><strong>Outcome:</strong> What was the result? (numbers, percentage, scope, recognition)</li>
+                        </ul>
+
+                        <h3 class="subtitle">Architecture-Specific Metrics</h3>
+                        <p>Three categories to consider:</p>
+                        <ul>
+                            <li><strong>Project Metrics:</strong> Project value ($, sq ft, acreage), Team size, Timeline, Scope expansion</li>
+                            <li><strong>Design/Technical Metrics:</strong> Cost savings, Efficiency improvements, Certifications (LEED, AIA, NCARB), Completed projects, Client retention</li>
+                            <li><strong>Leadership Metrics:</strong> Team size managed, Consultants coordinated, Mentees supervised, Client presentations</li>
+                        </ul>
+
+                        <h3 class="subtitle">Examples of Strong Quantified Statements</h3>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Weak</th>
+                                        <th>Strong</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>I have experience with cost management.</td>
+                                        <td>During my internship, I identified design alternatives that reduced material costs by 18%, saving the project $240,000.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>I led design work on multiple projects.</td>
+                                        <td>I led design on 7 completed projects ranging from $2M to $15M, managing teams of 4–8 and coordinating with 3–5 external consultants per project.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>I am proficient with GIS.</td>
+                                        <td>I used GIS to analyze land use patterns across a 250-acre site, identifying 8 distinct ecological zones that informed our master plan strategy.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> Be honest. If you did not personally achieve a result, do not claim credit. It is acceptable to say "contributed to" or "supported" when describing team accomplishments, but never misrepresent your individual role.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 10 -->
+                <section id="section-10" class="section">
+                    <div class="section-header" data-toggle="10">
+                        <div class="section-number">10</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Tailoring for Firm Type and Career Stage</h2>
+                            <div class="section-toggle expanded" data-toggle="10">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="10">
+                        <p>A cover letter for Gensler is not the same as a cover letter for a boutique studio. A letter written for your first job is not the same as one written when you are seeking a senior role.</p>
+
+                        <h3 class="subtitle">Large Firms (Gensler, Perkins & Will, HOK)</h3>
+                        <p><strong>Large firms have established processes, ATS screening, and standardized evaluation criteria.</strong></p>
+                        <p><strong>Strategy:</strong></p>
+                        <ol>
+                            <li>Mirror keywords from the job posting.</li>
+                            <li>Demonstrate system alignment.</li>
+                            <li>Show specialization.</li>
+                            <li>Reference relevant awards.</li>
+                            <li>Keep tone professional but accessible.</li>
+                        </ol>
+
+                        <h3 class="subtitle">Boutique Studios and Small Firms</h3>
+                        <p><strong>Small firms are built on personalities, relationships, and a shared creative vision.</strong></p>
+                        <p><strong>Strategy:</strong></p>
+                        <ol>
+                            <li>Research the principal's own projects.</li>
+                            <li>Reference a specific recent project.</li>
+                            <li>Show versatility.</li>
+                            <li>Inject genuine personality.</li>
+                            <li>Demonstrate cultural fit.</li>
+                        </ol>
+
+                        <h3 class="subtitle">Career Stage and Cover Letter Focus</h3>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Focus</th>
+                                        <th>What to Emphasize</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Foundation</strong></td>
+                                        <td>Academic projects, software mastery, competitions, GPA if 3.5+, internship experience</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Graduate Student (MArch/MLA)</strong></td>
+                                        <td>Thesis/capstone research, advanced studio projects, teaching assistantships, specialized coursework, professional experience during program</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Advanced Studio Work / Progression</strong></td>
+                                        <td>Project management, AIA career stages, coordination, design leadership, measurable outcomes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Leadership & Business</strong></td>
+                                        <td>Strategic leadership, business development, client retention, mentoring, publications, P&L responsibility</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>Graduate students occupy a unique position: you have more advanced design thinking than entry-level applicants but may have limited professional experience. Lead with your thesis or capstone work as evidence of independent thinking and research ability.</p>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> One-Size-Fits-All Letters Do Not Work. If you use the same cover letter for 10 different firms, it will read like a form letter. Spend 15–20 minutes customizing your opening paragraph for each application.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 11 -->
+                <section id="section-11" class="section">
+                    <div class="section-header" data-toggle="11">
+                        <div class="section-number">11</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">The Digital Pipeline: Formatting and Submission</h2>
+                            <div class="section-toggle expanded" data-toggle="11">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="11">
+                        <p>A strong cover letter means nothing if it arrives corrupted, unreadable, or in the wrong format.</p>
+
+                        <h3 class="subtitle">File Format: Always PDF</h3>
+                        <p>Never submit your cover letter as a Word document (.docx). Always convert to PDF before sending.</p>
+
+                        <div class="do-dont">
+                            <div class="do-dont-box do-section">
+                                <span class="do-dont-label">✓ Do</span>
+                                <div class="do-dont-item">Save as PDF before sending</div>
+                                <div class="do-dont-item">Test the PDF on multiple devices</div>
+                                <div class="do-dont-item">Use professional fonts</div>
+                                <div class="do-dont-item">Check that margins and spacing are preserved</div>
+                            </div>
+                            <div class="do-dont-box dont-section">
+                                <span class="do-dont-label">✕ Don't</span>
+                                <div class="do-dont-item">Send as .docx or Word document</div>
+                                <div class="do-dont-item">Assume the file will look right on their computer</div>
+                                <div class="do-dont-item">Use unusual fonts (they may not render)</div>
+                                <div class="do-dont-item">Skip the PDF test</div>
+                            </div>
+                        </div>
+
+                        <h3 class="subtitle">File Naming Convention</h3>
+                        <p>Use: <strong>[FirstName]_[LastName]_CoverLetter_[FirmName].pdf</strong></p>
+                        <p>Examples: Sarah_Chen_CoverLetter_Gensler.pdf, Marcus_Johnson_CoverLetter_Confluence.pdf</p>
+
+                        <h3 class="subtitle">Email Applications</h3>
+                        <p>When submitting by email, the email body itself serves as a condensed cover letter. Do not just attach your PDF and send a blank email.</p>
+
+                        <div class="email-template">
+Dear [Hiring Manager Name],<br><br>
+[One sentence: state the position and why you're interested]<br>
+[One sentence: reference a specific firm project or value]<br><br>
+I have attached my cover letter, resume, and portfolio. Thank you for your consideration, and I welcome the opportunity to discuss how my experience in [relevant area] could contribute to your team.<br><br>
+Best regards,<br>
+[Your Name] | [Phone] | [Email]
+                        </div>
+
+                        <div class="box key-insight">
+                            <p><strong>KEY INSIGHT:</strong> Some firms use online application portals that ask for file uploads. Others accept email submissions. Always follow the firm's specific instructions.</p>
+                        </div>
+
+                        <h3 class="subtitle">Final Check: Proofreading Before You Send</h3>
+                        <p>Typos are the number-one reason applications are dismissed by hiring managers. In architecture, attention to detail is non-negotiable.</p>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> Do Not Rely on Spell Check Alone. Spell checkers miss homophone errors ("your" vs. "you're", "its" vs. "it's"), repeated words, and context errors.</p>
+                        </div>
+
+                        <h3 class="subtitle">Three-Step Proofreading Strategy</h3>
+                        <div class="strategy-steps">
+                            <div class="strategy-step">
+                                <div class="strategy-step-title">Step 1: Automated Check</div>
+                                <div class="strategy-step-content">Run through spell check and tools like Grammarly.</div>
+                            </div>
+                            <div class="strategy-step">
+                                <div class="strategy-step-title">Step 2: Read Aloud</div>
+                                <div class="strategy-step-content">You will catch awkward phrasing, missing words, and repetitions.</div>
+                            </div>
+                            <div class="strategy-step">
+                                <div class="strategy-step-title">Step 3: Third-Party Review</div>
+                                <div class="strategy-step-content">Give your letter to someone else.</div>
+                            </div>
+                        </div>
+
+                        <div class="box pro-tip">
+                            <p><strong>PRO TIP:</strong> Never proofread right after you finish writing. Step away for at least a few hours, preferably overnight.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 12 -->
+                <section id="section-12" class="section">
+                    <div class="section-header" data-toggle="12">
+                        <div class="section-number">12</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">The Revision Process: A Real Student Case Study</h2>
+                            <div class="section-toggle expanded" data-toggle="12">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="12">
+                        <p>The best way to understand what makes a strong cover letter is to watch one develop through multiple drafts. Below, we trace a real student's application to a landscape architecture firm through five revisions over four days.</p>
+
+                        <h3 class="subtitle">Draft 1: The Starting Point</h3>
+                        <div class="blockquote">
+                            I am writing to express my strong interest in the Entry-Level Landscape Designer position at [Firm]. As a recent graduate of Morgan State University with a degree in Landscape Architecture, I am eager to contribute my skills in sustainable design, community-centered planning, and innovative landscape solutions.
+                        </div>
+
+                        <p><strong>What is wrong:</strong> This opening could be sent to any firm without changing a word.</p>
+
+                        <h3 class="subtitle">Draft 2–3: Iterative Improvements</h3>
+                        <div class="box key-insight">
+                            <p><strong>KEY INSIGHT:</strong> What improved: The student began to anchor claims in specific projects. Instead of "I have experience with community-centered planning," Draft 3 referenced "conducting site analysis, facilitating community input sessions, and preparing design diagrams for the Fairfield capstone."</p>
+                        </div>
+
+                        <div class="box common-mistake">
+                            <p><strong>COMMON MISTAKE:</strong> What persisted: Despite four revisions, the opening sentence never changed. All five drafts began with "I am writing to express my strong interest," the single most generic opening possible.</p>
+                        </div>
+
+                        <h3 class="subtitle">Draft 5: The Final Version</h3>
+                        <p>By Draft 5, the letter had become noticeably stronger in its middle paragraphs. However, the bookends of the letter—the opening and closing—remained the weakest parts.</p>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Element</th>
+                                        <th>Draft 1</th>
+                                        <th>Draft 5</th>
+                                        <th>Still Needs Work?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Opening</strong></td>
+                                        <td>Generic template</td>
+                                        <td>Still generic</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Philosophy</strong></td>
+                                        <td>Vague values</td>
+                                        <td>Anchored in capstone</td>
+                                        <td>Improved</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Skills</strong></td>
+                                        <td>Tool list</td>
+                                        <td>Tools in project context</td>
+                                        <td>Improved</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Collaboration</strong></td>
+                                        <td>Adjectives only</td>
+                                        <td>Some project detail</td>
+                                        <td>Partially</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Closing</strong></td>
+                                        <td>Passive formula</td>
+                                        <td>Still passive</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 13 -->
+                <section id="section-13" class="section">
+                    <div class="section-header" data-toggle="13">
+                        <div class="section-number">13</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Self-Editing Checklist</h2>
+                            <div class="section-toggle expanded" data-toggle="13">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="13">
+                        <div class="checklist">
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">Opening (Paragraph 1)</div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-1-1">
+                                    <label for="check-1-1">Does my first sentence name something specific about the firm?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-1-2">
+                                    <label for="check-1-2">Could I NOT swap in a different firm name without rewriting?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-1-3">
+                                    <label for="check-1-3">Have I avoided "I am writing to express my interest"?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-1-4">
+                                    <label for="check-1-4">Does the opening show evidence of research?</label>
+                                </div>
+                            </div>
+
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">Design Philosophy (Paragraph 2)</div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-2-1">
+                                    <label for="check-2-1">Do I name a specific project where I applied my design values?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-2-2">
+                                    <label for="check-2-2">Is every concept I mention backed by evidence from my work?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-2-3">
+                                    <label for="check-2-3">Does this connect to the firm's approach or body of work?</label>
+                                </div>
+                            </div>
+
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">Technical Skills (Paragraph 3)</div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-3-1">
+                                    <label for="check-3-1">Do I use the formula: tool + project + outcome?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-3-2">
+                                    <label for="check-3-2">Am I leading with the skill most relevant to the job posting?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-3-3">
+                                    <label for="check-3-3">Have I avoided listing more than 3 tools without context?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-3-4">
+                                    <label for="check-3-4">Does this paragraph tell the reader something my resume does not?</label>
+                                </div>
+                            </div>
+
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">Quantifying Impact</div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-4-1">
+                                    <label for="check-4-1">Have I included at least one measurable outcome (numbers, percentages, scale)?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-4-2">
+                                    <label for="check-4-2">Do my accomplishments use the Action + Context + Outcome formula?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-4-3">
+                                    <label for="check-4-3">Am I showing results, not just listing duties?</label>
+                                </div>
+                            </div>
+
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">Collaboration (Paragraph 4)</div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-5-1">
+                                    <label for="check-5-1">Do I tell a specific story rather than listing adjectives?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-5-2">
+                                    <label for="check-5-2">Have I avoided "fast-paced," "multitasking," and "leadership skills"?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-5-3">
+                                    <label for="check-5-3">Would the reader learn something about my character from this?</label>
+                                </div>
+                            </div>
+
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">Closing (Paragraph 5)</div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-6-1">
+                                    <label for="check-6-1">Does my closing reinforce a specific value I bring?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-6-2">
+                                    <label for="check-6-2">Do I name a concrete next step?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-6-3">
+                                    <label for="check-6-3">Have I avoided "It would be a pleasure" and "at your earliest convenience"?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-6-4">
+                                    <label for="check-6-4">Does my closing sound confident, not tentative?</label>
+                                </div>
+                            </div>
+
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">Overall</div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-7-1">
+                                    <label for="check-7-1">Is the letter one page or less?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-7-2">
+                                    <label for="check-7-2">Have I proofread for spelling and grammar?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-7-3">
+                                    <label for="check-7-3">Does every paragraph have a distinct job to do?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-7-4">
+                                    <label for="check-7-4">Would this letter make sense ONLY for this specific firm?</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check-7-5">
+                                    <label for="check-7-5">If applying to a landscape architecture firm, have I used discipline-specific vocabulary?</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 14 -->
+                <section id="section-14" class="section">
+                    <div class="section-header" data-toggle="14">
+                        <div class="section-number">14</div>
+                        <div class="section-header-content">
+                            <h2 class="section-title">Quick Reference Card</h2>
+                            <div class="section-toggle expanded" data-toggle="14">−</div>
+                        </div>
+                    </div>
+                    <div class="section-body visible" data-toggle="14">
+                        <div class="reference-card">
+                            <div class="reference-card-item">
+                                <div class="reference-card-title">Paragraph 1: Opening</div>
+                                <div class="reference-card-text">Name a specific project by the firm. Connect it to your experience. Show research. Do not say "I am writing to express my interest."</div>
+                            </div>
+
+                            <div class="reference-card-item">
+                                <div class="reference-card-title">Paragraph 2: Philosophy</div>
+                                <div class="reference-card-text">State a design value. Anchor it in YOUR project. Connect to the firm's approach. Every concept must have evidence.</div>
+                            </div>
+
+                            <div class="reference-card-item">
+                                <div class="reference-card-title">Paragraph 3: Skills</div>
+                                <div class="reference-card-text">Use the formula: Tool + Project + Outcome. Lead with the most relevant skill. Go deep on 2–3, not broad on 8.</div>
+                            </div>
+
+                            <div class="reference-card-item">
+                                <div class="reference-card-title">Paragraph 4: Collaboration</div>
+                                <div class="reference-card-text">Tell one specific story from a team project. Show how you navigated a real challenge. No unsupported adjectives.</div>
+                            </div>
+
+                            <div class="reference-card-item">
+                                <div class="reference-card-title">Paragraph 5: Closing</div>
+                                <div class="reference-card-text">Reinforce one specific value. Name a next step. Reference the firm's work. End with confidence, not hedging.</div>
+                            </div>
+
+                            <div style="background: #e8c547; color: #1a1a1a; padding: 30px; border-radius: 4px; margin-top: 30px; font-size: 16px; font-weight: 700; line-height: 1.6; text-align: center;">
+                                THE GOLDEN RULE: Every sentence in your cover letter should pass this test: Does this help the reader understand why hiring me makes their team stronger? If the answer is no, cut it or rewrite it.
+                            </div>
+
+                            <div class="reference-footer">
+                                Prepared for architecture and landscape architecture students. Based on faculty critique notes and real student application examples.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar when nav item clicked
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+            });
+        });
+
+        // Section Toggle - Expand/Collapse
+        const sectionHeaders = document.querySelectorAll('.section-header');
+        sectionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const toggleValue = header.getAttribute('data-toggle');
+                const body = document.querySelector(`[data-toggle="${toggleValue}"].section-body`);
+                const toggle = document.querySelector(`[data-toggle="${toggleValue}"].section-toggle`);
+
+                body.classList.toggle('visible');
+                toggle.classList.toggle('expanded');
+                toggle.classList.toggle('collapsed');
+                toggle.textContent = body.classList.contains('visible') ? '−' : '+';
+            });
+        });
+
+        // Expand All / Collapse All
+        const expandAllBtn = document.getElementById('expandAllBtn');
+        const collapseAllBtn = document.getElementById('collapseAllBtn');
+
+        expandAllBtn.addEventListener('click', () => {
+            document.querySelectorAll('.section-body').forEach(body => {
+                body.classList.add('visible');
+            });
+            document.querySelectorAll('.section-toggle').forEach(toggle => {
+                toggle.classList.add('expanded');
+                toggle.classList.remove('collapsed');
+                toggle.textContent = '−';
+            });
+        });
+
+        collapseAllBtn.addEventListener('click', () => {
+            document.querySelectorAll('.section-body').forEach(body => {
+                body.classList.remove('visible');
+            });
+            document.querySelectorAll('.section-toggle').forEach(toggle => {
+                toggle.classList.remove('expanded');
+                toggle.classList.add('collapsed');
+                toggle.textContent = '+';
+            });
+        });
+
+        // Smooth scrolling and active nav state
+        let currentSection = '1';
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionNum = item.getAttribute('data-section');
+                const target = document.getElementById(`section-${sectionNum}`);
+
+                if (target) {
+                    // Auto-expand if collapsed
+                    const body = target.querySelector('.section-body');
+                    const toggle = target.querySelector('.section-toggle');
+                    if (body && !body.classList.contains('visible')) {
+                        body.classList.add('visible');
+                        toggle.classList.add('expanded');
+                        toggle.classList.remove('collapsed');
+                        toggle.textContent = '−';
+                    }
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    updateActiveNav(sectionNum);
+                    // Close mobile menu
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+
+        function updateActiveNav(sectionNum) {
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            const activeItem = document.querySelector(`[data-section="${sectionNum}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+        }
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            let current = '1';
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.id.replace('section-', '');
+                }
+            });
+
+            if (current !== currentSection) {
+                currentSection = current;
+                updateActiveNav(current);
+            }
+        });
+
+        // Initialize - open all sections by default
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.section-body').forEach(body => {
+                body.classList.add('visible');
+            });
+            document.querySelectorAll('.section-toggle').forEach(toggle => {
+                toggle.classList.add('expanded');
+            });
+            updateActiveNav('1');
+        });
+    </script>
+</body>
+</html>
