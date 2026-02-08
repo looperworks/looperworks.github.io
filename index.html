@@ -44,107 +44,219 @@
 
     html, body {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #ffffff;
       color: #111111;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    /* Navigation */
-    nav {
+    /* Floating Right Navigation */
+    .side-nav {
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      z-index: 100;
+      text-align: left;
+    }
+
+    .side-nav-brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #111;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .side-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .side-nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: #111;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+      display: block;
+      line-height: 1.5;
+    }
+
+    .side-nav-links a:hover {
+      opacity: 0.5;
+    }
+
+    .side-nav-links a.active {
+      text-decoration: underline;
+    }
+
+    /* Mobile hamburger (replaces side-nav on small screens) */
+    .mobile-nav {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       height: 48px;
-      background: #ffffff;
+      background: #fff;
       border-bottom: 1px solid #e0e0e0;
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 0 40px;
-      z-index: 100;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 200;
     }
 
-    .nav-brand {
-      font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 500;
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #111;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 40px;
-      list-style: none;
-    }
-
-    .nav-links a {
+    .mobile-nav-brand {
       font-size: 13px;
-      letter-spacing: 0.5px;
-      color: #999;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #111;
-    }
-
-    .nav-links a.active {
-      color: #111;
       font-weight: 700;
+      color: #111;
+      text-decoration: none;
+      letter-spacing: 0.5px;
     }
 
-    /* Hamburger */
     .hamburger {
-      display: none;
+      display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       cursor: pointer;
+      padding: 8px;
     }
 
     .hamburger span {
-      width: 24px;
+      width: 22px;
       height: 2px;
       background: #111;
-      transition: all 0.3s ease;
     }
 
-    /* Page Container */
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 40px;
-      margin-top: 48px;
-    }
-
-    /* Header Section */
-    .header {
-      padding: 100px 0 60px;
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 48px;
+      left: 0;
+      right: 0;
+      background: #fff;
       border-bottom: 1px solid #e0e0e0;
+      padding: 20px 24px;
+      z-index: 199;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 15px;
+      color: #111;
+      text-decoration: none;
+    }
+
+    /* Page Layout */
+    .page {
+      max-width: 740px;
+      margin: 0;
+      padding: 0 40px;
+    }
+
+    /* Header — 4-column grid like Neil Donnelly */
+    .header {
+      padding: 40px 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 60px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 40px;
+    }
+
+    .header-intro {
+      grid-column: 1;
     }
 
     .header-title {
-      font-size: 48px;
+      font-size: 18px;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      margin-bottom: 16px;
+      line-height: 1.4;
+      margin-bottom: 12px;
       color: #111;
     }
 
     .header-subtitle {
-      font-size: 16px;
-      color: #666;
+      font-size: 14px;
+      color: #333;
       font-weight: 400;
       line-height: 1.7;
-      max-width: 540px;
+    }
+
+    .header-subscribe {
+      grid-column: 2;
+    }
+
+    .subscribe-label {
+      font-size: 14px;
+      font-weight: 400;
+      color: #111;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .subscribe-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 14px;
+    }
+
+    .subscribe-field label {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .subscribe-field input {
+      border: none;
+      border-bottom: 1px solid #111;
+      padding: 6px 0;
+      font-family: 'Circular Std', sans-serif;
+      font-size: 14px;
+      color: #111;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      max-width: 240px;
+    }
+
+    .subscribe-field input::placeholder {
+      color: #bbb;
+    }
+
+    .subscribe-btn {
+      margin-top: 6px;
+      padding: 8px 20px;
+      border: 1px solid #111;
+      background: transparent;
+      font-family: 'Circular Std', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #111;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .subscribe-btn:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .subscribe-msg {
+      display: none;
+      font-size: 13px;
+      color: #666;
+      margin-top: 12px;
     }
 
     /* Items List */
@@ -155,10 +267,10 @@
 
     .item {
       display: grid;
-      grid-template-columns: 60px 1fr 40px;
+      grid-template-columns: 40px 1fr 30px;
       align-items: center;
-      gap: 24px;
-      padding: 40px 0;
+      gap: 20px;
+      padding: 32px 0;
       border-bottom: 1px solid #e0e0e0;
       text-decoration: none;
       color: inherit;
@@ -166,24 +278,23 @@
     }
 
     .item:hover {
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     .item-number {
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 400;
       color: #999;
-      letter-spacing: 1px;
     }
 
     .item-content {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
 
     .item-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: #111;
       line-height: 1.3;
@@ -197,28 +308,27 @@
     }
 
     .item-arrow {
-      font-size: 20px;
+      font-size: 18px;
       color: #999;
       text-align: right;
       transition: transform 0.2s ease;
     }
 
     .item:hover .item-arrow {
-      transform: translateX(4px);
+      transform: translateX(3px);
       color: #111;
     }
 
     /* Footer */
     .footer {
-      padding: 60px 0;
-      text-align: left;
+      padding: 40px 0;
     }
 
     .footer-text {
       font-size: 13px;
       color: #999;
       line-height: 1.7;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .footer-meta {
@@ -229,57 +339,43 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        padding: 0 24px;
-      }
-
-      .nav-links {
+    @media (max-width: 900px) {
+      .side-nav {
         display: none;
-        position: absolute;
-        top: 48px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: #ffffff;
-        border-bottom: 1px solid #e0e0e0;
-        padding: 20px 24px;
-        gap: 16px;
-        z-index: 99;
       }
 
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hamburger {
+      .mobile-nav {
         display: flex;
       }
 
       .page {
+        max-width: 100%;
         padding: 0 24px;
+        margin-top: 48px;
       }
 
       .header {
-        padding: 60px 0 40px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 0;
       }
 
-      .header-title {
-        font-size: 36px;
+      .header-subscribe {
+        grid-column: 1;
       }
 
-      .header-subtitle {
-        font-size: 15px;
+      .subscribe-field input {
+        max-width: 100%;
       }
 
       .item {
-        grid-template-columns: 40px 1fr 30px;
-        gap: 16px;
-        padding: 28px 0;
+        grid-template-columns: 30px 1fr 24px;
+        gap: 14px;
+        padding: 24px 0;
       }
 
       .item-title {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .item-desc {
@@ -288,77 +384,79 @@
     }
 
     @media (max-width: 480px) {
-      nav {
-        padding: 0 16px;
-      }
-
-      .nav-brand {
-        font-size: 12px;
-      }
-
       .page {
         padding: 0 16px;
       }
 
       .header {
-        padding: 48px 0 32px;
+        padding: 24px 0;
       }
 
       .header-title {
-        font-size: 28px;
-      }
-
-      .header-subtitle {
-        font-size: 14px;
+        font-size: 16px;
       }
 
       .item {
         grid-template-columns: 1fr 24px;
-        gap: 12px;
-        padding: 24px 0;
+        padding: 20px 0;
       }
 
       .item-number {
         display: none;
       }
 
-      .item-title {
-        font-size: 15px;
-      }
-
-      .item-desc {
-        font-size: 12px;
-      }
-
       .footer {
-        padding: 40px 0;
+        padding: 30px 0;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <a href="/" class="nav-brand">looperworks</a>
-    <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
+  <!-- Floating Right Navigation -->
+  <nav class="side-nav">
+    <a href="/" class="side-nav-brand">looperworks</a>
+    <ul class="side-nav-links">
       <li><a href="portfolio-guide/">Portfolio</a></li>
       <li><a href="resume-guide/">Resume</a></li>
       <li><a href="cover-letter-guide/">Cover Letter</a></li>
       <li><a href="mapvoid/">Job Search</a></li>
     </ul>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="/" class="mobile-nav-brand">looperworks</a>
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
-  </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="portfolio-guide/">Portfolio</a>
+    <a href="resume-guide/">Resume</a>
+    <a href="cover-letter-guide/">Cover Letter</a>
+    <a href="mapvoid/">Job Search</a>
+  </div>
 
   <div class="page">
-    <!-- Header -->
+    <!-- Header with subscribe -->
     <section class="header">
-      <h1 class="header-title">Architecture Career Toolkit</h1>
-      <p class="header-subtitle">Strategic resources for architecture & landscape architecture students preparing for graduate school and professional employment.</p>
+      <div class="header-intro">
+        <h1 class="header-title">Architecture Career Toolkit</h1>
+        <p class="header-subtitle">Strategic resources for architecture & landscape architecture students preparing for graduate school and professional employment.</p>
+      </div>
+      <div class="header-subscribe">
+        <span class="subscribe-label">For email updates:</span>
+        <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+          <div class="subscribe-field">
+            <label for="subEmail">Email</label>
+            <input type="email" id="subEmail" name="email" placeholder="" required>
+          </div>
+          <button type="submit" class="subscribe-btn">Subscribe</button>
+        </form>
+        <p class="subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
+      </div>
     </section>
 
     <!-- Items -->
@@ -408,18 +506,29 @@
   </div>
 
   <script>
+    // Mobile menu toggle
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.getElementById('mobileMenu');
 
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
     });
 
-    document.querySelectorAll('.nav-links a').forEach(item => {
-      item.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
+    // Subscribe handler (placeholder — swap with Buttondown/Mailchimp endpoint)
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('subEmail').value;
+      const form = document.getElementById('subscribeForm');
+      const msg = document.getElementById('subscribeMsg');
+
+      // TODO: Replace with actual endpoint, e.g.:
+      // fetch('https://buttondown.email/api/emails/embed-subscribe/looperworks', {
+      //   method: 'POST', body: new FormData(form)
+      // });
+
+      form.style.display = 'none';
+      msg.style.display = 'block';
+    }
   </script>
 </body>
 </html>
