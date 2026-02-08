@@ -1,0 +1,10 @@
+{
+  "name": "threshold-job-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Weekly job data pipeline for Threshold Job Search",
+  "scripts": {
+    "fetch": "node fetch-jobs.js",
+    "probe": "node probe-ats.js"
+  }
+}
