@@ -104,18 +104,20 @@ body {
   transform: translateY(-50%);
   z-index: 2000;
   text-align: left;
+  border-left: 2px solid #111;
+  padding-left: 16px;
 }
 
 .side-nav-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .side-nav-links a {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: #111;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -123,6 +125,7 @@ body {
   line-height: 1.5;
   position: relative;
   padding-left: 0;
+  letter-spacing: 0.01em;
 }
 
 .side-nav-links a::before {
@@ -145,7 +148,8 @@ body {
 }
 
 .side-nav-links a.active {
-  text-decoration: underline;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 /* ===========================
