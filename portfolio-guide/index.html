@@ -93,8 +93,8 @@
             padding: 60px 40px;
             position: fixed;
             left: 0;
-            top: 48px;
-            height: calc(100vh - 48px);
+            top: 0;
+            height: 100vh;
             overflow-y: auto;
             z-index: 100;
         }
@@ -183,7 +183,7 @@
         .mobile-menu-toggle {
             display: none;
             position: fixed;
-            top: 68px;
+            top: 20px;
             left: 20px;
             z-index: 200;
             background: #ffffff;
@@ -733,76 +733,60 @@
             }
         }
 
-        /* Top Navigation Bar */
-        .top-nav {
+        /* Floating Right Navigation */
+        .side-nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 48px;
-            background: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
+            top: 40px;
+            right: 40px;
             z-index: 2000;
-            font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-align: left;
         }
-        .top-nav-brand {
+        .side-nav-brand {
             font-size: 14px;
-            font-weight: 500;
-            color: #111;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
-        .top-nav-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-        .top-nav-link {
-            font-size: 13px;
-            font-weight: 400;
-            color: #999;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            transition: color 0.2s;
-            padding: 4px 0;
-        }
-        .top-nav-link:hover {
-            color: #111;
-        }
-        .top-nav-link.active {
-            color: #111;
             font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #111;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
         }
-        @media (max-width: 768px) {
-            .top-nav {
-                padding: 0 16px;
-            }
-            .top-nav-links {
-                gap: 16px;
-            }
-            .top-nav-link {
-                font-size: 12px;
+        .side-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .side-nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: #111;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: block;
+            line-height: 1.5;
+        }
+        .side-nav-links a:hover {
+            opacity: 0.5;
+        }
+        .side-nav-links a.active {
+            text-decoration: underline;
+        }
+        @media (max-width: 900px) {
+            .side-nav {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <nav class="top-nav">
-        <a href="../" class="top-nav-brand" style="text-decoration:none;">looperworks</a>
-        <div class="top-nav-links">
-            <a href="../" class="top-nav-link">Home</a>
-            <a href="../portfolio-guide/" class="top-nav-link active">Portfolio</a>
-            <a href="../resume-guide/" class="top-nav-link">Resume</a>
-            <a href="../cover-letter-guide/" class="top-nav-link">Cover Letter</a>
-            <a href="../mapvoid/" class="top-nav-link">Job Search</a>
-        </div>
+    <nav class="side-nav">
+        <a href="../" class="side-nav-brand">looperworks</a>
+        <ul class="side-nav-links">
+            <li><a href="../portfolio-guide/" class="active">Portfolio</a></li>
+            <li><a href="../resume-guide/">Resume</a></li>
+            <li><a href="../cover-letter-guide/">Cover Letter</a></li>
+            <li><a href="../mapvoid/">Job Search</a></li>
+        </ul>
     </nav>
 
     <!-- Mobile Menu Toggle -->
