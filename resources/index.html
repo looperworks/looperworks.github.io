@@ -420,6 +420,60 @@
         .side-nav-links a.active {
             text-decoration: underline;
         }
+        /* Site Footer */
+        .site-footer {
+            background: #111;
+            color: #fff;
+            margin-left: 580px;
+        }
+        .footer-inner {
+            max-width: 900px;
+            padding: 40px 60px 0;
+        }
+        .footer-bottom {
+            padding: 24px 0;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer-bottom a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+        /* Cookie banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            font-size: 13px;
+            border-top: 1px solid #333;
+        }
+        .cookie-banner.hidden { display: none; }
+        .cookie-banner a { color: #fff; text-decoration: underline; }
+        .cookie-banner-btn {
+            padding: 8px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Circular Std', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 24px;
+        }
         @media (max-width: 900px) {
             .sidebar {
                 left: 0;
@@ -438,6 +492,15 @@
             .side-nav {
                 display: none;
             }
+            .site-footer { margin-left: 0; }
+            .footer-inner { padding: 30px 24px 0; }
+            .cookie-banner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 16px 24px;
+            }
+            .cookie-banner-btn { margin-left: 0; }
         }
     </style>
 </head>
@@ -782,5 +845,35 @@
         // Initialize
         updateActiveNav('1');
     </script>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-bottom">
+            &copy; 2026 Looperworks LLC. All rights reserved. &nbsp;&middot;&nbsp; <a href="../terms/">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookieBanner">
+    <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../terms/">Terms of Service</a>.</p>
+    <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+</div>
+
+<script>
+// Cookie consent
+(function() {
+    var banner = document.getElementById('cookieBanner');
+    var btn = document.getElementById('cookieAccept');
+    if (localStorage.getItem('cookieConsent') === 'accepted') {
+        banner.classList.add('hidden');
+    }
+    btn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.classList.add('hidden');
+    });
+})();
+</script>
 </body>
 </html>

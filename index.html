@@ -202,73 +202,6 @@
       color: #111;
     }
 
-    /* Subscribe Section */
-    .subscribe-section {
-      padding-top: 36px;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .subscribe-label {
-      font-size: 14px;
-      font-weight: 400;
-      color: #111;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .subscribe-field {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 14px;
-    }
-
-    .subscribe-field label {
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 4px;
-    }
-
-    .subscribe-field input {
-      border: none;
-      border-bottom: 1px solid #111;
-      padding: 6px 0;
-      font-family: 'Circular Std', sans-serif;
-      font-size: 14px;
-      color: #111;
-      background: transparent;
-      outline: none;
-      width: 100%;
-      max-width: 280px;
-    }
-
-    .subscribe-field input::placeholder {
-      color: #bbb;
-    }
-
-    .subscribe-btn {
-      margin-top: 6px;
-      padding: 8px 20px;
-      border: 1px solid #111;
-      background: transparent;
-      font-family: 'Circular Std', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: #111;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .subscribe-btn:hover {
-      background: #111;
-      color: #fff;
-    }
-
-    .subscribe-msg {
-      display: none;
-      font-size: 13px;
-      color: #666;
-      margin-top: 12px;
-    }
 
     /* Right Column - Items */
     .col-right {
@@ -339,24 +272,214 @@
       color: #111;
     }
 
-    /* Footer */
-    .footer {
-      grid-column: 1 / -1;
-      padding: 60px 0 40px;
+    /* Site Footer — dark, full-width */
+    .site-footer {
+      background: #111;
+      color: #fff;
+      margin-left: 180px;
     }
 
-    .footer-text {
-      font-size: 12px;
+    .footer-inner {
+      max-width: 1200px;
+      padding: 60px 60px 0 40px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 80px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid #333;
+    }
+
+    .footer-nav-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+    }
+
+    .footer-nav-col li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav-col a {
+      font-size: 13px;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-col a:hover {
+      color: #fff;
+    }
+
+    /* Join the community section */
+    .footer-community {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      padding: 40px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .footer-community-text {
+      flex: 1;
+      max-width: 560px;
+    }
+
+    .footer-community-text h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-community-text p {
+      font-size: 13px;
       color: #999;
       line-height: 1.7;
-      margin-bottom: 4px;
     }
 
-    .footer-meta {
-      font-size: 11px;
-      color: #bbb;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .footer-subscribe {
+      flex-shrink: 0;
+    }
+
+    .footer-subscribe-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .footer-subscribe input[type="email"] {
+      padding: 10px 14px;
+      font-family: 'Circular Std', sans-serif;
+      font-size: 13px;
+      border: 1px solid #444;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 4px;
+      width: 220px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .footer-subscribe input[type="email"]::placeholder {
+      color: #666;
+    }
+
+    .footer-subscribe input[type="email"]:focus {
+      border-color: #888;
+    }
+
+    .footer-subscribe button {
+      padding: 10px 20px;
+      font-family: 'Circular Std', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      background: #fff;
+      color: #111;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-subscribe button:hover {
+      opacity: 0.85;
+    }
+
+    .footer-subscribe-msg {
+      display: none;
+      font-size: 13px;
+      color: #999;
+    }
+
+    .footer-terms-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .footer-terms-check input[type="checkbox"] {
+      accent-color: #fff;
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    .footer-terms-check a {
+      color: #ccc;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    .footer-terms-check a:hover {
+      color: #fff;
+    }
+
+    /* Footer bottom bar */
+    .footer-bottom {
+      padding: 24px 0;
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Cookie consent banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 9999;
+      font-size: 13px;
+      border-top: 1px solid #333;
+    }
+
+    .cookie-banner.hidden {
+      display: none;
+    }
+
+    .cookie-banner p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .cookie-banner a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .cookie-banner-btn {
+      padding: 8px 20px;
+      background: #fff;
+      color: #111;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Circular Std', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-left: 24px;
+      transition: opacity 0.2s ease;
+    }
+
+    .cookie-banner-btn:hover {
+      opacity: 0.85;
     }
 
     /* Responsive */
@@ -384,12 +507,43 @@
         padding: 30px 0 0;
       }
 
-      .subscribe-field input {
-        max-width: 100%;
-      }
-
       .item {
         padding: 24px 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .site-footer {
+        margin-left: 0;
+      }
+
+      .footer-inner {
+        padding: 40px 24px 0;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+
+      .footer-community {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .footer-subscribe input[type="email"] {
+        width: 180px;
+      }
+
+      .cookie-banner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 16px 24px;
+      }
+
+      .cookie-banner-btn {
+        margin-left: 0;
       }
     }
 
@@ -416,8 +570,16 @@
         display: none;
       }
 
-      .footer {
-        padding: 40px 0 30px;
+      .footer-inner {
+        padding: 30px 16px 0;
+      }
+
+      .footer-subscribe-row {
+        flex-direction: column;
+      }
+
+      .footer-subscribe input[type="email"] {
+        width: 100%;
       }
     }
   </style>
@@ -466,17 +628,6 @@
           <p>Threshold is that space.</p>
         </div>
 
-        <div class="subscribe-section">
-          <span class="subscribe-label">For email updates:</span>
-          <form id="subscribeForm" onsubmit="handleSubscribe(event)">
-            <div class="subscribe-field">
-              <label for="subEmail">Email</label>
-              <input type="email" id="subEmail" name="email" placeholder="" required>
-            </div>
-            <button type="submit" class="subscribe-btn">Subscribe</button>
-          </form>
-          <p class="subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
-        </div>
       </div>
 
       <!-- Right Column: Guide Items -->
@@ -529,12 +680,69 @@
         </div>
       </div>
 
-      <!-- Footer -->
-      <section class="footer">
-        <p class="footer-text">Built for architecture and landscape architecture students.</p>
-        <p class="footer-meta">2025–2026 Edition</p>
-      </section>
     </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <!-- Footer Navigation -->
+      <nav class="footer-nav">
+        <div class="footer-nav-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="portfolio-guide/">Portfolio</a></li>
+            <li><a href="resume-guide/">Resume</a></li>
+            <li><a href="cover-letter-guide/">Cover Letter</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="mapvoid/">Job Search</a></li>
+            <li><a href="resources/">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Join the Community -->
+      <div class="footer-community">
+        <div class="footer-community-text">
+          <h3>Join the community</h3>
+          <p>Sign up for updates on new guides, resources, and tools built for architecture and landscape architecture students navigating the transition from studio to practice.</p>
+        </div>
+        <div class="footer-subscribe">
+          <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+            <div class="footer-subscribe-row">
+              <input type="email" id="subEmail" name="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </div>
+            <label class="footer-terms-check">
+              <input type="checkbox" id="termsCheck" required>
+              I agree to the <a href="terms/">Terms of Service</a>.
+            </label>
+          </form>
+          <p class="footer-subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        &copy; 2026 Looperworks LLC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="terms/">Terms of Service</a>.</p>
+    <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
   </div>
 
   <script>
@@ -552,7 +760,7 @@
       const email = document.getElementById('subEmail').value;
       const form = document.getElementById('subscribeForm');
       const msg = document.getElementById('subscribeMsg');
-      const btn = form.querySelector('.subscribe-btn');
+      const btn = form.querySelector('button[type="submit"]');
 
       btn.textContent = 'Sending...';
       btn.disabled = true;
@@ -573,6 +781,19 @@
         msg.style.display = 'block';
       });
     }
+
+    // Cookie consent banner
+    (function() {
+      var banner = document.getElementById('cookieBanner');
+      var acceptBtn = document.getElementById('cookieAccept');
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        banner.classList.add('hidden');
+      }
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.classList.add('hidden');
+      });
+    })();
   </script>
 </body>
 </html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Threshold</title>
+
+    <style>
+        /* Font Faces */
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Book.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Black.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #333;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* Left Navigation */
+        .side-nav {
+            position: fixed;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            text-align: left;
+        }
+
+        .side-nav-brand {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #111;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .side-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .side-nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: #111;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: block;
+            line-height: 1.5;
+        }
+
+        .side-nav-links a:hover {
+            opacity: 0.5;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 200;
+        }
+
+        .mobile-nav-brand {
+            font-size: 13px;
+            font-weight: 700;
+            color: #111;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 2px;
+            background: #111;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 48px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 24px;
+            z-index: 199;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 15px;
+            color: #111;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .page {
+            margin-left: 180px;
+            padding: 0 60px 0 40px;
+        }
+
+        .page-title {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #111;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .content {
+            max-width: 700px;
+            padding: 40px 0 80px;
+        }
+
+        .content h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+            margin: 40px 0 16px;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .content ul {
+            margin: 0 0 16px 20px;
+        }
+
+        .content li {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+
+        .content a {
+            color: #111;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 32px;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #111;
+            color: #fff;
+            margin-left: 180px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            padding: 40px 60px 0 40px;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-bottom a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+
+        /* Cookie banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            font-size: 13px;
+            border-top: 1px solid #333;
+        }
+
+        .cookie-banner.hidden {
+            display: none;
+        }
+
+        .cookie-banner a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .cookie-banner-btn {
+            padding: 8px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Circular Std', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .side-nav { display: none; }
+            .mobile-nav { display: flex; }
+            .page { margin-left: 0; padding: 0 24px; margin-top: 48px; }
+            .site-footer { margin-left: 0; }
+            .footer-inner { padding: 30px 24px 0; }
+            .cookie-banner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 16px 24px;
+            }
+            .cookie-banner-btn { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Left Navigation -->
+    <nav class="side-nav">
+        <a href="../" class="side-nav-brand">Threshold</a>
+        <ul class="side-nav-links">
+            <li><a href="../portfolio-guide/">Portfolio</a></li>
+            <li><a href="../resume-guide/">Resume</a></li>
+            <li><a href="../cover-letter-guide/">Cover Letter</a></li>
+            <li><a href="../mapvoid/">Job Search</a></li>
+            <li><a href="../resources/">Resources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <a href="../" class="mobile-nav-brand">Threshold</a>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../portfolio-guide/">Portfolio</a>
+        <a href="../resume-guide/">Resume</a>
+        <a href="../cover-letter-guide/">Cover Letter</a>
+        <a href="../mapvoid/">Job Search</a>
+        <a href="../resources/">Resources</a>
+    </div>
+
+    <div class="page">
+        <h1 class="page-title">Terms of Service</h1>
+
+        <div class="content">
+            <p class="meta">Last updated: February 8, 2026</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using Threshold (the "Website"), operated by Looperworks LLC ("we," "us," or "our"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Website.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>Threshold is a free educational resource designed for architecture and landscape architecture students. The Website provides career guidance including portfolio development strategies, resume writing advice, cover letter templates, job search tools, and curated professional resources. All content is provided for informational and educational purposes only.</p>
+
+            <h2>3. Use of Content</h2>
+            <p>All content on this Website, including text, guides, graphics, and design, is the property of Looperworks LLC and is protected by copyright law. You may access and use the content for personal, non-commercial, educational purposes. You may not:</p>
+            <ul>
+                <li>Reproduce, distribute, or republish any content without prior written consent</li>
+                <li>Use any content for commercial purposes or resale</li>
+                <li>Remove or alter any copyright or proprietary notices</li>
+                <li>Frame or mirror any portion of the Website</li>
+            </ul>
+
+            <h2>4. Email Subscription</h2>
+            <p>By subscribing to our email list, you consent to receive periodic updates about new guides, resources, and tools from Threshold. You may unsubscribe at any time by contacting us at the email address below. We will not sell, rent, or share your email address with third parties. Your information is stored securely and used solely for the purposes of this service.</p>
+
+            <h2>5. Job Search Tool</h2>
+            <p>The Job Search tool aggregates publicly available job listing data for architecture and landscape architecture positions. Looperworks LLC does not guarantee the accuracy, completeness, or availability of any job listing. We are not responsible for the content of external job postings or the hiring practices of any employer. Job listings may be delayed, outdated, or no longer available at the time of viewing.</p>
+
+            <h2>6. External Links</h2>
+            <p>The Website contains links to third-party websites and resources. These links are provided for convenience and reference only. Looperworks LLC does not endorse, control, or assume responsibility for the content, privacy policies, or practices of any third-party websites. Accessing external links is at your own risk.</p>
+
+            <h2>7. Disclaimer of Warranties</h2>
+            <p>The Website and its content are provided "as is" and "as available" without warranties of any kind, either express or implied. Looperworks LLC does not warrant that the Website will be uninterrupted, error-free, or free of harmful components. The career guidance provided on this Website is general in nature and should not be considered a substitute for professional career counseling or legal advice.</p>
+
+            <h2>8. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, Looperworks LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Website, including but not limited to any errors or omissions in content, any loss of data, or any outcomes related to employment or career decisions influenced by this Website.</p>
+
+            <h2>9. Cookies and Analytics</h2>
+            <p>This Website may use cookies and similar technologies to improve your browsing experience and analyze site traffic. Cookies are small text files stored on your device. By using the Website and accepting the cookie notice, you consent to the use of cookies. You may disable cookies in your browser settings, though some features may not function properly.</p>
+
+            <h2>10. Modifications to Terms</h2>
+            <p>Looperworks LLC reserves the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to the Website. Your continued use of the Website after any modifications constitutes acceptance of the revised terms. We encourage you to review these terms periodically.</p>
+
+            <h2>11. Governing Law</h2>
+            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Maryland, without regard to its conflict of law provisions.</p>
+
+            <h2>12. Contact Information</h2>
+            <p>If you have any questions about these Terms of Service, please contact us at:</p>
+            <p>Looperworks LLC<br>Email: seth@looperworks.com</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                &copy; 2026 Looperworks LLC. All rights reserved. &nbsp;&middot;&nbsp; <a href="../">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../terms/">Terms of Service</a>.</p>
+        <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        });
+
+        // Cookie consent
+        (function() {
+            var banner = document.getElementById('cookieBanner');
+            var btn = document.getElementById('cookieAccept');
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                banner.classList.add('hidden');
+            }
+            btn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.classList.add('hidden');
+            });
+        })();
+    </script>
+</body>
+</html>
