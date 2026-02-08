@@ -158,9 +158,9 @@
       text-decoration: none;
     }
 
-    /* Page Layout — full width, edge to edge */
+    /* Page Layout — sidebar floats over first column */
     .page {
-      margin: 0 0 0 180px;
+      margin: 0;
       padding: 0 60px 0 40px;
     }
 
@@ -272,50 +272,17 @@
       color: #111;
     }
 
-    /* Site Footer — dark, full-width */
+    /* Site Footer — full-width, light */
     .site-footer {
-      background: #111;
-      color: #fff;
-      margin-left: 180px;
+      background: #fff;
+      color: #111;
+      border-top: 1px solid #e0e0e0;
     }
 
     .footer-inner {
       max-width: 1200px;
-      padding: 60px 60px 0 40px;
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 80px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid #333;
-    }
-
-    .footer-nav-col h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-nav-col ul {
-      list-style: none;
-    }
-
-    .footer-nav-col li {
-      margin-bottom: 10px;
-    }
-
-    .footer-nav-col a {
-      font-size: 13px;
-      color: #999;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-nav-col a:hover {
-      color: #fff;
+      padding: 48px 40px 0;
+      margin: 0 auto;
     }
 
     /* Join the community section */
@@ -324,8 +291,8 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 60px;
-      padding: 40px 0;
-      border-bottom: 1px solid #333;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .footer-community-text {
@@ -336,13 +303,13 @@
     .footer-community-text h3 {
       font-size: 16px;
       font-weight: 700;
-      color: #fff;
+      color: #111;
       margin-bottom: 10px;
     }
 
     .footer-community-text p {
       font-size: 13px;
-      color: #999;
+      color: #666;
       line-height: 1.7;
     }
 
@@ -360,9 +327,9 @@
       padding: 10px 14px;
       font-family: 'Circular Std', sans-serif;
       font-size: 13px;
-      border: 1px solid #444;
-      background: #1a1a1a;
-      color: #fff;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #111;
       border-radius: 4px;
       width: 220px;
       outline: none;
@@ -370,11 +337,11 @@
     }
 
     .footer-subscribe input[type="email"]::placeholder {
-      color: #666;
+      color: #999;
     }
 
     .footer-subscribe input[type="email"]:focus {
-      border-color: #888;
+      border-color: #111;
     }
 
     .footer-subscribe button {
@@ -382,22 +349,23 @@
       font-family: 'Circular Std', sans-serif;
       font-size: 13px;
       font-weight: 700;
-      border: none;
-      background: #fff;
-      color: #111;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
       border-radius: 4px;
       cursor: pointer;
-      transition: opacity 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .footer-subscribe button:hover {
-      opacity: 0.85;
+      background: #333;
+      border-color: #333;
     }
 
     .footer-subscribe-msg {
       display: none;
       font-size: 13px;
-      color: #999;
+      color: #666;
     }
 
     .footer-terms-check {
@@ -405,31 +373,31 @@
       align-items: center;
       gap: 8px;
       font-size: 12px;
-      color: #999;
+      color: #666;
     }
 
     .footer-terms-check input[type="checkbox"] {
-      accent-color: #fff;
+      accent-color: #111;
       width: 14px;
       height: 14px;
       cursor: pointer;
     }
 
     .footer-terms-check a {
-      color: #ccc;
+      color: #111;
       text-decoration: underline;
-      transition: color 0.2s ease;
+      transition: opacity 0.2s ease;
     }
 
     .footer-terms-check a:hover {
-      color: #fff;
+      opacity: 0.6;
     }
 
     /* Footer bottom bar */
     .footer-bottom {
       padding: 24px 0;
       font-size: 12px;
-      color: #666;
+      color: #999;
     }
 
     /* Cookie consent banner */
@@ -494,7 +462,7 @@
 
       .page {
         padding: 0 24px;
-        margin: 48px 0 0 0;
+        margin-top: 48px;
       }
 
       .page-title {
@@ -513,17 +481,8 @@
     }
 
     @media (max-width: 900px) {
-      .site-footer {
-        margin-left: 0;
-      }
-
       .footer-inner {
-        padding: 40px 24px 0;
-      }
-
-      .footer-nav {
-        flex-wrap: wrap;
-        gap: 32px;
+        padding: 30px 24px 0;
       }
 
       .footer-community {
@@ -686,31 +645,6 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <!-- Footer Navigation -->
-      <nav class="footer-nav">
-        <div class="footer-nav-col">
-          <h4>Guides</h4>
-          <ul>
-            <li><a href="portfolio-guide/">Portfolio</a></li>
-            <li><a href="resume-guide/">Resume</a></li>
-            <li><a href="cover-letter-guide/">Cover Letter</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav-col">
-          <h4>Tools</h4>
-          <ul>
-            <li><a href="mapvoid/">Job Search</a></li>
-            <li><a href="resources/">Resources</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="terms/">Terms of Service</a></li>
-          </ul>
-        </div>
-      </nav>
-
       <!-- Join the Community -->
       <div class="footer-community">
         <div class="footer-community-text">
