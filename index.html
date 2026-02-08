@@ -535,16 +535,30 @@
       mobileMenu.classList.toggle('open');
     });
 
-    // Subscribe handler (placeholder)
+    // Subscribe handler — sends email to Google Sheets
     function handleSubscribe(e) {
       e.preventDefault();
       const email = document.getElementById('subEmail').value;
       const form = document.getElementById('subscribeForm');
       const msg = document.getElementById('subscribeMsg');
+      const btn = form.querySelector('.subscribe-btn');
 
-      // TODO: Replace with actual endpoint
-      form.style.display = 'none';
-      msg.style.display = 'block';
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      fetch('https://script.google.com/macros/s/AKfycbws9nPFsEYYueyUbTIDEodASQOzvwa0Pmr7QfAW-nXkSTDgl4NtYjqGEJBLdEbAkcM/exec', {
+        method: 'POST',
+        body: JSON.stringify({ email: email }),
+        headers: { 'Content-Type': 'text/plain' }
+      })
+      .then(function() {
+        form.style.display = 'none';
+        msg.style.display = 'block';
+      })
+      .catch(function() {
+        form.style.display = 'none';
+        msg.style.display = 'block';
+      });
     }
   </script>
 </body>
