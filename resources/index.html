@@ -432,6 +432,7 @@
             margin: 0 auto;
         }
         .footer-bottom {
+            padding: 24px 0;
             font-size: 12px;
             color: #999;
         }
@@ -849,8 +850,27 @@
 <!-- Site Footer -->
 <footer class="site-footer">
     <div class="footer-inner">
+        <div class="footer-community">
+            <div class="footer-community-text">
+                <h3>Join the community</h3>
+                <p>Sign up for updates on new guides, resources, and tools built for architecture and landscape architecture students navigating the transition from studio to practice.</p>
+            </div>
+            <div class="footer-subscribe">
+                <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+                    <div class="footer-subscribe-row">
+                        <input type="email" id="subEmail" name="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <label class="footer-terms-check">
+                        <input type="checkbox" id="termsCheck" required>
+                        I agree to the <a href="../terms/">Terms of Service</a>.
+                    </label>
+                </form>
+                <p class="footer-subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
+            </div>
+        </div>
         <div class="footer-bottom">
-            &copy; 2026 Looperworks LLC. All rights reserved. &nbsp;&middot;&nbsp; <a href="../terms/">Terms of Service</a>
+            &copy; 2026 Looperworks LLC. All rights reserved.
         </div>
     </div>
 </footer>
@@ -860,6 +880,34 @@
     <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../terms/">Terms of Service</a>.</p>
     <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
 </div>
+
+<script>
+// Subscribe handler
+function handleSubscribe(e) {
+    e.preventDefault();
+    var email = document.getElementById('subEmail').value;
+    var form = document.getElementById('subscribeForm');
+    var msg = document.getElementById('subscribeMsg');
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://script.google.com/macros/s/AKfycbws9nPFsEYYueyUbTIDEodASQOzvwa0Pmr7QfAW-nXkSTDgl4NtYjqGEJBLdEbAkcM/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        redirect: 'follow',
+        body: JSON.stringify({ email: email }),
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+    })
+    .then(function() {
+        form.style.display = 'none';
+        msg.style.display = 'block';
+    })
+    .catch(function() {
+        form.style.display = 'none';
+        msg.style.display = 'block';
+    });
+}
+</script>
 
 <script>
 // Cookie consent
