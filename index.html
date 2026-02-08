@@ -164,13 +164,24 @@
       padding: 0 60px 0 40px;
     }
 
-    /* Page Title */
-    .page-title {
+    /* Top Brand Link — top-left corner */
+    .top-brand {
+      display: block;
+      padding: 60px 0 40px 40px;
       font-size: 18px;
       font-weight: 700;
       line-height: 1.4;
       color: #111;
-      padding: 60px 0 40px;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .top-brand:hover {
+      opacity: 0.5;
+    }
+
+    /* Full-width divider below brand */
+    .top-divider {
       border-bottom: 1px solid #e0e0e0;
     }
 
@@ -228,6 +239,10 @@
     .item:first-child {
       border-top: none;
       padding-top: 0;
+    }
+
+    .item:last-child {
+      border-bottom: none;
     }
 
     .item:hover {
@@ -460,13 +475,14 @@
         display: flex;
       }
 
-      .page {
-        padding: 0 24px;
-        margin-top: 48px;
+      .top-brand {
+        padding: 20px 0 20px 24px;
+        font-size: 16px;
       }
 
-      .page-title {
-        padding: 30px 0 30px;
+      .page {
+        padding: 0 24px;
+        margin-left: 0;
       }
 
       .layout {
@@ -573,10 +589,11 @@
     <a href="resources/">Resources</a>
   </div>
 
-  <div class="page">
-    <!-- Page Title -->
-    <h1 class="page-title">Threshold</h1>
+  <!-- Top Brand -->
+  <a href="/" class="top-brand">Threshold</a>
+  <div class="top-divider"></div>
 
+  <div class="page">
     <!-- Two-Column Layout -->
     <div class="layout">
       <!-- Left Column: Mission + Subscribe -->
