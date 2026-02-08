@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>looperworks — Architecture Career Toolkit</title>
+  <title>Threshold — Architecture Career Toolkit</title>
   <style>
     /* Font Declarations */
     @font-face {
@@ -96,7 +96,7 @@
       text-decoration: underline;
     }
 
-    /* Mobile hamburger (replaces side-nav on small screens) */
+    /* Mobile hamburger */
     .mobile-nav {
       display: none;
       position: fixed;
@@ -160,23 +160,24 @@
 
     /* Page Layout */
     .page {
-      max-width: 740px;
+      max-width: 1100px;
       margin: 0 auto 0 180px;
       padding: 0 40px;
     }
 
-    /* Header — 4-column grid like Neil Donnelly */
-    .header {
-      padding: 40px 0 0;
+    /* Two-Column Layout */
+    .layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px 60px;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 40px;
+      gap: 0 100px;
+      padding: 60px 0 0;
+      min-height: calc(100vh - 100px);
+      align-content: start;
     }
 
-    .header-intro {
-      grid-column: 1;
+    /* Left Column */
+    .col-left {
+      padding-top: 0;
     }
 
     .header-title {
@@ -192,10 +193,14 @@
       color: #333;
       font-weight: 400;
       line-height: 1.7;
+      margin-bottom: 40px;
     }
 
-    .header-subscribe {
-      grid-column: 2;
+    /* Subscribe Section */
+    .subscribe-section {
+      padding-bottom: 36px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .subscribe-label {
@@ -260,7 +265,26 @@
       margin-top: 12px;
     }
 
-    /* Items List */
+    /* Mission Statement */
+    .mission p {
+      font-size: 14px;
+      color: #444;
+      font-weight: 400;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .mission p:last-child {
+      margin-bottom: 0;
+      font-weight: 500;
+      color: #111;
+    }
+
+    /* Right Column - Items */
+    .col-right {
+      padding-top: 0;
+    }
+
     .items {
       display: flex;
       flex-direction: column;
@@ -268,14 +292,18 @@
 
     .item {
       display: grid;
-      grid-template-columns: 40px 1fr 30px;
+      grid-template-columns: 30px 1fr 24px;
       align-items: center;
-      gap: 20px;
-      padding: 32px 0;
+      gap: 16px;
+      padding: 28px 0;
       border-bottom: 1px solid #e0e0e0;
       text-decoration: none;
       color: inherit;
       transition: opacity 0.2s ease;
+    }
+
+    .item:first-child {
+      border-top: 1px solid #e0e0e0;
     }
 
     .item:hover {
@@ -283,7 +311,7 @@
     }
 
     .item-number {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 400;
       color: #999;
     }
@@ -295,21 +323,21 @@
     }
 
     .item-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #111;
       line-height: 1.3;
     }
 
     .item-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: #666;
       font-weight: 400;
       line-height: 1.6;
     }
 
     .item-arrow {
-      font-size: 18px;
+      font-size: 16px;
       color: #999;
       text-align: right;
       transition: transform 0.2s ease;
@@ -322,18 +350,19 @@
 
     /* Footer */
     .footer {
-      padding: 40px 0;
+      grid-column: 1 / -1;
+      padding: 60px 0 40px;
     }
 
     .footer-text {
-      font-size: 13px;
+      font-size: 12px;
       color: #999;
       line-height: 1.7;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .footer-meta {
-      font-size: 12px;
+      font-size: 11px;
       color: #bbb;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -355,14 +384,15 @@
         margin: 48px 0 0 0;
       }
 
-      .header {
+      .layout {
         grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 30px 0;
+        gap: 40px;
+        padding: 30px 0 0;
+        min-height: auto;
       }
 
-      .header-subscribe {
-        grid-column: 1;
+      .header-subtitle {
+        margin-bottom: 30px;
       }
 
       .subscribe-field input {
@@ -370,8 +400,6 @@
       }
 
       .item {
-        grid-template-columns: 30px 1fr 24px;
-        gap: 14px;
         padding: 24px 0;
       }
 
@@ -389,8 +417,8 @@
         padding: 0 16px;
       }
 
-      .header {
-        padding: 24px 0;
+      .layout {
+        padding: 24px 0 0;
       }
 
       .header-title {
@@ -407,7 +435,7 @@
       }
 
       .footer {
-        padding: 30px 0;
+        padding: 40px 0 30px;
       }
     }
   </style>
@@ -415,7 +443,7 @@
 <body>
   <!-- Floating Left Navigation -->
   <nav class="side-nav">
-    <a href="/" class="side-nav-brand">looperworks</a>
+    <a href="/" class="side-nav-brand">Threshold</a>
     <ul class="side-nav-links">
       <li><a href="portfolio-guide/">Portfolio</a></li>
       <li><a href="resume-guide/">Resume</a></li>
@@ -426,7 +454,7 @@
 
   <!-- Mobile Navigation -->
   <div class="mobile-nav">
-    <a href="/" class="mobile-nav-brand">looperworks</a>
+    <a href="/" class="mobile-nav-brand">Threshold</a>
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
@@ -441,69 +469,78 @@
   </div>
 
   <div class="page">
-    <!-- Header with subscribe -->
-    <section class="header">
-      <div class="header-intro">
+    <div class="layout">
+      <!-- Left Column: Title, Subscribe, Mission -->
+      <div class="col-left">
         <h1 class="header-title">Architecture Career Toolkit</h1>
         <p class="header-subtitle">Strategic resources for architecture & landscape architecture students preparing for graduate school and professional employment.</p>
+
+        <div class="subscribe-section">
+          <span class="subscribe-label">For email updates:</span>
+          <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+            <div class="subscribe-field">
+              <label for="subEmail">Email</label>
+              <input type="email" id="subEmail" name="email" placeholder="" required>
+            </div>
+            <button type="submit" class="subscribe-btn">Subscribe</button>
+          </form>
+          <p class="subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
+        </div>
+
+        <div class="mission">
+          <p>We believe the transition from studio to practice should be navigated with the same rigor and intentionality that defines good design. Threshold equips architecture and landscape architecture students with the strategic tools to present their work, communicate their value, and find firms where they can grow.</p>
+          <p>This project grew out of years spent on both sides of the profession — practicing architecture, advising students on career strategy, and teaching in the studio. Through those experiences, it became clear that students needed more than a syllabus or a single advising session. They needed an accessible, always-available space where the practical knowledge that usually gets passed down informally — how to build a portfolio, how to write for firms, where the jobs actually are — could be organized, refined, and shared openly.</p>
+          <p>Threshold is that space.</p>
+        </div>
       </div>
-      <div class="header-subscribe">
-        <span class="subscribe-label">For email updates:</span>
-        <form id="subscribeForm" onsubmit="handleSubscribe(event)">
-          <div class="subscribe-field">
-            <label for="subEmail">Email</label>
-            <input type="email" id="subEmail" name="email" placeholder="" required>
-          </div>
-          <button type="submit" class="subscribe-btn">Subscribe</button>
-        </form>
-        <p class="subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
+
+      <!-- Right Column: Guide Items -->
+      <div class="col-right">
+        <div class="items">
+          <a href="portfolio-guide/" class="item">
+            <span class="item-number">01</span>
+            <div class="item-content">
+              <h2 class="item-title">Portfolio Guide</h2>
+              <p class="item-desc">Build a compelling visual narrative that communicates your design process and creative evolution.</p>
+            </div>
+            <span class="item-arrow">&rarr;</span>
+          </a>
+
+          <a href="resume-guide/" class="item">
+            <span class="item-number">02</span>
+            <div class="item-content">
+              <h2 class="item-title">Resume Guide</h2>
+              <p class="item-desc">Craft a strategic, ATS-ready resume that positions your architectural experience for maximum impact.</p>
+            </div>
+            <span class="item-arrow">&rarr;</span>
+          </a>
+
+          <a href="cover-letter-guide/" class="item">
+            <span class="item-number">03</span>
+            <div class="item-content">
+              <h2 class="item-title">Cover Letter Guide</h2>
+              <p class="item-desc">Write targeted cover letters that connect your skills to the firm's mission and project work.</p>
+            </div>
+            <span class="item-arrow">&rarr;</span>
+          </a>
+
+          <a href="mapvoid/" class="item">
+            <span class="item-number">04</span>
+            <div class="item-content">
+              <h2 class="item-title">Job Search</h2>
+              <p class="item-desc">Explore architecture and landscape architecture positions across the US with an interactive spatial map.</p>
+            </div>
+            <span class="item-arrow">&rarr;</span>
+          </a>
+        </div>
       </div>
-    </section>
 
-    <!-- Items -->
-    <div class="items">
-      <a href="portfolio-guide/" class="item">
-        <span class="item-number">01</span>
-        <div class="item-content">
-          <h2 class="item-title">Portfolio Guide</h2>
-          <p class="item-desc">Build a compelling visual narrative that communicates your design process and creative evolution.</p>
-        </div>
-        <span class="item-arrow">&rarr;</span>
-      </a>
-
-      <a href="resume-guide/" class="item">
-        <span class="item-number">02</span>
-        <div class="item-content">
-          <h2 class="item-title">Resume Guide</h2>
-          <p class="item-desc">Craft a strategic, ATS-ready resume that positions your architectural experience for maximum impact.</p>
-        </div>
-        <span class="item-arrow">&rarr;</span>
-      </a>
-
-      <a href="cover-letter-guide/" class="item">
-        <span class="item-number">03</span>
-        <div class="item-content">
-          <h2 class="item-title">Cover Letter Guide</h2>
-          <p class="item-desc">Write targeted cover letters that connect your skills to the firm's mission and project work.</p>
-        </div>
-        <span class="item-arrow">&rarr;</span>
-      </a>
-
-      <a href="mapvoid/" class="item">
-        <span class="item-number">04</span>
-        <div class="item-content">
-          <h2 class="item-title">Job Search</h2>
-          <p class="item-desc">Explore architecture and landscape architecture positions across the US with an interactive spatial map.</p>
-        </div>
-        <span class="item-arrow">&rarr;</span>
-      </a>
+      <!-- Footer -->
+      <section class="footer">
+        <p class="footer-text">Built for architecture and landscape architecture students.</p>
+        <p class="footer-meta">2025–2026 Edition</p>
+      </section>
     </div>
-
-    <!-- Footer -->
-    <section class="footer">
-      <p class="footer-text">Built for architecture and landscape architecture students preparing for graduate school applications and professional employment.</p>
-      <p class="footer-meta">2025–2026 Edition</p>
-    </section>
   </div>
 
   <script>
@@ -515,18 +552,14 @@
       mobileMenu.classList.toggle('open');
     });
 
-    // Subscribe handler (placeholder — swap with Buttondown/Mailchimp endpoint)
+    // Subscribe handler (placeholder)
     function handleSubscribe(e) {
       e.preventDefault();
       const email = document.getElementById('subEmail').value;
       const form = document.getElementById('subscribeForm');
       const msg = document.getElementById('subscribeMsg');
 
-      // TODO: Replace with actual endpoint, e.g.:
-      // fetch('https://buttondown.email/api/emails/embed-subscribe/looperworks', {
-      //   method: 'POST', body: new FormData(form)
-      // });
-
+      // TODO: Replace with actual endpoint
       form.style.display = 'none';
       msg.style.display = 'block';
     }
