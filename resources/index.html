@@ -457,8 +457,23 @@
             padding: 48px 40px 0;
             margin: 0 auto;
         }
+        /* Footer legal links */
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+            padding: 24px 0 0;
+            font-size: 12px;
+        }
+        .footer-legal a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-legal a:hover {
+            color: #111;
+        }
         .footer-bottom {
-            padding: 24px 0;
+            padding: 16px 0 24px;
             font-size: 12px;
             color: #999;
         }
@@ -984,6 +999,11 @@
                 </form>
                 <p class="footer-subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
             </div>
+        </div>
+        <!-- Legal Links -->
+        <div class="footer-legal">
+            <a href="../terms/">Terms of Service</a>
+            <a href="../privacy/">Privacy Policy</a>
         </div>
         <div class="footer-bottom">
             &copy; 2026 Looperworks LLC. All rights reserved.
