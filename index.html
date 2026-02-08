@@ -174,11 +174,11 @@
       border-bottom: 1px solid #e0e0e0;
     }
 
-    /* Two-Column Layout — even spacing, full width */
+    /* Two-Column Layout — narrow columns, generous white space */
     .layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 80px;
+      grid-template-columns: minmax(260px, 360px) minmax(260px, 400px);
+      justify-content: space-between;
       padding: 40px 0 0;
       align-content: start;
     }
