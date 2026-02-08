@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources — Threshold</title>
+
+    <style>
+        /* Font Faces */
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Book.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-BookItalic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-MediumItalic.otf') format('opentype');
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-BoldItalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-Black.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('../fonts/CircularStd-BlackItalic.otf') format('opentype');
+            font-weight: 900;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #333;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* Layout Structure */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            background: #ffffff;
+            color: #111;
+            padding: 0 20px;
+            position: fixed;
+            left: 180px;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+        }
+
+        /* Navigation */
+        .sidebar-nav {
+            margin-bottom: 0;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 8px 0;
+            font-size: 13px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            padding-left: 12px;
+            opacity: 0.7;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            opacity: 1;
+            color: #111;
+        }
+
+        .nav-item.active {
+            opacity: 1;
+            color: #111;
+            border-left-color: #111;
+        }
+
+        .nav-number {
+            font-weight: 700;
+            color: #999;
+            margin-right: 8px;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 180px;
+            z-index: 200;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            color: #111;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 580px;
+            flex: 1;
+            background: #ffffff;
+        }
+
+        .content-inner {
+            max-width: 900px;
+            padding: 80px 60px;
+            margin: 0 auto;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            color: #555;
+            font-family: 'Circular Std', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 40px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 0;
+            padding: 20px 0;
+            transition: background 0.2s ease;
+        }
+
+        .section-header:hover {
+            opacity: 0.85;
+        }
+
+        .section-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #bbb;
+            line-height: 1;
+            min-width: 70px;
+        }
+
+        .section-header-content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .section-toggle {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111;
+            cursor: pointer;
+            user-select: none;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .section-body {
+            display: none;
+            padding-left: 70px;
+            padding-top: 20px;
+        }
+
+        .section-body.visible {
+            display: block;
+        }
+
+        .section-body p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Resource Card Styles */
+        .resource-card {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .resource-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .resource-thumb {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 600 / 380;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .resource-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .resource-thumb img:hover {
+            opacity: 0.85;
+        }
+
+        .resource-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .resource-name a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .resource-name a:hover {
+            opacity: 0.6;
+        }
+
+        .resource-url {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .resource-url a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .resource-url a:hover {
+            color: #111;
+        }
+
+        .resource-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 320px;
+                height: auto;
+                position: fixed;
+                top: 48px;
+                left: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                padding: 60px 40px;
+                z-index: 150;
+                max-height: 100vh;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                left: 20px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .content-inner {
+                padding: 40px 24px;
+                padding-top: 60px;
+            }
+
+            .section-number {
+                font-size: 36px;
+                min-width: 50px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .section-body {
+                padding-left: 50px;
+            }
+
+            .resource-thumb {
+                max-width: 100%;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Floating Left Navigation */
+        .side-nav {
+            position: fixed;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2000;
+            text-align: left;
+        }
+        .side-nav-brand {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #111;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .side-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .side-nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: #111;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: block;
+            line-height: 1.5;
+        }
+        .side-nav-links a:hover {
+            opacity: 0.5;
+        }
+        .side-nav-links a.active {
+            text-decoration: underline;
+        }
+        @media (max-width: 900px) {
+            .sidebar {
+                left: 0;
+                width: 320px;
+                padding: 60px 40px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mobile-menu-toggle {
+                left: 20px;
+            }
+
+            .side-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="side-nav">
+        <a href="../" class="side-nav-brand">Threshold</a>
+        <ul class="side-nav-links">
+            <li><a href="../portfolio-guide/">Portfolio</a></li>
+            <li><a href="../resume-guide/">Resume</a></li>
+            <li><a href="../cover-letter-guide/">Cover Letter</a></li>
+            <li><a href="../mapvoid/">Job Search</a></li>
+            <li><a href="../resources/" class="active">Resources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">&#9776;</button>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <a href="#section-1" class="nav-item" data-section="1">
+                        <span class="nav-number">1</span>Architectural Representation
+                    </a>
+                    <a href="#section-2" class="nav-item" data-section="2">
+                        <span class="nav-number">2</span>Graphic Design &amp; Visual Culture
+                    </a>
+                    <a href="#section-3" class="nav-item" data-section="3">
+                        <span class="nav-number">3</span>Typography &amp; Type Foundries
+                    </a>
+                    <a href="#section-4" class="nav-item" data-section="4">
+                        <span class="nav-number">4</span>Jobs &amp; Career Boards
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-inner">
+                <!-- Controls -->
+                <div class="controls">
+                    <button class="btn" id="expandAllBtn">Expand All</button>
+                    <button class="btn" id="collapseAllBtn">Collapse All</button>
+                </div>
+
+                <!-- SECTION 1: Architectural Representation -->
+                <section id="section-1" class="section">
+                    <div class="section-header" data-toggle="1">
+                        <div class="section-number">1</div>
+                        <div class="section-header-content">
+                            <div class="section-title">Architectural Representation</div>
+                            <span class="section-toggle collapsed" data-toggle="1">+</span>
+                        </div>
+                    </div>
+                    <div class="section-body" data-toggle="1">
+                        <p>Award-winning project archives, visualization studios, and conceptual design practices that set the standard for how architecture is communicated visually.</p>
+
+                        <!-- Presidents Medals -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.presidentsmedals.com/" target="_blank" rel="noopener"><img src="images/presidents-medals.jpg" alt="Presidents Medals"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.presidentsmedals.com/" target="_blank" rel="noopener">Presidents Medals</a></div>
+                            <div class="resource-url"><a href="https://www.presidentsmedals.com/" target="_blank" rel="noopener">presidentsmedals.com</a></div>
+                            <p class="resource-desc">The RIBA Presidents Medals archive is one of the most comprehensive collections of student architectural work in the world. Spanning decades of submissions across Bronze, Silver, and Dissertation medals, it offers a direct look at how the best student projects are composed, narrated, and presented. Study the drawing techniques, layout strategies, and graphic standards that consistently earn recognition at the highest level.</p>
+                        </div>
+
+                        <!-- LCLA Office -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://lclaoffice.com/" target="_blank" rel="noopener"><img src="images/lcla-office.jpg" alt="LCLA Office"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://lclaoffice.com/" target="_blank" rel="noopener">LCLA Office</a></div>
+                            <div class="resource-url"><a href="https://lclaoffice.com/" target="_blank" rel="noopener">lclaoffice.com</a></div>
+                            <p class="resource-desc">LCLA Office is a design and research practice operating at the intersection of landscape architecture, architecture, and territorial design. Their project documentation is notable for its precise graphic language, combining analytical mapping, diagramming, and atmospheric rendering into cohesive visual narratives. A strong reference for students working across scales or integrating landscape and ecological thinking into their portfolios.</p>
+                        </div>
+
+                        <!-- Smout Allen -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.smoutallen.com/" target="_blank" rel="noopener"><img src="images/smout-allen.jpg" alt="Smout Allen"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.smoutallen.com/" target="_blank" rel="noopener">Smout Allen</a></div>
+                            <div class="resource-url"><a href="https://www.smoutallen.com/" target="_blank" rel="noopener">smoutallen.com</a></div>
+                            <p class="resource-desc">Smout Allen is a London-based architectural practice and Bartlett teaching unit known for pioneering experimental representation. Their work blends physical model-making, hand drawing, and digital techniques into richly layered compositions. For students interested in speculative design, environmental narratives, or pushing the boundaries of how architectural ideas are visualized, this is essential reference material.</p>
+                        </div>
+
+                        <!-- Concept Model -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://conceptmodel.tumblr.com/" target="_blank" rel="noopener"><img src="images/concept-model.jpg" alt="Concept Model"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://conceptmodel.tumblr.com/" target="_blank" rel="noopener">Concept Model</a></div>
+                            <div class="resource-url"><a href="https://conceptmodel.tumblr.com/" target="_blank" rel="noopener">conceptmodel.tumblr.com</a></div>
+                            <p class="resource-desc">A curated visual archive of architectural concept models from studios, schools, and competitions around the world. The collection emphasizes the range of materials, scales, and abstraction levels used to communicate spatial ideas through physical form. Invaluable for students developing their model photography skills or looking for inspiration on how to integrate physical models into portfolio spreads.</p>
+                        </div>
+
+                        <!-- MIR Visuals -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://mir.no/" target="_blank" rel="noopener"><img src="images/mir-visuals.jpg" alt="MIR Visuals"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://mir.no/" target="_blank" rel="noopener">MIR</a></div>
+                            <div class="resource-url"><a href="https://mir.no/" target="_blank" rel="noopener">mir.no</a></div>
+                            <p class="resource-desc">MIR is a Norwegian visualization studio that has redefined the standard for architectural rendering. Their images emphasize atmosphere, light, and human presence over technical precision, treating each visualization as a composed photograph rather than a technical output. Study their work to understand how mood, materiality, and storytelling elevate a rendering from documentation to communication.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: Graphic Design & Visual Culture -->
+                <section id="section-2" class="section">
+                    <div class="section-header" data-toggle="2">
+                        <div class="section-number">2</div>
+                        <div class="section-header-content">
+                            <div class="section-title">Graphic Design &amp; Visual Culture</div>
+                            <span class="section-toggle collapsed" data-toggle="2">+</span>
+                        </div>
+                    </div>
+                    <div class="section-body" data-toggle="2">
+                        <p>Platforms for discovering contemporary graphic design, editorial layout, and visual storytelling that inform how architects present their work beyond the discipline.</p>
+
+                        <!-- Fonts in Use -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://fontsinuse.com/" target="_blank" rel="noopener"><img src="images/fonts-in-use.jpg" alt="Fonts in Use"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://fontsinuse.com/" target="_blank" rel="noopener">Fonts in Use</a></div>
+                            <div class="resource-url"><a href="https://fontsinuse.com/" target="_blank" rel="noopener">fontsinuse.com</a></div>
+                            <p class="resource-desc">An independent archive of typography in practice. Each entry documents a real-world design project and identifies the typefaces used, making it one of the best resources for understanding how font choices shape tone, hierarchy, and identity. Search by industry, format, or typeface to find relevant precedents before committing to your own typographic direction.</p>
+                        </div>
+
+                        <!-- It's Nice That -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.itsnicethat.com/" target="_blank" rel="noopener"><img src="images/its-nice-that.jpg" alt="It's Nice That"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.itsnicethat.com/" target="_blank" rel="noopener">It's Nice That</a></div>
+                            <div class="resource-url"><a href="https://www.itsnicethat.com/" target="_blank" rel="noopener">itsnicethat.com</a></div>
+                            <p class="resource-desc">A leading platform for creative work across graphic design, illustration, photography, and art direction. Their editorial coverage highlights emerging and established practitioners, giving you a broad view of how visual culture is evolving outside of architecture. Useful for expanding your frame of reference when developing your portfolio's graphic identity and visual language.</p>
+                        </div>
+
+                        <!-- AIGA Eye on Design -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://eyeondesign.aiga.org/" target="_blank" rel="noopener"><img src="images/aiga-eye-on-design.jpg" alt="AIGA Eye on Design"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://eyeondesign.aiga.org/" target="_blank" rel="noopener">AIGA Eye on Design</a></div>
+                            <div class="resource-url"><a href="https://eyeondesign.aiga.org/" target="_blank" rel="noopener">eyeondesign.aiga.org</a></div>
+                            <p class="resource-desc">AIGA's editorial arm covers how design intersects with technology, culture, and daily life. The writing goes deeper than trend reports, examining the thinking behind design decisions. For architecture students, it provides critical context for understanding graphic design as a discipline with its own rigor, and how that rigor can inform the way you present spatial work on a page.</p>
+                        </div>
+
+                        <!-- Pinterest -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><img src="images/pinterest.jpg" alt="Pinterest"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest</a></div>
+                            <div class="resource-url"><a href="https://www.pinterest.com/" target="_blank" rel="noopener">pinterest.com</a></div>
+                            <p class="resource-desc">A visual discovery engine that remains one of the fastest ways to build mood boards and collect graphic references. Search for portfolio layouts, cover designs, color palettes, and typographic pairings. Use it as a starting point for assembling a visual direction, but be deliberate about moving from collection to curation — knowing what to leave out is as important as what you gather.</p>
+                        </div>
+
+                        <!-- ISSUU -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://issuu.com/" target="_blank" rel="noopener"><img src="images/issuu.jpg" alt="ISSUU"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://issuu.com/" target="_blank" rel="noopener">ISSUU</a></div>
+                            <div class="resource-url"><a href="https://issuu.com/" target="_blank" rel="noopener">issuu.com</a></div>
+                            <p class="resource-desc">A digital publishing platform where many architecture students and firms upload their portfolios, lookbooks, and project publications. Search for architecture portfolios to see how others handle layout, pacing, and sequencing in a multi-page format. It is one of the few places where you can flip through complete, real-world portfolio documents rather than isolated project images.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: Typography & Type Foundries -->
+                <section id="section-3" class="section">
+                    <div class="section-header" data-toggle="3">
+                        <div class="section-number">3</div>
+                        <div class="section-header-content">
+                            <div class="section-title">Typography &amp; Type Foundries</div>
+                            <span class="section-toggle collapsed" data-toggle="3">+</span>
+                        </div>
+                    </div>
+                    <div class="section-body" data-toggle="3">
+                        <p>Independent foundries and type libraries where you can find the typefaces that define your portfolio's voice, from workhorse text faces to distinctive display fonts.</p>
+
+                        <!-- Adobe Fonts -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://fonts.adobe.com/fonts" target="_blank" rel="noopener"><img src="images/adobe-fonts.jpg" alt="Adobe Fonts"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://fonts.adobe.com/fonts" target="_blank" rel="noopener">Adobe Fonts</a></div>
+                            <div class="resource-url"><a href="https://fonts.adobe.com/fonts" target="_blank" rel="noopener">fonts.adobe.com</a></div>
+                            <p class="resource-desc">Included with any Adobe Creative Cloud subscription, Adobe Fonts gives you access to thousands of high-quality typefaces that sync directly to InDesign, Illustrator, and Photoshop. For students already working within the Adobe ecosystem, this is the most frictionless way to access professional-grade typography. Browse by classification, recommended pairings, or foundry to find your portfolio's primary and secondary typefaces.</p>
+                        </div>
+
+                        <!-- Colophon Foundry -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.colophon-foundry.org/" target="_blank" rel="noopener"><img src="images/colophon.jpg" alt="Colophon Foundry"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.colophon-foundry.org/" target="_blank" rel="noopener">Colophon Foundry</a></div>
+                            <div class="resource-url"><a href="https://www.colophon-foundry.org/" target="_blank" rel="noopener">colophon-foundry.org</a></div>
+                            <p class="resource-desc">An independent type foundry based in Los Angeles and London producing typefaces with strong editorial character. Their designs balance contemporary aesthetics with functional clarity, making them well-suited for architecture portfolios that want to feel considered without being overly decorative. Faces like Apercu and Reader have become staples in design-forward publications.</p>
+                        </div>
+
+                        <!-- Commercial Type -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://commercialtype.com/" target="_blank" rel="noopener"><img src="images/commercial-type.jpg" alt="Commercial Type"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://commercialtype.com/" target="_blank" rel="noopener">Commercial Type</a></div>
+                            <div class="resource-url"><a href="https://commercialtype.com/" target="_blank" rel="noopener">commercialtype.com</a></div>
+                            <p class="resource-desc">Founded by Paul Barnes and Christian Schwartz, Commercial Type produces some of the most respected text and display typefaces in contemporary design. Their catalogue includes faces used by major publications, cultural institutions, and architecture firms worldwide. If you are looking for typographic authority and precision, this foundry sets the benchmark.</p>
+                        </div>
+
+                        <!-- Klim Type Foundry -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://klim.co.nz/" target="_blank" rel="noopener"><img src="images/klim.jpg" alt="Klim Type Foundry"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://klim.co.nz/" target="_blank" rel="noopener">Klim Type Foundry</a></div>
+                            <div class="resource-url"><a href="https://klim.co.nz/" target="_blank" rel="noopener">klim.co.nz</a></div>
+                            <p class="resource-desc">Kris Sowersby's New Zealand-based foundry produces typefaces known for their meticulous craft and conceptual depth. Each release is accompanied by detailed design notes explaining the historical and formal thinking behind the letterforms. Beyond finding a great typeface, reading Klim's documentation teaches you how to think and write about typographic choices in your own work.</p>
+                        </div>
+
+                        <!-- Pangram Pangram -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://pangrampangram.com/" target="_blank" rel="noopener"><img src="images/pangram.jpg" alt="Pangram Pangram"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://pangrampangram.com/" target="_blank" rel="noopener">Pangram Pangram</a></div>
+                            <div class="resource-url"><a href="https://pangrampangram.com/" target="_blank" rel="noopener">pangrampangram.com</a></div>
+                            <p class="resource-desc">A foundry focused on making high-quality, contemporary typefaces accessible to students and independent designers. Many of their fonts offer free trial versions that work in desktop applications, making them a practical starting point when your budget is limited. Their catalogue leans toward clean, geometric, and modern designs that pair well with architectural content.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: Jobs & Career Boards -->
+                <section id="section-4" class="section">
+                    <div class="section-header" data-toggle="4">
+                        <div class="section-number">4</div>
+                        <div class="section-header-content">
+                            <div class="section-title">Jobs &amp; Career Boards</div>
+                            <span class="section-toggle collapsed" data-toggle="4">+</span>
+                        </div>
+                    </div>
+                    <div class="section-body" data-toggle="4">
+                        <p>Dedicated job boards and career platforms for architecture and landscape architecture positions, from entry-level roles to career transitions beyond traditional practice.</p>
+
+                        <!-- Archinect Jobs -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://archinect.com/jobs" target="_blank" rel="noopener"><img src="images/archinect-jobs.jpg" alt="Archinect Jobs"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://archinect.com/jobs" target="_blank" rel="noopener">Archinect Jobs</a></div>
+                            <div class="resource-url"><a href="https://archinect.com/jobs" target="_blank" rel="noopener">archinect.com/jobs</a></div>
+                            <p class="resource-desc">One of the most active job boards in architecture, Archinect aggregates positions from firms of all sizes across the United States and internationally. Listings range from entry-level designer roles to senior positions and academic appointments. The platform also hosts salary threads and career discussions that offer unfiltered insight into what firms are looking for and what the profession actually pays.</p>
+                        </div>
+
+                        <!-- AIA Career Center -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://careercenter.aia.org/" target="_blank" rel="noopener"><img src="images/aia-career.jpg" alt="AIA Career Center"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://careercenter.aia.org/" target="_blank" rel="noopener">AIA Career Center</a></div>
+                            <div class="resource-url"><a href="https://careercenter.aia.org/" target="_blank" rel="noopener">careercenter.aia.org</a></div>
+                            <p class="resource-desc">The American Institute of Architects maintains a career center with job listings from AIA member firms and affiliated organizations. Positions tend to be from established, mid-to-large firms and often include clear descriptions of licensure requirements, project types, and firm culture. A reliable resource for understanding the conventional career pipeline and finding positions at firms with structured professional development.</p>
+                        </div>
+
+                        <!-- ASLA Career Center -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.asla.org/careercenter.aspx" target="_blank" rel="noopener"><img src="images/asla-career.jpg" alt="ASLA Career Center"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.asla.org/careercenter.aspx" target="_blank" rel="noopener">ASLA Career Center</a></div>
+                            <div class="resource-url"><a href="https://www.asla.org/careercenter.aspx" target="_blank" rel="noopener">asla.org/careercenter</a></div>
+                            <p class="resource-desc">The American Society of Landscape Architects career center is the primary job board for landscape architecture positions in the United States. Listings span private practice, public agencies, and academic roles. For landscape architecture students and dual-degree candidates, this is the most direct pipeline to firms and organizations working on urban design, environmental planning, and public space projects.</p>
+                        </div>
+
+                        <!-- Dezeen Jobs -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.dezeen.com/jobs/" target="_blank" rel="noopener"><img src="images/dezeen-jobs.jpg" alt="Dezeen Jobs"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.dezeen.com/jobs/" target="_blank" rel="noopener">Dezeen Jobs</a></div>
+                            <div class="resource-url"><a href="https://www.dezeen.com/jobs/" target="_blank" rel="noopener">dezeen.com/jobs</a></div>
+                            <p class="resource-desc">Dezeen's job board draws from their global network of architecture, interior design, and product design firms. The listings skew toward design-forward practices, many of them international, and frequently include positions at studios whose work you will recognize from the publication itself. A good source for finding firms where design quality and visual culture are central to the office identity.</p>
+                        </div>
+
+                        <!-- Out of Architecture -->
+                        <div class="resource-card">
+                            <div class="resource-thumb">
+                                <a href="https://www.outofarchitecture.com/open-positions" target="_blank" rel="noopener"><img src="images/out-of-architecture.jpg" alt="Out of Architecture"></a>
+                            </div>
+                            <div class="resource-name"><a href="https://www.outofarchitecture.com/open-positions" target="_blank" rel="noopener">Out of Architecture</a></div>
+                            <div class="resource-url"><a href="https://www.outofarchitecture.com/open-positions" target="_blank" rel="noopener">outofarchitecture.com/open-positions</a></div>
+                            <p class="resource-desc">A career platform specifically for architects exploring roles beyond traditional practice. Their open positions page lists opportunities in real estate development, tech, project management, design consulting, and other fields where architectural training is valued but the work itself is different. An important resource for students and professionals who want to understand the full range of career paths an architecture degree can open.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile menu
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Navigation items
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(n => n.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Section Toggle - Expand/Collapse
+        const sectionHeaders = document.querySelectorAll('.section-header');
+        sectionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const toggleValue = header.getAttribute('data-toggle');
+                const body = document.querySelector(`[data-toggle="${toggleValue}"].section-body`);
+                const toggle = document.querySelector(`[data-toggle="${toggleValue}"].section-toggle`);
+
+                body.classList.toggle('visible');
+                toggle.classList.toggle('expanded');
+                toggle.classList.toggle('collapsed');
+                toggle.textContent = body.classList.contains('visible') ? '\u2212' : '+';
+            });
+        });
+
+        // Expand All / Collapse All
+        const expandAllBtn = document.getElementById('expandAllBtn');
+        const collapseAllBtn = document.getElementById('collapseAllBtn');
+
+        expandAllBtn.addEventListener('click', () => {
+            document.querySelectorAll('.section-body').forEach(body => {
+                body.classList.add('visible');
+            });
+            document.querySelectorAll('.section-toggle').forEach(toggle => {
+                toggle.classList.add('expanded');
+                toggle.classList.remove('collapsed');
+                toggle.textContent = '\u2212';
+            });
+        });
+
+        collapseAllBtn.addEventListener('click', () => {
+            document.querySelectorAll('.section-body').forEach(body => {
+                body.classList.remove('visible');
+            });
+            document.querySelectorAll('.section-toggle').forEach(toggle => {
+                toggle.classList.remove('expanded');
+                toggle.classList.add('collapsed');
+                toggle.textContent = '+';
+            });
+        });
+
+        // Smooth scrolling and active nav state
+        let currentSection = '1';
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionNum = item.getAttribute('data-section');
+                const target = document.getElementById(`section-${sectionNum}`);
+
+                if (target) {
+                    const body = target.querySelector('.section-body');
+                    const toggle = target.querySelector('.section-toggle');
+                    if (body && !body.classList.contains('visible')) {
+                        body.classList.add('visible');
+                        toggle.classList.add('expanded');
+                        toggle.classList.remove('collapsed');
+                        toggle.textContent = '\u2212';
+                    }
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    updateActiveNav(sectionNum);
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+
+        function updateActiveNav(sectionNum) {
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            const activeItem = document.querySelector(`[data-section="${sectionNum}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+        }
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            let current = '1';
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.id.replace('section-', '');
+                }
+            });
+
+            if (current !== currentSection) {
+                currentSection = current;
+                updateActiveNav(current);
+            }
+        });
+
+        // Initialize
+        updateActiveNav('1');
+    </script>
+</body>
+</html>
