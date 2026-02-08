@@ -158,49 +158,54 @@
       text-decoration: none;
     }
 
-    /* Page Layout */
+    /* Page Layout — full width, edge to edge */
     .page {
-      max-width: 1100px;
-      margin: 0 auto 0 180px;
-      padding: 0 40px;
+      margin: 0 0 0 180px;
+      padding: 0 60px 0 40px;
     }
 
-    /* Two-Column Layout */
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 100px;
-      padding: 60px 0 0;
-      min-height: calc(100vh - 100px);
-      align-content: start;
-    }
-
-    /* Left Column */
-    .col-left {
-      padding-top: 0;
-    }
-
-    .header-title {
+    /* Page Title */
+    .page-title {
       font-size: 18px;
       font-weight: 700;
       line-height: 1.4;
-      margin-bottom: 12px;
       color: #111;
+      padding: 60px 0 40px;
+      border-bottom: 1px solid #e0e0e0;
     }
 
-    .header-subtitle {
-      font-size: 14px;
-      color: #333;
-      font-weight: 400;
-      line-height: 1.7;
+    /* Two-Column Layout — even spacing, full width */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 80px;
+      padding: 40px 0 0;
+      align-content: start;
+    }
+
+    /* Mission Statement */
+    .mission {
       margin-bottom: 40px;
+    }
+
+    .mission p {
+      font-size: 14px;
+      color: #444;
+      font-weight: 400;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .mission p:last-child {
+      margin-bottom: 0;
+      font-weight: 500;
+      color: #111;
     }
 
     /* Subscribe Section */
     .subscribe-section {
-      padding-bottom: 36px;
-      margin-bottom: 36px;
-      border-bottom: 1px solid #e0e0e0;
+      padding-top: 36px;
+      border-top: 1px solid #e0e0e0;
     }
 
     .subscribe-label {
@@ -233,7 +238,7 @@
       background: transparent;
       outline: none;
       width: 100%;
-      max-width: 240px;
+      max-width: 280px;
     }
 
     .subscribe-field input::placeholder {
@@ -263,21 +268,6 @@
       font-size: 13px;
       color: #666;
       margin-top: 12px;
-    }
-
-    /* Mission Statement */
-    .mission p {
-      font-size: 14px;
-      color: #444;
-      font-weight: 400;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .mission p:last-child {
-      margin-bottom: 0;
-      font-weight: 500;
-      color: #111;
     }
 
     /* Right Column - Items */
@@ -379,20 +369,18 @@
       }
 
       .page {
-        max-width: 100%;
         padding: 0 24px;
         margin: 48px 0 0 0;
+      }
+
+      .page-title {
+        padding: 30px 0 30px;
       }
 
       .layout {
         grid-template-columns: 1fr;
         gap: 40px;
         padding: 30px 0 0;
-        min-height: auto;
-      }
-
-      .header-subtitle {
-        margin-bottom: 30px;
       }
 
       .subscribe-field input {
@@ -402,14 +390,6 @@
       .item {
         padding: 24px 0;
       }
-
-      .item-title {
-        font-size: 15px;
-      }
-
-      .item-desc {
-        font-size: 13px;
-      }
     }
 
     @media (max-width: 480px) {
@@ -417,12 +397,13 @@
         padding: 0 16px;
       }
 
-      .layout {
-        padding: 24px 0 0;
+      .page-title {
+        font-size: 16px;
+        padding: 24px 0;
       }
 
-      .header-title {
-        font-size: 16px;
+      .layout {
+        padding: 24px 0 0;
       }
 
       .item {
@@ -469,11 +450,18 @@
   </div>
 
   <div class="page">
+    <!-- Page Title -->
+    <h1 class="page-title">Threshold</h1>
+
+    <!-- Two-Column Layout -->
     <div class="layout">
-      <!-- Left Column: Title, Subscribe, Mission -->
+      <!-- Left Column: Mission + Subscribe -->
       <div class="col-left">
-        <h1 class="header-title">Architecture Career Toolkit</h1>
-        <p class="header-subtitle">Strategic resources for architecture & landscape architecture students preparing for graduate school and professional employment.</p>
+        <div class="mission">
+          <p>We believe the transition from studio to practice should be navigated with the same rigor and intentionality that defines good design. Threshold equips architecture and landscape architecture students with the strategic tools to present their work, communicate their value, and find firms where they can grow.</p>
+          <p>This project grew out of years spent on both sides of the profession — practicing architecture, advising students on career strategy, and teaching in the studio. Through those experiences, it became clear that students needed more than a syllabus or a single advising session. They needed an accessible, always-available space where the practical knowledge that usually gets passed down informally — how to build a portfolio, how to write for firms, where the jobs actually are — could be organized, refined, and shared openly.</p>
+          <p>Threshold is that space.</p>
+        </div>
 
         <div class="subscribe-section">
           <span class="subscribe-label">For email updates:</span>
@@ -485,12 +473,6 @@
             <button type="submit" class="subscribe-btn">Subscribe</button>
           </form>
           <p class="subscribe-msg" id="subscribeMsg">Thanks — we'll be in touch.</p>
-        </div>
-
-        <div class="mission">
-          <p>We believe the transition from studio to practice should be navigated with the same rigor and intentionality that defines good design. Threshold equips architecture and landscape architecture students with the strategic tools to present their work, communicate their value, and find firms where they can grow.</p>
-          <p>This project grew out of years spent on both sides of the profession — practicing architecture, advising students on career strategy, and teaching in the studio. Through those experiences, it became clear that students needed more than a syllabus or a single advising session. They needed an accessible, always-available space where the practical knowledge that usually gets passed down informally — how to build a portfolio, how to write for firms, where the jobs actually are — could be organized, refined, and shared openly.</p>
-          <p>Threshold is that space.</p>
         </div>
       </div>
 
