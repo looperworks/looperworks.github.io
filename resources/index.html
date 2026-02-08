@@ -430,7 +430,7 @@
         }
         .footer-inner {
             max-width: 1200px;
-            padding: 24px 40px;
+            padding: 48px 40px 0;
             margin: 0 auto;
         }
         .footer-bottom {
@@ -445,6 +445,98 @@
         }
         .footer-bottom a:hover {
             color: #111;
+        }
+        /* Join the community section */
+        .footer-community {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .footer-community-text {
+            flex: 1;
+            max-width: 560px;
+        }
+        .footer-community-text h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 10px;
+        }
+        .footer-community-text p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+        .footer-subscribe {
+            flex-shrink: 0;
+        }
+        .footer-subscribe-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .footer-subscribe input[type="email"] {
+            padding: 10px 14px;
+            font-family: 'Circular Std', sans-serif;
+            font-size: 13px;
+            border: 1px solid #ccc;
+            background: #fff;
+            color: #111;
+            border-radius: 4px;
+            width: 220px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .footer-subscribe input[type="email"]::placeholder {
+            color: #999;
+        }
+        .footer-subscribe input[type="email"]:focus {
+            border-color: #111;
+        }
+        .footer-subscribe button {
+            padding: 10px 20px;
+            font-family: 'Circular Std', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid #111;
+            background: #111;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .footer-subscribe button:hover {
+            background: #333;
+            border-color: #333;
+        }
+        .footer-subscribe-msg {
+            display: none;
+            font-size: 13px;
+            color: #666;
+        }
+        .footer-terms-check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer-terms-check input[type="checkbox"] {
+            accent-color: #111;
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+        }
+        .footer-terms-check a {
+            color: #111;
+            text-decoration: underline;
+            transition: opacity 0.2s ease;
+        }
+        .footer-terms-check a:hover {
+            opacity: 0.6;
         }
         /* Cookie banner */
         .cookie-banner {
