@@ -548,8 +548,10 @@
 
       fetch('https://script.google.com/macros/s/AKfycbws9nPFsEYYueyUbTIDEodASQOzvwa0Pmr7QfAW-nXkSTDgl4NtYjqGEJBLdEbAkcM/exec', {
         method: 'POST',
+        mode: 'no-cors',
+        redirect: 'follow',
         body: JSON.stringify({ email: email }),
-        headers: { 'Content-Type': 'text/plain' }
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
       })
       .then(function() {
         form.style.display = 'none';
