@@ -247,6 +247,32 @@
       justify-content: flex-start;
     }
 
+    .card-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e8c547;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: gap 0.3s ease;
+    }
+
+    .card:hover .card-button {
+      gap: 14px;
+    }
+
+    .card-button .arrow {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-button .arrow {
+      transform: translateX(4px);
+    }
+
     /* Staggered Animation */
     .card:nth-child(1) {
       animation: slideUp 0.8s ease 0.35s both;
@@ -484,6 +510,7 @@
         <div class="card-number">01</div>
         <h2 class="card-title">Portfolio Guide</h2>
         <p class="card-description">Build a compelling visual narrative that communicates your design process and creative evolution.</p>
+        <div class="card-button">Open Guide <span class="arrow">&rarr;</span></div>
       </a>
 
       <!-- Resume Guide Card -->
@@ -491,6 +518,7 @@
         <div class="card-number">02</div>
         <h2 class="card-title">Resume Guide</h2>
         <p class="card-description">Craft a strategic, ATS-ready resume that positions your architectural experience for maximum impact.</p>
+        <div class="card-button">Open Guide <span class="arrow">&rarr;</span></div>
       </a>
 
       <!-- Cover Letter Guide Card -->
@@ -498,6 +526,7 @@
         <div class="card-number">03</div>
         <h2 class="card-title">Cover Letter Guide</h2>
         <p class="card-description">Write targeted cover letters that connect your skills to the firm's mission and project work.</p>
+        <div class="card-button">Open Guide <span class="arrow">&rarr;</span></div>
       </a>
 
       <!-- Job Search Card -->
@@ -505,6 +534,7 @@
         <div class="card-number">04</div>
         <h2 class="card-title">Job Search</h2>
         <p class="card-description">Explore architecture and landscape architecture positions across the US with an interactive spatial map.</p>
+        <div class="card-button">Explore Map <span class="arrow">&rarr;</span></div>
       </a>
     </div>
   </section>
