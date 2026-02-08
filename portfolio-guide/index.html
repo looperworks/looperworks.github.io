@@ -1848,16 +1848,8 @@
             }
         });
 
-        // Initialize - open all sections by default
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.section-body').forEach(body => {
-                body.classList.add('visible');
-            });
-            document.querySelectorAll('.section-toggle').forEach(toggle => {
-                toggle.classList.add('expanded');
-            });
-            updateActiveNav('1');
-        });
+        // Initialize - collapsed by default
+        updateActiveNav('1');
     </script>
 </body>
 </html>
