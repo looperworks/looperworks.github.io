@@ -734,6 +734,24 @@
             }
         }
 
+        /* Top Brand Link */
+        .top-brand {
+            display: block;
+            padding: 60px 0 40px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #111;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        .top-brand:hover {
+            opacity: 0.5;
+        }
+        .top-divider {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
         /* Floating Left Navigation */
         .side-nav {
             position: fixed;
@@ -742,15 +760,6 @@
             transform: translateY(-50%);
             z-index: 2000;
             text-align: left;
-        }
-        .side-nav-brand {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #111;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 20px;
         }
         .side-nav-links {
             list-style: none;
@@ -763,12 +772,27 @@
             font-weight: 400;
             color: #111;
             text-decoration: none;
-            transition: opacity 0.2s ease;
+            transition: all 0.3s ease;
             display: block;
             line-height: 1.5;
+            position: relative;
+            padding-left: 0;
+        }
+        .side-nav-links a::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: translateX(-4px);
         }
         .side-nav-links a:hover {
-            opacity: 0.5;
+            padding-left: 20px;
+        }
+        .side-nav-links a:hover::before {
+            opacity: 1;
+            left: 0;
+            transform: translateX(0);
         }
         .side-nav-links a.active {
             text-decoration: underline;
@@ -939,8 +963,11 @@
     </style>
 </head>
 <body>
+    <!-- Top Brand -->
+    <a href="../" class="top-brand">Threshold</a>
+    <div class="top-divider"></div>
+
     <nav class="side-nav">
-        <a href="../" class="side-nav-brand">Threshold</a>
         <ul class="side-nav-links">
             <li><a href="../mapvoid/">Job Search</a></li>
             <li><a href="../cover-letter-guide/">Cover Letter</a></li>
