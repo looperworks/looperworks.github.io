@@ -68,6 +68,40 @@ async function batchProcess(items, fn, concurrency = CONCURRENCY) {
   return results;
 }
 
+// ─── Job Relevance Filter ───
+// Only keep jobs relevant to architecture/landscape/design
+const RELEVANT_KEYWORDS = [
+  'architect', 'design', 'landscape', 'urban', 'planner', 'planning',
+  'intern', 'bim', 'revit', 'cad', 'autocad', 'rhino', 'grasshopper',
+  'visualization', 'renderer', 'model', 'draft', 'studio', 'project manager',
+  'sustainability', 'leed', 'preservation', 'historic', 'interior',
+  'construction', 'specification', 'graphic', 'visual', 'gis',
+  'environmental', 'ecological', 'horticultur', 'irrigation',
+  'entitle', 'permit', 'zoning', 'land use'
+];
+const EXCLUDE_KEYWORDS = [
+  'accountant', 'accounting', 'accounts payable', 'accounts receivable',
+  'payroll', 'human resource', 'recruiter', 'receptionist',
+  'marketing manager', 'sales rep', 'business develop',
+  'it support', 'network admin', 'software engineer', 'devops',
+  'janitor', 'custodian', 'security guard', 'truck driver',
+  'nurse', 'physician', 'pharmacist', 'dental',
+  'cook', 'chef', 'bartender', 'server', 'cashier',
+  'attorney', 'paralegal', 'compliance officer',
+  'agente', 'vendedor', 'analista'
+];
+
+function isRelevantJob(title) {
+  const t = (title || '').toLowerCase();
+  // Reject if title matches exclusion list
+  if (EXCLUDE_KEYWORDS.some(kw => t.includes(kw))) return false;
+  // Accept if title matches relevant keywords
+  if (RELEVANT_KEYWORDS.some(kw => t.includes(kw))) return true;
+  // For short titles or ambiguous ones, accept by default
+  // (better to show a questionable job than miss a real one)
+  return true;
+}
+
 // ─── Greenhouse ───
 async function fetchGreenhouseJobs(slug) {
   if (!slug) return [];
@@ -77,13 +111,15 @@ async function fetchGreenhouseJobs(slug) {
   try {
     const data = await resp.json();
     if (!data.jobs || !Array.isArray(data.jobs)) return [];
-    return data.jobs.map(j => ({
-      title: j.title || 'Untitled',
-      type: extractType(j),
-      salary: 'See listing',
-      posted: j.updated_at ? timeAgo(j.updated_at) : 'Recently',
-      url: j.absolute_url || ''
-    }));
+    return data.jobs
+      .filter(j => isRelevantJob(j.title))
+      .map(j => ({
+        title: j.title || 'Untitled',
+        type: extractType(j),
+        salary: 'See listing',
+        posted: j.updated_at ? timeAgo(j.updated_at) : 'Recently',
+        url: j.absolute_url || ''
+      }));
   } catch {
     return [];
   }
@@ -120,13 +156,15 @@ async function fetchLeverJobs(slug) {
   try {
     const data = await resp.json();
     if (!Array.isArray(data)) return [];
-    return data.map(j => ({
-      title: j.text || 'Untitled',
-      type: (j.categories && j.categories.commitment) || 'Full-time',
-      salary: 'See listing',
-      posted: j.createdAt ? timeAgo(new Date(j.createdAt).toISOString()) : 'Recently',
-      url: j.hostedUrl || ''
-    }));
+    return data
+      .filter(j => isRelevantJob(j.text))
+      .map(j => ({
+        title: j.text || 'Untitled',
+        type: (j.categories && j.categories.commitment) || 'Full-time',
+        salary: 'See listing',
+        posted: j.createdAt ? timeAgo(new Date(j.createdAt).toISOString()) : 'Recently',
+        url: j.hostedUrl || ''
+      }));
   } catch {
     return [];
   }
@@ -321,10 +359,13 @@ async function main() {
 
   await batchProcess(ghFirms, async (firm) => {
     const jobs = await fetchGreenhouseJobs(firm.greenhouse_slug);
-    if (jobs.length > 0) {
+    if (jobs.length > 0 && jobs.length <= 30) {
+      // Cap at 30 — more than that likely means wrong slug match
       firm.jobs.push(...jobs);
       ghHits++;
       ghJobs += jobs.length;
+    } else if (jobs.length > 30) {
+      console.log(`   ⚠ ${firm.name}: ${jobs.length} jobs (likely wrong match, skipping)`);
     }
   });
   console.log(`   ✓ ${ghHits} firms responded, ${ghJobs} jobs found\n`);
@@ -335,10 +376,12 @@ async function main() {
 
   await batchProcess(lvFirms, async (firm) => {
     const jobs = await fetchLeverJobs(firm.lever_slug);
-    if (jobs.length > 0) {
+    if (jobs.length > 0 && jobs.length <= 30) {
       firm.jobs.push(...jobs);
       lvHits++;
       lvJobs += jobs.length;
+    } else if (jobs.length > 30) {
+      console.log(`   ⚠ ${firm.name}: ${jobs.length} jobs (likely wrong match, skipping)`);
     }
   });
   console.log(`   ✓ ${lvHits} firms responded, ${lvJobs} jobs found\n`);
