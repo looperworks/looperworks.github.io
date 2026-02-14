@@ -1619,7 +1619,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 
 let markers = {};
 let markerCluster = null;
-let activeFilter = 'all';
+let activeFilters = new Set();
 let activeRefines = new Set();
 let searchTerm = '';
 let activeState = 'all';
@@ -1715,8 +1715,8 @@ function getFilteredFirms() {
       f.jobs.some(j => j.title.toLowerCase().includes(term))
     );
   }
-  if (activeFilter !== 'all') {
-    filtered = filtered.filter(f => f.discipline === activeFilter);
+  if (activeFilters.size > 0) {
+    filtered = filtered.filter(f => activeFilters.has(f.discipline));
   }
   activeState = document.getElementById('stateSelect').value;
   if (activeState !== 'all') {
@@ -1750,11 +1750,25 @@ function getFilteredFirms() {
 }
 
 function toggleFilter(el) {
-  document.querySelectorAll('.filter-group:first-child .filter-chip, .filter-group:nth-child(1) .filter-chip').forEach(c => {
-    if (c.parentElement === el.parentElement) c.classList.remove('active');
-  });
-  el.classList.add('active');
-  activeFilter = el.dataset.filter;
+  const filter = el.dataset.filter;
+  if (filter === 'all') {
+    // "All" clears all discipline selections
+    el.parentElement.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    activeFilters.clear();
+  } else {
+    // Toggle clicked chip
+    el.classList.toggle('active');
+    if (activeFilters.has(filter)) activeFilters.delete(filter);
+    else activeFilters.add(filter);
+    // Update "All" chip state
+    const allChip = el.parentElement.querySelector('.filter-chip[data-filter="all"]');
+    if (activeFilters.size === 0) {
+      allChip.classList.add('active');
+    } else {
+      allChip.classList.remove('active');
+    }
+  }
   applyFilters();
 }
 
@@ -1777,7 +1791,7 @@ function applyFilters() {
   plotMarkers(filtered);
   document.getElementById('resultsCount').textContent = filtered.length + ' firm' + (filtered.length !== 1 ? 's' : '') + ' found';
   // Auto-zoom to show filtered results
-  if (filtered.length > 0 && (activeFilter !== 'all' || activeState !== 'all' || searchTerm || activeRefines.size > 0)) {
+  if (filtered.length > 0 && (activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0)) {
     const lats = filtered.map(f => f.lat);
     const lngs = filtered.map(f => f.lng);
     const bounds = L.latLngBounds(
@@ -2135,15 +2149,14 @@ function launchSearch() {
   activeState = state;
 
   // Apply discipline
+  activeFilters.clear();
+  document.querySelectorAll('#disciplineChips .filter-chip').forEach(c => c.classList.remove('active'));
   if (disc !== 'all') {
-    document.querySelectorAll('#disciplineChips .filter-chip').forEach(c => c.classList.remove('active'));
     const chip = document.querySelector('#disciplineChips .filter-chip[data-filter="' + disc + '"]');
     if (chip) chip.classList.add('active');
-    activeFilter = disc;
+    activeFilters.add(disc);
   } else {
-    document.querySelectorAll('#disciplineChips .filter-chip').forEach(c => c.classList.remove('active'));
     document.querySelector('#disciplineChips .filter-chip[data-filter="all"]').classList.add('active');
-    activeFilter = 'all';
   }
 
   showMap();
