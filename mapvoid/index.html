@@ -434,6 +434,7 @@
           <div class="filter-chip" data-refine="residential" onclick="toggleRefine(this)">Residential</div>
           <div class="filter-chip" data-refine="parks" onclick="toggleRefine(this)">Parks & Public</div>
           <div class="filter-chip" data-refine="planning" onclick="toggleRefine(this)">Planning</div>
+          <div class="filter-chip" data-refine="internship" onclick="toggleRefine(this)">Internship</div>
           <div class="filter-chip" data-refine="entry" onclick="toggleRefine(this)">Entry Level</div>
           <div class="filter-chip" data-refine="senior" onclick="toggleRefine(this)">Senior/Director</div>
         </div>
@@ -1731,6 +1732,10 @@ function getFilteredFirms() {
       case 'residential': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('residential') || s.toLowerCase().includes('housing'))); break;
       case 'parks': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('park') || s.toLowerCase().includes('public'))); break;
       case 'planning': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('planning') || s.toLowerCase().includes('urban'))); break;
+      case 'internship': filtered = filtered.filter(f => f.jobs.some(j => {
+        const t = j.title.toLowerCase();
+        return t.includes('intern');
+      })); break;
       case 'entry': filtered = filtered.filter(f => f.jobs.some(j => {
         const t = j.title.toLowerCase();
         return t.includes('junior') || t.includes('intern') || t.includes('entry') || t.includes('designer') || t.includes('coordinator');
