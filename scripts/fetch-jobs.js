@@ -139,14 +139,29 @@ async function fetchJSearchJobs(apiKey) {
     return [];
   }
 
-  const queries = [
+  // Standard job queries (posted in last week)
+  const weeklyQueries = [
     'architect jobs united states',
     'landscape architect jobs united states',
-    'urban designer jobs united states'
+    'urban designer jobs united states',
+    'landscape designer jobs united states',
+    'architecture firm jobs united states'
+  ];
+
+  // Internship-specific queries (posted in last month — internships post less often)
+  const internQueries = [
+    'architecture intern',
+    'landscape architecture intern',
+    'landscape architect internship',
+    'urban design intern',
+    'architecture summer intern',
+    'design intern architecture firm'
   ];
 
   const allJobs = [];
-  for (const q of queries) {
+
+  // Weekly job searches
+  for (const q of weeklyQueries) {
     console.log(`  🔍 JSearch: "${q}"`);
     const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(q)}&page=1&num_pages=2&country=us&date_posted=week`;
     const resp = await fetchWithTimeout(url, {
@@ -168,8 +183,36 @@ async function fetchJSearchJobs(apiKey) {
     } catch {
       console.log('    ⚠ Parse error');
     }
-    await sleep(500); // respect rate limits
+    await sleep(500);
   }
+
+  // Internship searches (wider date window)
+  console.log('  🎓 Searching for internships (last month)...');
+  for (const q of internQueries) {
+    console.log(`  🔍 JSearch: "${q}"`);
+    const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(q)}&page=1&num_pages=2&country=us&date_posted=month`;
+    const resp = await fetchWithTimeout(url, {
+      headers: {
+        'X-RapidAPI-Key': apiKey,
+        'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+      }
+    });
+    if (!resp || !resp.ok) {
+      console.log(`    ⚠ JSearch query failed (status: ${resp ? resp.status : 'timeout'})`);
+      continue;
+    }
+    try {
+      const data = await resp.json();
+      if (data.data && Array.isArray(data.data)) {
+        allJobs.push(...data.data);
+        console.log(`    ✓ ${data.data.length} results`);
+      }
+    } catch {
+      console.log('    ⚠ Parse error');
+    }
+    await sleep(500);
+  }
+
   return allJobs;
 }
 
@@ -181,11 +224,18 @@ function normalize(name) {
     .replace(/(inc|llc|architects|architecture|design|studio|group|associates|partnership|consulting)$/g, '');
 }
 
-// Match JSearch results to existing firms
+// Match JSearch results to existing firms (with fuzzy fallback)
 function matchJSearchToFirms(jsearchJobs, firms) {
   const firmIndex = new Map();
+  const firmWords = new Map(); // secondary index by key words
   for (const f of firms) {
     firmIndex.set(normalize(f.name), f);
+    // Index by first significant word for fuzzy matching
+    const words = f.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 3);
+    for (const w of words) {
+      if (!firmWords.has(w)) firmWords.set(w, []);
+      firmWords.get(w).push(f);
+    }
   }
 
   const matched = [];
@@ -194,7 +244,28 @@ function matchJSearchToFirms(jsearchJobs, firms) {
   for (const j of jsearchJobs) {
     const employer = j.employer_name || '';
     const key = normalize(employer);
-    const firm = firmIndex.get(key);
+
+    // Exact match first
+    let firm = firmIndex.get(key);
+
+    // Fuzzy match: check if employer contains a firm name or vice versa
+    if (!firm) {
+      const empLower = employer.toLowerCase();
+      for (const [normName, f] of firmIndex) {
+        if (normName.length > 4 && (empLower.includes(normName) || normName.includes(normalize(employer)))) {
+          // Verify same city/state if available
+          if (j.job_state && f.state && j.job_state.length === 2) {
+            if (j.job_state.toUpperCase() === f.state.toUpperCase()) {
+              firm = f;
+              break;
+            }
+          } else {
+            firm = f;
+            break;
+          }
+        }
+      }
+    }
 
     const job = {
       title: j.job_title || 'Untitled',
@@ -205,6 +276,11 @@ function matchJSearchToFirms(jsearchJobs, firms) {
       posted: j.job_posted_at_datetime_utc ? timeAgo(j.job_posted_at_datetime_utc) : 'Recently',
       url: j.job_apply_link || ''
     };
+
+    // Tag internships properly
+    if (/intern/i.test(job.title)) {
+      job.type = 'Internship';
+    }
 
     if (firm) {
       matched.push({ firm, job });
