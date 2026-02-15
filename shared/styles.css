@@ -100,14 +100,11 @@ body {
 .side-nav {
   position: fixed;
   left: 40px;
-  top: 0;
-  bottom: 0;
+  top: 117px;
   z-index: 2000;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 0;
+  border-left: 2px solid #111;
+  padding-left: 16px;
 }
 
 .side-nav-links {
@@ -115,85 +112,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-left: 2px solid #111;
-  padding-left: 16px;
-}
-
-/* Subscribe + legal at bottom of sidebar */
-.side-nav-bottom {
-  position: absolute;
-  bottom: 24px;
-  left: 0;
-}
-
-.side-nav-form {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.side-nav-form input[type="email"] {
-  padding: 6px 10px;
-  font-family: 'Circular Std', sans-serif;
-  font-size: 11px;
-  border: 1px solid #ccc;
-  background: #fff;
-  color: #111;
-  border-radius: 3px;
-  width: 160px;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.side-nav-form input[type="email"]::placeholder {
-  color: #999;
-}
-
-.side-nav-form input[type="email"]:focus {
-  border-color: #111;
-}
-
-.side-nav-form button {
-  padding: 6px 12px;
-  font-family: 'Circular Std', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  border: 1px solid #111;
-  background: #111;
-  color: #fff;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  width: 160px;
-}
-
-.side-nav-form button:hover {
-  background: #333;
-  border-color: #333;
-}
-
-.side-nav-msg {
-  display: none;
-  font-size: 10px;
-  color: #666;
-  margin-bottom: 4px;
-}
-
-.side-nav-legal {
-  font-size: 10px;
-  color: #999;
-  line-height: 1.6;
-}
-
-.side-nav-legal a {
-  color: #999;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.side-nav-legal a:hover {
-  color: #111;
 }
 
 .side-nav-links a {
@@ -298,13 +216,34 @@ body {
 }
 
 /* ===========================
-   Site Footer (mobile-only — desktop uses sidebar)
+   Site Footer — minimal
    =========================== */
 .site-footer {
-  display: none;
-  background: #fff;
   border-top: 1px solid #e0e0e0;
-  padding: 20px 24px;
+  padding: 16px 0;
+  font-size: 11px;
+  color: #999;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-legal a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: #111;
 }
 
 /* ===========================
@@ -375,8 +314,10 @@ body {
     padding: 20px 0 10px 24px;
   }
 
-  .site-footer {
-    display: block;
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
   }
 
   .cookie-banner {
@@ -393,6 +334,6 @@ body {
 
 @media (max-width: 480px) {
   .site-footer {
-    padding: 16px;
+    padding: 12px 0;
   }
 }
