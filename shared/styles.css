@@ -228,40 +228,31 @@ body {
 }
 
 .footer-inner {
-  max-width: 800px;
+  max-width: 480px;
   padding: 40px 40px 0;
   margin: 0 auto;
 }
 
 /* Join the community section */
 .footer-community {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
   padding-bottom: 12px;
 }
 
-.footer-community-text {
-  flex: 1;
-  max-width: 440px;
-}
-
-.footer-community-text h3 {
+.footer-community h3 {
   font-size: 14px;
   font-weight: 700;
   color: #111;
   margin-bottom: 8px;
 }
 
-.footer-community-text p {
+.footer-community > p {
   font-size: 12px;
   color: #666;
   line-height: 1.7;
 }
 
 .footer-subscribe {
-  flex-shrink: 0;
+  margin-top: 12px;
 }
 
 .footer-subscribe-row {
@@ -456,11 +447,6 @@ body {
 
   .footer-inner {
     padding: 30px 24px 0;
-  }
-
-  .footer-community {
-    flex-direction: column;
-    gap: 16px;
   }
 
   .footer-subscribe {
