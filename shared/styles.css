@@ -315,6 +315,17 @@ body {
   color: #666;
 }
 
+.footer-terms-note {
+  font-size: 11px;
+  color: #999;
+  margin-top: 8px;
+}
+
+.footer-terms-note a {
+  color: #999;
+  text-decoration: underline;
+}
+
 .footer-terms-check {
   display: flex;
   align-items: center;
