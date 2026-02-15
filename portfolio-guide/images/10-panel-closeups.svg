@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      text { fill: #333; }
+      .label { font-size: 11px; fill: #777; }
+      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
+      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .subtitle { font-size: 11px; fill: #999; letter-spacing: 2px; text-transform: uppercase; }
+      .grid-col { stroke: #3B7DD8; stroke-width: 0.75; stroke-dasharray: 4,3; }
+      .grid-row { stroke: #E85D3A; stroke-width: 0.75; stroke-dasharray: 4,3; }
+      .margin-line { stroke: #BBB; stroke-width: 1; stroke-dasharray: 6,4; }
+      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.5; }
+      .module-fill { fill: #F0F4FA; stroke: none; }
+      .callout-line { stroke: #333; stroke-width: 0.75; }
+      .callout-dot { fill: #333; }
+      .dim-line { stroke: #BBB; stroke-width: 0.75; }
+      .accent-blue { fill: #3B7DD8; }
+      .accent-red { fill: #E85D3A; }
+      .white-text { font-size: 11px; fill: #FFF; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="380" fill="white"/>
+
+
+  <text x="400" y="36" text-anchor="middle" class="title">Key InDesign Panels</text>
+
+  <!-- Paragraph Styles panel -->
+  <rect x="40" y="60" width="330" height="310" fill="white" stroke="#D0D0D0" stroke-width="1.5" rx="5"/>
+  <rect x="40" y="60" width="330" height="30" fill="#333" rx="5"/>
+  <rect x="40" y="78" width="330" height="12" fill="#333"/>
+  <text x="60" y="82" class="white-text">Paragraph Styles</text>
+  <rect x="52" y="100" width="306" height="30" fill="#3B7DD8" rx="3"/>
+  <text x="68" y="120" class="white-text">Body Text</text>
+  <rect x="52" y="138" width="306" height="30" fill="#FAFAFA" stroke="#D0D0D0" stroke-width="0.5" rx="3"/>
+  <text x="68" y="158" class="label-bold">Heading 1</text>
+  <rect x="52" y="176" width="306" height="30" fill="#FAFAFA" stroke="#D0D0D0" stroke-width="0.5" rx="3"/>
+  <text x="68" y="196" class="label-bold">Heading 2</text>
+  <rect x="52" y="214" width="306" height="30" fill="#FAFAFA" stroke="#D0D0D0" stroke-width="0.5" rx="3"/>
+  <text x="68" y="234" class="label-bold">Caption</text>
+  <rect x="52" y="252" width="306" height="30" fill="#FAFAFA" stroke="#D0D0D0" stroke-width="0.5" rx="3"/>
+  <text x="68" y="272" class="label-bold">Page Number</text>
+  <text x="205" y="340" text-anchor="middle" class="label" font-style="italic">Enforces typographic consistency</text>
+
+  <!-- Align panel -->
+  <rect x="430" y="60" width="330" height="310" fill="white" stroke="#D0D0D0" stroke-width="1.5" rx="5"/>
+  <rect x="430" y="60" width="330" height="30" fill="#333" rx="5"/>
+  <rect x="430" y="78" width="330" height="12" fill="#333"/>
+  <text x="450" y="82" class="white-text">Align</text>
+  <rect x="445" y="105" width="300" height="24" fill="#FAFAFA" stroke="#D0D0D0" stroke-width="0.5" rx="3"/>
+  <text x="455" y="121" class="label-bold">Align To: Selection</text>
+  <!-- Align buttons row 1 -->
+  <rect x="465" y="145" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="484" y="169" text-anchor="middle" class="label-bold">L</text>
+  <rect x="512" y="145" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="531" y="169" text-anchor="middle" class="label-bold">C</text>
+  <rect x="559" y="145" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="578" y="169" text-anchor="middle" class="label-bold">R</text>
+  <!-- Row 2 -->
+  <rect x="465" y="192" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="484" y="216" text-anchor="middle" class="label-bold">&#x2191;</text>
+  <rect x="512" y="192" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="531" y="216" text-anchor="middle" class="label-bold">M</text>
+  <rect x="559" y="192" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="578" y="216" text-anchor="middle" class="label-bold">&#x2193;</text>
+  <!-- Distribute -->
+  <rect x="465" y="239" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="484" y="263" text-anchor="middle" class="label-bold">DH</text>
+  <rect x="512" y="239" width="38" height="38" fill="#FAFAFA" stroke="#D0D0D0" rx="4"/>
+  <text x="531" y="263" text-anchor="middle" class="label-bold">DV</text>
+  <text x="595" y="340" text-anchor="middle" class="label" font-style="italic">Positions elements relative to the grid</text>
+
+</svg>

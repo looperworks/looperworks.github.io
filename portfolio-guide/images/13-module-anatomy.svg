@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      text { fill: #333; }
+      .label { font-size: 11px; fill: #777; }
+      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
+      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .dimension { font-size: 11px; fill: #777; }
+      .caption { font-size: 11px; fill: #777; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="480" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" class="title">Anatomy of a Module</text>
+
+  <!-- Module container -->
+  <g id="module">
+    <rect x="200" y="80" width="400" height="280" fill="none" stroke="#333" stroke-width="2"/>
+
+    <!-- 7 content lines -->
+    <g id="content-lines">
+      <rect x="225" y="95" width="350" height="3" fill="#D0D0D0"/>
+      <rect x="225" y="127" width="350" height="3" fill="#D0D0D0"/>
+      <rect x="225" y="159" width="350" height="3" fill="#D0D0D0"/>
+      <rect x="225" y="191" width="350" height="3" fill="#D0D0D0"/>
+      <rect x="225" y="223" width="350" height="3" fill="#D0D0D0"/>
+      <rect x="225" y="255" width="350" height="3" fill="#D0D0D0"/>
+      <rect x="225" y="287" width="350" height="3" fill="#D0D0D0"/>
+    </g>
+
+    <!-- Gutter zone -->
+    <rect x="225" y="299" width="350" height="51" fill="#FFE8D6" stroke="#E85D3A" stroke-width="1"/>
+    <line x1="225" y1="299" x2="575" y2="299" stroke="#E85D3A" stroke-width="1"/>
+  </g>
+
+  <!-- LEFT: Dimension marks -->
+  <g id="left-dimensions">
+    <line x1="190" y1="95" x2="195" y2="95" stroke="#777" stroke-width="1"/>
+    <line x1="192" y1="95" x2="192" y2="127" stroke="#777" stroke-width="1"/>
+    <line x1="190" y1="127" x2="195" y2="127" stroke="#777" stroke-width="1"/>
+    <text x="175" y="115" class="dimension" text-anchor="end">12pt</text>
+
+    <line x1="190" y1="127" x2="195" y2="127" stroke="#777" stroke-width="1"/>
+    <line x1="192" y1="127" x2="192" y2="159" stroke="#777" stroke-width="1"/>
+    <line x1="190" y1="159" x2="195" y2="159" stroke="#777" stroke-width="1"/>
+    <text x="175" y="147" class="dimension" text-anchor="end">12pt</text>
+
+    <line x1="190" y1="159" x2="195" y2="159" stroke="#777" stroke-width="1"/>
+    <line x1="192" y1="159" x2="192" y2="191" stroke="#777" stroke-width="1"/>
+    <line x1="190" y1="191" x2="195" y2="191" stroke="#777" stroke-width="1"/>
+    <text x="175" y="179" class="dimension" text-anchor="end">12pt</text>
+
+    <text x="175" y="213" class="dimension" text-anchor="end">...</text>
+  </g>
+
+  <!-- RIGHT: Content labels with brackets -->
+  <g id="right-labels">
+    <!-- 7 lines bracket -->
+    <line x1="605" y1="95" x2="600" y2="95" stroke="#3B7DD8" stroke-width="2"/>
+    <line x1="600" y1="95" x2="600" y2="299" stroke="#3B7DD8" stroke-width="2"/>
+    <line x1="605" y1="299" x2="600" y2="299" stroke="#3B7DD8" stroke-width="2"/>
+    <text x="620" y="200" class="label-bold" fill="#3B7DD8">7 lines of content</text>
+    <text x="620" y="215" class="label">(84pt)</text>
+
+    <!-- Gutter bracket -->
+    <line x1="605" y1="299" x2="600" y2="299" stroke="#E85D3A" stroke-width="2"/>
+    <line x1="600" y1="299" x2="600" y2="350" stroke="#E85D3A" stroke-width="2"/>
+    <line x1="605" y1="350" x2="600" y2="350" stroke="#E85D3A" stroke-width="2"/>
+    <text x="620" y="328" class="label-bold" fill="#E85D3A">1 gutter line</text>
+    <text x="620" y="343" class="label">(12pt)</text>
+
+    <!-- Total height bracket -->
+    <line x1="700" y1="80" x2="695" y2="80" stroke="#333" stroke-width="2"/>
+    <line x1="695" y1="80" x2="695" y2="360" stroke="#333" stroke-width="2"/>
+    <line x1="700" y1="360" x2="695" y2="360" stroke="#333" stroke-width="2"/>
+    <text x="715" y="220" class="label-bold">Total module</text>
+    <text x="715" y="235" class="label-bold">height: 96pt</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <text x="400" y="450" class="caption">7 &#215; 12pt + 12pt gutter = 96pt total module height</text>
+</svg>

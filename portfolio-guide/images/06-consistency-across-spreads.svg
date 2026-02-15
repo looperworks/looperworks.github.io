@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870 355" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      text { fill: #333; }
+      .label { font-size: 11px; fill: #777; }
+      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
+      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .subtitle { font-size: 11px; fill: #999; letter-spacing: 2px; text-transform: uppercase; }
+      .grid-col { stroke: #3B7DD8; stroke-width: 0.75; stroke-dasharray: 4,3; }
+      .grid-row { stroke: #E85D3A; stroke-width: 0.75; stroke-dasharray: 4,3; }
+      .margin-line { stroke: #BBB; stroke-width: 1; stroke-dasharray: 6,4; }
+      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.5; }
+      .module-fill { fill: #F0F4FA; stroke: none; }
+      .callout-line { stroke: #333; stroke-width: 0.75; }
+      .callout-dot { fill: #333; }
+      .dim-line { stroke: #BBB; stroke-width: 0.75; }
+      .accent-blue { fill: #3B7DD8; }
+      .accent-red { fill: #E85D3A; }
+      .white-text { font-size: 11px; fill: #FFF; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="870" height="355" fill="white"/>
+
+
+  <text x="435" y="36" text-anchor="middle" class="title">Consistency Across Spreads</text>
+
+  <!-- Spread 1 -->
+  <g transform="translate(25,55)">
+    <rect x="0" y="0" width="130" height="180" class="page-border" rx="2"/>
+    <rect x="140" y="0" width="130" height="180" class="page-border" rx="2"/>
+    <line x1="130" y1="0" x2="130" y2="180" stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <rect x="10" y="15" width="45" height="60" fill="white" stroke="#3B7DD8" stroke-width="0.5"/>
+    <rect x="60" y="15" width="60" height="60" fill="#F0F4FA" stroke="none"/>
+    <rect x="10" y="85" width="110" height="15" fill="#F5F5F5"/>
+    <rect x="150" y="15" width="60" height="45" fill="white" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="150" y1="75" x2="260" y2="75" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="87" x2="255" y2="87" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="99" x2="258" y2="99" stroke="#333" stroke-width="0.4"/>
+    <text x="135" y="210" text-anchor="middle" class="label-bold">Spread 1: Plans</text>
+  </g>
+
+  <!-- Spread 2 -->
+  <g transform="translate(310,55)">
+    <rect x="0" y="0" width="130" height="180" class="page-border" rx="2"/>
+    <rect x="140" y="0" width="130" height="180" class="page-border" rx="2"/>
+    <line x1="130" y1="0" x2="130" y2="180" stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <rect x="10" y="15" width="110" height="75" fill="#E8F0FA" stroke="#3B7DD8" stroke-width="0.5"/>
+    <circle cx="65" cy="50" r="18" fill="#3B7DD8" opacity="0.12"/>
+    <line x1="150" y1="15" x2="260" y2="15" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="27" x2="258" y2="27" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="39" x2="255" y2="39" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="51" x2="260" y2="51" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="110" x2="260" y2="110" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="122" x2="257" y2="122" stroke="#333" stroke-width="0.4"/>
+    <text x="135" y="210" text-anchor="middle" class="label-bold">Spread 2: Renders + Text</text>
+  </g>
+
+  <!-- Spread 3 -->
+  <g transform="translate(595,55)">
+    <rect x="0" y="0" width="130" height="180" class="page-border" rx="2"/>
+    <rect x="140" y="0" width="130" height="180" class="page-border" rx="2"/>
+    <line x1="130" y1="0" x2="130" y2="180" stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <rect x="10" y="15" width="35" height="30" fill="none" stroke="#E85D3A" stroke-width="0.5"/>
+    <rect x="50" y="15" width="35" height="30" fill="none" stroke="#E85D3A" stroke-width="0.5"/>
+    <rect x="10" y="55" width="35" height="30" fill="#FFF0ED" stroke="#E85D3A" stroke-width="0.5"/>
+    <rect x="50" y="55" width="35" height="30" fill="none" stroke="#E85D3A" stroke-width="0.5"/>
+    <line x1="150" y1="15" x2="260" y2="15" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="27" x2="258" y2="27" stroke="#333" stroke-width="0.4"/>
+    <line x1="150" y1="39" x2="255" y2="39" stroke="#333" stroke-width="0.4"/>
+    <text x="135" y="210" text-anchor="middle" class="label-bold">Spread 3: Diagrams + Text</text>
+  </g>
+
+  <!-- Bottom bracket -->
+  <line x1="160" y1="280" x2="730" y2="280" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="160" y1="275" x2="160" y2="285" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="730" y1="275" x2="730" y2="285" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="445" y="302" text-anchor="middle" class="label-bold">Same grid structure, varied content</text>
+  <text x="445" y="335" text-anchor="middle" class="label" font-style="italic">The underlying 3-column modular grid creates rhythm and cohesion across all spreads.</text>
+
+</svg>

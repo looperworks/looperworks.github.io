@@ -1,0 +1,130 @@
+<svg font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif" viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Circular Std','Inter','Helvetica Neue',Arial,sans-serif; }
+      .title-main { font-size: 11px; font-weight: 600; fill: #1A1A1A; }
+      .title-label { font-size: 11px; font-weight: 400; fill: #777; letter-spacing: 0.5px; }
+      .panel-label { font-size: 11px; font-weight: 500; fill: #1A1A1A; }
+      .panel-name { font-size: 11px; font-weight: 400; fill: #333; }
+      .legend-text { font-size: 11px; font-weight: 400; fill: #333; }
+      .callout-circle { fill: none; stroke: #3B7DD8; stroke-width: 1.5; }
+      .callout-text { font-size: 11px; font-weight: 600; fill: #3B7DD8; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="550" fill="#FFFFFF"/>
+
+  <!-- Header -->
+<text x="30" y="50" class="title-main">Annotated InDesign Workspace</text>
+
+  <!-- Left Panels Stack -->
+  <!-- Pages Panel -->
+  <rect x="20" y="75" width="110" height="100" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="30" y="95" class="panel-label">Pages</text>
+  <line x1="25" y1="100" x2="125" y2="100" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="132" cy="110" r="6" class="callout-circle"/>
+  <text x="140" y="114" class="callout-text">1</text>
+
+  <!-- Layers Panel -->
+  <rect x="20" y="185" width="110" height="100" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="30" y="205" class="panel-label">Layers</text>
+  <line x1="25" y1="210" x2="125" y2="210" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="132" cy="220" r="6" class="callout-circle"/>
+  <text x="140" y="224" class="callout-text">2</text>
+
+  <!-- Links Panel -->
+  <rect x="20" y="295" width="110" height="100" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="30" y="315" class="panel-label">Links</text>
+  <line x1="25" y1="320" x2="125" y2="320" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="132" cy="330" r="6" class="callout-circle"/>
+  <text x="140" y="334" class="callout-text">3</text>
+
+  <!-- Center Canvas Area -->
+  <!-- Canvas background -->
+  <rect x="150" y="75" width="560" height="330" rx="2" fill="#FFFFFF" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Pasteboard area -->
+  <rect x="140" y="65" width="580" height="350" fill="#DDD" stroke="none"/>
+  <rect x="150" y="75" width="560" height="330" rx="2" fill="#FFFFFF" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Two-page spread -->
+  <!-- Left page -->
+  <rect x="160" y="85" width="260" height="310" fill="#FAFAFA" stroke="#CCC" stroke-width="0.5"/>
+  <line x1="170" y1="95" x2="410" y2="95" stroke="#CCC" stroke-width="0.5"/>
+  <line x1="170" y1="110" x2="410" y2="110" stroke="#CCC" stroke-width="0.5"/>
+  <line x1="170" y1="125" x2="410" y2="125" stroke="#CCC" stroke-width="0.5"/>
+  <rect x="170" y="135" width="230" height="150" fill="#F2F2F2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="290" y="218" style="font-size: 11px; fill: #BBB; text-anchor: middle;">Content</text>
+
+  <!-- Right page -->
+  <rect x="430" y="85" width="260" height="310" fill="#FAFAFA" stroke="#CCC" stroke-width="0.5"/>
+  <line x1="440" y1="95" x2="680" y2="95" stroke="#CCC" stroke-width="0.5"/>
+  <line x1="440" y1="110" x2="680" y2="110" stroke="#CCC" stroke-width="0.5"/>
+  <line x1="440" y1="125" x2="680" y2="125" stroke="#CCC" stroke-width="0.5"/>
+  <rect x="440" y="135" width="230" height="150" fill="#F2F2F2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="555" y="218" style="font-size: 11px; fill: #BBB; text-anchor: middle;">Content</text>
+
+  <!-- Center spine indicator -->
+  <line x1="420" y1="85" x2="420" y2="395" stroke="#E85D3A" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+
+  <!-- Right Panels Stack -->
+  <!-- Properties Panel -->
+  <rect x="770" y="75" width="110" height="100" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="780" y="95" class="panel-label">Properties</text>
+  <line x1="775" y1="100" x2="875" y2="100" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="763" cy="110" r="6" class="callout-circle"/>
+  <text x="750" y="114" class="callout-text">4</text>
+
+  <!-- Align Panel -->
+  <rect x="770" y="185" width="110" height="100" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="780" y="205" class="panel-label">Align</text>
+  <line x1="775" y1="210" x2="875" y2="210" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="763" cy="220" r="6" class="callout-circle"/>
+  <text x="750" y="224" class="callout-text">5</text>
+
+  <!-- Swatches Panel -->
+  <rect x="770" y="295" width="110" height="100" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="780" y="315" class="panel-label">Swatches</text>
+  <line x1="775" y1="320" x2="875" y2="320" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="763" cy="330" r="6" class="callout-circle"/>
+  <text x="750" y="334" class="callout-text">6</text>
+
+  <!-- Bottom Right Panels -->
+  <!-- Paragraph Panel -->
+  <rect x="770" y="405" width="110" height="60" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="780" y="423" class="panel-label">Paragraph</text>
+  <line x1="775" y1="428" x2="875" y2="428" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="763" cy="438" r="6" class="callout-circle"/>
+  <text x="750" y="442" class="callout-text">7</text>
+
+  <!-- Paragraph Styles Panel -->
+  <rect x="770" y="475" width="110" height="60" rx="4" fill="#F2F2F2" stroke="#BBB" stroke-width="1"/>
+  <text x="780" y="493" class="panel-label" style="font-size: 11px;">Para. Styles</text>
+  <line x1="775" y1="498" x2="875" y2="498" stroke="#BBB" stroke-width="0.5"/>
+  <circle cx="763" cy="508" r="6" class="callout-circle"/>
+  <text x="750" y="512" class="callout-text">8</text>
+
+  <!-- Legend Section -->
+  <line x1="20" y1="430" x2="880" y2="430" stroke="#BBB" stroke-width="1"/>
+
+  <text x="30" y="450" class="legend-text" style="font-weight: 500;">Legend:</text>
+
+  <g class="legend-item">
+    <text x="30" y="468" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">1</tspan> Pages: Navigate document pages</text>
+    <text x="280" y="468" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">2</tspan> Layers: Manage content hierarchy</text>
+    <text x="530" y="468" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">3</tspan> Links: Track linked assets</text>
+  </g>
+
+  <g class="legend-item">
+    <text x="30" y="485" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">4</tspan> Properties: Object attributes</text>
+    <text x="280" y="485" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">5</tspan> Align: Distribute elements</text>
+    <text x="530" y="485" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">6</tspan> Swatches: Color library</text>
+  </g>
+
+  <g class="legend-item">
+    <text x="30" y="502" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">7</tspan> Paragraph: Text formatting options</text>
+    <text x="340" y="502" class="legend-text"><tspan style="font-weight: 600; fill: #3B7DD8;">8</tspan> Para. Styles: Predefined text styles</text>
+  </g>
+
+</svg>

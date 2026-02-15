@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      text { fill: #333; }
+      .label { font-size: 11px; fill: #777; }
+      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
+      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .equation { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .baseline { stroke: #BBB; stroke-width: 1; }
+      .baseline-highlight { stroke: #3B7DD8; stroke-width: 1.5; }
+      .margin-zone { fill: #F2F2F2; opacity: 0.6; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" class="title">Baseline Grid: The Math</text>
+
+  <!-- Equation -->
+  <text x="400" y="70" text-anchor="middle" class="equation">840pt &#247; 12pt = 70 lines</text>
+
+  <!-- LEFT: Full page height with baseline indicators -->
+  <g id="left-column">
+    <!-- Top margin zone -->
+    <rect x="80" y="100" width="40" height="72" class="margin-zone"/>
+    <text x="100" y="140" text-anchor="middle" class="label">36pt</text>
+    <text x="100" y="153" text-anchor="middle" class="label">(3 lines)</text>
+
+    <!-- First baseline (highlighted) -->
+    <line x1="80" y1="100" x2="120" y2="100" class="baseline-highlight"/>
+    <text x="70" y="104" text-anchor="end" class="label-bold">1</text>
+
+    <!-- Baselines 2-24 -->
+    <line x1="80" y1="112" x2="120" y2="112" class="baseline"/>
+    <line x1="80" y1="124" x2="120" y2="124" class="baseline"/>
+    <line x1="80" y1="136" x2="120" y2="136" class="baseline"/>
+    <line x1="80" y1="148" x2="120" y2="148" class="baseline"/>
+    <line x1="80" y1="160" x2="120" y2="160" class="baseline"/>
+    <line x1="80" y1="172" x2="120" y2="172" class="baseline"/>
+    <line x1="80" y1="184" x2="120" y2="184" class="baseline"/>
+    <line x1="80" y1="196" x2="120" y2="196" class="baseline"/>
+    <line x1="80" y1="208" x2="120" y2="208" class="baseline"/>
+    <line x1="80" y1="220" x2="120" y2="220" class="baseline"/>
+    <line x1="80" y1="232" x2="120" y2="232" class="baseline"/>
+    <line x1="80" y1="244" x2="120" y2="244" class="baseline"/>
+    <line x1="80" y1="256" x2="120" y2="256" class="baseline"/>
+    <line x1="80" y1="268" x2="120" y2="268" class="baseline"/>
+    <line x1="80" y1="280" x2="120" y2="280" class="baseline"/>
+    <line x1="80" y1="292" x2="120" y2="292" class="baseline"/>
+    <line x1="80" y1="304" x2="120" y2="304" class="baseline"/>
+    <line x1="80" y1="316" x2="120" y2="316" class="baseline"/>
+    <line x1="80" y1="328" x2="120" y2="328" class="baseline"/>
+    <line x1="80" y1="340" x2="120" y2="340" class="baseline"/>
+    <line x1="80" y1="352" x2="120" y2="352" class="baseline"/>
+    <line x1="80" y1="364" x2="120" y2="364" class="baseline"/>
+    <line x1="80" y1="376" x2="120" y2="376" class="baseline"/>
+
+    <!-- Bottom margin zone -->
+    <rect x="80" y="340" width="40" height="96" class="margin-zone"/>
+    <text x="100" y="395" text-anchor="middle" class="label">48pt</text>
+    <text x="100" y="408" text-anchor="middle" class="label">(4 lines)</text>
+
+    <line x1="80" y1="388" x2="120" y2="388" class="baseline"/>
+
+    <!-- Last baseline (highlighted) -->
+    <line x1="80" y1="400" x2="120" y2="400" class="baseline-highlight"/>
+    <text x="70" y="404" text-anchor="end" class="label-bold">70</text>
+
+    <!-- Vertical dimension line -->
+    <line x1="45" y1="100" x2="45" y2="400" stroke="#777" stroke-width="1"/>
+    <line x1="40" y1="100" x2="50" y2="100" stroke="#777" stroke-width="1"/>
+    <line x1="40" y1="400" x2="50" y2="400" stroke="#777" stroke-width="1"/>
+    <text x="20" y="255" text-anchor="middle" class="label" transform="rotate(-90 20 255)">840pt</text>
+  </g>
+
+  <!-- RIGHT: Zoomed baseline detail -->
+  <g id="right-column">
+    <text x="500" y="110" class="label-bold">Baseline Detail (7 lines)</text>
+
+    <line x1="350" y1="140" x2="650" y2="140" class="baseline-highlight"/>
+    <text x="330" y="144" text-anchor="end" class="label">Line 1</text>
+
+    <line x1="350" y1="164" x2="650" y2="164" class="baseline"/>
+    <text x="330" y="168" text-anchor="end" class="label">Line 2</text>
+
+    <line x1="350" y1="188" x2="650" y2="188" class="baseline"/>
+    <text x="330" y="192" text-anchor="end" class="label">Line 3</text>
+
+    <line x1="350" y1="212" x2="650" y2="212" class="baseline"/>
+    <text x="330" y="216" text-anchor="end" class="label">Line 4</text>
+
+    <line x1="350" y1="236" x2="650" y2="236" class="baseline"/>
+    <text x="330" y="240" text-anchor="end" class="label">Line 5</text>
+
+    <line x1="350" y1="260" x2="650" y2="260" class="baseline"/>
+    <text x="330" y="264" text-anchor="end" class="label">Line 6</text>
+
+    <line x1="350" y1="284" x2="650" y2="284" class="baseline"/>
+    <text x="330" y="288" text-anchor="end" class="label">Line 7</text>
+
+    <!-- Dimension brackets (12pt each) -->
+    <line x1="670" y1="140" x2="670" y2="164" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="665" y1="140" x2="675" y2="140" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="665" y1="164" x2="675" y2="164" stroke="#E85D3A" stroke-width="1.5"/>
+    <text x="700" y="155" class="label" fill="#E85D3A" font-weight="600">12pt</text>
+
+    <line x1="670" y1="164" x2="670" y2="188" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="665" y1="188" x2="675" y2="188" stroke="#E85D3A" stroke-width="1.5"/>
+    <text x="700" y="179" class="label" fill="#E85D3A" font-weight="600">12pt</text>
+
+    <line x1="670" y1="188" x2="670" y2="212" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="665" y1="212" x2="675" y2="212" stroke="#E85D3A" stroke-width="1.5"/>
+    <text x="700" y="203" class="label" fill="#E85D3A" font-weight="600">12pt</text>
+
+    <line x1="670" y1="212" x2="670" y2="236" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="665" y1="236" x2="675" y2="236" stroke="#E85D3A" stroke-width="1.5"/>
+    <text x="700" y="227" class="label" fill="#E85D3A" font-weight="600">12pt</text>
+
+    <line x1="670" y1="236" x2="670" y2="260" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="665" y1="260" x2="675" y2="260" stroke="#E85D3A" stroke-width="1.5"/>
+    <text x="700" y="251" class="label" fill="#E85D3A" font-weight="600">12pt</text>
+
+    <line x1="670" y1="260" x2="670" y2="284" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="665" y1="284" x2="675" y2="284" stroke="#E85D3A" stroke-width="1.5"/>
+    <text x="700" y="275" class="label" fill="#E85D3A" font-weight="600">12pt</text>
+  </g>
+</svg>
