@@ -259,11 +259,14 @@ body {
 }
 
 .footer-subscribe {
-  margin-top: 8px;
+  margin-top: 4px;
+  overflow: hidden;
+  height: 56px;
 }
 
 .footer-subscribe iframe {
   display: block;
+  margin-top: -130px;
 }
 
 .footer-subscribe-row {
