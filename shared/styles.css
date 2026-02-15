@@ -228,7 +228,7 @@ body {
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 520px;
   padding: 40px 40px 0;
   margin: 0 auto;
 }
@@ -242,7 +242,7 @@ body {
 }
 
 .footer-community-text {
-  max-width: 560px;
+  max-width: 520px;
 }
 
 .footer-community-text h3 {
@@ -263,8 +263,7 @@ body {
 }
 
 .footer-subscribe iframe {
-  transform: scale(0.85);
-  transform-origin: top left;
+  display: block;
 }
 
 .footer-subscribe-row {
