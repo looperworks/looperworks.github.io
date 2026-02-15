@@ -262,13 +262,13 @@ body {
 
 .footer-subscribe {
   flex-shrink: 0;
-  width: 480px;
-  min-height: 320px;
+  width: 340px;
 }
 
 .footer-subscribe iframe {
   width: 100%;
-  min-height: 315px;
+  height: 60px;
+  border: none;
 }
 
 .footer-subscribe-row {
@@ -472,7 +472,7 @@ body {
 
   .footer-subscribe {
     width: 100%;
-    max-width: 480px;
+    max-width: 340px;
   }
 
   .footer-subscribe input[type="email"] {
