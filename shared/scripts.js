@@ -13,28 +13,7 @@
   }
 })();
 
-/* ----- Subscribe Handler — triggers Beehiiv magic link in background ----- */
-function handleSubscribe(e) {
-  e.preventDefault();
-  var email = document.getElementById('subEmail').value;
-  var form = document.getElementById('subscribeForm');
-  var msg = document.getElementById('subscribeMsg');
-  var btn = form.querySelector('button[type="submit"]');
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  /* Trigger the Beehiiv magic link in a hidden iframe so the user stays on-site */
-  var magicUrl = 'https://magic.beehiiv.com/v1/2fb6989b-c1ad-4dad-b94f-79bc24f39edd?email=' + encodeURIComponent(email);
-  var hiddenFrame = document.createElement('iframe');
-  hiddenFrame.style.display = 'none';
-  hiddenFrame.src = magicUrl;
-  document.body.appendChild(hiddenFrame);
-
-  /* Show success message */
-  form.style.display = 'none';
-  msg.style.display = 'block';
-}
+/* ----- Beehiiv — subscription handled natively by embedded iframe ----- */
 
 /* ----- Cookie Consent Banner ----- */
 (function() {
