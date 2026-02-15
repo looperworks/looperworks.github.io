@@ -17,25 +17,19 @@
 function handleSubscribe(e) {
   e.preventDefault();
   var email = document.getElementById('subEmail').value;
-  var form = document.getElementById('subscribeForm');
-  var msg = document.getElementById('subscribeMsg');
-  var btn = form.querySelector('button[type="submit"]');
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  var url = 'https://magic.beehiiv.com/v1/2fb6989b-c1ad-4dad-b94f-79bc24f39edd?email=' + encodeURIComponent(email);
-  var iframe = document.createElement('iframe');
-  iframe.style.display = 'none';
-  iframe.src = url;
-  document.body.appendChild(iframe);
-
-  setTimeout(function() {
-    form.style.display = 'none';
-    msg.style.display = 'block';
-    document.body.removeChild(iframe);
-  }, 2000);
+  window.location.href = 'https://magic.beehiiv.com/v1/2fb6989b-c1ad-4dad-b94f-79bc24f39edd?email=' + encodeURIComponent(email) + '&redirect_to=' + encodeURIComponent(window.location.origin + '/?subscribed=true');
 }
+
+/* ----- Show subscribe success if redirected back ----- */
+(function() {
+  if (window.location.search.indexOf('subscribed=true') !== -1) {
+    var form = document.getElementById('subscribeForm');
+    var msg = document.getElementById('subscribeMsg');
+    if (form) form.style.display = 'none';
+    if (msg) msg.style.display = 'block';
+    history.replaceState(null, '', window.location.pathname);
+  }
+})();
 
 /* ----- Cookie Consent Banner ----- */
 (function() {
