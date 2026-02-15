@@ -229,39 +229,43 @@ body {
 
 .footer-inner {
   max-width: 1200px;
-  padding: 48px 40px 0;
+  padding: 40px 40px 0;
   margin: 0 auto;
 }
 
 /* Join the community section */
 .footer-community {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 60px;
-  padding-bottom: 40px;
+  text-align: center;
+  padding-bottom: 32px;
 }
 
 .footer-community-text {
-  flex: 1;
-  max-width: 560px;
+  max-width: 480px;
 }
 
 .footer-community-text h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #111;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-community-text p {
-  font-size: 13px;
+  font-size: 12px;
   color: #666;
   line-height: 1.7;
 }
 
 .footer-subscribe {
-  flex-shrink: 0;
+  margin-top: 16px;
+}
+
+.footer-subscribe iframe {
+  transform: scale(0.85);
+  transform-origin: top center;
 }
 
 .footer-subscribe-row {
@@ -354,9 +358,10 @@ body {
 /* Footer legal links */
 .footer-legal {
   display: flex;
+  justify-content: center;
   gap: 20px;
   padding: 24px 0 0;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .footer-legal a {
@@ -372,8 +377,9 @@ body {
 /* Footer bottom bar */
 .footer-bottom {
   padding: 16px 0 24px;
-  font-size: 12px;
+  font-size: 11px;
   color: #999;
+  text-align: center;
 }
 
 .footer-bottom a {
@@ -458,18 +464,9 @@ body {
     padding: 30px 24px 0;
   }
 
-  .footer-community {
-    flex-direction: column;
-    gap: 24px;
-  }
-
   .footer-subscribe {
     width: 100%;
     max-width: 340px;
-  }
-
-  .footer-subscribe input[type="email"] {
-    width: 180px;
   }
 
   .cookie-banner {
