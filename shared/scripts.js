@@ -19,8 +19,7 @@
   var msg  = document.getElementById('subscribeMsg');
   if (!form || !msg) return;
 
-  // Replace this URL with your Google Apps Script web app URL
-  var SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyvaysymcghaIcNCJT1s6S_fN_5tdaM0pcX7L4WEERI6JlhaOue4ZfB-n1fQNR4YY5Fig/exec';
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
