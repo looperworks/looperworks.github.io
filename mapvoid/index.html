@@ -50,51 +50,7 @@
     display: none;
   }
 
-  /* ── Looperworks Side Nav ── */
-  .side-nav {
-      position: fixed;
-      left: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2000;
-      text-align: left;
-  }
-  .side-nav-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-  }
-  .side-nav-links a {
-      font-size: 14px;
-      font-weight: 400;
-      color: #111;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: block;
-      line-height: 1.5;
-      position: relative;
-      padding-left: 0;
-  }
-  .side-nav-links a::before {
-      content: '→';
-      position: absolute;
-      left: -20px;
-      opacity: 0;
-      transition: all 0.3s ease;
-      transform: translateX(-4px);
-  }
-  .side-nav-links a:hover {
-      padding-left: 20px;
-  }
-  .side-nav-links a:hover::before {
-      opacity: 1;
-      left: 0;
-      transform: translateX(0);
-  }
-  .side-nav-links a.active {
-      text-decoration: underline;
-  }
+  /* ── Looperworks Side Nav — uses shared styles ── */
 
   /* ── Header / Nav (removed — using looperworks top nav only) ── */
 
@@ -309,7 +265,8 @@
   @media (max-width: 900px) {
     .sidebar { width: 100%; min-width: auto; height: 45%; }
     .app-container { flex-direction: column; height: 100vh; margin-top: 0; margin-left: 0; }
-    .side-nav { display: none; }
+    .side-nav-wrapper { display: none; }
+    .subscribe-bar-zone, .subscribe-bar { display: none; }
     .detail-panel { width: 100%; }
     .welcome-banner { padding: 12px; }
     .top-brand-area { display: none; }
