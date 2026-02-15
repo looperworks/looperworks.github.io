@@ -24,19 +24,17 @@ function handleSubscribe(e) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  fetch('https://magic.beehiiv.com/v1/2fb6989b-c1ad-4dad-b94f-79bc24f39edd', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email })
-  })
-  .then(function() {
+  var url = 'https://magic.beehiiv.com/v1/2fb6989b-c1ad-4dad-b94f-79bc24f39edd?email=' + encodeURIComponent(email);
+  var iframe = document.createElement('iframe');
+  iframe.style.display = 'none';
+  iframe.src = url;
+  document.body.appendChild(iframe);
+
+  setTimeout(function() {
     form.style.display = 'none';
     msg.style.display = 'block';
-  })
-  .catch(function() {
-    form.style.display = 'none';
-    msg.style.display = 'block';
-  });
+    document.body.removeChild(iframe);
+  }, 2000);
 }
 
 /* ----- Cookie Consent Banner ----- */
