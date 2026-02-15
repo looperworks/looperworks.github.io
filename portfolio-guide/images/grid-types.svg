@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 570" width="700" height="570">
+  <defs>
+    <style>
+      text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      .title { font-size: 24px; font-weight: bold; fill: #111; }
+      .label { font-size: 13px; fill: #111; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="570" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" class="title">Grid Types</text>
+  
+  <!-- TOP LEFT: Manuscript Grid -->
+  <g>
+    <!-- Page background -->
+    <rect x="50" y="70" width="150" height="200" fill="white" stroke="#111" stroke-width="1.5"/>
+    <!-- Margins -->
+    <rect x="70" y="95" width="110" height="150" fill="none" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2"/>
+    <!-- Text block -->
+    <rect x="75" y="105" width="100" height="130" fill="none" stroke="#111" stroke-width="1"/>
+    <line x1="75" y1="115" x2="175" y2="115" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="123" x2="175" y2="123" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="131" x2="175" y2="131" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="139" x2="175" y2="139" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="147" x2="175" y2="147" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="155" x2="175" y2="155" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="163" x2="175" y2="163" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="171" x2="175" y2="171" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="179" x2="175" y2="179" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="187" x2="175" y2="187" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="195" x2="175" y2="195" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="203" x2="175" y2="203" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="211" x2="175" y2="211" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="219" x2="175" y2="219" stroke="#111" stroke-width="0.5"/>
+    <line x1="75" y1="227" x2="175" y2="227" stroke="#111" stroke-width="0.5"/>
+    <!-- Label -->
+    <text x="125" y="290" class="label">Manuscript Grid</text>
+  </g>
+  
+  <!-- TOP RIGHT: Column Grid -->
+  <g>
+    <!-- Page background -->
+    <rect x="350" y="70" width="150" height="200" fill="white" stroke="#111" stroke-width="1.5"/>
+    <!-- Margins -->
+    <rect x="370" y="95" width="110" height="150" fill="none" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2"/>
+    <!-- Column guides -->
+    <line x1="390" y1="95" x2="390" y2="245" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="430" y1="95" x2="430" y2="245" stroke="#e0e0e0" stroke-width="1"/>
+    <!-- Text in columns -->
+    <line x1="375" y1="110" x2="410" y2="110" stroke="#111" stroke-width="0.5"/>
+    <line x1="375" y1="118" x2="410" y2="118" stroke="#111" stroke-width="0.5"/>
+    <line x1="375" y1="126" x2="410" y2="126" stroke="#111" stroke-width="0.5"/>
+    <line x1="375" y1="134" x2="410" y2="134" stroke="#111" stroke-width="0.5"/>
+    <line x1="435" y1="110" x2="455" y2="110" stroke="#111" stroke-width="0.5"/>
+    <line x1="435" y1="118" x2="455" y2="118" stroke="#111" stroke-width="0.5"/>
+    <line x1="435" y1="126" x2="455" y2="126" stroke="#111" stroke-width="0.5"/>
+    <line x1="435" y1="134" x2="455" y2="134" stroke="#111" stroke-width="0.5"/>
+    <!-- Label -->
+    <text x="425" y="290" class="label">Column Grid</text>
+  </g>
+  
+  <!-- BOTTOM LEFT: Modular Grid -->
+  <g>
+    <!-- Page background -->
+    <rect x="50" y="330" width="150" height="200" fill="white" stroke="#111" stroke-width="1.5"/>
+    <!-- Modular grid 3x4 -->
+    <g transform="translate(70, 350)">
+      <!-- Vertical lines -->
+      <line x1="0" y1="0" x2="0" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="36" y1="0" x2="36" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="72" y1="0" x2="72" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="108" y1="0" x2="108" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+      <!-- Horizontal lines -->
+      <line x1="0" y1="0" x2="108" y2="0" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="0" y1="40" x2="108" y2="40" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="0" y1="80" x2="108" y2="80" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="0" y1="120" x2="108" y2="120" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="0" y1="160" x2="108" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+      <!-- Sample modules filled -->
+      <rect x="2" y="2" width="32" height="36" fill="#e0e0e0" opacity="0.3"/>
+      <rect x="38" y="2" width="32" height="36" fill="#e0e0e0" opacity="0.3"/>
+      <rect x="2" y="82" width="32" height="36" fill="#e0e0e0" opacity="0.3"/>
+      <rect x="74" y="42" width="32" height="36" fill="#e0e0e0" opacity="0.3"/>
+    </g>
+    <!-- Label -->
+    <text x="125" y="550" class="label">Modular Grid</text>
+  </g>
+  
+  <!-- BOTTOM RIGHT: Hierarchical Grid -->
+  <g>
+    <!-- Page background -->
+    <rect x="350" y="330" width="150" height="200" fill="white" stroke="#111" stroke-width="1.5"/>
+    <!-- Organic/irregular blocks -->
+    <rect x="370" y="350" width="70" height="60" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    <rect x="445" y="350" width="50" height="90" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    <rect x="370" y="415" width="40" height="40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    <rect x="415" y="415" width="30" height="80" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    <rect x="450" y="445" width="45" height="50" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    <!-- Label -->
+    <text x="425" y="550" class="label">Hierarchical Grid</text>
+  </g>
+</svg>

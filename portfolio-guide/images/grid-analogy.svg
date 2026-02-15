@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <style>
+      text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      .title { font-size: 24px; font-weight: bold; fill: #111; }
+      .label { font-size: 14px; fill: #111; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="300" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" class="title">The Design Analogy</text>
+  
+  <!-- Left side: Building Structure -->
+  <g>
+    <!-- Building outline -->
+    <rect x="50" y="80" width="120" height="160" fill="none" stroke="#111" stroke-width="2"/>
+    
+    <!-- Vertical columns -->
+    <line x1="80" y1="80" x2="80" y2="240" stroke="#111" stroke-width="2.5"/>
+    <line x1="110" y1="80" x2="110" y2="240" stroke="#111" stroke-width="2.5"/>
+    <line x1="140" y1="80" x2="140" y2="240" stroke="#111" stroke-width="2.5"/>
+    
+    <!-- Horizontal beams -->
+    <rect x="50" y="120" width="120" height="3" fill="#111"/>
+    <rect x="50" y="160" width="120" height="3" fill="#111"/>
+    <rect x="50" y="200" width="120" height="3" fill="#111"/>
+    
+    <!-- Label -->
+    <text x="110" y="265" class="label">Building Structure</text>
+  </g>
+  
+  <!-- Center: Equals sign -->
+  <text x="350" y="170" style="font-size: 36px; font-weight: bold; fill: #111; text-anchor: middle;">═</text>
+  
+  <!-- Right side: Page Structure -->
+  <g>
+    <!-- Page outline -->
+    <rect x="480" y="80" width="100" height="160" fill="none" stroke="#111" stroke-width="2"/>
+    
+    <!-- Vertical grid columns -->
+    <line x1="505" y1="80" x2="505" y2="240" stroke="#e0e0e0" stroke-width="1.5"/>
+    <line x1="530" y1="80" x2="530" y2="240" stroke="#e0e0e0" stroke-width="1.5"/>
+    <line x1="555" y1="80" x2="555" y2="240" stroke="#e0e0e0" stroke-width="1.5"/>
+    
+    <!-- Horizontal baseline lines -->
+    <line x1="480" y1="105" x2="580" y2="105" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="480" y1="130" x2="580" y2="130" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="480" y1="155" x2="580" y2="155" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="480" y1="180" x2="580" y2="180" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="480" y1="205" x2="580" y2="205" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="480" y1="230" x2="580" y2="230" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- Label -->
+    <text x="530" y="265" class="label">Page Structure</text>
+  </g>
+</svg>
