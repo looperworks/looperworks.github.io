@@ -228,7 +228,7 @@ body {
 }
 
 .footer-inner {
-  max-width: 520px;
+  max-width: 800px;
   padding: 40px 40px 0;
   margin: 0 auto;
 }
@@ -236,13 +236,15 @@ body {
 /* Join the community section */
 .footer-community {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
   padding-bottom: 12px;
 }
 
 .footer-community-text {
-  max-width: 520px;
+  flex: 1;
+  max-width: 440px;
 }
 
 .footer-community-text h3 {
@@ -259,14 +261,14 @@ body {
 }
 
 .footer-subscribe {
-  margin-top: -2px;
+  flex-shrink: 0;
   overflow: hidden;
   height: 52px;
 }
 
 .footer-subscribe iframe {
   display: block;
-  margin-top: -138px;
+  margin-top: -120px;
 }
 
 .footer-subscribe-row {
@@ -461,6 +463,11 @@ body {
 
   .footer-inner {
     padding: 30px 24px 0;
+  }
+
+  .footer-community {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .footer-subscribe {
