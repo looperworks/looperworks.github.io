@@ -84,16 +84,30 @@
     </div>
     <div class="top-divider"></div>
 
-    <!-- Left Navigation -->
-    <nav class="side-nav">
+    <!-- Subscribe Bar — hover near top to reveal -->
+    <div class="subscribe-bar-zone"></div>
+    <div class="subscribe-bar">
+      <span class="subscribe-bar-label">Stay updated</span>
+      <form id="subscribeForm">
+        <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <span class="subscribe-bar-msg" id="subscribeMsg"></span>
+    </div>
+
+    <!-- Left Navigation — hover to reveal -->
+    <div class="side-nav-wrapper">
+      <div class="side-nav-tab">Menu</div>
+      <nav class="side-nav">
         <ul class="side-nav-links">
-            <li><a href="../mapvoid/">Job Search</a></li>
-            <li><a href="../cover-letter-guide/">Cover Letter</a></li>
-            <li><a href="../resume-guide/">Resume</a></li>
-            <li><a href="../portfolio-guide/">Portfolio</a></li>
-            <li><a href="../resources/">Resources</a></li>
+          <li><a href="../mapvoid/">Job Search</a></li>
+          <li><a href="../cover-letter-guide/">Cover Letter</a></li>
+          <li><a href="../resume-guide/">Resume</a></li>
+          <li><a href="../portfolio-guide/">Portfolio</a></li>
+          <li><a href="../resources/">Resources</a></li>
         </ul>
-  </nav>
+      </nav>
+    </div>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
@@ -163,13 +177,7 @@
 
     <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-legal">
-        <a href="../terms/">Terms of Service</a>
-        <a href="../privacy/">Privacy Policy</a>
-      </div>
-      <span>&copy; 2026 Looperworks LLC</span>
-    </div>
+    <a href="../terms/">Terms</a> · <a href="../privacy/">Privacy</a> · &copy; 2026 Looperworks LLC
   </footer>
 
     <!-- Cookie Consent Banner -->

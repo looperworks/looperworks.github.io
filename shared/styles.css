@@ -95,16 +95,58 @@ body {
 }
 
 /* ===========================
-   Floating Left Navigation
+   Floating Left Navigation — hover reveal
    =========================== */
-.side-nav {
+.side-nav-wrapper {
   position: fixed;
-  left: 40px;
-  top: 117px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2000;
-  text-align: left;
+}
+
+/* "Menu" tab visible when nav is hidden */
+.side-nav-tab {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #fff;
+  font-family: 'Circular Std', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 10px 8px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  border-radius: 0 4px 4px 0;
+  transition: opacity 0.3s ease;
+}
+
+.side-nav-wrapper:hover .side-nav-tab {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Nav panel slides in on hover */
+.side-nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateX(-100%) translateY(-50%);
+  background: #fff;
+  padding: 24px 24px 24px 28px;
+  border-right: 1px solid #e0e0e0;
   border-left: 2px solid #111;
-  padding-left: 16px;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.side-nav-wrapper:hover .side-nav {
+  transform: translateX(0) translateY(-50%);
+  opacity: 1;
 }
 
 .side-nav-links {
@@ -122,6 +164,7 @@ body {
   transition: all 0.3s ease;
   display: block;
   line-height: 1.5;
+  white-space: nowrap;
   position: relative;
   padding-left: 0;
   letter-spacing: 0.01em;
@@ -149,6 +192,93 @@ body {
 .side-nav-links a.active {
   font-weight: 700;
   text-decoration: none;
+}
+
+/* ===========================
+   Subscribe Bar — hover reveal at top
+   =========================== */
+.subscribe-bar-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  z-index: 3000;
+}
+
+.subscribe-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3000;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.subscribe-bar-zone:hover + .subscribe-bar,
+.subscribe-bar:hover {
+  transform: translateY(0);
+}
+
+.subscribe-bar form {
+  display: flex;
+  gap: 6px;
+}
+
+.subscribe-bar input[type="email"] {
+  padding: 6px 12px;
+  font-family: 'Circular Std', sans-serif;
+  font-size: 12px;
+  border: 1px solid #555;
+  background: #222;
+  color: #fff;
+  border-radius: 3px;
+  width: 220px;
+  outline: none;
+}
+
+.subscribe-bar input[type="email"]::placeholder {
+  color: #888;
+}
+
+.subscribe-bar input[type="email"]:focus {
+  border-color: #fff;
+}
+
+.subscribe-bar button {
+  padding: 6px 16px;
+  font-family: 'Circular Std', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.subscribe-bar button:hover {
+  background: #fff;
+  color: #111;
+}
+
+.subscribe-bar-msg {
+  font-size: 12px;
+  color: #fff;
+}
+
+.subscribe-bar-label {
+  font-size: 12px;
+  color: #999;
+  margin-right: 4px;
 }
 
 /* ===========================
@@ -216,33 +346,23 @@ body {
 }
 
 /* ===========================
-   Site Footer — minimal
+   Site Footer — single centered line
    =========================== */
 .site-footer {
   border-top: 1px solid #e0e0e0;
   padding: 16px 0;
   font-size: 11px;
   color: #999;
+  text-align: center;
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-legal {
-  display: flex;
-  gap: 16px;
-}
-
-.footer-legal a {
+.site-footer a {
   color: #999;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.footer-legal a:hover {
+.site-footer a:hover {
   color: #111;
 }
 
@@ -302,7 +422,15 @@ body {
    Responsive — Shared
    =========================== */
 @media (max-width: 900px) {
-  .side-nav {
+  .side-nav-wrapper {
+    display: none;
+  }
+
+  .subscribe-bar-zone {
+    display: none;
+  }
+
+  .subscribe-bar {
     display: none;
   }
 
@@ -314,10 +442,8 @@ body {
     padding: 20px 0 10px 24px;
   }
 
-  .footer-inner {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+  .site-footer {
+    padding: 12px 24px;
   }
 
   .cookie-banner {
@@ -334,6 +460,6 @@ body {
 
 @media (max-width: 480px) {
   .site-footer {
-    padding: 12px 0;
+    padding: 12px 16px;
   }
 }
