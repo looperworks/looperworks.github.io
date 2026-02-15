@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 11 vertical bars -->
+  <rect x="0" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="5" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="10" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="15" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="20" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="25" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="30" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="35" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="40" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="45" y="0" width="2.5" height="56" fill="#111"/>
+  <rect x="50" y="0" width="2.5" height="56" fill="#111"/>
+  <!-- Offset block with gradient -->
+  <defs>
+    <linearGradient id="g" x1="10" y1="0" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#111" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="12" width="38" height="43" fill="url(#g)"/>
+  <!-- White gap lines inside block -->
+  <rect x="12.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+  <rect x="17.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+  <rect x="22.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+  <rect x="27.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+  <rect x="32.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+  <rect x="37.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+  <rect x="42.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+  <rect x="47.5" y="12" width="1" height="43" fill="rgba(255,255,255,0.95)"/>
+</svg>
