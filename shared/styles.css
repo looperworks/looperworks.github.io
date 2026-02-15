@@ -262,13 +262,6 @@ body {
 
 .footer-subscribe {
   flex-shrink: 0;
-  overflow: hidden;
-  height: 52px;
-}
-
-.footer-subscribe iframe {
-  display: block;
-  margin-top: -120px;
 }
 
 .footer-subscribe-row {
