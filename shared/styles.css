@@ -237,13 +237,12 @@ body {
 .footer-community {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   padding-bottom: 32px;
 }
 
 .footer-community-text {
-  max-width: 480px;
+  max-width: 560px;
 }
 
 .footer-community-text h3 {
@@ -265,7 +264,7 @@ body {
 
 .footer-subscribe iframe {
   transform: scale(0.85);
-  transform-origin: top center;
+  transform-origin: top left;
 }
 
 .footer-subscribe-row {
@@ -358,7 +357,6 @@ body {
 /* Footer legal links */
 .footer-legal {
   display: flex;
-  justify-content: center;
   gap: 20px;
   padding: 24px 0 0;
   font-size: 11px;
@@ -379,7 +377,6 @@ body {
   padding: 16px 0 24px;
   font-size: 11px;
   color: #999;
-  text-align: center;
 }
 
 .footer-bottom a {
