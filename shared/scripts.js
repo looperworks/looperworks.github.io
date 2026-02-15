@@ -13,7 +13,43 @@
   }
 })();
 
-/* ----- Beehiiv — subscription handled natively by embedded iframe ----- */
+/* ----- Subscribe → Google Sheet ----- */
+(function() {
+  var form = document.getElementById('subscribeForm');
+  var msg  = document.getElementById('subscribeMsg');
+  if (!form || !msg) return;
+
+  // Replace this URL with your Google Apps Script web app URL
+  var SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('subscribeEmail').value.trim();
+    if (!email) return;
+
+    var btn = form.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = '...';
+
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'email=' + encodeURIComponent(email)
+    }).then(function() {
+      msg.textContent = 'Thanks for subscribing!';
+      msg.style.display = 'block';
+      msg.style.color = '#111';
+      form.style.display = 'none';
+    }).catch(function() {
+      msg.textContent = 'Something went wrong. Please try again.';
+      msg.style.display = 'block';
+      msg.style.color = '#c00';
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    });
+  });
+})();
 
 /* ----- Cookie Consent Banner ----- */
 (function() {

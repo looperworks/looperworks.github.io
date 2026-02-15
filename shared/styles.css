@@ -267,7 +267,7 @@ body {
 .footer-subscribe-row {
   display: flex;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .footer-subscribe input[type="email"] {
