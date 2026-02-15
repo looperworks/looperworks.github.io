@@ -15,39 +15,46 @@
 
 /* ----- Subscribe → Google Sheet ----- */
 (function() {
-  var form = document.getElementById('subscribeForm');
-  var msg  = document.getElementById('subscribeMsg');
-  if (!form || !msg) return;
-
   var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyvaysymcghaIcNCJT1s6S_fN_5tdaM0pcX7L4WEERI6JlhaOue4ZfB-n1fQNR4YY5Fig/exec';
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var email = document.getElementById('subscribeEmail').value.trim();
-    if (!email) return;
+  function bindForm(formId, emailId, msgId) {
+    var form = document.getElementById(formId);
+    var msg  = document.getElementById(msgId);
+    if (!form || !msg) return;
 
-    var btn = form.querySelector('button');
-    btn.disabled = true;
-    btn.textContent = '...';
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = document.getElementById(emailId).value.trim();
+      if (!email) return;
 
-    fetch(SHEET_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: 'email=' + encodeURIComponent(email)
-    }).then(function() {
-      msg.textContent = 'Thanks for subscribing!';
-      msg.style.display = 'block';
-      msg.style.color = '#111';
-      form.style.display = 'none';
-    }).catch(function() {
-      msg.textContent = 'Something went wrong. Please try again.';
-      msg.style.display = 'block';
-      msg.style.color = '#c00';
-      btn.disabled = false;
-      btn.textContent = 'Subscribe';
+      var btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = '...';
+
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'email=' + encodeURIComponent(email)
+      }).then(function() {
+        msg.textContent = 'Subscribed!';
+        msg.style.display = 'block';
+        msg.style.color = '#111';
+        form.style.display = 'none';
+      }).catch(function() {
+        msg.textContent = 'Error. Try again.';
+        msg.style.display = 'block';
+        msg.style.color = '#c00';
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+      });
     });
-  });
+  }
+
+  // Desktop (sidebar) form
+  bindForm('subscribeForm', 'subscribeEmail', 'subscribeMsg');
+  // Mobile (footer) form
+  bindForm('subscribeFormMobile', 'subscribeEmailMobile', 'subscribeMsgMobile');
 })();
 
 /* ----- Cookie Consent Banner ----- */

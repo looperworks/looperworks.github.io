@@ -91,7 +91,18 @@
             <li><a href="../portfolio-guide/">Portfolio</a></li>
             <li><a href="../resources/">Resources</a></li>
         </ul>
-    </nav>
+    <div class="side-nav-bottom">
+      <form id="subscribeForm" class="side-nav-form">
+        <input type="email" id="subscribeEmail" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="side-nav-msg" id="subscribeMsg"></p>
+      <div class="side-nav-legal">
+        <a href="../terms/">Terms</a> · <a href="../privacy/">Privacy</a>
+        <br>&copy; 2026 Looperworks LLC
+      </div>
+    </div>
+  </nav>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
@@ -178,24 +189,19 @@
     </div>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-          <div class="footer-row">
-            <div class="footer-subscribe">
-              <form id="subscribeForm" class="footer-subscribe-row">
-                <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-              </form>
-              <p class="footer-subscribe-msg" id="subscribeMsg"></p>
-            </div>
-            <div class="footer-meta">
-              <div class="footer-bottom">
-                &copy; 2026 Looperworks LLC. All rights reserved.
-              </div>
-            </div>
-          </div>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <form id="subscribeFormMobile" class="side-nav-form">
+        <input type="email" id="subscribeEmailMobile" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="side-nav-msg" id="subscribeMsgMobile"></p>
+      <div class="side-nav-legal">
+        <a href="../terms/">Terms</a> · <a href="../privacy/">Privacy</a>
+        <br>&copy; 2026 Looperworks LLC
+      </div>
+    </div>
+  </footer>
 
     <!-- Cookie Consent Banner -->
     <div class="cookie-banner" id="cookieBanner">
