@@ -237,7 +237,7 @@ body {
 .footer-community {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 60px;
   padding-bottom: 40px;
 }
