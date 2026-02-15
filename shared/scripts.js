@@ -13,7 +13,7 @@
   }
 })();
 
-/* ----- Subscribe Handler — sends email to Google Sheets ----- */
+/* ----- Subscribe Handler — sends email to Beehiiv ----- */
 function handleSubscribe(e) {
   e.preventDefault();
   var email = document.getElementById('subEmail').value;
@@ -24,12 +24,10 @@ function handleSubscribe(e) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  fetch('https://script.google.com/macros/s/AKfycbws9nPFsEYYueyUbTIDEodASQOzvwa0Pmr7QfAW-nXkSTDgl4NtYjqGEJBLdEbAkcM/exec', {
+  fetch('https://magic.beehiiv.com/v1/2fb6989b-c1ad-4dad-b94f-79bc24f39edd', {
     method: 'POST',
-    mode: 'no-cors',
-    redirect: 'follow',
-    body: JSON.stringify({ email: email }),
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
   })
   .then(function() {
     form.style.display = 'none';
