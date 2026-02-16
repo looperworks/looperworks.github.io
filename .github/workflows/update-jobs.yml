@@ -15,8 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -29,10 +28,12 @@ jobs:
           JSEARCH_API_KEY: ${{ secrets.JSEARCH_API_KEY }}
         run: node fetch-jobs.js
 
-      - name: Commit updated data
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add mapvoid/firms.json
           git add data/jsearch-discoveries.json || true
-          git diff --staged --quiet && echo "No changes to commit" || (git commit -m "Update job listings [automated]" && git pull --rebase && git push)
+          git diff --staged --quiet && echo "No changes to commit" || git commit -m "Update job listings [automated]"
+          git pull --rebase origin main
+          git push origin main
