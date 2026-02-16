@@ -264,7 +264,8 @@ body {
    =========================== */
 .site-footer {
   border-top: 1px solid #e0e0e0;
-  padding: 20px 0 16px;
+  padding: 20px 40px 16px;
+  margin-left: 260px;
   text-align: center;
 }
 
@@ -405,6 +406,7 @@ body {
   }
 
   .site-footer {
+    margin-left: 0;
     padding: 12px 24px;
   }
 
