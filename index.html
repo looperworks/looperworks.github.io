@@ -180,15 +180,15 @@
   </style>
 </head>
 <body>
-  <!-- Subscribe Bar — hover near top to reveal -->
-  <div class="subscribe-bar-zone"></div>
-  <div class="subscribe-bar">
+  <!-- Subscribe Bar — slides down after scrolling 50% -->
+  <div class="subscribe-bar" id="subscribeBar">
     <span class="subscribe-bar-label">Stay updated</span>
     <form id="subscribeForm">
       <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>
     <span class="subscribe-bar-msg" id="subscribeMsg"></span>
+    <button class="subscribe-bar-close" id="subscribeBarClose">&times;</button>
   </div>
 
   <!-- Floating Left Navigation — hover to reveal -->

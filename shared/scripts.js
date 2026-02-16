@@ -57,6 +57,34 @@
   bindForm('subscribeFormMobile', 'subscribeEmailMobile', 'subscribeMsgMobile');
 })();
 
+/* ----- Subscribe Bar — scroll trigger + dismiss ----- */
+(function() {
+  var bar = document.getElementById('subscribeBar');
+  var closeBtn = document.getElementById('subscribeBarClose');
+  if (!bar) return;
+
+  var dismissed = sessionStorage.getItem('subscribeBarDismissed');
+  if (dismissed) return;
+
+  var shown = false;
+  window.addEventListener('scroll', function() {
+    if (dismissed || shown) return;
+    var scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (scrollPct > 0.3) {
+      bar.classList.add('visible');
+      shown = true;
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      bar.classList.remove('visible');
+      dismissed = true;
+      sessionStorage.setItem('subscribeBarDismissed', '1');
+    });
+  }
+})();
+
 /* ----- Cookie Consent Banner ----- */
 (function() {
   var banner = document.getElementById('cookieBanner');
