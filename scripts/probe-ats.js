@@ -2,264 +2,261 @@
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
-const http = require('http');
 
-const DATA_FILE = path.join(__dirname, '../data/firms-base.json');
-const CONCURRENCY = 5;
-const BATCH_DELAY = 200; // ms between batches
+// List of architecture firms to probe
+const firms = [
+  'Gensler',
+  'SOM',
+  'Foster + Partners',
+  'Perkins&Will',
+  'NBBJ',
+  'ZGF Architects',
+  'HOK',
+  'HKS Architects',
+  'KPF',
+  'SmithGroup',
+  'Henning Larsen',
+  'AECOM',
+  'Stantec',
+  'HDR',
+  'Jacobs',
+  'Cannon Design',
+  'Sasaki',
+  'IDEO',
+  'WeWork',
+  'Snøhetta',
+  'BIG',
+  'OMA',
+  'MVRDV',
+  'Studio Gang',
+  'COOKFOX',
+  'Ennead',
+  'Bohlin Cywinski Jackson',
+  'Olson Kundig',
+  'Lake|Flato',
+  'Diller Scofidio + Renfro',
+  'Morphosis',
+  'Kieran Timberlake',
+  'Elkus Manfredi',
+  'Miller Hull',
+  'Michael Maltzan',
+  'Mack Scogin',
+  'Machado Silvetti',
+  'Leers Weinzapfel',
+  'Pelli Clarke',
+  'Overland Partners',
+  'SHOP Architects',
+  'REX',
+  'Adjaye Associates',
+  'MAD Architects',
+  'Heatherwick Studio',
+  'WORKac',
+  'LMN Architects',
+  'Mithun',
+  'DLR Group',
+  'Leo A Daly',
+  'Page',
+  'EYP',
+  'Thornton Tomasetti',
+  'Populous',
+  'WATG',
+  'CallisonRTKL',
+  'HGA'
+];
 
-// Slug generation function
-function generateSlugCandidates(firm) {
-  const candidates = new Set();
-  const { name, website } = firm;
+// Generate slug variations for a firm name
+function generateSlugs(firmName) {
+  const slugs = new Set();
 
-  // Extract domain from website if available
-  if (website) {
-    try {
-      const url = new URL(website);
-      const domain = url.hostname.replace('www.', '').split('.')[0];
-      if (domain && domain.length > 0) {
-        candidates.add(domain.toLowerCase());
-      }
-    } catch (e) {
-      // Invalid URL, skip
-    }
+  // Basic lowercase
+  const basic = firmName.toLowerCase().replace(/[&]/g, 'and');
+  slugs.add(basic);
+
+  // Replace spaces and special chars with hyphens
+  slugs.add(basic.replace(/[\s+|]/g, '-'));
+
+  // Without hyphens/spaces
+  slugs.add(basic.replace(/[\s+|-]/g, ''));
+
+  // Get initials for acronyms
+  const words = firmName.split(/[\s+&|]/);
+  if (words.length > 1) {
+    const acronym = words.map(w => w.charAt(0).toLowerCase()).join('');
+    slugs.add(acronym);
   }
 
-  // Clean the firm name
-  let cleanName = name
-    .toLowerCase()
-    .trim();
-
-  // Remove common suffixes, storing them for variants
-  const suffixes = ['inc.', 'inc', 'llc', 'architecture', 'architects', 'design', 'group', 'firm', 'company'];
-  let baseName = cleanName;
-  let removedSuffix = false;
-
-  for (const suffix of suffixes) {
-    if (cleanName.endsWith(suffix)) {
-      baseName = cleanName.substring(0, cleanName.length - suffix.length).trim();
-      removedSuffix = true;
-      break;
-    }
+  // Handle specific patterns
+  if (firmName.includes('&')) {
+    slugs.add(basic.replace(/and/g, '-'));
   }
 
-  // Strategy 1: Extract acronyms from parentheses
-  const acronymMatch = name.match(/\(([A-Z]+(?:\s+[A-Z]+)*)\)/);
-  if (acronymMatch) {
-    const acronym = acronymMatch[1].toLowerCase().replace(/\s+/g, '');
-    candidates.add(acronym);
+  if (firmName.includes('+')) {
+    slugs.add(basic.replace(/\+/g, 'and'));
+    slugs.add(basic.replace(/\+/g, '-'));
   }
 
-  // Strategy 2: Base name with various transformations
-  if (baseName !== cleanName) {
-    candidates.add(baseName);
+  // Word variations
+  if (firmName.includes('Architects')) {
+    const withoutArchitects = firmName.replace(/\s*Architects\s*/, '').toLowerCase();
+    slugs.add(withoutArchitects.replace(/[\s+&|]/g, '-'));
+    slugs.add(withoutArchitects.replace(/[\s+&|]/g, ''));
   }
 
-  // Strategy 3: Replace special characters
-  let normalized = cleanName
-    .replace(/\s+&\s+/g, '-and-') // " & " -> "-and-"
-    .replace(/\s*&\s*/g, '') // Remove & entirely
-    .replace(/\s*\+\s*/g, '-and-') // Replace + with -and-
-    .replace(/\s*\|\s*/g, '') // Remove |
-    .replace(/[(),.\[\]]/g, '') // Remove parentheses, commas, dots, brackets
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Collapse multiple hyphens
-    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
-
-  candidates.add(normalized);
-
-  // Strategy 4: Without hyphens
-  candidates.add(normalized.replace(/-/g, ''));
-
-  // Strategy 5: Try splitting by common delimiters and taking first word
-  const firstWord = cleanName.split(/[\s&|+,()]+/)[0];
-  if (firstWord && firstWord.length > 1) {
-    candidates.add(firstWord);
+  if (firmName.includes('Associates')) {
+    const withoutAssociates = firmName.replace(/\s*Associates\s*/, '').toLowerCase();
+    slugs.add(withoutAssociates.replace(/[\s+&|]/g, '-'));
+    slugs.add(withoutAssociates.replace(/[\s+&|]/g, ''));
   }
 
-  // Strategy 6: Handle "and" variant
-  const withAnd = normalized.replace(/and/g, 'and').replace(/-and-/g, '-and-');
-  candidates.add(withAnd);
+  // Remove accents
+  const normalized = basic.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  slugs.add(normalized);
+  slugs.add(normalized.replace(/[\s+&|]/g, '-'));
 
-  // Filter out empty strings and sort by length (prefer shorter, simpler slugs)
-  return Array.from(candidates)
-    .filter(s => s && s.length > 0)
-    .sort((a, b) => {
-      // Prefer shorter slugs and those with fewer hyphens
-      if (a.length !== b.length) return a.length - b.length;
-      return (a.match(/-/g) || []).length - (b.match(/-/g) || []).length;
-    });
+  return Array.from(slugs);
 }
 
-// HTTP request wrapper with timeout
-function makeRequest(url, timeout = 5000) {
-  return new Promise((resolve) => {
-    const protocol = url.startsWith('https') ? https : http;
-    const req = protocol.get(url, { timeout }, (res) => {
-      let data = '';
-      res.on('data', (chunk) => {
-        data += chunk;
-      });
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          resolve({
-            status: res.statusCode,
-            data: parsed,
-            error: null
-          });
-        } catch (e) {
-          resolve({
-            status: res.statusCode,
-            data: null,
-            error: 'Invalid JSON'
-          });
-        }
-      });
-    });
-
-    req.on('error', (error) => {
-      resolve({
-        status: null,
-        data: null,
-        error: error.message
-      });
-    });
-
-    req.on('timeout', () => {
-      req.destroy();
-      resolve({
-        status: null,
-        data: null,
-        error: 'Timeout'
-      });
-    });
-  });
-}
-
-// Probe Greenhouse API
-async function probeGreenhouse(slug) {
-  const url = `https://boards-api.greenhouse.io/v1/boards/${slug}/jobs`;
-  const result = await makeRequest(url);
-
-  if (result.status === 200 && result.data && Array.isArray(result.data.jobs)) {
-    return { found: true, slug };
-  }
-  return { found: false };
-}
-
-// Probe Lever API
-async function probeLever(slug) {
-  const url = `https://api.lever.co/v0/postings/${slug}?mode=json`;
-  const result = await makeRequest(url);
-
-  if (result.status === 200 && Array.isArray(result.data)) {
-    return { found: true, slug };
-  }
-  return { found: false };
-}
-
-// Process firm with concurrency control
-async function processFirm(firm, index) {
-  const candidates = generateSlugCandidates(firm);
-
-  console.log(`\n[${index + 1}] ${firm.name}`);
-  console.log(`    Slug candidates: ${candidates.slice(0, 3).join(', ')}${candidates.length > 3 ? '...' : ''}`);
-
-  let foundGreenhouse = false;
-  let foundLever = false;
-
-  // Try each slug candidate
-  for (const candidate of candidates) {
-    if (!foundGreenhouse) {
-      const gh = await probeGreenhouse(candidate);
-      if (gh.found) {
-        console.log(`    ✓ Found on Greenhouse: ${candidate}`);
-        firm.greenhouse_slug = candidate;
-        foundGreenhouse = true;
-      }
-    }
-
-    if (!foundLever) {
-      const lv = await probeLever(candidate);
-      if (lv.found) {
-        console.log(`    ✓ Found on Lever: ${candidate}`);
-        firm.lever_slug = candidate;
-        foundLever = true;
-      }
-    }
-
-    // Stop if both found or exhausted candidates
-    if (foundGreenhouse && foundLever) break;
-  }
-
-  // If no match found via API, set best slug candidate for later validation
-  if (!foundGreenhouse && !foundLever && candidates.length > 0) {
-    firm.greenhouse_slug = candidates[0];
-    console.log(`    ○ No API match. Setting greenhouse_slug to: ${candidates[0]} (for manual validation)`);
-  }
-
-  return {
-    greenhouse: foundGreenhouse,
-    lever: foundLever
-  };
-}
-
-// Main function with concurrency control
-async function main() {
+// Test Greenhouse API
+async function testGreenhouse(slug) {
   try {
-    console.log('Reading firms data...');
-    const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-    console.log(`Loaded ${data.length} firms\n`);
+    const url = `https://boards-api.greenhouse.io/v1/boards/${slug}/jobs`;
+    const response = await fetch(url, {
+      headers: { 'Accept': 'application/json' },
+      timeout: 5000
+    });
 
-    const results = {
-      greenhouse: 0,
-      lever: 0,
-      noMatch: 0
-    };
-
-    // Process in batches with concurrency limit
-    for (let i = 0; i < data.length; i += CONCURRENCY) {
-      const batch = data.slice(i, i + CONCURRENCY);
-      const promises = batch.map((firm, idx) =>
-        processFirm(firm, i + idx)
-      );
-
-      const batchResults = await Promise.all(promises);
-
-      batchResults.forEach(result => {
-        if (result.greenhouse) results.greenhouse++;
-        else if (result.lever) results.lever++;
-        else results.noMatch++;
-      });
-
-      // Delay between batches to avoid overwhelming APIs
-      if (i + CONCURRENCY < data.length) {
-        await new Promise(resolve => setTimeout(resolve, BATCH_DELAY));
+    if (response.status === 200) {
+      const data = await response.json();
+      // Valid if it returns jobs array
+      if (data.jobs !== undefined) {
+        return true;
       }
     }
-
-    // Write updated data back to file
-    console.log('\n\nWriting updated data...');
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-    console.log('Data written to ' + DATA_FILE);
-
-    // Print summary
-    console.log('\n' + '='.repeat(60));
-    console.log('SUMMARY');
-    console.log('='.repeat(60));
-    console.log(`Total firms processed: ${data.length}`);
-    console.log(`Firms matched to Greenhouse: ${results.greenhouse}`);
-    console.log(`Firms matched to Lever: ${results.lever}`);
-    console.log(`Firms with no match: ${results.noMatch}`);
-    console.log('='.repeat(60));
-
+    return false;
   } catch (error) {
-    console.error('Error:', error);
-    process.exit(1);
+    return false;
   }
 }
 
-main();
+// Test Lever API
+async function testLever(slug) {
+  try {
+    const url = `https://api.lever.co/v0/postings/${slug}?mode=json`;
+    const response = await fetch(url, {
+      headers: { 'Accept': 'application/json' },
+      timeout: 5000
+    });
+
+    if (response.status === 200) {
+      const data = await response.json();
+      // Valid if it returns postings array
+      if (Array.isArray(data)) {
+        return true;
+      }
+    }
+    return false;
+  } catch (error) {
+    return false;
+  }
+}
+
+// Main probing function
+async function probeFirm(firmName) {
+  const slugs = generateSlugs(firmName);
+
+  console.log(`\nProbing ${firmName}...`);
+  console.log(`Testing ${slugs.length} slug variations`);
+
+  for (const slug of slugs) {
+    try {
+      // Test Greenhouse
+      const ghResult = await testGreenhouse(slug);
+      if (ghResult) {
+        console.log(`  ✓ FOUND: Greenhouse - "${slug}"`);
+        return { ats: 'greenhouse', slug };
+      }
+
+      // Test Lever
+      const leverResult = await testLever(slug);
+      if (leverResult) {
+        console.log(`  ✓ FOUND: Lever - "${slug}"`);
+        return { ats: 'lever', slug };
+      }
+
+      // Log attempt
+      console.log(`  - Tried: ${slug}`);
+    } catch (error) {
+      // Continue to next slug
+    }
+  }
+
+  console.log(`  ✗ Not found`);
+  return null;
+}
+
+// Main execution
+async function main() {
+  console.log(`Starting ATS probe for ${firms.length} architecture firms...\n`);
+
+  const results = {
+    greenhouse: {},
+    lever: {},
+    unknown: []
+  };
+
+  for (let i = 0; i < firms.length; i++) {
+    const firm = firms[i];
+    const result = await probeFirm(firm);
+
+    if (result) {
+      if (result.ats === 'greenhouse') {
+        results.greenhouse[firm] = result.slug;
+      } else if (result.ats === 'lever') {
+        results.lever[firm] = result.slug;
+      }
+    } else {
+      results.unknown.push(firm);
+    }
+
+    // Rate limiting - be respectful
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+
+  // Ensure output directory exists
+  const outputDir = path.join(__dirname, '..', 'data');
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  // Write results
+  const outputPath = path.join(outputDir, 'ats-slugs.json');
+  fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
+
+  // Print summary
+  console.log('\n' + '='.repeat(60));
+  console.log('RESULTS SUMMARY');
+  console.log('='.repeat(60));
+  console.log(`Greenhouse: ${Object.keys(results.greenhouse).length} firms`);
+  console.log(`Lever: ${Object.keys(results.lever).length} firms`);
+  console.log(`Unknown/Not Found: ${results.unknown.length} firms`);
+  console.log(`\nResults saved to: ${outputPath}`);
+
+  console.log('\nGreenhouse firms:');
+  Object.entries(results.greenhouse).forEach(([firm, slug]) => {
+    console.log(`  ${firm}: ${slug}`);
+  });
+
+  console.log('\nLever firms:');
+  Object.entries(results.lever).forEach(([firm, slug]) => {
+    console.log(`  ${firm}: ${slug}`);
+  });
+
+  if (results.unknown.length > 0) {
+    console.log('\nUnknown/Not found:');
+    results.unknown.forEach(firm => {
+      console.log(`  ${firm}`);
+    });
+  }
+}
+
+main().catch(console.error);
