@@ -269,6 +269,12 @@ body {
   text-align: center;
 }
 
+.footer-subscribe-label {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
 .footer-subscribe {
   display: flex;
   gap: 6px;
