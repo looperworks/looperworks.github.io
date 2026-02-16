@@ -263,9 +263,20 @@ body {
    Site Footer — single centered line
    =========================== */
 .site-footer {
-  border-top: 1px solid #e0e0e0;
-  padding: 20px 40px 16px 300px;
+  position: relative;
+  padding: 20px 40px 16px;
+  margin-left: 260px;
   text-align: center;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -260px;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
 }
 
 .footer-subscribe-label {
@@ -411,7 +422,12 @@ body {
   }
 
   .site-footer {
+    margin-left: 0;
     padding: 12px 24px;
+  }
+
+  .site-footer::before {
+    left: 0;
   }
 
   .cookie-banner {
