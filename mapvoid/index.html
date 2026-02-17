@@ -23048,14 +23048,18 @@ document.getElementById('subscribePopupForm').addEventListener('submit', functio
   setTimeout(() => closeSubscribe(), 1500);
 });
 
-// Footer subscribe form handler
-document.getElementById('subscribeForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = document.getElementById('subscribeEmail').value;
-  const msg = document.getElementById('subscribeMsg');
-  msg.style.color = 'var(--accent)';
-  msg.textContent = 'Thanks for subscribing!';
-  localStorage.setItem('threshold_subscribed_dismissed', '1');
+// Footer subscribe form handler (element is below script, use DOMContentLoaded)
+document.addEventListener('DOMContentLoaded', function() {
+  var footerForm = document.getElementById('subscribeForm');
+  if (footerForm) {
+    footerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var msg = document.getElementById('subscribeMsg');
+      msg.style.color = 'var(--accent)';
+      msg.textContent = 'Thanks for subscribing!';
+      localStorage.setItem('threshold_subscribed_dismissed', '1');
+    });
+  }
 });
 
 init();
