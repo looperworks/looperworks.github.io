@@ -22710,7 +22710,7 @@ const firms = [
     "lat": 32.7555,
     "lng": -97.3308,
     "size": 200,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://moregroup-inc.com",
     "specialties": [
       "Architecture"
@@ -22725,7 +22725,7 @@ const firms = [
     "lat": 39.7589,
     "lng": -84.1916,
     "size": 500,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://woolpert.com",
     "specialties": [
       "Architecture"
@@ -22740,7 +22740,7 @@ const firms = [
     "lat": 43.0972,
     "lng": -89.5043,
     "size": 200,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://www.meadhunt.com",
     "specialties": [
       "Architecture"
@@ -22755,7 +22755,7 @@ const firms = [
     "lat": 40.7128,
     "lng": -74.006,
     "size": 50,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://www.pcf-p.com",
     "specialties": [
       "Architecture"
@@ -22770,7 +22770,7 @@ const firms = [
     "lat": 42.3736,
     "lng": -71.1097,
     "size": 50,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://www.gundpartnership.com",
     "specialties": [
       "Architecture"
@@ -22785,7 +22785,7 @@ const firms = [
     "lat": 37.7749,
     "lng": -122.4194,
     "size": 20,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://www.lmsa.com",
     "specialties": [
       "Architecture"
@@ -22800,7 +22800,7 @@ const firms = [
     "lat": 41.8781,
     "lng": -87.6298,
     "size": 50,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://jahn.studio",
     "specialties": [
       "Architecture"
@@ -22815,7 +22815,7 @@ const firms = [
     "lat": 47.6062,
     "lng": -122.3321,
     "size": 20,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://www.grahambaba.com",
     "specialties": [
       "Architecture"
@@ -22830,7 +22830,7 @@ const firms = [
     "lat": 30.2672,
     "lng": -97.7431,
     "size": 20,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://www.mirorivera.com",
     "specialties": [
       "Architecture"
@@ -22845,7 +22845,7 @@ const firms = [
     "lat": 40.7128,
     "lng": -74.006,
     "size": 50,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://rex-ny.com",
     "specialties": [
       "Architecture"
@@ -22860,7 +22860,7 @@ const firms = [
     "lat": 40.7128,
     "lng": -74.006,
     "size": 200,
-    "discipline": "Architecture",
+    "discipline": "architecture",
     "website": "https://www.vinoly.com",
     "specialties": [
       "Architecture"
@@ -22875,7 +22875,7 @@ const firms = [
     "lat": 37.7749,
     "lng": -122.4194,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://www.baselandscape.com",
     "specialties": [
       "Landscape Architecture"
@@ -22890,7 +22890,7 @@ const firms = [
     "lat": 34.0522,
     "lng": -118.2437,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://www.hklainc.com",
     "specialties": [
       "Landscape Architecture"
@@ -22905,7 +22905,7 @@ const firms = [
     "lat": 34.0522,
     "lng": -118.2437,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://nava-la.com",
     "specialties": [
       "Landscape Architecture"
@@ -22920,7 +22920,7 @@ const firms = [
     "lat": 42.3601,
     "lng": -71.0589,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://studio-kezia.com",
     "specialties": [
       "Landscape Architecture"
@@ -22935,7 +22935,7 @@ const firms = [
     "lat": 40.7178,
     "lng": -74.0431,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://www.jaemeestudio.com",
     "specialties": [
       "Landscape Architecture"
@@ -22950,7 +22950,7 @@ const firms = [
     "lat": 42.3601,
     "lng": -71.0589,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://www.kylezick.com",
     "specialties": [
       "Landscape Architecture"
@@ -22965,7 +22965,7 @@ const firms = [
     "lat": 37.7749,
     "lng": -122.4194,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://glsarch.com",
     "specialties": [
       "Landscape Architecture"
@@ -22980,7 +22980,7 @@ const firms = [
     "lat": 40.9193,
     "lng": -72.3448,
     "size": 20,
-    "discipline": "Landscape Architecture",
+    "discipline": "landscape",
     "website": "https://www.laguardiadesigngroup.com",
     "specialties": [
       "Landscape Architecture"
@@ -23181,7 +23181,7 @@ function renderFirms(list) {
     return;
   }
   container.innerHTML = list.map(f => {
-    const d = DISC[f.discipline];
+    const d = DISC[f.discipline] || DISC.architecture;
     return `
     <div class="firm-card" id="card-${f.id}" onclick="selectFirm(${f.id})">
       <div class="firm-name">
@@ -23227,7 +23227,7 @@ function plotMarkers(list) {
     disableClusteringAtZoom: 13
   });
   list.forEach(f => {
-    const d = DISC[f.discipline];
+    const d = DISC[f.discipline] || DISC.architecture;
     // Size encoding: boutique(<20)=22px, small(20-99)=26px, mid(100-499)=32px, large(500+)=38px
     const sz = f.size < 20 ? 22 : f.size < 100 ? 26 : f.size < 500 ? 32 : 38;
     const icon = L.divIcon({
@@ -23281,7 +23281,7 @@ function getCareersUrl(firm) {
 function selectFirm(id) {
   const firm = firms.find(f => f.id === id);
   if (!firm) return;
-  const d = DISC[firm.discipline];
+  const d = DISC[firm.discipline] || DISC.architecture;
 
   document.querySelectorAll('.firm-card').forEach(c => c.classList.remove('selected'));
   const card = document.getElementById('card-' + id);
