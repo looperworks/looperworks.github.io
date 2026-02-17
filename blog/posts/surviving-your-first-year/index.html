@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMEJ4670Y7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DMEJ4670Y7');
+</script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surviving Your First Year in Practice — Threshold Blog</title>
+  <meta property="og:title" content="Surviving Your First Year in Practice">
+  <meta property="og:description" content="Studio prepared you to design buildings. It did not prepare you for reply-all emails, redline markups, or the existential crisis of your first spec sheet.">
+  <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
+  <meta property="og:url" content="https://thresholdarch.com/blog/posts/surviving-your-first-year/">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../../../shared/styles.css">
+  <style>
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .page {
+      margin: 0 0 0 260px;
+      padding: 0 60px 0 40px;
+      max-width: 680px;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      padding: 32px 0 0;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: #111; }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 24px 0 32px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .article-tag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      background: #e8eeff;
+      color: #2962ff;
+    }
+
+    .article-read-time {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .article-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .article-subtitle {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Article body */
+    .article-body {
+      padding: 36px 0 48px;
+    }
+
+    .article-body h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin: 36px 0 12px;
+      line-height: 1.3;
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid #e8c547;
+      margin: 28px 0;
+      padding: 4px 0 4px 20px;
+    }
+
+    .article-body blockquote p {
+      font-size: 15px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 0;
+      padding-left: 20px;
+    }
+
+    .article-body li {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    /* Author box */
+    .author-box {
+      border-top: 1px solid #e0e0e0;
+      padding: 28px 0;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .author-info p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Post navigation */
+    .post-nav {
+      border-top: 1px solid #e0e0e0;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .post-nav a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .post-nav a:hover { color: #111; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page {
+        margin-left: 0;
+        padding: 0 24px;
+      }
+
+      .article-title { font-size: 22px; }
+      .article-subtitle { font-size: 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 0 16px; }
+      .article-title { font-size: 20px; }
+      .article-body h2 { font-size: 16px; }
+      .article-body p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Left Navigation -->
+  <div class="side-nav-wrapper">
+    <div class="side-nav-tab">Menu</div>
+    <nav class="side-nav">
+      <ul class="side-nav-links">
+  <li><a href="../../../about/">About</a></li>
+  <li><a href="/">Firm Search</a></li>
+  <li><a href="../../../cover-letter-guide/">Cover Letter</a></li>
+  <li><a href="../../../resume-guide/">Resume</a></li>
+  <li><a href="../../../portfolio-guide/">Portfolio</a></li>
+  <li><a href="../../../blog/" class="active">Blog</a></li>
+  <li><a href="../../../resources/">Resources</a></li>
+</ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="/" class="mobile-nav-brand">Threshold</a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+  <a href="../../../about/">About</a>
+  <a href="/">Firm Search</a>
+  <a href="../../../cover-letter-guide/">Cover Letter</a>
+  <a href="../../../resume-guide/">Resume</a>
+  <a href="../../../portfolio-guide/">Portfolio</a>
+  <a href="../../../blog/" class="active">Blog</a>
+  <a href="../../../resources/">Resources</a>
+</div>
+
+  <!-- Animated Logo -->
+  <div class="top-brand-area">
+    <canvas id="logoCanvas" width="200" height="56" data-home="/"></canvas>
+  </div>
+  <div class="top-divider"></div>
+
+  <div class="page">
+    <a href="../../" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="article-date">January 5, 2026</span>
+        <span class="article-tag" style="background: #e8f5e9; color: #2e7d32;">Studio Culture</span>
+        <span class="article-read-time">8 min read</span>
+      </div>
+      <h1 class="article-title">Surviving Your First Year in Practice</h1>
+      <p class="article-subtitle">Studio prepared you to design buildings. It did not prepare you for reply-all emails, redline markups, or the existential crisis of your first spec sheet.</p>
+    </div>
+
+    <div class="article-body">
+      <p>Your studio professor made you sprint for months on a single project. Now you're managing four of them simultaneously while your inbox goes absolutely unhinged. The pace is different. The format is different. The expectations are different. And nobody tells you this is coming until you're already here, staring at your first redline set like someone attacked your portfolio with a red pen.</p>
+
+      <p>First year in practice isn't failure. It's just translation. And it's shorter and easier than it feels, if you know what to expect.</p>
+
+      <h2>The Pace Is Different (and That's Okay)</h2>
+
+      <p>School: you get months on one project. You do all-nighters. You pivot your entire concept at 4 AM because the light is hitting the model differently today and suddenly everything needs to change. There's intensity. There's drama. There's the sense that your life depends on this one studio project because, let's be honest, a significant portion of your GPA does.</p>
+
+      <p>Practice: you're managing four projects. Maybe five. They move at different paces. Some of them are in early design. Some are deep in construction documents. Some are in permitting purgatory waiting for a response from the city that will come in six weeks or six months, nobody knows. You work a steady pace. You go home at 5:30 or 6 PM most days. You have weekends.</p>
+
+      <p>This will feel wrong at first. It will feel like you're not working hard enough. Like you're missing something. Like the project isn't getting the intensity it deserves. You're not. You're not. And it is.</p>
+
+      <p>Here's the thing nobody tells you: sustainable pace is better design pace. The all-nighters produce energy and adrenaline, which feel productive. But they don't produce better buildings. They produce tired architects who make sloppy decisions. The steady marathon beat — eight hours of focused work, five days a week, year after year — is what actually builds things right.</p>
+
+      <blockquote>
+        <p>It's okay to feel bored sometimes. That's not a sign you're doing it wrong. That's a sign you're doing it sustainably.</p>
+      </blockquote>
+
+      <p>The adjustment from sprinting to marathon running takes about three months. After that, you'll stop wondering if this is really work and start appreciating that you can have a life outside the office and still be a good architect.</p>
+
+      <h2>How to Ask Questions Without Feeling Stupid</h2>
+
+      <p>You don't know things. A lot of things. Spec sheets look like they're written in a language that sort of sounds like English but follows no actual rules. You don't know why the contractor is asking for something in a way that seems unnecessarily complicated. You don't know what the difference is between this and that, but people keep assuming you do. You sit in meetings understanding maybe 40% of what's being discussed and hope nobody asks you a direct question.</p>
+
+      <p>This is normal. And here's the thing that actually trips people up: the question isn't "how do I know everything?" The question is "how do I ask about the things I don't know without looking like I just graduated and don't actually belong here?"</p>
+
+      <p>Answer: try first. Show your work. Ask specifically.</p>
+
+      <p>"I'm stuck" is not a question. "I looked at this and tried X and Y but I can't figure out Z — am I missing something?" is. The difference is the work you've already done. It shows you're not asking for someone to do your job for you. You're asking for help moving forward on work you've already started.</p>
+
+      <p>Nobody expects you to know everything. They expect you to learn. The way you prove you're learning is by showing that you tried, that you're thinking about the problem, that you're not just waiting for someone else to hand you the answer. That's it.</p>
+
+      <p>Ask early and often. Ask in writing if you're nervous. Ask your senior architect. Ask the admin who's been there 12 years — they know more about how the office actually runs than anyone else in the room. The people who look dumb in their first year are the ones who don't ask questions and then guess wrong. The ones who ask and adjust are the ones everybody wants to work with.</p>
+
+      <h2>Redlines, Markups, and the Art of Taking Feedback</h2>
+
+      <p>Your first redline set will come back and it will feel like someone attacked your work with a red pen. Because someone did. Literally. Your carefully drafted details have been marked up. Your section seems wrong. Your dimensioning has issues. Your thoughts about how this should work have been annotated with polite but firm corrections.</p>
+
+      <p>And your internal response is: I'm terrible at this. This person thinks my work is bad. I shouldn't be here.</p>
+
+      <p>Stop. That's not what's happening.</p>
+
+      <p>In school, feedback comes at the end. You've spent weeks on it. It's finished. The feedback is about what you did. In practice, feedback is constant and it's about the next version. Redlines aren't judgment. They're communication. It's how the profession talks about buildings. Someone's saying "here's what doesn't work" and "here's what to do instead." It's not personal. It's how the work gets better.</p>
+
+      <p>Learn to read redlines efficiently. There's a hierarchy to them. Some are cosmetic. Some are critical. Some are "think about this differently." Ask if something is unclear. "Is this a must-do or a preference?" is a totally reasonable question. Understand that revisions are the job. Not punishment. The job. You're going to revise constantly. That's not a sign you got it wrong the first time. It's how buildings actually get made.</p>
+
+      <p>The people who thrive in architecture are the ones who can take feedback and move forward without their egos getting in the way. You need thick skin. Not because people are mean (usually they're not), but because the work is never done and someone's always going to want it to be different.</p>
+
+      <h2>Office Culture Is Real and It Matters</h2>
+
+      <p>Every firm has unwritten rules. Who makes the coffee? Nobody knows. It just happens. When do people actually leave for the day? Official office hours say 6 PM but people are still working at 8. Is lunch at your desk or do you all go together? Is email formal or casual? Do you call people by their first names or do you use titles? Are there standing meetings you didn't make the calendar for but everyone goes to anyway?</p>
+
+      <p>Observe first. Adapt second. Find your people third.</p>
+
+      <p>The first week you're going to get almost everything wrong and that's fine. You're going to send an email that's too casual or too formal. You're going to show up to something at the wrong time. You're going to miss an unofficial thing that everyone assumed you knew about. It's all fine. People remember being new. They're patient. (Usually.)</p>
+
+      <p>By week three you should have a sense of the culture. By month three you should have adjusted to it. The people who struggle aren't the ones who mess up in their first weeks. They're the ones who don't pay attention or who decide the rules are stupid and do whatever they want. (The rules might be stupid, but that's not your decision to make at three months in.)</p>
+
+      <p>The social infrastructure of an office matters more than most people talk about. You spend more time with your coworkers than you spend with your family. The culture is either going to energize you or drain you. If you're spending eight hours a day in an environment where you don't like the people or you don't understand the communication style, that's going to make the learning harder.</p>
+
+      <h2>The Imposter Syndrome Talk</h2>
+
+      <p>You're going to sit in your first project meeting understanding maybe 40% of what's being discussed. Someone's talking about variance from the masterplan. Someone else is discussing permit strategy. Someone mentions a detail you haven't even thought about. And you're thinking: how did everyone else learn this? Why does nobody else look confused?</p>
+
+      <p>They all felt the same way in their first year. They just don't remember it anymore because it went away faster than you think it will.</p>
+
+      <p>There's a real gap between school knowledge and practice knowledge. School teaches you how to think about buildings. Practice teaches you how to build buildings. How to coordinate systems. How contractors actually work. How permits actually move. Which details matter and which ones don't. Which conversations move projects forward and which ones are just people talking in circles. The gap is real.</p>
+
+      <p>And it closes faster than you think. By six months you'll understand maybe 70% of conversations. By a year you'll be at 90%. The 10% you don't understand is usually either very specific to that firm or very boring and you're not actually missing anything.</p>
+
+      <p>Almost everyone feels like a fraud in their first year. That's not imposter syndrome. That's just accurately assessing that you know less than the people around you. Which is true and obvious and fine. You're supposed to know less. You just graduated. Your job is to know more next year than you know today. That's it.</p>
+
+      <p>Be patient with yourself. You're learning fast even when it doesn't feel like it. The fact that you're worried you're not learning enough is actually a pretty good sign that you are.</p>
+
+      <h2>What to Do If It's the Wrong Fit</h2>
+
+      <p>Sometimes the firm isn't right. That's not failure. That's information. Some firms have cultures that don't match how you work best. Some firms are drowning and can't actually teach you anything because everyone's too underwater to have time to care. Some firms are toxic in ways that go beyond just "architecture is hard." Some firms are doing work that doesn't actually interest you and won't pretend otherwise after about four months.</p>
+
+      <p>If you're at a good firm in a bad moment, give it time. Projects have cycles. You might be in the worst phase right now and month four will be better. But if you're at a bad firm, no amount of time fixes that.</p>
+
+      <p>The difference between discomfort of growth and discomfort of a bad environment is that one gets better with time and the other gets worse. Growth discomfort is scary but you're learning. Bad environment discomfort is draining and you're not. You'll feel the difference.</p>
+
+      <p>Give it six to twelve months before deciding. That's long enough to see the firm through a full project cycle and long enough to understand whether this is adjustment or actual incompatibility. But if you get to month twelve and you're still miserable, it's okay to leave. The architecture world is big enough that you can find something else. Staying somewhere bad because you feel like you should stick it out just produces burned-out architects. We have enough of those.</p>
+
+      <h2>The Bottom Line</h2>
+
+      <p>Your first year in practice isn't actually that scary once you know what you're walking into. You're going to feel weird. You're going to get things wrong. You're going to sit in meetings understanding 40% of what's happening. You're going to wonder if you belong there.</p>
+
+      <p>Then at some point around month nine you're going to notice you understood 90% of that meeting and nobody had to explain the thing you were confused about last time. You're going to look at your first redline set versus the one you got last week and see how much you've improved. You're going to realize that you actually do know things. That you can do this.</p>
+
+      <p>That's when it gets good. That's when the learning transitions from "why is everything so hard?" to "oh, I can actually do this." And you realize your studio education didn't teach you how to practice architecture. But it taught you how to learn. And that's actually the thing that matters.</p>
+    </div>
+
+    <div class="author-box">
+      <div class="author-avatar">S</div>
+      <div class="author-info">
+        <h4>Seth Looper</h4>
+        <p>Builder of Threshold. Writes about architecture career development, studio culture, and making the profession more accessible.</p>
+      </div>
+    </div>
+
+    <div class="post-nav">
+      <a href="../portfolio-mistakes/">&larr; Portfolio Mistakes</a>
+      <a href="../side-projects-and-visibility/">Side Projects &rarr;</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
+    <form id="subscribeForm" class="footer-subscribe">
+      <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="footer-msg" id="subscribeMsg"></p>
+    <span class="footer-legal"><a href="mailto:seth@thresholdarch.com">Contact</a> · <a href="../../../terms/">Terms</a> · <a href="../../../privacy/">Privacy</a> · &copy; 2026 Looperworks LLC</span>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../../../terms/">Terms of Service</a>.</p>
+    <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+  </div>
+
+  <script src="../../../shared/scripts.js"></script>
+</body>
+</html>

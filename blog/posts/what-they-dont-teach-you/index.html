@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMEJ4670Y7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DMEJ4670Y7');
+</script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What They Don't Teach You in Studio — Threshold Blog</title>
+  <meta property="og:title" content="What They Don't Teach You in Studio">
+  <meta property="og:description" content="Architecture school is great at teaching you to think spatially and pull all-nighters. It's less great at preparing you for the 90% of practice that isn't designing things.">
+  <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
+  <meta property="og:url" content="https://thresholdarch.com/blog/posts/what-they-dont-teach-you/">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../../../shared/styles.css">
+  <style>
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .page {
+      margin: 0 0 0 260px;
+      padding: 0 60px 0 40px;
+      max-width: 680px;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      padding: 32px 0 0;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: #111; }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 24px 0 32px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .article-tag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      background: #e8eeff;
+      color: #2962ff;
+    }
+
+    .article-read-time {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .article-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .article-subtitle {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Article body */
+    .article-body {
+      padding: 36px 0 48px;
+    }
+
+    .article-body h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin: 36px 0 12px;
+      line-height: 1.3;
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid #e8c547;
+      margin: 28px 0;
+      padding: 4px 0 4px 20px;
+    }
+
+    .article-body blockquote p {
+      font-size: 15px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 0;
+      padding-left: 20px;
+    }
+
+    .article-body li {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    /* Author box */
+    .author-box {
+      border-top: 1px solid #e0e0e0;
+      padding: 28px 0;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .author-info p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Post navigation */
+    .post-nav {
+      border-top: 1px solid #e0e0e0;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .post-nav a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .post-nav a:hover { color: #111; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page {
+        margin-left: 0;
+        padding: 0 24px;
+      }
+
+      .article-title { font-size: 22px; }
+      .article-subtitle { font-size: 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 0 16px; }
+      .article-title { font-size: 20px; }
+      .article-body h2 { font-size: 16px; }
+      .article-body p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Left Navigation -->
+  <div class="side-nav-wrapper">
+    <div class="side-nav-tab">Menu</div>
+    <nav class="side-nav">
+      <ul class="side-nav-links">
+  <li><a href="../../../about/">About</a></li>
+  <li><a href="/">Firm Search</a></li>
+  <li><a href="../../../cover-letter-guide/">Cover Letter</a></li>
+  <li><a href="../../../resume-guide/">Resume</a></li>
+  <li><a href="../../../portfolio-guide/">Portfolio</a></li>
+  <li><a href="../../../blog/" class="active">Blog</a></li>
+  <li><a href="../../../resources/">Resources</a></li>
+</ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="/" class="mobile-nav-brand">Threshold</a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+  <a href="../../../about/">About</a>
+  <a href="/">Firm Search</a>
+  <a href="../../../cover-letter-guide/">Cover Letter</a>
+  <a href="../../../resume-guide/">Resume</a>
+  <a href="../../../portfolio-guide/">Portfolio</a>
+  <a href="../../../blog/" class="active">Blog</a>
+  <a href="../../../resources/">Resources</a>
+</div>
+
+  <!-- Animated Logo -->
+  <div class="top-brand-area">
+    <canvas id="logoCanvas" width="200" height="56" data-home="/"></canvas>
+  </div>
+  <div class="top-divider"></div>
+
+  <div class="page">
+    <a href="../../" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="article-date">January 26, 2026</span>
+        <span class="article-tag">Career</span>
+        <span class="article-read-time">7 min read</span>
+      </div>
+      <h1 class="article-title">What They Don't Teach You in Studio</h1>
+      <p class="article-subtitle">Architecture school is great at teaching you to think spatially and pull all-nighters. It's less great at preparing you for the 90% of practice that isn't designing things.</p>
+    </div>
+
+    <div class="article-body">
+      <p>You spent five years learning to detail a corner condition. You can draw a parti in 15 minutes. You understand sight lines, adjacencies, and why that professor hated your second-year project. You're ready for practice.</p>
+
+      <p>Except you're not. Not for the stuff that actually matters. Because architecture school teaches you how to think like an architect. It does not teach you how to work like one.</p>
+
+      <p>There's a gap between what they teach you and what you need to know. It's not small. It's the gap between studio and reality, between the idealized project and the one getting built with a client who's already angry about the budget. Let's talk about what happens when you cross it.</p>
+
+      <h2>Project Management Is the Real Design Problem</h2>
+
+      <p>In school, you get 14 weeks per project. Maybe you mismanage the time. You pull an all-nighter. You get a scolding and a mediocre review. The next project, you try again. The stakes are low. The cost is tuition money you've already spent. The outcome of screwing up is learning a lesson.</p>
+
+      <p>In practice, you get 14 meetings per week with stakeholders, consultants, contractors, and clients. You've got a budget you've already partially blown on early design phases. You've got an overlap of deadlines on four different projects. And you've got no idea how this happened because your timeline said you had 18 months.</p>
+
+      <blockquote>
+        <p>Project management isn't the thing that stops you from designing. It's the thing that makes design possible.</p>
+      </blockquote>
+
+      <p>The people who understand this early — who realize that managing a schedule is a design problem, that coordinating consultants is a design problem, that defending your fee structure to a skeptical client is a design problem — those people move fast. They get resources. They get trust. They get the good projects.</p>
+
+      <p>The ones who didn't learn it in studio spend their first five years wondering why they're in meetings instead of doing what they thought was actually their job. They didn't understand that coordinating a structural engineer is using the exact same systems thinking you learned in studio. The medium changed. The thinking didn't have to.</p>
+
+      <h2>Nobody Taught You How Revit Actually Works</h2>
+
+      <p>School was beautiful. You learned Rhino. Maybe Grasshopper. You rendered things that made you feel like a real architect because they looked like the pictures in the architecture magazines. Your professor talked about parametric design like it was the future. Nobody mentioned Revit except in the context of "yeah, that's what offices use" — said the way someone might say "yeah, that's where the garbage goes."</p>
+
+      <p>So you get to your first office on your first day and they hand you a Revit file. It has 47 views. There are reamed walls and work-in-progress geometry from 2019. Nobody knows which version is the actual current version. Someone broke the link to the structural model three months ago and nobody fixed it. Welcome to practice.</p>
+
+      <p>The gap between school tools and practice tools is real. Rhino is expressive. Revit is procedural. One lets you think. One makes you follow rules. And the rules matter because you're not designing for a studio jury anymore. You're designing for constructability. For coordination. For the person who has to build this thing and doesn't have time for your parametric expression.</p>
+
+      <p>Firms expect production from day one. Not at school level. At professional level. If you're spending three hours figuring out how to draw a door in Revit, you're not being efficient. You're being expensive. And everyone knows it. Start learning Revit on your own time. Watch YouTube tutorials. Build personal projects in it. Show up on day one not as a Revit expert but as someone who doesn't have to be taught the basics. That's the difference between being valuable and being a burden.</p>
+
+      <h2>Client Communication Is a Skill, Not a Talent</h2>
+
+      <p>You presented to a jury once. Maybe twice. You prepared a digital presentation with all your best renderings. You talked about your design intent. You said things like "the spatial sequence creates a dialogue between public and private realms." The jury nodded knowingly. You got an A.</p>
+
+      <p>Your first client presentation happens next week. The client is a woman who's been thinking about her bathroom for two years. She has a Pinterest board. She has a budget. She has a timeline. And she wants to know why you moved her toilet three feet to the left when she specifically said she liked it where it was.</p>
+
+      <p>This is not a jury. Eloquence will not save you. Pretty renderings will not save you. What will save you is actually listening to what she's asking, translating your design thinking into her language, and being able to say "I moved it because of X, which solves Y, which you care about." And if you can't justify it in terms of the actual project requirements, maybe you shouldn't have moved it.</p>
+
+      <p>The best architects aren't the best talkers. They're the best listeners. They ask questions. They sit with the silence when a client is thinking. They take notes and actually read them back. They understand that your job isn't to teach the client about architecture. Your job is to solve the client's problem in the language the client speaks.</p>
+
+      <p>School teaches you a critique is about defending your ideas. Practice teaches you that a client meeting is about understanding theirs. Those are opposite skills, and you need both.</p>
+
+      <h2>The Business of Architecture</h2>
+
+      <p>Nobody sits you down and explains that architecture is a business. You learn design. You learn materials. You learn codes. But nobody explains fees. Nobody explains contracts. Nobody explains why your principal made a decision that compromised the design, and the reason was money.</p>
+
+      <p>This doesn't mean selling out. This means understanding the constraints you're actually working within. A $50,000 fee for a 20,000-square-foot commercial project is not a constraint on design. It's a different project entirely than a $500,000 fee. And if you don't understand that — if you can't articulate what that budget allows and doesn't allow — you'll spend your entire career frustrated that you can't do the work you thought you'd be doing.</p>
+
+      <p>Understanding the business isn't about becoming a bad designer. It's about becoming a designer who can actually get built. It's about knowing why your firm can afford to do certain kinds of work and not others. It's about understanding that the principal who says "we can't do that pro bono" is protecting the entire firm's ability to do any work at all. That's not a sellout. That's arithmetic.</p>
+
+      <p>Learn about AIA contracts. Understand what liability insurance costs. Ask your mentors about project margins. Read the boring emails about why a project got delayed. These aren't distractions from design. They're the infrastructure that makes design possible.</p>
+
+      <h2>How to Learn What School Didn't Teach</h2>
+
+      <p>The good news: you can still learn all of this. It won't come from a textbook or a lecture. It will come from proximity and attention.</p>
+
+      <p>Shadow project managers. Not to do what they do, but to understand what they do. Sit in on client calls if you're allowed. Listen to how problems get solved when they're not theoretical. Ask to be in the room during consultant coordination meetings. These are the masterclasses nobody advertises.</p>
+
+      <p>Learn Revit properly. Not from a video tutorial at 10 PM when you're already tired. Actually learn it. Spend a weekend building a full project from scratch. Make mistakes when the stakes are low.</p>
+
+      <p>Read contracts. I know. But actually read them. Even one. Read the AIA B101. Find a mentor who'll explain what each section actually means in human language. Understanding contracts is understanding risk, and understanding risk is understanding how to protect yourself and your firm.</p>
+
+      <p>Most importantly: find architects who've built things you care about, and ask them how they got there. Not in a networking event. In a real conversation. "What surprised you most about moving from school to practice?" is a question that will get you real answers. Architects love talking about the gap between what they expected and what actually happened. Use that.</p>
+
+      <p>Architecture school teaches you to think. Practice teaches you to build. The people who do this well are the ones who understand that design thinking and business thinking aren't enemies. They're the same thinking applied to different constraints.</p>
+
+      <p>The gap between school and practice is real. But it's not a gap you have to fall into. It's just a gap you have to know is there, and then cross it on purpose, with intention, the way you'd approach any design problem.</p>
+
+      <p>Because that's what good architects do. They understand the site. They understand the constraints. They adapt their thinking to reality. And they build things that actually get built.</p>
+    </div>
+
+    <div class="author-box">
+      <div class="author-avatar">S</div>
+      <div class="author-info">
+        <h4>Seth Looper</h4>
+        <p>Builder of Threshold. Writes about architecture career development, studio culture, and making the profession more accessible.</p>
+      </div>
+    </div>
+
+    <div class="post-nav">
+      <a href="../what-firms-actually-look-for/">← Previous: The Strategic Job Search</a>
+      <a href="../the-licensure-path/">Next: The Licensure Path →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
+    <form id="subscribeForm" class="footer-subscribe">
+      <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="footer-msg" id="subscribeMsg"></p>
+    <span class="footer-legal"><a href="mailto:seth@thresholdarch.com">Contact</a> · <a href="../../../terms/">Terms</a> · <a href="../../../privacy/">Privacy</a> · &copy; 2026 Looperworks LLC</span>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../../../terms/">Terms of Service</a>.</p>
+    <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+  </div>
+
+  <script src="../../../shared/scripts.js"></script>
+</body>
+</html>

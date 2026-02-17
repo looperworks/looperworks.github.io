@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMEJ4670Y7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DMEJ4670Y7');
+</script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Portfolio Mistakes Nobody Tells You About — Threshold Blog</title>
+  <meta property="og:title" content="The Portfolio Mistakes Nobody Tells You About">
+  <meta property="og:description" content="Your portfolio is probably too long, too unfocused, and trying too hard to impress. Here's how to fix it before it costs you the interview.">
+  <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
+  <meta property="og:url" content="https://thresholdarch.com/blog/posts/portfolio-mistakes/">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../../../shared/styles.css">
+  <style>
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .page {
+      margin: 0 0 0 260px;
+      padding: 0 60px 0 40px;
+      max-width: 680px;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      padding: 32px 0 0;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: #111; }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 24px 0 32px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .article-tag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .article-read-time {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .article-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .article-subtitle {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Article body */
+    .article-body {
+      padding: 36px 0 48px;
+    }
+
+    .article-body h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin: 36px 0 12px;
+      line-height: 1.3;
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid #e8c547;
+      margin: 28px 0;
+      padding: 4px 0 4px 20px;
+    }
+
+    .article-body blockquote p {
+      font-size: 15px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 0;
+      padding-left: 20px;
+    }
+
+    .article-body li {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    /* Author box */
+    .author-box {
+      border-top: 1px solid #e0e0e0;
+      padding: 28px 0;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .author-info p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Post navigation */
+    .post-nav {
+      border-top: 1px solid #e0e0e0;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .post-nav a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .post-nav a:hover { color: #111; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page {
+        margin-left: 0;
+        padding: 0 24px;
+      }
+
+      .article-title { font-size: 22px; }
+      .article-subtitle { font-size: 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 0 16px; }
+      .article-title { font-size: 20px; }
+      .article-body h2 { font-size: 16px; }
+      .article-body p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Left Navigation -->
+  <div class="side-nav-wrapper">
+    <div class="side-nav-tab">Menu</div>
+    <nav class="side-nav">
+      <ul class="side-nav-links">
+  <li><a href="../../../about/">About</a></li>
+  <li><a href="/">Firm Search</a></li>
+  <li><a href="../../../cover-letter-guide/">Cover Letter</a></li>
+  <li><a href="../../../resume-guide/">Resume</a></li>
+  <li><a href="../../../portfolio-guide/">Portfolio</a></li>
+  <li><a href="../../../blog/" class="active">Blog</a></li>
+  <li><a href="../../../resources/">Resources</a></li>
+</ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="/" class="mobile-nav-brand">Threshold</a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+  <a href="../../../about/">About</a>
+  <a href="/">Firm Search</a>
+  <a href="../../../cover-letter-guide/">Cover Letter</a>
+  <a href="../../../resume-guide/">Resume</a>
+  <a href="../../../portfolio-guide/">Portfolio</a>
+  <a href="../../../blog/" class="active">Blog</a>
+  <a href="../../../resources/">Resources</a>
+</div>
+
+  <!-- Animated Logo -->
+  <div class="top-brand-area">
+    <canvas id="logoCanvas" width="200" height="56" data-home="/"></canvas>
+  </div>
+  <div class="top-divider"></div>
+
+  <div class="page">
+    <a href="../../" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="article-date">January 12, 2026</span>
+        <span class="article-tag" style="background: #fff3e0; color: #e65100;">Advice</span>
+        <span class="article-read-time">7 min read</span>
+      </div>
+      <h1 class="article-title">The Portfolio Mistakes Nobody Tells You About</h1>
+      <p class="article-subtitle">Your portfolio is probably too long, too unfocused, and trying too hard to impress. Here's how to fix it before it costs you the interview.</p>
+    </div>
+
+    <div class="article-body">
+      <h2>You're Showing Too Many Projects</h2>
+
+      <p>The most common portfolio mistake is also the easiest to fix: you're showing everything. That 12-project, 24-page marathon might feel comprehensive to you. To a hiring partner looking through twenty portfolios in an afternoon? It's a test of endurance nobody asked for.</p>
+
+      <p>Four or five projects — really strong ones, presented with intention — will always beat twelve mediocre ones. This isn't a volume problem. This is a focus problem. When you're trying to say everything, you end up saying nothing.</p>
+
+      <p>Here's the hard part: choosing which projects to cut. You did that work. It took time. It means something to you. But the hiring manager doesn't care how much energy you invested. They care about what you can do for them.</p>
+
+      <blockquote>
+        <p>Your portfolio should tell a story, not display an archive. If you can't explain in thirty seconds why a project belongs there, it doesn't.</p>
+      </blockquote>
+
+      <p>Go through your work and ask yourself this for each project: "Would I put this in a museum? Or am I including it because I made it?" Be ruthless. Cut the ones where you can't articulate exactly why they matter — not why they mattered to you in the moment, but why they matter to someone evaluating your thinking.</p>
+
+      <h2>Your Process Is Missing</h2>
+
+      <p>This is the one that actually costs people interviews. You show the render. The nice perspective. The finished plan. But nowhere in that portfolio is the thinking.</p>
+
+      <p>Firms don't hire you to make pretty pictures. They hire you to solve problems. So show them your work solving problems. Show the site analysis that informed the design. Show the massing studies. Show the material investigations, the sketch iterations, the moment where you realized option A wasn't working so you tried option B. Show the scaffolding, not just the building.</p>
+
+      <p>The polished final image is dessert. Nobody orders dessert without seeing the menu first. When a partner opens your portfolio, they want to understand how you think — your process, your methodology, the logic chain that took you from a blank site to this particular design. The render should be the last thing they see, not the only thing.</p>
+
+      <p>Sketches aren't unprofessional. They're honest. Diagrams aren't filler. They're evidence. Include them. Make them clean, make them clear, but include them.</p>
+
+      <h2>One Portfolio Does Not Fit All</h2>
+
+      <p>You know what every portfolio mistake can be traced back to? Trying to please everyone.</p>
+
+      <p>You have one portfolio. You're applying to a healthcare-focused firm, a landscape architecture practice, and a parametric design studio. Same portfolio. Same story. Different audiences. This doesn't work.</p>
+
+      <p>Here's what actually works: build a core portfolio of your five to seven strongest pieces. Then, for every application, swap in the projects that speak to that firm's work. A healthcare firm doesn't need to see your pavilion competition. A landscape practice doesn't need your interior renovation. And that parametric design studio probably doesn't want your hand-drawn thesis.</p>
+
+      <p>Tailoring your portfolio to each application isn't dishonest. It's professional. It says: "I've looked at your work, I understand what you value, and here's why I fit." That's the equivalent of writing a thoughtful cover letter instead of a form letter. Firms notice.</p>
+
+      <p>Yes, this means more work. But you're competing against people who are spending two minutes on each application. Spend twenty minutes. Swap three projects. Show them you actually know who they are.</p>
+
+      <h2>The Layout Is Fighting the Work</h2>
+
+      <p>Your portfolio design should be invisible. Clean grid, consistent typography, enough white space to breathe. That's it. That's the entire brief.</p>
+
+      <p>What it shouldn't be: your chance to prove you're a graphic designer. Fancy borders around every image. Gradients in the background. Typography that's clever but hard to read. Oversized folios where every spread is a unique layout because "I wanted it to feel dynamic."</p>
+
+      <p>Your graphic design skills aren't what's being evaluated. Your architectural thinking is. When someone opens your portfolio, the layout should get out of the way. The work should be the thing that catches attention, not the fanciness of the frame.</p>
+
+      <p>Restraint is harder than excess. Anyone can add a gradient. Designing something so clean and well-organized that it disappears? That takes judgment. Use it.</p>
+
+      <h2>Digital vs. Print (and Why You Probably Need Both)</h2>
+
+      <p>The portfolio landscape has changed. Five years ago, print was everything. Now? It's more complicated.</p>
+
+      <p>Your PDF should exist. It should be under 20MB so it doesn't bounce back from someone's inbox. It should look good on-screen and in print. InDesign is your friend here. Illustrator too. Don't build your portfolio in Figma and export it as a PDF. That's like designing a building in Minecraft and calling it architecture.</p>
+
+      <p>Print should exist for in-person interviews. Some firms will still want to see work on paper. It matters. A printed portfolio hits different — the quality of the paper, the size, the tactile sense of scale — these things register even if you can't quantify them. Have a leave-behind.</p>
+
+      <p>Your website portfolio is nice. It can show movement, it can be interactive, it can be updated easily. But don't fool yourself that it replaces the PDF or the print version. Most applications still come through email. Most interviews still happen with a physical portfolio or a screen-shared PDF. Have both.</p>
+
+      <h2>The Fix</h2>
+
+      <p>Start with an audit. Print out your current portfolio (or sit with the PDF on your screen) and go through it page by page. For each project, write down one sentence about why it's there. If you can't write that sentence, it goes.</p>
+
+      <p>Then: ask three people to review it. Not your classmates (they're too close to the work and too tired to be honest). Ask someone further along in their career. Ask someone outside of architecture. Ask someone at a firm you want to work for, if you can get the meeting. Take notes. Look for patterns in the feedback.</p>
+
+      <p>Third: cut ruthlessly. Fewer projects, longer on each one, more process visible. Replace final renders with work shots. Add analysis. Add iterations. Add evidence of thinking.</p>
+
+      <p>Fourth: create two or three versions of your core portfolio. One for firms that build institutions. One for design-forward studios. One for technical practices. Swap as needed.</p>
+
+      <p>Fifth: design the layout to be clean, organized, and invisible. Serif or sans-serif, consistent margins, generous white space. Test it on different screens. Make sure it prints well. Make sure the PDF isn't bloated.</p>
+
+      <p>Sixth: build the PDF, print a copy, and leave it somewhere visible for a week. If you notice yourself cringing every time you see it, you're not done yet. Your portfolio is the first impression. Make sure it's the impression you want to leave.</p>
+
+      <p>It's not glamorous work. But it works. And unlike studio, nobody's going to penalize you for having a portfolio that's too thoughtfully designed.</p>
+    </div>
+
+    <div class="author-box">
+      <div class="author-avatar">S</div>
+      <div class="author-info">
+        <h4>Seth Looper</h4>
+        <p>Builder of Threshold. Writes about architecture career development, studio culture, and making the profession more accessible.</p>
+      </div>
+    </div>
+
+    <div class="post-nav">
+      <a href="../the-licensure-path/">← Previous: The Licensure Path</a>
+      <a href="../surviving-your-first-year/">Next: Surviving Your First Year &rarr;</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
+    <form id="subscribeForm" class="footer-subscribe">
+      <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="footer-msg" id="subscribeMsg"></p>
+    <span class="footer-legal"><a href="mailto:seth@thresholdarch.com">Contact</a> · <a href="../../../terms/">Terms</a> · <a href="../../../privacy/">Privacy</a> · &copy; 2026 Looperworks LLC</span>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../../../terms/">Terms of Service</a>.</p>
+    <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+  </div>
+
+  <script src="../../../shared/scripts.js"></script>
+</body>
+</html>
