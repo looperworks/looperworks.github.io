@@ -9,6 +9,8 @@
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', function() {
       mobileMenu.classList.toggle('open');
+      var isOpen = mobileMenu.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   }
 })();
@@ -209,5 +211,11 @@
     requestAnimationFrame(frame);
   }
 
-  document.fonts.ready.then(function() { requestAnimationFrame(frame); });
+  // Respect reduced motion preference
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    document.fonts.ready.then(function() { drawMark(1); });
+  } else {
+    document.fonts.ready.then(function() { requestAnimationFrame(frame); });
+  }
 })();

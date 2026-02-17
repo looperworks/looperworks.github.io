@@ -47,7 +47,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: #999;
+      color: #767676;
       margin-bottom: 12px;
     }
 
@@ -80,11 +80,16 @@
     }
 
     .blog-search input::placeholder {
-      color: #aaa;
+      color: #767676;
     }
 
     .blog-search input:focus {
       border-color: #111;
+    }
+
+    .blog-search input:focus-visible {
+      border-color: #111;
+      box-shadow: 0 0 0 2px rgba(17,17,17,0.2);
     }
 
     .no-results {
@@ -92,7 +97,7 @@
       padding: 40px 0;
       text-align: center;
       font-size: 13px;
-      color: #999;
+      color: #767676;
       grid-column: 1 / -1;
     }
 
@@ -145,7 +150,7 @@
 
     .column-header .col-desc {
       font-size: 11px;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.85);
       line-height: 1.5;
       margin-top: 6px;
       text-transform: none;
@@ -172,6 +177,11 @@
       border-color: var(--col-color, #ddd);
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
       transform: translateY(-2px);
+    }
+
+    .post-card:focus-visible {
+      outline: 2px solid var(--col-color, #111);
+      outline-offset: 2px;
     }
 
     .card-inner {
@@ -214,7 +224,7 @@
 
     .card-date {
       font-size: 10px;
-      color: #bbb;
+      color: #767676;
       font-weight: 500;
       margin-top: 14px;
     }
@@ -249,13 +259,26 @@
         gap: 28px;
       }
     }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- Floating Left Navigation -->
   <div class="side-nav-wrapper">
     <div class="side-nav-tab">Menu</div>
-    <nav class="side-nav">
+    <nav class="side-nav" aria-label="Main navigation">
       <ul class="side-nav-links">
   <li><a href="../about/">About</a></li>
   <li><a href="/">Firm Search</a></li>
@@ -271,11 +294,11 @@
   <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <a href="/" class="mobile-nav-brand">Threshold</a>
-    <div class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
   <a href="../about/">About</a>
@@ -289,11 +312,11 @@
 
   <!-- Animated Logo -->
   <div class="top-brand-area">
-    <canvas id="logoCanvas" width="200" height="56" data-home="/"></canvas>
+    <canvas id="logoCanvas" width="200" height="56" data-home="/" aria-label="Threshold — Home" role="img"></canvas>
   </div>
   <div class="top-divider"></div>
 
-  <main>
+  <main id="main-content">
   <div class="page">
 
     <!-- Header -->
@@ -304,6 +327,7 @@
 
     <!-- Search -->
     <div class="blog-search">
+      <label for="blogSearch" class="sr-only">Search articles</label>
       <input type="text" id="blogSearch" placeholder="Search articles...">
     </div>
 
@@ -315,7 +339,7 @@
       <div class="kanban-column" data-col="ground">
         <div class="column-header">
           <div class="col-top">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="15" x2="9" y2="21"/><line x1="15" y1="15" x2="15" y2="21"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="15" x2="9" y2="21"/><line x1="15" y1="15" x2="15" y2="21"/></svg>
             Ground
             <span class="col-count">3</span>
           </div>
@@ -354,7 +378,7 @@
       <div class="kanban-column" data-col="frame">
         <div class="column-header">
           <div class="col-top">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
             Frame
             <span class="col-count">3</span>
           </div>
@@ -393,7 +417,7 @@
       <div class="kanban-column" data-col="form">
         <div class="column-header">
           <div class="col-top">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             Form
             <span class="col-count">2</span>
           </div>
@@ -426,6 +450,7 @@
   <footer class="site-footer">
     <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
     <form id="subscribeForm" class="footer-subscribe">
+      <label for="subscribeEmail" class="sr-only">Email address</label>
       <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>

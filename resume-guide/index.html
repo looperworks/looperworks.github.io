@@ -683,9 +683,10 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Top Brand -->
     <div class="top-brand-area">
-        <canvas id="logoCanvas" width="200" height="56" data-home="../"></canvas>
+        <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
     </div>
     <div class="top-divider"></div>
 
@@ -693,7 +694,7 @@
   <!-- Floating Left Navigation — hover to reveal -->
   <div class="side-nav-wrapper">
     <div class="side-nav-tab">Menu</div>
-    <nav class="side-nav">
+    <nav class="side-nav" aria-label="Main navigation">
       <ul class="side-nav-links">
   <li><a href="../about/">About</a></li>
   <li><a href="/">Firm Search</a></li>
@@ -707,7 +708,7 @@
   </div>
 
     <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+    <button class="mobile-menu-toggle hamburger" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
     <!-- Container -->
     <div class="container">
@@ -763,7 +764,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
             <div class="content-inner">
                 <!-- Page Title -->
                 <h1 class="page-title" style="font-size: 32px; font-weight: 700; margin-bottom: 24px;">The Architecture Resume Guide</h1>
@@ -2012,6 +2013,7 @@
   <footer class="site-footer">
     <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
     <form id="subscribeForm" class="footer-subscribe">
+      <label for="subscribeEmail" class="sr-only">Email address</label>
       <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>

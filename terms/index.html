@@ -86,9 +86,10 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Top Brand -->
     <div class="top-brand-area">
-        <canvas id="logoCanvas" width="200" height="56" data-home="../"></canvas>
+        <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
     </div>
     <div class="top-divider"></div>
 
@@ -96,7 +97,7 @@
     <!-- Left Navigation — hover to reveal -->
     <div class="side-nav-wrapper">
       <div class="side-nav-tab">Menu</div>
-      <nav class="side-nav">
+      <nav class="side-nav" aria-label="Main navigation">
         <ul class="side-nav-links">
   <li><a href="../about/">About</a></li>
   <li><a href="/">Firm Search</a></li>
@@ -112,9 +113,9 @@
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
         <a href="/" class="mobile-nav-brand">Threshold</a>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
   <a href="../about/">About</a>
@@ -126,7 +127,7 @@
   <a href="../blog/">Blog</a>
 </div>
 
-    <div class="page">
+    <div class="page" id="main-content">
         <h1 class="page-title">Terms of Service</h1>
 
         <div class="content">
@@ -181,6 +182,7 @@
   <footer class="site-footer">
     <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
     <form id="subscribeForm" class="footer-subscribe">
+      <label for="subscribeEmail" class="sr-only">Email address</label>
       <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>
