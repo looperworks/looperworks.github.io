@@ -17,6 +17,7 @@ const path = require('path');
 // ─── Config ───
 const BASE_DIR = path.resolve(__dirname, '..');
 const FIRMS_BASE = path.join(BASE_DIR, 'data', 'firms-base.json');
+const FIRMS_STATIC = path.join(BASE_DIR, 'data', 'firms-with-static-jobs.json');
 const OUTPUT = path.join(BASE_DIR, 'mapvoid', 'firms.json');
 const DISCOVERIES = path.join(BASE_DIR, 'data', 'jsearch-discoveries.json');
 
@@ -340,13 +341,21 @@ function matchJSearchToFirms(jsearchJobs, firms) {
 async function main() {
   console.log('━━━ Threshold Job Pipeline ━━━\n');
 
-  // Load base data
-  console.log('📂 Loading firms-base.json...');
-  const firms = JSON.parse(fs.readFileSync(FIRMS_BASE, 'utf8'));
-  console.log(`   ${firms.length} firms loaded\n`);
+  // Load base data (with static/curated jobs preserved)
+  let firms;
+  if (fs.existsSync(FIRMS_STATIC)) {
+    console.log('📂 Loading firms-with-static-jobs.json (preserving curated jobs)...');
+    firms = JSON.parse(fs.readFileSync(FIRMS_STATIC, 'utf8'));
+  } else {
+    console.log('📂 Loading firms-base.json...');
+    firms = JSON.parse(fs.readFileSync(FIRMS_BASE, 'utf8'));
+  }
+  console.log(`   ${firms.length} firms loaded`);
+  const existingJobs = firms.reduce((s, f) => s + (f.jobs ? f.jobs.length : 0), 0);
+  console.log(`   ${existingJobs} curated job listings preserved\n`);
 
-  // Clear all existing jobs
-  for (const f of firms) f.jobs = [];
+  // Ensure all firms have a jobs array (but don't clear existing ones)
+  for (const f of firms) f.jobs = f.jobs || [];
 
   // Track stats
   let ghHits = 0, ghJobs = 0;
