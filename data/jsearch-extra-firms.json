@@ -1,0 +1,9245 @@
+[
+  {
+    "id": 1902,
+    "name": "Canopy / architecture + design",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8837,
+    "lng": -87.6488,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1903,
+    "name": "STL Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8691,
+    "lng": -87.6409,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1904,
+    "name": "MULLER2",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8876,
+    "lng": -87.6227,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1905,
+    "name": "MDT Architecture",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8938,
+    "lng": -87.6463,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1906,
+    "name": "NEW OFFICE",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.875,
+    "lng": -87.6486,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1907,
+    "name": "John Ronan Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8668,
+    "lng": -87.6296,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1908,
+    "name": "Studio Talo Architecture",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8592,
+    "lng": -87.6418,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1909,
+    "name": "Could Be Design",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8841,
+    "lng": -87.628,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1910,
+    "name": "Adrian Smith + Gordon Gill Architecture",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8669,
+    "lng": -87.6262,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1911,
+    "name": "Norman Kelley",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8905,
+    "lng": -87.6495,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1912,
+    "name": "Woodhouse Tinucci Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8903,
+    "lng": -87.6219,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1913,
+    "name": "Vladimir Radutny Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8717,
+    "lng": -87.6436,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1914,
+    "name": "Future Firm",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8964,
+    "lng": -87.6363,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1915,
+    "name": "HGA",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8618,
+    "lng": -87.6459,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1916,
+    "name": "JGMA",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.892,
+    "lng": -87.6257,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1917,
+    "name": "HPA",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8904,
+    "lng": -87.6206,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1918,
+    "name": "EWP Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8795,
+    "lng": -87.6109,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1919,
+    "name": "Myefski Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8732,
+    "lng": -87.6277,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1920,
+    "name": "Wight & Company",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8913,
+    "lng": -87.6251,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1921,
+    "name": "WHA",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8926,
+    "lng": -87.6267,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1922,
+    "name": "GreenbergFarrow",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8863,
+    "lng": -87.648,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Sustainability"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1923,
+    "name": "SEEK Design + Architecture",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8672,
+    "lng": -87.6382,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1924,
+    "name": "Design Collective",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8613,
+    "lng": -87.6405,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1925,
+    "name": "KTGY Architecture Firm",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8621,
+    "lng": -87.6387,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1926,
+    "name": "Pappageorge Haymes",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8835,
+    "lng": -87.6352,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1927,
+    "name": "HBRA Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8729,
+    "lng": -87.6414,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1928,
+    "name": "Nia Architects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8688,
+    "lng": -87.6123,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1929,
+    "name": "CHMARA ARCHITECTURAL SERVICES: residential architect & small commercial projects",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.884,
+    "lng": -87.6254,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1930,
+    "name": "Kwong Von Glinow",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8649,
+    "lng": -87.6206,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1931,
+    "name": "Via Chicago",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8646,
+    "lng": -87.6346,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1932,
+    "name": "Moss Architecture",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.8977,
+    "lng": -87.6242,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1933,
+    "name": "ARCHBOP",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.764,
+    "lng": -80.1844,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1934,
+    "name": "Miami",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.7754,
+    "lng": -80.1808,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1935,
+    "name": "Touzet Studio",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.7509,
+    "lng": -80.2105,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1936,
+    "name": "Shulman + Associates",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.7543,
+    "lng": -80.2011,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1937,
+    "name": "Nichols Architects",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.7501,
+    "lng": -80.1741,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1938,
+    "name": "Sweet Sparkman Architecture & Interiors",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.7768,
+    "lng": -80.1992,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Interior Design"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1939,
+    "name": "A.Masow Architects",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7829,
+    "lng": -96.8012,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1940,
+    "name": "STG Design",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7933,
+    "lng": -96.7986,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1941,
+    "name": "Heitler Houstoun Architects",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7673,
+    "lng": -96.8071,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1942,
+    "name": "Heatherwick Studio",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7153,
+    "lng": -74.0155,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1943,
+    "name": "Beyer Blinder Belle Architects and Planners",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7162,
+    "lng": -73.9901,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1944,
+    "name": "Gluckman Tang",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7088,
+    "lng": -74.0172,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1945,
+    "name": "Caliper Studio",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7327,
+    "lng": -74.0056,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1946,
+    "name": "Abruzzo Bodziak Architects",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6964,
+    "lng": -74.0241,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1947,
+    "name": "SITU",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6972,
+    "lng": -74.0009,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1948,
+    "name": "Only If",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7245,
+    "lng": -74.0091,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1949,
+    "name": "BÜRO KORAY DUMAN",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6953,
+    "lng": -74.0107,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1950,
+    "name": "nARCHITECTS",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7326,
+    "lng": -74.0048,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1951,
+    "name": "Thomas Phifer and Partners",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7316,
+    "lng": -73.9916,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1952,
+    "name": "Garnett DePasquale Projects",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6933,
+    "lng": -73.9972,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1953,
+    "name": "Christoff : Finio",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7201,
+    "lng": -74.0045,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1954,
+    "name": "SLADE ARCHITECTURE",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7035,
+    "lng": -74.0004,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1955,
+    "name": "RAAAF",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6973,
+    "lng": -74.0086,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1956,
+    "name": "Matter Practice",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7109,
+    "lng": -73.9878,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1957,
+    "name": "Bureau V Architecture",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7278,
+    "lng": -74.0155,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1958,
+    "name": "SCH/SH",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7128,
+    "lng": -74.0189,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1959,
+    "name": "Reiser+Umemoto, RUR Architecture DPC",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7293,
+    "lng": -73.9912,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1960,
+    "name": "Gradient Architecture",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7047,
+    "lng": -74.0004,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1961,
+    "name": "interboro",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7172,
+    "lng": -74.0199,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1962,
+    "name": "Mission",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7233,
+    "lng": -74.0044,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1963,
+    "name": "Laguarda.Low",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7239,
+    "lng": -74.0048,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1964,
+    "name": "3XN Architects",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6928,
+    "lng": -74.013,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1965,
+    "name": "Kenneth Park Architects",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6936,
+    "lng": -73.9888,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1966,
+    "name": "ABOUT",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7279,
+    "lng": -73.9927,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1967,
+    "name": "Oliver Freundlich Design: Residential and Commercial Design, New York City",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7051,
+    "lng": -74.0237,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1968,
+    "name": "Hill",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7279,
+    "lng": -73.9881,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1969,
+    "name": "PAU",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6962,
+    "lng": -74.0066,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1970,
+    "name": "Ellenzweig",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6956,
+    "lng": -73.9956,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1971,
+    "name": "MHS",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7234,
+    "lng": -74.0209,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1972,
+    "name": "CIVILIAN",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7118,
+    "lng": -74.004,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1973,
+    "name": "WXY",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7034,
+    "lng": -73.9911,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1974,
+    "name": "ICRAVE",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7097,
+    "lng": -74.0175,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [
+      {
+        "title": "Freelance Interior Design",
+        "type": "Full-time",
+        "salary": "See listing",
+        "posted": "1 week ago",
+        "url": "https://job-boards.greenhouse.io/icrave/jobs/4962025007"
+      }
+    ],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1975,
+    "name": "Young Projects",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7144,
+    "lng": -73.9968,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1976,
+    "name": "MBB Architects",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7008,
+    "lng": -74.0135,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1977,
+    "name": "BCV Architecture + Interiors",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7326,
+    "lng": -74,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Interior Design"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1978,
+    "name": "Mancini Duffy / Design. Push Boundaries. Solve Problems",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7103,
+    "lng": -74.0053,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1979,
+    "name": "Studio Zewde",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6976,
+    "lng": -74.017,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1980,
+    "name": "Pfeifferpartners",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7063,
+    "lng": -74.0025,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1981,
+    "name": "Studio Ames",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.702,
+    "lng": -74.0172,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1982,
+    "name": "Tod Williams Billie Tsien Architects",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6956,
+    "lng": -74.0008,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1983,
+    "name": "KAD",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.702,
+    "lng": -73.9898,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1984,
+    "name": "Bernheimer Architecture",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7272,
+    "lng": -74.0232,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1985,
+    "name": "HWKN by Matthias Hollwich",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7023,
+    "lng": -73.9992,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1986,
+    "name": "Christian Dean Architecture",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7014,
+    "lng": -74.0207,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1987,
+    "name": "Andrew Berman Architect",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7302,
+    "lng": -74.0032,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1988,
+    "name": "K+C",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7117,
+    "lng": -73.9946,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1989,
+    "name": "Megan Grehl",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7251,
+    "lng": -74.0184,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1990,
+    "name": "RES4",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6967,
+    "lng": -74.0088,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1991,
+    "name": "Studio Lyon Szot",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7097,
+    "lng": -74.0073,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1992,
+    "name": "Guerin Glass",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.722,
+    "lng": -73.9991,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1993,
+    "name": "Cluck Design",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.2465,
+    "lng": -80.8592,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1994,
+    "name": "Modern Architecture Design in Charlotte, NC",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.2232,
+    "lng": -80.8495,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1995,
+    "name": "Waterstreet Studio",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.2416,
+    "lng": -80.8532,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1996,
+    "name": "CosciaMoos Architecture",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9402,
+    "lng": -75.1673,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1997,
+    "name": "WRT",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9495,
+    "lng": -75.1741,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1998,
+    "name": "KieranTimberlake",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9426,
+    "lng": -75.1483,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 1999,
+    "name": "WORK",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9503,
+    "lng": -75.1507,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2000,
+    "name": "Atkin Olshin Schade Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9546,
+    "lng": -75.1832,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2001,
+    "name": "MGA Partners, Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9726,
+    "lng": -75.1518,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2002,
+    "name": "Mahlum",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9714,
+    "lng": -75.1481,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2003,
+    "name": "CLARK / BARNES",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9665,
+    "lng": -75.1785,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2004,
+    "name": "A+D",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.952,
+    "lng": -75.1767,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2005,
+    "name": "Assembledge+",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9486,
+    "lng": -75.1829,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2006,
+    "name": "Projects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9478,
+    "lng": -75.1458,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2007,
+    "name": "OpenScope Studio",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9432,
+    "lng": -75.1538,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2008,
+    "name": "EYRC Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9508,
+    "lng": -75.1683,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2009,
+    "name": "WTARCH",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9709,
+    "lng": -75.1454,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2010,
+    "name": "Matt Gagnon Studio",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9548,
+    "lng": -75.1565,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2011,
+    "name": "WHY",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9388,
+    "lng": -75.1733,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2012,
+    "name": "TIGHE ARCHITECTURE",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9713,
+    "lng": -75.162,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2013,
+    "name": "asap/ adam sokol architecture practice",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9543,
+    "lng": -75.1553,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2014,
+    "name": "GGA",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9349,
+    "lng": -75.1618,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2015,
+    "name": "Stephen Phillips Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9527,
+    "lng": -75.1511,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2016,
+    "name": "CO Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9389,
+    "lng": -75.1468,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2017,
+    "name": "LOHA: Lorcan O'Herlihy Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9358,
+    "lng": -75.1778,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2018,
+    "name": "Dennis Gibbens Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9564,
+    "lng": -75.1582,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2019,
+    "name": "Moore Ruble Yudell Architects & Planners",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.942,
+    "lng": -75.1804,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2020,
+    "name": "TGH Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9682,
+    "lng": -75.1754,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2021,
+    "name": "Montalba Architects",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9564,
+    "lng": -75.1604,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2022,
+    "name": "kdA",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9494,
+    "lng": -75.1619,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2023,
+    "name": "Koning Eizenberg Architecture",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9535,
+    "lng": -75.1478,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2024,
+    "name": "Lehrer Architect LA",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9408,
+    "lng": -75.1566,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2025,
+    "name": "Andmore Partners",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9421,
+    "lng": -75.1694,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2026,
+    "name": "architecture design build",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9595,
+    "lng": -75.1732,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2027,
+    "name": "House & Robertson Architects, Inc",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9452,
+    "lng": -75.1551,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2028,
+    "name": "RO ROCKETT DESIGN",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9355,
+    "lng": -75.1669,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2029,
+    "name": "AERO COLLECTIVE",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9725,
+    "lng": -75.1454,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2030,
+    "name": "Design, Bitches",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9355,
+    "lng": -75.1767,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2031,
+    "name": "GGLO",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9432,
+    "lng": -75.1479,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2032,
+    "name": "Alloi",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9678,
+    "lng": -75.15,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2033,
+    "name": "AW–ARCH",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3549,
+    "lng": -71.0726,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2034,
+    "name": "Bruner / Cott Architects",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3734,
+    "lng": -71.0508,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2035,
+    "name": "Annum",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3646,
+    "lng": -71.0394,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2036,
+    "name": "Touloukian Touloukian Inc",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3663,
+    "lng": -71.0786,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2037,
+    "name": "Höweler + Yoon",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3728,
+    "lng": -71.0669,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2038,
+    "name": "Flavin Architects",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3666,
+    "lng": -71.0413,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2039,
+    "name": "Studio Luz Architects",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3455,
+    "lng": -71.0743,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2040,
+    "name": "Peter Rose + Partners",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3444,
+    "lng": -71.0568,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2041,
+    "name": "Kennedy & Violich Architecture, Ltd",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.351,
+    "lng": -71.0547,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2042,
+    "name": "SsD",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3688,
+    "lng": -71.0708,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2043,
+    "name": "Arrowstreet",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3655,
+    "lng": -71.0683,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2044,
+    "name": "SGA",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3596,
+    "lng": -71.0427,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2045,
+    "name": "Behnisch Architekten / Contact",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3739,
+    "lng": -71.0752,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2046,
+    "name": "Charles Rose Architects",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.357,
+    "lng": -71.0678,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2047,
+    "name": "WOJR",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3402,
+    "lng": -71.0481,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2048,
+    "name": "SCB",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3656,
+    "lng": -71.0684,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2049,
+    "name": "CambridgeSeven",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3697,
+    "lng": -71.0568,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2050,
+    "name": "STUD-IO Computational Construction",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3572,
+    "lng": -71.0785,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2051,
+    "name": "Ci Design",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3431,
+    "lng": -71.0436,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2052,
+    "name": "Matter Design",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3763,
+    "lng": -71.0571,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2053,
+    "name": "NADAAA",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3735,
+    "lng": -71.0556,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2054,
+    "name": "Gamble Associates",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.346,
+    "lng": -71.0738,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2055,
+    "name": "French 2D",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3524,
+    "lng": -71.0429,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2056,
+    "name": "ART Architects • Albert Righter Tittmann Architects • Boston, MA",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3719,
+    "lng": -71.0445,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2057,
+    "name": "Tsoi Kobus Design",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3761,
+    "lng": -71.0705,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2058,
+    "name": "Kronberg U+A",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.739,
+    "lng": -84.4039,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2059,
+    "name": "Harrison Design",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.7602,
+    "lng": -84.3726,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2060,
+    "name": "Hagan Architects P.C",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.7453,
+    "lng": -84.3832,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2061,
+    "name": "Jeffrey Bruce Baker Designs",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.7352,
+    "lng": -84.3708,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2062,
+    "name": "Summerour Architects",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.7636,
+    "lng": -84.369,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2063,
+    "name": "Square Feet Studio",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.7614,
+    "lng": -84.3727,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2064,
+    "name": "May Architecture",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.73,
+    "lng": -84.3785,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2065,
+    "name": "clockwork",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "lat": 35.4609,
+    "lng": -97.4992,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2066,
+    "name": "Piper-Wind Architects",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "lat": 35.4797,
+    "lng": -97.5018,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2067,
+    "name": "DRAW is different from other architecture firms",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "lat": 35.48,
+    "lng": -97.5257,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2068,
+    "name": "Forward Design",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "lat": 35.4791,
+    "lng": -97.5321,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2069,
+    "name": "International Architects Atelier",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "lat": 35.4825,
+    "lng": -97.5021,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2070,
+    "name": "Anderson Anderson Architecture",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7638,
+    "lng": -122.4067,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2071,
+    "name": "MORK-ULNES",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7733,
+    "lng": -122.4272,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2072,
+    "name": "MICHAEL HENNESSEY ARCHITECTURE",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7867,
+    "lng": -122.4303,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2073,
+    "name": "Studio BBA",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7558,
+    "lng": -122.4317,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2074,
+    "name": "BAR Architects & Interiors",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.768,
+    "lng": -122.4048,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Interior Design"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2075,
+    "name": "Taylor Design",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7936,
+    "lng": -122.4282,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2076,
+    "name": "YA Studio",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7806,
+    "lng": -122.4234,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2077,
+    "name": "Wilson Associates",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7941,
+    "lng": -122.418,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2078,
+    "name": "Obata Noblin",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7925,
+    "lng": -122.4348,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2079,
+    "name": "Sustainable Design Architecture Firm",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7937,
+    "lng": -122.4323,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Sustainability"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2080,
+    "name": "Piechota Architecture",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7934,
+    "lng": -122.4288,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2081,
+    "name": "Edmonds + Lee Architects",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7592,
+    "lng": -122.422,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2082,
+    "name": "Dattner Architects",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.784,
+    "lng": -122.4269,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2083,
+    "name": "ELA",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7791,
+    "lng": -122.4189,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [
+      {
+        "title": "GSRP Lead Teacher - Morgan's",
+        "type": "Full-time",
+        "salary": "See listing",
+        "posted": "3 weeks ago",
+        "url": "https://job-boards.greenhouse.io/ela/jobs/7589871003"
+      }
+    ],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2084,
+    "name": "FOG Studio",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7703,
+    "lng": -122.4163,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2085,
+    "name": "Appleton Partners LLP",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7651,
+    "lng": -122.411,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2086,
+    "name": "IwamotoScott Architecture",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.755,
+    "lng": -122.4024,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2087,
+    "name": "Hornberger + Worstell",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7764,
+    "lng": -122.4106,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2088,
+    "name": "Architectural Resources Group",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7846,
+    "lng": -122.4126,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2089,
+    "name": "Siegel & Strain Architects",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7695,
+    "lng": -122.4366,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2090,
+    "name": "Homepage",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7815,
+    "lng": -122.4262,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2091,
+    "name": "John Lum Architecture",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7675,
+    "lng": -122.4055,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2092,
+    "name": "Dumican Mosey Architects",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7837,
+    "lng": -122.4274,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2093,
+    "name": "MHA",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7673,
+    "lng": -122.4231,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2094,
+    "name": "DGA Online",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.771,
+    "lng": -122.4276,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2095,
+    "name": "figure",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.76,
+    "lng": -122.4226,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2096,
+    "name": "Andrew Mann Architecture",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7925,
+    "lng": -122.4123,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2097,
+    "name": "Collective Operations",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.791,
+    "lng": -122.4148,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2098,
+    "name": "VJAA",
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.9698,
+    "lng": -93.2631,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2099,
+    "name": "Minnesota Residential and Commercial Architecture",
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.9578,
+    "lng": -93.2735,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2100,
+    "name": "MSR Design Portfolio",
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.975,
+    "lng": -93.2618,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2101,
+    "name": "CITYDESKSTUDIO",
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.984,
+    "lng": -93.2664,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2102,
+    "name": "Alliiance",
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.9755,
+    "lng": -93.2765,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2103,
+    "name": "People »",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6259,
+    "lng": -90.1834,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2104,
+    "name": "Studio Blitz",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6388,
+    "lng": -90.2126,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2105,
+    "name": "FGM Architects",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6104,
+    "lng": -90.1988,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2106,
+    "name": "Adriana Perrone, Architect",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6323,
+    "lng": -90.206,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2107,
+    "name": "Bower Leet Design",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6397,
+    "lng": -90.1894,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2108,
+    "name": "Architechnics",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6339,
+    "lng": -90.2104,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2109,
+    "name": "Bassetti Architects",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.615,
+    "lng": -90.2184,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2110,
+    "name": "Comfort Architecture",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6168,
+    "lng": -90.2004,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2111,
+    "name": "Careers",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.641,
+    "lng": -90.2165,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2112,
+    "name": "Aesh Design",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6236,
+    "lng": -90.1942,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2113,
+    "name": "AS//A",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6148,
+    "lng": -90.1915,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2114,
+    "name": "Bond Architects, Inc",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6268,
+    "lng": -90.2096,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2115,
+    "name": "CORE10 Architecture",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.6332,
+    "lng": -90.2192,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2116,
+    "name": "studioDVLP",
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.637,
+    "lng": -90.1886,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2117,
+    "name": "TEMPO",
+    "city": "Charlottesville",
+    "state": "VA",
+    "lat": 38.0136,
+    "lng": -78.4797,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2118,
+    "name": "SPARC Design Group",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.7487,
+    "lng": -80.1735,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2119,
+    "name": "EskewDumezRipple",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9518,
+    "lng": -90.0895,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2120,
+    "name": "Home",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9411,
+    "lng": -90.0576,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2121,
+    "name": "Manning Architects",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9494,
+    "lng": -90.0594,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2122,
+    "name": "studioWTA",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9578,
+    "lng": -90.052,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2123,
+    "name": "Concordia: Architecture",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9549,
+    "lng": -90.0535,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2124,
+    "name": "OJT",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9668,
+    "lng": -90.067,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2125,
+    "name": "Trapolin-Peer Architects",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9599,
+    "lng": -90.0713,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2126,
+    "name": "CICADA",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9643,
+    "lng": -90.0696,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2127,
+    "name": "DeForest Architects",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6221,
+    "lng": -122.3224,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2128,
+    "name": "Heliotrope",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6052,
+    "lng": -122.3417,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2129,
+    "name": "Mutuus",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.5961,
+    "lng": -122.3266,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2130,
+    "name": "Icicle Creek Retreat",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6168,
+    "lng": -122.3312,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2131,
+    "name": "GO'C WORKS",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6113,
+    "lng": -122.3411,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2132,
+    "name": "LMN Architects Seattle",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.5893,
+    "lng": -122.3407,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2133,
+    "name": "Wittman Estes",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.5971,
+    "lng": -122.3393,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2134,
+    "name": "Weber Thompson",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6078,
+    "lng": -122.3466,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2135,
+    "name": "Weinstein A+U",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.5955,
+    "lng": -122.3243,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2136,
+    "name": "Scott Mitchell Studio",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6145,
+    "lng": -122.3495,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2137,
+    "name": "ORA",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6025,
+    "lng": -122.3304,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2138,
+    "name": "SkB Architects",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6028,
+    "lng": -122.3438,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2139,
+    "name": "Medici Architects",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.603,
+    "lng": -122.3159,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2140,
+    "name": "Hybrid",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6096,
+    "lng": -122.3243,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2141,
+    "name": "MZA",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6205,
+    "lng": -122.3215,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2142,
+    "name": "McGranahan",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6014,
+    "lng": -122.3519,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2143,
+    "name": "Works Progress Architecture",
+    "city": "Portland",
+    "state": "OR",
+    "lat": 45.5093,
+    "lng": -122.6683,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2144,
+    "name": "Harka Architecture",
+    "city": "Portland",
+    "state": "OR",
+    "lat": 45.5293,
+    "lng": -122.6603,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2145,
+    "name": "HBX STUDIO",
+    "city": "Portland",
+    "state": "OR",
+    "lat": 45.512,
+    "lng": -122.6685,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2146,
+    "name": "Mackenzie",
+    "city": "Portland",
+    "state": "OR",
+    "lat": 45.517,
+    "lng": -122.6743,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2147,
+    "name": "Murray Legge Architecture",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7655,
+    "lng": -96.8082,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2148,
+    "name": "GFF",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7741,
+    "lng": -96.8158,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2149,
+    "name": "Bercy Chen Studio",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7701,
+    "lng": -96.7898,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2150,
+    "name": "Home Page",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7729,
+    "lng": -96.8104,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2151,
+    "name": "Matsys",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7754,
+    "lng": -96.8119,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2152,
+    "name": "World-class architecture, design, and service • Clayton Korte",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7816,
+    "lng": -96.8159,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2153,
+    "name": "alterstudio",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7725,
+    "lng": -96.7944,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2154,
+    "name": "BRAVE / Architecture",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7578,
+    "lng": -96.7913,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2155,
+    "name": "C O N T E N T",
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.7621,
+    "lng": -96.7985,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2156,
+    "name": "R3A Architecture",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.4226,
+    "lng": -80.0007,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2157,
+    "name": "LRK",
+    "city": "Memphis",
+    "state": "TN",
+    "lat": 35.138,
+    "lng": -90.0559,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2158,
+    "name": "Architectural Resource Team",
+    "city": "Phoenix",
+    "state": "AZ",
+    "lat": 33.4588,
+    "lng": -112.0788,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2159,
+    "name": "Hord Coplan Macht (HCM)",
+    "city": "Baltimore",
+    "state": "MD",
+    "lat": 39.3005,
+    "lng": -76.5989,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2160,
+    "name": "GWWO Architects",
+    "city": "Baltimore",
+    "state": "MD",
+    "lat": 39.2805,
+    "lng": -76.6289,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2161,
+    "name": "Rosemann & Associates",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.72,
+    "lng": -104.9887,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2162,
+    "name": "RESTAURANTS",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7592,
+    "lng": -104.9963,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2163,
+    "name": "CCY Architects",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7452,
+    "lng": -104.9791,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2164,
+    "name": "Arch11",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7453,
+    "lng": -104.9801,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2165,
+    "name": "Schemata Architects / Jo Nagasaka",
+    "city": "Tokyo",
+    "state": "",
+    "lat": 35.6942,
+    "lng": 139.6383,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2166,
+    "name": "JUN IGARASHI ARCHITECTS",
+    "city": "Tokyo",
+    "state": "",
+    "lat": 35.657,
+    "lng": 139.6364,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2167,
+    "name": "Tadao Ando Architect & Associates",
+    "city": "Tokyo",
+    "state": "",
+    "lat": 35.6612,
+    "lng": 139.6571,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2168,
+    "name": "Internship",
+    "city": "Tokyo",
+    "state": "",
+    "lat": 35.6788,
+    "lng": 139.639,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2169,
+    "name": "Kazuyo Sejima + Ryue Nishizawa /",
+    "city": "Tokyo",
+    "state": "",
+    "lat": 35.6842,
+    "lng": 139.661,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2170,
+    "name": "SUPPOSE DESIGN OFFICE",
+    "city": "Tokyo",
+    "state": "",
+    "lat": 35.6629,
+    "lng": 139.6546,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2171,
+    "name": "TORAFU ARCHITECTS トラフ建築設計事務所",
+    "city": "Tokyo",
+    "state": "",
+    "lat": 35.6861,
+    "lng": 139.6349,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2172,
+    "name": "Kimmel Eshkolot Architects",
+    "city": "Tel Aviv",
+    "state": "",
+    "lat": 32.0981,
+    "lng": 34.8004,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2173,
+    "name": "Chyutin Architects Homepage",
+    "city": "Tel Aviv",
+    "state": "",
+    "lat": 32.0696,
+    "lng": 34.7628,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2174,
+    "name": "Amnon Bar Or",
+    "city": "Tel Aviv",
+    "state": "",
+    "lat": 32.0778,
+    "lng": 34.7889,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2175,
+    "name": "Knafo Klimor Architects",
+    "city": "Tel Aviv",
+    "state": "",
+    "lat": 32.1036,
+    "lng": 34.7777,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2176,
+    "name": "Benedetta Tagliabue",
+    "city": "Barcelona",
+    "state": "",
+    "lat": 41.396,
+    "lng": 2.1516,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2177,
+    "name": "Moneo Brock",
+    "city": "Barcelona",
+    "state": "",
+    "lat": 41.395,
+    "lng": 2.1737,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2178,
+    "name": "Nieto Sobejano",
+    "city": "Barcelona",
+    "state": "",
+    "lat": 41.3715,
+    "lng": 2.1795,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2179,
+    "name": "RCR Arquitectes",
+    "city": "Barcelona",
+    "state": "",
+    "lat": 41.4014,
+    "lng": 2.1726,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2180,
+    "name": "batlleiroig",
+    "city": "Barcelona",
+    "state": "",
+    "lat": 41.3722,
+    "lng": 2.188,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2181,
+    "name": "Estudio Carme Pinós",
+    "city": "Barcelona",
+    "state": "",
+    "lat": 41.3987,
+    "lng": 2.1625,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2182,
+    "name": "BeL",
+    "city": "Barcelona",
+    "state": "",
+    "lat": 41.3845,
+    "lng": 2.1634,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2183,
+    "name": "ROMA Architecture",
+    "city": "Phoenix",
+    "state": "AZ",
+    "lat": 33.4486,
+    "lng": -112.0804,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2184,
+    "name": "Smith Gee Studio",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.1767,
+    "lng": -86.7687,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2185,
+    "name": "Nashville TN",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.1469,
+    "lng": -86.7632,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2186,
+    "name": "Anecdote Architectural Experiences",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.1681,
+    "lng": -86.7685,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2187,
+    "name": "Gresham Smith : Gresham Smith",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.171,
+    "lng": -86.7842,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2188,
+    "name": "Portfolio",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.1721,
+    "lng": -86.763,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2189,
+    "name": "Davis Stokes Collaborative Architects, P.C",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.1535,
+    "lng": -86.7693,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2190,
+    "name": "ESa",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.1642,
+    "lng": -86.7823,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2191,
+    "name": "LBGO",
+    "city": "Berlin",
+    "state": "",
+    "lat": 52.5174,
+    "lng": 13.4142,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2192,
+    "name": "Stadtpark Apartments",
+    "city": "Berlin",
+    "state": "",
+    "lat": 52.5107,
+    "lng": 13.4191,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2193,
+    "name": "M1DTW",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.3446,
+    "lng": -83.0623,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2194,
+    "name": "himmelzimmer",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.7983,
+    "lng": 144.9529,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2195,
+    "name": "Fender Katsalidis",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.815,
+    "lng": 144.9675,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2196,
+    "name": "Plus Architecture",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8184,
+    "lng": 144.9442,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2197,
+    "name": "Projects / ARM Architecture",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.7996,
+    "lng": 144.9504,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2198,
+    "name": "BVN",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8251,
+    "lng": 144.975,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2199,
+    "name": "Hassell",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.82,
+    "lng": 144.9783,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2200,
+    "name": "Architectus",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8056,
+    "lng": 144.9542,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2201,
+    "name": "AJC Architects",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8332,
+    "lng": 144.981,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2202,
+    "name": "SJB",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8302,
+    "lng": 144.9719,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2203,
+    "name": "CHROFI",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8141,
+    "lng": 144.9734,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2204,
+    "name": "Durbach Block Jaggers Architects",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.806,
+    "lng": 144.9689,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2205,
+    "name": "ARM Architecture",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.814,
+    "lng": 144.9748,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2206,
+    "name": "Woods Bagot",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8299,
+    "lng": 144.952,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2207,
+    "name": "Six Degrees Architects",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8059,
+    "lng": 144.9553,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2208,
+    "name": "Lyons",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8103,
+    "lng": 144.962,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2209,
+    "name": "McBride Charles Ryan Architects",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8124,
+    "lng": 144.9601,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2210,
+    "name": "NH Architecture",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8038,
+    "lng": 144.9563,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2211,
+    "name": "collaborative multidisciplinary team",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8055,
+    "lng": 144.9539,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2212,
+    "name": "Wardle",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8235,
+    "lng": 144.9479,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2213,
+    "name": "Article 25",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8259,
+    "lng": 144.9479,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2214,
+    "name": "Haworth Tompkins",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8122,
+    "lng": 144.9736,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2215,
+    "name": "Caruso St John Architects",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8262,
+    "lng": 144.9518,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2216,
+    "name": "Stanton Williams",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8142,
+    "lng": 144.9721,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2217,
+    "name": "DSDHA",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.7945,
+    "lng": 144.9641,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2218,
+    "name": "Allford Hall Monaghan Morris",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8223,
+    "lng": 144.9471,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2219,
+    "name": "Sergison Bates architects",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8258,
+    "lng": 144.9522,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2220,
+    "name": "Assemble",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8264,
+    "lng": 144.9437,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2221,
+    "name": "Contact",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8122,
+    "lng": 144.9541,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2222,
+    "name": "Carmody Groarke",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.7946,
+    "lng": 144.9652,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2223,
+    "name": "Minimaforms",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.8057,
+    "lng": 144.9482,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2224,
+    "name": "ID:SR",
+    "city": "Melbourne",
+    "state": "",
+    "lat": -37.7989,
+    "lng": 144.9627,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2225,
+    "name": "Patkau",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6681,
+    "lng": -79.3802,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2226,
+    "name": "KOHN SHNIER architects",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.652,
+    "lng": -79.3856,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2227,
+    "name": "GTA General Contractors: Construction, Design & Building Services",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6406,
+    "lng": -79.4011,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2228,
+    "name": "PHAEDRUS Studio",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6708,
+    "lng": -79.3841,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2229,
+    "name": "Icon Architects",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6661,
+    "lng": -79.3872,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2230,
+    "name": "Altius",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6362,
+    "lng": -79.378,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2231,
+    "name": "Sustainable Architecture Design",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6353,
+    "lng": -79.3972,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Sustainability"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2232,
+    "name": "Baldassarra Architects",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6557,
+    "lng": -79.391,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2233,
+    "name": "Vanle Architect Inc",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.673,
+    "lng": -79.3985,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2234,
+    "name": "ZAS Architects + Interiors",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6638,
+    "lng": -79.3789,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Interior Design"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2235,
+    "name": "Aziza Chaouni Projects",
+    "city": "Toronto",
+    "state": "ON",
+    "lat": 43.6648,
+    "lng": -79.3942,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2236,
+    "name": "Studio Shanghai Architectural Firm",
+    "city": "Shanghai",
+    "state": "",
+    "lat": 31.2313,
+    "lng": 121.4717,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2237,
+    "name": "LIN",
+    "city": "Shanghai",
+    "state": "",
+    "lat": 31.2281,
+    "lng": 121.4881,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2238,
+    "name": "KGD Architecture",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.9268,
+    "lng": -77.0447,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2239,
+    "name": "Eric Colbert & Associates",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.912,
+    "lng": -77.0325,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2240,
+    "name": "OTJ Architects",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.9168,
+    "lng": -77.019,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2241,
+    "name": "IBUKU",
+    "city": "Bali",
+    "state": "",
+    "lat": -8.3522,
+    "lng": 115.0804,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2242,
+    "name": "Studio Hillier",
+    "city": "Bali",
+    "state": "",
+    "lat": -8.3341,
+    "lng": 115.0783,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2243,
+    "name": "BVH Architecture",
+    "city": "Omaha",
+    "state": "NE",
+    "lat": 41.2435,
+    "lng": -95.9515,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2244,
+    "name": "NP2F",
+    "city": "Paris",
+    "state": "",
+    "lat": 48.8367,
+    "lng": 2.3502,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2245,
+    "name": "MIIM OFFICE FOR ARCHITECTURE",
+    "city": "Taipei",
+    "state": "",
+    "lat": 25.0368,
+    "lng": 121.5571,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2246,
+    "name": "C.F. Møller",
+    "city": "Copenhagen",
+    "state": "",
+    "lat": 55.6654,
+    "lng": 12.5766,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2247,
+    "name": "Cobe",
+    "city": "Copenhagen",
+    "state": "",
+    "lat": 55.6842,
+    "lng": 12.5665,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2248,
+    "name": "Neutelings Riedijk Architects",
+    "city": "Amsterdam",
+    "state": "",
+    "lat": 52.3751,
+    "lng": 4.9211,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2249,
+    "name": "KAAN Architecten",
+    "city": "Amsterdam",
+    "state": "",
+    "lat": 52.3791,
+    "lng": 4.9091,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2250,
+    "name": "We are Mecanoo",
+    "city": "Amsterdam",
+    "state": "",
+    "lat": 52.374,
+    "lng": 4.9214,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2251,
+    "name": "NL Architects",
+    "city": "Amsterdam",
+    "state": "",
+    "lat": 52.3646,
+    "lng": 4.9059,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2252,
+    "name": "Reiulf Ramstad Arkitekter",
+    "city": "Oslo",
+    "state": "",
+    "lat": 59.9198,
+    "lng": 10.7685,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2253,
+    "name": "JVA.no -",
+    "city": "Oslo",
+    "state": "",
+    "lat": 59.927,
+    "lng": 10.7351,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2254,
+    "name": "Helen & Hard",
+    "city": "Oslo",
+    "state": "",
+    "lat": 59.9005,
+    "lng": 10.7445,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2255,
+    "name": "SAUNDERS ARCHITECTURE",
+    "city": "Oslo",
+    "state": "",
+    "lat": 59.9239,
+    "lng": 10.755,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2256,
+    "name": "Oslotre",
+    "city": "Oslo",
+    "state": "",
+    "lat": 59.9054,
+    "lng": 10.7372,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2257,
+    "name": "Knit",
+    "city": "Las Vegas",
+    "state": "NV",
+    "lat": 36.1774,
+    "lng": -115.1318,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2258,
+    "name": "Philia Earth",
+    "city": "Hong Kong",
+    "state": "",
+    "lat": 22.337,
+    "lng": 114.1694,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2259,
+    "name": "RONALD LU & PARTNERS",
+    "city": "Hong Kong",
+    "state": "",
+    "lat": 22.3191,
+    "lng": 114.1526,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2260,
+    "name": "Studio Southwest Architects",
+    "city": "Albuquerque",
+    "state": "NM",
+    "lat": 35.066,
+    "lng": -106.6531,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2261,
+    "name": "Suina Design + Architecture",
+    "city": "Albuquerque",
+    "state": "NM",
+    "lat": 35.0773,
+    "lng": -106.6604,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2262,
+    "name": "FORMATIVE Architecture",
+    "city": "Albuquerque",
+    "state": "NM",
+    "lat": 35.0681,
+    "lng": -106.6319,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2263,
+    "name": "Hosoya Schaefer Architects",
+    "city": "Wichita",
+    "state": "KS",
+    "lat": 37.7006,
+    "lng": -97.3271,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2264,
+    "name": "BuildX About",
+    "city": "Nairobi",
+    "state": "",
+    "lat": -1.2741,
+    "lng": 36.8419,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2265,
+    "name": "Woodhull",
+    "city": "Portland",
+    "state": "ME",
+    "lat": 43.666,
+    "lng": -70.266,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2266,
+    "name": "Tatiana Bilbao Estudio",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4142,
+    "lng": -99.1229,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2267,
+    "name": "PRODUCTORA",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4314,
+    "lng": -99.1271,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2268,
+    "name": "» Proyectos",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4492,
+    "lng": -99.1459,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2269,
+    "name": "Rojkind Arquitectos",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.436,
+    "lng": -99.1278,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2270,
+    "name": "TALLER",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4323,
+    "lng": -99.1496,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2271,
+    "name": "Estudio Macías Peredo",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4265,
+    "lng": -99.1399,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [
+      "Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2272,
+    "name": "GGN",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4394,
+    "lng": -99.1189,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2273,
+    "name": "O'Shea Wilson Siteworks",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4258,
+    "lng": -99.1255,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2274,
+    "name": "Wolf Josey",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4241,
+    "lng": -99.1154,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2275,
+    "name": "ParkerRodriguez",
+    "city": "Mexico City",
+    "state": "",
+    "lat": 19.4451,
+    "lng": -99.1312,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2276,
+    "name": "EinwillerKuehl",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7731,
+    "lng": -122.4268,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2277,
+    "name": "PWP",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7678,
+    "lng": -122.4006,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2278,
+    "name": "Lutsko Associates :Lutsko Associates -",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7711,
+    "lng": -122.4188,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2279,
+    "name": "PLAT Studio",
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.7944,
+    "lng": -122.4131,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2280,
+    "name": "Coen+Partners",
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.9795,
+    "lng": -93.2685,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2281,
+    "name": "OJB",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3476,
+    "lng": -71.0644,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2282,
+    "name": "Landworks Studio, Inc",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3704,
+    "lng": -71.0539,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2283,
+    "name": "Klopfer Martin Design Group",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3705,
+    "lng": -71.0708,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2284,
+    "name": "Boston",
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.3621,
+    "lng": -71.0418,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2285,
+    "name": "Martha Schwartz Partners",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.7103,
+    "lng": -73.9981,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2286,
+    "name": "Future Green: Amant Art Campus",
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.6977,
+    "lng": -73.9871,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2287,
+    "name": "Innovations Design Group",
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.7661,
+    "lng": -80.2022,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2288,
+    "name": "ABLE",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.5925,
+    "lng": -122.3301,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2289,
+    "name": "Mundus Bishop",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7413,
+    "lng": -105.0066,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2290,
+    "name": "Superbloom",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7589,
+    "lng": -104.9738,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2291,
+    "name": "DHM Design",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7377,
+    "lng": -105.0056,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2292,
+    "name": "Studio Campo",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7525,
+    "lng": -104.9904,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2293,
+    "name": "Didier Design Studio",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.7479,
+    "lng": -104.9899,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2294,
+    "name": "HDS: Himsben Design Studio",
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.869,
+    "lng": -87.6164,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2295,
+    "name": "Merritt Chase",
+    "city": "New Orleans",
+    "state": "LA",
+    "lat": 29.9703,
+    "lng": -90.0818,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2296,
+    "name": "Scot Eckley Inc",
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.6083,
+    "lng": -122.3368,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2297,
+    "name": "West 8",
+    "city": "Philadelphia",
+    "state": "PA",
+    "lat": 39.9695,
+    "lng": -75.1649,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2298,
+    "name": "D.I.R.T. studio",
+    "city": "Kansas City",
+    "state": "MO",
+    "lat": 39.1149,
+    "lng": -94.564,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2299,
+    "name": "CHA",
+    "city": "Albany",
+    "state": "NY",
+    "lat": 42.6436,
+    "lng": -73.7446,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2300,
+    "name": "BYLA",
+    "city": "Boise",
+    "state": "ID",
+    "lat": 43.6116,
+    "lng": -116.1849,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [
+      "Landscape Architecture"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2301,
+    "name": "MV+A Architects",
+    "city": "Albuquerque",
+    "state": "NM",
+    "lat": 35.0847,
+    "lng": -106.6376,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [
+      "Urban Design",
+      "Planning"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2302,
+    "name": "Smith Dalia Architects",
+    "city": "Albuquerque",
+    "state": "NM",
+    "lat": 35.0757,
+    "lng": -106.6585,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [
+      "Urban Design",
+      "Planning"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2303,
+    "name": "Here LA",
+    "city": "Albuquerque",
+    "state": "NM",
+    "lat": 35.0879,
+    "lng": -106.6304,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [
+      "Urban Design",
+      "Planning"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2304,
+    "name": "Public Space Merwede",
+    "city": "Amsterdam",
+    "state": "",
+    "lat": 52.3672,
+    "lng": 4.89,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [
+      "Urban Design",
+      "Planning"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2305,
+    "name": "RELM",
+    "city": "Amsterdam",
+    "state": "",
+    "lat": 52.3691,
+    "lng": 4.8979,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [
+      "Urban Design",
+      "Planning"
+    ],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2306,
+    "name": "LDA Architects",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.498635,
+    "lng": -81.697984,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://ldaarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2307,
+    "name": "Dimit Architects",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.507957,
+    "lng": -81.703312,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dimitarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2308,
+    "name": "HSB Architects + Engineers",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.50633,
+    "lng": -81.704749,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://hsbarch.com",
+    "about": ""
+  },
+  {
+    "id": 2309,
+    "name": "Bostwick Design Partnership",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.489006,
+    "lng": -81.706722,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bostwickdesign.com",
+    "about": ""
+  },
+  {
+    "id": 2310,
+    "name": "DVA Architecture",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.491657,
+    "lng": -81.700259,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dvaarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2311,
+    "name": "CBLH Design",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.488212,
+    "lng": -81.699608,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://cblhdesign.com",
+    "about": ""
+  },
+  {
+    "id": 2312,
+    "name": "Redhouse Studio",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.484486,
+    "lng": -81.683598,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://redhousearchitecture.org",
+    "about": ""
+  },
+  {
+    "id": 2313,
+    "name": "CPL",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.491852,
+    "lng": -81.68497,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://cplteam.com",
+    "about": ""
+  },
+  {
+    "id": 2314,
+    "name": "Behnke Landscape Architecture",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.509382,
+    "lng": -81.680162,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://behnkela.com",
+    "about": ""
+  },
+  {
+    "id": 2315,
+    "name": "SmithGroup Cleveland",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.490943,
+    "lng": -81.691163,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://smithgroup.com",
+    "about": ""
+  },
+  {
+    "id": 2316,
+    "name": "Seventh Hill Design",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.488748,
+    "lng": -81.693538,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://seventhhilldesign.com",
+    "about": ""
+  },
+  {
+    "id": 2317,
+    "name": "Hasenstab Architects",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.512112,
+    "lng": -81.689935,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://hasenstabinc.com",
+    "about": ""
+  },
+  {
+    "id": 2318,
+    "name": "HZO Architects",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.51053,
+    "lng": -81.70766,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2319,
+    "name": "Pantuso Architecture",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.492983,
+    "lng": -81.684645,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2320,
+    "name": "DERU Landscape Architecture",
+    "city": "Cleveland",
+    "state": "OH",
+    "lat": 41.487309,
+    "lng": -81.694139,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://deru-la.com",
+    "about": ""
+  },
+  {
+    "id": 2321,
+    "name": "Design Collective Architecture",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.975891,
+    "lng": -82.999123,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dcollective.com",
+    "about": ""
+  },
+  {
+    "id": 2322,
+    "name": "Jonathan Barnes Architecture and Design",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.959039,
+    "lng": -83.001169,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2323,
+    "name": "Mode Architects",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.970917,
+    "lng": -83.010209,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://modearc.com",
+    "about": ""
+  },
+  {
+    "id": 2324,
+    "name": "Red Architecture",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.96703,
+    "lng": -83.005056,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://redarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2325,
+    "name": "NAC Architecture Columbus",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.970089,
+    "lng": -83.00918,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://nacarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2326,
+    "name": "Berardi Partners",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.969046,
+    "lng": -83.009834,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://berardipartners.com",
+    "about": ""
+  },
+  {
+    "id": 2327,
+    "name": "The Columbus Architectural Studio",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.969028,
+    "lng": -83.013512,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://cbusarch.com",
+    "about": ""
+  },
+  {
+    "id": 2328,
+    "name": "Keiser Design Group",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.950783,
+    "lng": -83.006992,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://keiserdesigngroup.com",
+    "about": ""
+  },
+  {
+    "id": 2329,
+    "name": "YR Architecture + Design",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.948691,
+    "lng": -83.013023,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://yr-architecture.com",
+    "about": ""
+  },
+  {
+    "id": 2330,
+    "name": "urbanorder architecture",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.967887,
+    "lng": -82.989524,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://urbanorderarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2331,
+    "name": "Bass Studio Architects",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.969902,
+    "lng": -82.991901,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2332,
+    "name": "Edge Landscape Architecture",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.953883,
+    "lng": -83.009437,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://edgela.com",
+    "about": ""
+  },
+  {
+    "id": 2333,
+    "name": "Designing Local",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.960515,
+    "lng": -82.994337,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://designinglocal.com",
+    "about": ""
+  },
+  {
+    "id": 2334,
+    "name": "POD Design",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.963598,
+    "lng": -83.007118,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://poddesign.net",
+    "about": ""
+  },
+  {
+    "id": 2335,
+    "name": "OHM Advisors",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.960148,
+    "lng": -82.995072,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://ohm-advisors.com",
+    "about": ""
+  },
+  {
+    "id": 2336,
+    "name": "FOREGROUND Studio",
+    "city": "Columbus",
+    "state": "OH",
+    "lat": 39.974343,
+    "lng": -83.008315,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://foregroundstudio.com",
+    "about": ""
+  },
+  {
+    "id": 2337,
+    "name": "BHDP Architecture",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.113494,
+    "lng": -84.523437,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bhdp.com",
+    "about": ""
+  },
+  {
+    "id": 2338,
+    "name": "SHP Architecture",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.106006,
+    "lng": -84.517531,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://shp.com",
+    "about": ""
+  },
+  {
+    "id": 2339,
+    "name": "Hixson Architecture",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.113538,
+    "lng": -84.500951,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2340,
+    "name": "CHAATRIK Architecture",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.095349,
+    "lng": -84.505221,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://chaatrik.com",
+    "about": ""
+  },
+  {
+    "id": 2341,
+    "name": "Schickel Design",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.106866,
+    "lng": -84.521469,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://schickeldesign.com",
+    "about": ""
+  },
+  {
+    "id": 2342,
+    "name": "DNK Architects",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.104485,
+    "lng": -84.509094,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dnkarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2343,
+    "name": "K4 Architecture + Design",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.11777,
+    "lng": -84.524561,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://k4architecture.com",
+    "about": ""
+  },
+  {
+    "id": 2344,
+    "name": "Elevar Design Group",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.101197,
+    "lng": -84.505803,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2345,
+    "name": "Reztark Design Studio",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.097138,
+    "lng": -84.510843,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://reztark.com",
+    "about": ""
+  },
+  {
+    "id": 2346,
+    "name": "CUDA Studio",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.096285,
+    "lng": -84.515903,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://cudastudio.com",
+    "about": ""
+  },
+  {
+    "id": 2347,
+    "name": "Meisner + Associates",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.100663,
+    "lng": -84.523213,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://meisnerandassociates.com",
+    "about": ""
+  },
+  {
+    "id": 2348,
+    "name": "Human Nature Inc",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.113114,
+    "lng": -84.5207,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://humannature.cc",
+    "about": ""
+  },
+  {
+    "id": 2349,
+    "name": "Place Workshop",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.095981,
+    "lng": -84.500982,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://placeworkshop.com",
+    "about": ""
+  },
+  {
+    "id": 2350,
+    "name": "MSP Design",
+    "city": "Cincinnati",
+    "state": "OH",
+    "lat": 39.091655,
+    "lng": -84.51496,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://mspdesign.com",
+    "about": ""
+  },
+  {
+    "id": 2351,
+    "name": "Levin Porter Architects",
+    "city": "Dayton",
+    "state": "OH",
+    "lat": 39.769964,
+    "lng": -84.206221,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://levin-porter.com",
+    "about": ""
+  },
+  {
+    "id": 2352,
+    "name": "Ruetschle Architects",
+    "city": "Dayton",
+    "state": "OH",
+    "lat": 39.771375,
+    "lng": -84.189055,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://ruetschle.com",
+    "about": ""
+  },
+  {
+    "id": 2353,
+    "name": "Oregon Group Architects",
+    "city": "Dayton",
+    "state": "OH",
+    "lat": 39.762155,
+    "lng": -84.196213,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://oregongroup.com",
+    "about": ""
+  },
+  {
+    "id": 2354,
+    "name": "Fanning Howey",
+    "city": "Dayton",
+    "state": "OH",
+    "lat": 39.768293,
+    "lng": -84.179463,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2355,
+    "name": "TOPOS Studio",
+    "city": "Dayton",
+    "state": "OH",
+    "lat": 39.769524,
+    "lng": -84.190743,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://topos-studio.com",
+    "about": ""
+  },
+  {
+    "id": 2356,
+    "name": "Four Points Architectural Services",
+    "city": "Akron",
+    "state": "OH",
+    "lat": 41.087029,
+    "lng": -81.52698,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://4points.net",
+    "about": ""
+  },
+  {
+    "id": 2357,
+    "name": "FMD Architects",
+    "city": "Akron",
+    "state": "OH",
+    "lat": 41.076109,
+    "lng": -81.531692,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2358,
+    "name": "Structura Architects",
+    "city": "Akron",
+    "state": "OH",
+    "lat": 41.091472,
+    "lng": -81.51665,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2359,
+    "name": "GPD Group",
+    "city": "Akron",
+    "state": "OH",
+    "lat": 41.08927,
+    "lng": -81.507074,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://gpdgroup.com",
+    "about": ""
+  },
+  {
+    "id": 2360,
+    "name": "The Collaborative",
+    "city": "Toledo",
+    "state": "OH",
+    "lat": 41.641611,
+    "lng": -83.547774,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://tc.design",
+    "about": ""
+  },
+  {
+    "id": 2361,
+    "name": "Thomas Porter Architects",
+    "city": "Toledo",
+    "state": "OH",
+    "lat": 41.648968,
+    "lng": -83.53737,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://thomasporterarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2362,
+    "name": "MacPherson Architects",
+    "city": "Toledo",
+    "state": "OH",
+    "lat": 41.664215,
+    "lng": -83.524405,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://macphersonarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2363,
+    "name": "Duket Architects Planners",
+    "city": "Toledo",
+    "state": "OH",
+    "lat": 41.642933,
+    "lng": -83.548685,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2364,
+    "name": "Toledo Design Collective",
+    "city": "Toledo",
+    "state": "OH",
+    "lat": 41.646926,
+    "lng": -83.545078,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://toledodesigncollective.org",
+    "about": ""
+  },
+  {
+    "id": 2365,
+    "name": "Motter & Meadows Architects",
+    "city": "Canton",
+    "state": "OH",
+    "lat": 40.798318,
+    "lng": -81.386557,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://mottermeadows.com",
+    "about": ""
+  },
+  {
+    "id": 2366,
+    "name": "SoL Harris Day Architecture",
+    "city": "Canton",
+    "state": "OH",
+    "lat": 40.800631,
+    "lng": -81.369694,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://solharrisday.com",
+    "about": ""
+  },
+  {
+    "id": 2367,
+    "name": "DPH Architecture",
+    "city": "Canton",
+    "state": "OH",
+    "lat": 40.808981,
+    "lng": -81.377972,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2368,
+    "name": "BSHM Architects",
+    "city": "Youngstown",
+    "state": "OH",
+    "lat": 41.089115,
+    "lng": -80.642052,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bshm-architects.com",
+    "about": ""
+  },
+  {
+    "id": 2369,
+    "name": "Strollo Architects",
+    "city": "Youngstown",
+    "state": "OH",
+    "lat": 41.110912,
+    "lng": -80.653997,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://strolloarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2370,
+    "name": "Architectural Design Inc",
+    "city": "Youngstown",
+    "state": "OH",
+    "lat": 41.106828,
+    "lng": -80.65308,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://architecturaldesigninc.com",
+    "about": ""
+  },
+  {
+    "id": 2371,
+    "name": "RVC Architects",
+    "city": "Athens",
+    "state": "OH",
+    "lat": 39.326261,
+    "lng": -82.098717,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://rvcarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2372,
+    "name": "VSWC Architects",
+    "city": "Athens",
+    "state": "OH",
+    "lat": 39.337093,
+    "lng": -82.096071,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://vswc.com",
+    "about": ""
+  },
+  {
+    "id": 2373,
+    "name": "DS Architecture",
+    "city": "Kent",
+    "state": "OH",
+    "lat": 41.16796,
+    "lng": -81.356029,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dsarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2374,
+    "name": "Desmone Architects",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.442391,
+    "lng": -79.987275,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://desmone.com",
+    "about": ""
+  },
+  {
+    "id": 2375,
+    "name": "NEXT architecture",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.426874,
+    "lng": -79.990742,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://next-architecture.net",
+    "about": ""
+  },
+  {
+    "id": 2376,
+    "name": "mossArchitects",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.434792,
+    "lng": -80.003712,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://mossarc.com",
+    "about": ""
+  },
+  {
+    "id": 2377,
+    "name": "DRAW Collective",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.442788,
+    "lng": -79.989466,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://drawcollective.com",
+    "about": ""
+  },
+  {
+    "id": 2378,
+    "name": "Graves Design Group",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.448151,
+    "lng": -79.983839,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://gravesdesigngroup.com",
+    "about": ""
+  },
+  {
+    "id": 2379,
+    "name": "EvolveEA",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.436235,
+    "lng": -79.995334,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://evolveea.com",
+    "about": ""
+  },
+  {
+    "id": 2380,
+    "name": "Midland Architecture",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.449216,
+    "lng": -79.990087,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://midlandarch.com",
+    "about": ""
+  },
+  {
+    "id": 2381,
+    "name": "Moshier Studio",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.434464,
+    "lng": -79.996544,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://moshierstudio.com",
+    "about": ""
+  },
+  {
+    "id": 2382,
+    "name": "Gaskill Architecture",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.452755,
+    "lng": -79.987789,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://gaskillarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2383,
+    "name": "AE Works",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.446992,
+    "lng": -79.999744,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://aeworks.com",
+    "about": ""
+  },
+  {
+    "id": 2384,
+    "name": "Perkins Eastman Pittsburgh",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.449895,
+    "lng": -79.992047,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://perkinseastman.com",
+    "about": ""
+  },
+  {
+    "id": 2385,
+    "name": "HDG Architects",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.426395,
+    "lng": -80.004907,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://hdgarchitects-pgh.com",
+    "about": ""
+  },
+  {
+    "id": 2386,
+    "name": "LBA Landscape Architecture",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.451565,
+    "lng": -79.983495,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://lba-la.com",
+    "about": ""
+  },
+  {
+    "id": 2387,
+    "name": "Environmental Planning & Design",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.443445,
+    "lng": -79.983972,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://epd-pgh.com",
+    "about": ""
+  },
+  {
+    "id": 2388,
+    "name": "Klavon Design Associates",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.441492,
+    "lng": -80.00322,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://klavondesign.com",
+    "about": ""
+  },
+  {
+    "id": 2389,
+    "name": "ROSSETTI",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.329893,
+    "lng": -83.043359,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://rossetti.com",
+    "about": ""
+  },
+  {
+    "id": 2390,
+    "name": "Kraemer Design Group",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.341374,
+    "lng": -83.038614,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://thekraemeredge.com",
+    "about": ""
+  },
+  {
+    "id": 2391,
+    "name": "INFORM Studio",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.3311,
+    "lng": -83.035744,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://in-formstudio.com",
+    "about": ""
+  },
+  {
+    "id": 2392,
+    "name": "AUDPC Architect",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.32822,
+    "lng": -83.034211,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://audpcarchitect.com",
+    "about": ""
+  },
+  {
+    "id": 2393,
+    "name": "Detroit Collaborative Design Center",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.339301,
+    "lng": -83.058864,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dcdc-udm.org",
+    "about": ""
+  },
+  {
+    "id": 2394,
+    "name": "livingLAB",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.316975,
+    "lng": -83.052962,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://livinglabdetroit.com",
+    "about": ""
+  },
+  {
+    "id": 2395,
+    "name": "Neumann/Smith Architecture",
+    "city": "Southfield",
+    "state": "MI",
+    "lat": 42.468211,
+    "lng": -83.207357,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://neumannsmith.com",
+    "about": ""
+  },
+  {
+    "id": 2396,
+    "name": "HKS Detroit",
+    "city": "Northville",
+    "state": "MI",
+    "lat": 42.434123,
+    "lng": -83.478054,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://hksinc.com",
+    "about": ""
+  },
+  {
+    "id": 2397,
+    "name": "Disbrow Iannuzzi Architects",
+    "city": "Ferndale",
+    "state": "MI",
+    "lat": 42.46592,
+    "lng": -83.147212,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://di.studio",
+    "about": ""
+  },
+  {
+    "id": 2398,
+    "name": "Quinn Evans Ann Arbor",
+    "city": "Ann Arbor",
+    "state": "MI",
+    "lat": 42.283928,
+    "lng": -83.738117,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://quinnevans.com",
+    "about": ""
+  },
+  {
+    "id": 2399,
+    "name": "G.H. Forbes Associates",
+    "city": "Royal Oak",
+    "state": "MI",
+    "lat": 42.479202,
+    "lng": -83.132894,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://ghfaa.com",
+    "about": ""
+  },
+  {
+    "id": 2400,
+    "name": "Krieger Klatt Architects",
+    "city": "Royal Oak",
+    "state": "MI",
+    "lat": 42.483607,
+    "lng": -83.135358,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://kriegerklatt.com",
+    "about": ""
+  },
+  {
+    "id": 2401,
+    "name": "AZD Associates",
+    "city": "Bloomfield Hills",
+    "state": "MI",
+    "lat": 42.570296,
+    "lng": -83.231701,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://azdarch.com",
+    "about": ""
+  },
+  {
+    "id": 2402,
+    "name": "DesRosiers Architects",
+    "city": "Bloomfield Hills",
+    "state": "MI",
+    "lat": 42.584822,
+    "lng": -83.231012,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://desarch.com",
+    "about": ""
+  },
+  {
+    "id": 2403,
+    "name": "Michael J. Dul & Associates",
+    "city": "Birmingham",
+    "state": "MI",
+    "lat": 42.554519,
+    "lng": -83.202889,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://mjdul.com",
+    "about": ""
+  },
+  {
+    "id": 2404,
+    "name": "CBI Design Professionals",
+    "city": "Detroit",
+    "state": "MI",
+    "lat": 42.341526,
+    "lng": -83.059931,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://cbidesign.net",
+    "about": ""
+  },
+  {
+    "id": 2405,
+    "name": "WDG Architecture",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.919103,
+    "lng": -77.035983,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://wdgarch.com",
+    "about": ""
+  },
+  {
+    "id": 2406,
+    "name": "Bonstra Haresign Architects",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.907933,
+    "lng": -77.027715,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bonstra.com",
+    "about": ""
+  },
+  {
+    "id": 2407,
+    "name": "HOK Washington",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.913362,
+    "lng": -77.035991,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://hok.com",
+    "about": ""
+  },
+  {
+    "id": 2408,
+    "name": "CORE Architecture + Design",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.893142,
+    "lng": -77.034339,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://coredc.com",
+    "about": ""
+  },
+  {
+    "id": 2409,
+    "name": "Sorg Design Architecture",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.918227,
+    "lng": -77.046162,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://sorg.design",
+    "about": ""
+  },
+  {
+    "id": 2410,
+    "name": "Travis Price Architects",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.892317,
+    "lng": -77.027573,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://travispricearchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2411,
+    "name": "BBGM Architects",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.913574,
+    "lng": -77.044567,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bbgm.com",
+    "about": ""
+  },
+  {
+    "id": 2412,
+    "name": "Perkins Eastman DC",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.904925,
+    "lng": -77.034805,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://perkinseastman.com",
+    "about": ""
+  },
+  {
+    "id": 2413,
+    "name": "Soto Architecture and Urban Design",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.909332,
+    "lng": -77.043995,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://sotopllc.com",
+    "about": ""
+  },
+  {
+    "id": 2414,
+    "name": "FILLAT+ Architecture",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.916503,
+    "lng": -77.049003,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://pfarc.com",
+    "about": ""
+  },
+  {
+    "id": 2415,
+    "name": "Axis Architecture + Interiors",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.895612,
+    "lng": -77.026038,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://axis-architects.com",
+    "about": ""
+  },
+  {
+    "id": 2416,
+    "name": "Lawlor Architects",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.91316,
+    "lng": -77.040524,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://lawlorarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2417,
+    "name": "GriD Architects",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.896537,
+    "lng": -77.031218,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://gridarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2418,
+    "name": "Bradley Site Design",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.901247,
+    "lng": -77.038048,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bradleysitedesign.com",
+    "about": ""
+  },
+  {
+    "id": 2419,
+    "name": "Joseph Richardson Landscape Architecture",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.917416,
+    "lng": -77.04081,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://jrichardsonla.com",
+    "about": ""
+  },
+  {
+    "id": 2420,
+    "name": "Phyto Studio",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.898349,
+    "lng": -77.046289,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://phytostudio.com",
+    "about": ""
+  },
+  {
+    "id": 2421,
+    "name": "Craig Richmond Landscape Architects",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.917784,
+    "lng": -77.042586,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://landarch1.com",
+    "about": ""
+  },
+  {
+    "id": 2422,
+    "name": "Colleen Healey Architecture",
+    "city": "Washington",
+    "state": "DC",
+    "lat": 38.91193,
+    "lng": -77.033587,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://healeyarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2423,
+    "name": "GTM Architects",
+    "city": "Bethesda",
+    "state": "MD",
+    "lat": 38.999485,
+    "lng": -77.094464,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://gtmarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2424,
+    "name": "McInturff Architects",
+    "city": "Bethesda",
+    "state": "MD",
+    "lat": 38.980589,
+    "lng": -77.079943,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2425,
+    "name": "SK+I Architecture",
+    "city": "Silver Spring",
+    "state": "MD",
+    "lat": 39.001408,
+    "lng": -77.040018,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://skiarch.com",
+    "about": ""
+  },
+  {
+    "id": 2426,
+    "name": "LSG Landscape Architecture",
+    "city": "Tysons",
+    "state": "VA",
+    "lat": 38.904187,
+    "lng": -77.243464,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://lsginc.com",
+    "about": ""
+  },
+  {
+    "id": 2427,
+    "name": "Fyffe Landscape Architecture",
+    "city": "Arlington",
+    "state": "VA",
+    "lat": 38.894756,
+    "lng": -77.091156,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://fyffela.com",
+    "about": ""
+  },
+  {
+    "id": 2428,
+    "name": "DW Ricks Architects",
+    "city": "Arlington",
+    "state": "VA",
+    "lat": 38.893278,
+    "lng": -77.088994,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2429,
+    "name": "TKZ Architecture",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.162856,
+    "lng": -86.77389,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://tkzarch.com",
+    "about": ""
+  },
+  {
+    "id": 2430,
+    "name": "Clements Wimsatt Architects",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.175372,
+    "lng": -86.78581,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://cwarch.design",
+    "about": ""
+  },
+  {
+    "id": 2431,
+    "name": "The Addison Group",
+    "city": "Nashville",
+    "state": "TN",
+    "lat": 36.170959,
+    "lng": -86.781944,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://addison-group.com",
+    "about": ""
+  },
+  {
+    "id": 2432,
+    "name": "BarberMcMurry Architects",
+    "city": "Knoxville",
+    "state": "TN",
+    "lat": 35.972062,
+    "lng": -83.915576,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bma1915.com",
+    "about": ""
+  },
+  {
+    "id": 2433,
+    "name": "Studio Four Design",
+    "city": "Knoxville",
+    "state": "TN",
+    "lat": 35.950086,
+    "lng": -83.922441,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://studiofourdesign.com",
+    "about": ""
+  },
+  {
+    "id": 2434,
+    "name": "Lewis Group Architects",
+    "city": "Knoxville",
+    "state": "TN",
+    "lat": 35.967296,
+    "lng": -83.908732,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://lewisgroup.net",
+    "about": ""
+  },
+  {
+    "id": 2435,
+    "name": "ROSS/FOWLER",
+    "city": "Knoxville",
+    "state": "TN",
+    "lat": 35.95304,
+    "lng": -83.911816,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://rossfowler.com",
+    "about": ""
+  },
+  {
+    "id": 2436,
+    "name": "Surface Architecture",
+    "city": "Chattanooga",
+    "state": "TN",
+    "lat": 35.056706,
+    "lng": -85.31721,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://surfacearch.com",
+    "about": ""
+  },
+  {
+    "id": 2437,
+    "name": "River Street Architecture",
+    "city": "Chattanooga",
+    "state": "TN",
+    "lat": 35.049157,
+    "lng": -85.308435,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://riverstreetarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2438,
+    "name": "franklin architects",
+    "city": "Chattanooga",
+    "state": "TN",
+    "lat": 35.052781,
+    "lng": -85.299877,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://franklinarch.com",
+    "about": ""
+  },
+  {
+    "id": 2439,
+    "name": "Billingsley Architecture",
+    "city": "Chattanooga",
+    "state": "TN",
+    "lat": 35.046248,
+    "lng": -85.298829,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://billingsleyarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2440,
+    "name": "Crump Firm Architects",
+    "city": "Memphis",
+    "state": "TN",
+    "lat": 35.145602,
+    "lng": -90.055555,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://crumpfirm.com",
+    "about": ""
+  },
+  {
+    "id": 2441,
+    "name": "Blair Parker Design",
+    "city": "Memphis",
+    "state": "TN",
+    "lat": 35.163248,
+    "lng": -90.051785,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://blairparkerdesign.com",
+    "about": ""
+  },
+  {
+    "id": 2442,
+    "name": "DT Design Studio",
+    "city": "Memphis",
+    "state": "TN",
+    "lat": 35.156837,
+    "lng": -90.062054,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dt-designstudio.com",
+    "about": ""
+  },
+  {
+    "id": 2443,
+    "name": "Collins Cooper Carusi Architects",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.742476,
+    "lng": -84.387786,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://collinscoopecarusi.com",
+    "about": ""
+  },
+  {
+    "id": 2444,
+    "name": "Blur Workshop",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.757615,
+    "lng": -84.38053,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://blurworkshop.com",
+    "about": ""
+  },
+  {
+    "id": 2445,
+    "name": "Plexus Research & Design",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.761735,
+    "lng": -84.383436,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://plexusrd.com",
+    "about": ""
+  },
+  {
+    "id": 2446,
+    "name": "PRAXIS3",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.744056,
+    "lng": -84.395248,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://praxis3.com",
+    "about": ""
+  },
+  {
+    "id": 2447,
+    "name": "Kronberg Urbanists + Architects",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.757872,
+    "lng": -84.400111,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://kronbergua.com",
+    "about": ""
+  },
+  {
+    "id": 2448,
+    "name": "HGOR",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.755273,
+    "lng": -84.384718,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://hgor.com",
+    "about": ""
+  },
+  {
+    "id": 2449,
+    "name": "TSW Planners Architects Landscape Architects",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.742761,
+    "lng": -84.388652,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://tsw-design.com",
+    "about": ""
+  },
+  {
+    "id": 2450,
+    "name": "APD Urban Planning",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.74025,
+    "lng": -84.393418,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://apdurban.com",
+    "about": ""
+  },
+  {
+    "id": 2451,
+    "name": "Dynamik Design",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.737682,
+    "lng": -84.377001,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://dynamikdesign.com",
+    "about": ""
+  },
+  {
+    "id": 2452,
+    "name": "Breaux & Associates Architects",
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.761336,
+    "lng": -84.396913,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bxarch.com",
+    "about": ""
+  },
+  {
+    "id": 2453,
+    "name": "SHEDDarchitecture",
+    "city": "Savannah",
+    "state": "GA",
+    "lat": 32.081003,
+    "lng": -81.09516,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://sheddarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2454,
+    "name": "Lynch Associates Architects",
+    "city": "Savannah",
+    "state": "GA",
+    "lat": 32.071327,
+    "lng": -81.096431,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://lyncharch.com",
+    "about": ""
+  },
+  {
+    "id": 2455,
+    "name": "Rose Architects",
+    "city": "Savannah",
+    "state": "GA",
+    "lat": 32.088794,
+    "lng": -81.088436,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://rosearch.co",
+    "about": ""
+  },
+  {
+    "id": 2456,
+    "name": "Cowart Group Architects",
+    "city": "Savannah",
+    "state": "GA",
+    "lat": 32.087325,
+    "lng": -81.095662,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://cowartgrouparchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2457,
+    "name": "2KM Architects",
+    "city": "Augusta",
+    "state": "GA",
+    "lat": 33.46778,
+    "lng": -81.966469,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://2kmarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2458,
+    "name": "Studio 3 Design Group",
+    "city": "Augusta",
+    "state": "GA",
+    "lat": 33.45953,
+    "lng": -81.975793,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://s3dg.com",
+    "about": ""
+  },
+  {
+    "id": 2459,
+    "name": "Surround Architecture",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.018862,
+    "lng": -105.2807,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://surroundarchitecture.com",
+    "about": ""
+  },
+  {
+    "id": 2460,
+    "name": "Renee del Gaudio Architecture",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.019938,
+    "lng": -105.276322,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://rdg-architecture.com",
+    "about": ""
+  },
+  {
+    "id": 2461,
+    "name": "Tumu Studio",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.019354,
+    "lng": -105.256239,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://tumustudio.com",
+    "about": ""
+  },
+  {
+    "id": 2462,
+    "name": "HMH Architecture + Interiors",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.015271,
+    "lng": -105.27432,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://hmhai.com",
+    "about": ""
+  },
+  {
+    "id": 2463,
+    "name": "bldg.collective",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.009408,
+    "lng": -105.267324,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bldgcollective.com",
+    "about": ""
+  },
+  {
+    "id": 2464,
+    "name": "Gettliffe Architecture",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.021239,
+    "lng": -105.259277,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://gettliffe.com",
+    "about": ""
+  },
+  {
+    "id": 2465,
+    "name": "Caddis Collaborative",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.018396,
+    "lng": -105.275788,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://caddispc.com",
+    "about": ""
+  },
+  {
+    "id": 2466,
+    "name": "Marpa Landscape",
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.023863,
+    "lng": -105.260676,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://marpa.com",
+    "about": ""
+  },
+  {
+    "id": 2467,
+    "name": "Ripley Design",
+    "city": "Fort Collins",
+    "state": "CO",
+    "lat": 40.574134,
+    "lng": -105.091524,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://ripleydesigninc.com",
+    "about": ""
+  },
+  {
+    "id": 2468,
+    "name": "Russell Mills Studios",
+    "city": "Fort Collins",
+    "state": "CO",
+    "lat": 40.578877,
+    "lng": -105.09905,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://russellmillsstudios.com",
+    "about": ""
+  },
+  {
+    "id": 2469,
+    "name": "BHA Design",
+    "city": "Fort Collins",
+    "state": "CO",
+    "lat": 40.579123,
+    "lng": -105.072524,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bhadesign.com",
+    "about": ""
+  },
+  {
+    "id": 2470,
+    "name": "VFLA Architecture + Interiors",
+    "city": "Fort Collins",
+    "state": "CO",
+    "lat": 40.593149,
+    "lng": -105.078449,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://vfla.com",
+    "about": ""
+  },
+  {
+    "id": 2471,
+    "name": "Aller Architecture",
+    "city": "Fort Collins",
+    "state": "CO",
+    "lat": 40.59103,
+    "lng": -105.09224,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://aller-architects.com",
+    "about": ""
+  },
+  {
+    "id": 2472,
+    "name": "Collab Architecture",
+    "city": "Fort Collins",
+    "state": "CO",
+    "lat": 40.584071,
+    "lng": -105.084009,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://collabarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2473,
+    "name": "LAI Design Group",
+    "city": "Denver",
+    "state": "CO",
+    "lat": 39.751941,
+    "lng": -104.994888,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://laidesigngroup.com",
+    "about": ""
+  },
+  {
+    "id": 2474,
+    "name": "RTA Architects",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "lat": 38.84649,
+    "lng": -104.808882,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://rtaarchitects.com",
+    "about": ""
+  },
+  {
+    "id": 2475,
+    "name": "LGA Studios",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "lat": 38.820073,
+    "lng": -104.813172,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://lgastudios.com",
+    "about": ""
+  },
+  {
+    "id": 2476,
+    "name": "Progress Studio",
+    "city": "Indianapolis",
+    "state": "IN",
+    "lat": 39.7539,
+    "lng": -86.151947,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://theprogressstudio.com",
+    "about": ""
+  },
+  {
+    "id": 2477,
+    "name": "Curran Architecture",
+    "city": "Indianapolis",
+    "state": "IN",
+    "lat": 39.777357,
+    "lng": -86.15758,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://curran-architecture.com",
+    "about": ""
+  },
+  {
+    "id": 2478,
+    "name": "Anderson + Bohlander",
+    "city": "Indianapolis",
+    "state": "IN",
+    "lat": 39.775741,
+    "lng": -86.159066,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://andersonbohlander.com",
+    "about": ""
+  },
+  {
+    "id": 2479,
+    "name": "Context Design",
+    "city": "Indianapolis",
+    "state": "IN",
+    "lat": 39.762285,
+    "lng": -86.167274,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://context-design.com",
+    "about": ""
+  },
+  {
+    "id": 2480,
+    "name": "Rundell Ernstberger Associates",
+    "city": "Indianapolis",
+    "state": "IN",
+    "lat": 39.758136,
+    "lng": -86.154642,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://reasite.com",
+    "about": ""
+  },
+  {
+    "id": 2481,
+    "name": "ONE 10 STUDIO Architects",
+    "city": "Indianapolis",
+    "state": "IN",
+    "lat": 39.754531,
+    "lng": -86.159358,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://one10studio.com",
+    "about": ""
+  },
+  {
+    "id": 2482,
+    "name": "RATIO Design",
+    "city": "Indianapolis",
+    "state": "IN",
+    "lat": 39.758686,
+    "lng": -86.163747,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "",
+    "about": ""
+  },
+  {
+    "id": 2483,
+    "name": "Kahler Slater",
+    "city": "Milwaukee",
+    "state": "WI",
+    "lat": 43.05025,
+    "lng": -87.893453,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://kahlerslater.com",
+    "about": ""
+  },
+  {
+    "id": 2484,
+    "name": "RINKA",
+    "city": "Milwaukee",
+    "state": "WI",
+    "lat": 43.053264,
+    "lng": -87.918363,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://rinka.com",
+    "about": ""
+  },
+  {
+    "id": 2485,
+    "name": "Galbraith Carnahan Architects",
+    "city": "Milwaukee",
+    "state": "WI",
+    "lat": 43.03202,
+    "lng": -87.897533,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://galbraithcarnahan.com",
+    "about": ""
+  },
+  {
+    "id": 2486,
+    "name": "Strang Inc",
+    "city": "Madison",
+    "state": "WI",
+    "lat": 43.065573,
+    "lng": -89.398215,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://strang-inc.com",
+    "about": ""
+  },
+  {
+    "id": 2487,
+    "name": "MoTis Architecture",
+    "city": "Madison",
+    "state": "WI",
+    "lat": 43.061101,
+    "lng": -89.40148,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://motisarch.com",
+    "about": ""
+  },
+  {
+    "id": 2488,
+    "name": "Aro Eberle Architects",
+    "city": "Madison",
+    "state": "WI",
+    "lat": 43.072242,
+    "lng": -89.386652,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://aroeberle.com",
+    "about": ""
+  },
+  {
+    "id": 2489,
+    "name": "JLA Architects",
+    "city": "Madison",
+    "state": "WI",
+    "lat": 43.069372,
+    "lng": -89.410111,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://jla-ap.com",
+    "about": ""
+  },
+  {
+    "id": 2490,
+    "name": "Joseph & Joseph Architects",
+    "city": "Louisville",
+    "state": "KY",
+    "lat": 38.251258,
+    "lng": -85.754841,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://josephandjoseph.net",
+    "about": ""
+  },
+  {
+    "id": 2491,
+    "name": "Studio A Architect",
+    "city": "Louisville",
+    "state": "KY",
+    "lat": 38.265203,
+    "lng": -85.748276,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://studioaarch.com",
+    "about": ""
+  },
+  {
+    "id": 2492,
+    "name": "bDot Architecture",
+    "city": "Birmingham",
+    "state": "AL",
+    "lat": 33.510595,
+    "lng": -86.812669,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bdota.com",
+    "about": ""
+  },
+  {
+    "id": 2493,
+    "name": "Studio C Architecture",
+    "city": "Birmingham",
+    "state": "AL",
+    "lat": 33.511199,
+    "lng": -86.807052,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://studiocarch.com",
+    "about": ""
+  },
+  {
+    "id": 2494,
+    "name": "Lorberbaum McNair",
+    "city": "Birmingham",
+    "state": "AL",
+    "lat": 33.511671,
+    "lng": -86.8129,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://lorberbaummcnair.com",
+    "about": ""
+  },
+  {
+    "id": 2495,
+    "name": "Neighboring Concepts",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.219833,
+    "lng": -80.843317,
+    "size": "Unknown",
+    "discipline": "urban",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://neighboringconcepts.com",
+    "about": ""
+  },
+  {
+    "id": 2496,
+    "name": "Liquid Design & Architecture",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.233876,
+    "lng": -80.834296,
+    "size": "Unknown",
+    "discipline": "multi",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://liquiddesign.net",
+    "about": ""
+  },
+  {
+    "id": 2497,
+    "name": "Bartlett Hartley Mulkey",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.240417,
+    "lng": -80.832494,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://bhmarc.com",
+    "about": ""
+  },
+  {
+    "id": 2498,
+    "name": "Urban Design Partners",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.228488,
+    "lng": -80.829043,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://urbandesignpartners.com",
+    "about": ""
+  },
+  {
+    "id": 2499,
+    "name": "Design Resource Group",
+    "city": "Charlotte",
+    "state": "NC",
+    "lat": 35.225024,
+    "lng": -80.857369,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://designresourcegroup.com",
+    "about": ""
+  },
+  {
+    "id": 2500,
+    "name": "Raleigh Architecture Co",
+    "city": "Raleigh",
+    "state": "NC",
+    "lat": 35.784521,
+    "lng": -78.649785,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://raleigh-architecture.com",
+    "about": ""
+  },
+  {
+    "id": 2501,
+    "name": "BuildSense",
+    "city": "Durham",
+    "state": "NC",
+    "lat": 35.984634,
+    "lng": -78.896627,
+    "size": "Unknown",
+    "discipline": "architecture",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://buildsense.com",
+    "about": ""
+  },
+  {
+    "id": 2502,
+    "name": "McAdams",
+    "city": "Raleigh",
+    "state": "NC",
+    "lat": 35.784637,
+    "lng": -78.6277,
+    "size": "Unknown",
+    "discipline": "landscape",
+    "specialties": [],
+    "jobs": [],
+    "website": "https://mcadamsco.com",
+    "about": ""
+  }
+]
