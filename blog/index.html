@@ -80,9 +80,15 @@
       position: relative;
     }
 
+    .tag-filter[data-filter="all"]     { --tag-color: #111; }
+    .tag-filter[data-filter="career"]  { --tag-color: #2962ff; }
+    .tag-filter[data-filter="studio"]  { --tag-color: #2e7d32; }
+    .tag-filter[data-filter="advice"]  { --tag-color: #e65100; }
+    .tag-filter[data-filter="industry"]{ --tag-color: #6a1b9a; }
+
     .tag-filter:hover,
     .tag-filter.active {
-      color: #111;
+      color: var(--tag-color, #111);
     }
 
     .tag-filter.active::after {
@@ -92,7 +98,7 @@
       left: 20px;
       right: 20px;
       height: 2px;
-      background: #111;
+      background: var(--tag-color, #111);
     }
 
     /* ── Modular Grid ── */

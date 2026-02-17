@@ -179,33 +179,19 @@ body {
   transform: translateX(-4px);
 }
 
-/* ── Nav Color Coding ── */
-.side-nav-links li:nth-child(1) a { --nav-color: #888; }     /* About */
-.side-nav-links li:nth-child(2) a { --nav-color: #2962ff; }  /* Firm Search */
-.side-nav-links li:nth-child(3) a { --nav-color: #e65100; }  /* Cover Letter */
-.side-nav-links li:nth-child(4) a { --nav-color: #2e7d32; }  /* Resume */
-.side-nav-links li:nth-child(5) a { --nav-color: #6a1b9a; }  /* Portfolio */
-.side-nav-links li:nth-child(6) a { --nav-color: #00838f; }  /* Resources */
-.side-nav-links li:nth-child(7) a { --nav-color: #c62828; }  /* Blog */
-
 .side-nav-links a:hover {
   padding-left: 20px;
-  color: var(--nav-color);
 }
 
 .side-nav-links a:hover::before {
   opacity: 1;
   left: 0;
   transform: translateX(0);
-  color: var(--nav-color);
 }
 
 .side-nav-links a.active {
   font-weight: 700;
   text-decoration: none;
-  color: var(--nav-color);
-  border-left: 3px solid var(--nav-color);
-  padding-left: 12px;
 }
 
 
@@ -271,27 +257,6 @@ body {
   font-size: 15px;
   color: #111;
   text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-/* Mobile nav color coding */
-.mobile-menu a:nth-child(1) { --nav-color: #888; }     /* About */
-.mobile-menu a:nth-child(2) { --nav-color: #2962ff; }  /* Firm Search */
-.mobile-menu a:nth-child(3) { --nav-color: #e65100; }  /* Cover Letter */
-.mobile-menu a:nth-child(4) { --nav-color: #2e7d32; }  /* Resume */
-.mobile-menu a:nth-child(5) { --nav-color: #6a1b9a; }  /* Portfolio */
-.mobile-menu a:nth-child(6) { --nav-color: #00838f; }  /* Resources */
-.mobile-menu a:nth-child(7) { --nav-color: #c62828; }  /* Blog */
-
-.mobile-menu a:hover {
-  color: var(--nav-color);
-}
-
-.mobile-menu a.active {
-  font-weight: 700;
-  color: var(--nav-color);
-  border-left: 3px solid var(--nav-color);
-  padding-left: 10px;
 }
 
 /* ===========================
