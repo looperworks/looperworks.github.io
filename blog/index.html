@@ -31,7 +31,7 @@
     .page {
       margin: 0 0 0 260px;
       padding: 0 48px 0 40px;
-      max-width: 960px;
+      max-width: 1060px;
     }
 
     /* ── Header ── */
@@ -95,42 +95,71 @@
       background: #111;
     }
 
-    /* ── Post list ── */
+    /* ── Modular Grid ── */
     .post-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 32px 0;
     }
 
     .post-card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
       color: inherit;
-      padding: 28px 0 28px 20px;
-      border-left: 3px solid transparent;
+      border: 1px solid #eee;
       transition: all 0.2s ease;
       position: relative;
-      border-bottom: 1px solid #f0f0f0;
+      overflow: hidden;
     }
-
-    .post-card[data-tag="career"] { border-left-color: #2962ff; }
-    .post-card[data-tag="studio"] { border-left-color: #2e7d32; }
-    .post-card[data-tag="advice"] { border-left-color: #e65100; }
-    .post-card[data-tag="industry"] { border-left-color: #6a1b9a; }
 
     .post-card:hover {
-      background: #fafafa;
-      padding-left: 24px;
+      border-color: #ddd;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
     }
 
-    .post-card:last-child {
-      border-bottom: none;
+    /* Accent bar at top */
+    .card-accent {
+      height: 3px;
+      width: 100%;
     }
+    .post-card[data-tag="career"] .card-accent { background: #2962ff; }
+    .post-card[data-tag="studio"] .card-accent { background: #2e7d32; }
+    .post-card[data-tag="advice"] .card-accent { background: #e65100; }
+    .post-card[data-tag="industry"] .card-accent { background: #6a1b9a; }
 
-    .card-top {
+    .card-inner {
+      padding: 24px;
       display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* Featured card — spans 2 cols + 2 rows */
+    .post-card.featured {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .post-card.featured .card-inner {
+      padding: 36px;
+      justify-content: flex-end;
+    }
+    .post-card.featured .card-title {
+      font-size: 24px;
+      letter-spacing: -0.3px;
+    }
+    .post-card.featured .card-excerpt {
+      max-width: 480px;
+    }
+
+    /* Wide card — spans 2 cols */
+    .post-card.wide {
+      grid-column: span 2;
+    }
+    .post-card.wide .card-title {
+      font-size: 18px;
     }
 
     .card-tag {
@@ -138,6 +167,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
+      margin-bottom: 10px;
     }
 
     .card-tag.career { color: #2962ff; }
@@ -145,31 +175,26 @@
     .card-tag.advice { color: #e65100; }
     .card-tag.industry { color: #6a1b9a; }
 
-    .card-date {
-      font-size: 11px;
-      color: #bbb;
-      font-weight: 500;
-    }
-
     .card-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: #111;
       line-height: 1.35;
-      letter-spacing: -0.3px;
       margin-bottom: 8px;
-      transition: color 0.2s;
-    }
-
-    .post-card:hover .card-title {
-      color: inherit;
     }
 
     .card-excerpt {
       font-size: 13px;
-      color: #888;
-      line-height: 1.65;
-      max-width: 600px;
+      color: #666;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .card-date {
+      font-size: 10px;
+      color: #bbb;
+      font-weight: 500;
+      margin-top: 16px;
     }
 
     /* ── Responsive ── */
@@ -198,14 +223,45 @@
         white-space: nowrap;
       }
 
-      .post-card {
-        padding: 24px 0 24px 16px;
+      .post-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .post-card.featured {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .post-card.featured .card-title {
+        font-size: 20px;
+      }
+      .post-card.wide {
+        grid-column: span 2;
       }
     }
 
     @media (max-width: 480px) {
       .page { padding: 0 16px; }
       .blog-header p { font-size: 16px; }
+
+      .post-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .post-card.featured,
+      .post-card.wide {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .post-card.featured .card-title {
+        font-size: 18px;
+      }
+      .post-card.featured .card-inner {
+        padding: 24px;
+      }
+
       .card-title { font-size: 15px; }
     }
   </style>
@@ -221,8 +277,8 @@
   <li><a href="../cover-letter-guide/">Cover Letter</a></li>
   <li><a href="../resume-guide/">Resume</a></li>
   <li><a href="../portfolio-guide/">Portfolio</a></li>
-  <li><a href="../blog/" class="active">Blog</a></li>
   <li><a href="../resources/">Resources</a></li>
+  <li><a href="../blog/" class="active">Blog</a></li>
 </ul>
     </nav>
   </div>
@@ -242,8 +298,8 @@
   <a href="../cover-letter-guide/">Cover Letter</a>
   <a href="../resume-guide/">Resume</a>
   <a href="../portfolio-guide/">Portfolio</a>
-  <a href="../blog/" class="active">Blog</a>
   <a href="../resources/">Resources</a>
+  <a href="../blog/" class="active">Blog</a>
 </div>
 
   <!-- Animated Logo -->
@@ -272,94 +328,107 @@
     <!-- Post Grid -->
     <div class="post-grid">
 
-      <a href="posts/what-firms-actually-look-for/" class="post-card" data-tag="career">
-        <div class="card-top">
+      <!-- Featured: newest post -->
+      <a href="posts/why-architects-cant-tell-their-story/" class="post-card featured" data-tag="career">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag career">Career</span>
-          <span class="card-date">Feb 16, 2026</span>
+          <h3 class="card-title">Why Architects Can't Tell Their Own Story</h3>
+          <p class="card-excerpt">You can explain a building's concept in a crit. So why can't you explain what you do at a dinner party? Storytelling is the one skill studio never taught you.</p>
+          <span class="card-date">February 17, 2026</span>
         </div>
-        <h3 class="card-title">The Strategic Job Search: Designing Your Career Path</h3>
-        <p class="card-excerpt">A successful job search isn't just about finding an open seat. It's about alignment. Approach your career with the same intentionality you bring to a studio project.</p>
+      </a>
+
+      <a href="posts/what-firms-actually-look-for/" class="post-card" data-tag="career">
+        <div class="card-accent"></div>
+        <div class="card-inner">
+          <span class="card-tag career">Career</span>
+          <h3 class="card-title">The Strategic Job Search</h3>
+          <p class="card-excerpt">The job search is a design problem. Treat it like one.</p>
+          <span class="card-date">February 16, 2026</span>
+        </div>
       </a>
 
       <a href="posts/small-firm-vs-big-firm/" class="post-card" data-tag="studio">
-        <div class="card-top">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag studio">Studio Culture</span>
-          <span class="card-date">Feb 9, 2026</span>
+          <h3 class="card-title">Small Firm vs. Big Firm</h3>
+          <p class="card-excerpt">Different planets. Same profession.</p>
+          <span class="card-date">February 9, 2026</span>
         </div>
-        <h3 class="card-title">Small Firm vs. Big Firm: An Honest Comparison</h3>
-        <p class="card-excerpt">Everyone has an opinion. Most of it is wrong — or at least incomplete. A 12-person studio and a 500-person global office aren't just different in headcount. They're different planets.</p>
       </a>
 
-      <a href="posts/cold-email-that-works/" class="post-card" data-tag="advice">
-        <div class="card-top">
+      <!-- Wide -->
+      <a href="posts/cold-email-that-works/" class="post-card wide" data-tag="advice">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag advice">Advice</span>
-          <span class="card-date">Feb 2, 2026</span>
+          <h3 class="card-title">How to Write a Cold Email That Actually Gets Read</h3>
+          <p class="card-excerpt">Most cold emails go straight to trash. Not because the sender isn't talented, but because the email doesn't give the reader a reason to care.</p>
+          <span class="card-date">February 2, 2026</span>
         </div>
-        <h3 class="card-title">How to Write a Cold Email That Actually Gets Read</h3>
-        <p class="card-excerpt">Most cold emails go straight to trash. Not because the sender isn't talented, but because the email doesn't give the reader a reason to care.</p>
       </a>
 
       <a href="posts/what-they-dont-teach-you/" class="post-card" data-tag="career">
-        <div class="card-top">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag career">Career</span>
-          <span class="card-date">Jan 26, 2026</span>
+          <h3 class="card-title">What They Don't Teach You in Studio</h3>
+          <p class="card-excerpt">School teaches thinking. Practice teaches building.</p>
+          <span class="card-date">January 26, 2026</span>
         </div>
-        <h3 class="card-title">What They Don't Teach You in Studio</h3>
-        <p class="card-excerpt">Architecture school is great at teaching you to think spatially. It's less great at preparing you for the 90% of practice that isn't designing things.</p>
       </a>
 
       <a href="posts/the-licensure-path/" class="post-card" data-tag="career">
-        <div class="card-top">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag career">Career</span>
-          <span class="card-date">Jan 19, 2026</span>
+          <h3 class="card-title">The Licensure Path</h3>
+          <p class="card-excerpt">ARE, AXP, and whether it actually matters.</p>
+          <span class="card-date">January 19, 2026</span>
         </div>
-        <h3 class="card-title">The Licensure Path: ARE, AXP, and Whether It Actually Matters</h3>
-        <p class="card-excerpt">Everyone tells you to get licensed. Not everyone tells you what that involves, how long it takes, or whether it's right for you.</p>
       </a>
 
       <a href="posts/portfolio-mistakes/" class="post-card" data-tag="advice">
-        <div class="card-top">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag advice">Advice</span>
-          <span class="card-date">Jan 12, 2026</span>
+          <h3 class="card-title">Portfolio Mistakes Nobody Tells You About</h3>
+          <p class="card-excerpt">Too long, too unfocused, trying too hard.</p>
+          <span class="card-date">January 12, 2026</span>
         </div>
-        <h3 class="card-title">The Portfolio Mistakes Nobody Tells You About</h3>
-        <p class="card-excerpt">Your portfolio is probably too long, too unfocused, and trying too hard. Here's how to fix it before it costs you the interview.</p>
       </a>
 
       <a href="posts/surviving-your-first-year/" class="post-card" data-tag="studio">
-        <div class="card-top">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag studio">Studio Culture</span>
-          <span class="card-date">Jan 5, 2026</span>
+          <h3 class="card-title">Surviving Your First Year</h3>
+          <p class="card-excerpt">Redlines aren't criticism. They're conversation.</p>
+          <span class="card-date">January 5, 2026</span>
         </div>
-        <h3 class="card-title">Surviving Your First Year in Practice</h3>
-        <p class="card-excerpt">Studio prepared you to design buildings. It did not prepare you for reply-all emails, redline markups, or the existential crisis of your first spec sheet.</p>
       </a>
 
-      <a href="posts/side-projects-and-visibility/" class="post-card" data-tag="career">
-        <div class="card-top">
+      <!-- Wide -->
+      <a href="posts/side-projects-and-visibility/" class="post-card wide" data-tag="career">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag career">Career</span>
-          <span class="card-date">Dec 29, 2025</span>
+          <h3 class="card-title">Side Projects and Building Your Professional Identity</h3>
+          <p class="card-excerpt">Nobody got discovered by sitting quietly at their desk doing redlines. Your side projects are how the profession learns your name.</p>
+          <span class="card-date">December 29, 2025</span>
         </div>
-        <h3 class="card-title">Side Projects and Building Your Professional Identity</h3>
-        <p class="card-excerpt">Nobody got discovered by sitting quietly at their desk doing redlines. Competitions, writing, social media — your side projects are how the profession learns your name.</p>
-      </a>
-
-      <a href="posts/grad-school-worth-it/" class="post-card" data-tag="industry">
-        <div class="card-top">
-          <span class="card-tag industry">Industry</span>
-          <span class="card-date">Dec 22, 2025</span>
-        </div>
-        <h3 class="card-title">Grad School: Is the M.Arch Worth It?</h3>
-        <p class="card-excerpt">Three more years of studio. Six figures of debt. A degree that may or may not change your career trajectory. Let's talk about when it actually makes sense — and when it doesn't.</p>
       </a>
 
       <a href="posts/architecture-education-beyond-architecture/" class="post-card" data-tag="industry">
-        <div class="card-top">
+        <div class="card-accent"></div>
+        <div class="card-inner">
           <span class="card-tag industry">Industry</span>
-          <span class="card-date">Dec 15, 2025</span>
+          <h3 class="card-title">Architecture Education Beyond Architecture</h3>
+          <p class="card-excerpt">Your degree taught you to think. Where you apply it is your choice.</p>
+          <span class="card-date">December 15, 2025</span>
         </div>
-        <h3 class="card-title">Architecture Education Doesn't Mean Becoming an Architect</h3>
-        <p class="card-excerpt">You learned systems thinking, visual communication, and how to defend ideas to hostile critics — all before you turned 25. That skillset doesn't belong to architecture firms alone.</p>
       </a>
 
     </div>
@@ -383,7 +452,7 @@
 
   <script src="../shared/scripts.js"></script>
   <script>
-    // Tag filtering
+    // Tag filtering with grid-aware show/hide
     document.querySelectorAll('.tag-filter').forEach(btn => {
       btn.addEventListener('click', () => {
         const filter = btn.dataset.filter;
@@ -391,10 +460,27 @@
         document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        document.querySelectorAll('.post-card').forEach(card => {
-          card.style.display = (filter === 'all' || card.dataset.tag === filter) ? '' : 'none';
+        const cards = document.querySelectorAll('.post-card');
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.tag === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
         });
 
+        // When filtering, remove featured/wide classes so cards stack evenly
+        if (filter !== 'all') {
+          cards.forEach(card => {
+            card.classList.remove('featured', 'wide');
+          });
+        } else {
+          // Restore featured/wide on "All"
+          const allCards = document.querySelectorAll('.post-card');
+          if (allCards[0]) allCards[0].classList.add('featured');
+          if (allCards[3]) allCards[3].classList.add('wide');
+          if (allCards[8]) allCards[8].classList.add('wide');
+        }
       });
     });
   </script>
