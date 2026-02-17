@@ -31,7 +31,7 @@
     .page {
       margin: 0 0 0 260px;
       padding: 0 48px 0 40px;
-      max-width: 1060px;
+      max-width: 1200px;
     }
 
     /* ── Header ── */
@@ -58,70 +58,44 @@
       letter-spacing: -0.2px;
     }
 
-    /* ── Tag filter bar ── */
-    .tag-bar {
-      display: flex;
-      gap: 0;
-      padding: 0;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .tag-filter {
-      padding: 14px 20px;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #999;
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      position: relative;
-    }
-
-    .tag-filter[data-filter="all"]     { --tag-color: #111; }
-    .tag-filter[data-filter="career"]  { --tag-color: #2962ff; }
-    .tag-filter[data-filter="studio"]  { --tag-color: #2e7d32; }
-    .tag-filter[data-filter="advice"]  { --tag-color: #e65100; }
-    .tag-filter[data-filter="industry"]{ --tag-color: #6a1b9a; }
-
-    .tag-filter[data-filter="career"],
-    .tag-filter[data-filter="studio"],
-    .tag-filter[data-filter="advice"],
-    .tag-filter[data-filter="industry"] {
-      color: var(--tag-color);
-      opacity: 0.45;
-    }
-
-    .tag-filter:hover {
-      opacity: 1;
-      color: var(--tag-color, #111);
-    }
-
-    .tag-filter.active {
-      opacity: 1;
-      color: var(--tag-color, #111);
-    }
-
-    .tag-filter.active::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 20px;
-      right: 20px;
-      height: 2px;
-      background: var(--tag-color, #111);
-    }
-
-    /* ── Modular Grid ── */
-    .post-grid {
+    /* ── Kanban Board ── */
+    .kanban-board {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       padding: 32px 0;
+      align-items: start;
     }
 
+    .kanban-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .column-header {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 12px 0 10px;
+      border-top: 3px solid var(--col-color);
+      color: var(--col-color);
+    }
+
+    .column-header .col-count {
+      font-weight: 500;
+      opacity: 0.5;
+      margin-left: 6px;
+    }
+
+    .kanban-column[data-col="career"]  { --col-color: #2962ff; }
+    .kanban-column[data-col="studio"]  { --col-color: #2e7d32; }
+    .kanban-column[data-col="advice"]  { --col-color: #e65100; }
+    .kanban-column[data-col="industry"]{ --col-color: #6a1b9a; }
+
+    /* ── Cards ── */
     .post-card {
       display: flex;
       flex-direction: column;
@@ -129,83 +103,34 @@
       color: inherit;
       border: 1px solid #eee;
       transition: all 0.2s ease;
-      position: relative;
       overflow: hidden;
     }
 
     .post-card:hover {
-      border-color: #ddd;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-color: var(--col-color, #ddd);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
       transform: translateY(-2px);
     }
 
-    /* Accent bar at top */
-    .card-accent {
-      height: 3px;
-      width: 100%;
-    }
-    .post-card[data-tag="career"] .card-accent { background: #2962ff; }
-    .post-card[data-tag="studio"] .card-accent { background: #2e7d32; }
-    .post-card[data-tag="advice"] .card-accent { background: #e65100; }
-    .post-card[data-tag="industry"] .card-accent { background: #6a1b9a; }
-
     .card-inner {
-      padding: 24px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       height: 100%;
     }
 
-    /* Featured card — spans 2 cols + 2 rows */
-    .post-card.featured {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-    .post-card.featured .card-inner {
-      padding: 36px;
-      justify-content: flex-end;
-    }
-    .post-card.featured .card-title {
-      font-size: 24px;
-      letter-spacing: -0.3px;
-    }
-    .post-card.featured .card-excerpt {
-      max-width: 480px;
-    }
-
-    /* Wide card — spans 2 cols */
-    .post-card.wide {
-      grid-column: span 2;
-    }
-    .post-card.wide .card-title {
-      font-size: 18px;
-    }
-
-    .card-tag {
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    .card-tag.career { color: #2962ff; }
-    .card-tag.studio { color: #2e7d32; }
-    .card-tag.advice { color: #e65100; }
-    .card-tag.industry { color: #6a1b9a; }
-
     .card-title {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 700;
       color: #111;
-      line-height: 1.35;
+      line-height: 1.4;
       margin-bottom: 8px;
     }
 
     .card-excerpt {
-      font-size: 13px;
+      font-size: 12px;
       color: #666;
-      line-height: 1.7;
+      line-height: 1.65;
       flex: 1;
     }
 
@@ -213,10 +138,17 @@
       font-size: 10px;
       color: #bbb;
       font-weight: 500;
-      margin-top: 16px;
+      margin-top: 14px;
     }
 
     /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .kanban-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 20px;
+      }
+    }
+
     @media (max-width: 900px) {
       .page {
         margin-left: 0;
@@ -231,57 +163,20 @@
         font-size: 18px;
       }
 
-      .tag-bar {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .tag-filter {
-        padding: 12px 14px;
-        font-size: 10px;
-        white-space: nowrap;
-      }
-
-      .post-grid {
+      .kanban-board {
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .post-card.featured {
-        grid-column: span 2;
-        grid-row: span 1;
-      }
-      .post-card.featured .card-title {
-        font-size: 20px;
-      }
-      .post-card.wide {
-        grid-column: span 2;
+        gap: 20px 16px;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 580px) {
       .page { padding: 0 16px; }
       .blog-header p { font-size: 16px; }
 
-      .post-grid {
+      .kanban-board {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 28px;
       }
-
-      .post-card.featured,
-      .post-card.wide {
-        grid-column: span 1;
-        grid-row: span 1;
-      }
-
-      .post-card.featured .card-title {
-        font-size: 18px;
-      }
-      .post-card.featured .card-inner {
-        padding: 24px;
-      }
-
-      .card-title { font-size: 15px; }
     }
   </style>
 </head>
@@ -335,120 +230,108 @@
       <p>Navigating the architecture profession — from landing your first job to building a career that lasts.</p>
     </div>
 
-    <!-- Tag Filter -->
-    <div class="tag-bar">
-      <button class="tag-filter active" data-filter="all">All</button>
-      <button class="tag-filter" data-filter="career">Career</button>
-      <button class="tag-filter" data-filter="studio">Studio Culture</button>
-      <button class="tag-filter" data-filter="advice">Advice</button>
-      <button class="tag-filter" data-filter="industry">Industry</button>
-    </div>
+    <!-- Kanban Board -->
+    <div class="kanban-board">
 
-    <!-- Post Grid -->
-    <div class="post-grid">
+      <!-- Career Column -->
+      <div class="kanban-column" data-col="career">
+        <div class="column-header">Career <span class="col-count">5</span></div>
 
-      <!-- Featured: newest post -->
-      <a href="posts/why-architects-cant-tell-their-story/" class="post-card featured" data-tag="career">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag career">Career</span>
-          <h3 class="card-title">Why Architects Can't Tell Their Own Story</h3>
-          <p class="card-excerpt">You can explain a building's concept in a crit. So why can't you explain what you do at a dinner party? Storytelling is the one skill studio never taught you.</p>
-          <span class="card-date">February 17, 2026</span>
-        </div>
-      </a>
+        <a href="posts/why-architects-cant-tell-their-story/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">Why Architects Can't Tell Their Own Story</h3>
+            <p class="card-excerpt">You can explain a building's concept in a crit. So why can't you explain what you do at a dinner party?</p>
+            <span class="card-date">February 17, 2026</span>
+          </div>
+        </a>
 
-      <a href="posts/what-firms-actually-look-for/" class="post-card" data-tag="career">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag career">Career</span>
-          <h3 class="card-title">The Strategic Job Search</h3>
-          <p class="card-excerpt">The job search is a design problem. Treat it like one.</p>
-          <span class="card-date">February 16, 2026</span>
-        </div>
-      </a>
+        <a href="posts/what-firms-actually-look-for/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">The Strategic Job Search</h3>
+            <p class="card-excerpt">The job search is a design problem. Treat it like one.</p>
+            <span class="card-date">February 16, 2026</span>
+          </div>
+        </a>
 
-      <a href="posts/small-firm-vs-big-firm/" class="post-card" data-tag="studio">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag studio">Studio Culture</span>
-          <h3 class="card-title">Small Firm vs. Big Firm</h3>
-          <p class="card-excerpt">Different planets. Same profession.</p>
-          <span class="card-date">February 9, 2026</span>
-        </div>
-      </a>
+        <a href="posts/what-they-dont-teach-you/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">What They Don't Teach You in Studio</h3>
+            <p class="card-excerpt">School teaches thinking. Practice teaches building.</p>
+            <span class="card-date">January 26, 2026</span>
+          </div>
+        </a>
 
-      <!-- Wide -->
-      <a href="posts/cold-email-that-works/" class="post-card wide" data-tag="advice">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag advice">Advice</span>
-          <h3 class="card-title">How to Write a Cold Email That Actually Gets Read</h3>
-          <p class="card-excerpt">Most cold emails go straight to trash. Not because the sender isn't talented, but because the email doesn't give the reader a reason to care.</p>
-          <span class="card-date">February 2, 2026</span>
-        </div>
-      </a>
+        <a href="posts/the-licensure-path/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">The Licensure Path</h3>
+            <p class="card-excerpt">ARE, AXP, and whether it actually matters.</p>
+            <span class="card-date">January 19, 2026</span>
+          </div>
+        </a>
 
-      <a href="posts/what-they-dont-teach-you/" class="post-card" data-tag="career">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag career">Career</span>
-          <h3 class="card-title">What They Don't Teach You in Studio</h3>
-          <p class="card-excerpt">School teaches thinking. Practice teaches building.</p>
-          <span class="card-date">January 26, 2026</span>
-        </div>
-      </a>
+        <a href="posts/side-projects-and-visibility/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">Side Projects and Building Your Professional Identity</h3>
+            <p class="card-excerpt">Nobody got discovered by sitting quietly at their desk doing redlines.</p>
+            <span class="card-date">December 29, 2025</span>
+          </div>
+        </a>
+      </div>
 
-      <a href="posts/the-licensure-path/" class="post-card" data-tag="career">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag career">Career</span>
-          <h3 class="card-title">The Licensure Path</h3>
-          <p class="card-excerpt">ARE, AXP, and whether it actually matters.</p>
-          <span class="card-date">January 19, 2026</span>
-        </div>
-      </a>
+      <!-- Studio Culture Column -->
+      <div class="kanban-column" data-col="studio">
+        <div class="column-header">Studio Culture <span class="col-count">2</span></div>
 
-      <a href="posts/portfolio-mistakes/" class="post-card" data-tag="advice">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag advice">Advice</span>
-          <h3 class="card-title">Portfolio Mistakes Nobody Tells You About</h3>
-          <p class="card-excerpt">Too long, too unfocused, trying too hard.</p>
-          <span class="card-date">January 12, 2026</span>
-        </div>
-      </a>
+        <a href="posts/small-firm-vs-big-firm/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">Small Firm vs. Big Firm</h3>
+            <p class="card-excerpt">Different planets. Same profession.</p>
+            <span class="card-date">February 9, 2026</span>
+          </div>
+        </a>
 
-      <a href="posts/surviving-your-first-year/" class="post-card" data-tag="studio">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag studio">Studio Culture</span>
-          <h3 class="card-title">Surviving Your First Year</h3>
-          <p class="card-excerpt">Redlines aren't criticism. They're conversation.</p>
-          <span class="card-date">January 5, 2026</span>
-        </div>
-      </a>
+        <a href="posts/surviving-your-first-year/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">Surviving Your First Year</h3>
+            <p class="card-excerpt">Redlines aren't criticism. They're conversation.</p>
+            <span class="card-date">January 5, 2026</span>
+          </div>
+        </a>
+      </div>
 
-      <!-- Wide -->
-      <a href="posts/side-projects-and-visibility/" class="post-card wide" data-tag="career">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag career">Career</span>
-          <h3 class="card-title">Side Projects and Building Your Professional Identity</h3>
-          <p class="card-excerpt">Nobody got discovered by sitting quietly at their desk doing redlines. Your side projects are how the profession learns your name.</p>
-          <span class="card-date">December 29, 2025</span>
-        </div>
-      </a>
+      <!-- Advice Column -->
+      <div class="kanban-column" data-col="advice">
+        <div class="column-header">Advice <span class="col-count">2</span></div>
 
-      <a href="posts/architecture-education-beyond-architecture/" class="post-card" data-tag="industry">
-        <div class="card-accent"></div>
-        <div class="card-inner">
-          <span class="card-tag industry">Industry</span>
-          <h3 class="card-title">Architecture Education Beyond Architecture</h3>
-          <p class="card-excerpt">Your degree taught you to think. Where you apply it is your choice.</p>
-          <span class="card-date">December 15, 2025</span>
-        </div>
-      </a>
+        <a href="posts/cold-email-that-works/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">How to Write a Cold Email That Actually Gets Read</h3>
+            <p class="card-excerpt">Most cold emails go straight to trash. Not because the sender isn't talented, but because the email doesn't give the reader a reason to care.</p>
+            <span class="card-date">February 2, 2026</span>
+          </div>
+        </a>
+
+        <a href="posts/portfolio-mistakes/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">Portfolio Mistakes Nobody Tells You About</h3>
+            <p class="card-excerpt">Too long, too unfocused, trying too hard.</p>
+            <span class="card-date">January 12, 2026</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Industry Column -->
+      <div class="kanban-column" data-col="industry">
+        <div class="column-header">Industry <span class="col-count">1</span></div>
+
+        <a href="posts/architecture-education-beyond-architecture/" class="post-card">
+          <div class="card-inner">
+            <h3 class="card-title">Architecture Education Beyond Architecture</h3>
+            <p class="card-excerpt">Your degree taught you to think. Where you apply it is your choice.</p>
+            <span class="card-date">December 15, 2025</span>
+          </div>
+        </a>
+      </div>
 
     </div>
   </div>
@@ -470,38 +353,5 @@
   </div>
 
   <script src="../shared/scripts.js"></script>
-  <script>
-    // Tag filtering with grid-aware show/hide
-    document.querySelectorAll('.tag-filter').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-
-        document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const cards = document.querySelectorAll('.post-card');
-        cards.forEach(card => {
-          if (filter === 'all' || card.dataset.tag === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        // When filtering, remove featured/wide classes so cards stack evenly
-        if (filter !== 'all') {
-          cards.forEach(card => {
-            card.classList.remove('featured', 'wide');
-          });
-        } else {
-          // Restore featured/wide on "All"
-          const allCards = document.querySelectorAll('.post-card');
-          if (allCards[0]) allCards[0].classList.add('featured');
-          if (allCards[3]) allCards[3].classList.add('wide');
-          if (allCards[8]) allCards[8].classList.add('wide');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
