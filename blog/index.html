@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMEJ4670Y7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DMEJ4670Y7');
+</script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Threshold</title>
+  <meta property="og:title" content="Blog — Threshold">
+  <meta property="og:description" content="Thoughts on architecture career development, studio culture, and navigating the profession.">
+  <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
+  <meta property="og:url" content="https://thresholdarch.com/blog/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../shared/styles.css">
+  <style>
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .page {
+      margin: 0 0 0 260px;
+      padding: 0 60px 0 40px;
+      max-width: 720px;
+    }
+
+    .page-intro {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 0;
+    }
+
+    .page-intro h1 {
+      font-size: 28px;
+      font-weight: 900;
+      color: #111;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .page-intro p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    /* Post list */
+    .post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .post-item {
+      display: block;
+      padding: 32px 0;
+      border-bottom: 1px solid #e0e0e0;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+
+    .post-item:hover {
+      opacity: 0.6;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .post-date {
+      font-size: 12px;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .post-tag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      background: #f0f0f0;
+      color: #666;
+    }
+
+    .post-tag.career { background: #e8eeff; color: #2962ff; }
+    .post-tag.studio { background: #e8f5e9; color: #2e7d32; }
+    .post-tag.advice { background: #fff3e0; color: #e65100; }
+    .post-tag.industry { background: #f3e5f5; color: #6a1b9a; }
+
+    .post-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .post-excerpt {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .post-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      margin-top: 12px;
+      transition: color 0.15s;
+    }
+
+    .post-item:hover .post-read {
+      color: #111;
+    }
+
+    .post-read svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.15s;
+    }
+
+    .post-item:hover .post-read svg {
+      transform: translateX(3px);
+    }
+
+    /* Empty state */
+    .coming-soon {
+      padding: 60px 0;
+      text-align: center;
+      color: #999;
+    }
+
+    .coming-soon svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.2;
+      margin-bottom: 16px;
+    }
+
+    .coming-soon h3 {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .coming-soon p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page {
+        margin-left: 0;
+        padding: 0 24px;
+      }
+
+      .page-intro {
+        padding: 30px 0 24px;
+      }
+
+      .page-intro h1 {
+        font-size: 22px;
+      }
+
+      .post-title {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding: 0 16px;
+      }
+
+      .page-intro h1 {
+        font-size: 20px;
+      }
+
+      .post-item {
+        padding: 24px 0;
+      }
+
+      .post-title {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Left Navigation — hover to reveal -->
+  <div class="side-nav-wrapper">
+    <div class="side-nav-tab">Menu</div>
+    <nav class="side-nav">
+      <ul class="side-nav-links">
+        <li><a href="../about/">About</a></li>
+        <li><a href="/">Firm Search</a></li>
+        <li><a href="../cover-letter-guide/">Cover Letter</a></li>
+        <li><a href="../resume-guide/">Resume</a></li>
+        <li><a href="../portfolio-guide/">Portfolio</a></li>
+        <li><a href="../blog/" class="active">Blog</a></li>
+        <li><a href="../resources/">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="/" class="mobile-nav-brand">Threshold</a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../about/">About</a>
+    <a href="/">Firm Search</a>
+    <a href="../cover-letter-guide/">Cover Letter</a>
+    <a href="../resume-guide/">Resume</a>
+    <a href="../portfolio-guide/">Portfolio</a>
+    <a href="../blog/">Blog</a>
+    <a href="../resources/">Resources</a>
+  </div>
+
+  <!-- Animated Logo -->
+  <div class="top-brand-area">
+    <canvas id="logoCanvas" width="200" height="56" data-home="/"></canvas>
+  </div>
+  <div class="top-divider"></div>
+
+  <div class="page">
+    <div class="page-intro">
+      <h1>Blog</h1>
+      <p>Thoughts on navigating the architecture profession — from landing your first job to building a career that lasts.</p>
+    </div>
+
+    <div class="post-list">
+
+      <a href="posts/what-firms-actually-look-for/" class="post-item">
+        <div class="post-meta">
+          <span class="post-date">February 16, 2026</span>
+          <span class="post-tag career">Career</span>
+        </div>
+        <h2 class="post-title">What Firms Actually Look For (And What They Won't Tell You)</h2>
+        <p class="post-excerpt">After years of hiring and being hired in architecture, I've noticed the same patterns. The things that get you in the door are rarely the things you'd expect. Here's what I've learned about what actually moves the needle.</p>
+        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="posts/small-firm-vs-big-firm/" class="post-item">
+        <div class="post-meta">
+          <span class="post-date">February 9, 2026</span>
+          <span class="post-tag studio">Studio Culture</span>
+        </div>
+        <h2 class="post-title">Small Firm vs. Big Firm: An Honest Comparison</h2>
+        <p class="post-excerpt">Everyone has an opinion on this, but most of the advice out there misses the nuance. The right answer depends on where you are in your career, what you want to learn, and what kind of work environment helps you thrive.</p>
+        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="posts/cold-email-that-works/" class="post-item">
+        <div class="post-meta">
+          <span class="post-date">February 2, 2026</span>
+          <span class="post-tag advice">Advice</span>
+        </div>
+        <h2 class="post-title">How to Write a Cold Email That Actually Gets Read</h2>
+        <p class="post-excerpt">Most cold emails to architecture firms go straight to trash. Not because the sender isn't talented, but because the email doesn't give the reader a reason to care. Here's a framework that works.</p>
+        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
+    <form id="subscribeForm" class="footer-subscribe">
+      <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="footer-msg" id="subscribeMsg"></p>
+    <span class="footer-legal"><a href="mailto:seth@thresholdarch.com">Contact</a> · <a href="../terms/">Terms</a> · <a href="../privacy/">Privacy</a> · &copy; 2026 Looperworks LLC</span>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../terms/">Terms of Service</a>.</p>
+    <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+  </div>
+
+  <script src="../shared/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMEJ4670Y7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DMEJ4670Y7');
+</script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Firms Actually Look For — Threshold Blog</title>
+  <meta property="og:title" content="What Firms Actually Look For (And What They Won't Tell You)">
+  <meta property="og:description" content="After years of hiring and being hired in architecture, here's what actually moves the needle when firms evaluate candidates.">
+  <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
+  <meta property="og:url" content="https://thresholdarch.com/blog/posts/what-firms-actually-look-for/">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../../../shared/styles.css">
+  <style>
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .page {
+      margin: 0 0 0 260px;
+      padding: 0 60px 0 40px;
+      max-width: 680px;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      padding: 32px 0 0;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: #111; }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 24px 0 32px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .article-tag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      background: #e8eeff;
+      color: #2962ff;
+    }
+
+    .article-read-time {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .article-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .article-subtitle {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Article body */
+    .article-body {
+      padding: 36px 0 48px;
+    }
+
+    .article-body h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin: 36px 0 12px;
+      line-height: 1.3;
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid #e8c547;
+      margin: 28px 0;
+      padding: 4px 0 4px 20px;
+    }
+
+    .article-body blockquote p {
+      font-size: 15px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 0;
+      padding-left: 20px;
+    }
+
+    .article-body li {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    /* Author box */
+    .author-box {
+      border-top: 1px solid #e0e0e0;
+      padding: 28px 0;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .author-info p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Post navigation */
+    .post-nav {
+      border-top: 1px solid #e0e0e0;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .post-nav a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .post-nav a:hover { color: #111; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page {
+        margin-left: 0;
+        padding: 0 24px;
+      }
+
+      .article-title { font-size: 22px; }
+      .article-subtitle { font-size: 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 0 16px; }
+      .article-title { font-size: 20px; }
+      .article-body h2 { font-size: 16px; }
+      .article-body p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Left Navigation -->
+  <div class="side-nav-wrapper">
+    <div class="side-nav-tab">Menu</div>
+    <nav class="side-nav">
+      <ul class="side-nav-links">
+        <li><a href="../../../about/">About</a></li>
+        <li><a href="/">Firm Search</a></li>
+        <li><a href="../../../cover-letter-guide/">Cover Letter</a></li>
+        <li><a href="../../../resume-guide/">Resume</a></li>
+        <li><a href="../../../portfolio-guide/">Portfolio</a></li>
+        <li><a href="../../" class="active">Blog</a></li>
+        <li><a href="../../../resources/">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="/" class="mobile-nav-brand">Threshold</a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../../../about/">About</a>
+    <a href="/">Firm Search</a>
+    <a href="../../../cover-letter-guide/">Cover Letter</a>
+    <a href="../../../resume-guide/">Resume</a>
+    <a href="../../../portfolio-guide/">Portfolio</a>
+    <a href="../../">Blog</a>
+    <a href="../../../resources/">Resources</a>
+  </div>
+
+  <!-- Animated Logo -->
+  <div class="top-brand-area">
+    <canvas id="logoCanvas" width="200" height="56" data-home="/"></canvas>
+  </div>
+  <div class="top-divider"></div>
+
+  <div class="page">
+    <a href="../../" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="article-date">February 16, 2026</span>
+        <span class="article-tag">Career</span>
+        <span class="article-read-time">6 min read</span>
+      </div>
+      <h1 class="article-title">What Firms Actually Look For (And What They Won't Tell You)</h1>
+      <p class="article-subtitle">After years of hiring and being hired in architecture, I've noticed the same patterns. The things that get you in the door are rarely the things you'd expect.</p>
+    </div>
+
+    <div class="article-body">
+      <p>Here's something that took me too long to learn: the best portfolio in the room doesn't always get the job. Neither does the strongest Revit modeler, the fastest renderer, or the person with the most prestigious school on their resume.</p>
+
+      <p>What gets people hired — consistently, across firms of all sizes — is harder to pin down, but once you see it, you can't unsee it. I've been on both sides of the hiring table enough times to know that the gap between what firms say they want and what actually moves them to make an offer is real.</p>
+
+      <h2>They're hiring a coworker, not a skill set</h2>
+
+      <p>Every firm needs someone who can produce. That's table stakes. But when a principal is reviewing 80 applications for one junior position, technical competence gets you into the pile — it doesn't pull you out of it.</p>
+
+      <p>What pulls you out is the sense that you'd be good to work with. That you're curious, that you ask questions, that you can take feedback without shutting down, and that you'll bring energy to the studio on a Tuesday afternoon when everyone's grinding through a deadline.</p>
+
+      <blockquote>
+        <p>I've never heard a principal say "we hired them because of their parametric grasshopper definition." I've heard dozens say "they just seemed like someone who'd fit in here."</p>
+      </blockquote>
+
+      <p>This isn't about being the most social person in the room. Plenty of great architects are quiet, introverted, and thoughtful. It's about demonstrating that you're someone who collaborates well, communicates clearly, and takes ownership of your work.</p>
+
+      <h2>Curiosity beats polish</h2>
+
+      <p>A polished portfolio is nice. A curious mind is better. Firms want to know that you're genuinely interested in architecture — not just as a career, but as a way of thinking about the world.</p>
+
+      <p>The candidates who stand out are the ones who can talk about why they made the decisions they made. Not the flashy render, but the messy diagram that led to the parti. Not the final model, but the moment they realized the section was more important than the plan.</p>
+
+      <p>If you can articulate your design thinking — why you made choices, what you learned from failures, how your ideas evolved — you'll stand out from 90% of applicants who just show finished work.</p>
+
+      <h2>Show that you've done your homework</h2>
+
+      <p>This sounds basic, but it's shockingly rare. Most cover letters and interviews reveal that the candidate knows almost nothing about the firm they're applying to. They've glanced at the website. Maybe they know one project. That's it.</p>
+
+      <p>The candidates who get callbacks are the ones who reference specific projects, specific values, specific aspects of the firm's work that resonate with their own interests. It doesn't take long — 30 minutes of research can set you apart from hundreds of generic applications.</p>
+
+      <p>A few things worth knowing before you apply:</p>
+
+      <ul>
+        <li>What types of projects does the firm actually do? Not what they're known for — what they're working on right now.</li>
+        <li>What's their design philosophy? Read their project descriptions. Listen to talks by principals if they're online.</li>
+        <li>What scale do they work at? A 12-person firm doing single-family residential is a fundamentally different experience from a 500-person firm doing hospitals.</li>
+        <li>Who works there? Look at the team page. See if you know anyone, or if anyone shares your background or interests.</li>
+      </ul>
+
+      <h2>The portfolio is a conversation starter, not a verdict</h2>
+
+      <p>Your portfolio doesn't need to be perfect. It needs to be interesting enough to generate a conversation. Hiring managers flip through portfolios quickly — sometimes in under two minutes. They're not reading every diagram or studying every detail.</p>
+
+      <p>They're looking for a few things: Can this person compose a page? Do they have range? Is there a point of view here? And most importantly: is there something I want to ask them about?</p>
+
+      <p>That last one is the key. If your portfolio makes someone curious enough to call you in for an interview, it's done its job. The interview is where you actually get the offer.</p>
+
+      <h2>Timing matters more than you think</h2>
+
+      <p>Architecture hiring is cyclical and unpredictable. A firm that has no openings in March might desperately need someone in June because they just won a competition. The candidate who sent a thoughtful email in May — even when there was no job posting — is the first person they call.</p>
+
+      <p>This is why cold outreach works in architecture when it fails in almost every other industry. Firms are small enough that your email might actually reach a principal. And if you've done your homework and written something genuine, they'll remember you when the time comes.</p>
+
+      <h2>The bottom line</h2>
+
+      <p>Technical skills get you considered. Curiosity, research, and clear communication get you hired. The students I've seen succeed aren't always the most talented designers in their class — they're the ones who approach the job search with the same intentionality they bring to their design work.</p>
+
+      <p>Architecture is a relationship-driven profession. Your career will be shaped less by your GPA and more by the connections you build, the questions you ask, and the genuine interest you show in the work.</p>
+
+      <p>Start there.</p>
+    </div>
+
+    <div class="author-box">
+      <div class="author-avatar">S</div>
+      <div class="author-info">
+        <h4>Seth Looper</h4>
+        <p>Builder of Threshold. Writes about architecture career development, studio culture, and making the profession more accessible.</p>
+      </div>
+    </div>
+
+    <div class="post-nav">
+      <span></span>
+      <a href="../small-firm-vs-big-firm/">Next: Small Firm vs. Big Firm &rarr;</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-subscribe-label">Subscribe for a weekly newsletter</p>
+    <form id="subscribeForm" class="footer-subscribe">
+      <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="footer-msg" id="subscribeMsg"></p>
+    <span class="footer-legal"><a href="mailto:seth@thresholdarch.com">Contact</a> · <a href="../../../terms/">Terms</a> · <a href="../../../privacy/">Privacy</a> · &copy; 2026 Looperworks LLC</span>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p><strong>Important Information</strong> &mdash; This website uses cookies to ensure you get the best experience on our website. See our <a href="../../../terms/">Terms of Service</a>.</p>
+    <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+  </div>
+
+  <script src="../../../shared/scripts.js"></script>
+</body>
+</html>
