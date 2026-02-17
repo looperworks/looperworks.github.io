@@ -265,7 +265,7 @@ body {
 .site-footer {
   position: relative;
   padding: 20px 40px 16px;
-  margin-left: 260px;
+  margin-left: 0;
   text-align: center;
 }
 
@@ -273,7 +273,7 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  left: -260px;
+  left: 0;
   right: 0;
   height: 1px;
   background: #e0e0e0;
