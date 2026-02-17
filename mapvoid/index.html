@@ -280,23 +280,23 @@
   .about-overlay.open { opacity: 1; pointer-events: auto; }
   .about-modal { background: #fff; border-radius: 20px; max-width: 540px; width: 92%; max-height: 85vh; overflow-y: auto; box-shadow: 0 25px 80px rgba(0,0,0,0.2); transform: translateY(20px) scale(0.97); transition: transform 0.3s ease; }
   .about-overlay.open .about-modal { transform: translateY(0) scale(1); }
-  .about-modal-hero { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 36px 32px 28px; border-radius: 20px 20px 0 0; position: relative; overflow: hidden; }
+  .about-modal-hero { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 24px 28px 20px; border-radius: 20px 20px 0 0; position: relative; overflow: hidden; }
   .about-modal-hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,197,71,0.15) 0%, transparent 70%); }
-  .about-modal-hero h2 { font-size: 24px; font-weight: 900; color: #fff; margin-bottom: 6px; position: relative; }
-  .about-modal-hero .about-subtitle { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.5; position: relative; }
-  .about-modal-hero .about-stats { display: flex; gap: 20px; margin-top: 18px; position: relative; }
+  .about-modal-hero h2 { font-size: 21px; font-weight: 900; color: #fff; margin-bottom: 4px; position: relative; }
+  .about-modal-hero .about-subtitle { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.4; position: relative; }
+  .about-modal-hero .about-stats { display: flex; gap: 18px; margin-top: 14px; position: relative; }
   .about-modal-hero .about-stat { text-align: center; }
-  .about-modal-hero .about-stat strong { display: block; font-size: 22px; font-weight: 800; color: var(--accent); }
-  .about-modal-hero .about-stat span { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); }
-  .about-modal-close { position: absolute; top: 14px; right: 16px; background: rgba(255,255,255,0.1); border: none; font-size: 20px; color: rgba(255,255,255,0.7); cursor: pointer; padding: 4px 10px; border-radius: 8px; z-index: 1; transition: all 0.15s; }
+  .about-modal-hero .about-stat strong { display: block; font-size: 18px; font-weight: 800; color: var(--accent); }
+  .about-modal-hero .about-stat span { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); }
+  .about-modal-close { position: absolute; top: 12px; right: 14px; background: rgba(255,255,255,0.1); border: none; font-size: 18px; color: rgba(255,255,255,0.7); cursor: pointer; padding: 3px 9px; border-radius: 8px; z-index: 1; transition: all 0.15s; }
   .about-modal-close:hover { color: #fff; background: rgba(255,255,255,0.2); }
-  .about-modal-body { padding: 24px 32px 32px; }
-  .about-modal-body h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px; margin-top: 20px; font-weight: 600; }
+  .about-modal-body { padding: 16px 28px 22px; }
+  .about-modal-body h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 5px; margin-top: 12px; font-weight: 600; }
   .about-modal-body h3:first-child { margin-top: 0; }
-  .about-modal-body p { font-size: 13px; line-height: 1.7; color: var(--text-dim); margin-bottom: 10px; }
-  .about-modal-body .disclaimer { font-size: 11px; color: var(--text-muted); line-height: 1.6; padding: 14px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); }
-  .about-modal-body .about-cta { display: flex; justify-content: center; margin-top: 22px; }
-  .about-modal-body .about-cta button { padding: 10px 28px; background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
+  .about-modal-body p { font-size: 11.5px; line-height: 1.6; color: var(--text-dim); margin-bottom: 6px; }
+  .about-modal-body .disclaimer { font-size: 10px; color: var(--text-muted); line-height: 1.5; padding: 10px 12px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); }
+  .about-modal-body .about-cta { display: flex; justify-content: center; margin-top: 14px; }
+  .about-modal-body .about-cta button { padding: 9px 24px; background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border: none; border-radius: 10px; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
   .about-modal-body .about-cta button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,52,96,0.4); }
 
   /* Hero section — hidden (map is default) */
@@ -520,16 +520,16 @@
     </div>
     <div class="about-modal-body">
       <h3>Why I built this</h3>
-      <p>I remember how overwhelming it was to figure out where to apply. There are thousands of firms out there, and most students only hear about the big names. I built Threshold so you can discover firms you didn't know existed — the 12-person studio doing incredible work in your dream city, the landscape firm pushing boundaries in resilience design, the urban shop reimagining public space.</p>
+      <p>Most students only hear about the big names. I built Threshold so you can discover firms you didn't know existed — the 12-person studio in your dream city, the landscape firm pushing resilience design, the urban shop reimagining public space.</p>
 
       <h3>How it works</h3>
-      <p>Search by name, city, discipline, or specialty. Click any pin to see what a firm is about, then jump straight to their website or careers page. Found firms you love? Save them to your list and export everything as a CSV when you're ready to apply.</p>
+      <p>Search by name, city, or specialty. Click any pin for firm details, then jump to their website or careers page. Save firms you love and export your list as a CSV when you're ready to apply.</p>
 
       <h3>Updated weekly</h3>
-      <p>I'm actively adding new firms and improving data every week. If you know a firm that should be listed or spot something that needs fixing, I'd love to hear from you — reach out anytime at <a href="mailto:hello@thresholdarch.com" style="color:var(--accent);text-decoration:none;font-weight:600">hello@thresholdarch.com</a>.</p>
+      <p>New firms and data improvements every week. Know a firm that should be here? Reach out at <a href="mailto:hello@thresholdarch.com" style="color:var(--accent);text-decoration:none;font-weight:600">hello@thresholdarch.com</a>.</p>
 
       <div class="disclaimer">
-        <p style="margin-bottom:0">Threshold is an independent student resource and is not affiliated with any firm listed. Information is compiled from public sources and updated regularly, but always verify details on a firm's official website.</p>
+        <p style="margin-bottom:0">Independent student resource, not affiliated with any listed firm. Always verify details on a firm's official website.</p>
       </div>
 
       <div class="about-cta">
