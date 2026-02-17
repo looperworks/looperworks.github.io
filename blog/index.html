@@ -30,185 +30,323 @@
 
     .page {
       margin: 0 0 0 260px;
-      padding: 0 60px 0 40px;
-      max-width: 720px;
+      padding: 0 48px 0 40px;
+      max-width: 960px;
     }
 
-    .page-intro {
-      padding: 48px 0 32px;
-      border-bottom: 1px solid #e0e0e0;
-      margin-bottom: 0;
+    /* ── Header ── */
+    .blog-header {
+      padding: 56px 0 40px;
+      border-bottom: 2px solid #111;
     }
 
-    .page-intro h1 {
-      font-size: 28px;
-      font-weight: 900;
-      color: #111;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
+    .blog-header h1 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 12px;
     }
 
-    .page-intro p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-      max-width: 520px;
+    .blog-header p {
+      font-size: 22px;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.5;
+      max-width: 600px;
+      letter-spacing: -0.2px;
     }
 
-    /* Post list */
-    .post-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .post-item {
-      display: block;
-      padding: 32px 0;
-      border-bottom: 1px solid #e0e0e0;
+    /* ── Featured post (hero) ── */
+    .featured-post {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
       text-decoration: none;
       color: inherit;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid #e0e0e0;
+      transition: all 0.3s ease;
     }
 
-    .post-item:hover {
-      opacity: 0.6;
+    .featured-post:hover {
+      border-bottom-color: #111;
     }
 
-    .post-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
+    .featured-geo {
+      position: relative;
+      overflow: hidden;
     }
 
-    .post-date {
-      font-size: 12px;
-      color: #999;
-      font-weight: 500;
+    .featured-geo svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
-    .post-tag {
+    .featured-content {
+      padding: 40px 0 40px 36px;
+    }
+
+    .featured-label {
       font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 2px 8px;
-      border-radius: 3px;
-      background: #f0f0f0;
-      color: #666;
-    }
-
-    .post-tag.career { background: #e8eeff; color: #2962ff; }
-    .post-tag.studio { background: #e8f5e9; color: #2e7d32; }
-    .post-tag.advice { background: #fff3e0; color: #e65100; }
-    .post-tag.industry { background: #f3e5f5; color: #6a1b9a; }
-
-    .post-title {
-      font-size: 20px;
       font-weight: 700;
-      color: #111;
-      line-height: 1.3;
-      margin-bottom: 8px;
-    }
-
-    .post-excerpt {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.7;
-    }
-
-    .post-read {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12px;
-      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       color: #999;
-      margin-top: 12px;
-      transition: color 0.15s;
-    }
-
-    .post-item:hover .post-read {
-      color: #111;
-    }
-
-    .post-read svg {
-      width: 14px;
-      height: 14px;
-      transition: transform 0.15s;
-    }
-
-    .post-item:hover .post-read svg {
-      transform: translateX(3px);
-    }
-
-    /* Empty state */
-    .coming-soon {
-      padding: 60px 0;
-      text-align: center;
-      color: #999;
-    }
-
-    .coming-soon svg {
-      width: 48px;
-      height: 48px;
-      opacity: 0.2;
       margin-bottom: 16px;
     }
 
-    .coming-soon h3 {
-      font-size: 16px;
+    .featured-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      transition: color 0.2s;
+    }
+
+    .featured-post:hover .featured-title {
+      color: #2962ff;
+    }
+
+    .featured-excerpt {
+      font-size: 15px;
       color: #666;
-      margin-bottom: 8px;
+      line-height: 1.7;
+      max-width: 480px;
     }
 
-    .coming-soon p {
+    .featured-date {
+      font-size: 11px;
+      color: #bbb;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    /* ── Tag filter bar ── */
+    .tag-bar {
+      display: flex;
+      gap: 0;
+      padding: 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tag-filter {
+      padding: 14px 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #999;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .tag-filter:hover,
+    .tag-filter.active {
+      color: #111;
+    }
+
+    .tag-filter.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 20px;
+      right: 20px;
+      height: 2px;
+      background: #111;
+    }
+
+    /* ── Post grid ── */
+    .post-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .post-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px solid #e0e0e0;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Alternating vertical divider */
+    .post-card:nth-child(odd) {
+      border-right: 1px solid #e0e0e0;
+      padding-right: 28px;
+    }
+
+    .post-card:nth-child(even) {
+      padding-left: 28px;
+    }
+
+    .post-card:hover {
+      border-bottom-color: #111;
+    }
+
+    .card-geo {
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-geo svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .card-body {
+      padding: 20px 0 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-tag {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .card-tag.career { color: #2962ff; }
+    .card-tag.studio { color: #2e7d32; }
+    .card-tag.advice { color: #e65100; }
+    .card-tag.industry { color: #6a1b9a; }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.35;
+      letter-spacing: -0.3px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .post-card:hover .card-title {
+      color: #2962ff;
+    }
+
+    .card-excerpt {
       font-size: 13px;
+      color: #888;
       line-height: 1.6;
+      flex: 1;
     }
 
-    /* Responsive */
+    .card-date {
+      font-size: 11px;
+      color: #ccc;
+      margin-top: 16px;
+      font-weight: 500;
+    }
+
+    /* ── Arrow indicator ── */
+    .card-arrow {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: all 0.2s;
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+    }
+
+    .post-card:nth-child(even) .card-arrow {
+      right: 0;
+    }
+
+    .post-card:hover .card-arrow {
+      opacity: 0.3;
+      transform: translateX(0);
+    }
+
+    /* ── Responsive ── */
     @media (max-width: 900px) {
       .page {
         margin-left: 0;
         padding: 0 24px;
       }
 
-      .page-intro {
-        padding: 30px 0 24px;
+      .blog-header {
+        padding: 32px 0 28px;
       }
 
-      .page-intro h1 {
+      .blog-header p {
+        font-size: 18px;
+      }
+
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-geo {
+        height: 140px;
+      }
+
+      .featured-content {
+        padding: 24px 0 32px;
+      }
+
+      .featured-title {
         font-size: 22px;
       }
 
-      .post-title {
-        font-size: 17px;
+      .tag-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tag-filter {
+        padding: 12px 14px;
+        font-size: 10px;
+        white-space: nowrap;
+      }
+
+      .post-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .post-card:nth-child(odd) {
+        border-right: none;
+        padding-right: 0;
+      }
+
+      .post-card:nth-child(even) {
+        padding-left: 0;
+      }
+
+      .card-arrow {
+        right: 0 !important;
       }
     }
 
     @media (max-width: 480px) {
-      .page {
-        padding: 0 16px;
-      }
-
-      .page-intro h1 {
-        font-size: 20px;
-      }
-
-      .post-item {
-        padding: 24px 0;
-      }
-
-      .post-title {
-        font-size: 16px;
-      }
+      .page { padding: 0 16px; }
+      .blog-header p { font-size: 16px; }
+      .featured-title { font-size: 20px; }
+      .card-title { font-size: 15px; }
+      .card-geo { height: 90px; }
     }
   </style>
 </head>
 <body>
-  <!-- Floating Left Navigation — hover to reveal -->
+  <!-- Floating Left Navigation -->
   <div class="side-nav-wrapper">
     <div class="side-nav-tab">Menu</div>
     <nav class="side-nav">
@@ -250,111 +388,262 @@
   <div class="top-divider"></div>
 
   <div class="page">
-    <div class="page-intro">
+
+    <!-- Header -->
+    <div class="blog-header">
       <h1>Blog</h1>
-      <p>Thoughts on navigating the architecture profession — from landing your first job to building a career that lasts.</p>
+      <p>Navigating the architecture profession — from landing your first job to building a career that lasts.</p>
     </div>
 
-    <div class="post-list">
+    <!-- Featured / Latest Post -->
+    <a href="posts/what-firms-actually-look-for/" class="featured-post" data-tag="career">
+      <div class="featured-geo">
+        <svg viewBox="0 0 200 260" preserveAspectRatio="none">
+          <rect width="200" height="260" fill="#f0f4ff"/>
+          <line x1="0" y1="0" x2="200" y2="260" stroke="#2962ff" stroke-width="0.5" opacity="0.2"/>
+          <line x1="40" y1="0" x2="200" y2="208" stroke="#2962ff" stroke-width="0.5" opacity="0.15"/>
+          <line x1="80" y1="0" x2="200" y2="156" stroke="#2962ff" stroke-width="0.5" opacity="0.1"/>
+          <line x1="0" y1="52" x2="200" y2="260" stroke="#2962ff" stroke-width="0.5" opacity="0.15"/>
+          <line x1="0" y1="104" x2="200" y2="260" stroke="#2962ff" stroke-width="0.5" opacity="0.1"/>
+          <line x1="0" y1="156" x2="80" y2="260" stroke="#2962ff" stroke-width="0.5" opacity="0.08"/>
+          <rect x="20" y="200" width="40" height="4" fill="#2962ff" opacity="0.3"/>
+          <rect x="20" y="212" width="24" height="4" fill="#2962ff" opacity="0.15"/>
+        </svg>
+      </div>
+      <div class="featured-content">
+        <div class="featured-label">Latest — Career</div>
+        <h2 class="featured-title">The Strategic Job Search: Designing Your Career Path</h2>
+        <p class="featured-excerpt">A successful job search isn't just about finding an open seat. It's about alignment. Approach your career with the same intentionality you bring to a studio project.</p>
+        <div class="featured-date">February 16, 2026</div>
+      </div>
+    </a>
 
-      <a href="posts/what-firms-actually-look-for/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">February 16, 2026</span>
-          <span class="post-tag career">Career</span>
+    <!-- Tag Filter -->
+    <div class="tag-bar">
+      <button class="tag-filter active" data-filter="all">All</button>
+      <button class="tag-filter" data-filter="career">Career</button>
+      <button class="tag-filter" data-filter="studio">Studio Culture</button>
+      <button class="tag-filter" data-filter="advice">Advice</button>
+      <button class="tag-filter" data-filter="industry">Industry</button>
+    </div>
+
+    <!-- Post Grid -->
+    <div class="post-grid">
+
+      <!-- Small Firm vs Big Firm -->
+      <a href="posts/small-firm-vs-big-firm/" class="post-card" data-tag="studio">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#f1f8f1"/>
+            <g opacity="0.12" stroke="#2e7d32" stroke-width="0.5">
+              <line x1="0" y1="0" x2="0" y2="120"/><line x1="20" y1="0" x2="20" y2="120"/>
+              <line x1="40" y1="0" x2="40" y2="120"/><line x1="60" y1="0" x2="60" y2="120"/>
+              <line x1="80" y1="0" x2="80" y2="120"/><line x1="100" y1="0" x2="100" y2="120"/>
+              <line x1="120" y1="0" x2="120" y2="120"/><line x1="140" y1="0" x2="140" y2="120"/>
+              <line x1="160" y1="0" x2="160" y2="120"/><line x1="180" y1="0" x2="180" y2="120"/>
+              <line x1="200" y1="0" x2="200" y2="120"/>
+              <line x1="0" y1="0" x2="400" y2="0"/><line x1="0" y1="20" x2="400" y2="20"/>
+              <line x1="0" y1="40" x2="400" y2="40"/><line x1="0" y1="60" x2="400" y2="60"/>
+              <line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="100" x2="400" y2="100"/>
+              <line x1="0" y1="120" x2="400" y2="120"/>
+            </g>
+            <rect x="20" y="20" width="60" height="40" fill="#2e7d32" opacity="0.06"/>
+            <rect x="100" y="40" width="40" height="60" fill="#2e7d32" opacity="0.04"/>
+          </svg>
         </div>
-        <h2 class="post-title">The Strategic Job Search: Designing Your Career Path</h2>
-        <p class="post-excerpt">A successful job search isn't just about finding an open seat. It's about alignment. And if you spent five years learning to be intentional about everything from door handles to datum lines, you might as well bring that energy to the thing that pays your rent.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag studio">Studio Culture</span>
+          <h3 class="card-title">Small Firm vs. Big Firm: An Honest Comparison</h3>
+          <p class="card-excerpt">The right answer depends on where you are, what you want to learn, and what kind of environment helps you thrive.</p>
+          <span class="card-date">February 9, 2026</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/small-firm-vs-big-firm/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">February 9, 2026</span>
-          <span class="post-tag studio">Studio Culture</span>
+      <!-- Cold Email -->
+      <a href="posts/cold-email-that-works/" class="post-card" data-tag="advice">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#fff8f0"/>
+            <polygon points="0,120 120,0 140,0 0,120" fill="#e65100" opacity="0.06"/>
+            <polygon points="40,120 160,0 180,0 20,120" fill="#e65100" opacity="0.05"/>
+            <polygon points="80,120 200,0 220,0 60,120" fill="#e65100" opacity="0.04"/>
+            <polygon points="120,120 240,0 260,0 100,120" fill="#e65100" opacity="0.03"/>
+            <rect x="20" y="90" width="50" height="3" fill="#e65100" opacity="0.2"/>
+            <rect x="20" y="100" width="30" height="3" fill="#e65100" opacity="0.12"/>
+          </svg>
         </div>
-        <h2 class="post-title">Small Firm vs. Big Firm: An Honest Comparison</h2>
-        <p class="post-excerpt">Everyone has an opinion on this, but most of the advice out there misses the nuance. The right answer depends on where you are in your career, what you want to learn, and what kind of work environment helps you thrive.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag advice">Advice</span>
+          <h3 class="card-title">How to Write a Cold Email That Actually Gets Read</h3>
+          <p class="card-excerpt">Most cold emails go straight to trash. Not because the sender isn't talented, but because the email doesn't give the reader a reason to care.</p>
+          <span class="card-date">February 2, 2026</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/cold-email-that-works/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">February 2, 2026</span>
-          <span class="post-tag advice">Advice</span>
+      <!-- What They Don't Teach You -->
+      <a href="posts/what-they-dont-teach-you/" class="post-card" data-tag="career">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#f0f4ff"/>
+            <line x1="0" y1="0" x2="400" y2="120" stroke="#2962ff" stroke-width="0.5" opacity="0.15"/>
+            <line x1="0" y1="30" x2="300" y2="120" stroke="#2962ff" stroke-width="0.5" opacity="0.1"/>
+            <line x1="100" y1="0" x2="400" y2="90" stroke="#2962ff" stroke-width="0.5" opacity="0.1"/>
+            <rect x="340" y="16" width="40" height="4" fill="#2962ff" opacity="0.2"/>
+            <rect x="356" y="26" width="24" height="4" fill="#2962ff" opacity="0.12"/>
+          </svg>
         </div>
-        <h2 class="post-title">How to Write a Cold Email That Actually Gets Read</h2>
-        <p class="post-excerpt">Most cold emails to architecture firms go straight to trash. Not because the sender isn't talented, but because the email doesn't give the reader a reason to care. Here's a framework that works.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag career">Career</span>
+          <h3 class="card-title">What They Don't Teach You in Studio</h3>
+          <p class="card-excerpt">Architecture school is great at teaching you to think spatially. It's less great at preparing you for the 90% of practice that isn't designing things.</p>
+          <span class="card-date">January 26, 2026</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/what-they-dont-teach-you/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">January 26, 2026</span>
-          <span class="post-tag career">Career</span>
+      <!-- Licensure Path -->
+      <a href="posts/the-licensure-path/" class="post-card" data-tag="career">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#f0f4ff"/>
+            <line x1="0" y1="60" x2="400" y2="60" stroke="#2962ff" stroke-width="0.5" opacity="0.1"/>
+            <line x1="0" y1="0" x2="160" y2="120" stroke="#2962ff" stroke-width="0.5" opacity="0.12"/>
+            <line x1="200" y1="0" x2="360" y2="120" stroke="#2962ff" stroke-width="0.5" opacity="0.08"/>
+            <circle cx="80" cy="60" r="3" fill="#2962ff" opacity="0.15"/>
+            <circle cx="280" cy="60" r="3" fill="#2962ff" opacity="0.15"/>
+            <rect x="20" y="100" width="32" height="4" fill="#2962ff" opacity="0.18"/>
+          </svg>
         </div>
-        <h2 class="post-title">What They Don't Teach You in Studio</h2>
-        <p class="post-excerpt">Architecture school is great at teaching you to think spatially and pull all-nighters. It's less great at preparing you for the 90% of practice that isn't designing things.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag career">Career</span>
+          <h3 class="card-title">The Licensure Path: ARE, AXP, and Whether It Actually Matters</h3>
+          <p class="card-excerpt">Everyone tells you to get licensed. Not everyone tells you what that involves, how long it takes, or whether it's right for you.</p>
+          <span class="card-date">January 19, 2026</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/the-licensure-path/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">January 19, 2026</span>
-          <span class="post-tag career">Career</span>
+      <!-- Portfolio Mistakes -->
+      <a href="posts/portfolio-mistakes/" class="post-card" data-tag="advice">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#fff8f0"/>
+            <polygon points="0,80 80,0 100,0 0,100" fill="#e65100" opacity="0.05"/>
+            <polygon points="150,120 270,0 290,0 170,120" fill="#e65100" opacity="0.04"/>
+            <polygon points="300,120 380,40 400,40 320,120" fill="#e65100" opacity="0.03"/>
+            <rect x="20" y="14" width="44" height="3" fill="#e65100" opacity="0.18"/>
+            <rect x="20" y="22" width="28" height="3" fill="#e65100" opacity="0.1"/>
+          </svg>
         </div>
-        <h2 class="post-title">The Licensure Path: ARE, AXP, and Whether It Actually Matters</h2>
-        <p class="post-excerpt">Everyone tells you to get licensed. Not everyone tells you what that actually involves, how long it takes, or whether it's the right move for every career path.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag advice">Advice</span>
+          <h3 class="card-title">The Portfolio Mistakes Nobody Tells You About</h3>
+          <p class="card-excerpt">Your portfolio is probably too long, too unfocused, and trying too hard. Here's how to fix it before it costs you the interview.</p>
+          <span class="card-date">January 12, 2026</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/portfolio-mistakes/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">January 12, 2026</span>
-          <span class="post-tag advice">Advice</span>
+      <!-- Surviving Your First Year -->
+      <a href="posts/surviving-your-first-year/" class="post-card" data-tag="studio">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#f1f8f1"/>
+            <g opacity="0.1" stroke="#2e7d32" stroke-width="0.5">
+              <line x1="0" y1="0" x2="0" y2="120"/><line x1="24" y1="0" x2="24" y2="120"/>
+              <line x1="48" y1="0" x2="48" y2="120"/><line x1="72" y1="0" x2="72" y2="120"/>
+              <line x1="96" y1="0" x2="96" y2="120"/><line x1="120" y1="0" x2="120" y2="120"/>
+              <line x1="0" y1="0" x2="400" y2="0"/><line x1="0" y1="24" x2="400" y2="24"/>
+              <line x1="0" y1="48" x2="400" y2="48"/><line x1="0" y1="72" x2="400" y2="72"/>
+              <line x1="0" y1="96" x2="400" y2="96"/>
+            </g>
+            <rect x="48" y="48" width="48" height="24" fill="#2e7d32" opacity="0.05"/>
+          </svg>
         </div>
-        <h2 class="post-title">The Portfolio Mistakes Nobody Tells You About</h2>
-        <p class="post-excerpt">Your portfolio is probably too long, too unfocused, and trying too hard to impress. Here's how to fix it before it costs you the interview.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag studio">Studio Culture</span>
+          <h3 class="card-title">Surviving Your First Year in Practice</h3>
+          <p class="card-excerpt">Studio prepared you to design buildings. It did not prepare you for reply-all emails, redline markups, or the existential crisis of your first spec sheet.</p>
+          <span class="card-date">January 5, 2026</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/surviving-your-first-year/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">January 5, 2026</span>
-          <span class="post-tag studio">Studio Culture</span>
+      <!-- Side Projects -->
+      <a href="posts/side-projects-and-visibility/" class="post-card" data-tag="career">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#f0f4ff"/>
+            <line x1="0" y1="120" x2="200" y2="0" stroke="#2962ff" stroke-width="0.5" opacity="0.12"/>
+            <line x1="100" y1="120" x2="300" y2="0" stroke="#2962ff" stroke-width="0.5" opacity="0.08"/>
+            <line x1="200" y1="120" x2="400" y2="0" stroke="#2962ff" stroke-width="0.5" opacity="0.06"/>
+            <rect x="340" y="90" width="40" height="4" fill="#2962ff" opacity="0.2"/>
+            <rect x="352" y="100" width="28" height="4" fill="#2962ff" opacity="0.12"/>
+          </svg>
         </div>
-        <h2 class="post-title">Surviving Your First Year in Practice</h2>
-        <p class="post-excerpt">Studio prepared you to design buildings. It did not prepare you for reply-all emails, redline markups, or the existential crisis of your first spec sheet.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag career">Career</span>
+          <h3 class="card-title">Side Projects and Building Your Professional Identity</h3>
+          <p class="card-excerpt">Your day job builds your skills. Your side projects build your reputation. Here's how to become visible in the profession.</p>
+          <span class="card-date">December 29, 2025</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/side-projects-and-visibility/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">December 29, 2025</span>
-          <span class="post-tag career">Career</span>
+      <!-- Grad School -->
+      <a href="posts/grad-school-worth-it/" class="post-card" data-tag="industry">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#f8f0fb"/>
+            <g opacity="0.12" fill="#6a1b9a">
+              <circle cx="20" cy="20" r="2"/><circle cx="48" cy="20" r="2"/><circle cx="76" cy="20" r="2"/>
+              <circle cx="104" cy="20" r="2"/><circle cx="132" cy="20" r="2"/>
+              <circle cx="20" cy="48" r="2"/><circle cx="48" cy="48" r="2"/><circle cx="76" cy="48" r="2"/>
+              <circle cx="104" cy="48" r="2"/><circle cx="132" cy="48" r="2"/>
+              <circle cx="20" cy="76" r="2"/><circle cx="48" cy="76" r="2"/><circle cx="76" cy="76" r="2"/>
+              <circle cx="104" cy="76" r="2"/><circle cx="132" cy="76" r="2"/>
+              <circle cx="20" cy="104" r="2"/><circle cx="48" cy="104" r="2"/><circle cx="76" cy="104" r="2"/>
+              <circle cx="104" cy="104" r="2"/>
+            </g>
+            <rect x="340" y="96" width="40" height="3" fill="#6a1b9a" opacity="0.15"/>
+          </svg>
         </div>
-        <h2 class="post-title">Side Projects and Building Your Professional Identity</h2>
-        <p class="post-excerpt">Your day job builds your skills. Your side projects build your reputation. Here's how to use competitions, writing, and social media to become visible in the profession.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="card-body">
+          <span class="card-tag industry">Industry</span>
+          <h3 class="card-title">Grad School: Is the M.Arch Worth It?</h3>
+          <p class="card-excerpt">The decision to pursue a graduate degree is one of the most expensive choices you'll make. When does it make sense?</p>
+          <span class="card-date">December 22, 2025</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <a href="posts/grad-school-worth-it/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">December 22, 2025</span>
-          <span class="post-tag industry">Industry</span>
+      <!-- Architecture Education -->
+      <a href="posts/architecture-education-beyond-architecture/" class="post-card" data-tag="industry">
+        <div class="card-geo">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <rect width="400" height="120" fill="#f8f0fb"/>
+            <g opacity="0.1" fill="#6a1b9a">
+              <circle cx="24" cy="24" r="2"/><circle cx="52" cy="24" r="2"/><circle cx="80" cy="24" r="2"/>
+              <circle cx="108" cy="24" r="2"/><circle cx="136" cy="24" r="2"/><circle cx="164" cy="24" r="2"/>
+              <circle cx="24" cy="52" r="2"/><circle cx="52" cy="52" r="2"/><circle cx="80" cy="52" r="2"/>
+              <circle cx="108" cy="52" r="2"/><circle cx="136" cy="52" r="2"/><circle cx="164" cy="52" r="2"/>
+              <circle cx="24" cy="80" r="2"/><circle cx="52" cy="80" r="2"/><circle cx="80" cy="80" r="2"/>
+              <circle cx="108" cy="80" r="2"/><circle cx="136" cy="80" r="2"/>
+              <circle cx="24" cy="108" r="2"/><circle cx="52" cy="108" r="2"/><circle cx="80" cy="108" r="2"/>
+            </g>
+            <rect x="20" y="14" width="36" height="3" fill="#6a1b9a" opacity="0.18"/>
+            <rect x="20" y="22" width="22" height="3" fill="#6a1b9a" opacity="0.1"/>
+          </svg>
         </div>
-        <h2 class="post-title">Grad School: Is the M.Arch Worth It?</h2>
-        <p class="post-excerpt">The decision to pursue a graduate degree in architecture is one of the most expensive choices you'll make. Let's talk about when it makes sense and when it doesn't.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </a>
-
-      <a href="posts/architecture-education-beyond-architecture/" class="post-item">
-        <div class="post-meta">
-          <span class="post-date">December 15, 2025</span>
-          <span class="post-tag industry">Industry</span>
+        <div class="card-body">
+          <span class="card-tag industry">Industry</span>
+          <h3 class="card-title">Architecture Education Doesn't Mean Becoming an Architect</h3>
+          <p class="card-excerpt">An architecture degree teaches you to think in ways almost no other education does. Here's why it matters far beyond buildings.</p>
+          <span class="card-date">December 15, 2025</span>
         </div>
-        <h2 class="post-title">Architecture Education Doesn't Mean Becoming an Architect</h2>
-        <p class="post-excerpt">An architecture degree teaches you to think in ways that almost no other education does. Here's what you're actually learning — and why it matters far beyond buildings.</p>
-        <span class="post-read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
     </div>
@@ -377,5 +666,34 @@
   </div>
 
   <script src="../shared/scripts.js"></script>
+  <script>
+    // Tag filtering
+    document.querySelectorAll('.tag-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active state
+        document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter cards
+        document.querySelectorAll('.post-card').forEach(card => {
+          if (filter === 'all' || card.dataset.tag === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Filter featured
+        const featured = document.querySelector('.featured-post');
+        if (filter === 'all' || featured.dataset.tag === filter) {
+          featured.style.display = '';
+        } else {
+          featured.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
