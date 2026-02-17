@@ -152,8 +152,11 @@
   .detail-about { font-size: 13px; line-height: 1.6; color: var(--text-dim); }
   .detail-tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .detail-tag { padding: 3px 9px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; color: var(--text-dim); }
+  .detail-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
   .detail-website { display: inline-block; padding: 8px 16px; background: var(--text); color: #fff; text-decoration: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; font-family: inherit; transition: background 0.15s; }
   .detail-website:hover { background: #333; }
+  .detail-careers { display: inline-block; padding: 8px 16px; background: #2e7d32; color: #fff; text-decoration: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; font-family: inherit; transition: background 0.15s; }
+  .detail-careers:hover { background: #1b5e20; }
 
   /* Job card CSS removed — firm discovery mode */
 
@@ -25005,6 +25008,51 @@ function plotMarkers(list) {
   map.addLayer(markerCluster);
 }
 
+// Known careers page paths for firms with non-standard URLs
+const CAREERS_PATHS = {
+  'gensler.com': '/careers',
+  'som.com': '/careers',
+  'fosterandpartners.com': '/careers',
+  'perkinswill.com': '/careers',
+  'nbbj.com': '/careers',
+  'zgf.com': '/careers',
+  'hok.com': '/careers',
+  'big.dk': '/jobs',
+  'aecom.com': '/careers',
+  'hdrinc.com': '/careers',
+  'jacobs.com': '/careers',
+  'stantec.com': '/careers',
+  'smithgroup.com': '/careers',
+  'sasaki.com': '/careers',
+  'populous.com': '/careers',
+  'snohetta.com': '/career',
+  'olsonkundig.com': '/careers',
+  'hks.com': '/careers',
+  'kfrarch.com': '/about#careers',
+  'massdesigngroup.org': '/jobs',
+  'dfrg.org': '/careers',
+  'weissmanfredi.com': '/careers',
+  'bfraud.com': '/careers',
+  'shop-architects.com': '/work-at-shop',
+  'dfrg.org': '/careers'
+};
+
+function getCareersUrl(firm) {
+  if (!firm.website) return '#';
+  try {
+    const url = new URL(firm.website.startsWith('http') ? firm.website : 'https://' + firm.website);
+    const host = url.hostname.replace(/^www\./, '');
+    // Check known paths
+    if (CAREERS_PATHS[host]) {
+      return url.origin + CAREERS_PATHS[host];
+    }
+    // Default: append /careers
+    return url.origin + '/careers';
+  } catch {
+    return firm.website + '/careers';
+  }
+}
+
 function selectFirm(id) {
   const firm = firms.find(f => f.id === id);
   if (!firm) return;
@@ -25031,9 +25079,12 @@ function selectFirm(id) {
       <h3>Specialties</h3>
       <div class="detail-tags">${firm.specialties.map(s => `<span class="detail-tag">${s}</span>`).join('')}</div>
     </div>
-    <div class="detail-section">
-      <a class="detail-website" href="${firm.website}" target="_blank">Visit Website →</a>
-    </div>
+    ${firm.website ? `<div class="detail-section">
+      <div class="detail-buttons">
+        <a class="detail-website" href="${firm.website}" target="_blank">Visit Website →</a>
+        <a class="detail-careers" href="${getCareersUrl(firm)}" target="_blank">Careers Page →</a>
+      </div>
+    </div>` : ''}
   `;
   document.getElementById('detailBody').innerHTML = html;
   document.getElementById('detailPanel').classList.add('open');
