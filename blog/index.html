@@ -58,58 +58,6 @@
       letter-spacing: -0.2px;
     }
 
-    /* ── Featured post (hero) ── */
-    .featured-post {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      padding: 48px 0;
-      border-bottom: 1px solid #e0e0e0;
-      transition: all 0.3s ease;
-    }
-
-    .featured-post:hover {
-      border-bottom-color: #111;
-    }
-
-    .featured-label {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #2962ff;
-      margin-bottom: 16px;
-    }
-
-    .featured-title {
-      font-size: 32px;
-      font-weight: 800;
-      color: #111;
-      line-height: 1.15;
-      letter-spacing: -0.8px;
-      margin-bottom: 16px;
-      max-width: 640px;
-      transition: color 0.2s;
-    }
-
-    .featured-post:hover .featured-title {
-      color: #2962ff;
-    }
-
-    .featured-excerpt {
-      font-size: 15px;
-      color: #666;
-      line-height: 1.7;
-      max-width: 540px;
-    }
-
-    .featured-date {
-      font-size: 11px;
-      color: #bbb;
-      margin-top: 20px;
-      font-weight: 500;
-    }
-
     /* ── Tag filter bar ── */
     .tag-bar {
       display: flex;
@@ -256,14 +204,6 @@
         font-size: 18px;
       }
 
-      .featured-post {
-        padding: 32px 0;
-      }
-
-      .featured-title {
-        font-size: 24px;
-      }
-
       .tag-bar {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -296,7 +236,6 @@
     @media (max-width: 480px) {
       .page { padding: 0 16px; }
       .blog-header p { font-size: 16px; }
-      .featured-title { font-size: 20px; }
       .card-title { font-size: 15px; }
     }
   </style>
@@ -351,14 +290,6 @@
       <p>Navigating the architecture profession — from landing your first job to building a career that lasts.</p>
     </div>
 
-    <!-- Featured / Latest Post -->
-    <a href="posts/what-firms-actually-look-for/" class="featured-post" data-tag="career">
-      <div class="featured-label">Latest — Career</div>
-      <h2 class="featured-title">The Strategic Job Search: Designing Your Career Path</h2>
-      <p class="featured-excerpt">A successful job search isn't just about finding an open seat. It's about alignment. Approach your career with the same intentionality you bring to a studio project.</p>
-      <div class="featured-date">February 16, 2026</div>
-    </a>
-
     <!-- Tag Filter -->
     <div class="tag-bar">
       <button class="tag-filter active" data-filter="all">All</button>
@@ -370,6 +301,16 @@
 
     <!-- Post Grid -->
     <div class="post-grid">
+
+      <a href="posts/what-firms-actually-look-for/" class="post-card" data-tag="career">
+        <div>
+          <span class="card-tag career">Career</span>
+          <h3 class="card-title">The Strategic Job Search: Designing Your Career Path</h3>
+          <p class="card-excerpt">A successful job search isn't just about finding an open seat. It's about alignment. Approach your career with the same intentionality you bring to a studio project.</p>
+          <span class="card-date">February 16, 2026</span>
+        </div>
+        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
 
       <a href="posts/small-firm-vs-big-firm/" class="post-card" data-tag="studio">
         <div>
@@ -494,8 +435,6 @@
           card.style.display = (filter === 'all' || card.dataset.tag === filter) ? '' : 'none';
         });
 
-        const featured = document.querySelector('.featured-post');
-        featured.style.display = (filter === 'all' || featured.dataset.tag === filter) ? '' : 'none';
       });
     });
   </script>
