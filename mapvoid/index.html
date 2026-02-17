@@ -95,9 +95,22 @@
   .filter-chip { padding: 4px 11px; border: 1.5px solid var(--border); border-radius: 20px; font-size: 11px; cursor: pointer; background: #fff; color: var(--text-dim); transition: all 0.15s; user-select: none; font-family: inherit; font-weight: 500; }
   .filter-chip:hover { border-color: var(--border-hover); color: var(--text); }
   .filter-chip.active { background: var(--text); color: #fff; border-color: var(--text); }
+
+  /* Discipline chips — colorful even when inactive */
+  .filter-chip[data-filter="architecture"] { background: #e8eeff; color: #2962ff; border-color: #c5d4ff; }
+  .filter-chip[data-filter="architecture"]:hover { background: #d4e0ff; border-color: #2962ff; }
   .filter-chip[data-filter="architecture"].active { background: #2962ff; border-color: #2962ff; color: #fff; }
+
+  .filter-chip[data-filter="landscape"] { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+  .filter-chip[data-filter="landscape"]:hover { background: #c8e6c9; border-color: #2e7d32; }
   .filter-chip[data-filter="landscape"].active { background: #2e7d32; border-color: #2e7d32; color: #fff; }
+
+  .filter-chip[data-filter="urban"] { background: #fff3e0; color: #e65100; border-color: #ffcc80; }
+  .filter-chip[data-filter="urban"]:hover { background: #ffe0b2; border-color: #e65100; }
   .filter-chip[data-filter="urban"].active { background: #e65100; border-color: #e65100; color: #fff; }
+
+  .filter-chip[data-filter="multi"] { background: #f3e5f5; color: #6a1b9a; border-color: #ce93d8; }
+  .filter-chip[data-filter="multi"]:hover { background: #e1bee7; border-color: #6a1b9a; }
   .filter-chip[data-filter="multi"].active { background: #6a1b9a; border-color: #6a1b9a; color: #fff; }
 
   .results-header { padding: 10px 16px; font-size: 12px; color: var(--text-dim); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
