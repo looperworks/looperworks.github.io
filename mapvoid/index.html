@@ -25295,7 +25295,11 @@ function exportCSV() {
 // Initialize saved UI on load
 updateSavedUI();
 
-// First-visit About modal triggers inside showMap()
+// Show About modal on first visit
+if (!localStorage.getItem('threshold_welcomed_v3')) {
+  setTimeout(() => { openAbout(); }, 600);
+  localStorage.setItem('threshold_welcomed_v3', '1');
+}
 
 document.getElementById('searchInput').addEventListener('input', (e) => {
   clearTimeout(searchDebounce);
@@ -25320,11 +25324,6 @@ function showMap() {
   document.getElementById('backToHero').style.display = 'block';
   // Leaflet needs a moment after container becomes visible to recalculate size
   setTimeout(() => { map.invalidateSize(); }, 150);
-  // Show About modal on first visit (v2 key resets for all users)
-  if (!localStorage.getItem('threshold_welcomed_v2')) {
-    setTimeout(() => { openAbout(); }, 500);
-    localStorage.setItem('threshold_welcomed_v2', '1');
-  }
 }
 
 function showHero() {
