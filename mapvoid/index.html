@@ -278,25 +278,25 @@
   /* About modal */
   .about-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 1300; opacity: 0; pointer-events: none; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
   .about-overlay.open { opacity: 1; pointer-events: auto; }
-  .about-modal { background: #fff; border-radius: 20px; max-width: 540px; width: 92%; max-height: 85vh; overflow-y: auto; box-shadow: 0 25px 80px rgba(0,0,0,0.2); transform: translateY(20px) scale(0.97); transition: transform 0.3s ease; }
+  .about-modal { background: #fff; border-radius: 16px; max-width: 480px; width: 92%; box-shadow: 0 25px 80px rgba(0,0,0,0.2); transform: translateY(20px) scale(0.97); transition: transform 0.3s ease; overflow: hidden; }
   .about-overlay.open .about-modal { transform: translateY(0) scale(1); }
-  .about-modal-hero { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 24px 28px 20px; border-radius: 20px 20px 0 0; position: relative; overflow: hidden; }
+  .about-modal-hero { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 20px 24px 16px; border-radius: 16px 16px 0 0; position: relative; overflow: hidden; }
   .about-modal-hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,197,71,0.15) 0%, transparent 70%); }
-  .about-modal-hero h2 { font-size: 21px; font-weight: 900; color: #fff; margin-bottom: 4px; position: relative; }
-  .about-modal-hero .about-subtitle { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.4; position: relative; }
-  .about-modal-hero .about-stats { display: flex; gap: 18px; margin-top: 14px; position: relative; }
+  .about-modal-hero h2 { font-size: 19px; font-weight: 900; color: #fff; margin-bottom: 3px; position: relative; }
+  .about-modal-hero .about-subtitle { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.4; position: relative; }
+  .about-modal-hero .about-stats { display: flex; gap: 16px; margin-top: 12px; position: relative; }
   .about-modal-hero .about-stat { text-align: center; }
-  .about-modal-hero .about-stat strong { display: block; font-size: 18px; font-weight: 800; color: var(--accent); }
-  .about-modal-hero .about-stat span { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); }
-  .about-modal-close { position: absolute; top: 12px; right: 14px; background: rgba(255,255,255,0.1); border: none; font-size: 18px; color: rgba(255,255,255,0.7); cursor: pointer; padding: 3px 9px; border-radius: 8px; z-index: 1; transition: all 0.15s; }
+  .about-modal-hero .about-stat strong { display: block; font-size: 16px; font-weight: 800; color: var(--accent); }
+  .about-modal-hero .about-stat span { font-size: 8px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); }
+  .about-modal-close { position: absolute; top: 10px; right: 12px; background: rgba(255,255,255,0.1); border: none; font-size: 16px; color: rgba(255,255,255,0.7); cursor: pointer; padding: 2px 8px; border-radius: 6px; z-index: 1; transition: all 0.15s; }
   .about-modal-close:hover { color: #fff; background: rgba(255,255,255,0.2); }
-  .about-modal-body { padding: 16px 28px 22px; }
-  .about-modal-body h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 5px; margin-top: 12px; font-weight: 600; }
+  .about-modal-body { padding: 14px 24px 18px; }
+  .about-modal-body h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; margin-top: 10px; font-weight: 600; }
   .about-modal-body h3:first-child { margin-top: 0; }
-  .about-modal-body p { font-size: 11.5px; line-height: 1.6; color: var(--text-dim); margin-bottom: 6px; }
-  .about-modal-body .disclaimer { font-size: 10px; color: var(--text-muted); line-height: 1.5; padding: 10px 12px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); }
-  .about-modal-body .about-cta { display: flex; justify-content: center; margin-top: 14px; }
-  .about-modal-body .about-cta button { padding: 9px 24px; background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border: none; border-radius: 10px; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
+  .about-modal-body p { font-size: 11px; line-height: 1.5; color: var(--text-dim); margin-bottom: 4px; }
+  .about-modal-body .disclaimer { font-size: 9.5px; color: var(--text-muted); line-height: 1.4; padding: 8px 10px; background: var(--bg); border-radius: 6px; border: 1px solid var(--border); margin-top: 8px; }
+  .about-modal-body .about-cta { display: flex; justify-content: center; margin-top: 12px; }
+  .about-modal-body .about-cta button { padding: 8px 22px; background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border: none; border-radius: 8px; font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
   .about-modal-body .about-cta button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,52,96,0.4); }
 
   /* Hero section — hidden (map is default) */
@@ -25296,9 +25296,9 @@ function exportCSV() {
 updateSavedUI();
 
 // Show About modal on first visit
-if (!localStorage.getItem('threshold_welcomed_v3')) {
+if (!localStorage.getItem('threshold_welcomed_v4')) {
   setTimeout(() => { openAbout(); }, 600);
-  localStorage.setItem('threshold_welcomed_v3', '1');
+  localStorage.setItem('threshold_welcomed_v4', '1');
 }
 
 document.getElementById('searchInput').addEventListener('input', (e) => {
