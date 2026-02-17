@@ -189,10 +189,27 @@
   .map-container { flex: 1; position: relative; }
   #map { width: 100%; height: 100%; }
 
-  /* Legend */
-  .map-legend { position: absolute; bottom: 20px; left: 12px; background: #fff; padding: 10px 14px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); border: 1px solid var(--border); z-index: 600; font-size: 11px; color: var(--text-dim); }
+  /* Legend — collapsible */
+  .map-legend { position: absolute; bottom: 20px; left: 12px; background: #fff; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); border: 1px solid var(--border); z-index: 600; font-size: 11px; color: var(--text-dim); transition: all 0.2s; }
+  .map-legend .legend-toggle { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); user-select: none; }
+  .map-legend .legend-toggle svg { width: 14px; height: 14px; transition: transform 0.2s; }
+  .map-legend.collapsed .legend-toggle svg { transform: rotate(-90deg); }
+  .map-legend .legend-body { padding: 0 12px 10px; }
+  .map-legend.collapsed .legend-body { display: none; }
   .map-legend h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 6px; }
   .legend-item { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+
+  /* Selected marker pulse */
+  @keyframes marker-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(232,197,71,0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(232,197,71,0); }
+    100% { box-shadow: 0 0 0 0 rgba(232,197,71,0); }
+  }
+  .custom-marker.selected-marker {
+    animation: marker-pulse 1.5s ease-out infinite;
+    border-color: var(--accent) !important;
+    z-index: 1000 !important;
+  }
   .legend-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
 
   /* ── Detail Panel ── */
@@ -613,6 +630,10 @@
         <div class="welcome-stat"><strong id="statStates">0</strong> States</div>
       </div>
       <div class="sidebar-toolbar">
+        <button class="toolbar-btn" id="discoverBtn" onclick="discoverFirm()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Discover
+        </button>
         <button class="toolbar-btn" id="nearMeBtn" onclick="findNearMe()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg>
           Near Me
@@ -692,17 +713,23 @@
   <div class="map-container">
     <div id="map"></div>
 
-    <div class="map-legend">
-      <h4>Discipline</h4>
-      <div class="legend-item"><div class="legend-dot" style="background:#2962ff"></div> Architecture</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div> Landscape Architecture</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#e65100"></div> Urban Design</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#6a1b9a"></div> Multidisciplinary</div>
-      <h4 style="margin-top:10px;">Firm Size</h4>
-      <div class="legend-item"><div class="legend-dot" style="background:#888;width:10px;height:10px;"></div> Boutique (&lt;20)</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#888;width:13px;height:13px;"></div> Small (20–99)</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#888;width:16px;height:16px;"></div> Mid-size (100–499)</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#888;width:19px;height:19px;"></div> Large (500+)</div>
+    <div class="map-legend collapsed" id="mapLegend">
+      <div class="legend-toggle" onclick="document.getElementById('mapLegend').classList.toggle('collapsed')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        Legend
+      </div>
+      <div class="legend-body">
+        <h4>Discipline</h4>
+        <div class="legend-item"><div class="legend-dot" style="background:#2962ff"></div> Architecture</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div> Landscape Architecture</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e65100"></div> Urban Design</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#6a1b9a"></div> Multidisciplinary</div>
+        <h4 style="margin-top:10px;">Firm Size</h4>
+        <div class="legend-item"><div class="legend-dot" style="background:#888;width:10px;height:10px;"></div> Boutique (&lt;20)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#888;width:13px;height:13px;"></div> Small (20–99)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#888;width:16px;height:16px;"></div> Mid-size (100–499)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#888;width:19px;height:19px;"></div> Large (500+)</div>
+      </div>
     </div>
 
     <div class="detail-panel" id="detailPanel">
@@ -22993,7 +23020,7 @@ const firms = [
 const map = L.map('map').setView([39.5, -98.0], 4);
 const tileUrl = localStorage.getItem('threshold_theme') === 'dark'
   ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-  : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+  : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
 const tileLayer = L.tileLayer(tileUrl, {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
   maxZoom: 19
@@ -23150,7 +23177,7 @@ function applyFilters() {
     );
     map.fitBounds(bounds, { padding: [30, 30], maxZoom: 12 });
   } else if (filtered.length === firms.length) {
-    map.setView([39.5, -98.0], 4);
+    map.setView([39.8, -98.5], 5);
   }
 }
 
@@ -23286,6 +23313,16 @@ function selectFirm(id) {
   document.querySelectorAll('.firm-card').forEach(c => c.classList.remove('selected'));
   const card = document.getElementById('card-' + id);
   if (card) { card.classList.add('selected'); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+
+  // Highlight selected marker with pulse
+  document.querySelectorAll('.custom-marker.selected-marker').forEach(el => el.classList.remove('selected-marker'));
+  if (markers[id]) {
+    const el = markers[id].getElement();
+    if (el) {
+      const dot = el.querySelector('.custom-marker');
+      if (dot) dot.classList.add('selected-marker');
+    }
+  }
 
   // On mobile, switch to map view when selecting a firm
   if (isMobileView()) { switchMobileView('map'); }
@@ -23586,7 +23623,7 @@ function toggleDarkMode() {
     document.getElementById('darkModeLabel').textContent = 'Dark';
     document.getElementById('darkModeBtn').classList.remove('active');
     // Switch to light map tiles
-    tileLayer.setUrl('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png');
+    tileLayer.setUrl('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png');
   } else {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('threshold_theme', 'dark');
@@ -23602,6 +23639,15 @@ if (localStorage.getItem('threshold_theme') === 'dark') {
   document.documentElement.setAttribute('data-theme', 'dark');
   document.getElementById('darkModeLabel').textContent = 'Light';
   document.getElementById('darkModeBtn').classList.add('active');
+}
+
+// ── Discover a Random Firm ──
+function discoverFirm() {
+  const filtered = getFilteredFirms();
+  const pool = filtered.length > 0 ? filtered : firms;
+  const randomFirm = pool[Math.floor(Math.random() * pool.length)];
+  if (isMobileView()) { switchMobileView('map'); }
+  selectFirm(randomFirm.id);
 }
 
 // ── Firms Near Me ──
