@@ -83,8 +83,9 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 14px 0 12px;
-      border-top: 3px solid var(--col-color);
+      padding: 10px 14px;
+      border-radius: 4px;
+      background: var(--col-bg);
       color: var(--col-color);
     }
 
@@ -101,9 +102,9 @@
       font-size: 10px;
     }
 
-    .kanban-column[data-col="ground"] { --col-color: #5C6BC0; }
-    .kanban-column[data-col="frame"]  { --col-color: #00897B; }
-    .kanban-column[data-col="form"]   { --col-color: #EF6C00; }
+    .kanban-column[data-col="ground"] { --col-color: #5C6BC0; --col-bg: #e8eaf6; }
+    .kanban-column[data-col="frame"]  { --col-color: #00897B; --col-bg: #e0f2f1; }
+    .kanban-column[data-col="form"]   { --col-color: #EF6C00; --col-bg: #fff3e0; }
 
     /* ── Cards ── */
     .post-card {
