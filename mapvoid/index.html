@@ -80,6 +80,10 @@
   [data-theme="dark"] .search-box input { background: #2a2a2a; color: #e8e8e8; border-color: rgba(255,255,255,0.1); }
   [data-theme="dark"] .search-box input::placeholder { color: #666; }
   [data-theme="dark"] .site-footer { background: #1a1a1a; border-top-color: rgba(255,255,255,0.06); }
+  [data-theme="dark"] .mobile-view-tabs { background: #1e1e1e; border-top-color: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .mobile-view-tab { color: #777; }
+  [data-theme="dark"] .mobile-view-tab.active { background: var(--accent); color: #1a1a1a; }
+  [data-theme="dark"] .detail-panel::before { background: rgba(255,255,255,0.2); }
 
   /* Near Me + Dark Mode buttons */
   .toolbar-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: 11px; font-weight: 500; font-family: inherit; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
@@ -367,14 +371,147 @@
   .hero { display: none; }
   .back-to-hero { display: none; }
 
+  /* ── Mobile view toggle tab bar ── */
+  .mobile-view-tabs { display: none; }
+
   @media (max-width: 900px) {
-    .sidebar { width: 100%; min-width: auto; height: 45%; }
     .app-container { flex-direction: column; height: 100vh; margin-top: 0; margin-left: 0; }
     .side-nav-wrapper { display: none; }
     .subscribe-bar { display: none; }
-    .detail-panel { width: 100%; }
-    .welcome-banner { padding: 12px; }
     .top-brand-area { display: none; }
+    .welcome-banner { padding: 12px; }
+
+    /* Mobile view toggle — list vs map */
+    .mobile-view-tabs {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+      padding: 6px 12px;
+      padding-bottom: max(6px, env(safe-area-inset-bottom));
+      gap: 8px;
+    }
+    .mobile-view-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 0;
+      border: none;
+      background: none;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.15s;
+    }
+    .mobile-view-tab.active {
+      background: var(--accent);
+      color: #1a1a1a;
+    }
+    .mobile-view-tab svg { width: 16px; height: 16px; }
+
+    /* Sidebar: full screen when active, hidden when map view */
+    .sidebar {
+      width: 100%;
+      min-width: auto;
+      height: calc(100vh - 52px);
+      border-right: none;
+      border-bottom: none;
+    }
+    .sidebar.mobile-hidden { display: none; }
+
+    /* Map: full screen when active, hidden when list view */
+    .map-container.mobile-hidden { display: none; }
+    .map-container { height: calc(100vh - 52px); }
+
+    /* Detail panel — bottom sheet */
+    .detail-panel {
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 70vh;
+      max-height: 70vh;
+      border-radius: 16px 16px 0 0;
+      border-left: none;
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -8px 30px rgba(0,0,0,0.15);
+      transform: translateY(100%);
+      z-index: 1100;
+    }
+    .detail-panel.open { transform: translateY(0); }
+    .detail-panel::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 4px;
+      background: rgba(128,128,128,0.3);
+      border-radius: 2px;
+      margin: 8px auto 0;
+    }
+
+    /* Saved drawer — full width on mobile */
+    .saved-drawer { width: 100%; }
+    .saved-fab { bottom: 64px; right: 12px; padding: 8px 14px; font-size: 12px; }
+
+    /* Modals — full width with padding */
+    .about-modal { max-width: 100%; width: 94%; border-radius: 14px; }
+    .subscribe-popup { max-width: 100%; width: 94%; border-radius: 14px; }
+
+    /* Toolbar buttons — larger tap targets */
+    .toolbar-btn { padding: 8px 14px; font-size: 12px; min-height: 36px; }
+    .toolbar-btn svg { width: 15px; height: 15px; }
+    .sidebar-toolbar { gap: 8px; }
+
+    /* Filter chips — horizontal scroll instead of wrap */
+    .filters {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+    .filters::-webkit-scrollbar { display: none; }
+    .filter-chip { white-space: nowrap; flex-shrink: 0; padding: 6px 14px; font-size: 12px; min-height: 32px; }
+
+    /* Search box — stack on very small screens */
+    .search-box input { font-size: 16px; padding: 10px 14px; }
+    .search-box button { padding: 10px 16px; font-size: 14px; }
+
+    /* State filter — bigger select */
+    .state-filter select { font-size: 14px; padding: 8px 12px; min-height: 40px; }
+
+    /* Results list items — bigger tap targets */
+    .firm-card { padding: 14px 16px; }
+    .firm-name { font-size: 15px; }
+    .firm-location { font-size: 13px; }
+
+    /* Map legend — smaller on mobile, above tab bar */
+    .map-legend { bottom: 64px; left: 8px; padding: 8px 10px; font-size: 10px; }
+
+    /* Leaflet zoom — above tab bar */
+    .leaflet-control-zoom { margin-bottom: 60px !important; }
+  }
+
+  /* Small phone tweaks */
+  @media (max-width: 380px) {
+    .sidebar-header h2 { font-size: 14px; }
+    .welcome-stat strong { font-size: 13px; }
+    .about-modal-hero { padding: 16px 18px 12px; }
+    .about-modal-body { padding: 12px 18px 14px; }
+    .subscribe-popup-hero { padding: 16px 18px 12px; }
+    .subscribe-popup-body { padding: 14px 18px 18px; }
   }
 </style>
 </head>
@@ -574,6 +711,18 @@
       <div class="detail-body" id="detailBody"></div>
     </div>
   </div>
+</div>
+
+<!-- Mobile View Toggle Tab Bar -->
+<div class="mobile-view-tabs" id="mobileViewTabs">
+  <button class="mobile-view-tab active" id="mobileListTab" onclick="switchMobileView('list')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+    List
+  </button>
+  <button class="mobile-view-tab" id="mobileMapTab" onclick="switchMobileView('map')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+    Map
+  </button>
 </div>
 
 <!-- Saved jobs FAB removed -->
@@ -23134,6 +23283,8 @@ function selectFirm(id) {
   const card = document.getElementById('card-' + id);
   if (card) { card.classList.add('selected'); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
 
+  // On mobile, switch to map view when selecting a firm
+  if (isMobileView()) { switchMobileView('map'); }
   map.flyTo([firm.lat, firm.lng], 12, { duration: 0.8 });
 
   // Update URL hash for shareable links
@@ -23384,6 +23535,30 @@ function openAbout() {
 }
 function closeAbout() {
   document.getElementById('aboutOverlay').classList.remove('open');
+}
+
+// ── Mobile View Toggle ──
+function switchMobileView(view) {
+  var sidebar = document.querySelector('.sidebar');
+  var mapCont = document.querySelector('.map-container');
+  var listTab = document.getElementById('mobileListTab');
+  var mapTab = document.getElementById('mobileMapTab');
+  if (view === 'map') {
+    sidebar.classList.add('mobile-hidden');
+    mapCont.classList.remove('mobile-hidden');
+    listTab.classList.remove('active');
+    mapTab.classList.add('active');
+    // Refresh map tiles (fixes grey tiles on show)
+    setTimeout(function() { map.invalidateSize(); }, 100);
+  } else {
+    sidebar.classList.remove('mobile-hidden');
+    mapCont.classList.add('mobile-hidden');
+    listTab.classList.add('active');
+    mapTab.classList.remove('active');
+  }
+}
+function isMobileView() {
+  return window.innerWidth <= 900;
 }
 
 // ── Dark Mode ──
