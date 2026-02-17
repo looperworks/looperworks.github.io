@@ -22,269 +22,24 @@
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../../../shared/styles.css">
+  <link rel="stylesheet" href="../../../shared/post.css">
   <style>
-    html, body {
-      width: 100%;
-      min-height: 100%;
-      color: #111111;
-      line-height: 1.6;
-    }
-
-    .page {
-      margin: 0 0 0 260px;
-      padding: 0 60px 0 40px;
-      max-width: 680px;
-    }
-
-    /* Back link */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #999;
-      text-decoration: none;
-      padding: 32px 0 0;
-      transition: color 0.15s;
-    }
-
-    .back-link:hover { color: #111; }
-
-    .back-link svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    /* Article header */
-    .article-header {
-      padding: 24px 0 32px;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .article-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .article-date {
-      font-size: 12px;
-      color: #999;
-      font-weight: 500;
-    }
-
     .article-tag {
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 2px 8px;
-      border-radius: 3px;
       background: #e8eeff;
       color: #2962ff;
     }
-
-    .article-read-time {
-      font-size: 12px;
-      color: #bbb;
-    }
-
-    .article-title {
-      font-size: 28px;
-      font-weight: 900;
-      color: #111;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-    }
-
-    .article-subtitle {
-      font-size: 16px;
-      color: #666;
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-    /* Article body */
-    .article-body {
-      padding: 36px 0 48px;
-    }
-
-    .article-body h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin: 28px 0 16px;
-      line-height: 1.3;
-    }
-
-    .article-body h2:first-child {
-      margin-top: 0;
-    }
-
-    .article-body p {
-      font-size: 15px;
-      color: #333;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .article-body blockquote {
-      border-left: 3px solid #e8c547;
-      margin: 28px 0;
-      padding: 4px 0 4px 20px;
-    }
-
-    .article-body blockquote p {
-      font-size: 15px;
-      color: #555;
-      line-height: 1.7;
-      font-style: italic;
-      margin-bottom: 0;
-    }
-
-    .article-body ul, .article-body ol {
-      margin: 0 0 20px 0;
-      padding-left: 20px;
-    }
-
-    .article-body li {
-      font-size: 15px;
-      color: #333;
-      line-height: 1.7;
-      margin-bottom: 8px;
-    }
-
-    /* Share section */
-    .share-section {
-      border-top: 1px solid #e0e0e0;
-      padding: 24px 0;
-    }
-
-    .share-label {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #999;
-      margin-bottom: 14px;
-    }
-
-    .share-buttons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .share-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #f5f5f5;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-    }
-
-    .share-btn:hover {
-      background: #e0e0e0;
-    }
-
-    .share-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: #666;
-    }
-
-    .share-btn:hover svg {
-      fill: #111;
-    }
-
-    .share-btn.copied {
-      background: #e8f5e9;
-    }
-
-    .share-btn.copied svg {
-      fill: #2e7d32;
-    }
-
-    /* Author box */
-    .author-box {
-      border-top: 1px solid #e0e0e0;
-      padding: 28px 0;
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .author-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1a1a2e, #0f3460);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .author-info h4 {
-      font-size: 14px;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 2px;
-    }
-
-    .author-info p {
-      font-size: 12px;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    /* Post navigation */
-    .post-nav {
-      border-top: 1px solid #e0e0e0;
-      padding: 24px 0;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .post-nav a {
-      font-size: 13px;
-      font-weight: 600;
-      color: #999;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .post-nav a:hover { color: #111; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .page {
-        margin-left: 0;
-        padding: 0 24px;
-      }
-
-      .article-title { font-size: 22px; }
-      .article-subtitle { font-size: 14px; }
-    }
-
-    @media (max-width: 480px) {
-      .page { padding: 0 16px; }
-      .article-title { font-size: 20px; }
-      .article-body h2 { font-size: 16px; }
-      .article-body p { font-size: 14px; }
-    }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thresholdarch.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://thresholdarch.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "The Licensure Path: ARE, AXP, and Whether It Actually Matters" }
+  ]
+}
+</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -358,6 +113,14 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
       Back to Blog
     </a>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="../../">Blog</a>
+      <span aria-hidden="true">›</span>
+      <span class="current">The Licensure Path: ARE, AXP, and Whether It Actually Matters</span>
+    </nav>
 
     <article>
     <div class="article-header">
