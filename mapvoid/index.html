@@ -25320,10 +25320,10 @@ function showMap() {
   document.getElementById('backToHero').style.display = 'block';
   // Leaflet needs a moment after container becomes visible to recalculate size
   setTimeout(() => { map.invalidateSize(); }, 150);
-  // Show About modal on first visit
-  if (!localStorage.getItem('threshold_visited')) {
-    setTimeout(() => { openAbout(); }, 400);
-    localStorage.setItem('threshold_visited', '1');
+  // Show About modal on first visit (v2 key resets for all users)
+  if (!localStorage.getItem('threshold_welcomed_v2')) {
+    setTimeout(() => { openAbout(); }, 500);
+    localStorage.setItem('threshold_welcomed_v2', '1');
   }
 }
 
