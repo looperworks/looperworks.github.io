@@ -25274,9 +25274,9 @@ function closeSavedDrawer() {
 
 function exportCSV() {
   if (savedFirms.length === 0) return;
-  const headers = ['Firm Name', 'City', 'State', 'Discipline', 'Size', 'Specialties', 'Website', 'Careers Page'];
+  const headers = ['Firm Name', 'Primary Discipline', 'Location', 'Website', 'Focus Area'];
   const rows = savedFirms.map(s => [
-    s.name, s.city, s.state, s.discipline, s.size, s.specialties, s.website, s.careersUrl
+    s.name, s.discipline, s.city + ', ' + s.state, s.website, s.specialties
   ]);
   const csvContent = [headers, ...rows]
     .map(row => row.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(','))
