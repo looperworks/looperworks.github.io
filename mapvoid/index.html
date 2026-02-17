@@ -23038,8 +23038,10 @@ function plotMarkers(list) {
 }
 
 function getCareersUrl(firm) {
-  // Google search always finds the right careers page
-  return 'https://www.google.com/search?q=' + encodeURIComponent(firm.name + ' careers jobs');
+  if (!firm.website) return 'https://www.google.com/search?q=' + encodeURIComponent(firm.name + ' careers jobs');
+  // Try direct /careers path on firm's website
+  let base = firm.website.replace(/\/+$/, '');
+  return base + '/careers';
 }
 
 function selectFirm(id) {
