@@ -31,7 +31,7 @@
     .page {
       margin: 0 0 0 260px;
       padding: 0 48px 0 40px;
-      max-width: 1200px;
+      max-width: 1060px;
     }
 
     /* ── Header ── */
@@ -61,8 +61,8 @@
     /* ── Kanban Board ── */
     .kanban-board {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       padding: 32px 0;
       align-items: start;
     }
@@ -74,26 +74,36 @@
       min-width: 0;
     }
 
+    /* Column header with icon */
     .column-header {
-      font-size: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 12px 0 10px;
+      padding: 14px 0 12px;
       border-top: 3px solid var(--col-color);
       color: var(--col-color);
     }
 
-    .column-header .col-count {
-      font-weight: 500;
-      opacity: 0.5;
-      margin-left: 6px;
+    .column-header svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
     }
 
-    .kanban-column[data-col="career"]  { --col-color: #2962ff; }
-    .kanban-column[data-col="studio"]  { --col-color: #2e7d32; }
-    .kanban-column[data-col="advice"]  { --col-color: #e65100; }
-    .kanban-column[data-col="industry"]{ --col-color: #6a1b9a; }
+    .column-header .col-count {
+      font-weight: 500;
+      opacity: 0.4;
+      margin-left: auto;
+      font-size: 10px;
+    }
+
+    .kanban-column[data-col="ground"] { --col-color: #5C6BC0; }
+    .kanban-column[data-col="frame"]  { --col-color: #00897B; }
+    .kanban-column[data-col="form"]   { --col-color: #EF6C00; }
 
     /* ── Cards ── */
     .post-card {
@@ -102,7 +112,6 @@
       text-decoration: none;
       color: inherit;
       border: 1px solid #eee;
-      border-left: 1px solid #eee;
       transition: all 0.2s ease;
       overflow: hidden;
     }
@@ -128,13 +137,13 @@
       letter-spacing: 0.3px;
       padding: 2px 8px;
       border-radius: 3px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      width: fit-content;
     }
 
-    .kanban-column[data-col="career"] .card-badge  { background: #e8eeff; color: #2962ff; }
-    .kanban-column[data-col="studio"] .card-badge  { background: #e8f5e9; color: #2e7d32; }
-    .kanban-column[data-col="advice"] .card-badge  { background: #fff3e0; color: #e65100; }
-    .kanban-column[data-col="industry"] .card-badge { background: #f3e5f5; color: #6a1b9a; }
+    .kanban-column[data-col="ground"] .card-badge { background: #e8eaf6; color: #5C6BC0; }
+    .kanban-column[data-col="frame"] .card-badge  { background: #e0f2f1; color: #00897B; }
+    .kanban-column[data-col="form"] .card-badge   { background: #fff3e0; color: #EF6C00; }
 
     .card-title {
       font-size: 14px;
@@ -159,13 +168,6 @@
     }
 
     /* ── Responsive ── */
-    @media (max-width: 1100px) {
-      .kanban-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px 20px;
-      }
-    }
-
     @media (max-width: 900px) {
       .page {
         margin-left: 0;
@@ -250,27 +252,13 @@
     <!-- Kanban Board -->
     <div class="kanban-board">
 
-      <!-- Career Column -->
-      <div class="kanban-column" data-col="career">
-        <div class="column-header">Career <span class="col-count">5</span></div>
-
-        <a href="posts/why-architects-cant-tell-their-story/" class="post-card">
-          <div class="card-inner">
-            <span class="card-badge">7 min read</span>
-            <h3 class="card-title">Why Architects Can't Tell Their Own Story</h3>
-            <p class="card-excerpt">You can explain a building's concept in a crit. So why can't you explain what you do at a dinner party?</p>
-            <span class="card-date">February 17, 2026</span>
-          </div>
-        </a>
-
-        <a href="posts/what-firms-actually-look-for/" class="post-card">
-          <div class="card-inner">
-            <span class="card-badge">8 min read</span>
-            <h3 class="card-title">The Strategic Job Search</h3>
-            <p class="card-excerpt">The job search is a design problem. Treat it like one.</p>
-            <span class="card-date">February 16, 2026</span>
-          </div>
-        </a>
+      <!-- Ground Column -->
+      <div class="kanban-column" data-col="ground">
+        <div class="column-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="15" x2="9" y2="21"/><line x1="15" y1="15" x2="15" y2="21"/></svg>
+          Ground
+          <span class="col-count">3</span>
+        </div>
 
         <a href="posts/what-they-dont-teach-you/" class="post-card">
           <div class="card-inner">
@@ -290,42 +278,32 @@
           </div>
         </a>
 
-        <a href="posts/side-projects-and-visibility/" class="post-card">
+        <a href="posts/architecture-education-beyond-architecture/" class="post-card">
           <div class="card-inner">
-            <span class="card-badge">6 min read</span>
-            <h3 class="card-title">Side Projects and Building Your Professional Identity</h3>
-            <p class="card-excerpt">Nobody got discovered by sitting quietly at their desk doing redlines.</p>
-            <span class="card-date">December 29, 2025</span>
+            <span class="card-badge">8 min read</span>
+            <h3 class="card-title">Architecture Education Beyond Architecture</h3>
+            <p class="card-excerpt">Your degree taught you to think. Where you apply it is your choice.</p>
+            <span class="card-date">December 15, 2025</span>
           </div>
         </a>
       </div>
 
-      <!-- Studio Culture Column -->
-      <div class="kanban-column" data-col="studio">
-        <div class="column-header">Studio Culture <span class="col-count">2</span></div>
+      <!-- Frame Column -->
+      <div class="kanban-column" data-col="frame">
+        <div class="column-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+          Frame
+          <span class="col-count">3</span>
+        </div>
 
-        <a href="posts/small-firm-vs-big-firm/" class="post-card">
+        <a href="posts/what-firms-actually-look-for/" class="post-card">
           <div class="card-inner">
-            <span class="card-badge">6 min read</span>
-            <h3 class="card-title">Small Firm vs. Big Firm</h3>
-            <p class="card-excerpt">Different planets. Same profession.</p>
-            <span class="card-date">February 9, 2026</span>
+            <span class="card-badge">8 min read</span>
+            <h3 class="card-title">The Strategic Job Search</h3>
+            <p class="card-excerpt">The job search is a design problem. Treat it like one.</p>
+            <span class="card-date">February 16, 2026</span>
           </div>
         </a>
-
-        <a href="posts/surviving-your-first-year/" class="post-card">
-          <div class="card-inner">
-            <span class="card-badge">7 min read</span>
-            <h3 class="card-title">Surviving Your First Year</h3>
-            <p class="card-excerpt">Redlines aren't criticism. They're conversation.</p>
-            <span class="card-date">January 5, 2026</span>
-          </div>
-        </a>
-      </div>
-
-      <!-- Advice Column -->
-      <div class="kanban-column" data-col="advice">
-        <div class="column-header">Advice <span class="col-count">2</span></div>
 
         <a href="posts/cold-email-that-works/" class="post-card">
           <div class="card-inner">
@@ -346,16 +324,29 @@
         </a>
       </div>
 
-      <!-- Industry Column -->
-      <div class="kanban-column" data-col="industry">
-        <div class="column-header">Industry <span class="col-count">1</span></div>
+      <!-- Form Column -->
+      <div class="kanban-column" data-col="form">
+        <div class="column-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Form
+          <span class="col-count">2</span>
+        </div>
 
-        <a href="posts/architecture-education-beyond-architecture/" class="post-card">
+        <a href="posts/why-architects-cant-tell-their-story/" class="post-card">
           <div class="card-inner">
-            <span class="card-badge">8 min read</span>
-            <h3 class="card-title">Architecture Education Beyond Architecture</h3>
-            <p class="card-excerpt">Your degree taught you to think. Where you apply it is your choice.</p>
-            <span class="card-date">December 15, 2025</span>
+            <span class="card-badge">7 min read</span>
+            <h3 class="card-title">Why Architects Can't Tell Their Own Story</h3>
+            <p class="card-excerpt">You can explain a building's concept in a crit. So why can't you explain what you do at a dinner party?</p>
+            <span class="card-date">February 17, 2026</span>
+          </div>
+        </a>
+
+        <a href="posts/side-projects-and-visibility/" class="post-card">
+          <div class="card-inner">
+            <span class="card-badge">6 min read</span>
+            <h3 class="card-title">Side Projects and Building Your Professional Identity</h3>
+            <p class="card-excerpt">Nobody got discovered by sitting quietly at their desk doing redlines.</p>
+            <span class="card-date">December 29, 2025</span>
           </div>
         </a>
       </div>
