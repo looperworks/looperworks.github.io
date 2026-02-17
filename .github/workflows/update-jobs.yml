@@ -12,9 +12,14 @@ jobs:
   update-jobs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
 
-      - uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -24,7 +29,24 @@ jobs:
           JSEARCH_API_KEY: ${{ secrets.JSEARCH_API_KEY }}
         run: node fetch-jobs.js
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update job listings [automated]"
-          file_pattern: "mapvoid/firms.json data/jsearch-discoveries.json"
+      - name: Sync with remote and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stash our changed files
+          git stash --include-untracked
+
+          # Get the absolute latest from remote
+          git fetch origin main
+          git reset --hard origin/main
+
+          # Re-apply our changes on top
+          git stash pop
+
+          # Commit and push
+          git add mapvoid/firms.json
+          git add data/jsearch-discoveries.json || true
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Update job listings [automated]"
+          git push origin main
