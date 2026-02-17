@@ -43,6 +43,51 @@
     --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
   }
 
+  /* Dark mode */
+  [data-theme="dark"] {
+    --bg: #1a1a1a;
+    --bg-card: #242424;
+    --bg-card-hover: #2e2e2e;
+    --border: rgba(255,255,255,0.1);
+    --border-hover: rgba(255,255,255,0.2);
+    --text: #e8e8e8;
+    --text-dim: #aaaaaa;
+    --text-muted: #777777;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  [data-theme="dark"] .sidebar { background: #1e1e1e; border-right-color: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .sidebar-header { background: #1e1e1e; }
+  [data-theme="dark"] .search-section { background: #1e1e1e; }
+  [data-theme="dark"] .firm-item { border-bottom-color: rgba(255,255,255,0.06); }
+  [data-theme="dark"] .firm-item:hover { background: #2a2a2a; }
+  [data-theme="dark"] .detail-panel { background: #1e1e1e; }
+  [data-theme="dark"] .filter-chip { background: #2a2a2a; border-color: rgba(255,255,255,0.1); color: #ccc; }
+  [data-theme="dark"] .filter-chip:hover { background: #333; }
+  [data-theme="dark"] .about-modal-body { background: #1e1e1e; }
+  [data-theme="dark"] .about-modal-body h3 { color: #888; }
+  [data-theme="dark"] .about-modal-body p { color: #aaa; }
+  [data-theme="dark"] .about-modal-body .disclaimer { background: #242424; border-color: rgba(255,255,255,0.08); color: #888; }
+  [data-theme="dark"] .saved-drawer { background: #1e1e1e; border-left-color: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .saved-fab { background: #242424; border-color: rgba(255,255,255,0.1); color: #e8e8e8; }
+  [data-theme="dark"] .subscribe-popup .subscribe-popup-body { background: #1e1e1e; }
+  [data-theme="dark"] .subscribe-popup-body input[type="email"] { background: #2a2a2a; border-color: rgba(255,255,255,0.1); color: #e8e8e8; }
+  [data-theme="dark"] .leaflet-control-zoom a { background: #242424 !important; color: #e8e8e8 !important; border-color: rgba(255,255,255,0.1) !important; }
+  [data-theme="dark"] .map-legend { background: #242424 !important; color: #ccc !important; border-color: rgba(255,255,255,0.1) !important; }
+  [data-theme="dark"] .sort-bar { background: #1e1e1e; }
+  [data-theme="dark"] .sort-bar select { background: #2a2a2a; color: #ccc; border-color: rgba(255,255,255,0.1); }
+  [data-theme="dark"] .state-filter select { background: #2a2a2a; color: #ccc; border-color: rgba(255,255,255,0.1); }
+  [data-theme="dark"] .search-box input { background: #2a2a2a; color: #e8e8e8; border-color: rgba(255,255,255,0.1); }
+  [data-theme="dark"] .search-box input::placeholder { color: #666; }
+  [data-theme="dark"] .site-footer { background: #1a1a1a; border-top-color: rgba(255,255,255,0.06); }
+
+  /* Near Me + Dark Mode buttons */
+  .toolbar-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: 11px; font-weight: 500; font-family: inherit; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
+  .toolbar-btn:hover { border-color: var(--border-hover); color: var(--text); }
+  .toolbar-btn.active { background: var(--accent); border-color: var(--accent); color: #1a1a1a; }
+  .toolbar-btn svg { width: 13px; height: 13px; }
+  .sidebar-toolbar { display: flex; gap: 6px; margin-top: 8px; }
+
   /* Override top-brand positioning for map layout */
   .top-brand-area {
     position: fixed;
@@ -425,6 +470,16 @@
         <div class="welcome-stat"><strong id="statFirms">0</strong> Firms</div>
         <div class="welcome-stat"><strong id="statCities">0</strong> Cities</div>
         <div class="welcome-stat"><strong id="statStates">0</strong> States</div>
+      </div>
+      <div class="sidebar-toolbar">
+        <button class="toolbar-btn" id="nearMeBtn" onclick="findNearMe()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg>
+          Near Me
+        </button>
+        <button class="toolbar-btn" id="darkModeBtn" onclick="toggleDarkMode()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <span id="darkModeLabel">Dark</span>
+        </button>
       </div>
     </div>
     <div class="search-section">
@@ -22783,7 +22838,10 @@ const firms = [
 
 // ── Map Setup ──
 const map = L.map('map').setView([39.5, -98.0], 4);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+const tileUrl = localStorage.getItem('threshold_theme') === 'dark'
+  ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+  : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+const tileLayer = L.tileLayer(tileUrl, {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
   maxZoom: 19
 }).addTo(map);
@@ -23326,6 +23384,62 @@ function openAbout() {
 }
 function closeAbout() {
   document.getElementById('aboutOverlay').classList.remove('open');
+}
+
+// ── Dark Mode ──
+function toggleDarkMode() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('threshold_theme', 'light');
+    document.getElementById('darkModeLabel').textContent = 'Dark';
+    document.getElementById('darkModeBtn').classList.remove('active');
+    // Switch to light map tiles
+    tileLayer.setUrl('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('threshold_theme', 'dark');
+    document.getElementById('darkModeLabel').textContent = 'Light';
+    document.getElementById('darkModeBtn').classList.add('active');
+    // Switch to dark map tiles
+    tileLayer.setUrl('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png');
+  }
+}
+
+// Restore theme on load
+if (localStorage.getItem('threshold_theme') === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.getElementById('darkModeLabel').textContent = 'Light';
+  document.getElementById('darkModeBtn').classList.add('active');
+}
+
+// ── Firms Near Me ──
+function findNearMe() {
+  const btn = document.getElementById('nearMeBtn');
+  btn.textContent = 'Locating...';
+  if (!navigator.geolocation) {
+    btn.textContent = 'Not supported';
+    setTimeout(() => { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg> Near Me'; }, 2000);
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    const userLat = pos.coords.latitude;
+    const userLng = pos.coords.longitude;
+    // Sort firms by distance
+    const withDist = firms.map(f => ({
+      ...f,
+      dist: Math.sqrt(Math.pow(f.lat - userLat, 2) + Math.pow(f.lng - userLng, 2))
+    }));
+    withDist.sort((a, b) => a.dist - b.dist);
+    // Zoom map to user location
+    map.setView([userLat, userLng], 10);
+    // Select nearest firm
+    if (withDist.length > 0) selectFirm(withDist[0].id);
+    btn.classList.add('active');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg> Near Me';
+  }, function() {
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg> Near Me';
+  });
 }
 
 // ── Subscribe popup (after 60s) ──
