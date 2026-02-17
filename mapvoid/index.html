@@ -23039,8 +23039,31 @@ function plotMarkers(list) {
 
 function getCareersUrl(firm) {
   if (!firm.website) return 'https://www.google.com/search?q=' + encodeURIComponent(firm.name + ' careers jobs');
-  // Try direct /careers path on firm's website
   let base = firm.website.replace(/\/+$/, '');
+  // Known non-standard careers paths for major firms
+  const known = {
+    'gensler.com': 'https://gensler.wd1.myworkdayjobs.com/genslercareers',
+    'som.com': '/culture/careers',
+    'hok.com': '/people/careers',
+    'smithgroup.com': '/our-firm/careers',
+    'ennead.com': '/employment',
+    'woodsbagot.com': '/global-studio/careers',
+    'nbbj.com': '/careers',
+    'dlrgroup.com': '/careers',
+    'cannondesign.com': '/careers',
+    'perkinswill.com': '/careers',
+    'zgf.com': '/careers',
+    'sasaki.com': '/careers',
+    'payette.com': '/careers',
+    'big.dk': '/careers',
+    'heintges.com': '/employment',
+    'lfrarchitects.com': '/join-us',
+    'fieldoperations.net': '/studio',
+  };
+  const host = base.replace(/https?:\/\/(www\.)?/, '').split('/')[0].toLowerCase();
+  if (known[host]) {
+    return known[host].startsWith('http') ? known[host] : base + known[host];
+  }
   return base + '/careers';
 }
 
