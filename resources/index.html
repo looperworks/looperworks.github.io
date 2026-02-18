@@ -24,29 +24,81 @@
 <link rel="stylesheet" href="../shared/styles.css?v=2">
 <link rel="stylesheet" href="../shared/resources.css">
 <style>
-    .department-heading {
-        font-size: 0.85rem;
+    /* Section 5: Kanban card grid */
+    .kanban-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 8px;
+    }
+    .kanban-card {
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 8px;
+        padding: 20px;
+        transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .kanban-card:hover {
+        border-color: #ccc;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .kanban-card .card-rank {
+        font-size: 11px;
+        font-weight: 700;
+        color: #bbb;
+        margin-bottom: 6px;
+    }
+    .kanban-card .card-school {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 2px;
+        line-height: 1.3;
+    }
+    .kanban-card .card-school a {
+        color: #1a1a1a;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .kanban-card .card-school a:hover { opacity: 0.6; }
+    .kanban-card .card-url {
+        font-size: 11px;
+        color: #aaa;
+        margin-bottom: 12px;
+    }
+    .kanban-card .card-dept {
+        font-size: 10px;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #555;
-        margin: 1.25rem 0 0.5rem 0;
-        padding: 0;
+        letter-spacing: 0.06em;
+        color: #aaa;
+        margin: 10px 0 4px;
     }
-    .section-body .department-heading:first-of-type {
-        margin-top: 0;
+    .kanban-card .card-dept:first-of-type { margin-top: 0; }
+    .kanban-card .card-program {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #444;
     }
-    .admissions-link {
-        margin-top: 1.25rem;
-        padding-top: 1rem;
-        border-top: 1px solid #e0e0e0;
+    .kanban-card .card-program a {
+        color: #444;
+        text-decoration: none;
+        transition: color 0.15s;
     }
-    .admissions-link .resource-name a {
+    .kanban-card .card-program a:hover { color: #1a1a1a; }
+    .kanban-card .card-admissions {
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid #f0f0f0;
+    }
+    .kanban-card .card-admissions a {
+        font-size: 12px;
         font-weight: 600;
+        color: #888;
+        text-decoration: none;
+        transition: color 0.15s;
     }
-    .admissions-link .resource-name a::after {
-        content: " →";
-    }
+    .kanban-card .card-admissions a:hover { color: #1a1a1a; }
+    .kanban-card .card-admissions a::after { content: " \2192"; }
 </style>
 </head>
 <body>
@@ -297,295 +349,256 @@
                     </div>
                 </div>
                 <div class="section-body" data-toggle="5">
-                    <p>The top-ranked graduate architecture programs in the United States, with direct links to degree options, department pages, and admissions information.</p>
+                    <p>A curated list of the top graduate architecture programs in the United States, ranked by reputation, faculty, research output, and career outcomes. Each card links directly to program pages and admissions info.</p>
 
-                    <!-- 1. Harvard GSD -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.gsd.harvard.edu/" target="_blank" rel="noopener">Harvard Graduate School of Design (GSD)</a></div>
-                        <div class="resource-url"><a href="https://www.gsd.harvard.edu/" target="_blank" rel="noopener">gsd.harvard.edu</a></div>
-                        <h4 class="department-heading">Architecture Department</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/architecture/master-in-architecture-i/" target="_blank" rel="noopener">M.Arch I (3+ Year Professional)</a></div>
-                        </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/architecture/master-in-architecture-ii/" target="_blank" rel="noopener">M.Arch II (Post-Professional)</a></div>
-                        </div>
-                        <h4 class="department-heading">Landscape Architecture Department</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/landscape-architecture/master-in-landscape-architecture-i/" target="_blank" rel="noopener">MLA I / MLA I AP</a></div>
-                        </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/landscape-architecture/master-in-landscape-architecture-ii/" target="_blank" rel="noopener">MLA II (Post-Professional)</a></div>
-                        </div>
-                        <h4 class="department-heading">Urban Planning &amp; Design Department</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/urban-planning-design/master-in-urban-planning/" target="_blank" rel="noopener">Master in Urban Planning (MUP)</a></div>
-                        </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/urban-planning-design/master-of-architecture-in-urban-design/" target="_blank" rel="noopener">Master of Architecture in Urban Design (MAUD)</a></div>
-                        </div>
-                        <h4 class="department-heading">Design Studies</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/design-studies/master-in-design-studies/" target="_blank" rel="noopener">Master in Design Studies (MDes)</a></div>
-                        </div>
-                        <div class="resource-card admissions-link">
-                            <div class="resource-name"><a href="https://www.gsd.harvard.edu/admissions/apply-now/" target="_blank" rel="noopener">GSD Admissions Overview</a></div>
-                        </div>
-                    </div>
+                    <div class="kanban-grid">
 
-                    <!-- 2. MIT SA+P -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://architecture.mit.edu/" target="_blank" rel="noopener">MIT School of Architecture + Planning (SA+P)</a></div>
-                        <div class="resource-url"><a href="https://architecture.mit.edu/" target="_blank" rel="noopener">architecture.mit.edu</a></div>
-                        <h4 class="department-heading">Architecture Department</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://architecture.mit.edu/architecture-and-urbanism/degree-programs/master-architecture" target="_blank" rel="noopener">Master of Architecture (M.Arch)</a></div>
+                        <!-- 1. Harvard GSD -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#1</div>
+                            <div class="card-school"><a href="https://www.gsd.harvard.edu/" target="_blank" rel="noopener">Harvard GSD</a></div>
+                            <div class="card-url">gsd.harvard.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://www.gsd.harvard.edu/architecture/" target="_blank" rel="noopener">M.Arch I (Professional)</a></div>
+                            <div class="card-program"><a href="https://www.gsd.harvard.edu/architecture/" target="_blank" rel="noopener">M.Arch II (Post-Professional)</a></div>
+                            <div class="card-program"><a href="https://www.gsd.harvard.edu/design-studies/" target="_blank" rel="noopener">MDes (Design Studies)</a></div>
+                            <div class="card-dept">Urban Design &amp; Planning</div>
+                            <div class="card-program"><a href="https://www.gsd.harvard.edu/urban-design/" target="_blank" rel="noopener">MAUD (Urban Design)</a></div>
+                            <div class="card-program"><a href="https://www.gsd.harvard.edu/urban-planning/" target="_blank" rel="noopener">MUP (Urban Planning)</a></div>
+                            <div class="card-admissions"><a href="https://www.gsd.harvard.edu/admissions/apply-now/" target="_blank" rel="noopener">GSD Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://architecture.mit.edu/architecture-and-urbanism/degree-programs/master-science-architecture-studies" target="_blank" rel="noopener">SMArchS (Master of Science in Architecture Studies)</a></div>
-                        </div>
-                        <h4 class="department-heading">Specialized Programs</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://architecture.mit.edu/building-technology/degree-programs/master-science-building-technology" target="_blank" rel="noopener">Master of Science in Building Technology (SMBT)</a></div>
-                        </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://architecture.mit.edu/computation/degree-programs/master-science-architecture-studies-computation" target="_blank" rel="noopener">SMArchS Computation</a></div>
-                        </div>
-                        <div class="resource-card admissions-link">
-                            <div class="resource-name"><a href="https://architecture.mit.edu/admissions/graduate-admissions" target="_blank" rel="noopener">MIT Architecture Graduate Admissions</a></div>
-                        </div>
-                    </div>
 
-                    <!-- 3. Columbia GSAPP -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.arch.columbia.edu/" target="_blank" rel="noopener">Columbia University GSAPP</a></div>
-                        <div class="resource-url"><a href="https://www.arch.columbia.edu/" target="_blank" rel="noopener">arch.columbia.edu</a></div>
-                        <h4 class="department-heading">Architecture &amp; Design</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.arch.columbia.edu/programs/1-master-of-architecture" target="_blank" rel="noopener">Master of Architecture (M.Arch)</a></div>
+                        <!-- 2. MIT SA+P -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#2</div>
+                            <div class="card-school"><a href="https://architecture.mit.edu/" target="_blank" rel="noopener">MIT SA+P</a></div>
+                            <div class="card-url">architecture.mit.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://architecture.mit.edu/architecture-and-urbanism/degree-programs/master-architecture" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://architecture.mit.edu/architecture-and-urbanism/degree-programs/master-science-architecture-studies" target="_blank" rel="noopener">SMArchS</a></div>
+                            <div class="card-dept">Specialized</div>
+                            <div class="card-program"><a href="https://architecture.mit.edu/building-technology/degree-programs/master-science-building-technology" target="_blank" rel="noopener">SMBT (Building Technology)</a></div>
+                            <div class="card-program"><a href="https://architecture.mit.edu/computation/degree-programs/master-science-architecture-studies-computation" target="_blank" rel="noopener">SMArchS Computation</a></div>
+                            <div class="card-admissions"><a href="https://architecture.mit.edu/admissions/graduate-admissions" target="_blank" rel="noopener">MIT Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.arch.columbia.edu/programs/2-master-of-science-in-advanced-architectural-design" target="_blank" rel="noopener">MS Advanced Architectural Design (MS-AAD)</a></div>
+
+                        <!-- 3. Columbia GSAPP -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#3</div>
+                            <div class="card-school"><a href="https://www.arch.columbia.edu/" target="_blank" rel="noopener">Columbia GSAPP</a></div>
+                            <div class="card-url">arch.columbia.edu</div>
+                            <div class="card-dept">Architecture &amp; Design</div>
+                            <div class="card-program"><a href="https://www.arch.columbia.edu/programs/1-master-of-architecture" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://www.arch.columbia.edu/programs/2-master-of-science-in-advanced-architectural-design" target="_blank" rel="noopener">MS-AAD</a></div>
+                            <div class="card-program"><a href="https://www.arch.columbia.edu/programs/15-m-s-computational-design-practices" target="_blank" rel="noopener">MS Computational Design</a></div>
+                            <div class="card-dept">Urbanism</div>
+                            <div class="card-program"><a href="https://www.arch.columbia.edu/programs/5-master-of-science-in-architecture-and-urban-design" target="_blank" rel="noopener">MS-AUD</a></div>
+                            <div class="card-program"><a href="https://www.arch.columbia.edu/programs/4-master-of-science-in-urban-planning" target="_blank" rel="noopener">MS Urban Planning</a></div>
+                            <div class="card-admissions"><a href="https://www.arch.columbia.edu/admissions" target="_blank" rel="noopener">GSAPP Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.arch.columbia.edu/programs/15-m-s-computational-design-practices" target="_blank" rel="noopener">MS Computational Design Practices</a></div>
+
+                        <!-- 4. Penn Weitzman -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#4</div>
+                            <div class="card-school"><a href="https://www.design.upenn.edu/" target="_blank" rel="noopener">Penn Weitzman</a></div>
+                            <div class="card-url">design.upenn.edu</div>
+                            <div class="card-dept">Architecture &amp; Landscape</div>
+                            <div class="card-program"><a href="https://www.design.upenn.edu/architecture/graduate/master-architecture" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://www.design.upenn.edu/landscape-architecture/graduate/master-landscape-architecture" target="_blank" rel="noopener">MLA</a></div>
+                            <div class="card-dept">Advanced Design (MSD)</div>
+                            <div class="card-program"><a href="https://www.design.upenn.edu/architecture/graduate/master-science-design-advanced-architectural-design" target="_blank" rel="noopener">MSD Advanced Arch Design</a></div>
+                            <div class="card-program"><a href="https://www.design.upenn.edu/architecture/graduate/master-science-design-robotics-and-autonomous-systems" target="_blank" rel="noopener">MSD Robotics</a></div>
+                            <div class="card-admissions"><a href="https://www.design.upenn.edu/admissions/graduate-admissions" target="_blank" rel="noopener">Weitzman Admissions</a></div>
                         </div>
-                        <h4 class="department-heading">Urbanism &amp; Planning</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.arch.columbia.edu/programs/5-master-of-science-in-architecture-and-urban-design" target="_blank" rel="noopener">MS Architecture and Urban Design (MS-AUD)</a></div>
+
+                        <!-- 5. SCI-Arc -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#5</div>
+                            <div class="card-school"><a href="https://www.sciarc.edu/" target="_blank" rel="noopener">SCI-Arc</a></div>
+                            <div class="card-url">sciarc.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://www.sciarc.edu/institutional/programs/graduate/m-arch-1" target="_blank" rel="noopener">M.Arch 1 (3-year)</a></div>
+                            <div class="card-program"><a href="https://www.sciarc.edu/institutional/programs/graduate/m-arch-2" target="_blank" rel="noopener">M.Arch 2 (2-year)</a></div>
+                            <div class="card-dept">Postgraduate</div>
+                            <div class="card-program"><a href="https://www.sciarc.edu/institutional/programs/postgraduate/architectural-technologies" target="_blank" rel="noopener">MS Architectural Technologies</a></div>
+                            <div class="card-program"><a href="https://www.sciarc.edu/institutional/programs/postgraduate/design-of-cities" target="_blank" rel="noopener">MS Design of Cities</a></div>
+                            <div class="card-admissions"><a href="https://www.sciarc.edu/admissions/graduate" target="_blank" rel="noopener">SCI-Arc Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.arch.columbia.edu/programs/4-master-of-science-in-urban-planning" target="_blank" rel="noopener">MS Urban Planning</a></div>
+
+                        <!-- 6. Yale -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#6</div>
+                            <div class="card-school"><a href="https://www.architecture.yale.edu/" target="_blank" rel="noopener">Yale School of Architecture</a></div>
+                            <div class="card-url">architecture.yale.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://www.architecture.yale.edu/academic-programs/master-of-architecture" target="_blank" rel="noopener">M.Arch I</a></div>
+                            <div class="card-program"><a href="https://www.architecture.yale.edu/academic-programs/master-of-architecture-ii" target="_blank" rel="noopener">M.Arch II</a></div>
+                            <div class="card-dept">Research</div>
+                            <div class="card-program"><a href="https://www.architecture.yale.edu/academic-programs/master-of-environmental-design" target="_blank" rel="noopener">MED (Environmental Design)</a></div>
+                            <div class="card-admissions"><a href="https://www.architecture.yale.edu/admissions/graduate-admissions" target="_blank" rel="noopener">Yale Admissions</a></div>
                         </div>
-                        <div class="resource-card admissions-link">
-                            <div class="resource-name"><a href="https://www.arch.columbia.edu/admissions" target="_blank" rel="noopener">GSAPP Admissions Info</a></div>
+
+                        <!-- 7. Cornell AAP -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#7</div>
+                            <div class="card-school"><a href="https://aap.cornell.edu/" target="_blank" rel="noopener">Cornell AAP</a></div>
+                            <div class="card-url">aap.cornell.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://aap.cornell.edu/academics/architecture/graduate/march" target="_blank" rel="noopener">M.Arch Professional</a></div>
+                            <div class="card-program"><a href="https://aap.cornell.edu/academics/architecture/graduate/ms-aad" target="_blank" rel="noopener">MS Advanced Architectural Design</a></div>
+                            <div class="card-dept">Urban Design</div>
+                            <div class="card-program"><a href="https://aap.cornell.edu/academics/architecture/graduate/ms-aud" target="_blank" rel="noopener">MS Advanced Urban Design</a></div>
+                            <div class="card-admissions"><a href="https://aap.cornell.edu/admissions/graduate" target="_blank" rel="noopener">AAP Admissions</a></div>
                         </div>
-                    </div>
 
-                    <!-- 4. Penn Weitzman -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.design.upenn.edu/" target="_blank" rel="noopener">University of Pennsylvania (Weitzman School of Design)</a></div>
-                        <div class="resource-url"><a href="https://www.design.upenn.edu/" target="_blank" rel="noopener">design.upenn.edu</a></div>
-                        <h4 class="department-heading">Architecture &amp; Landscape</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.design.upenn.edu/architecture/graduate/master-architecture" target="_blank" rel="noopener">Master of Architecture (M.Arch)</a></div>
+                        <!-- 8. UC Berkeley CED -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#8</div>
+                            <div class="card-school"><a href="https://ced.berkeley.edu/" target="_blank" rel="noopener">UC Berkeley CED</a></div>
+                            <div class="card-url">ced.berkeley.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://ced.berkeley.edu/academics/architecture/graduate-programs/master-of-architecture" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://ced.berkeley.edu/academics/architecture/graduate-programs/master-of-advanced-architectural-design" target="_blank" rel="noopener">MAAD (Advanced Design)</a></div>
+                            <div class="card-dept">Design</div>
+                            <div class="card-program"><a href="https://ced.berkeley.edu/academics/graduate-programs/master-design" target="_blank" rel="noopener">MDes</a></div>
+                            <div class="card-admissions"><a href="https://ced.berkeley.edu/admissions/graduate-admissions" target="_blank" rel="noopener">CED Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.design.upenn.edu/landscape-architecture/graduate/master-landscape-architecture" target="_blank" rel="noopener">Master of Landscape Architecture (MLA)</a></div>
+
+                        <!-- 9. Rice -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#9</div>
+                            <div class="card-school"><a href="https://arch.rice.edu/" target="_blank" rel="noopener">Rice Architecture</a></div>
+                            <div class="card-url">arch.rice.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://arch.rice.edu/academics/graduate-programs" target="_blank" rel="noopener">M.Arch Option 1 &amp; 2</a></div>
+                            <div class="card-dept">Post-Professional</div>
+                            <div class="card-program"><a href="https://arch.rice.edu/academics/graduate-programs/master-science-architecture" target="_blank" rel="noopener">MA in Architecture</a></div>
+                            <div class="card-admissions"><a href="https://arch.rice.edu/admissions/graduate-admissions" target="_blank" rel="noopener">Rice Admissions</a></div>
                         </div>
-                        <h4 class="department-heading">Advanced Design (MSD)</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.design.upenn.edu/architecture/graduate/master-science-design-advanced-architectural-design" target="_blank" rel="noopener">MSD in Advanced Architectural Design</a></div>
+
+                        <!-- 10. U Michigan Taubman -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#10</div>
+                            <div class="card-school"><a href="https://www.taubmancollege.umich.edu/" target="_blank" rel="noopener">U Michigan Taubman</a></div>
+                            <div class="card-url">taubmancollege.umich.edu</div>
+                            <div class="card-dept">Architecture</div>
+                            <div class="card-program"><a href="https://www.taubmancollege.umich.edu/architecture/degrees/master-architecture" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://www.taubmancollege.umich.edu/architecture/degrees/master-science-architecture" target="_blank" rel="noopener">MS in Architecture</a></div>
+                            <div class="card-dept">Planning</div>
+                            <div class="card-program"><a href="https://www.taubmancollege.umich.edu/urban-planning/degrees/master-urban-regional-planning" target="_blank" rel="noopener">Master of Urban Planning</a></div>
+                            <div class="card-admissions"><a href="https://www.taubmancollege.umich.edu/admissions/apply" target="_blank" rel="noopener">Taubman Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.design.upenn.edu/architecture/graduate/master-science-design-robotics-and-autonomous-systems" target="_blank" rel="noopener">MSD in Robotics and Autonomous Systems</a></div>
+
+                        <!-- 11. Princeton -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#11</div>
+                            <div class="card-school"><a href="https://soa.princeton.edu/" target="_blank" rel="noopener">Princeton SoA</a></div>
+                            <div class="card-url">soa.princeton.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://soa.princeton.edu/content/master-architecture-program" target="_blank" rel="noopener">M.Arch Professional</a></div>
+                            <div class="card-admissions"><a href="https://soa.princeton.edu/content/admission" target="_blank" rel="noopener">SoA Admissions</a></div>
                         </div>
-                        <div class="resource-card admissions-link">
-                            <div class="resource-name"><a href="https://www.design.upenn.edu/admissions/graduate-admissions" target="_blank" rel="noopener">Weitzman Graduate Admissions</a></div>
+
+                        <!-- 12. UT Austin -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#12</div>
+                            <div class="card-school"><a href="https://soa.utexas.edu/" target="_blank" rel="noopener">UT Austin SoA</a></div>
+                            <div class="card-url">soa.utexas.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://soa.utexas.edu/programs/architecture" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://soa.utexas.edu/programs/sustainable-design" target="_blank" rel="noopener">MS Sustainable Design</a></div>
+                            <div class="card-admissions"><a href="https://soa.utexas.edu/apply/graduate-admissions" target="_blank" rel="noopener">UTSOA Admissions</a></div>
                         </div>
-                    </div>
 
-                    <!-- 5. SCI-Arc -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.sciarc.edu/" target="_blank" rel="noopener">SCI-Arc</a></div>
-                        <div class="resource-url"><a href="https://www.sciarc.edu/" target="_blank" rel="noopener">sciarc.edu</a></div>
-                        <h4 class="department-heading">Architecture Degrees</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.sciarc.edu/institutional/programs/graduate/m-arch-1" target="_blank" rel="noopener">M.Arch 1 (3-year Professional)</a></div>
+                        <!-- 13. UVA -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#13</div>
+                            <div class="card-school"><a href="https://www.arch.virginia.edu/" target="_blank" rel="noopener">UVA A-School</a></div>
+                            <div class="card-url">arch.virginia.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://www.arch.virginia.edu/programs/architecture" target="_blank" rel="noopener">Master of Architecture</a></div>
+                            <div class="card-program"><a href="https://www.arch.virginia.edu/programs/landscape-architecture" target="_blank" rel="noopener">Master of Landscape Arch</a></div>
+                            <div class="card-admissions"><a href="https://www.arch.virginia.edu/apply/graduate-admissions" target="_blank" rel="noopener">UVA Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.sciarc.edu/institutional/programs/graduate/m-arch-2" target="_blank" rel="noopener">M.Arch 2 (2-year Professional)</a></div>
+
+                        <!-- 14. Georgia Tech -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#14</div>
+                            <div class="card-school"><a href="https://arch.gatech.edu/" target="_blank" rel="noopener">Georgia Tech</a></div>
+                            <div class="card-url">arch.gatech.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://arch.gatech.edu/master-architecture" target="_blank" rel="noopener">Master of Architecture</a></div>
+                            <div class="card-program"><a href="https://arch.gatech.edu/master-science-urban-design" target="_blank" rel="noopener">MS Urban Design</a></div>
+                            <div class="card-admissions"><a href="https://arch.gatech.edu/admissions" target="_blank" rel="noopener">GT Admissions</a></div>
                         </div>
-                        <h4 class="department-heading">Postgraduate Programs</h4>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.sciarc.edu/institutional/programs/postgraduate/architectural-technologies" target="_blank" rel="noopener">MS Architectural Technologies</a></div>
+
+                        <!-- 15. WashU Sam Fox -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#15</div>
+                            <div class="card-school"><a href="https://samfoxschool.wustl.edu/" target="_blank" rel="noopener">WashU Sam Fox</a></div>
+                            <div class="card-url">samfoxschool.wustl.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://samfoxschool.wustl.edu/academics/graduate-architecture" target="_blank" rel="noopener">Master of Architecture</a></div>
+                            <div class="card-program"><a href="https://samfoxschool.wustl.edu/academics/graduate-landscape-architecture" target="_blank" rel="noopener">Master of Landscape Arch</a></div>
+                            <div class="card-admissions"><a href="https://samfoxschool.wustl.edu/admissions/graduate" target="_blank" rel="noopener">Sam Fox Admissions</a></div>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-name"><a href="https://www.sciarc.edu/institutional/programs/postgraduate/design-of-cities" target="_blank" rel="noopener">MS Design of Cities</a></div>
+
+                        <!-- 16. USC -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#16</div>
+                            <div class="card-school"><a href="https://arch.usc.edu/" target="_blank" rel="noopener">USC Architecture</a></div>
+                            <div class="card-url">arch.usc.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://arch.usc.edu/programs/master-of-architecture" target="_blank" rel="noopener">Master of Architecture</a></div>
+                            <div class="card-program"><a href="https://arch.usc.edu/programs/master-of-building-science" target="_blank" rel="noopener">Master of Building Science</a></div>
+                            <div class="card-admissions"><a href="https://arch.usc.edu/admissions/graduate-admissions" target="_blank" rel="noopener">USC Admissions</a></div>
                         </div>
-                        <div class="resource-card admissions-link">
-                            <div class="resource-name"><a href="https://www.sciarc.edu/admissions/graduate" target="_blank" rel="noopener">SCI-Arc Graduate Admissions</a></div>
+
+                        <!-- 17. UCLA AUD -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#17</div>
+                            <div class="card-school"><a href="https://www.aud.ucla.edu/" target="_blank" rel="noopener">UCLA AUD</a></div>
+                            <div class="card-url">aud.ucla.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://www.aud.ucla.edu/programs/m-arch" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://www.aud.ucla.edu/programs/ms-aud" target="_blank" rel="noopener">MS Architecture &amp; Urban Design</a></div>
+                            <div class="card-admissions"><a href="https://www.aud.ucla.edu/admissions" target="_blank" rel="noopener">UCLA AUD Admissions</a></div>
                         </div>
-                    </div>
 
-                    <!-- 6. Yale -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.architecture.yale.edu/" target="_blank" rel="noopener">Yale School of Architecture</a></div>
-                        <div class="resource-url"><a href="https://www.architecture.yale.edu/" target="_blank" rel="noopener">architecture.yale.edu</a></div>
-                        <h4 class="department-heading">Architecture Department</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.architecture.yale.edu/academic-programs/master-of-architecture" target="_blank" rel="noopener">M.Arch I</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.architecture.yale.edu/academic-programs/master-of-architecture-ii" target="_blank" rel="noopener">M.Arch II</a></div></div>
-                        <h4 class="department-heading">Research</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.architecture.yale.edu/academic-programs/master-of-environmental-design" target="_blank" rel="noopener">Master of Environmental Design (MED)</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://www.architecture.yale.edu/admissions/graduate-admissions" target="_blank" rel="noopener">Yale Admissions</a></div></div>
-                    </div>
+                        <!-- 18. Pratt -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#18</div>
+                            <div class="card-school"><a href="https://www.pratt.edu/architecture/" target="_blank" rel="noopener">Pratt Institute</a></div>
+                            <div class="card-url">pratt.edu/architecture</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://www.pratt.edu/architecture/graduate-architecture/architecture-m-arch/" target="_blank" rel="noopener">M.Arch</a></div>
+                            <div class="card-program"><a href="https://www.pratt.edu/architecture/graduate-architecture/urban-design-ms/" target="_blank" rel="noopener">MS Urban Design</a></div>
+                            <div class="card-admissions"><a href="https://www.pratt.edu/admissions/graduate-admissions/" target="_blank" rel="noopener">Pratt Admissions</a></div>
+                        </div>
 
-                    <!-- 7. Cornell AAP -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://aap.cornell.edu/" target="_blank" rel="noopener">Cornell University (AAP)</a></div>
-                        <div class="resource-url"><a href="https://aap.cornell.edu/" target="_blank" rel="noopener">aap.cornell.edu</a></div>
-                        <h4 class="department-heading">Architecture</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://aap.cornell.edu/academics/architecture/graduate/march" target="_blank" rel="noopener">M.Arch Professional</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://aap.cornell.edu/academics/architecture/graduate/ms-aad" target="_blank" rel="noopener">MS Advanced Architectural Design</a></div></div>
-                        <h4 class="department-heading">Urban Design</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://aap.cornell.edu/academics/architecture/graduate/ms-aud" target="_blank" rel="noopener">MS Advanced Urban Design</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://aap.cornell.edu/admissions/graduate" target="_blank" rel="noopener">AAP Admissions</a></div></div>
-                    </div>
+                        <!-- 19. Virginia Tech -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#19</div>
+                            <div class="card-school"><a href="https://archdesign.vt.edu/" target="_blank" rel="noopener">Virginia Tech</a></div>
+                            <div class="card-url">archdesign.vt.edu</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://archdesign.vt.edu/architecture/graduate.html" target="_blank" rel="noopener">Master of Architecture</a></div>
+                            <div class="card-program"><a href="https://archdesign.vt.edu/architecture/msarch.html" target="_blank" rel="noopener">MS in Architecture</a></div>
+                            <div class="card-admissions"><a href="https://archdesign.vt.edu/admissions/graduate.html" target="_blank" rel="noopener">VT Admissions</a></div>
+                        </div>
 
-                    <!-- 8. UC Berkeley CED -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://ced.berkeley.edu/" target="_blank" rel="noopener">UC Berkeley (CED)</a></div>
-                        <div class="resource-url"><a href="https://ced.berkeley.edu/" target="_blank" rel="noopener">ced.berkeley.edu</a></div>
-                        <h4 class="department-heading">Architecture</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://ced.berkeley.edu/academics/architecture/graduate-programs/master-of-architecture" target="_blank" rel="noopener">M.Arch</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://ced.berkeley.edu/academics/architecture/graduate-programs/master-of-advanced-architectural-design" target="_blank" rel="noopener">MAAD (Advanced Design)</a></div></div>
-                        <h4 class="department-heading">Design</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://ced.berkeley.edu/academics/graduate-programs/master-design" target="_blank" rel="noopener">Master of Design (MDes)</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://ced.berkeley.edu/admissions/graduate-admissions" target="_blank" rel="noopener">CED Admissions</a></div></div>
-                    </div>
+                        <!-- 20. U Florida -->
+                        <div class="kanban-card">
+                            <div class="card-rank">#20</div>
+                            <div class="card-school"><a href="https://dcp.ufl.edu/architecture/" target="_blank" rel="noopener">U Florida SoA</a></div>
+                            <div class="card-url">dcp.ufl.edu/architecture</div>
+                            <div class="card-dept">Programs</div>
+                            <div class="card-program"><a href="https://dcp.ufl.edu/architecture/master-of-architecture/" target="_blank" rel="noopener">Master of Architecture</a></div>
+                            <div class="card-program"><a href="https://dcp.ufl.edu/architecture/master-of-science-in-architectural-studies/" target="_blank" rel="noopener">MS Architectural Studies</a></div>
+                            <div class="card-admissions"><a href="https://dcp.ufl.edu/architecture/admissions/" target="_blank" rel="noopener">UF SoA Admissions</a></div>
+                        </div>
 
-                    <!-- 9. Rice -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://arch.rice.edu/" target="_blank" rel="noopener">Rice Architecture</a></div>
-                        <div class="resource-url"><a href="https://arch.rice.edu/" target="_blank" rel="noopener">arch.rice.edu</a></div>
-                        <h4 class="department-heading">Architecture</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://arch.rice.edu/academics/graduate-programs" target="_blank" rel="noopener">M.Arch Option 1 &amp; 2</a></div></div>
-                        <h4 class="department-heading">Post-Professional</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://arch.rice.edu/academics/graduate-programs/master-science-architecture" target="_blank" rel="noopener">MA in Architecture</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://arch.rice.edu/admissions/graduate-admissions" target="_blank" rel="noopener">Rice Admissions</a></div></div>
-                    </div>
-
-                    <!-- 10. U Michigan Taubman -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.taubmancollege.umich.edu/" target="_blank" rel="noopener">University of Michigan (Taubman)</a></div>
-                        <div class="resource-url"><a href="https://www.taubmancollege.umich.edu/" target="_blank" rel="noopener">taubmancollege.umich.edu</a></div>
-                        <h4 class="department-heading">Architecture</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.taubmancollege.umich.edu/architecture/degrees/master-architecture" target="_blank" rel="noopener">M.Arch</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.taubmancollege.umich.edu/architecture/degrees/master-science-architecture" target="_blank" rel="noopener">MS in Architecture</a></div></div>
-                        <h4 class="department-heading">Planning</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.taubmancollege.umich.edu/urban-planning/degrees/master-urban-regional-planning" target="_blank" rel="noopener">Master of Urban Planning</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://www.taubmancollege.umich.edu/admissions/apply" target="_blank" rel="noopener">Taubman Admissions</a></div></div>
-                    </div>
-
-                    <!-- 11. Princeton -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://soa.princeton.edu/" target="_blank" rel="noopener">Princeton School of Architecture</a></div>
-                        <div class="resource-url"><a href="https://soa.princeton.edu/" target="_blank" rel="noopener">soa.princeton.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://soa.princeton.edu/content/master-architecture-program" target="_blank" rel="noopener">M.Arch Professional</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://soa.princeton.edu/content/admission" target="_blank" rel="noopener">SoA Admissions</a></div></div>
-                    </div>
-
-                    <!-- 12. UT Austin -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://soa.utexas.edu/" target="_blank" rel="noopener">UT Austin (School of Architecture)</a></div>
-                        <div class="resource-url"><a href="https://soa.utexas.edu/" target="_blank" rel="noopener">soa.utexas.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://soa.utexas.edu/programs/architecture" target="_blank" rel="noopener">M.Arch</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://soa.utexas.edu/programs/sustainable-design" target="_blank" rel="noopener">MS Sustainable Design</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://soa.utexas.edu/apply/graduate-admissions" target="_blank" rel="noopener">UTSOA Admissions</a></div></div>
-                    </div>
-
-                    <!-- 13. UVA -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.arch.virginia.edu/" target="_blank" rel="noopener">University of Virginia (A-School)</a></div>
-                        <div class="resource-url"><a href="https://www.arch.virginia.edu/" target="_blank" rel="noopener">arch.virginia.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.arch.virginia.edu/programs/architecture" target="_blank" rel="noopener">Master of Architecture</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.arch.virginia.edu/programs/landscape-architecture" target="_blank" rel="noopener">Master of Landscape Architecture</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://www.arch.virginia.edu/apply/graduate-admissions" target="_blank" rel="noopener">UVA Admissions</a></div></div>
-                    </div>
-
-                    <!-- 14. Georgia Tech -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://arch.gatech.edu/" target="_blank" rel="noopener">Georgia Tech</a></div>
-                        <div class="resource-url"><a href="https://arch.gatech.edu/" target="_blank" rel="noopener">arch.gatech.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://arch.gatech.edu/master-architecture" target="_blank" rel="noopener">Master of Architecture</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://arch.gatech.edu/master-science-urban-design" target="_blank" rel="noopener">MS Urban Design</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://arch.gatech.edu/admissions" target="_blank" rel="noopener">GT Admissions</a></div></div>
-                    </div>
-
-                    <!-- 15. WashU Sam Fox -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://samfoxschool.wustl.edu/" target="_blank" rel="noopener">WashU (Sam Fox)</a></div>
-                        <div class="resource-url"><a href="https://samfoxschool.wustl.edu/" target="_blank" rel="noopener">samfoxschool.wustl.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://samfoxschool.wustl.edu/academics/graduate-architecture" target="_blank" rel="noopener">Master of Architecture</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://samfoxschool.wustl.edu/academics/graduate-landscape-architecture" target="_blank" rel="noopener">Master of Landscape Architecture</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://samfoxschool.wustl.edu/admissions/graduate" target="_blank" rel="noopener">Sam Fox Admissions</a></div></div>
-                    </div>
-
-                    <!-- 16. USC -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://arch.usc.edu/" target="_blank" rel="noopener">USC Architecture</a></div>
-                        <div class="resource-url"><a href="https://arch.usc.edu/" target="_blank" rel="noopener">arch.usc.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://arch.usc.edu/programs/master-of-architecture" target="_blank" rel="noopener">Master of Architecture</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://arch.usc.edu/programs/master-of-building-science" target="_blank" rel="noopener">Master of Building Science</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://arch.usc.edu/admissions/graduate-admissions" target="_blank" rel="noopener">USC Admissions</a></div></div>
-                    </div>
-
-                    <!-- 17. UCLA AUD -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.aud.ucla.edu/" target="_blank" rel="noopener">UCLA (AUD)</a></div>
-                        <div class="resource-url"><a href="https://www.aud.ucla.edu/" target="_blank" rel="noopener">aud.ucla.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.aud.ucla.edu/programs/m-arch" target="_blank" rel="noopener">M.Arch</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.aud.ucla.edu/programs/ms-aud" target="_blank" rel="noopener">MS Architecture and Urban Design</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://www.aud.ucla.edu/admissions" target="_blank" rel="noopener">UCLA AUD Admissions</a></div></div>
-                    </div>
-
-                    <!-- 18. Pratt -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://www.pratt.edu/architecture/" target="_blank" rel="noopener">Pratt Institute</a></div>
-                        <div class="resource-url"><a href="https://www.pratt.edu/architecture/" target="_blank" rel="noopener">pratt.edu/architecture</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.pratt.edu/architecture/graduate-architecture/architecture-m-arch/" target="_blank" rel="noopener">M.Arch</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://www.pratt.edu/architecture/graduate-architecture/urban-design-ms/" target="_blank" rel="noopener">MS Urban Design</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://www.pratt.edu/admissions/graduate-admissions/" target="_blank" rel="noopener">Pratt Admissions</a></div></div>
-                    </div>
-
-                    <!-- 19. Virginia Tech -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://archdesign.vt.edu/" target="_blank" rel="noopener">Virginia Tech</a></div>
-                        <div class="resource-url"><a href="https://archdesign.vt.edu/" target="_blank" rel="noopener">archdesign.vt.edu</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://archdesign.vt.edu/architecture/graduate.html" target="_blank" rel="noopener">Master of Architecture</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://archdesign.vt.edu/architecture/msarch.html" target="_blank" rel="noopener">MS in Architecture</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://archdesign.vt.edu/admissions/graduate.html" target="_blank" rel="noopener">VT Graduate Admissions</a></div></div>
-                    </div>
-
-                    <!-- 20. U Florida -->
-                    <div class="resource-card">
-                        <div class="resource-name"><a href="https://dcp.ufl.edu/architecture/" target="_blank" rel="noopener">University of Florida (SoA)</a></div>
-                        <div class="resource-url"><a href="https://dcp.ufl.edu/architecture/" target="_blank" rel="noopener">dcp.ufl.edu/architecture</a></div>
-                        <h4 class="department-heading">Programs</h4>
-                        <div class="resource-card"><div class="resource-name"><a href="https://dcp.ufl.edu/architecture/master-of-architecture/" target="_blank" rel="noopener">Master of Architecture</a></div></div>
-                        <div class="resource-card"><div class="resource-name"><a href="https://dcp.ufl.edu/architecture/master-of-science-in-architectural-studies/" target="_blank" rel="noopener">MS in Architectural Studies</a></div></div>
-                        <div class="resource-card admissions-link"><div class="resource-name"><a href="https://dcp.ufl.edu/architecture/admissions/" target="_blank" rel="noopener">UF SoA Admissions</a></div></div>
-                    </div>
-
+                    </div><!-- /.kanban-grid -->
                 </div>
             </section>
 
