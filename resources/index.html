@@ -883,6 +883,111 @@
     <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
 </div>
 
+<!-- Section 5 Modal Overlay -->
+<style>
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-overlay.active {
+    display: flex;
+  }
+  .modal-panel {
+    background: #fff;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 960px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2.5rem 2rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideUp 0.3s ease;
+  }
+  .modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #555;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+  .modal-close-btn:hover {
+    background: #eee;
+  }
+  @keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="modal-overlay" id="section5Modal">
+  <div class="modal-panel">
+    <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+    <div id="section5ModalBody"></div>
+  </div>
+</div>
+
 <script src="../shared/scripts.js"></script>
+
+<!-- Section 5 Modal Script (must load after scripts.js) -->
+<script>
+(function() {
+  var modal = document.getElementById('section5Modal');
+  var modalBody = document.getElementById('section5ModalBody');
+  var closeBtn = modal.querySelector('.modal-close-btn');
+  var section5 = document.getElementById('section-5');
+  var header5 = section5.querySelector('.section-header');
+
+  function openModal() {
+    var body = section5.querySelector('.section-body');
+    modalBody.innerHTML = body.innerHTML;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Override Section 5 click to open modal
+  header5.addEventListener('click', function(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    openModal();
+  }, true);
+
+  // Close on X button
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close on backdrop click
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+})();
+</script>
 </body>
 </html>
