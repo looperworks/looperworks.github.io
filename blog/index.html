@@ -263,5 +263,148 @@
       noResults.style.display = totalVisible === 0 && query ? 'block' : 'none';
     });
   </script>
+
+<!-- Blog Post Modal Overlay -->
+<style>
+  .blog-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+  .blog-modal-overlay.active {
+    display: flex;
+  }
+  .blog-modal-panel {
+    background: #fff;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 960px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2.5rem 2rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: blogModalSlideUp 0.3s ease;
+  }
+  .blog-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #555;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+    z-index: 1;
+  }
+  .blog-modal-close:hover {
+    background: #eee;
+  }
+  .blog-modal-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    font-size: 1.1rem;
+  }
+  @keyframes blogModalSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Style overrides for article content inside modal */
+  .blog-modal-panel article {
+    max-width: 100%;
+  }
+  .blog-modal-panel .article-header {
+    margin-bottom: 1.5rem;
+  }
+  .blog-modal-panel .article-body {
+    line-height: 1.8;
+  }
+</style>
+
+<div class="blog-modal-overlay" id="blogModal">
+  <div class="blog-modal-panel">
+    <button class="blog-modal-close" aria-label="Close modal">&times;</button>
+    <div id="blogModalBody">
+      <div class="blog-modal-loading">Loading article...</div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Modal Script -->
+<script>
+(function() {
+  var modal = document.getElementById('blogModal');
+  var modalBody = document.getElementById('blogModalBody');
+  var closeBtn = modal.querySelector('.blog-modal-close');
+
+  function openModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    modalBody.innerHTML = '<div class="blog-modal-loading">Loading article...</div>';
+  }
+
+  // Intercept all post-card clicks
+  var cards = document.querySelectorAll('.post-card');
+  cards.forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var url = card.getAttribute('href');
+      if (!url) return;
+
+      openModal();
+
+      fetch(url)
+        .then(function(response) { return response.text(); })
+        .then(function(html) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, 'text/html');
+          var article = doc.querySelector('article');
+          if (article) {
+            modalBody.innerHTML = article.innerHTML;
+          } else {
+            modalBody.innerHTML = '<p>Could not load article content.</p>';
+          }
+        })
+        .catch(function() {
+          modalBody.innerHTML = '<p>Error loading article. Please try again.</p>';
+        });
+    });
+  });
+
+  // Close on X button
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close on backdrop click
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+})();
+</script>
 </body>
 </html>
