@@ -158,9 +158,9 @@
 }
 
 .section-title {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #333;
     line-height: 1.3;
 }
 
@@ -206,15 +206,15 @@
 }
 
 .resource-name {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 8px;
     line-height: 1.3;
 }
 
 .resource-name a {
-    color: #1a1a1a;
+    color: #333;
     text-decoration: none;
     transition: opacity 0.2s ease;
 }
