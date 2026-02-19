@@ -1,0 +1,4 @@
+Contact: mailto:seth@thresholdarch.com
+Expires: 2027-02-18T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://thresholdarch.com/.well-known/security.txt
