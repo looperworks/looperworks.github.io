@@ -938,26 +938,24 @@
   }
 </style>
 
-<div class="modal-overlay" id="section5Modal">
+<div class="modal-overlay" id="sectionModal">
   <div class="modal-panel">
     <button class="modal-close-btn" aria-label="Close modal">&times;</button>
-    <div id="section5ModalBody"></div>
+    <div id="sectionModalBody"></div>
   </div>
 </div>
 
 <script src="../shared/scripts.js"></script>
 
-<!-- Section 5 Modal Script (must load after scripts.js) -->
+<!-- Section Modal Script (must load after scripts.js) -->
 <script>
 (function() {
-  var modal = document.getElementById('section5Modal');
-  var modalBody = document.getElementById('section5ModalBody');
+  var modal = document.getElementById('sectionModal');
+  var modalBody = document.getElementById('sectionModalBody');
   var closeBtn = modal.querySelector('.modal-close-btn');
-  var section5 = document.getElementById('section-5');
-  var header5 = section5.querySelector('.section-header');
 
-  function openModal() {
-    var body = section5.querySelector('.section-body');
+  function openModal(sectionEl) {
+    var body = sectionEl.querySelector('.section-body');
     modalBody.innerHTML = body.innerHTML;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -968,12 +966,18 @@
     document.body.style.overflow = '';
   }
 
-  // Override Section 5 click to open modal
-  header5.addEventListener('click', function(e) {
-    e.stopImmediatePropagation();
-    e.preventDefault();
-    openModal();
-  }, true);
+  // Override all section header clicks to open modal
+  var sections = document.querySelectorAll('.section');
+  sections.forEach(function(section) {
+    var header = section.querySelector('.section-header');
+    if (header) {
+      header.addEventListener('click', function(e) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        openModal(section);
+      }, true);
+    }
+  });
 
   // Close on X button
   closeBtn.addEventListener('click', closeModal);
