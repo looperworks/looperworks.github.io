@@ -101,7 +101,7 @@
     top: 0;
     left: 40px;
     padding: 16px 0;
-    z-index: auto; position: static; top: auto; left: auto; padding: 40px 0 20px 40px;;
+    z-index: auto; position: static; top: auto; left: auto; padding: 40px 40px 20px 40px; display: flex; align-items: center; justify-content: space-between;
     background: transparent;
   }
   .top-divider {
@@ -537,7 +537,13 @@
     .subscribe-popup-hero { padding: 16px 18px 12px; }
     .subscribe-popup-body { padding: 14px 18px 18px; }
   }
-</style>
+
+    /* Header menu trigger */
+    .side-nav-tab { display: none; }
+    .header-menu-trigger { font-family: 'Circular Std', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #111; cursor: pointer; padding: 8px 0; }
+    .header-menu-trigger:hover { opacity: 0.6; }
+    .side-nav-wrapper.menu-open .side-nav { transform: translateX(0) translateY(-50%); opacity: 1; }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -580,6 +586,7 @@
 <!-- Animated Logo -->
 <div class="top-brand-area">
     <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
+        <span class="header-menu-trigger" id="headerMenuTrigger">Menu</span>
 </div>
 <div class="top-divider"></div>
 
@@ -23751,4 +23758,17 @@ init();
 
 <script src="../shared/scripts.js?v=2" defer></script>
 </body>
-</html>
+    <script>
+        document.getElementById('headerMenuTrigger').addEventListener('click', function(e) {
+              e.stopPropagation();
+              document.querySelector('.side-nav-wrapper').classList.toggle('menu-open');
+        });
+        document.addEventListener('click', function(e) {
+              var w = document.querySelector('.side-nav-wrapper');
+              var t = document.getElementById('headerMenuTrigger');
+              if (w && w.classList.contains('menu-open') && !w.contains(e.target) && e.target !== t) {
+                      w.classList.remove('menu-open');
+              }
+        });
+    </script>
+    ml>
