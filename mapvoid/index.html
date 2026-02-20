@@ -101,11 +101,11 @@
     top: 0;
     left: 40px;
     padding: 16px 0;
-    z-index: 2001;
+    z-index: auto; position: static; top: auto; left: auto; padding: 40px 0 20px 40px;;
     background: transparent;
   }
   .top-divider {
-    display: none;
+    display: block;
   }
 
   /* ── Looperworks Side Nav — uses shared styles ── */
@@ -129,7 +129,7 @@
   .welcome-stat strong { color: var(--text); font-size: 14px; font-weight: 700; display: block; }
 
   /* ── App Container — visible by default ── */
-  .app-container { display: flex; height: 100vh; margin-top: 0; margin-left: 140px; }
+  .app-container { display: flex; height: calc(100vh - 117px); margin-top: 0; margin-left: 0; }
 
   /* ── Sidebar ── */
   .sidebar { width: 420px; min-width: 420px; background: #fff; display: flex; flex-direction: column; border-right: 1px solid var(--border); overflow: hidden; }
