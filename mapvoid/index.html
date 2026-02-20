@@ -545,6 +545,12 @@
       .header-nav a { font-family: 'Circular Std', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #111; text-decoration: none; white-space: nowrap; }
       .header-nav a:hover { opacity: 0.6; }
       .header-nav a.active { border-bottom: 2px solid #111; padding-bottom: 2px; }
+      .header-nav-dropdown { position: relative; }
+      .header-nav-dropdown > span { cursor: pointer; font-family: 'Circular Std', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #111; }
+      .header-nav-dropdown .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; padding: 12px 0; min-width: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 100; margin-top: 8px; }
+      .header-nav-dropdown:hover .dropdown-menu { display: block; }
+      .header-nav-dropdown .dropdown-menu a { display: block; padding: 8px 20px; font-size: 11px; white-space: nowrap; }
+      .header-nav-dropdown:hover > span { opacity: 0.6; }
   </style>
 </head>
 <body>
@@ -588,7 +594,7 @@
 <!-- Animated Logo -->
 <div class="top-brand-area">
     <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
-        <nav class="header-nav" aria-label="Main navigation"><a href="../about/">About</a><a href="/" class="active">Firm Search</a><a href="../cover-letter-guide/">Cover Letter</a><a href="../resume-guide/">Resume</a><a href="../portfolio-guide/">Portfolio</a><a href="../resources/">Resources</a><a href="../blog/">Blog</a></nav>
+        <nav class="header-nav" aria-label="Main navigation"><a href="../about/">About</a><a href="/" class="active">Firm Search</a><div class="header-nav-dropdown"><span>Guides</span><div class="dropdown-menu"><a href="../cover-letter-guide/">Cover Letter</a><a href="../resume-guide/">Resume</a><a href="../portfolio-guide/">Portfolio</a></div></div><a href="../resources/">Resources</a><a href="../blog/">Blog</a></nav>
 </div>
 <div class="top-divider"></div>
 
