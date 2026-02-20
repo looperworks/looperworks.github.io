@@ -19,7 +19,7 @@
 <meta property="og:title" content="Firm Search — Threshold">
 <meta property="og:description" content="Explore architecture and landscape architecture firms across the US with an interactive firm search map.">
 <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
-<meta property="og:url" content="https://thresholdarch.com/">
+<meta property="og:url" content="https://thresholdarch.com/mapvoid/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -594,7 +594,24 @@
 <!-- Animated Logo -->
 <div class="top-brand-area">
     <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
-        <nav class="header-nav" aria-label="Main navigation"><a href="../about/">About</a><a href="/" class="active">Firm Search</a><div class="header-nav-dropdown"><span>Guides</span><div class="dropdown-menu"><a href="../cover-letter-guide/">Cover Letter</a><a href="../resume-guide/">Resume</a><a href="../portfolio-guide/">Portfolio</a></div></div><a href="../resources/">Resources</a><a href="../blog/">Blog</a></nav>
+        <nav class="header-nav" aria-label="Main navigation"><a href="../about/">About</a><a href="/" class="active">Firm Search</a><div class="header-nav-dropdown"><span role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">Guides</span><div class="dropdown-menu"><a href="../cover-letter-guide/">Cover Letter</a><a href="../resume-guide/">Resume</a><a href="../portfolio-guide/">Portfolio</a></div></div><a href="../resources/">Resources</a><a href="../blog/">Blog</a></nav>
+<script>
+(function(){
+  var dd = document.querySelector('.header-nav-dropdown');
+  var sp = dd.querySelector('span');
+  dd.addEventListener('mouseenter', function(){ sp.setAttribute('aria-expanded','true'); });
+  dd.addEventListener('mouseleave', function(){ sp.setAttribute('aria-expanded','false'); });
+  sp.addEventListener('keydown', function(e){
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      var menu = dd.querySelector('.dropdown-menu');
+      var open = menu.style.display==='block';
+      menu.style.display = open ? '' : 'block';
+      sp.setAttribute('aria-expanded', open ? 'false' : 'true');
+    }
+  });
+})();
+</script>
 </div>
 <div class="top-divider"></div>
 
