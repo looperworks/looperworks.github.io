@@ -184,7 +184,7 @@
 <body>
 
   <div class="top-brand-area">
-    <canvas id="logoCanvas" width="400" height="112" style="width: 200px; height: 56px;"></canvas>
+    <canvas id="logoCanvas" data-home="/about/"></canvas>
   </div>
   <div class="top-divider"></div>
 
@@ -216,32 +216,8 @@
     <a href="/blog/">Blog</a>
   </div>
 
+  <script src="/shared/scripts.js?v=2"></script>
   <script>
-    // Draw barcode logo
-    (function() {
-      var canvas = document.getElementById('logoCanvas');
-      if (!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var pattern = [
-        6,4,2,4,6,4,8,4,2,4,6,4,2,4,6,4,8,4,2,4,2,4,6,4,6,4,2,4,
-        8,4,6,4,2,4,6,4,2,4,8,4,2,4,6,4,6,4,6,4,2,4,2,4,6,4,6,12
-      ];
-      var x = 0;
-      var fill = true;
-      ctx.fillStyle = '#111';
-      for (var i = 0; i < pattern.length; i++) {
-        if (fill) {
-          ctx.fillRect(x, 0, pattern[i], canvas.height);
-        }
-        x += pattern[i];
-        fill = !fill;
-      }
-    })();
-
-    document.getElementById('logoCanvas').addEventListener('click', function() {
-      window.location.href = '/about/';
-    });
-
     function openMenu() {
       document.getElementById('menuPanel').classList.add('active');
       document.getElementById('menuOverlay').classList.add('active');
