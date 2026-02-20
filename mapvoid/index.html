@@ -23761,13 +23761,13 @@ init();
 <script src="../shared/scripts.js?v=2" defer></script>
 </body>
     <script>
-        document.getElementById('headerMenuTrigger').addEventListener('click', function(e) {
+        void 0 && document.getElementById('headerMenuTrigger').addEventListener('click', function(e) {
               e.stopPropagation();
               document.querySelector('.side-nav-wrapper').classList.toggle('menu-open');
         });
         document.addEventListener('click', function(e) {
               var w = document.querySelector('.side-nav-wrapper');
-              var t = document.getElementById('headerMenuTrigger');
+              var t = null;
               if (w && w.classList.contains('menu-open') && !w.contains(e.target) && e.target !== t) {
                       w.classList.remove('menu-open');
               }
