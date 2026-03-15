@@ -233,14 +233,14 @@
   line-height: 1.65;
 }
 
-.box p {
+.section-body .box p {
   margin-bottom: 12px;
   font-size: 13px;
   font-weight: 400;
   color: #444;
 }
 
-.box p:last-child {
+.section-body .box p:last-child {
   margin-bottom: 0;
 }
 
@@ -313,7 +313,7 @@ tbody tr:hover {
   line-height: 1.65;
 }
 
-.comparison-box p {
+.section-body .comparison-box p {
   font-size: 13px;
   font-weight: 400;
   line-height: 1.65;
@@ -321,7 +321,7 @@ tbody tr:hover {
   color: #444;
 }
 
-.comparison-box p:last-child {
+.section-body .comparison-box p:last-child {
   margin-bottom: 0;
 }
 
