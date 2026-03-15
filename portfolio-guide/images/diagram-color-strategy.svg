@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: Inter, -apple-system, system-ui, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="380" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">
+    COLOR PALETTE STRATEGIES
+  </text>
+
+  <!-- Column 1: Monochrome -->
+  <text x="200" y="85" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">Monochrome</text>
+  <text x="200" y="105" font-size="8" fill="#999" text-anchor="middle">Neutral palette</text>
+
+  <!-- Swatch 1 -->
+  <rect x="150" y="130" width="50" height="60" fill="#d8d8d8" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Swatch 2 -->
+  <rect x="160" y="155" width="50" height="60" fill="#c0c0c0" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Swatch 3 -->
+  <rect x="200" y="140" width="50" height="60" fill="#a0a0a0" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Column 2: Accent -->
+  <text x="450" y="85" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">Accent</text>
+  <text x="450" y="105" font-size="8" fill="#999" text-anchor="middle">Highlight approach</text>
+
+  <!-- Swatch 1 (gray) -->
+  <rect x="400" y="130" width="50" height="60" fill="#d8d8d8" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Swatch 2 (gray) -->
+  <rect x="410" y="155" width="50" height="60" fill="#c0c0c0" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Swatch 3 (orange accent) -->
+  <rect x="450" y="140" width="50" height="60" fill="#E85D3A" stroke="#E85D3A" stroke-width="1.2" rx="2"/>
+
+  <!-- Column 3: Project-coded -->
+  <text x="700" y="85" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">Project-coded</text>
+  <text x="700" y="105" font-size="8" fill="#999" text-anchor="middle">Varied per project</text>
+
+  <!-- Swatch 1 (muted teal) -->
+  <rect x="650" y="130" width="40" height="50" fill="#6B8E7F" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Swatch 2 (muted rose) -->
+  <rect x="695" y="130" width="40" height="50" fill="#B88B7E" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Swatch 3 (muted blue) -->
+  <rect x="650" y="185" width="40" height="50" fill="#7A8FA3" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Swatch 4 (muted ochre) -->
+  <rect x="695" y="185" width="40" height="50" fill="#A89763" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Figure label -->
+  <line x1="400" y1="330" x2="400" y2="332" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="345" font-size="8" fill="#ccc" text-anchor="middle">FIG. 15</text>
+</svg>

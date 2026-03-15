@@ -1,0 +1,68 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: Inter, -apple-system, system-ui, sans-serif; }
+    </style>
+  </defs>
+  <rect width="800" height="400" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">Three Requirements for Licensure</text>
+
+  <!-- EDUCATION box -->
+  <rect x="80" y="90" width="140" height="80" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="150" y="115" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">EDUCATION</text>
+  <text x="150" y="135" font-size="8" fill="#999" text-anchor="middle">degree</text>
+  <text x="150" y="145" font-size="8" fill="#999" text-anchor="middle">required</text>
+
+  <!-- Arrow 1 -->
+  <polyline points="220,130 270,130" stroke="#1a1a1a" stroke-width="1.2" fill="none"/>
+  <polygon points="270,130 260,125 260,135" fill="#1a1a1a"/>
+
+  <!-- AXP box (filled black) -->
+  <rect x="270" y="90" width="140" height="80" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="340" y="115" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">AXP</text>
+  <text x="340" y="135" font-size="8" fill="#ffffff" text-anchor="middle">3,740</text>
+  <text x="340" y="145" font-size="8" fill="#ffffff" text-anchor="middle">hours</text>
+
+  <!-- Arrow 2 -->
+  <polyline points="410,130 460,130" stroke="#1a1a1a" stroke-width="1.2" fill="none"/>
+  <polygon points="460,130 450,125 450,135" fill="#1a1a1a"/>
+
+  <!-- ARE box (filled orange) -->
+  <rect x="460" y="90" width="140" height="80" fill="#E85D3A" stroke="#E85D3A" stroke-width="1.2" rx="2"/>
+  <text x="530" y="115" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">ARE</text>
+  <text x="530" y="135" font-size="8" fill="#ffffff" text-anchor="middle">6</text>
+  <text x="530" y="145" font-size="8" fill="#ffffff" text-anchor="middle">divisions</text>
+
+  <!-- Arrow 3 (leads to result) -->
+  <polyline points="600,130 650,130" stroke="#1a1a1a" stroke-width="1.2" fill="none"/>
+  <polygon points="650,130 640,125 640,135" fill="#1a1a1a"/>
+
+  <!-- LICENSED ARCHITECT box -->
+  <rect x="650" y="90" width="140" height="80" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="720" y="125" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">LICENSED</text>
+  <text x="720" y="140" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">ARCHITECT</text>
+
+  <!-- Connector line between top and bottom -->
+  <line x1="150" y1="170" x2="150" y2="200" stroke="#ccc" stroke-width="1"/>
+  <line x1="150" y1="200" x2="530" y2="200" stroke="#ccc" stroke-width="1"/>
+  <line x1="530" y1="200" x2="530" y2="170" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Bottom sublabels with connection points -->
+  <line x1="150" y1="200" x2="150" y2="220" stroke="#ccc" stroke-width="1"/>
+  <text x="150" y="265" font-size="8" fill="#999" text-anchor="middle">4-year degree</text>
+  <text x="150" y="275" font-size="8" fill="#999" text-anchor="middle">in architecture</text>
+
+  <line x1="340" y1="200" x2="340" y2="220" stroke="#ccc" stroke-width="1"/>
+  <text x="340" y="265" font-size="8" fill="#999" text-anchor="middle">internship</text>
+  <text x="340" y="275" font-size="8" fill="#999" text-anchor="middle">experience</text>
+
+  <line x1="530" y1="200" x2="530" y2="220" stroke="#ccc" stroke-width="1"/>
+  <text x="530" y="265" font-size="8" fill="#999" text-anchor="middle">architecture</text>
+  <text x="530" y="275" font-size="8" fill="#999" text-anchor="middle">licensing exams</text>
+
+  <!-- Figure label -->
+  <line x1="350" y1="330" x2="450" y2="330" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="347" font-size="8" fill="#ccc" text-anchor="middle">FIG. 2</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: Inter, -apple-system, system-ui, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">
+    PORTFOLIO SEQUENCING PATTERNS
+  </text>
+
+  <!-- Pattern 1: Strong Open -->
+  <text x="60" y="90" font-size="9" font-weight="600" fill="#1a1a1a">Strong Open</text>
+
+  <!-- Thumbnail 1 (large) -->
+  <rect x="50" y="110" width="80" height="100" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Arrow -->
+  <polyline points="130,160 145,160" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="150,160 145,157 145,163" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 2 (small) -->
+  <rect x="155" y="135" width="45" height="50" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Arrow -->
+  <polyline points="200,160 215,160" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="220,160 215,157 215,163" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 3 (small) -->
+  <rect x="225" y="135" width="45" height="50" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Arrow -->
+  <polyline points="270,160 285,160" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="290,160 285,157 285,163" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 4 (medium) -->
+  <rect x="295" y="120" width="60" height="80" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+
+  <!-- Pattern 2: Process Arc -->
+  <text x="60" y="250" font-size="9" font-weight="600" fill="#1a1a1a">Process Arc</text>
+
+  <!-- Thumbnail 1 (sketch) -->
+  <rect x="50" y="270" width="50" height="60" fill="#f0f0f0" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="75" y="308" font-size="7" fill="#999" text-anchor="middle">Sketch</text>
+
+  <!-- Arrow -->
+  <polyline points="100,300 115,300" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="120,300 115,297 115,303" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 2 (iteration) -->
+  <rect x="125" y="270" width="60" height="60" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="155" y="308" font-size="7" fill="#999" text-anchor="middle">Iteration</text>
+
+  <!-- Arrow -->
+  <polyline points="185,300 200,300" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="205,300 200,297 200,303" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 3 (iteration) -->
+  <rect x="210" y="270" width="60" height="60" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="240" y="308" font-size="7" fill="#999" text-anchor="middle">Iteration</text>
+
+  <!-- Arrow -->
+  <polyline points="270,300 285,300" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="290,300 285,297 285,303" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 4 (final) -->
+  <rect x="295" y="270" width="60" height="60" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="325" y="308" font-size="7" fill="#ffffff" text-anchor="middle">Final</text>
+
+  <!-- Pattern 3: Scale Shift -->
+  <text x="60" y="410" font-size="9" font-weight="600" fill="#1a1a1a">Scale Shift</text>
+
+  <!-- Thumbnail 1 (urban - large) -->
+  <rect x="50" y="430" width="75" height="55" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="87.5" y="467" font-size="7" fill="#999" text-anchor="middle">Urban</text>
+
+  <!-- Arrow -->
+  <polyline points="125,457.5 140,457.5" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="145,457.5 140,454.5 140,460.5" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 2 (building) -->
+  <rect x="150" y="435" width="55" height="45" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="177.5" y="467" font-size="7" fill="#999" text-anchor="middle">Building</text>
+
+  <!-- Arrow -->
+  <polyline points="205,457.5 220,457.5" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="225,457.5 220,454.5 220,460.5" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 3 (detail) -->
+  <rect x="230" y="440" width="40" height="35" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="250" y="467" font-size="7" fill="#999" text-anchor="middle">Detail</text>
+
+  <!-- Arrow -->
+  <polyline points="270,457.5 285,457.5" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="290,457.5 285,454.5 285,460.5" fill="#1a1a1a"/>
+
+  <!-- Thumbnail 4 (material - small) -->
+  <rect x="295" y="445" width="30" height="25" fill="#E85D3A" stroke="#E85D3A" stroke-width="1.2" rx="2"/>
+  <text x="310" y="467" font-size="6" fill="#ffffff" text-anchor="middle">Mat</text>
+
+  <!-- Figure label -->
+  <line x1="400" y1="490" x2="400" y2="492" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="505" font-size="8" fill="#ccc" text-anchor="middle">FIG. 14</text>
+</svg>

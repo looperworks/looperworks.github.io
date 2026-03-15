@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: Inter, -apple-system, system-ui, sans-serif; }
+    </style>
+  </defs>
+  <rect width="800" height="350" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">Path to Licensure — Typical Timeline</text>
+
+  <!-- Top track label -->
+  <text x="120" y="85" font-size="8.5" font-weight="600" fill="#1a1a1a">AXP EXPERIENCE</text>
+
+  <!-- AXP bar (years 1-4) -->
+  <rect x="180" y="75" width="240" height="25" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="300" y="93" font-size="8" font-weight="600" fill="#ffffff" text-anchor="middle">Years 1–4</text>
+
+  <!-- Bottom track label -->
+  <text x="120" y="180" font-size="8.5" font-weight="600" fill="#1a1a1a">ARE EXAMS</text>
+
+  <!-- ARE bar (years 2-5) -->
+  <rect x="240" y="170" width="240" height="25" fill="#E85D3A" stroke="#E85D3A" stroke-width="1.2" rx="2"/>
+  <text x="360" y="188" font-size="8" font-weight="600" fill="#ffffff" text-anchor="middle">Years 2–5</text>
+
+  <!-- Final milestone -->
+  <circle cx="540" cy="130" r="20" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <text x="540" y="135" font-size="8" font-weight="600" fill="#1a1a1a" text-anchor="middle">LICENSE</text>
+
+  <!-- Timeline base -->
+  <line x1="180" y1="240" x2="580" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+
+  <!-- Year markers -->
+  <line x1="180" y1="235" x2="180" y2="245" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="180" y="265" font-size="8" fill="#999" text-anchor="middle">Year 1</text>
+
+  <line x1="260" y1="235" x2="260" y2="245" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="260" y="265" font-size="8" fill="#999" text-anchor="middle">Year 2</text>
+
+  <line x1="340" y1="235" x2="340" y2="245" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="340" y="265" font-size="8" fill="#999" text-anchor="middle">Year 3</text>
+
+  <line x1="420" y1="235" x2="420" y2="245" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="420" y="265" font-size="8" fill="#999" text-anchor="middle">Year 4</text>
+
+  <line x1="500" y1="235" x2="500" y2="245" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="500" y="265" font-size="8" fill="#999" text-anchor="middle">Year 5</text>
+
+  <line x1="580" y1="235" x2="580" y2="245" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="580" y="265" font-size="8" fill="#999" text-anchor="middle">Year 6–7</text>
+
+  <!-- Figure label -->
+  <line x1="350" y1="310" x2="450" y2="310" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="327" font-size="8" fill="#ccc" text-anchor="middle">FIG. 1</text>
+</svg>

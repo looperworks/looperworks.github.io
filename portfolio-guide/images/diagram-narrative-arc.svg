@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: Inter, -apple-system, system-ui, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="320" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">
+    PROJECT NARRATIVE STRUCTURE
+  </text>
+
+  <!-- Arrow 1 to Context -->
+  <polyline points="80,100 100,100" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="105,100 100,97 100,103" fill="#1a1a1a"/>
+
+  <!-- Node 1: Context -->
+  <rect x="110" y="80" width="120" height="80" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="170" y="115" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">Context</text>
+  <text x="170" y="155" font-size="8" fill="#999" text-anchor="middle">Background & brief</text>
+
+  <!-- Arrow 1 to 2 -->
+  <polyline points="230,120 260,120" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="265,120 260,117 260,123" fill="#1a1a1a"/>
+
+  <!-- Node 2: Concept -->
+  <rect x="270" y="80" width="120" height="80" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="330" y="115" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="middle">Concept</text>
+  <text x="330" y="155" font-size="8" fill="#999" text-anchor="middle">Core idea & strategy</text>
+
+  <!-- Arrow 2 to 3 -->
+  <polyline points="390,120 420,120" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="425,120 420,117 420,123" fill="#1a1a1a"/>
+
+  <!-- Node 3: Development (filled black) -->
+  <rect x="430" y="80" width="120" height="80" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="490" y="115" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">Development</text>
+  <text x="490" y="155" font-size="8" fill="#ffffff" text-anchor="middle">Iterations & process</text>
+
+  <!-- Arrow 3 to 4 -->
+  <polyline points="550,120 580,120" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="585,120 580,117 580,123" fill="#1a1a1a"/>
+
+  <!-- Node 4: Resolution (filled orange) -->
+  <rect x="590" y="80" width="120" height="80" fill="#E85D3A" stroke="#E85D3A" stroke-width="1.2" rx="2"/>
+  <text x="650" y="115" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">Resolution</text>
+  <text x="650" y="155" font-size="8" fill="#ffffff" text-anchor="middle">Outcome & impact</text>
+
+  <!-- Arrow 4 end -->
+  <polyline points="710,120 730,120" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <polygon points="735,120 730,117 730,123" fill="#1a1a1a"/>
+
+  <!-- Figure label -->
+  <line x1="400" y1="270" x2="400" y2="272" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="285" font-size="8" fill="#ccc" text-anchor="middle">FIG. 12</text>
+</svg>

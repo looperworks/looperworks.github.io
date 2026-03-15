@@ -101,6 +101,43 @@
   });
 })();
 
+/* ----- Diagram Lightbox ----- */
+(function() {
+  // Create modal element
+  var modal = document.createElement('div');
+  modal.className = 'diagram-modal';
+  modal.innerHTML = '<span class="diagram-modal-close">&times;</span><img src="" alt="">';
+  document.body.appendChild(modal);
+
+  var modalImg = modal.querySelector('img');
+  var closeBtn = modal.querySelector('.diagram-modal-close');
+
+  // Click any diagram to open
+  document.addEventListener('click', function(e) {
+    var img = e.target.closest('.diagram-wrap img');
+    if (!img) return;
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Close on backdrop click, close button, or Escape
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal || e.target === closeBtn) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+})();
+
 /* ----- Animated Logo (auto-initializes if #logoCanvas exists) ----- */
 (function() {
   var canvas = document.getElementById('logoCanvas');
