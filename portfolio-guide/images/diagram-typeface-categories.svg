@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" font-family="Inter, system-ui, sans-serif">
+  <rect width="820" height="520" fill="#f8f8f8" rx="2"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" font-size="9" font-weight="500" fill="#1a1a1a" letter-spacing="1.2">TYPEFACE CATEGORIES FOR ARCHITECTURE PORTFOLIOS</text>
+  <line x1="310" y1="42" x2="510" y2="42" stroke="#E85D3A" stroke-width="1.2"/>
+
+  <!-- Category 1: Modernist -->
+  <rect x="30" y="62" width="370" height="195" rx="2" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="30" y="62" width="370" height="26" rx="2" fill="#1a1a1a"/>
+  <text x="42" y="79" font-size="7.5" font-weight="500" fill="#E85D3A">01</text>
+  <text x="62" y="79" font-size="7.5" font-weight="500" fill="white" letter-spacing="0.8">MODERNIST WORKHORSES</text>
+  <text x="386" y="79" text-anchor="end" font-size="6.5" fill="#999" font-style="italic">Neutral, precise, Swiss/German tradition</text>
+
+  <text x="50" y="106" font-size="7.5" font-weight="500" fill="#1a1a1a">Helvetica</text>
+  <text x="160" y="106" font-size="7" fill="#666">Technical docs, signage, resumes</text>
+  <text x="380" y="106" text-anchor="end" font-size="6.5" fill="#999">Free alt: Built-in</text>
+
+  <text x="50" y="126" font-size="7.5" font-weight="500" fill="#1a1a1a">Futura</text>
+  <text x="160" y="126" font-size="7" fill="#666">Headers, competition boards, titles</text>
+  <text x="380" y="126" text-anchor="end" font-size="6.5" fill="#999">Free alt: Jost</text>
+
+  <text x="50" y="146" font-size="7.5" font-weight="500" fill="#1a1a1a">DIN</text>
+  <text x="160" y="146" font-size="7" fill="#666">Diagram annotation, design briefs</text>
+  <text x="380" y="146" text-anchor="end" font-size="6.5" fill="#999">Free alt: DM Sans</text>
+
+  <text x="50" y="166" font-size="7.5" font-weight="500" fill="#1a1a1a">Univers</text>
+  <text x="160" y="166" font-size="7" fill="#666">Complex layouts, long-form documents</text>
+  <text x="380" y="166" text-anchor="end" font-size="6.5" fill="#999">Free alt: Inter</text>
+
+  <line x1="50" y1="182" x2="380" y2="182" stroke="#eee" stroke-width="0.8"/>
+  <text x="50" y="196" font-size="6.5" fill="#888">Best when your drawings should be the focal point — the type stays invisible.</text>
+  <text x="50" y="210" font-size="6.5" fill="#888">Clarity and neutrality over personality.</text>
+
+  <!-- Category 2: Humanist -->
+  <rect x="420" y="62" width="370" height="195" rx="2" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="420" y="62" width="370" height="26" rx="2" fill="#1a1a1a"/>
+  <text x="432" y="79" font-size="7.5" font-weight="500" fill="#E85D3A">02</text>
+  <text x="452" y="79" font-size="7.5" font-weight="500" fill="white" letter-spacing="0.8">HUMANIST &amp; CONTEMPORARY</text>
+  <text x="776" y="79" text-anchor="end" font-size="6.5" fill="#999" font-style="italic">Approachable, warm, contemporary</text>
+
+  <text x="440" y="106" font-size="7.5" font-weight="500" fill="#1a1a1a">Avenir</text>
+  <text x="550" y="106" font-size="7" fill="#666">Personal statements, project descriptions</text>
+  <text x="770" y="106" text-anchor="end" font-size="6.5" fill="#999">Free alt: Nunito</text>
+
+  <text x="440" y="126" font-size="7.5" font-weight="500" fill="#1a1a1a">Söhne</text>
+  <text x="550" y="126" font-size="7" fill="#666">Modern branding, studio identity</text>
+  <text x="770" y="126" text-anchor="end" font-size="6.5" fill="#999">Free alt: Space Grotesk</text>
+
+  <text x="440" y="146" font-size="7.5" font-weight="500" fill="#1a1a1a">Gill Sans</text>
+  <text x="550" y="146" font-size="7" fill="#666">Storytelling, narrative portfolios</text>
+  <text x="770" y="146" text-anchor="end" font-size="6.5" fill="#999">Free alt: Lato</text>
+
+  <text x="440" y="166" font-size="7.5" font-weight="500" fill="#1a1a1a">Circular</text>
+  <text x="550" y="166" font-size="7" fill="#666">Modern studio branding, tech-forward</text>
+  <text x="770" y="166" text-anchor="end" font-size="6.5" fill="#999">Free alt: Plus Jakarta Sans</text>
+
+  <line x1="440" y1="182" x2="770" y2="182" stroke="#eee" stroke-width="0.8"/>
+  <text x="440" y="196" font-size="6.5" fill="#888">Adds warmth to personal narratives and design philosophy statements.</text>
+  <text x="440" y="210" font-size="6.5" fill="#888">Personality without sacrificing professionalism.</text>
+
+  <!-- Category 3: Editorial -->
+  <rect x="30" y="275" width="370" height="215" rx="2" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="30" y="275" width="370" height="26" rx="2" fill="#1a1a1a"/>
+  <text x="42" y="292" font-size="7.5" font-weight="500" fill="#E85D3A">03</text>
+  <text x="62" y="292" font-size="7.5" font-weight="500" fill="white" letter-spacing="0.8">EDITORIAL &amp; STYLISTIC</text>
+  <text x="386" y="292" text-anchor="end" font-size="6.5" fill="#999" font-style="italic">Style-specific, expressive, brand-forward</text>
+
+  <text x="50" y="319" font-size="7.5" font-weight="500" fill="#1a1a1a">Neue Montreal</text>
+  <text x="160" y="319" font-size="7" fill="#666">High-end branding, luxury projects</text>
+  <text x="380" y="319" text-anchor="end" font-size="6.5" fill="#999">Free alt: Montserrat</text>
+
+  <text x="50" y="339" font-size="7.5" font-weight="500" fill="#1a1a1a">GT Alpina</text>
+  <text x="160" y="339" font-size="7" fill="#666">Academic portfolios, research, thesis</text>
+  <text x="380" y="339" text-anchor="end" font-size="6.5" fill="#999">Free alt: Source Serif 4</text>
+
+  <text x="50" y="359" font-size="7.5" font-weight="500" fill="#1a1a1a">Monolisk</text>
+  <text x="160" y="359" font-size="7" fill="#666">Brutalist projects, raw material aesthetics</text>
+  <text x="380" y="359" text-anchor="end" font-size="6.5" fill="#999">Free alt: Archivo Black</text>
+
+  <text x="50" y="379" font-size="7.5" font-weight="500" fill="#1a1a1a">Didot / Playfair</text>
+  <text x="160" y="379" font-size="7" fill="#666">Classical architecture, luxury real estate</text>
+  <text x="380" y="379" text-anchor="end" font-size="6.5" fill="#E85D3A">Free: Playfair Display</text>
+
+  <text x="50" y="399" font-size="7.5" font-weight="500" fill="#1a1a1a">Minion Pro</text>
+  <text x="160" y="399" font-size="7" fill="#666">Academic writing, text-heavy portfolios</text>
+  <text x="380" y="399" text-anchor="end" font-size="6.5" fill="#999">Free alt: Crimson Pro</text>
+
+  <line x1="50" y1="415" x2="380" y2="415" stroke="#eee" stroke-width="0.8"/>
+  <text x="50" y="429" font-size="6.5" fill="#888">Typography reinforces the design thesis of the work it accompanies.</text>
+  <text x="50" y="443" font-size="6.5" fill="#888">From Brutalist materiality to classical refinement.</text>
+
+  <!-- Category 4: Functional -->
+  <rect x="420" y="275" width="370" height="215" rx="2" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="420" y="275" width="370" height="26" rx="2" fill="#1a1a1a"/>
+  <text x="432" y="292" font-size="7.5" font-weight="500" fill="#E85D3A">04</text>
+  <text x="452" y="292" font-size="7.5" font-weight="500" fill="white" letter-spacing="0.8">FUNCTIONAL &amp; DISPLAY</text>
+  <text x="776" y="292" text-anchor="end" font-size="6.5" fill="#999" font-style="italic">Technical, high-impact, digital-ready</text>
+
+  <text x="440" y="319" font-size="7.5" font-weight="500" fill="#1a1a1a">Century Gothic / DIN Pro</text>
+  <text x="600" y="319" font-size="7" fill="#666">CAD/BIM environments</text>
+  <text x="770" y="319" text-anchor="end" font-size="6.5" fill="#999">Free alt: Poppins</text>
+
+  <text x="440" y="339" font-size="7.5" font-weight="500" fill="#1a1a1a">Tungsten</text>
+  <text x="600" y="339" font-size="7" fill="#666">Competition boards, exhibition posters</text>
+  <text x="770" y="339" text-anchor="end" font-size="6.5" fill="#999">Free alt: Oswald</text>
+
+  <text x="440" y="359" font-size="7.5" font-weight="500" fill="#1a1a1a">Roboto / Montserrat</text>
+  <text x="600" y="359" font-size="7" fill="#666">Digital portfolios, design decks</text>
+  <text x="770" y="359" text-anchor="end" font-size="6.5" fill="#E85D3A">Free: Roboto (exact)</text>
+
+  <line x1="440" y1="380" x2="770" y2="380" stroke="#eee" stroke-width="0.8"/>
+  <text x="440" y="394" font-size="6.5" fill="#888">Engineered for legibility in technical production environments</text>
+  <text x="440" y="408" font-size="6.5" fill="#888">like CAD and BIM, and for high-impact visual communication</text>
+  <text x="440" y="422" font-size="6.5" fill="#888">at presentation and exhibition scale.</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="500" width="760" height="1" fill="#E85D3A" opacity="0.3"/>
+  <text x="410" y="514" text-anchor="middle" font-size="6.5" fill="#888">Fig 7a — 16 typeface recommendations organized by architectural intent · Free alternatives from Google Fonts noted</text>
+</svg>
