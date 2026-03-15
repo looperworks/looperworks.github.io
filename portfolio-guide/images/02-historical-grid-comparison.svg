@@ -1,28 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="Inter, -apple-system, system-ui, sans-serif">
   <defs>
     <style>
-      text { fill: #333; }
-      .label { font-size: 11px; fill: #777; }
-      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
-      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      text { fill: #333; font-family: Inter, -apple-system, system-ui, sans-serif; }
+      .label { font-size: 7px; fill: #777; }
+      .label-bold { font-size: 8px; fill: #1A1A1A; font-weight: 500; }
+      .title { font-size: 9px; fill: #999; font-weight: 400; letter-spacing: 1.6px; text-transform: uppercase; }
       .subtitle { font-size: 11px; fill: #999; letter-spacing: 2px; text-transform: uppercase; }
-      .grid-col { stroke: #3B7DD8; stroke-width: 0.75; stroke-dasharray: 4,3; }
-      .grid-row { stroke: #E85D3A; stroke-width: 0.75; stroke-dasharray: 4,3; }
-      .margin-line { stroke: #BBB; stroke-width: 1; stroke-dasharray: 6,4; }
-      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.5; }
+      .grid-col { stroke: #1a1a1a; stroke-width: 1.2; stroke-dasharray: 4,3; }
+      .grid-row { stroke: #E85D3A; stroke-width: 1.2; stroke-dasharray: 4,3; }
+      .margin-line { stroke: #BBB; stroke-width: 1.2; stroke-dasharray: 6,4; }
+      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.2; }
       .module-fill { fill: #F0F4FA; stroke: none; }
       .callout-line { stroke: #333; stroke-width: 0.75; }
       .callout-dot { fill: #333; }
       .dim-line { stroke: #BBB; stroke-width: 0.75; }
-      .accent-blue { fill: #3B7DD8; }
+      .accent-blue { fill: #1a1a1a; }
       .accent-red { fill: #E85D3A; }
       .white-text { font-size: 11px; fill: #FFF; font-weight: 600; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="460" fill="white"/>
-
+  <rect width="800" height="460" fill="#f8f8f8"/>
 
   <text x="400" y="36" text-anchor="middle" class="title">The Grid Across Civilizations</text>
 
@@ -62,12 +61,12 @@
     <rect x="100" y="0" width="90" height="60" fill="#E8F0FA" stroke="#BBB" stroke-width="1" opacity="0.7"/>
     <rect x="0" y="70" width="90" height="60" fill="#E8F0FA" stroke="#BBB" stroke-width="1" opacity="0.7"/>
     <rect x="100" y="70" width="90" height="60" fill="#F5E6D6" stroke="#BBB" stroke-width="1" opacity="0.7"/>
-    <line x1="0" y1="140" x2="190" y2="140" stroke="#BBB" stroke-width="1.5"/>
+    <line x1="0" y1="140" x2="190" y2="140" stroke="#BBB" stroke-width="1.2"/>
     <rect x="0" y="150" width="90" height="60" fill="#F5E6D6" stroke="#BBB" stroke-width="1" opacity="0.7"/>
     <rect x="100" y="150" width="90" height="60" fill="#E8F0FA" stroke="#BBB" stroke-width="1" opacity="0.7"/>
     <rect x="0" y="220" width="90" height="50" fill="#E8F0FA" stroke="#BBB" stroke-width="1" opacity="0.7"/>
     <rect x="100" y="220" width="90" height="50" fill="#F5E6D6" stroke="#BBB" stroke-width="1" opacity="0.7"/>
-    <line x1="95" y1="0" x2="95" y2="270" stroke="#BBB" stroke-width="1.5"/>
+    <line x1="95" y1="0" x2="95" y2="270" stroke="#BBB" stroke-width="1.2"/>
   </g>
   <text x="405" y="395" text-anchor="middle" class="label-bold">Japanese Timber Module</text>
   <text x="405" y="410" text-anchor="middle" class="label" font-style="italic">Ken module system</text>
@@ -91,4 +90,7 @@
   <!-- Bottom note -->
   <text x="400" y="440" text-anchor="middle" class="label" font-style="italic">The grid as an organizing principle is older than graphic design itself.</text>
 
+  <!-- Figure label -->
+  <line x1="150" y1="450" x2="650" y2="450" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="463" text-anchor="middle" font-size="7" fill="#ccc">FIG. 2</text>
 </svg>

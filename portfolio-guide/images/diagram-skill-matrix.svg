@@ -9,19 +9,19 @@
   <rect width="800" height="420" fill="#f8f8f8"/>
 
   <!-- Title -->
-  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">
+  <text x="400" y="30" font-size="9" font-weight="400" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">
     PROJECT–SKILL COVERAGE MATRIX
   </text>
 
   <!-- Header Row: Skills -->
-  <text x="140" y="85" font-size="8" fill="#999" text-anchor="middle">Sustainability</text>
+  <text x="140" y="85" font-size="7" fill="#999" text-anchor="middle">Sustainability</text>
   <text x="240" y="85" font-size="8" fill="#999" text-anchor="middle">Computation</text>
   <text x="340" y="85" font-size="8" fill="#999" text-anchor="middle">Community</text>
   <text x="440" y="85" font-size="8" fill="#999" text-anchor="middle">Technical</text>
   <text x="540" y="85" font-size="8" fill="#999" text-anchor="middle">Conceptual</text>
 
   <!-- Project A Row -->
-  <text x="50" y="150" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="end">Project A</text>
+  <text x="50" y="150" font-size="8" font-weight="500" fill="#1a1a1a" text-anchor="end">Project A</text>
   <circle cx="140" cy="140" r="5" fill="#1a1a1a"/>
   <circle cx="240" cy="140" r="5" fill="#1a1a1a"/>
   <circle cx="340" cy="140" r="0" fill="none" stroke="#999" stroke-width="1"/>
@@ -29,7 +29,7 @@
   <circle cx="540" cy="140" r="5" fill="#1a1a1a"/>
 
   <!-- Project B Row -->
-  <text x="50" y="215" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="end">Project B</text>
+  <text x="50" y="215" font-size="8" font-weight="500" fill="#1a1a1a" text-anchor="end">Project B</text>
   <circle cx="140" cy="205" r="0" fill="none" stroke="#999" stroke-width="1"/>
   <circle cx="240" cy="205" r="5" fill="#1a1a1a"/>
   <circle cx="340" cy="205" r="5" fill="#1a1a1a"/>
@@ -37,7 +37,7 @@
   <circle cx="540" cy="205" r="0" fill="none" stroke="#999" stroke-width="1"/>
 
   <!-- Project C Row -->
-  <text x="50" y="280" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="end">Project C</text>
+  <text x="50" y="280" font-size="8" font-weight="500" fill="#1a1a1a" text-anchor="end">Project C</text>
   <circle cx="140" cy="270" r="5" fill="#1a1a1a"/>
   <circle cx="240" cy="270" r="0" fill="none" stroke="#999" stroke-width="1"/>
   <circle cx="340" cy="270" r="5" fill="#1a1a1a"/>
@@ -45,7 +45,7 @@
   <circle cx="540" cy="270" r="5" fill="#1a1a1a"/>
 
   <!-- Project D Row -->
-  <text x="50" y="345" font-size="9" font-weight="600" fill="#1a1a1a" text-anchor="end">Project D</text>
+  <text x="50" y="345" font-size="8" font-weight="500" fill="#1a1a1a" text-anchor="end">Project D</text>
   <circle cx="140" cy="335" r="5" fill="#1a1a1a"/>
   <circle cx="240" cy="335" r="5" fill="#1a1a1a"/>
   <circle cx="340" cy="335" r="5" fill="#1a1a1a"/>
@@ -60,5 +60,5 @@
 
   <!-- Figure label -->
   <line x1="400" y1="370" x2="400" y2="372" stroke="#ccc" stroke-width="1"/>
-  <text x="400" y="385" font-size="8" fill="#ccc" text-anchor="middle">FIG. 13</text>
+  <text x="400" y="385" font-size="7" fill="#ccc" text-anchor="middle">FIG. 13</text>
 </svg>

@@ -1,19 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="Inter, -apple-system, system-ui, sans-serif">
   <defs>
     <style>
-      text { fill: #333; }
-      .label { font-size: 11px; fill: #777; }
-      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
-      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      text { fill: #333; font-family: Inter, -apple-system, system-ui, sans-serif; }
+      .label { font-size: 7px; fill: #777; }
+      .label-bold { font-size: 8px; fill: #1A1A1A; font-weight: 500; }
+      .title { font-size: 9px; fill: #999; font-weight: 400; letter-spacing: 1.6px; text-transform: uppercase; }
       .equation { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
       .baseline { stroke: #BBB; stroke-width: 1; }
-      .baseline-highlight { stroke: #3B7DD8; stroke-width: 1.5; }
+      .baseline-highlight { stroke: #1a1a1a; stroke-width: 1.2; }
       .margin-zone { fill: #F2F2F2; opacity: 0.6; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="480" fill="white"/>
+  <rect width="800" height="480" fill="#f8f8f8"/>
 
   <!-- Title -->
   <text x="400" y="35" text-anchor="middle" class="title">Baseline Grid: The Math</text>
@@ -101,29 +101,29 @@
     <text x="330" y="288" text-anchor="end" class="label">Line 7</text>
 
     <!-- Dimension brackets (12pt each) -->
-    <line x1="670" y1="140" x2="670" y2="164" stroke="#E85D3A" stroke-width="1.5"/>
-    <line x1="665" y1="140" x2="675" y2="140" stroke="#E85D3A" stroke-width="1.5"/>
-    <line x1="665" y1="164" x2="675" y2="164" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="670" y1="140" x2="670" y2="164" stroke="#E85D3A" stroke-width="1.2"/>
+    <line x1="665" y1="140" x2="675" y2="140" stroke="#E85D3A" stroke-width="1.2"/>
+    <line x1="665" y1="164" x2="675" y2="164" stroke="#E85D3A" stroke-width="1.2"/>
     <text x="700" y="155" class="label" fill="#E85D3A" font-weight="600">12pt</text>
 
-    <line x1="670" y1="164" x2="670" y2="188" stroke="#E85D3A" stroke-width="1.5"/>
-    <line x1="665" y1="188" x2="675" y2="188" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="670" y1="164" x2="670" y2="188" stroke="#E85D3A" stroke-width="1.2"/>
+    <line x1="665" y1="188" x2="675" y2="188" stroke="#E85D3A" stroke-width="1.2"/>
     <text x="700" y="179" class="label" fill="#E85D3A" font-weight="600">12pt</text>
 
-    <line x1="670" y1="188" x2="670" y2="212" stroke="#E85D3A" stroke-width="1.5"/>
-    <line x1="665" y1="212" x2="675" y2="212" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="670" y1="188" x2="670" y2="212" stroke="#E85D3A" stroke-width="1.2"/>
+    <line x1="665" y1="212" x2="675" y2="212" stroke="#E85D3A" stroke-width="1.2"/>
     <text x="700" y="203" class="label" fill="#E85D3A" font-weight="600">12pt</text>
 
-    <line x1="670" y1="212" x2="670" y2="236" stroke="#E85D3A" stroke-width="1.5"/>
-    <line x1="665" y1="236" x2="675" y2="236" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="670" y1="212" x2="670" y2="236" stroke="#E85D3A" stroke-width="1.2"/>
+    <line x1="665" y1="236" x2="675" y2="236" stroke="#E85D3A" stroke-width="1.2"/>
     <text x="700" y="227" class="label" fill="#E85D3A" font-weight="600">12pt</text>
 
-    <line x1="670" y1="236" x2="670" y2="260" stroke="#E85D3A" stroke-width="1.5"/>
-    <line x1="665" y1="260" x2="675" y2="260" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="670" y1="236" x2="670" y2="260" stroke="#E85D3A" stroke-width="1.2"/>
+    <line x1="665" y1="260" x2="675" y2="260" stroke="#E85D3A" stroke-width="1.2"/>
     <text x="700" y="251" class="label" fill="#E85D3A" font-weight="600">12pt</text>
 
-    <line x1="670" y1="260" x2="670" y2="284" stroke="#E85D3A" stroke-width="1.5"/>
-    <line x1="665" y1="284" x2="675" y2="284" stroke="#E85D3A" stroke-width="1.5"/>
+    <line x1="670" y1="260" x2="670" y2="284" stroke="#E85D3A" stroke-width="1.2"/>
+    <line x1="665" y1="284" x2="675" y2="284" stroke="#E85D3A" stroke-width="1.2"/>
     <text x="700" y="275" class="label" fill="#E85D3A" font-weight="600">12pt</text>
   </g>
 </svg>

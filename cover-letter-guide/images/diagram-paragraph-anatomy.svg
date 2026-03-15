@@ -7,29 +7,29 @@
   <rect width="800" height="400" fill="#f8f8f8"/>
 
   <!-- Title -->
-  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">Anatomy of a Strong Paragraph</text>
+  <text x="400" y="30" font-size="9" font-weight="400" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">Anatomy of a Strong Paragraph</text>
 
   <!-- Main paragraph box -->
   <rect x="150" y="80" width="500" height="120" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
-  <text x="170" y="110" font-size="9" font-weight="500" fill="#1a1a1a" line-height="1.5">I was struck by your recent work on sustainable urbanism. Your approach mirrors my fascination with climate-responsive design, which I've explored through my coursework at [school]. I'd welcome the chance to apply these interests at [firm].</text>
+  <text x="170" y="110" font-size="8" font-weight="500" fill="#1a1a1a" line-height="1.5">I was struck by your recent work on sustainable urbanism. Your approach mirrors my fascination with climate-responsive design, which I've explored through my coursework at [school]. I'd welcome the chance to apply these interests at [firm].</text>
 
   <!-- Callout 1: Opening hook -->
   <line x1="170" y1="95" x2="80" y2="50" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
   <rect x="20" y="35" width="100" height="25" fill="none" stroke="#1a1a1a" stroke-width="1" rx="2"/>
-  <text x="30" y="52" font-size="8" font-weight="600" fill="#1a1a1a">Opening hook</text>
+  <text x="30" y="52" font-size="7" font-weight="500" fill="#1a1a1a">Opening hook</text>
 
   <!-- Callout 2: Firm-specific detail -->
   <line x1="320" y1="135" x2="320" y2="200" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
   <rect x="270" y="200" width="100" height="25" fill="none" stroke="#1a1a1a" stroke-width="1" rx="2"/>
-  <text x="275" y="217" font-size="8" font-weight="600" fill="#1a1a1a">Firm-specific</text>
-  <text x="285" y="227" font-size="8" font-weight="600" fill="#1a1a1a">detail</text>
+  <text x="275" y="217" font-size="7" font-weight="500" fill="#1a1a1a">Firm-specific</text>
+  <text x="285" y="227" font-size="7" font-weight="500" fill="#1a1a1a">detail</text>
 
   <!-- Callout 3: Your connection -->
   <line x1="550" y1="155" x2="650" y2="250" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
   <rect x="630" y="250" width="100" height="25" fill="none" stroke="#1a1a1a" stroke-width="1" rx="2"/>
-  <text x="640" y="267" font-size="8" font-weight="600" fill="#1a1a1a">Your connection</text>
+  <text x="640" y="267" font-size="7" font-weight="500" fill="#1a1a1a">Your connection</text>
 
   <!-- Figure label -->
   <line x1="350" y1="360" x2="450" y2="360" stroke="#ccc" stroke-width="1"/>
-  <text x="400" y="377" font-size="8" fill="#ccc" text-anchor="middle">FIG. 2</text>
+  <text x="400" y="377" font-size="7" fill="#ccc" text-anchor="middle">FIG. 2</text>
 </svg>

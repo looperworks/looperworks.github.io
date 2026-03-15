@@ -1,37 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="Inter, -apple-system, system-ui, sans-serif">
   <defs>
     <style>
-      text { fill: #333; }
-      .label { font-size: 11px; fill: #777; }
-      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
-      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      text { fill: #333; font-family: Inter, -apple-system, system-ui, sans-serif; }
+      .label { font-size: 7px; fill: #777; }
+      .label-bold { font-size: 8px; fill: #1A1A1A; font-weight: 500; }
+      .title { font-size: 9px; fill: #999; font-weight: 400; letter-spacing: 1.6px; text-transform: uppercase; }
       .subtitle { font-size: 11px; fill: #999; letter-spacing: 2px; text-transform: uppercase; }
-      .grid-col { stroke: #3B7DD8; stroke-width: 0.75; stroke-dasharray: 4,3; }
-      .grid-row { stroke: #E85D3A; stroke-width: 0.75; stroke-dasharray: 4,3; }
-      .margin-line { stroke: #BBB; stroke-width: 1; stroke-dasharray: 6,4; }
-      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.5; }
+      .grid-col { stroke: #1a1a1a; stroke-width: 1.2; stroke-dasharray: 4,3; }
+      .grid-row { stroke: #E85D3A; stroke-width: 1.2; stroke-dasharray: 4,3; }
+      .margin-line { stroke: #BBB; stroke-width: 1.2; stroke-dasharray: 6,4; }
+      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.2; }
       .module-fill { fill: #F0F4FA; stroke: none; }
       .callout-line { stroke: #333; stroke-width: 0.75; }
       .callout-dot { fill: #333; }
       .dim-line { stroke: #BBB; stroke-width: 0.75; }
-      .accent-blue { fill: #3B7DD8; }
+      .accent-blue { fill: #1a1a1a; }
       .accent-red { fill: #E85D3A; }
       .white-text { font-size: 11px; fill: #FFF; font-weight: 600; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="380" fill="white"/>
-
+  <rect width="800" height="380" fill="#f8f8f8"/>
 
   <text x="400" y="36" text-anchor="middle" class="title">Key InDesign Panels</text>
 
   <!-- Paragraph Styles panel -->
-  <rect x="40" y="60" width="330" height="310" fill="white" stroke="#D0D0D0" stroke-width="1.5" rx="5"/>
+  <rect x="40" y="60" width="330" height="310" fill="white" stroke="#D0D0D0" stroke-width="1.2" rx="5"/>
   <rect x="40" y="60" width="330" height="30" fill="#333" rx="5"/>
   <rect x="40" y="78" width="330" height="12" fill="#333"/>
   <text x="60" y="82" class="white-text">Paragraph Styles</text>
-  <rect x="52" y="100" width="306" height="30" fill="#3B7DD8" rx="3"/>
+  <rect x="52" y="100" width="306" height="30" fill="#1a1a1a" rx="3"/>
   <text x="68" y="120" class="white-text">Body Text</text>
   <rect x="52" y="138" width="306" height="30" fill="#FAFAFA" stroke="#D0D0D0" stroke-width="0.5" rx="3"/>
   <text x="68" y="158" class="label-bold">Heading 1</text>
@@ -44,7 +43,7 @@
   <text x="205" y="340" text-anchor="middle" class="label" font-style="italic">Enforces typographic consistency</text>
 
   <!-- Align panel -->
-  <rect x="430" y="60" width="330" height="310" fill="white" stroke="#D0D0D0" stroke-width="1.5" rx="5"/>
+  <rect x="430" y="60" width="330" height="310" fill="white" stroke="#D0D0D0" stroke-width="1.2" rx="5"/>
   <rect x="430" y="60" width="330" height="30" fill="#333" rx="5"/>
   <rect x="430" y="78" width="330" height="12" fill="#333"/>
   <text x="450" y="82" class="white-text">Align</text>

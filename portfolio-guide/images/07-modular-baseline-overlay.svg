@@ -1,24 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="Inter, -apple-system, system-ui, sans-serif">
   <defs>
     <style>
-      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      text { fill: #333; font-family: Inter, -apple-system, system-ui, sans-serif; }
+      .title { font-size: 9px; fill: #999; font-weight: 400; letter-spacing: 1.6px; text-transform: uppercase; }
       .subtitle { font-size: 11px; fill: #999; letter-spacing: 2px; }
-      .label { font-size: 11px; fill: #777; }
-      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
-      .page-bg { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.5; }
+      .label { font-size: 7px; fill: #777; }
+      .label-bold { font-size: 8px; fill: #1A1A1A; font-weight: 500; }
+      .page-bg { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.2; }
       .margin-area { fill: none; stroke: #DDD; stroke-width: 0.5; stroke-dasharray: 5,3; }
-      .mod-col { stroke: #3B7DD8; stroke-width: 0.6; }
-      .mod-row { stroke: #3B7DD8; stroke-width: 0.6; }
+      .mod-col { stroke: #1a1a1a; stroke-width: 1.2; }
+      .mod-row { stroke: #1a1a1a; stroke-width: 1.2; }
       .baseline { stroke: #E85D3A; stroke-width: 0.3; }
-      .module-highlight { fill: #3B7DD8; fill-opacity: 0.06; stroke: #3B7DD8; stroke-width: 1; }
+      .module-highlight { fill: #1a1a1a; fill-opacity: 0.06; stroke: #1a1a1a; stroke-width: 1; }
       .callout-line { stroke: #333; stroke-width: 0.75; }
       .callout-dot { fill: #333; }
       .text-line { fill: #999; }
     </style>
   </defs>
 
-  <rect width="800" height="600" fill="white"/>
-<text x="400" y="54" text-anchor="middle" class="title">Modular Grid + Baseline Grid Overlay</text>
+  <rect width="800" height="600" fill="#f8f8f8"/>
+  <text x="400" y="54" text-anchor="middle" class="title">Modular Grid + Baseline Grid Overlay</text>
 
   <!-- Page -->
   <rect x="200" y="80" width="340" height="470" class="page-bg" rx="1"/>
@@ -72,14 +73,14 @@
   </g>
 
   <!-- Modular grid (3 columns x 4 rows) -->
-  <!-- Column lines (blue, stronger) -->
+  <!-- Column lines (dark, stronger) -->
   <line x1="230" y1="110" x2="230" y2="520" class="mod-col"/>
   <line x1="315" y1="110" x2="315" y2="520" class="mod-col"/>
   <line x1="328" y1="110" x2="328" y2="520" class="mod-col"/>
   <line x1="413" y1="110" x2="413" y2="520" class="mod-col"/>
   <line x1="426" y1="110" x2="426" y2="520" class="mod-col"/>
   <line x1="510" y1="110" x2="510" y2="520" class="mod-col"/>
-  <!-- Row lines (blue, stronger) -->
+  <!-- Row lines (dark, stronger) -->
   <line x1="230" y1="110" x2="510" y2="110" class="mod-row"/>
   <line x1="230" y1="200" x2="510" y2="200" class="mod-row"/>
   <line x1="230" y1="210" x2="510" y2="210" class="mod-row"/>
@@ -111,7 +112,7 @@
   <circle cx="515" cy="155" r="2" class="callout-dot"/>
   <text x="565" y="147" class="label-bold">Modular Grid</text>
   <text x="565" y="160" class="label">Columns + rows define</text>
-  <text x="565" y="172" class="label">content zones (blue lines)</text>
+  <text x="565" y="172" class="label">content zones (dark lines)</text>
 
   <!-- Baseline grid callout -->
   <line x1="515" y1="260" x2="560" y2="260" class="callout-line"/>
@@ -130,7 +131,7 @@
   <text x="565" y="369" class="label">content to a shared rhythm</text>
 
   <!-- Gutter callout -->
-  <rect x="315" y="340" width="13" height="30" fill="#3B7DD8" fill-opacity="0.12"/>
+  <rect x="315" y="340" width="13" height="30" fill="#1a1a1a" fill-opacity="0.12"/>
   <line x1="321" y1="340" x2="321" y2="330" class="callout-line"/>
   <line x1="321" y1="330" x2="560" y2="430" class="callout-line"/>
   <circle cx="321" cy="340" r="2" class="callout-dot"/>
@@ -139,7 +140,7 @@
   <text x="565" y="447" class="label">matches baseline increment</text>
 
   <!-- Legend -->
-  <line x1="210" y1="575" x2="240" y2="575" stroke="#3B7DD8" stroke-width="1.5"/>
+  <line x1="210" y1="575" x2="240" y2="575" stroke="#1a1a1a" stroke-width="1.2"/>
   <text x="246" y="579" class="label">Modular grid (columns + rows)</text>
   <line x1="430" y1="575" x2="460" y2="575" stroke="#E85D3A" stroke-width="1"/>
   <text x="466" y="579" class="label">Baseline grid (12 pt increment)</text>

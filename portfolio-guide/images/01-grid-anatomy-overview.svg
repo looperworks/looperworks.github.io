@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" font-family="Inter, -apple-system, system-ui, sans-serif">
   <defs>
     <style>
-      text { fill: #333; }
-      .label { font-size: 11px; fill: #777; }
-      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
-      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      text { fill: #333; font-family: Inter, -apple-system, system-ui, sans-serif; }
+      .label { font-size: 7px; fill: #777; }
+      .label-bold { font-size: 8px; fill: #1A1A1A; font-weight: 500; }
+      .title { font-size: 9px; fill: #999; font-weight: 400; letter-spacing: 1.6px; text-transform: uppercase; }
       .subtitle { font-size: 11px; fill: #999; letter-spacing: 2px; text-transform: uppercase; }
-      .grid-col { stroke: #3B7DD8; stroke-width: 0.75; stroke-dasharray: 4,3; }
-      .grid-row { stroke: #E85D3A; stroke-width: 0.75; stroke-dasharray: 4,3; }
-      .margin-line { stroke: #BBB; stroke-width: 1; stroke-dasharray: 6,4; }
-      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.5; }
+      .grid-col { stroke: #1a1a1a; stroke-width: 1.2; stroke-dasharray: 4,3; }
+      .grid-row { stroke: #E85D3A; stroke-width: 1.2; stroke-dasharray: 4,3; }
+      .margin-line { stroke: #BBB; stroke-width: 1.2; stroke-dasharray: 6,4; }
+      .page-border { fill: #FAFAFA; stroke: #D0D0D0; stroke-width: 1.2; }
       .module-fill { fill: #F0F4FA; stroke: none; }
       .gutter-fill { fill: none; }
-      .callout-line { stroke: #333; stroke-width: 0.75; }
+      .callout-line { stroke: #333; stroke-width: 1.2; }
       .callout-dot { fill: #333; }
       .dim-line { stroke: #BBB; stroke-width: 0.75; }
       .dim-arrow { fill: #BBB; }
@@ -20,10 +20,10 @@
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="620" fill="white"/>
+  <rect width="800" height="620" fill="#f8f8f8"/>
 
   <!-- Title -->
-<text x="400" y="58" text-anchor="middle" class="title">Grid Anatomy Overview</text>
+  <text x="400" y="58" text-anchor="middle" class="title">Grid Anatomy Overview</text>
 
   <!-- Page rectangle -->
   <rect x="200" y="90" width="400" height="480" class="page-border" rx="1"/>
@@ -49,7 +49,7 @@
   <rect x="352" y="447" width="96" height="93" class="module-fill"/>
   <rect x="464" y="447" width="96" height="93" class="module-fill"/>
 
-  <!-- Column grid lines (blue) -->
+  <!-- Column grid lines (dark) -->
   <line x1="240" y1="120" x2="240" y2="540" class="grid-col"/>
   <line x1="336" y1="120" x2="336" y2="540" class="grid-col"/>
   <line x1="352" y1="120" x2="352" y2="540" class="grid-col"/>
@@ -57,7 +57,7 @@
   <line x1="464" y1="120" x2="464" y2="540" class="grid-col"/>
   <line x1="560" y1="120" x2="560" y2="540" class="grid-col"/>
 
-  <!-- Row grid lines (red-orange) -->
+  <!-- Row grid lines (orange) -->
   <line x1="240" y1="120" x2="560" y2="120" class="grid-row"/>
   <line x1="240" y1="213" x2="560" y2="213" class="grid-row"/>
   <line x1="240" y1="229" x2="560" y2="229" class="grid-row"/>
@@ -78,7 +78,7 @@
   <text x="126" y="104" text-anchor="end" class="label">controlling rhythm</text>
 
   <!-- Gutter (vertical) callout -->
-  <rect x="336" y="165" width="16" height="40" fill="#3B7DD8" fill-opacity="0.15" stroke="#3B7DD8" stroke-width="0.5"/>
+  <rect x="336" y="165" width="16" height="40" fill="#1a1a1a" fill-opacity="0.15" stroke="#1a1a1a" stroke-width="0.5"/>
   <line x1="344" y1="165" x2="344" y2="148" class="callout-line"/>
   <line x1="344" y1="148" x2="130" y2="148" class="callout-line"/>
   <circle cx="344" cy="165" r="2" class="callout-dot"/>
@@ -87,7 +87,7 @@
   <text x="126" y="169" text-anchor="end" class="label">columns or rows</text>
 
   <!-- Module callout -->
-  <rect x="352" y="229" width="96" height="93" fill="#3B7DD8" fill-opacity="0.08" stroke="#3B7DD8" stroke-width="1.5" stroke-dasharray="none"/>
+  <rect x="352" y="229" width="96" height="93" fill="#1a1a1a" fill-opacity="0.08" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="none"/>
   <line x1="400" y1="275" x2="400" y2="260" class="callout-line"/>
   <line x1="400" y1="260" x2="130" y2="260" class="callout-line"/>
   <circle cx="400" cy="275" r="2" class="callout-dot"/>
@@ -144,10 +144,14 @@
   <text x="220" y="570" text-anchor="middle" class="label">Margin</text>
 
   <!-- Legend -->
-  <line x1="220" y1="598" x2="248" y2="598" stroke="#3B7DD8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="220" y1="598" x2="248" y2="598" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="4,3"/>
   <text x="254" y="602" class="label">Column lines</text>
-  <line x1="350" y1="598" x2="378" y2="598" stroke="#E85D3A" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="350" y1="598" x2="378" y2="598" stroke="#E85D3A" stroke-width="1.2" stroke-dasharray="4,3"/>
   <text x="384" y="602" class="label">Row lines</text>
   <rect x="490" y="592" width="14" height="12" fill="#F0F4FA" stroke="#D0D0D0" stroke-width="0.5"/>
   <text x="510" y="602" class="label">Module</text>
+
+  <!-- Figure label -->
+  <line x1="200" y1="605" x2="600" y2="605" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="618" text-anchor="middle" font-size="7" fill="#ccc">FIG. 1</text>
 </svg>

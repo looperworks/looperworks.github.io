@@ -9,12 +9,12 @@
   <rect width="800" height="500" fill="#f8f8f8"/>
 
   <!-- Title -->
-  <text x="400" y="30" font-size="10" font-weight="500" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">
+  <text x="400" y="30" font-size="9" font-weight="400" letter-spacing="1.6" fill="#999" text-anchor="middle" text-transform="uppercase">
     PORTFOLIO SEQUENCING PATTERNS
   </text>
 
   <!-- Pattern 1: Strong Open -->
-  <text x="60" y="90" font-size="9" font-weight="600" fill="#1a1a1a">Strong Open</text>
+  <text x="60" y="90" font-size="8" font-weight="500" fill="#1a1a1a">Strong Open</text>
 
   <!-- Thumbnail 1 (large) -->
   <rect x="50" y="110" width="80" height="100" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
@@ -41,7 +41,7 @@
   <rect x="295" y="120" width="60" height="80" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
 
   <!-- Pattern 2: Process Arc -->
-  <text x="60" y="250" font-size="9" font-weight="600" fill="#1a1a1a">Process Arc</text>
+  <text x="60" y="250" font-size="8" font-weight="500" fill="#1a1a1a">Process Arc</text>
 
   <!-- Thumbnail 1 (sketch) -->
   <rect x="50" y="270" width="50" height="60" fill="#f0f0f0" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
@@ -72,7 +72,7 @@
   <text x="325" y="308" font-size="7" fill="#ffffff" text-anchor="middle">Final</text>
 
   <!-- Pattern 3: Scale Shift -->
-  <text x="60" y="410" font-size="9" font-weight="600" fill="#1a1a1a">Scale Shift</text>
+  <text x="60" y="410" font-size="8" font-weight="500" fill="#1a1a1a">Scale Shift</text>
 
   <!-- Thumbnail 1 (urban - large) -->
   <rect x="50" y="430" width="75" height="55" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
@@ -104,5 +104,5 @@
 
   <!-- Figure label -->
   <line x1="400" y1="490" x2="400" y2="492" stroke="#ccc" stroke-width="1"/>
-  <text x="400" y="505" font-size="8" fill="#ccc" text-anchor="middle">FIG. 14</text>
+  <text x="400" y="505" font-size="7" fill="#ccc" text-anchor="middle">FIG. 14</text>
 </svg>
