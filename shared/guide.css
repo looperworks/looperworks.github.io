@@ -268,8 +268,8 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.65;
 }
 
 thead {
@@ -277,16 +277,26 @@ thead {
 }
 
 th {
-  padding: 16px 12px;
+  padding: 14px 12px;
   text-align: left;
-  font-weight: 700;
-  color: #333;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #555;
   border-bottom: 2px solid #e8e8e8;
 }
 
 td {
-  padding: 16px 12px;
+  padding: 14px 12px;
   border-bottom: 1px solid #f0f0f0;
+  color: #444;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+td strong {
+  font-weight: 500;
   color: #333;
 }
 
@@ -342,6 +352,19 @@ tbody tr:hover {
 .after {
   background: #f0fff0;
   border: 1px solid #ccffcc;
+}
+
+.section-body .before p,
+.section-body .after p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #444;
+}
+
+.section-body .before p strong,
+.section-body .after p strong {
+  font-weight: 500;
 }
 
 /* Do/Don't Table */
@@ -584,8 +607,14 @@ tbody tr:hover {
 
 .section-body li {
   margin-bottom: 10px;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #444;
+}
+
+.section-body li strong {
+  font-weight: 600;
+  color: #333;
 }
 
 .section-body ol {
