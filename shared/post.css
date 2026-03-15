@@ -65,11 +65,11 @@ html, body {
 }
 
 .article-title {
-  font-size: 28px;
-  font-weight: 900;
+  font-size: 26px;
+  font-weight: 700;
   color: #111;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   margin-bottom: 12px;
 }
 
@@ -86,8 +86,8 @@ html, body {
 }
 
 .article-body h2 {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 600;
   color: #1a1a1a;
   margin: 28px 0 16px;
   line-height: 1.3;
@@ -98,8 +98,8 @@ html, body {
 }
 
 .article-body p {
-  font-size: 15px;
-  color: #333;
+  font-size: 14px;
+  color: #444;
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -124,8 +124,8 @@ html, body {
 }
 
 .article-body li {
-  font-size: 15px;
-  color: #333;
+  font-size: 14px;
+  color: #444;
   line-height: 1.7;
   margin-bottom: 8px;
 }
@@ -211,7 +211,7 @@ html, body {
 
 .author-info h4 {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: #111;
   margin-bottom: 2px;
 }

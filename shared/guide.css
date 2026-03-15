@@ -218,7 +218,7 @@
 /* Subtitles */
 .subtitle {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   color: #333;
   margin-top: 24px;
   margin-bottom: 16px;
@@ -448,11 +448,11 @@ tbody tr:hover {
 }
 
 .checklist-group-title {
-  font-weight: 700;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #333;
+  color: #555;
   margin-bottom: 12px;
 }
 
@@ -461,8 +461,8 @@ tbody tr:hover {
   align-items: flex-start;
   gap: 12px;
   padding: 10px 0;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.65;
 }
 
 .checklist-item input[type="checkbox"] {
@@ -588,15 +588,15 @@ tbody tr:hover {
 }
 
 .strategy-step-title {
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 13px;
   margin-bottom: 10px;
   color: #333;
 }
 
 .strategy-step-content {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.65;
   color: #555;
 }
 
