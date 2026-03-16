@@ -268,7 +268,10 @@
   .empty-state h4 { font-size: 14px; color: var(--text-dim); margin-bottom: 5px; }
   .empty-state p { font-size: 12px; line-height: 1.5; }
 
-  /* ── Clusters ── */
+  /* ── Clusters (dynamic colors set via JS iconCreateFunction) ── */
+  .marker-cluster-custom { border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .marker-cluster-custom div { border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 700; }
+  /* Fallback static clusters (when no filter active = mixed disciplines) */
   .marker-cluster-small { background-color: rgba(41,98,255,0.15); }
   .marker-cluster-small div { background-color: rgba(41,98,255,0.6); color: #fff; }
   .marker-cluster-medium { background-color: rgba(110,80,200,0.15); }
@@ -1120,12 +1123,47 @@ function plotMarkers(list) {
     map.removeLayer(markerCluster);
   }
   markers = {};
+
+  // Determine cluster color: if all visible firms share one discipline, use that color
+  const disciplines = new Set(list.map(f => f.discipline));
+  const singleDisc = disciplines.size === 1 ? DISC[list[0].discipline] : null;
+
   markerCluster = L.markerClusterGroup({
     maxClusterRadius: 45,
     spiderfyOnMaxZoom: true,
     showCoverageOnHover: false,
     zoomToBoundsOnClick: true,
-    disableClusteringAtZoom: 13
+    disableClusteringAtZoom: 13,
+    iconCreateFunction: function(cluster) {
+      const count = cluster.getChildCount();
+      let size = count < 20 ? 'small' : count < 80 ? 'medium' : 'large';
+      let dim = size === 'small' ? 36 : size === 'medium' ? 44 : 52;
+      let innerDim = size === 'small' ? 26 : size === 'medium' ? 32 : 38;
+
+      // Determine color: single discipline = that color; mixed = majority color
+      let c;
+      if (singleDisc) {
+        c = singleDisc.color;
+      } else {
+        const children = cluster.getAllChildMarkers();
+        const discCount = {};
+        children.forEach(m => {
+          const ll = m.getLatLng();
+          const firm = list.find(f => f.lat === ll.lat && f.lng === ll.lng);
+          if (firm) discCount[firm.discipline] = (discCount[firm.discipline] || 0) + 1;
+        });
+        const majorDisc = Object.entries(discCount).sort((a,b) => b[1] - a[1])[0];
+        c = majorDisc ? (DISC[majorDisc[0]] || DISC.architecture).color : DISC.architecture.color;
+      }
+      const cr = parseInt(c.slice(1,3), 16);
+      const cg = parseInt(c.slice(3,5), 16);
+      const cb = parseInt(c.slice(5,7), 16);
+      return L.divIcon({
+        html: `<div style="background:rgba(${cr},${cg},${cb},0.15);width:${dim}px;height:${dim}px;border-radius:50%;display:flex;align-items:center;justify-content:center"><div style="background:rgba(${cr},${cg},${cb},0.6);width:${innerDim}px;height:${innerDim}px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700">${count}</div></div>`,
+        className: 'marker-cluster-custom',
+        iconSize: L.point(dim, dim)
+      });
+    }
   });
   list.forEach(f => {
     const d = DISC[f.discipline] || DISC.architecture;
