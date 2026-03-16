@@ -10,7 +10,7 @@
   gtag('config', 'G-DMEJ4670Y7');
 </script>
 <meta charset="UTF-8">
-<meta name="google-site-verification" cotent="dZLv7BBielnbrddE4dhiRMbjm5Oesvgkj_KsjyvliAc" />
+<meta name="google-site-verification" content="dZLv7BBielnbrddE4dhiRMbjm5Oesvgkj_KsjyvliAc" />
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Search and discover architecture, landscape architecture, and urban design firms. Filter by discipline, size, and location to find your next opportunity.">
@@ -93,6 +93,12 @@
   [data-theme="dark"] .mobile-view-tab { color: #777; }
   [data-theme="dark"] .mobile-view-tab.active { background: var(--accent); color: #1a1a1a; }
   [data-theme="dark"] .detail-panel::before { background: rgba(255,255,255,0.2); }
+  [data-theme="dark"] .student-chip { border-color: #2e7d32 !important; }
+  [data-theme="dark"] .student-chip.active { background: #2e7d32 !important; color: #fff !important; }
+  [data-theme="dark"] .internship-banner { background: linear-gradient(135deg, #1b3a1b, #1e3e1e); border-color: #2e5a2e; }
+  [data-theme="dark"] .internship-banner-text { color: #a5d6a7; }
+  [data-theme="dark"] .internship-banner-text strong { color: #c8e6c9; }
+  [data-theme="dark"] .hiring-tag { background: #1b3a1b; border-color: #2e5a2e; color: #a5d6a7; }
 
   /* Near Me + Dark Mode buttons */
   .toolbar-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: 11px; font-weight: 500; font-family: inherit; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
@@ -769,9 +775,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;vertical-align:-1px;margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
             Internships <span class="chip-count" id="countInternships"></span>
           </div>
-          <div class="filter-chip student-chip" data-refine="fellowship" onclick="toggleRefine(this)">Fellowship</div>
-          <div class="filter-chip student-chip" data-refine="entry-level" onclick="toggleRefine(this)">Entry-Level</div>
-          <div class="filter-chip student-chip" data-refine="mentorship" onclick="toggleRefine(this)">Mentorship</div>
+          <div class="filter-chip student-chip" data-refine="fellowship" onclick="toggleRefine(this)">Fellowship <span class="chip-count" id="countFellowship"></span></div>
+          <div class="filter-chip student-chip" data-refine="entry-level" onclick="toggleRefine(this)">Entry-Level <span class="chip-count" id="countEntryLevel"></span></div>
+          <div class="filter-chip student-chip" data-refine="mentorship" onclick="toggleRefine(this)">Mentorship <span class="chip-count" id="countMentorship"></span></div>
         </div>
       </div>
 
@@ -1005,6 +1011,12 @@ function updateChipCounts() {
   document.getElementById('countMulti').textContent = '(' + firms.filter(f => f.discipline === 'multi').length + ')';
   const internEl = document.getElementById('countInternships');
   if (internEl) internEl.textContent = '(' + firms.filter(f => (f.hiringHints || []).includes('Internships')).length + ')';
+  const fellowEl = document.getElementById('countFellowship');
+  if (fellowEl) fellowEl.textContent = '(' + firms.filter(f => (f.hiringHints || []).includes('Fellowship')).length + ')';
+  const entryEl = document.getElementById('countEntryLevel');
+  if (entryEl) entryEl.textContent = '(' + firms.filter(f => (f.hiringHints || []).some(h => h === 'Entry-Level' || h === 'New Graduates')).length + ')';
+  const mentorEl = document.getElementById('countMentorship');
+  if (mentorEl) mentorEl.textContent = '(' + firms.filter(f => (f.hiringHints || []).some(h => h === 'Mentorship' || h === 'ARE/Licensure Support')).length + ')';
 }
 
 function updateStats() {
