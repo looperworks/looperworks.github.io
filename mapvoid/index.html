@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="../shared/styles.css?v=4">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="firms.js?v=13"></script>
+<script src="firms.js?v=14"></script>
 <style>
   :root {
     --bg: #fafafa;
@@ -258,6 +258,13 @@
   .detail-tag { padding: 3px 9px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; color: var(--text-dim); }
   .detail-tag.project-tag { background: #f0f7ff; border-color: #c2d9f2; color: #1a5276; }
   .detail-tag.hiring-tag { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; font-weight: 600; }
+  .student-chip { border-color: #a5d6a7 !important; }
+  .student-chip.active { background: #2e7d32 !important; color: #fff !important; border-color: #2e7d32 !important; }
+  .internship-banner { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border: 1px solid #a5d6a7; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .internship-banner-icon { width: 32px; height: 32px; background: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .internship-banner-icon svg { width: 18px; height: 18px; color: #fff; }
+  .internship-banner-text { font-size: 12px; color: #1b5e20; line-height: 1.4; }
+  .internship-banner-text strong { font-size: 13px; display: block; margin-bottom: 1px; }
   .detail-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
   .detail-website { display: inline-block; padding: 8px 16px; background: var(--text); color: #fff; text-decoration: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; font-family: inherit; transition: background 0.15s; }
   .detail-website:hover { background: #333; }
@@ -752,6 +759,21 @@
           <div class="filter-chip" data-refine="planning" onclick="toggleRefine(this)">Planning</div>
         </div>
       </div>
+      <div class="filter-group">
+        <div class="filter-group-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;vertical-align:-2px;margin-right:3px;color:#2e7d32"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
+          Student Opportunities
+        </div>
+        <div class="filters" id="studentChips">
+          <div class="filter-chip student-chip" data-refine="internships" onclick="toggleRefine(this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;vertical-align:-1px;margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
+            Internships <span class="chip-count" id="countInternships"></span>
+          </div>
+          <div class="filter-chip student-chip" data-refine="fellowship" onclick="toggleRefine(this)">Fellowship</div>
+          <div class="filter-chip student-chip" data-refine="entry-level" onclick="toggleRefine(this)">Entry-Level</div>
+          <div class="filter-chip student-chip" data-refine="mentorship" onclick="toggleRefine(this)">Mentorship</div>
+        </div>
+      </div>
 
       <div class="filter-group">
         <div class="filter-group-label">Explore by Specialty</div>
@@ -981,6 +1003,8 @@ function updateChipCounts() {
   document.getElementById('countLand').textContent = '(' + firms.filter(f => f.discipline === 'landscape').length + ')';
   document.getElementById('countUrban').textContent = '(' + firms.filter(f => f.discipline === 'urban').length + ')';
   document.getElementById('countMulti').textContent = '(' + firms.filter(f => f.discipline === 'multi').length + ')';
+  const internEl = document.getElementById('countInternships');
+  if (internEl) internEl.textContent = '(' + firms.filter(f => (f.hiringHints || []).includes('Internships')).length + ')';
 }
 
 function updateStats() {
@@ -1026,6 +1050,10 @@ function getFilteredFirms() {
       case 'residential': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('residential') || s.toLowerCase().includes('housing'))); break;
       case 'parks': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('park') || s.toLowerCase().includes('public'))); break;
       case 'planning': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('planning') || s.toLowerCase().includes('urban'))); break;
+      case 'internships': filtered = filtered.filter(f => (f.hiringHints || []).includes('Internships')); break;
+      case 'fellowship': filtered = filtered.filter(f => (f.hiringHints || []).includes('Fellowship')); break;
+      case 'entry-level': filtered = filtered.filter(f => (f.hiringHints || []).some(h => h === 'Entry-Level' || h === 'New Graduates')); break;
+      case 'mentorship': filtered = filtered.filter(f => (f.hiringHints || []).some(h => h === 'Mentorship' || h === 'ARE/Licensure Support')); break;
     }
   });
   return filtered;
@@ -1284,8 +1312,16 @@ function selectFirm(id) {
 
   const projects = (firm.notableProjects || []).filter(p => p && p.length > 3);
   const hiring = (firm.hiringHints || []);
+  const hasInternship = hiring.includes('Internships');
 
   let html = `
+    ${hasInternship ? `<div class="internship-banner">
+      <div class="internship-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg></div>
+      <div class="internship-banner-text">
+        <strong>Internship Program</strong>
+        This firm offers internships for students${hiring.includes('Co-op') ? ' and co-op positions' : ''}${hiring.includes('Fellowship') ? ' and fellowships' : ''}.
+      </div>
+    </div>` : ''}
     <div class="detail-section">
       <h3>About</h3>
       <p class="detail-about">${firm.about || '<span style="color:#aaa;font-style:italic">No description available</span>'}</p>
