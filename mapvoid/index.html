@@ -42777,8 +42777,8 @@ function getFilteredFirms() {
   }
   activeRefines.forEach(refine => {
     switch(refine) {
-      case 'large': filtered = filtered.filter(f => f.size >= 100); break;
-      case 'small': filtered = filtered.filter(f => f.size < 20); break;
+      case 'large': filtered = filtered.filter(f => (f.size || 0) >= 100); break;
+      case 'small': filtered = filtered.filter(f => f.size && f.size < 20); break;
       case 'sustainable': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('sustainable') || s.toLowerCase().includes('ecological'))); break;
       case 'healthcare': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('healthcare') || s.toLowerCase().includes('healing'))); break;
       case 'residential': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('residential') || s.toLowerCase().includes('housing'))); break;
@@ -42848,7 +42848,7 @@ function sortAndRender(list) {
   const sort = document.getElementById('sortSelect').value;
   switch(sort) {
     case 'name': list.sort((a,b) => a.name.localeCompare(b.name)); break;
-    case 'size': list.sort((a,b) => b.size - a.size); break;
+    case 'size': list.sort((a,b) => (b.size || 0) - (a.size || 0)); break;
     case 'discipline': list.sort((a,b) => a.discipline.localeCompare(b.discipline) || a.name.localeCompare(b.name)); break;
   }
   renderFirms(list);
@@ -42883,7 +42883,7 @@ function renderFirms(list) {
         ${f.city}, ${f.state}
       </div>
       <div class="firm-meta">
-        <span class="meta-tag">${f.size < 50 ? 'Boutique' : f.size < 200 ? 'Mid-size' : f.size < 500 ? 'Large' : 'Global'} · ${f.size} emp.</span>
+        <span class="meta-tag">${f.size ? (f.size < 50 ? 'Boutique' : f.size < 200 ? 'Mid-size' : f.size < 500 ? 'Large' : 'Global') + ' · ' + f.size + ' emp.' : ''}</span>
       </div>
       <div class="firm-specialties">${f.specialties.join(' · ')}</div>
     </div>`;
@@ -42918,8 +42918,9 @@ function plotMarkers(list) {
   });
   list.forEach(f => {
     const d = DISC[f.discipline] || DISC.architecture;
-    // Size encoding: boutique(<20)=22px, small(20-99)=26px, mid(100-499)=32px, large(500+)=38px
-    const sz = f.size < 20 ? 22 : f.size < 100 ? 26 : f.size < 500 ? 32 : 38;
+    // Size encoding: unknown/no-size=24px, boutique(<20)=22px, small(20-99)=26px, mid(100-499)=32px, large(500+)=38px
+    const fSize = f.size || 0;
+    const sz = fSize === 0 ? 24 : fSize < 20 ? 22 : fSize < 100 ? 26 : fSize < 500 ? 32 : 38;
     const icon = L.divIcon({
       className: '',
       html: `<div class="custom-marker ${d.marker}" style="width:${sz}px;height:${sz}px;font-size:${sz < 26 ? 9 : sz < 32 ? 10 : 11}px">·</div>`,
@@ -42928,8 +42929,9 @@ function plotMarkers(list) {
     });
     const marker = L.marker([f.lat, f.lng], { icon });
     marker.on('click', () => selectFirm(f.id));
+    const sizeText = f.size ? f.size + ' emp.' : '';
     marker.bindTooltip(
-      `<div class="tooltip-rich"><b>${f.name}</b><div class="tt-meta">${d.label} · ${f.city}, ${f.state} · ${f.size} emp.</div></div>`,
+      `<div class="tooltip-rich"><b>${f.name}</b><div class="tt-meta">${d.label} · ${f.city}, ${f.state}${sizeText ? ' · ' + sizeText : ''}</div></div>`,
       { offset: [0, -18], direction: 'top' }
     );
     markerCluster.addLayer(marker);
@@ -42999,7 +43001,7 @@ function selectFirm(id) {
   header.className = 'detail-header ' + d.badge;
   document.getElementById('detailDisc').textContent = d.label;
   document.getElementById('detailName').textContent = firm.name;
-  document.getElementById('detailLoc').textContent = firm.city + ', ' + firm.state + ' · ' + firm.size + ' employees';
+  document.getElementById('detailLoc').textContent = firm.city + ', ' + firm.state + (firm.size ? ' · ' + firm.size + ' employees' : '');
 
   let html = `
     <div class="detail-section">
@@ -43093,7 +43095,7 @@ function renderSavedList() {
     return '<div class="saved-item">' +
       '<div class="saved-item-info">' +
         '<div class="saved-item-name">' + s.name + ' <span class="discipline-badge ' + d.badge + '" style="font-size:8px;padding:1px 5px;">' + d.label + '</span></div>' +
-        '<div class="saved-item-meta">' + s.city + ', ' + s.state + ' · ' + s.size + ' emp. · ' + s.specialties + '</div>' +
+        '<div class="saved-item-meta">' + s.city + ', ' + s.state + (s.size ? ' · ' + s.size + ' emp.' : '') + (s.specialties ? ' · ' + s.specialties : '') + '</div>' +
         '<div class="saved-item-links">' +
           (s.website ? '<a href="' + s.website + '" target="_blank">Website</a>' : '') +
           '<a href="' + s.careersUrl + '" target="_blank">Careers</a>' +
