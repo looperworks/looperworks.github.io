@@ -915,6 +915,7 @@ async function init() {
   const sorted = [...firms].sort((a,b) => a.name.localeCompare(b.name));
   renderFirms(sorted);
   plotMarkers(firms);
+  document.getElementById('resultsCount').textContent = firms.length + ' firms found';
 
   // Check for shareable firm link in URL hash
   const hash = window.location.hash;
