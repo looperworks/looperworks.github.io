@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="../shared/styles.css?v=4">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="firms.js?v=2"></script>
+<script src="firms.js?v=3"></script>
 <style>
   :root {
     --bg: #fafafa;
@@ -1152,7 +1152,9 @@ function plotMarkers(list) {
 }
 
 function getCareersUrl(firm) {
-  if (!firm.website) return 'https://www.google.com/search?q=' + encodeURIComponent(firm.name + ' careers jobs');
+  // Use enriched careersUrl if available
+  if (firm.careersUrl) return firm.careersUrl;
+  if (!firm.website) return '';
   let base = firm.website.replace(/\/+$/, '');
   // Known non-standard careers paths for major firms
   const known = {
@@ -1225,8 +1227,15 @@ function selectFirm(id) {
     </div>
     <div class="detail-section">
       <div class="detail-buttons">
-        ${firm.website ? `<a class="detail-website" href="${firm.website}" target="_blank">Visit Website →</a>` : ''}
-        <a class="detail-careers" href="${getCareersUrl(firm)}" target="_blank">Careers Page →</a>
+        ${firm.website ? `<a class="detail-website" href="${firm.website}" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Visit Website</a>` : ''}
+        ${getCareersUrl(firm) ? `<a class="detail-careers" href="${getCareersUrl(firm)}" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Careers Page</a>` : ''}
+        ${!firm.website ? `<a class="detail-search" href="https://www.google.com/search?q=${encodeURIComponent(firm.name + ' ' + firm.city + ' ' + firm.state + ' architecture')}" target="_blank" style="background:#f5f5f5;color:#666;border:1px solid #ddd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          Search Online</a>` : ''}
         <button class="detail-save-btn ${isFirmSaved(firm.id) ? 'saved' : ''}" onclick="toggleSaveFirm(${firm.id})">
           <svg viewBox="0 0 24 24" fill="${isFirmSaved(firm.id) ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
           ${isFirmSaved(firm.id) ? 'Saved' : 'Save Firm'}
@@ -1266,7 +1275,7 @@ function toggleSaveFirm(id) {
       discipline: firm.discipline,
       size: firm.size,
       website: firm.website || '',
-      careersUrl: getCareersUrl(firm),
+      careersUrl: firm.careersUrl || getCareersUrl(firm),
       specialties: (firm.specialties || []).join(', ')
     });
   }
