@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="../shared/styles.css?v=4">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="firms.js?v=11"></script>
+<script src="firms.js?v=12"></script>
 <style>
   :root {
     --bg: #fafafa;
@@ -235,6 +235,8 @@
   .detail-about { font-size: 13px; line-height: 1.6; color: var(--text-dim); }
   .detail-tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .detail-tag { padding: 3px 9px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; color: var(--text-dim); }
+  .detail-tag.project-tag { background: #f0f7ff; border-color: #c2d9f2; color: #1a5276; }
+  .detail-tag.hiring-tag { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; font-weight: 600; }
   .detail-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
   .detail-website { display: inline-block; padding: 8px 16px; background: var(--text); color: #fff; text-decoration: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; font-family: inherit; transition: background 0.15s; }
   .detail-website:hover { background: #333; }
@@ -1254,15 +1256,26 @@ function selectFirm(id) {
   document.getElementById('detailName').textContent = firm.name;
   document.getElementById('detailLoc').textContent = firm.city + ', ' + firm.state + (firm.size ? ' · ' + firm.size + ' employees' : '');
 
+  const projects = (firm.notableProjects || []).filter(p => p && p.length > 3);
+  const hiring = (firm.hiringHints || []);
+
   let html = `
     <div class="detail-section">
       <h3>About</h3>
-      <p class="detail-about">${firm.about || ''}</p>
+      <p class="detail-about">${firm.about || '<span style="color:#aaa;font-style:italic">No description available</span>'}</p>
     </div>
+    ${projects.length > 0 ? `<div class="detail-section">
+      <h3>Notable Projects</h3>
+      <div class="detail-tags">${projects.map(p => `<span class="detail-tag project-tag">${p}</span>`).join('')}</div>
+    </div>` : ''}
     <div class="detail-section">
       <h3>Specialties</h3>
       <div class="detail-tags">${(firm.specialties || []).map(s => `<span class="detail-tag">${s}</span>`).join('')}</div>
     </div>
+    ${hiring.length > 0 ? `<div class="detail-section">
+      <h3>Student &amp; Early Career</h3>
+      <div class="detail-tags">${hiring.map(h => `<span class="detail-tag hiring-tag">${h}</span>`).join('')}</div>
+    </div>` : ''}
     <div class="detail-section">
       <div class="detail-buttons">
         ${firm.website ? `<a class="detail-website" href="${firm.website}" target="_blank">
