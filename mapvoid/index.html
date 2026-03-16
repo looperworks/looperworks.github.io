@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="../shared/styles.css?v=4">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="firms.js?v=12"></script>
+<script src="firms.js?v=13"></script>
 <style>
   :root {
     --bg: #fafafa;
@@ -83,6 +83,11 @@
   [data-theme="dark"] .state-filter select { background: #2a2a2a; color: #ccc; border-color: rgba(255,255,255,0.1); }
   [data-theme="dark"] .search-box input { background: #2a2a2a; color: #e8e8e8; border-color: rgba(255,255,255,0.1); }
   [data-theme="dark"] .search-box input::placeholder { color: #666; }
+  [data-theme="dark"] .autocomplete-dropdown { background: #2a2a2a; border-color: rgba(255,255,255,0.1); }
+  [data-theme="dark"] .ac-item:hover, [data-theme="dark"] .ac-item.ac-active { background: #333; }
+  [data-theme="dark"] .ac-item-name { color: #e8e8e8; }
+  [data-theme="dark"] .ac-category { background: #222; }
+  [data-theme="dark"] .ac-item-name mark { background: #5a4800; }
   [data-theme="dark"] .site-footer { background: #1a1a1a; border-top-color: rgba(255,255,255,0.06); }
   [data-theme="dark"] .mobile-view-tabs { background: #1e1e1e; border-top-color: rgba(255,255,255,0.08); }
   [data-theme="dark"] .mobile-view-tab { color: #777; }
@@ -135,12 +140,28 @@
   /* ── Sidebar ── */
   .sidebar { width: 420px; min-width: 420px; background: #fff; display: flex; flex-direction: column; border-right: 1px solid var(--border); overflow: hidden; }
   .search-section { padding: 14px 16px; border-bottom: 1px solid var(--border); }
-  .search-box { display: flex; gap: 8px; margin-bottom: 10px; }
-  .search-box input { flex: 1; padding: 9px 14px; border: 1.5px solid var(--border); background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; color: var(--text); outline: none; transition: border-color 0.2s; font-family: inherit; }
+  .search-box { position: relative; display: flex; gap: 8px; margin-bottom: 10px; }
+  .search-box input { flex: 1; padding: 9px 14px 9px 34px; border: 1.5px solid var(--border); background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; color: var(--text); outline: none; transition: border-color 0.2s; font-family: inherit; }
   .search-box input::placeholder { color: var(--text-muted); }
   .search-box input:focus { border-color: var(--accent); }
+  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--text-muted); pointer-events: none; z-index: 1; }
+  .search-clear { position: absolute; right: 78px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 0; display: none; z-index: 1; }
+  .search-clear:hover { color: var(--text); }
+  .search-box input:not(:placeholder-shown) ~ .search-clear { display: block; }
   .search-box button { padding: 9px 18px; background: var(--text); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 13px; cursor: pointer; font-weight: 600; font-family: inherit; transition: background 0.15s; }
   .search-box button:hover { background: #333; }
+  /* Autocomplete dropdown */
+  .autocomplete-dropdown { position: absolute; top: 100%; left: 0; right: 70px; background: #fff; border: 1.5px solid var(--border); border-top: none; border-radius: 0 0 var(--radius-sm) var(--radius-sm); box-shadow: 0 6px 16px rgba(0,0,0,0.1); z-index: 999; max-height: 280px; overflow-y: auto; display: none; }
+  .autocomplete-dropdown.visible { display: block; }
+  .ac-item { padding: 8px 14px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 12px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+  .ac-item:last-child { border-bottom: none; }
+  .ac-item:hover, .ac-item.ac-active { background: var(--bg-card-hover); }
+  .ac-item-icon { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; flex-shrink: 0; }
+  .ac-item-text { flex: 1; min-width: 0; }
+  .ac-item-name { font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ac-item-meta { font-size: 10px; color: var(--text-muted); margin-top: 1px; }
+  .ac-item-name mark { background: #fff3cd; color: inherit; padding: 0 1px; border-radius: 2px; }
+  .ac-category { padding: 5px 14px 3px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); background: var(--bg); }
 
   .filter-group { margin-bottom: 8px; }
   .filter-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 5px; font-weight: 600; }
@@ -689,8 +710,13 @@
     </div>
     <div class="search-section">
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search firms, cities, or specialties..." />
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Search firms, cities, specialties..." autocomplete="off" />
+        <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Clear search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
         <button onclick="applySearch()">Search</button>
+        <div class="autocomplete-dropdown" id="acDropdown"></div>
       </div>
 
       <div class="filter-group">
@@ -1430,18 +1456,208 @@ if (!localStorage.getItem('threshold_welcomed_v4')) {
   localStorage.setItem('threshold_welcomed_v4', '1');
 }
 
-document.getElementById('searchInput').addEventListener('input', (e) => {
+// ── Autocomplete System ──
+let acIndex = -1;
+const acDropdown = document.getElementById('acDropdown');
+const searchInput = document.getElementById('searchInput');
+const searchClearBtn = document.getElementById('searchClear');
+
+function clearSearch() {
+  searchInput.value = '';
+  searchClearBtn.style.display = 'none';
+  hideAutocomplete();
+  searchTerm = '';
+  applyFilters();
+  searchInput.focus();
+}
+
+function hideAutocomplete() {
+  acDropdown.classList.remove('visible');
+  acIndex = -1;
+}
+
+function showAutocomplete(term) {
+  if (!term || term.length < 2) { hideAutocomplete(); return; }
+  const t = term.toLowerCase();
+  const results = [];
+
+  // 1. Matching firms (max 5)
+  const firmMatches = firms.filter(f =>
+    f.name.toLowerCase().includes(t)
+  ).slice(0, 5);
+  if (firmMatches.length > 0) {
+    results.push({ type: 'category', label: 'Firms' });
+    firmMatches.forEach(f => {
+      const d = DISC[f.discipline] || DISC.architecture;
+      results.push({ type: 'firm', firm: f, disc: d });
+    });
+  }
+
+  // 2. Matching cities (max 4, deduplicated)
+  const citySet = new Set();
+  firms.forEach(f => {
+    const cityState = f.city + ', ' + f.state;
+    if (cityState.toLowerCase().includes(t) && !citySet.has(cityState)) {
+      citySet.add(cityState);
+    }
+  });
+  const cityMatches = [...citySet].slice(0, 4);
+  if (cityMatches.length > 0) {
+    results.push({ type: 'category', label: 'Cities' });
+    cityMatches.forEach(c => {
+      const count = firms.filter(f => (f.city + ', ' + f.state) === c).length;
+      results.push({ type: 'city', name: c, count });
+    });
+  }
+
+  // 3. Matching specialties (max 3)
+  const specSet = new Set();
+  firms.forEach(f => (f.specialties || []).forEach(s => {
+    if (s.toLowerCase().includes(t)) specSet.add(s);
+  }));
+  const specMatches = [...specSet].slice(0, 3);
+  if (specMatches.length > 0) {
+    results.push({ type: 'category', label: 'Specialties' });
+    specMatches.forEach(s => {
+      const count = firms.filter(f => (f.specialties || []).includes(s)).length;
+      results.push({ type: 'specialty', name: s, count });
+    });
+  }
+
+  // 4. Matching states (max 2)
+  const stateNames = { AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC' };
+  const stateMatches = Object.entries(stateNames).filter(([code, name]) =>
+    name.toLowerCase().includes(t) || code.toLowerCase() === t
+  ).slice(0, 2);
+  if (stateMatches.length > 0 && !cityMatches.length) {
+    results.push({ type: 'category', label: 'States' });
+    stateMatches.forEach(([code, name]) => {
+      const count = firms.filter(f => f.state === code).length;
+      results.push({ type: 'state', code, name, count });
+    });
+  }
+
+  if (results.length === 0) { hideAutocomplete(); return; }
+
+  // Render
+  function highlight(text, term) {
+    const idx = text.toLowerCase().indexOf(term.toLowerCase());
+    if (idx === -1) return text;
+    return text.substring(0, idx) + '<mark>' + text.substring(idx, idx + term.length) + '</mark>' + text.substring(idx + term.length);
+  }
+
+  let html = '';
+  results.forEach((r, i) => {
+    if (r.type === 'category') {
+      html += `<div class="ac-category">${r.label}</div>`;
+    } else if (r.type === 'firm') {
+      html += `<div class="ac-item" data-action="firm" data-id="${r.firm.id}" data-idx="${i}">
+        <div class="ac-item-icon" style="background:${r.disc.color}">·</div>
+        <div class="ac-item-text">
+          <div class="ac-item-name">${highlight(r.firm.name, t)}</div>
+          <div class="ac-item-meta">${r.disc.label} · ${r.firm.city}, ${r.firm.state}</div>
+        </div>
+      </div>`;
+    } else if (r.type === 'city') {
+      html += `<div class="ac-item" data-action="search" data-term="${r.name.split(',')[0]}" data-idx="${i}">
+        <div class="ac-item-icon" style="background:#607d8b"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:11px;height:11px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="ac-item-text">
+          <div class="ac-item-name">${highlight(r.name, t)}</div>
+          <div class="ac-item-meta">${r.count} firms</div>
+        </div>
+      </div>`;
+    } else if (r.type === 'specialty') {
+      html += `<div class="ac-item" data-action="search" data-term="${r.name}" data-idx="${i}">
+        <div class="ac-item-icon" style="background:#8d6e63"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:11px;height:11px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="ac-item-text">
+          <div class="ac-item-name">${highlight(r.name, t)}</div>
+          <div class="ac-item-meta">${r.count} firms</div>
+        </div>
+      </div>`;
+    } else if (r.type === 'state') {
+      html += `<div class="ac-item" data-action="state" data-code="${r.code}" data-idx="${i}">
+        <div class="ac-item-icon" style="background:#7986cb"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:11px;height:11px"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+        <div class="ac-item-text">
+          <div class="ac-item-name">${highlight(r.name, t)}</div>
+          <div class="ac-item-meta">${r.code} · ${r.count} firms</div>
+        </div>
+      </div>`;
+    }
+  });
+
+  acDropdown.innerHTML = html;
+  acDropdown.classList.add('visible');
+  acIndex = -1;
+
+  // Click handlers
+  acDropdown.querySelectorAll('.ac-item').forEach(item => {
+    item.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      const action = item.dataset.action;
+      if (action === 'firm') {
+        hideAutocomplete();
+        selectFirm(parseInt(item.dataset.id));
+      } else if (action === 'search') {
+        searchInput.value = item.dataset.term;
+        hideAutocomplete();
+        applySearch();
+      } else if (action === 'state') {
+        searchInput.value = '';
+        hideAutocomplete();
+        document.getElementById('stateSelect').value = item.dataset.code;
+        applyFilters();
+      }
+    });
+  });
+}
+
+searchInput.addEventListener('input', (e) => {
+  const val = e.target.value;
+  searchClearBtn.style.display = val ? 'block' : 'none';
+  showAutocomplete(val);
   clearTimeout(searchDebounce);
   searchDebounce = setTimeout(() => {
-    searchTerm = e.target.value;
+    searchTerm = val;
     applyFilters();
-  }, 250);
+  }, 300);
 });
-document.getElementById('searchInput').addEventListener('keyup', (e) => {
-  if (e.key === 'Enter') {
-    clearTimeout(searchDebounce);
-    applySearch();
+
+searchInput.addEventListener('keydown', (e) => {
+  const items = acDropdown.querySelectorAll('.ac-item');
+  if (!acDropdown.classList.contains('visible') || items.length === 0) {
+    if (e.key === 'Enter') { clearTimeout(searchDebounce); applySearch(); hideAutocomplete(); }
+    return;
   }
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    acIndex = Math.min(acIndex + 1, items.length - 1);
+    items.forEach((it, i) => it.classList.toggle('ac-active', i === acIndex));
+    items[acIndex]?.scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    acIndex = Math.max(acIndex - 1, 0);
+    items.forEach((it, i) => it.classList.toggle('ac-active', i === acIndex));
+    items[acIndex]?.scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (acIndex >= 0 && items[acIndex]) {
+      items[acIndex].dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+    } else {
+      clearTimeout(searchDebounce);
+      applySearch();
+      hideAutocomplete();
+    }
+  } else if (e.key === 'Escape') {
+    hideAutocomplete();
+  }
+});
+
+searchInput.addEventListener('blur', () => {
+  setTimeout(hideAutocomplete, 150);
+});
+
+searchInput.addEventListener('focus', () => {
+  if (searchInput.value.length >= 2) showAutocomplete(searchInput.value);
 });
 
 
