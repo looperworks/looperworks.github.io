@@ -965,7 +965,7 @@ function getFilteredFirms() {
   // Specialty filter
   if (activeSpecialty) {
     filtered = filtered.filter(f =>
-      f.specialties.some(s => s.toLowerCase().includes(activeSpecialty.toLowerCase()))
+      (f.specialties || []).some(s => s.toLowerCase().includes(activeSpecialty.toLowerCase()))
     );
   }
   if (searchTerm) {
@@ -975,7 +975,7 @@ function getFilteredFirms() {
       f.city.toLowerCase().includes(term) ||
       f.state.toLowerCase().includes(term) ||
       f.discipline.toLowerCase().includes(term) ||
-      f.specialties.some(s => s.toLowerCase().includes(term))
+      (f.specialties || []).some(s => s.toLowerCase().includes(term))
     );
   }
   if (activeFilters.size > 0) {
@@ -989,11 +989,11 @@ function getFilteredFirms() {
     switch(refine) {
       case 'large': filtered = filtered.filter(f => (f.size || 0) >= 100); break;
       case 'small': filtered = filtered.filter(f => f.size && f.size < 20); break;
-      case 'sustainable': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('sustainable') || s.toLowerCase().includes('ecological'))); break;
-      case 'healthcare': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('healthcare') || s.toLowerCase().includes('healing'))); break;
-      case 'residential': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('residential') || s.toLowerCase().includes('housing'))); break;
-      case 'parks': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('park') || s.toLowerCase().includes('public'))); break;
-      case 'planning': filtered = filtered.filter(f => f.specialties.some(s => s.toLowerCase().includes('planning') || s.toLowerCase().includes('urban'))); break;
+      case 'sustainable': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('sustainable') || s.toLowerCase().includes('ecological'))); break;
+      case 'healthcare': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('healthcare') || s.toLowerCase().includes('healing'))); break;
+      case 'residential': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('residential') || s.toLowerCase().includes('housing'))); break;
+      case 'parks': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('park') || s.toLowerCase().includes('public'))); break;
+      case 'planning': filtered = filtered.filter(f => (f.specialties || []).some(s => s.toLowerCase().includes('planning') || s.toLowerCase().includes('urban'))); break;
     }
   });
   return filtered;
@@ -1095,7 +1095,7 @@ function renderFirms(list) {
       <div class="firm-meta">
         <span class="meta-tag">${f.size ? (f.size < 50 ? 'Boutique' : f.size < 200 ? 'Mid-size' : f.size < 500 ? 'Large' : 'Global') + ' · ' + f.size + ' emp.' : ''}</span>
       </div>
-      <div class="firm-specialties">${f.specialties.join(' · ')}</div>
+      <div class="firm-specialties">${(f.specialties || []).join(' · ')}</div>
     </div>`;
   }).join('');
 }
@@ -1216,11 +1216,11 @@ function selectFirm(id) {
   let html = `
     <div class="detail-section">
       <h3>About</h3>
-      <p class="detail-about">${firm.about}</p>
+      <p class="detail-about">${firm.about || ''}</p>
     </div>
     <div class="detail-section">
       <h3>Specialties</h3>
-      <div class="detail-tags">${firm.specialties.map(s => `<span class="detail-tag">${s}</span>`).join('')}</div>
+      <div class="detail-tags">${(firm.specialties || []).map(s => `<span class="detail-tag">${s}</span>`).join('')}</div>
     </div>
     <div class="detail-section">
       <div class="detail-buttons">
@@ -1266,7 +1266,7 @@ function toggleSaveFirm(id) {
       size: firm.size,
       website: firm.website || '',
       careersUrl: getCareersUrl(firm),
-      specialties: firm.specialties.join(', ')
+      specialties: (firm.specialties || []).join(', ')
     });
   }
   localStorage.setItem('threshold_saved_firms', JSON.stringify(savedFirms));
