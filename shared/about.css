@@ -27,13 +27,11 @@ html, body {
 }
 
 .mission-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  color: #999;
-  line-height: 1.4;
+  color: #111;
+  line-height: 1.3;
   margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .mission p {
