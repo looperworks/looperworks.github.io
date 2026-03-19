@@ -110,6 +110,14 @@
                 <!-- Page Title -->
                 <h1 class="page-title" style="font-size: 32px; font-weight: 700; margin-bottom: 24px;">The Architecture Cover Letter Guide</h1>
 
+                <!-- Firm context banner (shown when linked from Firm Search) -->
+                <div id="firmContext" style="display:none; padding: 14px 18px; background: linear-gradient(135deg, #fffcee, #fff8dc); border: 1px solid #e8c547; border-radius: 8px; margin-bottom: 20px; line-height: 1.6;">
+                  <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #999; font-weight: 600; margin-bottom: 4px;">Writing a cover letter to</div>
+                  <div style="font-size: 18px; font-weight: 700; color: #1a1a1a;" id="firmContextName"></div>
+                  <div style="font-size: 13px; color: #666; margin-top: 2px;" id="firmContextMeta"></div>
+                  <div style="font-size: 12px; color: #888; margin-top: 8px; font-style: italic;" id="firmContextTip"></div>
+                </div>
+
                 <!-- Controls -->
                 <div class="controls">
                     <button class="btn" id="expandAllBtn">Expand All</button>
@@ -1196,6 +1204,26 @@ Best regards,<br>
 
         // Initialize - collapsed by default
         updateActiveNav('1');
+
+        // Firm context from Firm Search link
+        (function() {
+          const params = new URLSearchParams(window.location.search);
+          const firm = params.get('firm');
+          if (!firm) return;
+          const city = params.get('city') || '';
+          const state = params.get('state') || '';
+          const disc = params.get('disc') || '';
+          const specs = params.get('specs') || '';
+
+          document.getElementById('firmContextName').textContent = firm;
+          let meta = disc;
+          if (city && state) meta += ' \u00B7 ' + city + ', ' + state;
+          document.getElementById('firmContextMeta').textContent = meta;
+          if (specs) {
+            document.getElementById('firmContextTip').textContent = 'Specialties: ' + specs + '. Reference these in your opening paragraph.';
+          }
+          document.getElementById('firmContext').style.display = 'block';
+        })();
     </script>
 
 <!-- Site Footer -->
