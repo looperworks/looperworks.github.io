@@ -112,8 +112,8 @@
 
   /* Override top-brand positioning for map layout */
   .top-brand-area {
-    position: relative; top: auto; left: auto; padding: 20px 40px 12px 40px; display: block;
-    background: transparent;
+    position: relative; top: auto; left: auto; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between;
+    background: #f5f5f2; border-bottom: 1px solid #e0e0e0;
   }
   .top-divider {
     display: block;
@@ -140,7 +140,7 @@
   .welcome-stat strong { color: var(--text); font-size: 14px; font-weight: 700; display: block; }
 
   /* ── App Container — visible by default ── */
-  .app-container { display: flex; height: calc(100vh - 130px); margin-top: 0; margin-left: 0; }
+  .app-container { display: flex; height: calc(100vh - 90px); margin-top: 0; margin-left: 0; }
 
   /* ── Sidebar ── */
   .sidebar { width: 420px; min-width: 420px; background: #fff; display: flex; flex-direction: column; border-right: 1px solid var(--border); overflow: hidden; }
@@ -594,16 +594,15 @@
  /* Header horizontal nav */
       .side-nav-wrapper { display: none; }
       .side-nav-tab { display: none; }
-      /* ── Nav Bar (GSD-inspired) ── */
-      .nav-bar { display: flex; align-items: center; justify-content: flex-start; gap: 0; background: #f5f5f2; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; padding: 0 40px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .nav-bar a { font-family: 'Circular Std', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #555; text-decoration: none; white-space: nowrap; padding: 12px 16px; transition: color 0.15s, background 0.15s; border-right: 1px solid #e8e8e5; }
-      .nav-bar a:first-child { border-left: 1px solid #e8e8e5; }
-      .nav-bar a:hover { color: #111; background: #eeeee9; }
-      .nav-bar a.active { color: #111; background: #fff; }
-      [data-theme="dark"] .nav-bar { background: #242424; border-color: rgba(255,255,255,0.08); }
-      [data-theme="dark"] .nav-bar a { color: #999; border-color: rgba(255,255,255,0.06); }
-      [data-theme="dark"] .nav-bar a:hover { color: #e8e8e8; background: #2a2a2a; }
-      [data-theme="dark"] .nav-bar a.active { color: #e8e8e8; background: #1e1e1e; }
+      /* ── Header Nav (inline with logo) ── */
+      .header-nav { display: flex; gap: 0; align-items: center; }
+      .header-nav a { font-family: 'Circular Std', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #777; text-decoration: none; white-space: nowrap; padding: 8px 14px; border-radius: 4px; transition: color 0.15s, background 0.15s; }
+      .header-nav a:hover { color: #111; background: rgba(0,0,0,0.05); }
+      .header-nav a.active { color: #111; border-bottom: 2px solid #111; border-radius: 0; }
+      [data-theme="dark"] .top-brand-area { background: #1e1e1e; border-bottom-color: rgba(255,255,255,0.08); }
+      [data-theme="dark"] .header-nav a { color: #888; }
+      [data-theme="dark"] .header-nav a:hover { color: #e8e8e8; background: rgba(255,255,255,0.05); }
+      [data-theme="dark"] .header-nav a.active { color: #e8e8e8; border-bottom-color: #e8e8e8; }
   </style>
 </head>
 <body>
@@ -644,20 +643,20 @@
   <a href="../blog/">Blog</a>
 </div>
 
-<!-- Animated Logo -->
+<!-- Animated Logo + Nav Bar -->
 <div class="top-brand-area">
     <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="../about/">About</a>
+      <a href="/" class="active">Firm Search</a>
+      <a href="../cover-letter-guide/">Cover Letter</a>
+      <a href="../resume-guide/">Resume</a>
+      <a href="../portfolio-guide/">Portfolio</a>
+      <a href="../application-timeline/">Timeline</a>
+      <a href="../resources/">Resources</a>
+      <a href="../blog/">Blog</a>
+    </nav>
 </div>
-<nav class="nav-bar" aria-label="Main navigation">
-  <a href="../about/">About</a>
-  <a href="/" class="active">Firm Search</a>
-  <a href="../cover-letter-guide/">Cover Letter</a>
-  <a href="../resume-guide/">Resume</a>
-  <a href="../portfolio-guide/">Portfolio</a>
-  <a href="../application-timeline/">Timeline</a>
-  <a href="../resources/">Resources</a>
-  <a href="../blog/">Blog</a>
-</nav>
 
 <!-- header removed — nav lives in looperworks top bar -->
 
