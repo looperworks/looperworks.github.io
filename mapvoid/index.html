@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="../shared/styles.css?v=4">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="firms.js?v=15"></script>
+<script src="firms.js?v=16"></script>
 <style>
   :root {
     --bg: #fafafa;
@@ -99,6 +99,8 @@
   [data-theme="dark"] .internship-banner-text { color: #a5d6a7; }
   [data-theme="dark"] .internship-banner-text strong { color: #c8e6c9; }
   [data-theme="dark"] .hiring-tag { background: #1b3a1b; border-color: #2e5a2e; color: #a5d6a7; }
+  [data-theme="dark"] .welcome-tip { background: linear-gradient(135deg, #2a2510, #2a2510); border-color: #5a4a1a; color: #aaa; }
+  [data-theme="dark"] .welcome-tip strong { color: #e8e8e8; }
 
   /* Near Me + Dark Mode buttons */
   .toolbar-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: 11px; font-weight: 500; font-family: inherit; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
@@ -171,6 +173,14 @@
 
   .filter-group { margin-bottom: 8px; }
   .filter-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 5px; font-weight: 600; }
+  .filter-group-label.collapsible { cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
+  .filter-group-label.collapsible::after { content: '+'; font-size: 12px; font-weight: 400; color: var(--text-muted); transition: transform 0.2s; }
+  .filter-group-label.collapsible.open::after { content: '\2212'; }
+  .filter-group .filters.collapsed { display: none; }
+  .welcome-tip { padding: 10px 14px; margin-bottom: 8px; background: linear-gradient(135deg, #fffcee, #fff8dc); border: 1px solid #e8c547; border-radius: var(--radius-sm); font-size: 12px; color: #666; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px; }
+  .welcome-tip strong { color: #1a1a1a; }
+  .welcome-tip .tip-close { background: none; border: none; color: #ccc; cursor: pointer; font-size: 16px; padding: 0 2px; flex-shrink: 0; }
+  .welcome-tip .tip-close:hover { color: #999; }
   .filters { display: flex; flex-wrap: wrap; gap: 5px; }
   .filter-chip { padding: 4px 11px; border: 1.5px solid var(--border); border-radius: 20px; font-size: 11px; cursor: pointer; background: #fff; color: var(--text-dim); transition: all 0.15s; user-select: none; font-family: inherit; font-weight: 500; }
   .filter-chip:hover { border-color: var(--border-hover); color: var(--text); }
@@ -732,6 +742,11 @@
         <div class="autocomplete-dropdown" id="acDropdown"></div>
       </div>
 
+      <div class="welcome-tip" id="welcomeTip">
+        <div><strong>Welcome!</strong> Explore 2,600+ firms across the US. Try the <strong style="color:#2e7d32;cursor:pointer" onclick="document.querySelector('[data-refine=internships]').click(); document.getElementById('welcomeTip').style.display='none';">Internships</strong> filter to find programs near you.</div>
+        <button class="tip-close" onclick="document.getElementById('welcomeTip').style.display='none'" title="Dismiss">&times;</button>
+      </div>
+
       <div class="filter-group">
         <div class="filter-group-label">Discipline</div>
         <div class="filters" id="disciplineChips">
@@ -754,8 +769,8 @@
       </div>
 
       <div class="filter-group">
-        <div class="filter-group-label">Refine</div>
-        <div class="filters" id="refineChips">
+        <div class="filter-group-label collapsible" onclick="toggleFilterGroup(this)">Refine</div>
+        <div class="filters collapsed" id="refineChips">
           <div class="filter-chip" data-refine="large" onclick="toggleRefine(this)">100+ Employees</div>
           <div class="filter-chip" data-refine="small" onclick="toggleRefine(this)">Boutique (&lt;20)</div>
           <div class="filter-chip" data-refine="sustainable" onclick="toggleRefine(this)">Sustainable</div>
@@ -766,11 +781,11 @@
         </div>
       </div>
       <div class="filter-group">
-        <div class="filter-group-label">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;vertical-align:-2px;margin-right:3px;color:#2e7d32"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
-          Student Opportunities
+        <div class="filter-group-label collapsible" onclick="toggleFilterGroup(this)">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;vertical-align:-2px;margin-right:3px;color:#2e7d32"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
+          Student Opportunities</span>
         </div>
-        <div class="filters" id="studentChips">
+        <div class="filters collapsed" id="studentChips">
           <div class="filter-chip student-chip" data-refine="internships" onclick="toggleRefine(this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;vertical-align:-1px;margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
             Internships <span class="chip-count" id="countInternships"></span>
@@ -782,8 +797,8 @@
       </div>
 
       <div class="filter-group">
-        <div class="filter-group-label">Explore by Specialty</div>
-        <div class="filters" id="specialtyChips">
+        <div class="filter-group-label collapsible" onclick="toggleFilterGroup(this)">Explore by Specialty</div>
+        <div class="filters collapsed" id="specialtyChips">
           <div class="filter-chip" data-specialty="education" onclick="toggleSpecialty(this)">Education</div>
           <div class="filter-chip" data-specialty="cultural" onclick="toggleSpecialty(this)">Cultural</div>
           <div class="filter-chip" data-specialty="mixed-use" onclick="toggleSpecialty(this)">Mixed-Use</div>
@@ -1094,6 +1109,12 @@ function toggleFilter(el) {
   applyFilters();
 }
 
+function toggleFilterGroup(label) {
+  label.classList.toggle('open');
+  const filters = label.nextElementSibling;
+  filters.classList.toggle('collapsed');
+}
+
 function toggleRefine(el) {
   el.classList.toggle('active');
   const refine = el.dataset.refine;
@@ -1334,18 +1355,21 @@ function selectFirm(id) {
         This firm offers internships for students${hiring.includes('Co-op') ? ' and co-op positions' : ''}${hiring.includes('Fellowship') ? ' and fellowships' : ''}.
       </div>
     </div>` : ''}
-    <div class="detail-section">
+    ${firm.about ? `<div class="detail-section">
       <h3>About</h3>
-      <p class="detail-about">${firm.about || '<span style="color:#aaa;font-style:italic">No description available</span>'}</p>
-    </div>
+      <p class="detail-about">${firm.about}</p>
+    </div>` : `<div class="detail-section">
+      <h3>About</h3>
+      <p class="detail-about" style="color:#aaa;font-style:italic">Visit their website to learn more about this firm.</p>
+    </div>`}
     ${projects.length > 0 ? `<div class="detail-section">
       <h3>Notable Projects</h3>
       <div class="detail-tags">${projects.map(p => `<span class="detail-tag project-tag">${p}</span>`).join('')}</div>
     </div>` : ''}
-    <div class="detail-section">
+    ${(firm.specialties || []).length > 0 ? `<div class="detail-section">
       <h3>Specialties</h3>
       <div class="detail-tags">${(firm.specialties || []).map(s => `<span class="detail-tag">${s}</span>`).join('')}</div>
-    </div>
+    </div>` : ''}
     ${hiring.length > 0 ? `<div class="detail-section">
       <h3>Student &amp; Early Career</h3>
       <div class="detail-tags">${hiring.map(h => `<span class="detail-tag hiring-tag">${h}</span>`).join('')}</div>
