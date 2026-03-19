@@ -1,67 +1,65 @@
-<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #999; text-anchor: middle; }
-      .card-title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 10px; font-weight: 700; color: white; text-anchor: start; }
-      .list-item { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #333; text-anchor: start; line-height: 1.5; }
-      .pro-tip-title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 700; color: white; }
-      .pro-tip-text { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: white; line-height: 1.5; }
-      .fig-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #ccc; }
+      text { font-family: Inter, -apple-system, system-ui, sans-serif; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="420" fill="#f8f8f8"/>
+  <rect width="800" height="460" fill="#f8f8f8"/>
 
   <!-- Title -->
-  <text x="400" y="25" class="title">Application Preparation Checklist</text>
+  <text x="400" y="28" font-size="9" font-weight="400" letter-spacing="1.6" fill="#999" text-anchor="middle">APPLICATION PREPARATION CHECKLIST</text>
 
   <!-- Left Card: BEFORE YOU APPLY -->
-  <g>
-    <!-- Card background -->
-    <rect x="30" y="50" width="340" height="280" fill="white" stroke="#ccc" stroke-width="1.2" rx="2"/>
+  <rect x="30" y="50" width="355" height="280" fill="white" stroke="#e0e0e0" stroke-width="1" rx="2"/>
+  <rect x="30" y="50" width="355" height="32" rx="2" fill="#1a1a1a"/>
+  <text x="50" y="72" font-size="8" font-weight="600" fill="#ffffff" letter-spacing="0.8">BEFORE YOU APPLY</text>
 
-    <!-- Header -->
-    <rect x="30" y="50" width="340" height="45" fill="#1a1a1a" rx="2"/>
-    <text x="50" y="80" class="card-title">BEFORE YOU APPLY</text>
+  <text x="50" y="108" font-size="8" fill="#1a1a1a">Portfolio (8-15 pages, PDF under 10MB)</text>
+  <text x="50" y="132" font-size="8" fill="#1a1a1a">Resume (1 page, ATS-friendly format)</text>
+  <text x="50" y="156" font-size="8" fill="#1a1a1a">Cover letter template (customize per firm)</text>
+  <text x="50" y="180" font-size="8" fill="#1a1a1a">References (2-3 people, ask permission)</text>
+  <text x="50" y="204" font-size="8" fill="#1a1a1a">Work samples (3-5 high-res images)</text>
+  <text x="50" y="228" font-size="8" fill="#1a1a1a">Email signature template</text>
+  <text x="50" y="252" font-size="8" fill="#1a1a1a">LinkedIn profile updated</text>
 
-    <!-- List items -->
-    <text x="50" y="120" class="list-item">✓ Portfolio (8–15 pages, PDF &lt;10MB)</text>
-    <text x="50" y="140" class="list-item">✓ Resume (1 page, ATS-friendly)</text>
-    <text x="50" y="160" class="list-item">✓ Cover letter template</text>
-    <text x="50" y="175" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #999; text-anchor: start; margin-left: 20px;">  (customize per firm)</text>
-    <text x="50" y="200" class="list-item">✓ References (2–3 people)</text>
-    <text x="50" y="215" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #999; text-anchor: start; margin-left: 20px;">  (ask permission first)</text>
-    <text x="50" y="240" class="list-item">✓ Work samples list</text>
-    <text x="50" y="260" class="list-item">✓ Email signature template</text>
-    <text x="50" y="280" class="list-item">✓ LinkedIn profile updated</text>
-  </g>
+  <!-- Checkmarks -->
+  <text x="40" y="108" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="40" y="132" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="40" y="156" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="40" y="180" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="40" y="204" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="40" y="228" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="40" y="252" font-size="8" fill="#2e7d32">&#x2713;</text>
 
   <!-- Right Card: RESEARCH THE FIRM -->
-  <g>
-    <!-- Card background -->
-    <rect x="430" y="50" width="340" height="280" fill="white" stroke="#ccc" stroke-width="1.2" rx="2"/>
+  <rect x="415" y="50" width="355" height="280" fill="white" stroke="#e0e0e0" stroke-width="1" rx="2"/>
+  <rect x="415" y="50" width="355" height="32" rx="2" fill="#1a1a1a"/>
+  <text x="435" y="72" font-size="8" font-weight="600" fill="#ffffff" letter-spacing="0.8">RESEARCH THE FIRM</text>
 
-    <!-- Header -->
-    <rect x="430" y="50" width="340" height="45" fill="#1a1a1a" rx="2"/>
-    <text x="450" y="80" class="card-title">RESEARCH THE FIRM</text>
+  <text x="435" y="108" font-size="8" fill="#1a1a1a">Recent projects (last 2-3 years)</text>
+  <text x="435" y="132" font-size="8" fill="#1a1a1a">Design philosophy / mission statement</text>
+  <text x="435" y="156" font-size="8" fill="#1a1a1a">Current job postings</text>
+  <text x="435" y="180" font-size="8" fill="#1a1a1a">Size and office locations</text>
+  <text x="435" y="204" font-size="8" fill="#1a1a1a">Who reviews applications</text>
+  <text x="435" y="228" font-size="8" fill="#1a1a1a">Awards and recognition</text>
+  <text x="435" y="252" font-size="8" fill="#1a1a1a">Team leads and principals</text>
 
-    <!-- List items -->
-    <text x="450" y="120" class="list-item">✓ Recent projects (last 2–3 years)</text>
-    <text x="450" y="140" class="list-item">✓ Design philosophy/mission</text>
-    <text x="450" y="160" class="list-item">✓ Current job postings</text>
-    <text x="450" y="180" class="list-item">✓ Size and office locations</text>
-    <text x="450" y="200" class="list-item">✓ Who reviews applications</text>
-    <text x="450" y="220" class="list-item">✓ Awards/recognition</text>
-    <text x="450" y="240" class="list-item">✓ Team leads &amp; principals</text>
-    <text x="450" y="260" class="list-item">✓ Salary/comp information</text>
-  </g>
+  <text x="425" y="108" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="425" y="132" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="425" y="156" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="425" y="180" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="425" y="204" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="425" y="228" font-size="8" fill="#2e7d32">&#x2713;</text>
+  <text x="425" y="252" font-size="8" fill="#2e7d32">&#x2713;</text>
 
   <!-- Pro Tip Box -->
-  <rect x="30" y="360" width="740" height="45" fill="#E85D3A" stroke="#E85D3A" stroke-width="1.2" stroke-dasharray="4,3" rx="2"/>
-  <text x="50" y="378" class="pro-tip-title">PRO TIP:</text>
-  <text x="50" y="393" class="pro-tip-text">The cover letter and portfolio should reference the firm's specific work. Generic applications get filtered out immediately.</text>
+  <rect x="30" y="355" width="740" height="55" fill="none" stroke="#E85D3A" stroke-width="1.2" stroke-dasharray="4,3" rx="2"/>
+  <text x="50" y="378" font-size="9" font-weight="700" fill="#E85D3A">PRO TIP:</text>
+  <text x="50" y="396" font-size="7.5" fill="#666">The cover letter and portfolio should reference the firm's specific work. Generic applications get filtered out immediately.</text>
 
-  <!-- FIG. 4 label -->
-  <text x="20" y="405" class="fig-label">FIG. 4</text>
+  <!-- Figure label -->
+  <line x1="400" y1="430" x2="400" y2="432" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="450" font-size="7" fill="#ccc" text-anchor="middle">FIG. 4</text>
 </svg>

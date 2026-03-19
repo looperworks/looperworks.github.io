@@ -1,10 +1,7 @@
 <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #999; text-anchor: middle; }
-      .month-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #666; text-anchor: middle; }
-      .timeframe-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #999; text-anchor: middle; }
-      .fig-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #ccc; }
+      text { font-family: Inter, -apple-system, system-ui, sans-serif; }
     </style>
   </defs>
 
@@ -12,79 +9,79 @@
   <rect width="800" height="280" fill="#f8f8f8"/>
 
   <!-- Title -->
-  <text x="400" y="25" class="title">The Architecture Hiring Year</text>
+  <text x="400" y="28" font-size="9" font-weight="400" letter-spacing="1.6" fill="#999" text-anchor="middle">THE ARCHITECTURE HIRING YEAR</text>
+
+  <!-- Phase backgrounds -->
+  <!-- Research & Prepare: Sep-Nov (outlined) -->
+  <rect x="45" y="65" width="145" height="36" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="117" y="88" font-size="7.5" font-weight="600" fill="#1a1a1a" text-anchor="middle">Research &amp; Prepare</text>
+
+  <!-- Peak Application Season: Dec-Mar (filled #1a1a1a) -->
+  <rect x="216" y="65" width="202" height="36" fill="#1a1a1a" rx="2"/>
+  <text x="317" y="88" font-size="7.5" font-weight="600" fill="#ffffff" text-anchor="middle">Peak Application Season</text>
+
+  <!-- Late Opportunities: Apr-Jun (filled #E85D3A) -->
+  <rect x="444" y="65" width="144" height="36" fill="#E85D3A" rx="2"/>
+  <text x="516" y="88" font-size="7.5" font-weight="600" fill="#ffffff" text-anchor="middle">Late Opportunities</text>
+
+  <!-- Internship Season: Jul-Aug (dashed outlined) -->
+  <rect x="615" y="65" width="130" height="36" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="4,3" rx="2"/>
+  <text x="680" y="88" font-size="7.5" font-weight="600" fill="#1a1a1a" text-anchor="middle">Internship Season</text>
 
   <!-- Timeline base line -->
   <line x1="60" y1="120" x2="740" y2="120" stroke="#ccc" stroke-width="1.2"/>
 
   <!-- Month markers and labels -->
-  <g id="months">
-    <!-- Sep -->
-    <circle cx="60" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="60" y="145" class="month-label">Sep</text>
+  <circle cx="60" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="60" y="140" font-size="8" fill="#666" text-anchor="middle">Sep</text>
 
-    <!-- Oct -->
-    <circle cx="117" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="117" y="145" class="month-label">Oct</text>
+  <circle cx="117" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="117" y="140" font-size="8" fill="#666" text-anchor="middle">Oct</text>
 
-    <!-- Nov -->
-    <circle cx="174" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="174" y="145" class="month-label">Nov</text>
+  <circle cx="174" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="174" y="140" font-size="8" fill="#666" text-anchor="middle">Nov</text>
 
-    <!-- Dec -->
-    <circle cx="231" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="231" y="145" class="month-label">Dec</text>
+  <circle cx="231" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="231" y="140" font-size="8" fill="#666" text-anchor="middle">Dec</text>
 
-    <!-- Jan -->
-    <circle cx="288" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="288" y="145" class="month-label">Jan</text>
+  <circle cx="288" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="288" y="140" font-size="8" fill="#666" text-anchor="middle">Jan</text>
 
-    <!-- Feb -->
-    <circle cx="345" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="345" y="145" class="month-label">Feb</text>
+  <circle cx="345" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="345" y="140" font-size="8" fill="#666" text-anchor="middle">Feb</text>
 
-    <!-- Mar -->
-    <circle cx="402" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="402" y="145" class="month-label">Mar</text>
+  <circle cx="402" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="402" y="140" font-size="8" fill="#666" text-anchor="middle">Mar</text>
 
-    <!-- Apr -->
-    <circle cx="459" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="459" y="145" class="month-label">Apr</text>
+  <circle cx="459" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="459" y="140" font-size="8" fill="#666" text-anchor="middle">Apr</text>
 
-    <!-- May -->
-    <circle cx="516" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="516" y="145" class="month-label">May</text>
+  <circle cx="516" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="516" y="140" font-size="8" fill="#666" text-anchor="middle">May</text>
 
-    <!-- Jun -->
-    <circle cx="573" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="573" y="145" class="month-label">Jun</text>
+  <circle cx="573" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="573" y="140" font-size="8" fill="#666" text-anchor="middle">Jun</text>
 
-    <!-- Jul -->
-    <circle cx="630" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="630" y="145" class="month-label">Jul</text>
+  <circle cx="630" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="630" y="140" font-size="8" fill="#666" text-anchor="middle">Jul</text>
 
-    <!-- Aug -->
-    <circle cx="687" cy="120" r="3" fill="#1a1a1a"/>
-    <text x="687" y="145" class="month-label">Aug</text>
-  </g>
+  <circle cx="687" cy="120" r="3" fill="#1a1a1a"/>
+  <text x="687" y="140" font-size="8" fill="#666" text-anchor="middle">Aug</text>
 
-  <!-- Phase backgrounds -->
-  <!-- Research & Prepare: Sep-Nov (outlined) -->
-  <rect x="45" y="75" width="145" height="40" fill="none" stroke="#999" stroke-width="1.2" rx="2"/>
-  <text x="117" y="100" class="timeframe-label" style="font-weight: 600; color: #666;">Research & Prepare</text>
+  <!-- Legend -->
+  <rect x="100" y="180" width="14" height="14" fill="none" stroke="#1a1a1a" stroke-width="1.2" rx="2"/>
+  <text x="122" y="191" font-size="7" fill="#666">Prepare</text>
 
-  <!-- Peak Application Season: Dec-Mar (filled #1a1a1a) -->
-  <rect x="216" y="75" width="202" height="40" fill="#1a1a1a" rx="2"/>
-  <text x="317" y="100" class="timeframe-label" style="font-weight: 600; color: white;">Peak Application Season</text>
+  <rect x="210" y="180" width="14" height="14" fill="#1a1a1a" rx="2"/>
+  <text x="232" y="191" font-size="7" fill="#666">Apply</text>
 
-  <!-- Late Opportunities: Apr-Jun (filled #E85D3A) -->
-  <rect x="444" y="75" width="144" height="40" fill="#E85D3A" rx="2"/>
-  <text x="516" y="100" class="timeframe-label" style="font-weight: 600; color: white;">Late Opportunities</text>
+  <rect x="300" y="180" width="14" height="14" fill="#E85D3A" rx="2"/>
+  <text x="322" y="191" font-size="7" fill="#666">Late opportunities</text>
 
-  <!-- Internship Season: Jul-Aug (dashed outlined) -->
-  <rect x="615" y="75" width="130" height="40" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="4,3" rx="2"/>
-  <text x="680" y="100" class="timeframe-label" style="font-weight: 600; color: #666;">Internship Season</text>
+  <rect x="440" y="180" width="14" height="14" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="3,2" rx="2"/>
+  <text x="462" y="191" font-size="7" fill="#666">Internship season</text>
 
-  <!-- FIG. 1 label -->
-  <text x="20" y="265" class="fig-label">FIG. 1</text>
+  <!-- Figure label -->
+  <line x1="400" y1="250" x2="400" y2="252" stroke="#ccc" stroke-width="1"/>
+  <text x="400" y="268" font-size="7" fill="#ccc" text-anchor="middle">FIG. 1</text>
 </svg>
