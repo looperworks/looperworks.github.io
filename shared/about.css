@@ -18,7 +18,7 @@ html, body {
   grid-template-columns: minmax(240px, 320px) minmax(240px, 360px);
   justify-content: space-between;
   padding: 40px 0 0;
-  align-content: start;
+  align-items: start;
 }
 
 /* Mission Statement */
@@ -87,6 +87,7 @@ html, body {
 .item:first-child {
   border-top: none;
   padding-top: 0;
+  align-items: first baseline;
 }
 
 .item:last-child {
