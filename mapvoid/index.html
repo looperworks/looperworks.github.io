@@ -742,9 +742,9 @@
         <div class="autocomplete-dropdown" id="acDropdown"></div>
       </div>
 
-      <div class="welcome-tip" id="welcomeTip">
-        <div><strong>Welcome!</strong> Explore 2,600+ firms across the US. Try the <strong style="color:#2e7d32;cursor:pointer" onclick="document.querySelector('[data-refine=internships]').click(); document.getElementById('welcomeTip').style.display='none';">Internships</strong> filter to find programs near you.</div>
-        <button class="tip-close" onclick="document.getElementById('welcomeTip').style.display='none'" title="Dismiss">&times;</button>
+      <div class="welcome-tip" id="welcomeTip" style="display:none">
+        <div><strong>Welcome!</strong> Explore 2,600+ firms across the US. Try the <strong style="color:#2e7d32;cursor:pointer" onclick="document.querySelector('[data-refine=internships]').click(); dismissTip();">Internships</strong> filter to find programs near you.</div>
+        <button class="tip-close" onclick="dismissTip()" title="Dismiss">&times;</button>
       </div>
 
       <div class="filter-group">
@@ -982,7 +982,19 @@ let activeState = 'all';
 let activeSpecialty = '';
 let searchDebounce = null;
 
+function dismissTip() {
+  document.getElementById('welcomeTip').style.display = 'none';
+  try { sessionStorage.setItem('tipDismissed', '1'); } catch(e) {}
+}
+
 async function init() {
+  // Show welcome tip for first-time visitors
+  try {
+    if (!sessionStorage.getItem('tipDismissed')) {
+      document.getElementById('welcomeTip').style.display = '';
+    }
+  } catch(e) { document.getElementById('welcomeTip').style.display = ''; }
+
   populateStates();
   updateStats();
   updateChipCounts();
