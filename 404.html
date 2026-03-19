@@ -182,13 +182,14 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;">Skip to main content</a>
 
   <div class="top-brand-area">
     <canvas id="logoCanvas" data-home="/about/"></canvas>
   </div>
   <div class="top-divider"></div>
 
-  <div class="error-container">
+  <main id="main-content" class="error-container">
     <div class="error-code">404</div>
     <h1 class="error-title">This page doesn’t exist</h1>
     <p class="error-message">The page you’re looking for may have moved or is no longer available. Here are some places to start instead.</p>
@@ -200,7 +201,7 @@
       <a href="/portfolio-guide/">Portfolio Guide</a>
       <a href="/blog/">Blog</a>
     </div>
-  </div>
+  </main>
 
   <div class="menu-tab" onclick="openMenu()">Menu</div>
   <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
