@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="../shared/styles.css?v=4">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="firms.js?v=16"></script>
+<script src="firms.js?v=17"></script>
 <style>
   :root {
     --bg: #fafafa;
@@ -38,7 +38,7 @@
     --border-hover: rgba(0,0,0,0.16);
     --text: #1a1a1a;
     --text-dim: #666666;
-    --text-muted: #999999;
+    --text-muted: #767676;
     --accent: #e8c547;
     --accent-hover: #d4b33e;
     --radius: 12px;
@@ -78,6 +78,7 @@
   [data-theme="dark"] .subscribe-popup-body input[type="email"] { background: #2a2a2a; border-color: rgba(255,255,255,0.1); color: #e8e8e8; }
   [data-theme="dark"] .leaflet-control-zoom a { background: #242424 !important; color: #e8e8e8 !important; border-color: rgba(255,255,255,0.1) !important; }
   [data-theme="dark"] .map-legend { background: #242424 !important; color: #ccc !important; border-color: rgba(255,255,255,0.1) !important; }
+  [data-theme="dark"] .results-header { background: #1e1e1e; }
   [data-theme="dark"] .sort-bar { background: #1e1e1e; }
   [data-theme="dark"] .sort-bar select { background: #2a2a2a; color: #ccc; border-color: rgba(255,255,255,0.1); }
   [data-theme="dark"] .state-filter select { background: #2a2a2a; color: #ccc; border-color: rgba(255,255,255,0.1); }
@@ -171,11 +172,12 @@
   .ac-item-name mark { background: #fff3cd; color: inherit; padding: 0 1px; border-radius: 2px; }
   .ac-category { padding: 5px 14px 3px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); background: var(--bg); }
 
-  .filter-group { margin-bottom: 8px; }
-  .filter-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 5px; font-weight: 600; }
-  .filter-group-label.collapsible { cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
-  .filter-group-label.collapsible::after { content: '+'; font-size: 12px; font-weight: 400; color: var(--text-muted); transition: transform 0.2s; }
-  .filter-group-label.collapsible.open::after { content: '\2212'; }
+  .filter-group { margin-bottom: 6px; }
+  .filter-group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; }
+  .filter-group-label.collapsible { cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 3px 0; border-radius: 4px; transition: color 0.15s; }
+  .filter-group-label.collapsible:hover { color: var(--text); }
+  .filter-group-label.collapsible::after { content: '\25B8'; font-size: 10px; color: var(--text-muted); transition: transform 0.2s; }
+  .filter-group-label.collapsible.open::after { transform: rotate(90deg); }
   .filter-group .filters.collapsed { display: none; }
   .welcome-tip { padding: 10px 14px; margin-bottom: 8px; background: linear-gradient(135deg, #fffcee, #fff8dc); border: 1px solid #e8c547; border-radius: var(--radius-sm); font-size: 12px; color: #666; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px; }
   .welcome-tip strong { color: #1a1a1a; }
@@ -203,8 +205,11 @@
   .filter-chip[data-filter="multi"]:hover { background: #e1bee7; border-color: #6a1b9a; }
   .filter-chip[data-filter="multi"].active { background: #6a1b9a; border-color: #6a1b9a; color: #fff; }
 
-  .results-header { padding: 10px 16px; font-size: 12px; color: var(--text-dim); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .results-header { padding: 8px 16px; font-size: 12px; color: var(--text-dim); border-bottom: 1px solid var(--border); border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg-card); position: sticky; top: 0; z-index: 2; }
   .results-header select { padding: 4px 8px; border: 1px solid var(--border); border-radius: 4px; font-size: 11px; font-family: inherit; background: #fff; color: var(--text-dim); }
+  .clear-filters { font-size: 11px; color: var(--accent-hover); cursor: pointer; border: none; background: none; font-family: inherit; font-weight: 500; padding: 0; margin-left: 8px; text-decoration: underline; display: none; }
+  .clear-filters:hover { color: var(--text); }
+  .clear-filters.visible { display: inline; }
 
   .results-list { flex: 1; overflow-y: auto; }
   .results-list::-webkit-scrollbar { width: 5px; }
@@ -644,7 +649,7 @@
 <!-- Animated Logo -->
 <div class="top-brand-area">
     <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
-        <nav class="header-nav" aria-label="Main navigation"><a href="../about/">About</a><a href="/" class="active">Firm Search</a><div class="header-nav-dropdown"><span role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">Guides</span><div class="dropdown-menu"><a href="../cover-letter-guide/">Cover Letter</a><a href="../resume-guide/">Resume</a><a href="../portfolio-guide/">Portfolio</a></div></div><a href="../resources/">Resources</a><a href="../blog/">Blog</a></nav>
+        <nav class="header-nav" aria-label="Main navigation"><a href="../about/">About</a><a href="/" class="active">Firm Search</a><a href="../cover-letter-guide/">Cover Letter</a><a href="../resume-guide/">Resume</a><a href="../portfolio-guide/">Portfolio</a><a href="../resources/">Resources</a><a href="../blog/">Blog</a></nav>
 <script>
 (function(){
   var dd = document.querySelector('.header-nav-dropdown');
@@ -717,11 +722,11 @@
         <div class="welcome-stat"><strong id="statStates">0</strong> States</div>
       </div>
       <div class="sidebar-toolbar">
-        <button class="toolbar-btn" id="discoverBtn" onclick="discoverFirm()">
+        <button class="toolbar-btn" id="discoverBtn" onclick="discoverFirm()" title="Jump to a random firm — great for exploring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           Discover
         </button>
-        <button class="toolbar-btn" id="nearMeBtn" onclick="findNearMe()">
+        <button class="toolbar-btn" id="nearMeBtn" onclick="findNearMe()" title="Find firms near your current location">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg>
           Near Me
         </button>
@@ -812,7 +817,7 @@
     </div>
 
     <div class="results-header">
-      <span id="resultsCount">0 firms found</span>
+      <span><span id="resultsCount">0 firms found</span><button class="clear-filters" id="clearAllBtn" onclick="clearAllFilters()">Clear filters</button></span>
       <select id="sortSelect" onchange="sortResults()">
         <option value="name">Sort by Name</option>
         <option value="size">Sort by Firm Size</option>
@@ -1140,11 +1145,35 @@ function applySearch() {
   applyFilters();
 }
 
+function clearAllFilters() {
+  // Reset discipline chips
+  document.querySelectorAll('#disciplineChips .filter-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('#disciplineChips .filter-chip[data-filter="all"]').classList.add('active');
+  activeFilters.clear();
+  // Reset state
+  document.getElementById('stateSelect').value = 'all';
+  activeState = 'all';
+  // Reset refines + student chips
+  document.querySelectorAll('#refineChips .filter-chip, #studentChips .filter-chip').forEach(c => c.classList.remove('active'));
+  activeRefines.clear();
+  // Reset specialties
+  document.querySelectorAll('#specialtyChips .filter-chip').forEach(c => c.classList.remove('active'));
+  activeSpecialties.clear();
+  // Reset search
+  document.getElementById('searchInput').value = '';
+  searchTerm = '';
+  applyFilters();
+}
+
 function applyFilters() {
   const filtered = getFilteredFirms();
   sortAndRender(filtered);
   plotMarkers(filtered);
   document.getElementById('resultsCount').textContent = filtered.length + ' firm' + (filtered.length !== 1 ? 's' : '') + ' found';
+  // Show/hide clear filters button
+  const hasFilters = activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0 || (typeof activeSpecialties !== 'undefined' && activeSpecialties.size > 0);
+  const clearBtn = document.getElementById('clearAllBtn');
+  if (clearBtn) clearBtn.classList.toggle('visible', hasFilters);
   // Auto-zoom to show filtered results
   if (filtered.length > 0 && (activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0)) {
     const lats = filtered.map(f => f.lat);
