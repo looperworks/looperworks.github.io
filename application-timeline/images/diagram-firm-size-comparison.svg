@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #999; text-anchor: middle; }
+      .column-title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 600; color: white; text-anchor: middle; }
+      .column-title-outline { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 600; color: #1a1a1a; text-anchor: middle; }
+      .column-content { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #666; text-anchor: start; line-height: 1.4; }
+      .column-content-white { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: white; text-anchor: start; line-height: 1.4; }
+      .fig-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #ccc; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="380" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="25" class="title">Hiring by Firm Size</text>
+
+  <!-- Column 1: Large Firms (outlined) -->
+  <rect x="20" y="50" width="175" height="300" fill="none" stroke="#999" stroke-width="1.2" rx="2"/>
+  <rect x="20" y="50" width="175" height="40" fill="none" stroke="#999" stroke-width="1.2"/>
+  <text x="107.5" y="75" class="column-title-outline">Large Firms</text>
+  <text x="107.5" y="89" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #999; text-anchor: middle;">(100+ staff)</text>
+
+  <text x="30" y="115" class="column-content">• Structured recruiting</text>
+  <text x="30" y="130" class="column-content">• Campus visits</text>
+  <text x="30" y="145" class="column-content">• Oct–Feb timeline</text>
+  <text x="30" y="160" class="column-content">• Formal HR process</text>
+  <text x="30" y="175" class="column-content">• Standardized comp</text>
+  <text x="30" y="190" class="column-content">• Batch reviews</text>
+  <text x="30" y="205" class="column-content">• Competitive positions</text>
+
+  <!-- Column 2: Mid-Size (filled #1a1a1a) -->
+  <rect x="210" y="50" width="175" height="300" fill="#1a1a1a" rx="2"/>
+  <rect x="210" y="50" width="175" height="40" fill="#333"/>
+  <text x="297.5" y="75" class="column-title">Mid-Size</text>
+  <text x="297.5" y="89" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #999; text-anchor: middle;">(20–99 staff)</text>
+
+  <text x="220" y="115" class="column-content-white">• Moderate structure</text>
+  <text x="220" y="130" class="column-content-white">• Local recruiting</text>
+  <text x="220" y="145" class="column-content-white">• Jan–Apr timeline</text>
+  <text x="220" y="160" class="column-content-white">• Principal reviews</text>
+  <text x="220" y="175" class="column-content-white">• Negotiable comp</text>
+  <text x="220" y="190" class="column-content-white">• Personal touch</text>
+  <text x="220" y="205" class="column-content-white">• Project fit matters</text>
+
+  <!-- Column 3: Boutique (filled #E85D3A) -->
+  <rect x="400" y="50" width="175" height="300" fill="#E85D3A" rx="2"/>
+  <rect x="400" y="50" width="175" height="40" fill="#d64621"/>
+  <text x="487.5" y="75" class="column-title">Boutique</text>
+  <text x="487.5" y="89" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: white; text-anchor: middle;">(Under 20 staff)</text>
+
+  <text x="410" y="115" class="column-content-white">• Informal/rolling</text>
+  <text x="410" y="130" class="column-content-white">• Year-round hiring</text>
+  <text x="410" y="145" class="column-content-white">• Founder reviews</text>
+  <text x="410" y="160" class="column-content-white">• Project-based</text>
+  <text x="410" y="175" class="column-content-white">• Flexible comp</text>
+  <text x="410" y="190" class="column-content-white">• Culture priority</text>
+  <text x="410" y="205" class="column-content-white">• Responsive hiring</text>
+
+  <!-- Column 4: Landscape Firms (outlined) -->
+  <rect x="590" y="50" width="190" height="300" fill="none" stroke="#999" stroke-width="1.2" rx="2"/>
+  <rect x="590" y="50" width="190" height="40" fill="none" stroke="#999" stroke-width="1.2"/>
+  <text x="685" y="75" class="column-title-outline">Landscape Firms</text>
+
+  <text x="600" y="115" class="column-content">• Seasonal peaks</text>
+  <text x="600" y="130" class="column-content">• Spring hiring surge</text>
+  <text x="600" y="145" class="column-content">• Field season prep</text>
+  <text x="600" y="160" class="column-content">• Portfolio + plants</text>
+  <text x="600" y="175" class="column-content">• PlantsList knowledge</text>
+  <text x="600" y="190" class="column-content">• Outdoor experience</text>
+  <text x="600" y="205" class="column-content">• Technical drawings</text>
+
+  <!-- FIG. 3 label -->
+  <text x="20" y="365" class="fig-label">FIG. 3</text>
+</svg>

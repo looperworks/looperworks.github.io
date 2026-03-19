@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #999; text-anchor: middle; }
+      .node-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; color: white; text-anchor: middle; font-weight: 500; }
+      .node-label-outline { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; color: #1a1a1a; text-anchor: middle; font-weight: 500; }
+      .timeframe { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #999; text-anchor: middle; }
+      .fig-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #ccc; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#999"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="280" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="25" class="title">The Architecture Hiring Process</text>
+
+  <!-- Flow nodes and connections -->
+  <!-- Node 1: Portfolio + Resume + Cover Letter -->
+  <rect x="20" y="60" width="110" height="60" fill="none" stroke="#999" stroke-width="1.2" rx="2"/>
+  <text x="75" y="85" class="node-label-outline" style="font-size: 8px;">Portfolio +</text>
+  <text x="75" y="97" class="node-label-outline" style="font-size: 8px;">Resume +</text>
+  <text x="75" y="109" class="node-label-outline" style="font-size: 8px;">Cover Letter</text>
+
+  <!-- Arrow 1 -->
+  <line x1="130" y1="90" x2="160" y2="90" stroke="#999" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+  <text x="145" y="110" class="timeframe">1-3 weeks</text>
+
+  <!-- Node 2: Application Submitted -->
+  <rect x="160" y="60" width="100" height="60" fill="none" stroke="#999" stroke-width="1.2" rx="2"/>
+  <text x="210" y="95" class="node-label-outline" style="font-size: 8px;">Application</text>
+  <text x="210" y="107" class="node-label-outline" style="font-size: 8px;">Submitted</text>
+
+  <!-- Arrow 2 -->
+  <line x1="260" y1="90" x2="290" y2="90" stroke="#999" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="110" class="timeframe">1-2 weeks</text>
+
+  <!-- Node 3: Phone/Video Screen -->
+  <rect x="290" y="60" width="100" height="60" fill="none" stroke="#999" stroke-width="1.2" rx="2"/>
+  <text x="340" y="85" class="node-label-outline" style="font-size: 8px;">Phone/Video</text>
+  <text x="340" y="107" class="node-label-outline" style="font-size: 8px;">Screen</text>
+
+  <!-- Arrow 3 -->
+  <line x1="390" y1="90" x2="420" y2="90" stroke="#999" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+  <text x="405" y="110" class="timeframe">1 week</text>
+
+  <!-- Node 4: Portfolio Walkthrough (filled #1a1a1a) -->
+  <rect x="420" y="60" width="110" height="60" fill="#1a1a1a" rx="2"/>
+  <text x="475" y="85" class="node-label">Portfolio</text>
+  <text x="475" y="107" class="node-label">Walkthrough</text>
+
+  <!-- Arrow 4 -->
+  <line x1="530" y1="90" x2="560" y2="90" stroke="#999" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+  <text x="545" y="110" class="timeframe">1-5 days</text>
+
+  <!-- Node 5: Offer (filled #E85D3A) -->
+  <rect x="560" y="60" width="80" height="60" fill="#E85D3A" rx="2"/>
+  <text x="600" y="95" class="node-label">Offer</text>
+
+  <!-- Info box -->
+  <rect x="50" y="170" width="700" height="85" fill="none" stroke="#ccc" stroke-width="1.2" rx="2"/>
+  <text x="70" y="190" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #666; font-weight: 600;">TIMELINE NOTES:</text>
+  <text x="70" y="205" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #999;">• Most architecture firms review applications in batches during peak season (Dec–Mar)</text>
+  <text x="70" y="220" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #999;">• Phone/video screens typically happen within 1-2 weeks of application submission</text>
+  <text x="70" y="235" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #999;">• Portfolio walkthroughs are conducted by senior architects or principals</text>
+
+  <!-- FIG. 2 label -->
+  <text x="20" y="265" class="fig-label">FIG. 2</text>
+</svg>

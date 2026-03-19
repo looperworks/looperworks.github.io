@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #999; text-anchor: middle; }
+      .card-title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 10px; font-weight: 700; color: white; text-anchor: start; }
+      .list-item { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: #333; text-anchor: start; line-height: 1.5; }
+      .pro-tip-title { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 700; color: white; }
+      .pro-tip-text { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 8px; color: white; line-height: 1.5; }
+      .fig-label { font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #ccc; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="400" y="25" class="title">Application Preparation Checklist</text>
+
+  <!-- Left Card: BEFORE YOU APPLY -->
+  <g>
+    <!-- Card background -->
+    <rect x="30" y="50" width="340" height="280" fill="white" stroke="#ccc" stroke-width="1.2" rx="2"/>
+
+    <!-- Header -->
+    <rect x="30" y="50" width="340" height="45" fill="#1a1a1a" rx="2"/>
+    <text x="50" y="80" class="card-title">BEFORE YOU APPLY</text>
+
+    <!-- List items -->
+    <text x="50" y="120" class="list-item">✓ Portfolio (8–15 pages, PDF &lt;10MB)</text>
+    <text x="50" y="140" class="list-item">✓ Resume (1 page, ATS-friendly)</text>
+    <text x="50" y="160" class="list-item">✓ Cover letter template</text>
+    <text x="50" y="175" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #999; text-anchor: start; margin-left: 20px;">  (customize per firm)</text>
+    <text x="50" y="200" class="list-item">✓ References (2–3 people)</text>
+    <text x="50" y="215" style="font-family: Inter, -apple-system, system-ui, sans-serif; font-size: 7px; color: #999; text-anchor: start; margin-left: 20px;">  (ask permission first)</text>
+    <text x="50" y="240" class="list-item">✓ Work samples list</text>
+    <text x="50" y="260" class="list-item">✓ Email signature template</text>
+    <text x="50" y="280" class="list-item">✓ LinkedIn profile updated</text>
+  </g>
+
+  <!-- Right Card: RESEARCH THE FIRM -->
+  <g>
+    <!-- Card background -->
+    <rect x="430" y="50" width="340" height="280" fill="white" stroke="#ccc" stroke-width="1.2" rx="2"/>
+
+    <!-- Header -->
+    <rect x="430" y="50" width="340" height="45" fill="#1a1a1a" rx="2"/>
+    <text x="450" y="80" class="card-title">RESEARCH THE FIRM</text>
+
+    <!-- List items -->
+    <text x="450" y="120" class="list-item">✓ Recent projects (last 2–3 years)</text>
+    <text x="450" y="140" class="list-item">✓ Design philosophy/mission</text>
+    <text x="450" y="160" class="list-item">✓ Current job postings</text>
+    <text x="450" y="180" class="list-item">✓ Size and office locations</text>
+    <text x="450" y="200" class="list-item">✓ Who reviews applications</text>
+    <text x="450" y="220" class="list-item">✓ Awards/recognition</text>
+    <text x="450" y="240" class="list-item">✓ Team leads &amp; principals</text>
+    <text x="450" y="260" class="list-item">✓ Salary/comp information</text>
+  </g>
+
+  <!-- Pro Tip Box -->
+  <rect x="30" y="360" width="740" height="45" fill="#E85D3A" stroke="#E85D3A" stroke-width="1.2" stroke-dasharray="4,3" rx="2"/>
+  <text x="50" y="378" class="pro-tip-title">PRO TIP:</text>
+  <text x="50" y="393" class="pro-tip-text">The cover letter and portfolio should reference the firm's specific work. Generic applications get filtered out immediately.</text>
+
+  <!-- FIG. 4 label -->
+  <text x="20" y="405" class="fig-label">FIG. 4</text>
+</svg>
