@@ -198,6 +198,11 @@
   border-bottom: 1px solid #f0f0f0;
 }
 
+.resource-card:first-child,
+.section-body p + .resource-card {
+  margin-top: 12px;
+}
+
 .resource-card:last-child {
   border-bottom: none;
   margin-bottom: 0;
