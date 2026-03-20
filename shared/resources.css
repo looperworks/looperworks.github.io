@@ -250,6 +250,15 @@
   color: #444;
 }
 
+/* Footer alignment — match main content margin */
+.site-footer {
+  margin-left: 660px;
+}
+
+.site-footer::before {
+  left: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .sidebar {
@@ -259,6 +268,10 @@
   }
 
   .main-content {
+    margin-left: 0;
+  }
+
+  .site-footer {
     margin-left: 0;
   }
 
