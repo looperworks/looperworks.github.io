@@ -120,6 +120,10 @@
   background: #ffffff;
 }
 
+.site-footer {
+  margin-left: 660px;
+}
+
 .content-inner {
   max-width: 900px;
   padding: 80px 60px;
@@ -658,6 +662,10 @@ tbody tr:hover {
   }
 
   .main-content {
+    margin-left: 0;
+  }
+
+  .site-footer {
     margin-left: 0;
   }
 

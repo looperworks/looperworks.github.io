@@ -136,10 +136,19 @@ html, body {
   color: #111;
 }
 
+/* Footer alignment — match page margin */
+.site-footer {
+  margin-left: 260px;
+}
+
 /* Responsive — page-specific */
 @media (max-width: 900px) {
   .page {
     padding: 0 24px;
+    margin-left: 0;
+  }
+
+  .site-footer {
     margin-left: 0;
   }
 
