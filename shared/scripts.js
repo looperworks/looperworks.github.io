@@ -114,7 +114,7 @@
 
   // Click any diagram to open
   document.addEventListener('click', function(e) {
-    var img = e.target.closest('.diagram-wrap img');
+    var img = e.target.closest('.diagram-wrap img') || e.target.closest('.cover-example img');
     if (!img) return;
     modalImg.src = img.src;
     modalImg.alt = img.alt;
