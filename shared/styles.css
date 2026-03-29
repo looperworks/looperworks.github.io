@@ -541,6 +541,35 @@ body {
   opacity: 0.85;
 }
 
+
+/* Cover Typology Examples */
+.cover-example {
+  text-align: center;
+  margin: 28px auto;
+  max-width: 360px;
+}
+
+.cover-example img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: zoom-in;
+  transition: opacity 0.15s ease;
+}
+
+.cover-example img:hover {
+  opacity: 0.85;
+}
+
+.cover-example .caption {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #888;
+  letter-spacing: 0.01em;
+}
+
 /* Diagram Lightbox Modal */
 .diagram-modal {
   display: none;
