@@ -1,0 +1,73 @@
+name: Audit firm URLs
+
+# Runs the firm-URL audit once a week and any time it's triggered manually.
+# If the run produces changes to mapvoid/firms.js (auto-recovered URL variants
+# or newly-cleared 404 careersUrl entries), it opens a pull request with the
+# diff. The full audit report is attached to the workflow run as an artifact
+# so we don't commit a separate audit file to the repo (the site is served by
+# GitHub Pages, and we don't want firm-by-firm broken-URL data publicly
+# discoverable at a stable URL).
+
+on:
+  schedule:
+    # Sunday 06:00 UTC. Adjust as needed.
+    - cron: '0 6 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run audit
+        run: |
+          mkdir -p /tmp/audit-out
+          python3 scripts/audit-firm-urls.py --report /tmp/audit-out/AUDIT_broken_firm_urls.md
+
+      - name: Upload audit report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: broken-firm-urls-report
+          path: /tmp/audit-out/AUDIT_broken_firm_urls.md
+          if-no-files-found: warn
+
+      - name: Open PR if firms.js changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Weekly URL audit: auto-fix variant URLs and clear 404 careersUrl"
+          branch: audit/weekly-firm-urls
+          delete-branch: true
+          title: "Weekly firm URL audit"
+          body: |
+            This PR was opened automatically by `.github/workflows/audit-firm-urls.yml`.
+
+            The latest run made changes to `mapvoid/firms.js`. These are typically:
+
+            - URL variants that started failing under the recorded scheme/host but
+              work under http vs https or www vs bare host (auto-fixed by the
+              script).
+            - `careersUrl` values that now return a hard 404 (auto-cleared so the
+              firm card stops linking to a dead page).
+
+            The full audit report for this run (including firms whose URLs are
+            still broken and need manual review) is attached to the workflow run
+            as the `broken-firm-urls-report` artifact.
+
+            Review the diff and merge if it looks right. If a firm is now broken
+            beyond repair, that is a separate, manual cleanup, not part of this
+            PR.
+          labels: |
+            audit
+            automated

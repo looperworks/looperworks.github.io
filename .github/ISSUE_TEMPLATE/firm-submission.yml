@@ -1,0 +1,107 @@
+name: Submit a firm
+description: Suggest a firm to add to the Threshold firm-search database
+title: "[Firm Submission] "
+labels: ["firm-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a firm. Fill in what you know. The maintainer
+        will verify the details before adding the firm to `mapvoid/firms.js`.
+        Required fields are marked.
+
+  - type: input
+    id: name
+    attributes:
+      label: Firm name
+      placeholder: e.g., Snøhetta
+    validations:
+      required: true
+
+  - type: input
+    id: city
+    attributes:
+      label: City
+      placeholder: e.g., New York
+    validations:
+      required: true
+
+  - type: input
+    id: state
+    attributes:
+      label: State or province (2-letter code)
+      placeholder: e.g., NY, CA, BC, ON
+    validations:
+      required: true
+
+  - type: dropdown
+    id: discipline
+    attributes:
+      label: Discipline
+      description: The firm's primary practice area.
+      options:
+        - architecture
+        - landscape
+        - urban
+        - multi (multidisciplinary)
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: Website URL
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: input
+    id: careers
+    attributes:
+      label: Careers or jobs page URL (optional)
+      placeholder: https://.../careers
+
+  - type: textarea
+    id: about
+    attributes:
+      label: About the firm
+      description: One or two sentences describing what they do.
+      placeholder: e.g., A research-oriented urban design practice known for transit-adjacent mixed-use work.
+    validations:
+      required: true
+
+  - type: input
+    id: specialties
+    attributes:
+      label: Specialties
+      description: Comma-separated. Examples include Commercial, Residential, Healthcare, Education, Cultural, Mixed-Use, Workplace, Planning, Sustainable.
+      placeholder: e.g., Healthcare, Education, Sustainable
+
+  - type: input
+    id: size
+    attributes:
+      label: Approximate firm size (number of employees)
+      description: An estimate is fine. Used to bucket boutique / small / mid / large.
+      placeholder: e.g., 25
+
+  - type: checkboxes
+    id: opportunities
+    attributes:
+      label: Student or early-career programs (check all that apply)
+      options:
+        - label: Internships
+        - label: Fellowship
+        - label: Entry-Level positions
+        - label: Mentorship
+
+  - type: textarea
+    id: notable
+    attributes:
+      label: Notable projects (optional)
+      description: A few projects that represent the firm's work.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else for the maintainer
+      description: Why this firm belongs on the list, how you came across them, etc.
