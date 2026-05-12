@@ -251,6 +251,10 @@
  }
  .breadcrumb a { color: #595959; text-decoration: none; }
  .breadcrumb a:hover { color: #333; }
+ .btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+ .btn.active:hover { background: #1a1a1a; color: #fff; }
+ .mode-alpha .card-rank { display: none; }
+ .mode-alpha .sidebar-nav .nav-number { display: none; }
  </style>
 </head>
 <body>
@@ -313,6 +317,11 @@
  
  <p>Choosing the right graduate architecture program is one of the most important decisions in your career. This guide ranks the <strong>top 20 M.Arch programs in the United States</strong> for 2026, based on design reputation, faculty strength, research output, studio culture, and career outcomes. Whether you are applying for a professional Master of Architecture (M.Arch), a post-professional MS in Advanced Architectural Design, or a specialized degree in urban design, landscape architecture, or computational design, each card below links directly to the program page and admissions requirements.</p>
  <p style="font-size:13px;color:#666;margin-top:8px;">Programs listed include NAAB-accredited professional degrees and post-professional research degrees. Admissions deadlines shown are for the Fall 2026 cycle — always confirm dates on the school's official website.</p>
+
+ <div class="controls" role="group" aria-label="Sort order">
+ <button class="btn active" id="sortRankedBtn" type="button" aria-pressed="true">Ranked</button>
+ <button class="btn" id="sortAlphaBtn" type="button" aria-pressed="false">Alphabetical</button>
+ </div>
 
  <div class="kanban-grid" role="list" aria-label="Top 20 graduate architecture programs">
 
@@ -621,5 +630,52 @@
  <span class="footer-legal"><a href="mailto:seth@thresholdarch.com">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · © 2026 Looperworks LLC</span>
 </footer>
  <script src="/shared/scripts.js?v=2" defer></script>
+ <script>
+ (function() {
+ var rankedBtn = document.getElementById('sortRankedBtn');
+ var alphaBtn = document.getElementById('sortAlphaBtn');
+ if (!rankedBtn || !alphaBtn) return;
+ var grid = document.querySelector('.kanban-grid');
+ var sidebarNav = document.querySelector('.sidebar-nav');
+ var h1 = document.querySelector('.page-title');
+ var container = document.querySelector('.container');
+ if (!grid || !sidebarNav || !h1 || !container) return;
+
+ var rankedCards = Array.prototype.slice.call(grid.querySelectorAll('.kanban-card'));
+ var rankedNav = Array.prototype.slice.call(sidebarNav.querySelectorAll('.nav-item'));
+
+ function schoolName(el) {
+ var s = el.querySelector('.card-school');
+ return (s ? s.textContent : '').trim();
+ }
+ function navName(el) {
+ return el.textContent.replace(/^\s*\d+\s*/, '').trim();
+ }
+ var alphaCards = rankedCards.slice().sort(function(a, b) {
+ return schoolName(a).localeCompare(schoolName(b));
+ });
+ var alphaNav = rankedNav.slice().sort(function(a, b) {
+ return navName(a).localeCompare(navName(b));
+ });
+
+ var titleRanked = 'Top 20 Graduate Architecture Programs in the U.S. (2026)';
+ var titleAlpha = 'Architecture Programs (Alphabetical)';
+
+ function applyMode(mode) {
+ var alpha = mode === 'alpha';
+ (alpha ? alphaCards : rankedCards).forEach(function(c) { grid.appendChild(c); });
+ (alpha ? alphaNav : rankedNav).forEach(function(n) { sidebarNav.appendChild(n); });
+ container.classList.toggle('mode-alpha', alpha);
+ h1.textContent = alpha ? titleAlpha : titleRanked;
+ rankedBtn.classList.toggle('active', !alpha);
+ alphaBtn.classList.toggle('active', alpha);
+ rankedBtn.setAttribute('aria-pressed', String(!alpha));
+ alphaBtn.setAttribute('aria-pressed', String(alpha));
+ }
+
+ rankedBtn.addEventListener('click', function() { applyMode('ranked'); });
+ alphaBtn.addEventListener('click', function() { applyMode('alpha'); });
+ })();
+ </script>
 </body>
 </html>
