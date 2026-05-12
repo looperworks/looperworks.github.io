@@ -15,9 +15,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Search and discover architecture, landscape architecture, and urban design firms. Filter by discipline, size, and location to find your next opportunity.">
 <link rel="canonical" href="https://thresholdarch.com/mapvoid/">
-<title>Firm Search — Architecture Career Toolkit</title>
-<meta property="og:title" content="Firm Search — Threshold">
-<meta property="og:description" content="Explore architecture and landscape architecture firms across the US with an interactive firm search map.">
+<title>Firm Search: Architecture Career Toolkit</title>
+<meta property="og:title" content="Firm Search: Threshold">
+<meta property="og:description" content="Explore architecture and landscape architecture firms across the U.S. with an interactive firm search map.">
 <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
 <meta property="og:url" content="https://thresholdarch.com/mapvoid/">
 <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Firm Search — Architecture Career Toolkit",
+      "name": "Firm Search: Architecture Career Toolkit",
       "description": "Search and discover architecture, landscape architecture, and urban design firms. Filter by discipline, size, and location to find your next opportunity.",
       "url": "https://thresholdarch.com/mapvoid/",
       "isPartOf": {
@@ -140,9 +140,9 @@
     display: block;
   }
 
-  /* ── Looperworks Side Nav — uses shared styles ── */
+  /* ── Looperworks Side Nav; uses shared styles ── */
 
-  /* ── Header / Nav (removed — using looperworks top nav only) ── */
+  /* ── Header / Nav (removed; using looperworks top nav only) ── */
 
   /* ── Sidebar Header ── */
   .sidebar-header { padding: 16px; border-bottom: 1px solid var(--border); background: #ffffff; }
@@ -155,12 +155,12 @@
   .sidebar-header .welcome-stat { color: #777; }
   .sidebar-header .welcome-stat strong { color: #111; }
 
-  /* ── Welcome Banner (legacy — now sidebar-header) ── */
+  /* ── Welcome Banner (legacy; now sidebar-header) ── */
   .welcome-stats { display: flex; gap: 16px; margin-top: 10px; }
   .welcome-stat { font-size: 11px; color: var(--text-muted); }
   .welcome-stat strong { color: var(--text); font-size: 14px; font-weight: 700; display: block; }
 
-  /* ── App Container — visible by default ── */
+  /* ── App Container; visible by default ── */
   .app-container { display: flex; height: calc(100vh - 90px); margin-top: 0; margin-left: 0; }
 
   /* ── Sidebar ── */
@@ -205,7 +205,7 @@
   .filter-chip:hover { border-color: var(--border-hover); color: var(--text); }
   .filter-chip.active { background: var(--text); color: #fff; border-color: var(--text); }
 
-  /* Discipline chips — colorful even when inactive */
+  /* Discipline chips; colorful even when inactive */
   .filter-chip[data-filter="architecture"] { background: #e8eeff; color: #2962ff; border-color: #c5d4ff; }
   .filter-chip[data-filter="architecture"]:hover { background: #d4e0ff; border-color: #2962ff; }
   .filter-chip[data-filter="architecture"].active { background: #2962ff; border-color: #2962ff; color: #fff; }
@@ -245,14 +245,14 @@
   .firm-location svg { width: 11px; height: 11px; vertical-align: -1px; margin-right: 2px; }
   .firm-meta { display: flex; gap: 5px; flex-wrap: wrap; }
   .meta-tag { font-size: 10px; padding: 2px 7px; background: var(--bg); border-radius: 4px; color: var(--text-dim); }
-  /* .meta-tag.jobs removed — firm discovery mode */
+  /* .meta-tag.jobs removed; firm discovery mode */
   .firm-specialties { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 
   /* ── Map ── */
   .map-container { flex: 1; position: relative; z-index: 1; }
   #map { width: 100%; height: 100%; }
 
-  /* Legend — collapsible */
+  /* Legend; collapsible */
   .map-legend { position: absolute; bottom: 20px; left: 12px; background: #fff; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); border: 1px solid var(--border); z-index: 600; font-size: 11px; color: var(--text-dim); transition: all 0.2s; }
   .map-legend .legend-toggle { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); user-select: none; }
   .map-legend .legend-toggle svg { width: 14px; height: 14px; transition: transform 0.2s; }
@@ -311,7 +311,7 @@
   .detail-apply { display: inline-block; padding: 8px 16px; background: #E85D3A; color: #fff; text-decoration: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; font-family: inherit; transition: background 0.15s; }
   .detail-apply:hover { background: #c44a2d; }
 
-  /* Job card CSS removed — firm discovery mode */
+  /* Job card CSS removed; firm discovery mode */
 
   /* ── Markers ── */
   .custom-marker { border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.25); color: #fff; }
@@ -355,7 +355,7 @@
   .tooltip-rich .tt-meta { color: var(--text-dim); font-size: 11px; margin-top: 2px; }
   /* .tt-jobs removed */
 
-  /* Saved jobs FAB and drawer CSS removed — firm discovery mode */
+  /* Saved jobs FAB and drawer CSS removed; firm discovery mode */
   .saved-drawer-list { flex: 1; overflow-y: auto; padding: 0; }
   .saved-item { padding: 12px 22px; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; gap: 12px; align-items: flex-start; }
   .saved-item:hover { background: var(--bg-card-hover); }
@@ -461,7 +461,7 @@
   .subscribe-popup-body .subscribe-note { font-size: 10px; color: var(--text-muted); margin-top: 10px; line-height: 1.4; }
   .subscribe-popup-body .subscribe-popup-msg { font-size: 11px; margin-top: 10px; font-weight: 600; }
 
-  /* Hero section — hidden (map is default) */
+  /* Hero section; hidden (map is default) */
   .hero { display: none; }
   .back-to-hero { display: none; }
 
@@ -475,7 +475,7 @@
     .top-brand-area { display: none; }
     .welcome-banner { padding: 12px; }
 
-    /* Mobile view toggle — list vs map */
+    /* Mobile view toggle; list vs map */
     .mobile-view-tabs {
       display: flex;
       position: fixed;
@@ -513,7 +513,7 @@
     }
     .mobile-view-tab svg { width: 16px; height: 16px; }
 
-    /* App container — no overflow, no scroll */
+    /* App container; no overflow, no scroll */
     .app-container { overflow: hidden; }
 
     /* Sidebar: full screen when active, hidden when map view */
@@ -531,7 +531,7 @@
     .map-container.mobile-visible { display: block; }
     .map-container.mobile-hidden { display: none; }
 
-    /* Detail panel — bottom sheet */
+    /* Detail panel; bottom sheet */
     .detail-panel {
       position: fixed;
       top: auto;
@@ -559,20 +559,20 @@
       margin: 8px auto 0;
     }
 
-    /* Saved drawer — full width on mobile */
+    /* Saved drawer; full width on mobile */
     .saved-drawer { width: 100%; }
     .saved-fab { bottom: 64px; right: 12px; padding: 8px 14px; font-size: 12px; }
 
-    /* Modals — full width with padding */
+    /* Modals; full width with padding */
     .about-modal { max-width: 100%; width: 94%; border-radius: 14px; }
     .subscribe-popup { max-width: 100%; width: 94%; border-radius: 14px; }
 
-    /* Toolbar buttons — larger tap targets */
+    /* Toolbar buttons; larger tap targets */
     .toolbar-btn { padding: 8px 14px; font-size: 12px; min-height: 36px; }
     .toolbar-btn svg { width: 15px; height: 15px; }
     .sidebar-toolbar { gap: 8px; }
 
-    /* Filter chips — horizontal scroll instead of wrap */
+    /* Filter chips; horizontal scroll instead of wrap */
     .filters {
       flex-wrap: nowrap;
       overflow-x: auto;
@@ -583,22 +583,22 @@
     .filters::-webkit-scrollbar { display: none; }
     .filter-chip { white-space: nowrap; flex-shrink: 0; padding: 6px 14px; font-size: 12px; min-height: 32px; }
 
-    /* Search box — stack on very small screens */
+    /* Search box; stack on very small screens */
     .search-box input { font-size: 16px; padding: 10px 14px; }
     .search-box button { padding: 10px 16px; font-size: 14px; }
 
-    /* State filter — bigger select */
+    /* State filter; bigger select */
     .state-filter select { font-size: 14px; padding: 8px 12px; min-height: 40px; }
 
-    /* Results list items — bigger tap targets */
+    /* Results list items; bigger tap targets */
     .firm-card { padding: 14px 16px; }
     .firm-name { font-size: 15px; }
     .firm-location { font-size: 13px; }
 
-    /* Map legend — smaller on mobile, above tab bar */
+    /* Map legend; smaller on mobile, above tab bar */
     .map-legend { bottom: 64px; left: 8px; padding: 8px 10px; font-size: 10px; }
 
-    /* Leaflet zoom — above tab bar */
+    /* Leaflet zoom; above tab bar */
     .leaflet-control-zoom { margin-bottom: 60px !important; }
   }
 
@@ -629,7 +629,7 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Floating Left Navigation — hover to reveal -->
+  <!-- Floating Left Navigation; hover to reveal -->
   <div class="side-nav-wrapper">
     <div class="side-nav-tab">Menu</div>
     <nav class="side-nav" aria-label="Main navigation">
@@ -668,7 +668,7 @@
 
 <!-- Animated Logo + Nav Bar -->
 <div class="top-brand-area">
-    <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold — Home" role="img"></canvas>
+    <canvas id="logoCanvas" width="200" height="56" data-home="../" aria-label="Threshold: Home" role="img"></canvas>
     <nav class="header-nav" aria-label="Main navigation">
       <a href="../about/">About</a>
       <a href="/" class="active">Firm Search</a>
@@ -681,15 +681,15 @@
     </nav>
 </div>
 
-<!-- header removed — nav lives in looperworks top bar -->
+<!-- header removed; nav lives in looperworks top bar -->
 
 
 <!-- Hero Section -->
 <div class="hero" id="main-content">
   <div class="hero-glow"></div>
-  <div class="hero-badge">FREE RESOURCE // 2,028 US FIRMS // ALL 50 STATES</div>
+  <div class="hero-badge">FREE RESOURCE // 2,028 U.S. FIRMS // ALL 50 STATES</div>
   <h1>Find your place in<br><span class="accent">architecture.</span></h1>
-  <p class="subtitle">Search 2,028 architecture, landscape, and urban design firms across every US state. Explore firm details, specialties, and career opportunities.</p>
+  <p class="subtitle">Search 2,028 architecture, landscape, and urban design firms across every U.S. state. Explore firm details, specialties, and career opportunities.</p>
   <div class="hero-search">
     <input type="text" id="heroSearchInput" placeholder="Search firms, cities, specialties..." />
     <select id="heroStateSelect">
@@ -733,7 +733,7 @@
         <div class="welcome-stat"><strong id="statStates">0</strong> States</div>
       </div>
       <div class="sidebar-toolbar">
-        <button class="toolbar-btn" id="discoverBtn" onclick="discoverFirm()" title="Jump to a random firm — great for exploring">
+        <button class="toolbar-btn" id="discoverBtn" onclick="discoverFirm()" title="Jump to a random firm. Great for exploring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           Discover
         </button>
@@ -759,7 +759,7 @@
       </div>
 
       <div class="welcome-tip" id="welcomeTip" style="display:none">
-        <div><strong>Welcome!</strong> Explore 2,000+ firms across the US. Try the <strong style="color:#2e7d32;cursor:pointer" onclick="document.querySelector('[data-refine=internships]').click(); dismissTip();">Internships</strong> filter to find programs near you.</div>
+        <div><strong>Welcome!</strong> Explore 2,000+ firms across the U.S. Try the <strong style="color:#2e7d32;cursor:pointer" onclick="document.querySelector('[data-refine=internships]').click(); dismissTip();">Internships</strong> filter to find programs near you.</div>
         <button class="tip-close" onclick="dismissTip()" title="Dismiss">&times;</button>
       </div>
 
@@ -905,11 +905,11 @@
       <p>Threshold helps you find firms, prepare your application, and navigate the profession. Search 2,028 firms across all 50 states, filter by discipline and internship programs, then use our guides to apply.</p>
 
       <h3>The toolkit</h3>
-      <p style="margin-bottom:2px"><a href="../application-timeline/" style="color:var(--accent);text-decoration:none;font-weight:600">How to Apply</a> — Month-by-month hiring timeline and process</p>
-      <p style="margin-bottom:2px"><a href="../cover-letter-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Cover Letter Guide</a> — Structure, examples, and firm-specific strategy</p>
-      <p style="margin-bottom:2px"><a href="../resume-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Resume Guide</a> — ATS-ready format for architecture professionals</p>
-      <p style="margin-bottom:2px"><a href="../portfolio-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Portfolio Guide</a> — Layout, curation, and narrative structure</p>
-      <p style="margin-bottom:2px"><a href="../resources/" style="color:var(--accent);text-decoration:none;font-weight:600">Resources</a> — Industry sites, job boards, and top 20 grad programs</p>
+      <p style="margin-bottom:2px"><a href="../application-timeline/" style="color:var(--accent);text-decoration:none;font-weight:600">How to Apply</a>: Month-by-month hiring timeline and process</p>
+      <p style="margin-bottom:2px"><a href="../cover-letter-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Cover Letter Guide</a>: Structure, examples, and firm-specific strategy</p>
+      <p style="margin-bottom:2px"><a href="../resume-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Resume Guide</a>: ATS-ready format for architecture professionals</p>
+      <p style="margin-bottom:2px"><a href="../portfolio-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Portfolio Guide</a>: Layout, curation, and narrative structure</p>
+      <p style="margin-bottom:2px"><a href="../resources/" style="color:var(--accent);text-decoration:none;font-weight:600">Resources</a>: Industry sites, job boards, and top 20 grad programs</p>
 
       <h3>Built for you</h3>
       <p>Know a firm that should be here? Have feedback? Reach out at <a href="mailto:seth@thresholdarch.com" style="color:var(--accent);text-decoration:none;font-weight:600">seth@thresholdarch.com</a>.</p>
@@ -931,7 +931,7 @@
     <div class="subscribe-popup-hero">
       <button class="subscribe-popup-close" onclick="closeSubscribe()">&times;</button>
       <h3>Stay in the loop</h3>
-      <p>I add new firms and features every week. Get a quick update straight to your inbox — no spam, just useful stuff for your job search.</p>
+      <p>I add new firms and features every week. Get a quick update straight to your inbox. No spam, just useful stuff for your job search.</p>
     </div>
     <div class="subscribe-popup-body">
       <form id="subscribePopupForm">
@@ -1225,7 +1225,7 @@ function renderFirms(list) {
       <div class="empty-state">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <h4>The void is empty here</h4>
-        <p>No firms match this combination. Try widening your search — great firms often hide in unexpected places.</p>
+        <p>No firms match this combination. Try widening your search. Great firms often hide in unexpected places.</p>
       </div>`;
     return;
   }
