@@ -280,7 +280,7 @@
 </div>
  <button class="mobile-menu-toggle hamburger" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
- <div class="container">
+ <div class="container mode-alpha">
  <aside class="sidebar" id="sidebar">
  <div class="sidebar-content">
  <nav class="sidebar-nav">
@@ -313,14 +313,14 @@
  <nav class="breadcrumb" aria-label="Breadcrumb">
  <a href="/">Home</a> &rsaquo; <a href="/resources/">Resources</a> &rsaquo; Top 20 Graduate Programs
  </nav>
- <h1 class="page-title">Top 20 Graduate Architecture Programs in the U.S. (2026)</h1>
+ <h1 class="page-title">Architecture Programs (Alphabetical)</h1>
  
  <p>Choosing the right graduate architecture program is one of the most important decisions in your career. This guide ranks the <strong>top 20 M.Arch programs in the United States</strong> for 2026, based on design reputation, faculty strength, research output, studio culture, and career outcomes. Whether you are applying for a professional Master of Architecture (M.Arch), a post-professional MS in Advanced Architectural Design, or a specialized degree in urban design, landscape architecture, or computational design, each card below links directly to the program page and admissions requirements.</p>
  <p style="font-size:13px;color:#666;margin-top:8px;">Programs listed include NAAB-accredited professional degrees and post-professional research degrees. Admissions deadlines shown are for the Fall 2026 cycle — always confirm dates on the school's official website.</p>
 
  <div class="controls" role="group" aria-label="Sort order">
- <button class="btn active" id="sortRankedBtn" type="button" aria-pressed="true">Ranked</button>
- <button class="btn" id="sortAlphaBtn" type="button" aria-pressed="false">Alphabetical</button>
+ <button class="btn active" id="sortAlphaBtn" type="button" aria-pressed="true">Alphabetical</button>
+ <button class="btn" id="sortRankedBtn" type="button" aria-pressed="false">Ranked</button>
  </div>
 
  <div class="kanban-grid" role="list" aria-label="Top 20 graduate architecture programs">
@@ -675,6 +675,7 @@
 
  rankedBtn.addEventListener('click', function() { applyMode('ranked'); });
  alphaBtn.addEventListener('click', function() { applyMode('alpha'); });
+ applyMode('alpha');
  })();
  </script>
 </body>
