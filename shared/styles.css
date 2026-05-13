@@ -63,9 +63,13 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #333;
+  font-size: 14px;
+  font-feature-settings: 'cv11', 'ss03'; /* Inter: open digits + alt grotesque a */
+  color: #222;
   background: #ffffff;
-  line-height: 1.7;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ===========================
