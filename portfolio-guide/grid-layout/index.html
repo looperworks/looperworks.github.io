@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMEJ4670Y7"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-DMEJ4670Y7');
+</script>
+ <meta charset="UTF-8">
+ <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="The 12-point grid as structural bay. How modular systems read as discipline.">
+ <link rel="canonical" href="https://thresholdarch.com/portfolio-guide/grid-layout/">
+ <title>Grid Systems & Layout: Portfolio Guide: Threshold</title>
+ <meta property="og:title" content="Grid Systems & Layout: Portfolio Guide">
+ <meta property="og:description" content="The 12-point grid as structural bay. How modular systems read as discipline.">
+ <meta property="og:image" content="https://thresholdarch.com/shared/og-image.png">
+ <meta property="og:url" content="https://thresholdarch.com/portfolio-guide/grid-layout/">
+ <meta property="og:type" content="article">
+ <link rel="stylesheet" href="../../shared/styles.css?v=15">
+ <link rel="stylesheet" href="../../shared/about.css?v=14">
+ <link rel="stylesheet" href="../../shared/guide.css?v=15">
+ <style>
+   .container {{ display: block; }}
+   .reading-page {{ max-width: 720px; margin: 60px auto 80px; padding: 0 40px; }}
+   .reading-back-link {{
+     display: inline-block; font-size: 12px; color: #999;
+     text-decoration: none; margin-bottom: 48px; letter-spacing: 0.02em;
+   }}
+   .reading-back-link:hover {{ color: #111; }}
+   .reading-header {{
+     display: grid; grid-template-columns: 30px 1fr; gap: 16px;
+     align-items: baseline; margin-bottom: 40px;
+   }}
+   .reading-number {{ font-size: 13px; color: #999; font-weight: 400; }}
+   .reading-title {{
+     font-size: 24px; font-weight: 600; color: #111;
+     line-height: 1.3; margin: 0;
+   }}
+   .reading-body {{ padding-left: 46px; }}
+   .reading-body p {{ font-size: 15px; line-height: 1.7; color: #333; margin-bottom: 20px; }}
+   .reading-body .subtitle, .reading-body h3 {{
+     font-size: 14px; font-weight: 600; color: #111;
+     margin-top: 32px; margin-bottom: 12px;
+   }}
+   .reading-body ul, .reading-body ol {{ margin: 0 0 20px 20px; padding: 0; }}
+   .reading-body li {{ font-size: 15px; line-height: 1.7; color: #333; margin-bottom: 8px; }}
+   .reading-body .box {{
+     border-left: 2px solid #ccc; background: #fafafa;
+     padding: 14px 18px; margin: 28px 0;
+   }}
+   .reading-body .box p {{ font-size: 14px; margin-bottom: 0; color: #444; }}
+   .reading-body .diagram-wrap {{ margin: 32px 0; }}
+   .reading-body .diagram-wrap img {{ width: 100%; height: auto; display: block; }}
+   .reading-body .table-wrapper {{ overflow-x: auto; margin: 28px 0; }}
+   .reading-body table {{ width: 100%; border-collapse: collapse; font-size: 13px; }}
+   .reading-body th, .reading-body td {{
+     padding: 12px 10px; text-align: left;
+     border-bottom: 1px solid #eee; vertical-align: top;
+   }}
+   .reading-body th {{
+     font-weight: 600; font-size: 11px; text-transform: uppercase;
+     letter-spacing: 0.05em; color: #999;
+   }}
+   .reading-body a {{ color: #111; text-decoration: underline; text-underline-offset: 2px; }}
+   .reading-body a:hover {{ color: #555; }}
+   .reading-body .resource-card {{
+     padding: 16px 0; border-bottom: 1px solid #eee;
+   }}
+   .reading-body .resource-card:last-child {{ border-bottom: none; }}
+   .reading-body .resource-name {{ font-size: 15px; font-weight: 600; margin-bottom: 4px; }}
+   .reading-body .resource-name a {{ text-decoration: none; color: #111; }}
+   .reading-body .resource-name a:hover {{ color: #555; }}
+   .reading-body .resource-url {{ font-size: 12px; color: #999; margin-bottom: 8px; }}
+   .reading-body .resource-url a {{ color: #999; text-decoration: none; }}
+   .reading-body .resource-url a:hover {{ color: #555; }}
+   .reading-body .resource-desc {{ font-size: 14px; color: #444; line-height: 1.6; margin: 0; }}
+   @media (max-width: 720px) {{
+     .reading-page {{ padding: 0 24px; margin-top: 40px; }}
+     .reading-body {{ padding-left: 0; }}
+     .reading-header {{ grid-template-columns: 1fr; gap: 8px; }}
+     .reading-title {{ font-size: 20px; }}
+   }}
+ </style>
+</head>
+<body>
+ <a href="#main-content" class="skip-link">Skip to main content</a>
+
+ <!-- Floating Left Navigation; hover to reveal -->
+ <div class="side-nav-wrapper">
+ <div class="side-nav-tab">Menu</div>
+ <nav class="side-nav" aria-label="Main navigation">
+ <ul class="side-nav-links">
+ <li><a href="../../about/">About</a></li>
+ <li><a href="/">Firm Search</a></li>
+ <li><a href="../../application-timeline/">How to Apply</a></li>
+ <li><a href="../../cover-letter-guide/">Cover Letter</a></li>
+ <li><a href="../../resume-guide/">Resume</a></li>
+ <li><a href="../../portfolio-guide/" class="active">Portfolio</a></li>
+ <li><a href="../../resources/">Resources</a></li>
+ <li><a href="../../blog/">Blog</a></li>
+</ul>
+ </nav>
+ </div>
+
+ <div class="mobile-nav">
+ <a href="/" class="mobile-nav-brand">Threshold</a>
+ <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+ <span></span><span></span><span></span>
+ </button>
+ </div>
+ <div class="mobile-menu" id="mobileMenu">
+ <a href="../../about/">About</a>
+ <a href="/">Firm Search</a>
+ <a href="../../application-timeline/">How to Apply</a>
+ <a href="../../cover-letter-guide/">Cover Letter</a>
+ <a href="../../resume-guide/">Resume</a>
+ <a href="../../portfolio-guide/" class="active">Portfolio</a>
+ <a href="../../resources/">Resources</a>
+ <a href="../../blog/">Blog</a>
+ </div>
+
+ <div class="top-brand-area">
+ <canvas id="logoCanvas" width="200" height="56" data-home="/" aria-label="Threshold: Home" role="img"></canvas>
+ </div>
+ <div class="top-divider"></div>
+
+ <main id="main-content">
+ <div class="reading-page">
+ <a href="../" class="reading-back-link">&larr; Back to Portfolio Guide</a>
+ <div class="reading-header">
+ <span class="reading-number">08</span>
+ <h1 class="reading-title">Grid Systems & Layout</h1>
+ </div>
+ <div class="reading-body">
+<p>A grid is a system of invisible lines that organizes content on a page. It determines where text sits, where images align, and how white space is distributed. Without a grid, a portfolio is a collection of pages. With one, it becomes a coherent document. The grid is the invisible architecture of your portfolio. It should feel inevitable, not restrictive.</p>
+
+ <h3 class="subtitle">Why the Grid Matters</h3>
+ <p>Grids exist to solve a fundamental problem: how do you arrange complex information (text, images, diagrams, captions) so that it feels intentional rather than accidental? A strong grid provides three things: consistency across pages so reviewers can focus on content rather than navigation, hierarchy so the eye knows where to go first, and rhythm so the portfolio feels composed rather than assembled.</p>
+
+ <div class="box key-insight">
+ <p><strong>KEY INSIGHT:</strong> A portfolio without a grid is like a building without a structural system. You might get away with it for a page or two, but the moment complexity increases. Multiple images, captions, diagrams. Everything collapses. The grid is what holds the portfolio together.</p>
+ </div>
+
+ <h3 class="subtitle">Grid Anatomy</h3>
+ <p>Before building a grid, you need to understand its components. Every grid is made up of columns, gutters, modules, margins, and baseline increments. These parts work together the same way structural elements work together in a building. Each one has a role, and removing any one of them compromises the whole system.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/01-grid-anatomy-overview.svg" alt="Grid anatomy showing columns, gutters, modules, margins, and baselines" loading="lazy">
+ </div>
+
+ <h3 class="subtitle">A Brief History</h3>
+ <p>The grid is not a modern invention. The Greek and Roman Hippodamian plan organized cities into orthogonal blocks. The Japanese Ken module governed timber construction proportions for centuries. The typographic grid emerged in post-war Switzerland through Josef Muller-Brockmann and the Swiss International Style, a response to chaos, an attempt to bring order, clarity, and objectivity to visual communication. The same impulse that drives you to align columns in a floor plan should drive how you organize a portfolio spread.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/02-historical-grid-comparison.svg" alt="Historical grid comparison: Greek urban grid, Japanese Ken module, modern page grid" loading="lazy">
+ </div>
+
+ <h3 class="subtitle">The Design Analogy: Structure = Layout</h3>
+ <p>Think of your portfolio page the way you think about a building. A building has a structural column grid: vertical elements that carry loads and define spatial rhythm. A page has a column grid: vertical divisions that carry content and define visual rhythm. Columns determine where walls and openings go; on the page, columns determine where images and text go. Beams span between columns to create floor plates; baselines span across the page to create consistent text alignment. The margin is your setback: the distance between the edge and the usable space.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/03-structural-vs-page-grid.svg" alt="Building structural grid vs page modular grid. Same logic" loading="lazy">
+ </div>
+
+ <h3 class="subtitle">The Ideal System: Baseline + Modular</h3>
+ <p>A professional portfolio grid combines two systems working together. The baseline grid controls horizontal rhythm. It ensures every line of text, every caption, and every image edge aligns to the same invisible horizontal lines. The modular grid controls vertical structure. It divides the page into columns and modules that determine content width and placement.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/07-modular-baseline-overlay.svg" alt="Modular grid overlaid with baseline grid. Two systems, one goal" loading="lazy">
+ </div>
+
+ <p>When these two systems overlap, you get a complete framework: a matrix of cells where every element on the page has a precise location. Text snaps to baselines. Images span exact column widths. Captions align with image edges. White space becomes intentional rather than accidental.</p>
+
+ <div class="box pro-tip">
+ <p><strong>PRO TIP:</strong> For most architecture and landscape architecture portfolios, a modular grid (baseline + columns) is the ideal system. It gives you the precision to handle plan drawings, section cuts, renderings, detail photos, and text blocks, all on the same page. Without visual conflict.</p>
+ </div>
+
+ <h3 class="subtitle">The Atomic Unit: Why 12pt</h3>
+ <p>Every grid needs a base unit: the smallest increment from which all other measurements derive. In architecture, this might be a 4-inch module or a 600mm planning grid. In portfolio design, the atomic unit is <strong>12 points</strong>.</p>
+
+ <p>Why 12? Because 12 is the most divisible small number. It divides evenly by 2, 3, 4, and 6, giving you maximum flexibility for spacing, margins, gutters, and type sizes. Your body text at 9pt sits cleanly on a 12pt baseline. Your heading at 24pt spans exactly 2 baseline increments. Your margins at 48pt equal exactly 4 increments. Everything relates back to 12.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/12-baseline-math.svg" alt="Baseline math: 840pt page divided by 12pt gives 70 baseline lines" loading="lazy">
+ </div>
+
+ <div class="box key-insight">
+ <p><strong>KEY INSIGHT:</strong> The 12pt unit is to your portfolio what the structural bay is to a building. Every dimension, column width, gutter, margin, leading, should be a multiple of 12. This creates mathematical harmony across every page, the same way a consistent structural bay creates spatial harmony across every floor plate.</p>
+ </div>
+
+ <h3 class="subtitle">Module Anatomy</h3>
+ <p>A module is the basic building block of your modular grid. One column wide by a set number of baselines tall. Understanding how modules are constructed from baseline increments is essential. Each module contains a content zone (where text and images sit) and a gutter zone (the space between modules). In a 12pt system, a module might be 7 content lines (84pt) plus 1 gutter line (12pt), giving a total module height of 96pt.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/13-module-anatomy.svg" alt="Module anatomy showing content lines, gutter zone, and 12pt increments" loading="lazy">
+ </div>
+
+ <h3 class="subtitle">Phase 1: Preparing the InDesign Workspace</h3>
+ <p>Before constructing your grid, set up your InDesign workspace correctly. Your workspace should include the Pages panel, Layers panel, and Links panel on the left; the central canvas showing your two-page spread; and the Properties, Align, Swatches, Paragraph, and Paragraph Styles panels on the right.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/09-indesign-workspace.svg" alt="InDesign workspace layout with panel positions" loading="lazy">
+ </div>
+
+ <p>Go to <strong>Preferences &gt; Units &amp; Increments</strong> and change both Horizontal and Vertical rulers from inches to <strong>points</strong>. This is critical. Working in points gives you the precision needed for grid construction. Set your Keyboard Increment to 12pt so nudging objects with arrow keys moves them exactly one grid unit.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/10-panel-closeups.svg" alt="InDesign Paragraph Styles and Align panel closeups" loading="lazy">
+ </div>
+
+ <h3 class="subtitle">Phase 2: Constructing the Page</h3>
+ <p>Create a new document with these specifications for a standard portfolio page:</p>
+
+ <div class="table-wrapper">
+ <table>
+ <thead>
+ <tr>
+ <th>Parameter</th>
+ <th>Value</th>
+ <th>Rationale</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Page Size</strong></td>
+ <td>600 x 840 pt (8.33 x 11.67 in)</td>
+ <td>Clean proportion, slightly taller than letter</td>
+ </tr>
+ <tr>
+ <td><strong>Top Margin</strong></td>
+ <td>36 pt</td>
+ <td>3 baseline increments</td>
+ </tr>
+ <tr>
+ <td><strong>Bottom Margin</strong></td>
+ <td>48 pt</td>
+ <td>4 baseline increments</td>
+ </tr>
+ <tr>
+ <td><strong>Inside Margin</strong></td>
+ <td>36 pt</td>
+ <td>3 increments</td>
+ </tr>
+ <tr>
+ <td><strong>Outside Margin</strong></td>
+ <td>36 pt</td>
+ <td>3 baseline increments</td>
+ </tr>
+ <tr>
+ <td><strong>Columns</strong></td>
+ <td>6</td>
+ <td>Maximum flexibility (spans of 1, 2, 3, or 6)</td>
+ </tr>
+ <tr>
+ <td><strong>Gutter</strong></td>
+ <td>12 pt</td>
+ <td>1 baseline increment</td>
+ </tr>
+ <tr>
+ <td><strong>Baseline Grid</strong></td>
+ <td>12 pt increment</td>
+ <td>The atomic unit</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+
+ <div class="diagram-wrap">
+ <img src="../../images/14-indesign-setup-steps.svg" alt="InDesign setup steps: Preferences, Create Guides, and final result" loading="lazy">
+ </div>
+
+ <p>Under <strong>Preferences &gt; Grids</strong>, set the Baseline Grid start to 0pt, relative to Top of Page, and the increment to <strong>12pt</strong>. Then use <strong>Layout &gt; Create Guides</strong> to add 8 row guides with 12pt gutters. The result is a page with 70 baseline lines and 8 horizontal row divisions. Your complete modular framework.</p>
+
+ <p>Six columns is the recommended starting point because 6 divides into flexible arrangements: a full-width image spans all 6 columns, a large image takes 4 with text in the remaining 2, two equal images each take 3, or three equal columns of 2 each. This single column count handles virtually every layout scenario you will encounter.</p>
+
+ <h3 class="subtitle">Phase 3: Applying the Grid</h3>
+ <p>With your grid constructed, every element on the page must respect it. Set all text frames to <strong>Align to Baseline Grid</strong> in the paragraph settings. This ensures every line of body text, every caption, and every heading locks to the 12pt baseline. Images should snap to column edges. Their widths should span exact column multiples, and their top and bottom edges should align to baseline increments.</p>
+
+ <p>When placing content, think in modules. A module is one column wide by a set number of baselines tall. An image might occupy a 3-column x 20-baseline module. A text block might fill a 2-column x 15-baseline module. Every element has a precise address on the grid.</p>
+
+ <h3 class="subtitle">Consistency Across Spreads</h3>
+ <p>The true power of a grid reveals itself across multiple pages. When the same 3-column modular grid underlies every spread, whether showing plans, renders with text, or diagrams, the portfolio develops visual rhythm and cohesion. Reviewers can navigate intuitively because the underlying structure is familiar, even as the content changes.</p>
+
+ <div class="diagram-wrap">
+ <img src="../../images/06-consistency-across-spreads.svg" alt="Same grid applied across three different spread types" loading="lazy">
+ </div>
+
+ <h3 class="subtitle">Common Mistake: Baseline Drift</h3>
+ <p>Baseline drift occurs when text gradually falls off the grid, usually because a heading, image, or spacing value introduced a non-12pt increment. Once one element drifts, everything below it misaligns. The result is subtle but noticeable: text across columns no longer lines up horizontally, captions float at slightly different heights, and the page loses its sense of precision.</p>
+
+ <div class="box common-mistake">
+ <p><strong>COMMON MISTAKE:</strong> Inserting a 15pt space after a heading or using a non-grid image height. This pushes all subsequent text off the baseline grid. Always use spacing values that are multiples of 12pt: 12, 24, 36, 48. If an image height does not land on a baseline, adjust it until it does. Precision here is non-negotiable.</p>
+ </div>
+
+ <h3 class="subtitle">White Space as Design Strategy</h3>
+ <p>White space is perhaps the most undervalued tool in portfolio design. It provides visual relief, prevents cognitive overload, and directs focus. A crowded page signals a lack of confidence; a balanced layout embracing empty space suggests a designer in control of the narrative. Empty modules in your grid are not wasted space. They are compositional decisions. Learn to see white space as an active element, not a passive one.</p>
+
+ <h3 class="subtitle">Layout and Visual Hierarchy</h3>
+ <p>Use your grid to establish a reading pattern. The F-pattern (viewers scan left-to-right, then down the left side) and Z-pattern (diagonal scanning) are natural eye movements. Position your most important content: the hero image, the project title, the key diagram. Along these visual pathways. Secondary content (process images, captions, supplementary drawings) fills the supporting grid positions.</p>
+
+ <div class="box key-insight">
+ <p><strong>KEY INSIGHT:</strong> A consistent grid applied across all portfolio pages creates coherence and professionalism. When a viewer moves from one project to the next, the familiar grid structure allows them to focus on content rather than navigating new layouts. Consistency is a form of confidence. The grid is not where creativity goes to die. It is where clarity begins.</p>
+ </div>
+ </div>
+ </div>
+ </main>
+
+ <footer class="site-footer">
+ <p class="footer-subscribe-label">Career insights for architecture students and emerging professionals</p>
+ <form id="subscribeForm" class="footer-subscribe">
+ <label for="subscribeEmail" class="sr-only">Email address</label>
+ <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+ <button type="submit">Subscribe</button>
+ </form>
+ <p class="footer-msg" id="subscribeMsg"></p>
+ <span class="footer-legal"><a href="mailto:seth@thresholdarch.com">Contact</a> &middot; <a href="../../terms/">Terms</a> &middot; <a href="../../privacy/">Privacy</a> &middot; &copy; 2026 Looperworks LLC</span>
+ </footer>
+
+ <div class="cookie-banner" id="cookieBanner">
+ <p><strong>Important Information:</strong> This website uses cookies to ensure you get the best experience on our website. See our <a href="../../terms/">Terms of Service</a>.</p>
+ <button class="cookie-banner-btn" id="cookieAccept">Got it!</button>
+ </div>
+
+ <script src="../../shared/scripts.js?v=2" defer></script>
+</body>
+</html>
