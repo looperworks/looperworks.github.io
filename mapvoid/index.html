@@ -719,29 +719,106 @@
   .nav-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); color: #fff; font-size: 10px; font-weight: 700; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; margin-left: 4px; }
   .nav-badge:empty { display: none; }
 
-  /* About modal */
-  .about-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 1300; opacity: 0; pointer-events: none; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+  /* About modal — academic minimal aesthetic, warm off-white, grayscale */
+  .about-overlay {
+    position: fixed; inset: 0;
+    background: rgba(28, 24, 18, 0.45);
+    z-index: 1300; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  }
   .about-overlay.open { opacity: 1; pointer-events: auto; }
-  .about-modal { background: #fff; border-radius: 16px; max-width: 480px; width: 92%; box-shadow: 0 25px 80px rgba(0,0,0,0.2); transform: translateY(20px) scale(0.97); transition: transform 0.3s ease; overflow: hidden; }
-  .about-overlay.open .about-modal { transform: translateY(0) scale(1); }
-  .about-modal-hero { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 20px 24px 16px; border-radius: 16px 16px 0 0; position: relative; overflow: hidden; }
-  .about-modal-hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,197,71,0.15) 0%, transparent 70%); }
-  .about-modal-hero h2 { font-size: 19px; font-weight: 900; color: #fff; margin-bottom: 3px; position: relative; }
-  .about-modal-hero .about-subtitle { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.4; position: relative; }
-  .about-modal-hero .about-stats { display: flex; gap: 16px; margin-top: 12px; position: relative; }
-  .about-modal-hero .about-stat { text-align: center; }
-  .about-modal-hero .about-stat strong { display: block; font-size: 16px; font-weight: 800; color: var(--accent); }
-  .about-modal-hero .about-stat span { font-size: 8px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); }
-  .about-modal-close { position: absolute; top: 10px; right: 12px; background: rgba(255,255,255,0.1); border: none; font-size: 16px; color: rgba(255,255,255,0.7); cursor: pointer; padding: 2px 8px; border-radius: 6px; z-index: 1; transition: all 0.15s; }
-  .about-modal-close:hover { color: #fff; background: rgba(255,255,255,0.2); }
-  .about-modal-body { padding: 14px 24px 18px; }
-  .about-modal-body h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; margin-top: 10px; font-weight: 600; }
+  .about-modal {
+    background: #fdfbf6;            /* warm parchment */
+    border: 1px solid #e5dfd1;
+    border-radius: 4px;              /* squared-off, paper-like */
+    max-width: 520px; width: 92%;
+    box-shadow: 0 24px 64px rgba(28, 24, 18, 0.18);
+    transform: translateY(16px); opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .about-overlay.open .about-modal { transform: translateY(0); opacity: 1; }
+  .about-modal-hero {
+    background: transparent;
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid #ebe5d6;
+    position: relative;
+  }
+  .about-modal-hero h2 {
+    font-size: 20px; font-weight: 700;
+    color: #1a1a1a; letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .about-modal-hero .about-subtitle {
+    font-size: 12px; color: #6b6356;
+    line-height: 1.5; max-width: 90%;
+  }
+  .about-modal-hero .about-stats {
+    display: flex; gap: 28px; margin-top: 18px;
+  }
+  .about-modal-hero .about-stat { text-align: left; }
+  .about-modal-hero .about-stat strong {
+    display: block; font-size: 22px; font-weight: 700;
+    color: #1a1a1a; letter-spacing: -0.02em;
+    font-feature-settings: 'lnum';
+  }
+  .about-modal-hero .about-stat span {
+    font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #8d8473;
+    margin-top: 2px; font-weight: 600;
+  }
+  .about-modal-close {
+    position: absolute; top: 14px; right: 14px;
+    background: none; border: none;
+    width: 28px; height: 28px; border-radius: 50%;
+    font-size: 18px; line-height: 1; color: #8d8473;
+    cursor: pointer; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s;
+  }
+  .about-modal-close:hover { background: rgba(28, 24, 18, 0.06); color: #1a1a1a; }
+  .about-modal-body { padding: 20px 32px 24px; }
+  .about-modal-body h3 {
+    font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #8d8473;
+    margin-bottom: 6px; margin-top: 16px;
+    font-weight: 700;
+  }
   .about-modal-body h3:first-child { margin-top: 0; }
-  .about-modal-body p { font-size: 11px; line-height: 1.5; color: var(--text-dim); margin-bottom: 4px; }
-  .about-modal-body .disclaimer { font-size: 9.5px; color: var(--text-muted); line-height: 1.4; padding: 8px 10px; background: var(--bg); border-radius: 6px; border: 1px solid var(--border); margin-top: 8px; }
-  .about-modal-body .about-cta { display: flex; justify-content: center; margin-top: 12px; }
-  .about-modal-body .about-cta button { padding: 8px 22px; background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border: none; border-radius: 8px; font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
-  .about-modal-body .about-cta button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,52,96,0.4); }
+  .about-modal-body p {
+    font-size: 12px; line-height: 1.6;
+    color: #3a352c; margin-bottom: 4px;
+  }
+  .about-modal-body a {
+    color: #1a1a1a; text-decoration: none;
+    font-weight: 600; border-bottom: 1px solid #c9bfa8;
+    transition: border-color 0.15s;
+  }
+  .about-modal-body a:hover { border-bottom-color: #1a1a1a; }
+  .about-modal-body .disclaimer {
+    font-size: 10px; color: #8d8473;
+    line-height: 1.5; padding: 10px 14px;
+    background: rgba(28, 24, 18, 0.03);
+    border-left: 2px solid #c9bfa8;
+    margin-top: 14px; font-style: italic;
+  }
+  .about-modal-body .disclaimer p { color: #6b6356; margin: 0; font-size: 10px; }
+  .about-modal-body .about-cta {
+    display: flex; justify-content: flex-start;
+    margin-top: 18px;
+  }
+  .about-modal-body .about-cta button {
+    padding: 10px 22px;
+    background: #1a1a1a; color: #fdfbf6;
+    border: none; border-radius: 3px;
+    font-size: 12px; font-weight: 600; font-family: inherit;
+    letter-spacing: 0.02em;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .about-modal-body .about-cta button:hover { background: #3a352c; }
 
   /* Subscribe popup */
   .subscribe-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 1300; opacity: 0; pointer-events: none; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
@@ -1207,36 +1284,36 @@
 <div class="about-overlay" id="aboutOverlay" onclick="if(event.target===this)closeAbout()">
   <div class="about-modal">
     <div class="about-modal-hero">
-      <button class="about-modal-close" onclick="closeAbout()">&times;</button>
+      <button class="about-modal-close" onclick="closeAbout()" aria-label="Close">&times;</button>
       <h2>Threshold</h2>
-      <div class="about-subtitle">A free career toolkit for architecture students and emerging professionals.</div>
+      <div class="about-subtitle">A career toolkit for architecture students and emerging professionals. Free, independent, always.</div>
       <div class="about-stats">
-        <div class="about-stat"><strong id="aboutStatFirms">2,024</strong><span>Firms</span></div>
-        <div class="about-stat"><strong id="aboutStatStates">55</strong><span>States</span></div>
+        <div class="about-stat"><strong id="aboutStatFirms">2,147</strong><span>Firms</span></div>
+        <div class="about-stat"><strong id="aboutStatStates">50</strong><span>States</span></div>
         <div class="about-stat"><strong>5</strong><span>Guides</span></div>
-        <div class="about-stat"><strong>Free</strong><span>Always</span></div>
+        <div class="about-stat"><strong>$0</strong><span>Always</span></div>
       </div>
     </div>
     <div class="about-modal-body">
       <h3>What this is</h3>
-      <p>Threshold helps you find firms, prepare your application, and navigate the profession. Search 2,024 firms across all 50 states, filter by discipline and internship programs, then use our guides to apply.</p>
+      <p>Threshold helps you find firms, prepare your application, and navigate the profession. Search architecture, landscape, urban-design and multidisciplinary practices across the U.S. — filter by size, internship programs, or specialty, then use the guides to apply.</p>
 
       <h3>The toolkit</h3>
-      <p style="margin-bottom:2px"><a href="../application-timeline/" style="color:var(--accent);text-decoration:none;font-weight:600">How to Apply</a>: Month-by-month hiring timeline and process</p>
-      <p style="margin-bottom:2px"><a href="../cover-letter-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Cover Letter Guide</a>: Structure, examples, and firm-specific strategy</p>
-      <p style="margin-bottom:2px"><a href="../resume-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Resume Guide</a>: ATS-ready format for architecture professionals</p>
-      <p style="margin-bottom:2px"><a href="../portfolio-guide/" style="color:var(--accent);text-decoration:none;font-weight:600">Portfolio Guide</a>: Layout, curation, and narrative structure</p>
-      <p style="margin-bottom:2px"><a href="../resources/" style="color:var(--accent);text-decoration:none;font-weight:600">Resources</a>: Industry sites, job boards, and top 20 grad programs</p>
+      <p style="margin-bottom:2px"><a href="../application-timeline/">How to Apply</a>: month-by-month hiring timeline and process</p>
+      <p style="margin-bottom:2px"><a href="../cover-letter-guide/">Cover Letter Guide</a>: structure, examples, and firm-specific strategy</p>
+      <p style="margin-bottom:2px"><a href="../resume-guide/">Resume Guide</a>: ATS-ready format for architecture professionals</p>
+      <p style="margin-bottom:2px"><a href="../portfolio-guide/">Portfolio Guide</a>: layout, curation, and narrative structure</p>
+      <p style="margin-bottom:2px"><a href="../resources/">Resources</a>: industry sites, job boards, top grad programs</p>
 
       <h3>Built for you</h3>
-      <p>Know a firm that should be here? Have feedback? Reach out at <a href="mailto:seth@thresholdarch.com" style="color:var(--accent);text-decoration:none;font-weight:600">seth@thresholdarch.com</a>.</p>
+      <p>Know a firm that should be here? Have feedback or want one-on-one guidance? Reach out at <a href="mailto:seth@thresholdarch.com">seth@thresholdarch.com</a>.</p>
 
       <div class="disclaimer">
-        <p style="margin-bottom:0">Independent student resource, not affiliated with any listed firm. Always verify details on a firm's official website.</p>
+        <p>Independent student resource, not affiliated with any listed firm. Always verify details on a firm's official website.</p>
       </div>
 
       <div class="about-cta">
-        <button onclick="closeAbout()">Start Exploring &rarr;</button>
+        <button onclick="closeAbout()">Start exploring &rarr;</button>
       </div>
     </div>
   </div>
@@ -2974,6 +3051,16 @@ document.getElementById('heroSearchInput').addEventListener('keyup', function(e)
 });
 
 function openAbout() {
+  // Refresh stats from live firm data each time the modal opens so the
+  // counts stay accurate as firms get added or removed.
+  const firmsEl = document.getElementById('aboutStatFirms');
+  const statesEl = document.getElementById('aboutStatStates');
+  if (firmsEl && typeof firms !== 'undefined') {
+    firmsEl.textContent = firms.length.toLocaleString();
+  }
+  if (statesEl && typeof firms !== 'undefined') {
+    statesEl.textContent = new Set(firms.map(f => f.state)).size;
+  }
   document.getElementById('aboutOverlay').classList.add('open');
 }
 function closeAbout() {
