@@ -263,11 +263,13 @@
  @media (max-width: 720px) {
    .content-inner { padding: 40px 24px 60px; }
  }
- /* At 720px the kanban grid becomes a single column of cards.
-    Each card already contains a school's full info; one-per-row reads
-    like a reference list rather than a dashboard. */
+ /* At 720px column, 2 cards per row keeps the grid feel without
+    the dashboard width. Cards reflow to 1-up on narrow screens. */
  .kanban-grid {
-   grid-template-columns: 1fr;
+   grid-template-columns: repeat(2, 1fr);
+ }
+ @media (max-width: 560px) {
+   .kanban-grid { grid-template-columns: 1fr; }
  }
  </style>
 </head>
