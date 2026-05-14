@@ -162,6 +162,30 @@
   /* ── Sidebar ── */
   .sidebar { width: 420px; min-width: 420px; background: #fff; display: flex; flex-direction: column; border-right: 1px solid var(--border); overflow: hidden; }
   .search-section { padding: 14px 16px; border-bottom: 1px solid var(--border); }
+
+  /* Persona starter filters — quick presets for common student profiles */
+  .personas {
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-bottom: 10px;
+  }
+  .persona-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 9px;
+    background: var(--bg); color: var(--text-dim);
+    border: 1px solid var(--border); border-radius: 12px;
+    font-size: 11px; font-weight: 500; font-family: inherit;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .persona-btn:hover {
+    background: var(--bg-card-hover); border-color: var(--border-hover);
+    color: var(--text);
+  }
+  .persona-btn.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  .persona-btn.active .persona-emoji { filter: brightness(1.2); }
+  .persona-emoji { font-size: 12px; }
+  [data-theme="dark"] .persona-btn { background: #2a2a2a; }
   .search-box { position: relative; display: flex; gap: 8px; margin-bottom: 10px; }
   .search-box input { flex: 1; padding: 9px 14px 9px 34px; border: 1.5px solid var(--border); background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; color: var(--text); outline: none; transition: border-color 0.2s; font-family: inherit; }
   .search-box input::placeholder { color: var(--text-muted); }
@@ -821,6 +845,25 @@
       </div>
     </div>
     <div class="search-section">
+      <!-- Persona starter filters: one-tap shortcut for common student profiles.
+           Each toggles a curated bundle of filters. Click again to clear. -->
+      <div class="personas" aria-label="Starter filters">
+        <button class="persona-btn" data-persona="march1" onclick="togglePersona('march1')" title="Filters: Internships, Mentorship, Entry-Level">
+          <span class="persona-emoji">🎓</span> M.Arch I
+        </button>
+        <button class="persona-btn" data-persona="postprof" onclick="togglePersona('postprof')" title="Filters: Fellowship, Mentorship">
+          <span class="persona-emoji">🏛️</span> Post-prof
+        </button>
+        <button class="persona-btn" data-persona="landscape" onclick="togglePersona('landscape')" title="Filters: Landscape, Parks &amp; Public">
+          <span class="persona-emoji">🌳</span> Landscape
+        </button>
+        <button class="persona-btn" data-persona="sustainable" onclick="togglePersona('sustainable')" title="Filters: Sustainable focus">
+          <span class="persona-emoji">♻️</span> Sustainable
+        </button>
+        <button class="persona-btn" data-persona="boutique" onclick="togglePersona('boutique')" title="Filters: Boutique firms (under 20 people)">
+          <span class="persona-emoji">✷</span> Small firms
+        </button>
+      </div>
       <div class="search-box">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" id="searchInput" placeholder="Search firms, cities, specialties..." autocomplete="off" />
@@ -1257,6 +1300,8 @@ function clearAllFilters() {
   savedOnly = false;
   const navSaved = document.getElementById('navSaved');
   if (navSaved) navSaved.classList.remove('active');
+  // Reset persona buttons
+  document.querySelectorAll('.persona-btn').forEach(b => b.classList.remove('active'));
   // Reset search
   document.getElementById('searchInput').value = '';
   searchTerm = '';
@@ -1462,6 +1507,68 @@ function toggleSpecialty(el) {
     document.querySelectorAll('#specialtyChips .filter-chip').forEach(c => c.classList.remove('active'));
     activeSpecialty = spec;
     el.classList.add('active');
+  }
+  applyFilters();
+}
+
+// ─── Persona starter filters ──────────────────────────────────────────
+// Each persona toggles a curated bundle of refine chips + (optionally)
+// discipline. Click again to remove the bundle. Multiple personas can
+// be active simultaneously (toggling them ORs the filters together).
+const PERSONAS = {
+  march1:     { discipline: null,          refines: ['internships', 'mentorship', 'entry-level'] },
+  postprof:   { discipline: null,          refines: ['fellowship', 'mentorship'] },
+  landscape:  { discipline: 'landscape',   refines: ['parks'] },
+  sustainable:{ discipline: null,          refines: ['sustainable'] },
+  boutique:   { discipline: null,          refines: ['small'] },
+};
+
+function togglePersona(name) {
+  const p = PERSONAS[name];
+  if (!p) return;
+  const btn = document.querySelector(`.persona-btn[data-persona="${name}"]`);
+  if (!btn) return;
+  const wasActive = btn.classList.contains('active');
+
+  if (wasActive) {
+    btn.classList.remove('active');
+    // Remove its refines + discipline (only if this persona owns them)
+    p.refines.forEach(r => {
+      activeRefines.delete(r);
+      const chip = document.querySelector(`.filter-chip[data-refine="${r}"]`);
+      if (chip) chip.classList.remove('active');
+    });
+    if (p.discipline) {
+      activeFilters.delete(p.discipline);
+      const chip = document.querySelector(`#disciplineChips .filter-chip[data-filter="${p.discipline}"]`);
+      if (chip) chip.classList.remove('active');
+      if (activeFilters.size === 0) {
+        const allChip = document.querySelector('#disciplineChips .filter-chip[data-filter="all"]');
+        if (allChip) allChip.classList.add('active');
+      }
+    }
+  } else {
+    btn.classList.add('active');
+    // Add refines + discipline; expand "More filters" so user sees what changed
+    p.refines.forEach(r => {
+      activeRefines.add(r);
+      const chip = document.querySelector(`.filter-chip[data-refine="${r}"]`);
+      if (chip) chip.classList.add('active');
+    });
+    if (p.discipline) {
+      activeFilters.add(p.discipline);
+      const chip = document.querySelector(`#disciplineChips .filter-chip[data-filter="${p.discipline}"]`);
+      if (chip) chip.classList.add('active');
+      const allChip = document.querySelector('#disciplineChips .filter-chip[data-filter="all"]');
+      if (allChip) allChip.classList.remove('active');
+    }
+    // Expand the "More filters" accordion so user can see the activated chips
+    const moreLabel = document.querySelector('.filter-group-label.collapsible');
+    if (moreLabel && !moreLabel.classList.contains('open')) {
+      moreLabel.classList.add('open');
+      const filtersMore = moreLabel.nextElementSibling;
+      if (filtersMore) filtersMore.classList.remove('collapsed');
+    }
   }
   applyFilters();
 }
