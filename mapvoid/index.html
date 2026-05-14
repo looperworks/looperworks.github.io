@@ -93,14 +93,41 @@
   [data-theme="dark"] .detail-panel { background: #1e1e1e; }
   [data-theme="dark"] .filter-chip { background: #2a2a2a; border-color: rgba(255,255,255,0.1); color: #ccc; }
   [data-theme="dark"] .filter-chip:hover { background: #333; }
+  /* About modal dark-mode: replace parchment palette with dark equivalents
+     so the bright parchment surface doesn't clash on a dark page */
+  [data-theme="dark"] .about-modal { background: #1e1e1e; border-color: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .about-modal-hero { border-bottom-color: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .about-modal-hero h2 { color: #f3f1ec; }
+  [data-theme="dark"] .about-modal-hero .about-subtitle { color: #999; }
+  [data-theme="dark"] .about-modal-hero .about-stat strong { color: #f3f1ec; }
+  [data-theme="dark"] .about-modal-hero .about-stat span { color: #888; }
+  [data-theme="dark"] .about-modal-close { color: #888; }
+  [data-theme="dark"] .about-modal-close:hover { background: rgba(255,255,255,0.06); color: #f3f1ec; }
   [data-theme="dark"] .about-modal-body { background: #1e1e1e; }
   [data-theme="dark"] .about-modal-body h3 { color: #888; }
-  [data-theme="dark"] .about-modal-body p { color: #aaa; }
-  [data-theme="dark"] .about-modal-body .disclaimer { background: #242424; border-color: rgba(255,255,255,0.08); color: #888; }
+  [data-theme="dark"] .about-modal-body p { color: #ccc; }
+  [data-theme="dark"] .about-modal-body a { color: #f3f1ec; border-bottom-color: rgba(255,255,255,0.2); }
+  [data-theme="dark"] .about-modal-body a:hover { border-bottom-color: #f3f1ec; }
+  [data-theme="dark"] .about-modal-body .disclaimer { background: rgba(255,255,255,0.03); border-left-color: rgba(255,255,255,0.15); color: #888; }
+  [data-theme="dark"] .about-modal-body .disclaimer p { color: #888; }
+  [data-theme="dark"] .about-modal-body .about-cta button { background: #f3f1ec; color: #1a1a1a; }
+  [data-theme="dark"] .about-modal-body .about-cta button:hover { background: #ddd9d0; }
   [data-theme="dark"] .saved-drawer { background: #1e1e1e; border-left-color: rgba(255,255,255,0.08); }
   [data-theme="dark"] .saved-fab { background: #242424; border-color: rgba(255,255,255,0.1); color: #e8e8e8; }
+  /* Subscribe popup dark-mode — same pattern as About modal */
+  [data-theme="dark"] .subscribe-popup { background: #1e1e1e; border-color: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .subscribe-popup-hero { border-bottom-color: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .subscribe-popup-hero h3 { color: #f3f1ec; }
+  [data-theme="dark"] .subscribe-popup-hero p { color: #999; }
+  [data-theme="dark"] .subscribe-popup-close { color: #888; }
+  [data-theme="dark"] .subscribe-popup-close:hover { background: rgba(255,255,255,0.06); color: #f3f1ec; }
   [data-theme="dark"] .subscribe-popup .subscribe-popup-body { background: #1e1e1e; }
   [data-theme="dark"] .subscribe-popup-body input[type="email"] { background: #2a2a2a; border-color: rgba(255,255,255,0.1); color: #e8e8e8; }
+  [data-theme="dark"] .subscribe-popup-body input[type="email"]::placeholder { color: #666; }
+  [data-theme="dark"] .subscribe-popup-body input[type="email"]:focus { border-color: #f3f1ec; }
+  [data-theme="dark"] .subscribe-popup-body button[type="submit"] { background: #f3f1ec; color: #1a1a1a; }
+  [data-theme="dark"] .subscribe-popup-body button[type="submit"]:hover { background: #ddd9d0; }
+  [data-theme="dark"] .subscribe-popup-body .subscribe-note { color: #777; }
   [data-theme="dark"] .leaflet-control-zoom a { background: #242424 !important; color: #e8e8e8 !important; border-color: rgba(255,255,255,0.1) !important; }
   [data-theme="dark"] .map-legend { background: #242424 !important; color: #ccc !important; border-color: rgba(255,255,255,0.1) !important; }
   [data-theme="dark"] .results-header { background: #1e1e1e; }
@@ -1320,11 +1347,11 @@
 
 <!-- Mobile View Toggle Tab Bar -->
 <div class="mobile-view-tabs" id="mobileViewTabs">
-  <button class="mobile-view-tab active" id="mobileListTab" onclick="switchMobileView('list')">
+  <button class="mobile-view-tab active" id="mobileListTab" onclick="switchMobileView('list')" aria-label="Show firm list">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
     List
   </button>
-  <button class="mobile-view-tab" id="mobileMapTab" onclick="switchMobileView('map')">
+  <button class="mobile-view-tab" id="mobileMapTab" onclick="switchMobileView('map')" aria-label="Show map view">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
     Map
   </button>
@@ -1406,7 +1433,7 @@
     <button class="drawer-close" onclick="closeSavedDrawer()">&times;</button>
   </div>
   <div class="saved-drawer-actions" id="drawerActions">
-    <button class="export-btn" onclick="exportCSV()">
+    <button class="export-btn" onclick="exportCSV()" aria-label="Export saved firms as CSV">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Export CSV
     </button>
@@ -1546,11 +1573,14 @@ function updateChipCounts() {
 
 function updateStats() {
   const cities = new Set(firms.map(f => f.city + ', ' + f.state));
-  const states = new Set(firms.map(f => f.state));
+  // Exclude DC + PR from the "states" count so this matches the
+  // "ALL 50 STATES" marketing line and the welcome-modal stat.
+  const stateCodes = new Set(firms.map(f => f.state));
+  stateCodes.delete('DC'); stateCodes.delete('PR');
   const el = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
   el('statFirms', firms.length);
   el('statCities', cities.size);
-  el('statStates', states.size);
+  el('statStates', stateCodes.size);
 }
 
 function getFilteredFirms() {
