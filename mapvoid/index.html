@@ -600,6 +600,80 @@
   [data-theme="dark"] .compare-modal { background: #1e1e1e; color: #e8e8e8; }
   [data-theme="dark"] .compare-grid .compare-cell { background: #2a2a2a; }
   [data-theme="dark"] .compare-grid .compare-cell.head { background: #1e1e1e; }
+
+  /* Coachmark tour — 3-step popover that appears once per browser */
+  .coachmark-overlay {
+    position: fixed; inset: 0; z-index: 1500;
+    pointer-events: none;
+  }
+  .coachmark-bubble {
+    position: absolute; max-width: 280px;
+    background: #1a1a1a; color: #fff;
+    border-radius: 8px; padding: 14px 16px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    font-size: 12px; line-height: 1.45;
+    pointer-events: auto;
+  }
+  .coachmark-bubble h4 {
+    font-size: 13px; font-weight: 700; margin-bottom: 4px; color: #fff;
+  }
+  .coachmark-bubble p { margin-bottom: 10px; color: #ddd; }
+  .coachmark-bubble-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px;
+  }
+  .coachmark-bubble-step { color: #999; }
+  .coachmark-bubble button {
+    background: #fff; color: #1a1a1a;
+    border: none; border-radius: 4px;
+    padding: 5px 12px; font-size: 11px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+  }
+  .coachmark-bubble button.skip {
+    background: none; color: #999; padding: 5px 8px;
+  }
+  .coachmark-bubble button.skip:hover { color: #fff; }
+  /* Arrow */
+  .coachmark-bubble::before {
+    content: ''; position: absolute;
+    width: 12px; height: 12px; background: #1a1a1a;
+    transform: rotate(45deg);
+  }
+  .coachmark-bubble[data-arrow="top"]::before    { top: -6px; left: 30px; }
+  .coachmark-bubble[data-arrow="bottom"]::before { bottom: -6px; left: 30px; }
+  .coachmark-bubble[data-arrow="left"]::before   { left: -6px; top: 22px; }
+
+  /* Shortcuts cheat sheet modal */
+  .shortcuts-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.55); z-index: 1400;
+    opacity: 0; pointer-events: none;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.2s;
+  }
+  .shortcuts-overlay.open { opacity: 1; pointer-events: auto; }
+  .shortcuts-modal {
+    background: #fff; border-radius: 8px;
+    max-width: 420px; width: 90%;
+    padding: 22px 26px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.3);
+  }
+  .shortcuts-modal h3 {
+    font-size: 14px; font-weight: 700; margin-bottom: 14px;
+  }
+  .shortcut-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 0; border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .shortcut-row:last-child { border: none; }
+  .shortcut-row kbd {
+    background: var(--bg); border: 1px solid var(--border);
+    border-bottom-width: 2px; border-radius: 4px;
+    padding: 2px 7px; font-family: ui-monospace, monospace;
+    font-size: 11px; color: var(--text); font-weight: 600;
+  }
+  [data-theme="dark"] .shortcuts-modal { background: #1e1e1e; color: #e8e8e8; }
   .saved-drawer-actions .clear-btn:hover { border-color: var(--border-hover); color: var(--text); }
   .saved-drawer-actions .saved-count { font-size: 12px; color: var(--text-muted); margin-left: auto; }
   .saved-drawer-list { flex: 1; overflow-y: auto; }
@@ -1195,6 +1269,22 @@
     <span class="saved-count" id="drawerCount">0 firms saved</span>
   </div>
   <div class="saved-drawer-list" id="savedList"></div>
+</div>
+
+<!-- Coachmark host (steps inserted at runtime) -->
+<div class="coachmark-overlay" id="coachmarkOverlay" hidden></div>
+
+<!-- Keyboard shortcuts cheat sheet -->
+<div class="shortcuts-overlay" id="shortcutsOverlay" onclick="if(event.target===this)closeShortcuts()">
+  <div class="shortcuts-modal">
+    <h3>Keyboard shortcuts</h3>
+    <div class="shortcut-row"><span>Focus search</span><kbd>/</kbd></div>
+    <div class="shortcut-row"><span>Save the firm currently open</span><kbd>S</kbd></div>
+    <div class="shortcut-row"><span>Discover a random firm</span><kbd>R</kbd></div>
+    <div class="shortcut-row"><span>Show saved firms</span><kbd>shift</kbd> + <kbd>S</kbd></div>
+    <div class="shortcut-row"><span>Close detail panel / modal</span><kbd>Esc</kbd></div>
+    <div class="shortcut-row"><span>Show this cheat sheet</span><kbd>?</kbd></div>
+  </div>
 </div>
 
 <!-- Compare firms modal: side-by-side view of 2–3 selected saved firms -->
@@ -2362,11 +2452,121 @@ function exportCSV() {
 updateSavedUI();
 renderRecentlyViewed();
 
-// Show About modal on first visit
+// ─── First-visit onboarding (About modal → coachmark tour) ────────────
 if (!localStorage.getItem('threshold_welcomed_v4')) {
   setTimeout(() => { openAbout(); }, 600);
   localStorage.setItem('threshold_welcomed_v4', '1');
 }
+
+// ─── Coachmark tour: 3-step tooltip walkthrough ───────────────────────
+const COACHMARKS = [
+  { selector: '.personas', arrow: 'top',
+    title: 'Start with a persona',
+    body: 'Quick presets bundle the most common filters. Tap one to get going, or skip and use search/filters directly.' },
+  { selector: '#searchInput', arrow: 'top',
+    title: 'Search or filter',
+    body: 'Type a firm name, city, or specialty. Or use the filter chips below to narrow down by discipline, size, and opportunity type.' },
+  { selector: '#navSaved', arrow: 'top',
+    title: 'Save firms as you browse',
+    body: 'Click the star on any firm card to add it to your shortlist. Track your application status, compare firms, or export your list as CSV.' },
+];
+let coachmarkStep = 0;
+
+function startCoachmarkTour() {
+  if (localStorage.getItem('threshold_coachmarks_seen')) return;
+  coachmarkStep = 0;
+  showCoachmark();
+}
+
+function showCoachmark() {
+  const host = document.getElementById('coachmarkOverlay');
+  if (!host) return;
+  if (coachmarkStep >= COACHMARKS.length) { endCoachmarkTour(); return; }
+  const step = COACHMARKS[coachmarkStep];
+  const target = document.querySelector(step.selector);
+  if (!target) { coachmarkStep++; return showCoachmark(); }
+  const rect = target.getBoundingClientRect();
+  host.hidden = false;
+  host.innerHTML = `
+    <div class="coachmark-bubble" data-arrow="${step.arrow}" style="top:${rect.bottom + 14}px; left:${Math.max(12, rect.left)}px">
+      <h4>${step.title}</h4>
+      <p>${step.body}</p>
+      <div class="coachmark-bubble-footer">
+        <span class="coachmark-bubble-step">${coachmarkStep + 1} of ${COACHMARKS.length}</span>
+        <span>
+          <button class="skip" onclick="endCoachmarkTour()">Skip</button>
+          <button onclick="nextCoachmark()">${coachmarkStep === COACHMARKS.length - 1 ? 'Got it' : 'Next →'}</button>
+        </span>
+      </div>
+    </div>
+  `;
+}
+
+function nextCoachmark() {
+  coachmarkStep++;
+  showCoachmark();
+}
+
+function endCoachmarkTour() {
+  const host = document.getElementById('coachmarkOverlay');
+  if (host) { host.hidden = true; host.innerHTML = ''; }
+  localStorage.setItem('threshold_coachmarks_seen', '1');
+}
+
+// Trigger the tour after the About modal is closed (if it was the first visit
+// trigger — i.e., the coachmarks haven't run yet)
+function maybeStartCoachmarks() {
+  setTimeout(() => {
+    if (!localStorage.getItem('threshold_coachmarks_seen') &&
+        !document.getElementById('aboutOverlay').classList.contains('open')) {
+      startCoachmarkTour();
+    }
+  }, 300);
+}
+
+// ─── Keyboard shortcuts ───────────────────────────────────────────────
+function openShortcuts() { document.getElementById('shortcutsOverlay').classList.add('open'); }
+function closeShortcuts() { document.getElementById('shortcutsOverlay').classList.remove('open'); }
+
+document.addEventListener('keydown', (e) => {
+  // Don't trigger shortcuts while typing in an input/textarea
+  const isInput = e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA';
+
+  if (e.key === 'Escape') {
+    if (document.getElementById('shortcutsOverlay').classList.contains('open')) return closeShortcuts();
+    if (document.getElementById('compareOverlay').classList.contains('open')) return closeCompare();
+    if (document.getElementById('aboutOverlay').classList.contains('open')) return closeAbout();
+    if (document.getElementById('savedDrawer').classList.contains('open')) return closeSavedDrawer();
+    if (document.getElementById('detailPanel').classList.contains('open')) return closeDetail();
+    if (!document.getElementById('coachmarkOverlay').hidden) return endCoachmarkTour();
+    if (isInput) e.target.blur();
+    return;
+  }
+
+  if (isInput) return;  // most shortcuts blocked while typing
+
+  if (e.key === '/') {
+    e.preventDefault();
+    const input = document.getElementById('searchInput');
+    if (input) { input.focus(); input.select(); }
+  } else if (e.key === '?') {
+    e.preventDefault();
+    openShortcuts();
+  } else if (e.key.toLowerCase() === 's' && !e.shiftKey && !e.metaKey && !e.ctrlKey) {
+    // Save the currently-open firm
+    const panel = document.getElementById('detailPanel');
+    if (panel && panel.classList.contains('open')) {
+      const nameEl = document.getElementById('detailName');
+      const firm = firms.find(f => f.name === nameEl.textContent);
+      if (firm) toggleSaveFirm(firm.id);
+    }
+  } else if (e.key === 'S' && e.shiftKey) {
+    e.preventDefault();
+    toggleSavedOnly();
+  } else if (e.key.toLowerCase() === 'r' && !e.metaKey && !e.ctrlKey) {
+    if (typeof discoverFirm === 'function') discoverFirm();
+  }
+});
 
 // ── Autocomplete System ──
 let acIndex = -1;
@@ -2640,6 +2840,8 @@ function openAbout() {
 }
 function closeAbout() {
   document.getElementById('aboutOverlay').classList.remove('open');
+  // After welcome modal, kick off the 3-step coachmark tour if it hasn't run
+  if (typeof maybeStartCoachmarks === 'function') maybeStartCoachmarks();
 }
 
 // ── Mobile View Toggle ──
