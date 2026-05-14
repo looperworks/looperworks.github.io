@@ -78,6 +78,15 @@
    .reading-body .resource-url a { color: #999; text-decoration: none; }
    .reading-body .resource-url a:hover { color: #555; }
    .reading-body .resource-desc { font-size: 12px; color: #444; line-height: 1.6; margin: 0; }
+   .reading-body .resource-header {
+     display: flex; justify-content: space-between; align-items: baseline;
+     gap: 12px; margin-bottom: 4px;
+   }
+   .reading-body .resource-category {
+     font-size: 9px; color: #999; font-weight: 600;
+     text-transform: uppercase; letter-spacing: 0.06em;
+     white-space: nowrap;
+   }
    @media (max-width: 720px) {
      .reading-page { padding: 0 24px; margin-top: 40px; }
      .reading-body { padding-left: 0; }
@@ -148,96 +157,106 @@
  <div class="reading-body">
 <p>The architecture profession moves fast. These ten sites represent the best of what's out there, not just for keeping up with news, but for understanding how the industry thinks, hires, and evolves. Each one serves a different purpose in your professional development.</p>
 
- <h3 class="resource-category-title" style="font-size: 13px; font-weight: 700; margin: 24px 0 6px; color: #1a1a1a;">News & Project Discovery</h3>
+ <h3 class="subtitle">News &amp; Project Discovery</h3>
 
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://www.archdaily.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">ArchDaily</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Global Project Database</span>
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://www.archdaily.com" target="_blank" rel="noopener">ArchDaily</a></div>
+ <span class="resource-category">Global Project Database</span>
  </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">The most visited architecture website in the world. Use it for project research before interviews. Search a firm's published work to reference specific buildings in your cover letter. The Materials section links real products to projects, which is useful for understanding how firms make specification decisions.</p>
- </div>
-
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://www.dezeen.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">Dezeen</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Editorial Trends</span>
- </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">London-based, editorially driven. Dezeen sets visual trends and covers the intersection of architecture, interiors, and technology. Their jobs board is one of the most active in the industry, and their AI and sustainability coverage is ahead of most publications.</p>
+ <div class="resource-url"><a href="https://www.archdaily.com" target="_blank" rel="noopener">archdaily.com</a></div>
+ <p class="resource-desc">The most visited architecture website in the world. Use it for project research before interviews. Search a firm's published work to reference specific buildings in your cover letter. The Materials section links real products to projects, which is useful for understanding how firms make specification decisions.</p>
  </div>
 
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://www.designboom.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">Designboom</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Avant-Garde</span>
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://www.dezeen.com" target="_blank" rel="noopener">Dezeen</a></div>
+ <span class="resource-category">Editorial Trends</span>
  </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">The first online architecture magazine. Best for experimental, concept-driven work: pavilions, installations, and starchitect projects. Their video interviews and studio visits give you language for talking about design philosophy in interviews.</p>
- </div>
-
- <h3 class="resource-category-title" style="font-size: 13px; font-weight: 700; margin: 24px 0 6px; color: #1a1a1a;">Professional Practice & Career</h3>
-
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://www.architecturalrecord.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">Architectural Record</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Building Technology</span>
- </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">Founded in 1891. One of the most respected publications in the field. Read it for the business side: industry billings, legal news, and the Building Types Study series (essential when researching healthcare, education, or housing typologies). Their continuing education articles explain complex technical assemblies clearly.</p>
+ <div class="resource-url"><a href="https://www.dezeen.com" target="_blank" rel="noopener">dezeen.com</a></div>
+ <p class="resource-desc">London-based, editorially driven. Dezeen sets visual trends and covers the intersection of architecture, interiors, and technology. Their jobs board is one of the most active in the industry, and their AI and sustainability coverage is ahead of most publications.</p>
  </div>
 
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://archinect.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">Archinect</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Community & Jobs</span>
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://www.designboom.com" target="_blank" rel="noopener">Designboom</a></div>
+ <span class="resource-category">Avant-Garde</span>
  </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">More "street-level" than other sites. The forums are where professionals honestly discuss salaries, office culture, and job market realities. The "Behind the Scenes" interviews explain how firms actually hire. If you want to understand what working in architecture is really like, start here.</p>
- </div>
-
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://www.aia.org/" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">AIA Newsroom</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Industry Data</span>
- </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">The American Institute of Architects provides the most reliable data on market health. Their Architecture Billings Index tells you which sectors are growing or shrinking. Useful for targeting your job search toward active markets. Also covers licensure legislation and student loan advocacy.</p>
+ <div class="resource-url"><a href="https://www.designboom.com" target="_blank" rel="noopener">designboom.com</a></div>
+ <p class="resource-desc">The first online architecture magazine. Best for experimental, concept-driven work: pavilions, installations, and starchitect projects. Their video interviews and studio visits give you language for talking about design philosophy in interviews.</p>
  </div>
 
- <h3 class="resource-category-title" style="font-size: 13px; font-weight: 700; margin: 24px 0 6px; color: #1a1a1a;">Firm Marketing & Competitions</h3>
+ <h3 class="subtitle">Professional Practice &amp; Career</h3>
 
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://architizer.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">Architizer</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Firm Marketing</span>
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://www.architecturalrecord.com" target="_blank" rel="noopener">Architectural Record</a></div>
+ <span class="resource-category">Building Technology</span>
  </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">Where firms go to be seen. Study how offices market their identity through the A+Awards and project narratives. The Journal section features guides on architectural visualization and firm management. Useful for understanding how firms think about their public image, which helps you tailor your application.</p>
- </div>
-
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://bustler.net" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">Bustler</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Competitions</span>
- </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">The premier platform for tracking architectural competitions. If you want to build your portfolio through open calls, check this daily. Their calendar of global design events, exhibitions, and lectures is thorough. Competition wins are one of the fastest ways to get noticed by firms.</p>
+ <div class="resource-url"><a href="https://www.architecturalrecord.com" target="_blank" rel="noopener">architecturalrecord.com</a></div>
+ <p class="resource-desc">Founded in 1891. One of the most respected publications in the field. Read it for the business side: industry billings, legal news, and the Building Types Study series (essential when researching healthcare, education, or housing typologies). Their continuing education articles explain complex technical assemblies clearly.</p>
  </div>
 
- <h3 class="resource-category-title" style="font-size: 13px; font-weight: 700; margin: 24px 0 6px; color: #1a1a1a;">Urbanism & Sustainability</h3>
-
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://www.archpaper.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">The Architect's Newspaper</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Policy & Urbanism</span>
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://archinect.com" target="_blank" rel="noopener">Archinect</a></div>
+ <span class="resource-category">Community &amp; Jobs</span>
  </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">The primary source for how politics and policy affect what gets built in the U.S. Their regional editions provide hyper-local news on projects in specific cities. Essential when you're researching firms in a target market. Understanding the political context of where a firm works makes you a stronger applicant.</p>
- </div>
-
- <div class="resource-item" style="margin-bottom: 16px; padding: 14px 16px; border: 1px solid #e8e8e8; border-radius: 8px;">
- <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
- <a href="https://metropolismag.com" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; color: #1a1a1a; text-decoration: none;">Metropolis Magazine</a>
- <span style="font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Sustainability</span>
- </div>
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;">The leader in tracking the "why" behind design: climate-conscious practice, equity in the built environment, and healthy materials. Their Sustainability Lab provides resources for architects working toward 2030 carbon goals. If sustainability is part of your design philosophy, cite Metropolis in your applications.</p>
+ <div class="resource-url"><a href="https://archinect.com" target="_blank" rel="noopener">archinect.com</a></div>
+ <p class="resource-desc">More "street-level" than other sites. The forums are where professionals honestly discuss salaries, office culture, and job market realities. The "Behind the Scenes" interviews explain how firms actually hire. If you want to understand what working in architecture is really like, start here.</p>
  </div>
 
- <div style="margin-top: 20px; padding: 14px 16px; background: #fffcee; border: 1px solid #e8c547; border-radius: 8px;">
- <p style="font-size: 13px; color: #555; line-height: 1.6; margin: 0;"><strong style="color: #1a1a1a;">How to use these sites strategically:</strong> Before applying to any firm, search their name on ArchDaily, Dezeen, and Architizer. Read their published projects. Reference a specific building in your cover letter. Check Archinect forums for insider perspectives on their office culture. This is the research that separates strong applicants from generic ones.</p>
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://www.aia.org/" target="_blank" rel="noopener">AIA Newsroom</a></div>
+ <span class="resource-category">Industry Data</span>
+ </div>
+ <div class="resource-url"><a href="https://www.aia.org/" target="_blank" rel="noopener">aia.org</a></div>
+ <p class="resource-desc">The American Institute of Architects provides the most reliable data on market health. Their Architecture Billings Index tells you which sectors are growing or shrinking. Useful for targeting your job search toward active markets. Also covers licensure legislation and student loan advocacy.</p>
+ </div>
+
+ <h3 class="subtitle">Firm Marketing &amp; Competitions</h3>
+
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://architizer.com" target="_blank" rel="noopener">Architizer</a></div>
+ <span class="resource-category">Firm Marketing</span>
+ </div>
+ <div class="resource-url"><a href="https://architizer.com" target="_blank" rel="noopener">architizer.com</a></div>
+ <p class="resource-desc">Where firms go to be seen. Study how offices market their identity through the A+Awards and project narratives. The Journal section features guides on architectural visualization and firm management. Useful for understanding how firms think about their public image, which helps you tailor your application.</p>
+ </div>
+
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://bustler.net" target="_blank" rel="noopener">Bustler</a></div>
+ <span class="resource-category">Competitions</span>
+ </div>
+ <div class="resource-url"><a href="https://bustler.net" target="_blank" rel="noopener">bustler.net</a></div>
+ <p class="resource-desc">The premier platform for tracking architectural competitions. If you want to build your portfolio through open calls, check this daily. Their calendar of global design events, exhibitions, and lectures is thorough. Competition wins are one of the fastest ways to get noticed by firms.</p>
+ </div>
+
+ <h3 class="subtitle">Urbanism &amp; Sustainability</h3>
+
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://www.archpaper.com" target="_blank" rel="noopener">The Architect's Newspaper</a></div>
+ <span class="resource-category">Policy &amp; Urbanism</span>
+ </div>
+ <div class="resource-url"><a href="https://www.archpaper.com" target="_blank" rel="noopener">archpaper.com</a></div>
+ <p class="resource-desc">The primary source for how politics and policy affect what gets built in the U.S. Their regional editions provide hyper-local news on projects in specific cities. Essential when you're researching firms in a target market. Understanding the political context of where a firm works makes you a stronger applicant.</p>
+ </div>
+
+ <div class="resource-card">
+ <div class="resource-header">
+ <div class="resource-name"><a href="https://metropolismag.com" target="_blank" rel="noopener">Metropolis Magazine</a></div>
+ <span class="resource-category">Sustainability</span>
+ </div>
+ <div class="resource-url"><a href="https://metropolismag.com" target="_blank" rel="noopener">metropolismag.com</a></div>
+ <p class="resource-desc">The leader in tracking the "why" behind design: climate-conscious practice, equity in the built environment, and healthy materials. Their Sustainability Lab provides resources for architects working toward 2030 carbon goals. If sustainability is part of your design philosophy, cite Metropolis in your applications.</p>
+ </div>
+
+ <div class="box">
+ <p><strong>How to use these sites strategically:</strong> Before applying to any firm, search their name on ArchDaily, Dezeen, and Architizer. Read their published projects. Reference a specific building in your cover letter. Check Archinect forums for insider perspectives on their office culture. This is the research that separates strong applicants from generic ones.</p>
  </div>
  </div>
  </div>
