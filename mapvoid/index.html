@@ -227,9 +227,25 @@
   .results-list::-webkit-scrollbar { width: 5px; }
   .results-list::-webkit-scrollbar-track { background: transparent; }
   .results-list::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 3px; }
-  .firm-card { padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); cursor: pointer; transition: background 0.12s; }
+  .firm-card { position: relative; padding: 12px 36px 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); cursor: pointer; transition: background 0.12s; }
   .firm-card:hover { background: var(--bg-card-hover); }
   .firm-card.selected { background: #fffcee; border-left: 3px solid var(--accent); }
+  /* Star save button on each card — top-right, click does not bubble to card */
+  .firm-card-save {
+    position: absolute; top: 10px; right: 10px;
+    width: 26px; height: 26px;
+    display: flex; align-items: center; justify-content: center;
+    background: none; border: none; padding: 0; cursor: pointer;
+    color: #bbb; border-radius: 4px;
+    transition: color 0.12s, background 0.12s, transform 0.12s;
+  }
+  .firm-card-save:hover { color: var(--accent); background: rgba(0,0,0,0.04); }
+  .firm-card-save.saved { color: var(--accent); }
+  .firm-card-save svg { width: 14px; height: 14px; display: block; }
+  .firm-card-save:active { transform: scale(0.9); }
+  [data-theme="dark"] .firm-card-save:hover { background: rgba(255,255,255,0.06); }
+  /* Active "Saved" filter pill in the sidebar header */
+  .sidebar-tools a.active { color: var(--accent); font-weight: 700; }
   .firm-name { font-size: 14px; font-weight: 600; margin-bottom: 3px; display: flex; align-items: center; gap: 8px; color: var(--text); }
   .discipline-badge { font-size: 9px; padding: 2px 7px; border-radius: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; flex-shrink: 0; }
   .discipline-badge.arch { background: #e8eeff; color: #2962ff; }
@@ -717,7 +733,7 @@
       <div class="sidebar-title-row">
         <h2>Firm Search</h2>
         <div class="sidebar-tools">
-          <a href="#" id="navSaved" onclick="openSavedDrawer(); return false;">Saved <span class="nav-badge" id="navSavedBadge"></span></a>
+          <a href="#" id="navSaved" onclick="toggleSavedOnly(); return false;" title="Show only firms you've saved">Saved <span class="nav-badge" id="navSavedBadge"></span></a>
           <a href="#" id="navAbout" onclick="openAbout(); return false;">About</a>
         </div>
       </div>
@@ -982,16 +998,25 @@ let activeRefines = new Set();
 let searchTerm = '';
 let activeState = 'all';
 let activeSpecialty = '';
+let savedOnly = false;
 let searchDebounce = null;
 
 async function init() {
   populateStates();
   updateStats();
   updateChipCounts();
-  const sorted = [...firms].sort((a,b) => a.name.localeCompare(b.name));
-  renderFirms(sorted);
-  plotMarkers(firms);
-  document.getElementById('resultsCount').textContent = firms.length + ' firms found';
+
+  // Apply any filter state from the URL before the first render so the page
+  // arrives in the bookmarked / shared configuration.
+  const hadUrlState = readUrlState();
+  if (hadUrlState) {
+    applyFilters();
+  } else {
+    const sorted = [...firms].sort((a,b) => a.name.localeCompare(b.name));
+    renderFirms(sorted);
+    plotMarkers(firms);
+    document.getElementById('resultsCount').textContent = firms.length + ' firms found';
+  }
 
   // Check for shareable firm link in URL hash
   const hash = window.location.hash;
@@ -1047,6 +1072,11 @@ function updateStats() {
 
 function getFilteredFirms() {
   let filtered = [...firms];
+  // Saved-only view (takes precedence; the rest of the filters still narrow further)
+  if (savedOnly) {
+    const savedIds = new Set(savedFirms.map(s => s.id));
+    filtered = filtered.filter(f => savedIds.has(f.id));
+  }
   // Specialty filter
   if (activeSpecialty) {
     filtered = filtered.filter(f =>
@@ -1141,9 +1171,13 @@ function clearAllFilters() {
   // Reset refines + student chips
   document.querySelectorAll('#refineChips .filter-chip, #studentChips .filter-chip').forEach(c => c.classList.remove('active'));
   activeRefines.clear();
-  // Reset specialties
+  // Reset specialty
   document.querySelectorAll('#specialtyChips .filter-chip').forEach(c => c.classList.remove('active'));
-  activeSpecialties.clear();
+  activeSpecialty = '';
+  // Reset Saved-only view
+  savedOnly = false;
+  const navSaved = document.getElementById('navSaved');
+  if (navSaved) navSaved.classList.remove('active');
   // Reset search
   document.getElementById('searchInput').value = '';
   searchTerm = '';
@@ -1156,9 +1190,10 @@ function applyFilters() {
   plotMarkers(filtered);
   document.getElementById('resultsCount').textContent = filtered.length + ' firm' + (filtered.length !== 1 ? 's' : '') + ' found';
   // Show/hide clear filters button
-  const hasFilters = activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0 || (typeof activeSpecialties !== 'undefined' && activeSpecialties.size > 0);
+  const hasFilters = activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0 || activeSpecialty || savedOnly;
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) clearBtn.classList.toggle('visible', hasFilters);
+  syncUrlState();
   // Auto-zoom to show filtered results
   if (filtered.length > 0 && (activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0)) {
     const lats = filtered.map(f => f.lat);
@@ -1191,18 +1226,32 @@ function sortResults() {
 function renderFirms(list) {
   const container = document.getElementById('resultsList');
   if (list.length === 0) {
-    container.innerHTML = `
-      <div class="empty-state">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <h4>The void is empty here</h4>
-        <p>No firms match this combination. Try widening your search. Great firms often hide in unexpected places.</p>
-      </div>`;
+    if (savedOnly && savedFirms.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <h4>Nothing saved yet</h4>
+          <p>Tap the star on any firm card to save it here. Your shortlist lives in this browser, no account needed.</p>
+        </div>`;
+    } else {
+      container.innerHTML = `
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <h4>The void is empty here</h4>
+          <p>No firms match this combination. Try widening your search. Great firms often hide in unexpected places.</p>
+        </div>`;
+    }
     return;
   }
   container.innerHTML = list.map(f => {
     const d = DISC[f.discipline] || DISC.architecture;
+    const saved = isFirmSaved(f.id);
+    const starTitle = saved ? 'Remove from saved' : 'Save firm';
     return `
     <div class="firm-card" id="card-${f.id}" onclick="selectFirm(${f.id})">
+      <button class="firm-card-save${saved ? ' saved' : ''}" onclick="toggleSavedOnCard(${f.id}, event)" aria-label="${starTitle}" title="${starTitle}">
+        <svg viewBox="0 0 24 24" fill="${saved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </button>
       <div class="firm-name">
         ${f.name}
         <span class="discipline-badge ${d.badge}">${d.label}</span>
@@ -1217,6 +1266,111 @@ function renderFirms(list) {
       <div class="firm-specialties">${(f.specialties || []).join(' · ')}</div>
     </div>`;
   }).join('');
+}
+
+function toggleSavedOnly() {
+  savedOnly = !savedOnly;
+  const link = document.getElementById('navSaved');
+  if (link) link.classList.toggle('active', savedOnly);
+  applyFilters();
+}
+
+// Toggle save state on a single firm card without bubbling the click
+// up to the card itself (which would open the detail panel).
+function toggleSavedOnCard(id, ev) {
+  if (ev) { ev.stopPropagation(); ev.preventDefault(); }
+  toggleSaveFirm(id);
+  // Re-render the list so the star reflects the new state. If we're in
+  // saved-only view and just unsaved this firm, it will drop out of the list.
+  applyFilters();
+}
+
+// ── URL state sync ──
+// Encodes the current filter set into ?d=&s=&q=&r=&sp=&saved= so a student
+// can bookmark or DM a search. Updates without a page reload.
+function syncUrlState() {
+  const params = new URLSearchParams();
+  if (activeFilters.size > 0) params.set('d', [...activeFilters].join(','));
+  if (activeState && activeState !== 'all') params.set('s', activeState);
+  if (searchTerm) params.set('q', searchTerm);
+  if (activeRefines.size > 0) params.set('r', [...activeRefines].join(','));
+  if (activeSpecialty) params.set('sp', activeSpecialty);
+  if (savedOnly) params.set('saved', '1');
+  const qs = params.toString();
+  const newUrl = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
+  // Only push if changed to avoid spamming history on identical state.
+  if (newUrl !== window.location.pathname + window.location.search + window.location.hash) {
+    history.replaceState(null, '', newUrl);
+  }
+}
+
+// Reads URL params on page load and applies them to the filter state.
+// Returns true if any state was applied (so init() can skip its default render).
+function readUrlState() {
+  const params = new URLSearchParams(window.location.search);
+  let touched = false;
+  const d = params.get('d');
+  if (d) {
+    d.split(',').filter(Boolean).forEach(v => activeFilters.add(v));
+    // Update chip UI
+    document.querySelectorAll('#disciplineChips .filter-chip').forEach(c => {
+      const f = c.dataset.filter;
+      c.classList.toggle('active', f === 'all' ? activeFilters.size === 0 : activeFilters.has(f));
+    });
+    touched = true;
+  }
+  const s = params.get('s');
+  if (s) {
+    activeState = s;
+    const sel = document.getElementById('stateSelect');
+    if (sel) sel.value = s;
+    touched = true;
+  }
+  const q = params.get('q');
+  if (q) {
+    searchTerm = q;
+    const input = document.getElementById('searchInput');
+    if (input) input.value = q;
+    touched = true;
+  }
+  const r = params.get('r');
+  if (r) {
+    r.split(',').filter(Boolean).forEach(v => activeRefines.add(v));
+    document.querySelectorAll('#refineChips .filter-chip, #studentChips .filter-chip').forEach(c => {
+      c.classList.toggle('active', activeRefines.has(c.dataset.refine));
+    });
+    // If any refine chips are active, expand the "More filters" accordion
+    // so users can see what's selected.
+    const moreLabel = document.querySelector('.filter-group-label.collapsible');
+    if (moreLabel && !moreLabel.classList.contains('open')) {
+      moreLabel.classList.add('open');
+      const filtersMore = moreLabel.nextElementSibling;
+      if (filtersMore) filtersMore.classList.remove('collapsed');
+    }
+    touched = true;
+  }
+  const sp = params.get('sp');
+  if (sp) {
+    activeSpecialty = sp;
+    document.querySelectorAll('#specialtyChips .filter-chip').forEach(c => {
+      c.classList.toggle('active', c.dataset.specialty === sp);
+    });
+    // Also expand the "More filters" accordion
+    const moreLabel = document.querySelector('.filter-group-label.collapsible');
+    if (moreLabel && !moreLabel.classList.contains('open')) {
+      moreLabel.classList.add('open');
+      const filtersMore = moreLabel.nextElementSibling;
+      if (filtersMore) filtersMore.classList.remove('collapsed');
+    }
+    touched = true;
+  }
+  if (params.get('saved') === '1') {
+    savedOnly = true;
+    const link = document.getElementById('navSaved');
+    if (link) link.classList.add('active');
+    touched = true;
+  }
+  return touched;
 }
 
 function toggleSpecialty(el) {
@@ -1456,6 +1610,12 @@ function toggleSaveFirm(id) {
   }
   localStorage.setItem('threshold_saved_firms', JSON.stringify(savedFirms));
   updateSavedUI();
+  // Re-render the sidebar list so the star reflects the new state and
+  // saved-only view drops/re-adds the firm. Cheap because the list is
+  // already in memory.
+  if (typeof getFilteredFirms === 'function' && document.getElementById('resultsList')) {
+    sortAndRender(getFilteredFirms());
+  }
   // Refresh detail panel if open
   const panel = document.getElementById('detailPanel');
   if (panel.classList.contains('open')) {
