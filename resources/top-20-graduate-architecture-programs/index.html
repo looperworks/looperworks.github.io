@@ -255,7 +255,13 @@
  .btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
  .btn.active:hover { background: #1a1a1a; color: #fff; }
  .mode-alpha .card-rank { display: none; }
- .mode-alpha .sidebar-nav .nav-number { display: none; }
+ /* Sidebar removed — center the main content like other reading pages. */
+ .container { display: block; min-height: 0; }
+ .main-content { margin-left: 0; }
+ .content-inner { max-width: 1100px; padding: 60px 40px 80px; margin: 0 auto; }
+ @media (max-width: 720px) {
+   .content-inner { padding: 40px 24px 60px; }
+ }
  </style>
 </head>
 <body>
@@ -289,36 +295,7 @@
  </ul>
  </nav>
 </div>
- <button class="mobile-menu-toggle hamburger" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
  <div class="container mode-alpha">
- <aside class="sidebar" id="sidebar">
- <div class="sidebar-content">
- <nav class="sidebar-nav">
- <a href="#school-1" class="nav-item" data-section="1"><span class="nav-number">1</span>Harvard GSD</a>
- <a href="#school-2" class="nav-item" data-section="2"><span class="nav-number">2</span>MIT SA+P</a>
- <a href="#school-3" class="nav-item" data-section="3"><span class="nav-number">3</span>Columbia GSAPP</a>
- <a href="#school-4" class="nav-item" data-section="4"><span class="nav-number">4</span>UPenn Weitzman</a>
- <a href="#school-5" class="nav-item" data-section="5"><span class="nav-number">5</span>Yale</a>
- <a href="#school-6" class="nav-item" data-section="6"><span class="nav-number">6</span>Cornell AAP</a>
- <a href="#school-7" class="nav-item" data-section="7"><span class="nav-number">7</span>UC Berkeley CED</a>
- <a href="#school-8" class="nav-item" data-section="8"><span class="nav-number">8</span>Rice</a>
- <a href="#school-9" class="nav-item" data-section="9"><span class="nav-number">9</span>SCI-Arc</a>
- <a href="#school-10" class="nav-item" data-section="10"><span class="nav-number">10</span>U Michigan Taubman</a>
- <a href="#school-11" class="nav-item" data-section="11"><span class="nav-number">11</span>Princeton SoA</a>
- <a href="#school-12" class="nav-item" data-section="12"><span class="nav-number">12</span>UT Austin</a>
- <a href="#school-13" class="nav-item" data-section="13"><span class="nav-number">13</span>UVA</a>
- <a href="#school-14" class="nav-item" data-section="14"><span class="nav-number">14</span>Georgia Tech</a>
- <a href="#school-15" class="nav-item" data-section="15"><span class="nav-number">15</span>WashU Sam Fox</a>
- <a href="#school-16" class="nav-item" data-section="16"><span class="nav-number">16</span>USC</a>
- <a href="#school-17" class="nav-item" data-section="17"><span class="nav-number">17</span>UCLA AUD</a>
- <a href="#school-18" class="nav-item" data-section="18"><span class="nav-number">18</span>Pratt</a>
- <a href="#school-19" class="nav-item" data-section="19"><span class="nav-number">19</span>Virginia Tech</a>
- <a href="#school-20" class="nav-item" data-section="20"><span class="nav-number">20</span>U Florida</a>
- </nav>
- </div>
- </aside>
-
  <main class="main-content" id="main-content">
  <div class="content-inner">
  <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -647,26 +624,18 @@
  var alphaBtn = document.getElementById('sortAlphaBtn');
  if (!rankedBtn || !alphaBtn) return;
  var grid = document.querySelector('.kanban-grid');
- var sidebarNav = document.querySelector('.sidebar-nav');
  var h1 = document.querySelector('.page-title');
  var container = document.querySelector('.container');
- if (!grid || !sidebarNav || !h1 || !container) return;
+ if (!grid || !h1 || !container) return;
 
  var rankedCards = Array.prototype.slice.call(grid.querySelectorAll('.kanban-card'));
- var rankedNav = Array.prototype.slice.call(sidebarNav.querySelectorAll('.nav-item'));
 
  function schoolName(el) {
  var s = el.querySelector('.card-school');
  return (s ? s.textContent : '').trim();
  }
- function navName(el) {
- return el.textContent.replace(/^\s*\d+\s*/, '').trim();
- }
  var alphaCards = rankedCards.slice().sort(function(a, b) {
  return schoolName(a).localeCompare(schoolName(b));
- });
- var alphaNav = rankedNav.slice().sort(function(a, b) {
- return navName(a).localeCompare(navName(b));
  });
 
  var titleRanked = 'Graduate Architecture Programs (Ranked)';
@@ -675,7 +644,6 @@
  function applyMode(mode) {
  var alpha = mode === 'alpha';
  (alpha ? alphaCards : rankedCards).forEach(function(c) { grid.appendChild(c); });
- (alpha ? alphaNav : rankedNav).forEach(function(n) { sidebarNav.appendChild(n); });
  container.classList.toggle('mode-alpha', alpha);
  h1.textContent = alpha ? titleAlpha : titleRanked;
  rankedBtn.classList.toggle('active', !alpha);
