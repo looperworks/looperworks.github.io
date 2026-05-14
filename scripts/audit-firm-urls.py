@@ -6,26 +6,40 @@ Verify every firm website and careersUrl in mapvoid/firms.js.
 
 What it does:
   1. Loads mapvoid/firms.js and collects all unique website + careersUrl values.
-  2. Issues parallel HTTP requests with realistic browser headers.
-  3. For URLs that fail under the original scheme/host, tries variants
-     (http <-> https, www <-> bare host). If a variant works, the data is
-     auto-updated so the firm card links to the working URL.
-  4. Writes an updated markdown report listing the firms whose URLs are
-     still broken after the variant retry, grouped by failure mode.
+  2. Issues parallel HTTP requests with realistic browser headers (pass 1).
+  3. For URLs that fail, tries variants (http <-> https, www <-> bare host)
+     (pass 2). If a variant works, the data is auto-updated so the firm card
+     links to the working URL.
+  4. For URLs that STILL fail, falls back to a real Chromium browser via
+     Playwright (pass 3). Many small-firm sites sit behind Cloudflare bot
+     challenges or TLS-fingerprint filtering that block urllib but pass a
+     full browser. This stage cuts the false-positive rate in the audit
+     significantly.
+  5. Writes an updated markdown report listing the firms whose URLs are
+     still broken after all three passes, grouped by failure mode.
 
 Defaults:
   - firms.js path:    mapvoid/firms.js (relative to repo root)
   - report path:      ../AUDIT_broken_firm_urls.md (one level above repo root,
                       so it is not served by GitHub Pages)
-  - parallelism:      15 workers
-  - per-request timeout: 12 seconds
+  - parallelism:      15 workers (urllib stages)
+  - per-request timeout: 12 seconds (urllib), 20 seconds (browser)
   - User-Agent:       a current desktop Chrome string
 
+Browser fallback setup (one-time, optional but recommended):
+  pip install playwright
+  playwright install chromium
+
+If playwright is not installed, the script logs a warning and skips the
+browser fallback. Everything else still runs; only the false-positive rate
+on Cloudflare-protected sites stays higher.
+
 Usage:
-  python3 scripts/audit-firm-urls.py                # run, write firms.js + report
-  python3 scripts/audit-firm-urls.py --no-write     # dry run, no file changes
-  python3 scripts/audit-firm-urls.py --report PATH  # custom report path
-  python3 scripts/audit-firm-urls.py --workers N    # adjust concurrency
+  python3 scripts/audit-firm-urls.py                  # run, write firms.js + report
+  python3 scripts/audit-firm-urls.py --no-write       # dry run, no file changes
+  python3 scripts/audit-firm-urls.py --report PATH    # custom report path
+  python3 scripts/audit-firm-urls.py --workers N      # adjust concurrency
+  python3 scripts/audit-firm-urls.py --no-browser     # skip Playwright stage
 """
 
 from __future__ import annotations
@@ -134,6 +148,79 @@ def try_recover(url: str, timeout: int) -> tuple[str, str]:
     return (s, url)
 
 
+def try_browser(urls: list[str], timeout: int = 20) -> dict[str, tuple[str, str]]:
+    """Browser-realistic check for URLs that failed earlier stages.
+
+    Launches one headless Chromium, then for each URL tries the original and
+    its variants until one returns 2xx/3xx. This is the slow path, intended
+    only for URLs that urllib could not reach (often Cloudflare-protected
+    small-firm sites that gate on TLS fingerprint or JS challenge).
+
+    Returns dict mapping original_url -> (status_label, working_url). If
+    the original URL works, working_url == original_url. If a variant works,
+    working_url is the variant.
+
+    If `playwright` is not installed, returns {} and logs a hint.
+    """
+    if not urls:
+        return {}
+
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print(
+            "browser fallback skipped: playwright not installed. "
+            "Install with: pip install playwright && playwright install chromium",
+            file=sys.stderr,
+        )
+        return {}
+
+    results: dict[str, tuple[str, str]] = {}
+    print(
+        f"browser fallback: launching Chromium for {len(urls)} URLs (~{len(urls) * 3}s)",
+        file=sys.stderr,
+    )
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        ctx = browser.new_context(
+            user_agent=HEADERS["User-Agent"],
+            viewport={"width": 1440, "height": 900},
+            locale="en-US",
+            extra_http_headers={
+                "Accept-Language": "en-US,en;q=0.9",
+            },
+            ignore_https_errors=True,
+        )
+        try:
+            for url in urls:
+                page = ctx.new_page()
+                last_status = "ERR"
+                chosen: tuple[str, str] | None = None
+                try:
+                    for cand in variants(url):
+                        try:
+                            resp = page.goto(
+                                cand,
+                                timeout=timeout * 1000,
+                                wait_until="domcontentloaded",
+                            )
+                            code = str(resp.status) if resp is not None else "NoResp"
+                            last_status = code
+                            if is_ok(code):
+                                chosen = (code, cand)
+                                break
+                        except Exception as e:
+                            last_status = type(e).__name__[:15]
+                finally:
+                    page.close()
+                results[url] = chosen if chosen else (last_status, url)
+        finally:
+            browser.close()
+
+    return results
+
+
 def categorize(status: str) -> str:
     if is_ok(status):
         return "ok"
@@ -235,6 +322,25 @@ def main() -> int:
         action="store_false",
         help="Keep broken careersUrl values; report only.",
     )
+    parser.add_argument(
+        "--browser",
+        dest="use_browser",
+        action="store_true",
+        default=True,
+        help="Use Playwright Chromium for URLs that failed earlier stages (default on).",
+    )
+    parser.add_argument(
+        "--no-browser",
+        dest="use_browser",
+        action="store_false",
+        help="Skip the browser fallback stage; faster but more false positives.",
+    )
+    parser.add_argument(
+        "--browser-timeout",
+        type=int,
+        default=20,
+        help="Per-request timeout for the browser stage (seconds).",
+    )
     args = parser.parse_args()
 
     socket.setdefaulttimeout(args.timeout + 3)
@@ -265,7 +371,29 @@ def main() -> int:
             else:
                 raw_status[orig] = new_status
 
-    print(f"recoveries: {len(recoveries)}", file=sys.stderr)
+    print(f"recoveries after urllib variants: {len(recoveries)}", file=sys.stderr)
+
+    # Third pass: real browser via Playwright for URLs that still fail.
+    # This catches Cloudflare challenges and TLS-fingerprint bot blocking.
+    if args.use_browser:
+        still_failing = [u for u, s in raw_status.items() if not is_ok(s)]
+        if still_failing:
+            browser_results = try_browser(still_failing, timeout=args.browser_timeout)
+            browser_recovered = 0
+            for orig, (status, working_url) in browser_results.items():
+                if is_ok(status):
+                    raw_status[orig] = status
+                    if working_url != orig:
+                        recoveries[orig] = working_url
+                    browser_recovered += 1
+                else:
+                    raw_status[orig] = status
+            if browser_results:
+                print(
+                    f"browser pass: {browser_recovered} additional recoveries "
+                    f"({browser_recovered}/{len(still_failing)} false positives fixed)",
+                    file=sys.stderr,
+                )
 
     # Apply recoveries to firm records
     applied_recoveries = 0
