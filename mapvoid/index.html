@@ -472,6 +472,47 @@
   .saved-item-note:focus { border-color: var(--accent); }
   .saved-item-note::placeholder { color: var(--text-muted); }
   .saved-item-remove { background: none; border: none; color: #ccc; cursor: pointer; font-size: 16px; padding: 2px 6px; border-radius: 4px; }
+  /* Application-status filter tabs at top of saved drawer */
+  .saved-filter-tabs {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    padding: 10px 22px 4px; background: var(--bg-card);
+    position: sticky; top: 0; z-index: 1;
+    border-bottom: 1px solid var(--border);
+  }
+  .saved-filter-tab {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 9px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 12px;
+    font-size: 10px; font-family: inherit; cursor: pointer;
+    color: var(--text-dim); transition: all 0.15s;
+  }
+  .saved-filter-tab:hover { background: var(--bg-card-hover); color: var(--text); }
+  .saved-filter-tab.active { background: var(--text); color: #fff; border-color: var(--text); }
+  .saved-filter-tab.active .status-dot { box-shadow: 0 0 0 1px rgba(255,255,255,0.4); }
+  .saved-filter-tab > span:last-child { opacity: 0.6; font-weight: 500; margin-left: 2px; }
+  .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; }
+  /* Status pill on each saved item — click to advance through stages */
+  .saved-item-actions {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  .saved-status-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 2px 9px;
+    border: 1px solid var(--c, var(--border));
+    color: var(--c, var(--text-dim));
+    background: var(--bg); border-radius: 11px;
+    font-size: 10px; font-weight: 600; cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+  }
+  .saved-status-pill:hover { background: var(--bg-card-hover); }
+  .saved-item-actions a {
+    font-size: 11px; color: var(--accent); text-decoration: none;
+  }
+  .saved-item-actions a:hover { text-decoration: underline; }
+  [data-theme="dark"] .saved-filter-tab { background: #2a2a2a; }
+  [data-theme="dark"] .saved-filter-tabs { background: #1e1e1e; }
   .saved-item-remove:hover { color: #e53935; background: #fce4ec; }
   .saved-drawer-empty { padding: 60px 22px; text-align: center; color: var(--text-muted); }
   .saved-drawer-empty svg { width: 44px; height: 44px; opacity: 0.2; margin-bottom: 10px; }
@@ -2025,6 +2066,41 @@ function updateSavedUI() {
   renderSavedList();
 }
 
+// ─── Application status tracker for saved firms ──────────────────────
+// Each saved firm has a status from this ordered set. Persists alongside
+// savedFirms in localStorage. Default 'Researching' for new saves.
+const APP_STATUSES = ['Researching', 'Applied', 'Interview', 'Offer', 'Pass'];
+const STATUS_COLORS = {
+  'Researching': '#7c8694',  // slate
+  'Applied':     '#2962ff',  // blue
+  'Interview':   '#ed6c02',  // amber
+  'Offer':       '#2e7d32',  // green
+  'Pass':        '#9e9e9e',  // gray
+};
+let savedFilterStatus = 'all';  // drawer filter; 'all' or one of APP_STATUSES
+
+function getSavedStatus(savedFirm) {
+  return savedFirm.status || 'Researching';
+}
+
+function cycleStatus(index) {
+  const s = savedFirms[index];
+  if (!s) return;
+  const cur = getSavedStatus(s);
+  const i = APP_STATUSES.indexOf(cur);
+  s.status = APP_STATUSES[(i + 1) % APP_STATUSES.length];
+  localStorage.setItem('threshold_saved_firms', JSON.stringify(savedFirms));
+  renderSavedList();
+}
+
+function setSavedFilter(status) {
+  savedFilterStatus = status;
+  document.querySelectorAll('.saved-filter-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.status === status);
+  });
+  renderSavedList();
+}
+
 function renderSavedList() {
   const container = document.getElementById('savedList');
   if (!container) return;
@@ -2032,20 +2108,48 @@ function renderSavedList() {
     container.innerHTML = '<div class="saved-drawer-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><p>No firms saved yet.<br>Browse firms on the map and save the ones that interest you.</p></div>';
     return;
   }
-  container.innerHTML = savedFirms.map((s, i) => {
+
+  // Build status filter tabs (sticky at top of drawer list)
+  const counts = { all: savedFirms.length };
+  APP_STATUSES.forEach(s => { counts[s] = 0; });
+  savedFirms.forEach(f => { counts[getSavedStatus(f)] = (counts[getSavedStatus(f)] || 0) + 1; });
+  const tabsHtml = `
+    <div class="saved-filter-tabs">
+      <button class="saved-filter-tab ${savedFilterStatus === 'all' ? 'active' : ''}" data-status="all" onclick="setSavedFilter('all')">All <span>${counts.all}</span></button>
+      ${APP_STATUSES.map(s => `<button class="saved-filter-tab ${savedFilterStatus === s ? 'active' : ''}" data-status="${s}" onclick="setSavedFilter('${s}')"><span class="status-dot" style="background:${STATUS_COLORS[s]}"></span>${s} <span>${counts[s] || 0}</span></button>`).join('')}
+    </div>
+  `;
+
+  // Filter the list by selected status
+  const visible = savedFirms
+    .map((s, originalIdx) => ({ s, i: originalIdx }))
+    .filter(({s}) => savedFilterStatus === 'all' || getSavedStatus(s) === savedFilterStatus);
+
+  if (visible.length === 0) {
+    container.innerHTML = tabsHtml + '<div class="saved-drawer-empty" style="padding:30px 22px"><p>No saved firms in this status.</p></div>';
+    return;
+  }
+
+  const itemsHtml = visible.map(({s, i}) => {
     const d = DISC[s.discipline] || DISC.architecture;
-    return '<div class="saved-item">' +
-      '<div class="saved-item-info">' +
-        '<div class="saved-item-name">' + s.name + ' <span class="discipline-badge ' + d.badge + '" style="font-size:8px;padding:1px 5px;">' + d.label + '</span></div>' +
-        '<div class="saved-item-meta">' + s.city + ', ' + s.state + (s.size ? ' · ' + s.size + ' emp.' : '') + (s.specialties ? ' · ' + s.specialties : '') + '</div>' +
-        '<div class="saved-item-links">' +
-          (s.website ? '<a href="' + s.website + '" target="_blank">Website</a>' : '') +
-          '<a href="' + s.careersUrl + '" target="_blank">Careers</a>' +
-        '</div>' +
-      '</div>' +
-      '<button class="saved-item-remove" onclick="removeSaved(' + i + ')" title="Remove">&times;</button>' +
-    '</div>';
+    const status = getSavedStatus(s);
+    return `<div class="saved-item">
+      <div class="saved-item-info">
+        <div class="saved-item-name">${s.name} <span class="discipline-badge ${d.badge}" style="font-size:8px;padding:1px 5px;">${d.label}</span></div>
+        <div class="saved-item-meta">${s.city}, ${s.state}${s.size ? ' · ' + s.size + ' emp.' : ''}${s.specialties ? ' · ' + s.specialties : ''}</div>
+        <div class="saved-item-actions">
+          <button class="saved-status-pill" onclick="cycleStatus(${i})" title="Click to advance status" style="--c:${STATUS_COLORS[status]}">
+            <span class="status-dot" style="background:${STATUS_COLORS[status]}"></span>${status}
+          </button>
+          ${s.website ? `<a href="${s.website}" target="_blank">Website</a>` : ''}
+          ${s.careersUrl ? `<a href="${s.careersUrl}" target="_blank">Careers</a>` : ''}
+        </div>
+      </div>
+      <button class="saved-item-remove" onclick="removeSaved(${i})" title="Remove">&times;</button>
+    </div>`;
   }).join('');
+
+  container.innerHTML = tabsHtml + itemsHtml;
 }
 
 function removeSaved(index) {
@@ -2074,9 +2178,10 @@ function closeSavedDrawer() {
 
 function exportCSV() {
   if (savedFirms.length === 0) return;
-  const headers = ['Firm Name', 'Primary Discipline', 'Location', 'Website', 'Focus Area'];
+  const headers = ['Firm Name', 'Status', 'Primary Discipline', 'Location', 'Website', 'Careers URL', 'Focus Area'];
   const rows = savedFirms.map(s => [
-    s.name, s.discipline, s.city + ', ' + s.state, s.website, s.specialties
+    s.name, getSavedStatus(s), s.discipline, s.city + ', ' + s.state,
+    s.website || '', s.careersUrl || '', s.specialties || ''
   ]);
   const csvContent = [headers, ...rows]
     .map(row => row.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(','))
