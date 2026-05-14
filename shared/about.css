@@ -136,9 +136,14 @@ html, body {
   color: #111;
 }
 
-/* Footer alignment — match page margin */
+/* Footer alignment — match page margin. Extend the divider line back
+   under the 260px page offset so it spans the full page width visually. */
 .site-footer {
   margin-left: 260px;
+}
+
+.site-footer::before {
+  left: -260px;
 }
 
 /* Responsive — page-specific */
@@ -150,6 +155,10 @@ html, body {
 
   .site-footer {
     margin-left: 0;
+  }
+
+  .site-footer::before {
+    left: 0;
   }
 
   .layout {
