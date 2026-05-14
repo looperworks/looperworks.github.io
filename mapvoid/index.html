@@ -820,23 +820,75 @@
   }
   .about-modal-body .about-cta button:hover { background: #3a352c; }
 
-  /* Subscribe popup */
-  .subscribe-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 1300; opacity: 0; pointer-events: none; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+  /* Subscribe popup — same parchment palette as About modal */
+  .subscribe-overlay {
+    position: fixed; inset: 0;
+    background: rgba(28, 24, 18, 0.45);
+    z-index: 1300; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  }
   .subscribe-overlay.open { opacity: 1; pointer-events: auto; }
-  .subscribe-popup { background: #fff; border-radius: 16px; max-width: 400px; width: 90%; box-shadow: 0 25px 80px rgba(0,0,0,0.2); transform: translateY(20px) scale(0.97); transition: transform 0.3s ease; overflow: hidden; }
-  .subscribe-overlay.open .subscribe-popup { transform: translateY(0) scale(1); }
-  .subscribe-popup-hero { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 20px 24px 16px; position: relative; }
-  .subscribe-popup-hero h3 { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 4px; }
-  .subscribe-popup-hero p { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.4; margin: 0; }
-  .subscribe-popup-close { position: absolute; top: 10px; right: 12px; background: rgba(255,255,255,0.1); border: none; font-size: 16px; color: rgba(255,255,255,0.7); cursor: pointer; padding: 2px 8px; border-radius: 6px; transition: all 0.15s; }
-  .subscribe-popup-close:hover { color: #fff; background: rgba(255,255,255,0.2); }
-  .subscribe-popup-body { padding: 18px 24px 22px; }
+  .subscribe-popup {
+    background: #fdfbf6;
+    border: 1px solid #e5dfd1;
+    border-radius: 4px;
+    max-width: 440px; width: 92%;
+    box-shadow: 0 24px 64px rgba(28, 24, 18, 0.18);
+    transform: translateY(16px); opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .subscribe-overlay.open .subscribe-popup { transform: translateY(0); opacity: 1; }
+  .subscribe-popup-hero {
+    background: transparent;
+    padding: 24px 28px 18px;
+    border-bottom: 1px solid #ebe5d6;
+    position: relative;
+  }
+  .subscribe-popup-hero h3 {
+    font-size: 18px; font-weight: 700;
+    color: #1a1a1a; letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .subscribe-popup-hero p {
+    font-size: 12px; color: #6b6356;
+    line-height: 1.55; margin: 0;
+  }
+  .subscribe-popup-close {
+    position: absolute; top: 14px; right: 14px;
+    background: none; border: none;
+    width: 28px; height: 28px; border-radius: 50%;
+    font-size: 18px; line-height: 1; color: #8d8473;
+    cursor: pointer; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s;
+  }
+  .subscribe-popup-close:hover { background: rgba(28, 24, 18, 0.06); color: #1a1a1a; }
+  .subscribe-popup-body { padding: 20px 28px 22px; }
   .subscribe-popup-body form { display: flex; gap: 8px; }
-  .subscribe-popup-body input[type="email"] { flex: 1; padding: 9px 12px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 12px; font-family: inherit; outline: none; transition: border-color 0.15s; }
-  .subscribe-popup-body input[type="email"]:focus { border-color: var(--accent); }
-  .subscribe-popup-body button[type="submit"] { padding: 9px 18px; background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border: none; border-radius: 8px; font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer; white-space: nowrap; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 12px rgba(15,52,96,0.3); }
-  .subscribe-popup-body button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,52,96,0.4); }
-  .subscribe-popup-body .subscribe-note { font-size: 10px; color: var(--text-muted); margin-top: 10px; line-height: 1.4; }
+  .subscribe-popup-body input[type="email"] {
+    flex: 1; padding: 10px 13px;
+    background: #fff;
+    border: 1px solid #d4cdba; border-radius: 3px;
+    font-size: 12px; font-family: inherit; color: #1a1a1a;
+    outline: none; transition: border-color 0.15s;
+  }
+  .subscribe-popup-body input[type="email"]:focus { border-color: #1a1a1a; }
+  .subscribe-popup-body input[type="email"]::placeholder { color: #a59c87; }
+  .subscribe-popup-body button[type="submit"] {
+    padding: 10px 20px;
+    background: #1a1a1a; color: #fdfbf6;
+    border: none; border-radius: 3px;
+    font-size: 12px; font-weight: 600; font-family: inherit;
+    letter-spacing: 0.02em;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .subscribe-popup-body button[type="submit"]:hover { background: #3a352c; }
+  .subscribe-popup-body .subscribe-note { font-size: 10px; color: #8d8473; margin-top: 12px; line-height: 1.5; font-style: italic; }
   .subscribe-popup-body .subscribe-popup-msg { font-size: 11px; margin-top: 10px; font-weight: 600; }
 
   /* Hero section; hidden (map is default) */
