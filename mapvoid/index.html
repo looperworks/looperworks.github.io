@@ -3104,14 +3104,19 @@ document.getElementById('heroSearchInput').addEventListener('keyup', function(e)
 
 function openAbout() {
   // Refresh stats from live firm data each time the modal opens so the
-  // counts stay accurate as firms get added or removed.
+  // counts stay accurate as firms get added or removed. The build-time
+  // script scripts/sync-firm-counts.py keeps the static fallback in
+  // sync; this runtime read is a safety net.
   const firmsEl = document.getElementById('aboutStatFirms');
   const statesEl = document.getElementById('aboutStatStates');
   if (firmsEl && typeof firms !== 'undefined') {
     firmsEl.textContent = firms.length.toLocaleString();
   }
   if (statesEl && typeof firms !== 'undefined') {
-    statesEl.textContent = new Set(firms.map(f => f.state)).size;
+    // Exclude DC + PR so this matches the "50 STATES" marketing copy.
+    const stateCodes = new Set(firms.map(f => f.state));
+    stateCodes.delete('DC'); stateCodes.delete('PR');
+    statesEl.textContent = stateCodes.size;
   }
   document.getElementById('aboutOverlay').classList.add('open');
 }
