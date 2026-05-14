@@ -537,7 +537,69 @@
   .saved-drawer-actions .export-btn { padding: 7px 16px; background: #2e7d32; color: #fff; border: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.15s; }
   .saved-drawer-actions .export-btn:hover { background: #1b5e20; }
   .saved-drawer-actions .export-btn svg { width: 14px; height: 14px; }
+  .saved-drawer-actions .compare-btn { padding: 7px 12px; background: var(--bg); color: var(--text-dim); border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 12px; font-weight: 500; font-family: inherit; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s; }
+  .saved-drawer-actions .compare-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .saved-drawer-actions .compare-btn svg { width: 13px; height: 13px; }
   .saved-drawer-actions .clear-btn { padding: 7px 12px; background: none; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-dim); cursor: pointer; font-family: inherit; }
+  /* Compare modal */
+  .compare-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.55); z-index: 1300;
+    opacity: 0; pointer-events: none;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.2s;
+  }
+  .compare-overlay.open { opacity: 1; pointer-events: auto; }
+  .compare-modal {
+    background: #fff; border-radius: 8px;
+    width: min(1100px, 92vw); max-height: 88vh;
+    display: flex; flex-direction: column;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.3);
+  }
+  .compare-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 22px; border-bottom: 1px solid var(--border);
+  }
+  .compare-header h2 { font-size: 16px; font-weight: 800; }
+  .compare-body { overflow-y: auto; padding: 12px 22px 22px; }
+  .compare-picker {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 4px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+  }
+  .compare-picker-hint { width: 100%; font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+  .compare-picker-chip {
+    padding: 5px 11px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 14px;
+    font-size: 11px; font-family: inherit; cursor: pointer;
+    color: var(--text-dim); transition: all 0.15s;
+  }
+  .compare-picker-chip:hover { background: var(--bg-card-hover); }
+  .compare-picker-chip.selected { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .compare-picker-chip.disabled { opacity: 0.4; cursor: not-allowed; }
+  .compare-grid {
+    display: grid; gap: 12px;
+    grid-template-columns: 120px repeat(var(--cols, 2), 1fr);
+  }
+  .compare-grid .compare-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--text-muted); font-weight: 700;
+    padding-top: 6px;
+  }
+  .compare-grid .compare-cell {
+    font-size: 12px; color: var(--text);
+    padding: 6px 10px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 6px;
+  }
+  .compare-grid .compare-cell.head {
+    font-size: 14px; font-weight: 700; color: var(--text);
+    background: #fff; border-color: var(--border);
+  }
+  .compare-grid .compare-cell a { color: var(--accent); text-decoration: none; }
+  .compare-grid .compare-cell a:hover { text-decoration: underline; }
+  .compare-empty { padding: 40px 22px; text-align: center; color: var(--text-muted); font-size: 12px; }
+  [data-theme="dark"] .compare-modal { background: #1e1e1e; color: #e8e8e8; }
+  [data-theme="dark"] .compare-grid .compare-cell { background: #2a2a2a; }
+  [data-theme="dark"] .compare-grid .compare-cell.head { background: #1e1e1e; }
   .saved-drawer-actions .clear-btn:hover { border-color: var(--border-hover); color: var(--text); }
   .saved-drawer-actions .saved-count { font-size: 12px; color: var(--text-muted); margin-left: auto; }
   .saved-drawer-list { flex: 1; overflow-y: auto; }
@@ -1125,10 +1187,25 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Export CSV
     </button>
+    <button class="compare-btn" onclick="openCompare()" title="Compare 2–3 saved firms side by side">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+      Compare
+    </button>
     <button class="clear-btn" onclick="clearAllSaved()">Clear All</button>
     <span class="saved-count" id="drawerCount">0 firms saved</span>
   </div>
   <div class="saved-drawer-list" id="savedList"></div>
+</div>
+
+<!-- Compare firms modal: side-by-side view of 2–3 selected saved firms -->
+<div class="compare-overlay" id="compareOverlay" onclick="if(event.target===this)closeCompare()">
+  <div class="compare-modal">
+    <div class="compare-header">
+      <h2>Compare firms</h2>
+      <button class="drawer-close" onclick="closeCompare()">&times;</button>
+    </div>
+    <div class="compare-body" id="compareBody"></div>
+  </div>
 </div>
 
 <script>
@@ -2174,6 +2251,90 @@ function openSavedDrawer() {
 function closeSavedDrawer() {
   document.getElementById('savedDrawer').classList.remove('open');
   document.getElementById('savedOverlay').classList.remove('open');
+}
+
+// ─── Compare 2–3 saved firms side-by-side ────────────────────────────
+let compareSelection = new Set();  // ids of saved firms in the comparison
+
+function openCompare() {
+  // Preselect first 2 saved firms if nothing chosen yet
+  if (compareSelection.size === 0 && savedFirms.length >= 2) {
+    compareSelection.add(savedFirms[0].id);
+    compareSelection.add(savedFirms[1].id);
+  }
+  document.getElementById('compareOverlay').classList.add('open');
+  renderCompare();
+}
+
+function closeCompare() {
+  document.getElementById('compareOverlay').classList.remove('open');
+}
+
+function toggleCompareSelection(id) {
+  if (compareSelection.has(id)) {
+    compareSelection.delete(id);
+  } else {
+    if (compareSelection.size >= 3) return;  // cap at 3
+    compareSelection.add(id);
+  }
+  renderCompare();
+}
+
+function renderCompare() {
+  const body = document.getElementById('compareBody');
+  if (!body) return;
+  if (savedFirms.length < 2) {
+    body.innerHTML = `
+      <div class="compare-empty">
+        <p>Save at least 2 firms to compare them.<br>Star firms on the map to add them to your shortlist.</p>
+      </div>`;
+    return;
+  }
+
+  // Picker chips (one per saved firm)
+  const pickerHtml = `
+    <div class="compare-picker">
+      <div class="compare-picker-hint">Pick 2–3 firms to compare:</div>
+      ${savedFirms.map(s => {
+        const isSel = compareSelection.has(s.id);
+        const isFull = compareSelection.size >= 3 && !isSel;
+        return `<button class="compare-picker-chip${isSel ? ' selected' : ''}${isFull ? ' disabled' : ''}" onclick="toggleCompareSelection(${s.id})">${s.name}</button>`;
+      }).join('')}
+    </div>
+  `;
+
+  const selected = savedFirms.filter(s => compareSelection.has(s.id));
+  if (selected.length < 2) {
+    body.innerHTML = pickerHtml + `<div class="compare-empty"><p>Select at least 2 firms.</p></div>`;
+    return;
+  }
+
+  // Build the comparison grid
+  const cols = selected.length;
+  const rows = [
+    { label: 'Firm', cells: selected.map(s => `<div class="compare-cell head">${s.name}</div>`) },
+    { label: 'Location', cells: selected.map(s => `<div class="compare-cell">${s.city}, ${s.state}</div>`) },
+    { label: 'Discipline', cells: selected.map(s => `<div class="compare-cell">${(DISC[s.discipline]||DISC.architecture).label}</div>`) },
+    { label: 'Size', cells: selected.map(s => `<div class="compare-cell">${s.size ? s.size + ' employees' : '—'}</div>`) },
+    { label: 'Specialties', cells: selected.map(s => `<div class="compare-cell">${s.specialties || '—'}</div>`) },
+    { label: 'Status', cells: selected.map(s => {
+      const st = getSavedStatus(s);
+      return `<div class="compare-cell"><span class="status-dot" style="background:${STATUS_COLORS[st]};margin-right:5px"></span>${st}</div>`;
+    }) },
+    { label: 'Website', cells: selected.map(s => `<div class="compare-cell">${s.website ? `<a href="${s.website}" target="_blank">${s.website.replace(/https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a>` : '—'}</div>`) },
+    { label: 'Careers', cells: selected.map(s => `<div class="compare-cell">${s.careersUrl ? `<a href="${s.careersUrl}" target="_blank">Careers page →</a>` : '—'}</div>`) },
+  ];
+
+  const gridHtml = `
+    <div class="compare-grid" style="--cols:${cols}">
+      ${rows.map(r => `
+        <div class="compare-label">${r.label}</div>
+        ${r.cells.join('')}
+      `).join('')}
+    </div>
+  `;
+
+  body.innerHTML = pickerHtml + gridHtml;
 }
 
 function exportCSV() {
