@@ -223,6 +223,61 @@
   .clear-filters:hover { color: var(--text); }
   .clear-filters.visible { display: inline; }
 
+  /* Active-filter pill bar — one chip per active filter, click X to remove */
+  .active-filter-pills {
+    display: none; flex-wrap: wrap; gap: 6px;
+    padding: 8px 16px; border-bottom: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+  .active-filter-pills.visible { display: flex; }
+  .active-filter-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 4px 3px 9px;
+    background: var(--accent); color: #fff;
+    border-radius: 14px; font-size: 11px; font-weight: 500;
+    cursor: default;
+  }
+  .active-filter-pill button {
+    background: rgba(255,255,255,0.18); color: #fff;
+    border: none; cursor: pointer;
+    width: 17px; height: 17px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; line-height: 1;
+    padding: 0; transition: background 0.15s;
+    font-family: inherit;
+  }
+  .active-filter-pill button:hover { background: rgba(255,255,255,0.35); }
+  [data-theme="dark"] .active-filter-pills { background: #1e1e1e; }
+
+  /* Recently viewed strip — last 7 firms opened, horizontal scroll on overflow */
+  .recently-viewed {
+    padding: 8px 16px; border-bottom: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+  .recently-viewed-label {
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--text-muted); font-weight: 600; margin-bottom: 4px;
+  }
+  .recently-viewed-row {
+    display: flex; gap: 6px; overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .recently-viewed-row::-webkit-scrollbar { display: none; }
+  .recently-viewed-item {
+    flex: 0 0 auto; max-width: 140px;
+    padding: 5px 10px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 12px;
+    font-size: 11px; color: var(--text-dim); cursor: pointer;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .recently-viewed-item:hover {
+    background: var(--bg-card-hover); border-color: var(--border-hover);
+    color: var(--text);
+  }
+  [data-theme="dark"] .recently-viewed { background: #1e1e1e; }
+  [data-theme="dark"] .recently-viewed-item { background: #2a2a2a; }
+
   .results-list { flex: 1; overflow-y: auto; }
   .results-list::-webkit-scrollbar { width: 5px; }
   .results-list::-webkit-scrollbar-track { background: transparent; }
@@ -307,6 +362,21 @@
   .detail-tag { padding: 3px 9px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; color: var(--text-dim); }
   .detail-tag.project-tag { background: #f0f7ff; border-color: #c2d9f2; color: #1a5276; }
   .detail-tag.hiring-tag { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; font-weight: 600; }
+
+  /* Similar firms — clickable cards in detail panel tail */
+  .detail-similar-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+  .detail-similar-item {
+    text-align: left; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 8px 10px; cursor: pointer; font-family: inherit;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .detail-similar-item:hover {
+    background: var(--bg-card-hover); border-color: var(--border-hover);
+  }
+  .dsi-name { font-size: 12px; font-weight: 600; color: var(--text); }
+  .dsi-meta { font-size: 10px; color: var(--text-muted); margin-top: 1px; }
+  [data-theme="dark"] .detail-similar-item { background: #2a2a2a; }
   .student-chip { border-color: #a5d6a7 !important; }
   .student-chip.active { background: #2e7d32 !important; color: #fff !important; border-color: #2e7d32 !important; }
   .internship-banner { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border: 1px solid #a5d6a7; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
@@ -825,6 +895,15 @@
       </div>
     </div>
 
+    <!-- Recently viewed (last 7 firms opened, persists in localStorage) -->
+    <div class="recently-viewed" id="recentlyViewed" hidden>
+      <div class="recently-viewed-label">Recently viewed</div>
+      <div class="recently-viewed-row" id="recentlyViewedRow"></div>
+    </div>
+
+    <!-- Active-filter pill bar: visible only when at least one filter is on -->
+    <div class="active-filter-pills" id="activeFilterPills"></div>
+
     <div class="results-header">
       <span><span id="resultsCount">0 firms found</span><button class="clear-filters" id="clearAllBtn" onclick="clearAllFilters()">Clear filters</button></span>
       <select id="sortSelect" onchange="sortResults()">
@@ -1193,6 +1272,7 @@ function applyFilters() {
   const hasFilters = activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0 || activeSpecialty || savedOnly;
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) clearBtn.classList.toggle('visible', hasFilters);
+  renderActiveFilterPills();
   syncUrlState();
   // Auto-zoom to show filtered results
   if (filtered.length > 0 && (activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0)) {
@@ -1386,6 +1466,184 @@ function toggleSpecialty(el) {
   applyFilters();
 }
 
+// ─── Active-filter pill bar ───────────────────────────────────────────
+// Renders one removable pill per active filter above the results list.
+// Each pill's X handler clears just that filter and reruns applyFilters.
+function renderActiveFilterPills() {
+  const container = document.getElementById('activeFilterPills');
+  if (!container) return;
+  const pills = [];
+
+  // Discipline chips
+  activeFilters.forEach(d => {
+    const label = (d === 'architecture' ? 'Architecture' :
+                   d === 'landscape'    ? 'Landscape'    :
+                   d === 'urban'        ? 'Urban Design' :
+                   d === 'multi'        ? 'Multi'        : d);
+    pills.push({ label, clear: () => {
+      activeFilters.delete(d);
+      const chip = document.querySelector(`#disciplineChips .filter-chip[data-filter="${d}"]`);
+      if (chip) chip.classList.remove('active');
+      if (activeFilters.size === 0) {
+        const all = document.querySelector('#disciplineChips .filter-chip[data-filter="all"]');
+        if (all) all.classList.add('active');
+      }
+    }});
+  });
+
+  // State dropdown
+  if (activeState && activeState !== 'all') {
+    pills.push({ label: 'State: ' + activeState, clear: () => {
+      activeState = 'all';
+      const sel = document.getElementById('stateSelect');
+      if (sel) sel.value = 'all';
+    }});
+  }
+
+  // Search term
+  if (searchTerm) {
+    pills.push({ label: '"' + searchTerm + '"', clear: () => {
+      searchTerm = '';
+      const input = document.getElementById('searchInput');
+      if (input) input.value = '';
+      const clr = document.getElementById('searchClear');
+      if (clr) clr.style.display = 'none';
+    }});
+  }
+
+  // Refines (size + student-opportunity chips both write to activeRefines)
+  const REFINE_LABELS = {
+    'large':       '100+ Employees',
+    'small':       'Boutique (<20)',
+    'sustainable': 'Sustainable',
+    'healthcare':  'Healthcare',
+    'residential': 'Residential',
+    'parks':       'Parks & Public',
+    'planning':    'Planning',
+    'internships': 'Internships',
+    'fellowship':  'Fellowship',
+    'entry-level': 'Entry-Level',
+    'mentorship':  'Mentorship',
+  };
+  activeRefines.forEach(r => {
+    pills.push({ label: REFINE_LABELS[r] || r, clear: () => {
+      activeRefines.delete(r);
+      const chip = document.querySelector(`.filter-chip[data-refine="${r}"]`);
+      if (chip) chip.classList.remove('active');
+    }});
+  });
+
+  // Specialty
+  if (activeSpecialty) {
+    pills.push({ label: 'Project: ' + activeSpecialty.replace(/\b\w/g, c => c.toUpperCase()), clear: () => {
+      const chip = document.querySelector(`.filter-chip[data-specialty="${activeSpecialty}"]`);
+      if (chip) chip.classList.remove('active');
+      activeSpecialty = '';
+    }});
+  }
+
+  // Saved-only filter
+  if (savedOnly) {
+    pills.push({ label: 'Saved firms only', clear: () => {
+      savedOnly = false;
+      const link = document.getElementById('navSaved');
+      if (link) link.classList.remove('active');
+    }});
+  }
+
+  if (pills.length === 0) {
+    container.classList.remove('visible');
+    container.innerHTML = '';
+    return;
+  }
+  container.classList.add('visible');
+  container.innerHTML = '';
+  pills.forEach((p, i) => {
+    const pill = document.createElement('div');
+    pill.className = 'active-filter-pill';
+    pill.innerHTML = `<span>${p.label}</span><button aria-label="Remove filter">×</button>`;
+    pill.querySelector('button').addEventListener('click', () => {
+      p.clear();
+      applyFilters();
+    });
+    container.appendChild(pill);
+  });
+}
+
+// ─── Recently viewed (last 7 firms opened) ────────────────────────────
+let recentlyViewed = JSON.parse(localStorage.getItem('threshold_recently_viewed') || '[]');
+const RECENT_MAX = 7;
+
+function pushRecentlyViewed(firm) {
+  // Move to front, dedupe, cap at RECENT_MAX
+  recentlyViewed = recentlyViewed.filter(r => r.id !== firm.id);
+  recentlyViewed.unshift({ id: firm.id, name: firm.name, city: firm.city, state: firm.state });
+  if (recentlyViewed.length > RECENT_MAX) recentlyViewed = recentlyViewed.slice(0, RECENT_MAX);
+  localStorage.setItem('threshold_recently_viewed', JSON.stringify(recentlyViewed));
+  renderRecentlyViewed();
+}
+
+function renderRecentlyViewed() {
+  const wrapper = document.getElementById('recentlyViewed');
+  const row = document.getElementById('recentlyViewedRow');
+  if (!wrapper || !row) return;
+  if (recentlyViewed.length === 0) {
+    wrapper.hidden = true;
+    return;
+  }
+  wrapper.hidden = false;
+  row.innerHTML = '';
+  recentlyViewed.forEach(r => {
+    const item = document.createElement('div');
+    item.className = 'recently-viewed-item';
+    item.title = r.name + ' — ' + r.city + ', ' + r.state;
+    item.textContent = r.name;
+    item.addEventListener('click', () => {
+      // Verify firm still exists (may have been removed since cached)
+      if (firms.some(f => f.id === r.id)) selectFirm(r.id);
+    });
+    row.appendChild(item);
+  });
+}
+
+// ─── Similar firms ────────────────────────────────────────────────────
+// Heuristic: score every other firm against the target by shared specialty
+// count + same discipline + similar size band. Return top N.
+function findSimilarFirms(firm, limit = 5) {
+  const targetSpecs = new Set((firm.specialties || []).map(s => s.toLowerCase()));
+  const targetSize = firm.size || 0;
+  const sizeBand = (s) => s < 20 ? 0 : s < 100 ? 1 : s < 500 ? 2 : 3;
+  const targetBand = sizeBand(targetSize);
+
+  const scored = firms
+    .filter(f => f.id !== firm.id && f.name !== firm.name)  // skip self + branches
+    .map(f => {
+      let score = 0;
+      if (f.discipline === firm.discipline) score += 5;
+      const overlap = (f.specialties || []).filter(s => targetSpecs.has(s.toLowerCase())).length;
+      score += overlap * 4;
+      const otherBand = sizeBand(f.size || 0);
+      if (otherBand === targetBand) score += 3;
+      else if (Math.abs(otherBand - targetBand) === 1) score += 1;
+      // Prefer firms with metadata (about + projects) — likely to be informative
+      if (f.about) score += 1;
+      return { f, score };
+    })
+    .filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  // Dedupe by name to avoid showing 5 branches of the same firm
+  const seen = new Set();
+  const out = [];
+  for (const { f } of scored) {
+    if (seen.has(f.name)) continue;
+    seen.add(f.name);
+    out.push(f);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
 function plotMarkers(list) {
   // Remove existing cluster group
   if (markerCluster) {
@@ -1571,9 +1829,31 @@ function selectFirm(id) {
       <h3>Student &amp; Early Career</h3>
       <div class="detail-tags">${hiring.map(h => `<span class="detail-tag hiring-tag">${h}</span>`).join('')}</div>
     </div>` : ''}
+    <div class="detail-section" id="detailSimilar"></div>
   `;
   document.getElementById('detailBody').innerHTML = html;
   document.getElementById('detailPanel').classList.add('open');
+
+  // Push to recently-viewed (after panel opens so the page feels responsive)
+  pushRecentlyViewed(firm);
+
+  // Render similar firms in the panel's tail section
+  const similar = findSimilarFirms(firm, 5);
+  const simSection = document.getElementById('detailSimilar');
+  if (simSection && similar.length > 0) {
+    simSection.innerHTML = `
+      <h3>Similar firms</h3>
+      <div class="detail-similar-list">
+        ${similar.map(s => {
+          const sd = DISC[s.discipline] || DISC.architecture;
+          return `<button class="detail-similar-item" onclick="selectFirm(${s.id})">
+            <div class="dsi-name">${s.name}</div>
+            <div class="dsi-meta">${sd.label} · ${s.city}, ${s.state}${s.size ? ' · ' + s.size + ' emp.' : ''}</div>
+          </button>`;
+        }).join('')}
+      </div>
+    `;
+  }
 }
 
 function closeDetail() {
@@ -1707,6 +1987,7 @@ function exportCSV() {
 
 // Initialize saved UI on load
 updateSavedUI();
+renderRecentlyViewed();
 
 // Show About modal on first visit
 if (!localStorage.getItem('threshold_welcomed_v4')) {
