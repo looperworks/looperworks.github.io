@@ -121,14 +121,11 @@
   [data-theme="dark"] .internship-banner-text { color: #a5d6a7; }
   [data-theme="dark"] .internship-banner-text strong { color: #c8e6c9; }
   [data-theme="dark"] .hiring-tag { background: #1b3a1b; border-color: #2e5a2e; color: #a5d6a7; }
-  [data-theme="dark"] .welcome-tip { background: linear-gradient(135deg, #2a2510, #2a2510); border-color: #5a4a1a; color: #aaa; }
-  [data-theme="dark"] .welcome-tip strong { color: #e8e8e8; }
 
   /* Near Me + Dark Mode buttons */
-  .toolbar-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: 11px; font-weight: 500; font-family: inherit; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
-  .toolbar-btn:hover { border-color: var(--border-hover); color: var(--text); }
-  .toolbar-btn.active { background: var(--accent); border-color: var(--accent); color: #1a1a1a; }
-  .toolbar-btn svg { width: 13px; height: 13px; }
+  .toolbar-link { background: none; border: none; padding: 0; font-family: inherit; font-size: 11px; font-weight: 500; letter-spacing: 0.03em; color: var(--text-dim); cursor: pointer; transition: color 0.15s; }
+  .toolbar-link:hover { color: var(--text); }
+  .toolbar-link.active { color: var(--text); font-weight: 600; }
   .sidebar-toolbar { display: flex; gap: 6px; margin-top: 8px; }
 
   /* Override top-brand positioning for map layout */
@@ -151,14 +148,13 @@
   .sidebar-tools { display: flex; gap: 4px; }
   .sidebar-tools a { color: #666; text-decoration: none; font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: var(--radius-sm); transition: all 0.15s; }
   .sidebar-tools a:hover { color: #111; background: rgba(255,255,255,0.06); }
-  .sidebar-header .welcome-stats { }
-  .sidebar-header .welcome-stat { color: #777; }
-  .sidebar-header .welcome-stat strong { color: #111; }
+  /* Sidebar stats — one quiet line */
+  .sidebar-stats-line { margin-top: 8px; font-size: 11px; color: #777; letter-spacing: 0.01em; }
+  .sidebar-stats-line > span:not(.sep) { color: #111; font-weight: 600; }
+  .sidebar-stats-line .sep { margin: 0 6px; color: #ccc; }
 
-  /* ── Welcome Banner (legacy; now sidebar-header) ── */
-  .welcome-stats { display: flex; gap: 16px; margin-top: 10px; }
-  .welcome-stat { font-size: 11px; color: var(--text-muted); }
-  .welcome-stat strong { color: var(--text); font-size: 14px; font-weight: 700; display: block; }
+  /* Sidebar toolbar (Discover / Near Me / Dark) */
+  .sidebar-toolbar { display: flex; gap: 14px; margin-top: 6px; }
 
   /* ── App Container; visible by default ── */
   .app-container { display: flex; height: calc(100vh - 90px); margin-top: 0; margin-left: 0; }
@@ -196,10 +192,6 @@
   .filter-group-label.collapsible::after { content: '\25B8'; font-size: 10px; color: var(--text-muted); transition: transform 0.2s; }
   .filter-group-label.collapsible.open::after { transform: rotate(90deg); }
   .filter-group .filters.collapsed { display: none; }
-  .welcome-tip { padding: 10px 14px; margin-bottom: 8px; background: linear-gradient(135deg, #fffcee, #fff8dc); border: 1px solid #e8c547; border-radius: var(--radius-sm); font-size: 12px; color: #666; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px; }
-  .welcome-tip strong { color: #1a1a1a; }
-  .welcome-tip .tip-close { background: none; border: none; color: #ccc; cursor: pointer; font-size: 16px; padding: 0 2px; flex-shrink: 0; }
-  .welcome-tip .tip-close:hover { color: #999; }
   .filters { display: flex; flex-wrap: wrap; gap: 5px; }
   .filter-chip { padding: 4px 11px; border: 1.5px solid var(--border); border-radius: 20px; font-size: 11px; cursor: pointer; background: #fff; color: var(--text-dim); transition: all 0.15s; user-select: none; font-family: inherit; font-weight: 500; }
   .filter-chip:hover { border-color: var(--border-hover); color: var(--text); }
@@ -568,8 +560,7 @@
     .subscribe-popup { max-width: 100%; width: 94%; border-radius: 14px; }
 
     /* Toolbar buttons; larger tap targets */
-    .toolbar-btn { padding: 8px 14px; font-size: 12px; min-height: 36px; }
-    .toolbar-btn svg { width: 15px; height: 15px; }
+    .toolbar-link { font-size: 12px; }
     .sidebar-toolbar { gap: 8px; }
 
     /* Filter chips; horizontal scroll instead of wrap */
@@ -605,7 +596,7 @@
   /* Small phone tweaks */
   @media (max-width: 380px) {
     .sidebar-header h2 { font-size: 14px; }
-    .welcome-stat strong { font-size: 13px; }
+    .sidebar-stats-line { font-size: 11px; }
     .about-modal-hero { padding: 16px 18px 12px; }
     .about-modal-body { padding: 12px 18px 14px; }
     .subscribe-popup-hero { padding: 16px 18px 12px; }
@@ -727,24 +718,17 @@
           <a href="#" id="navAbout" onclick="openAbout(); return false;">About</a>
         </div>
       </div>
-      <div class="welcome-stats">
-        <div class="welcome-stat"><strong id="statFirms">0</strong> Firms</div>
-        <div class="welcome-stat"><strong id="statCities">0</strong> Cities</div>
-        <div class="welcome-stat"><strong id="statStates">0</strong> States</div>
+      <div class="sidebar-stats-line">
+        <span id="statFirms">0</span> firms
+        <span class="sep">&middot;</span>
+        <span id="statCities">0</span> cities
+        <span class="sep">&middot;</span>
+        <span id="statStates">0</span> states
       </div>
       <div class="sidebar-toolbar">
-        <button class="toolbar-btn" id="discoverBtn" onclick="discoverFirm()" title="Jump to a random firm. Great for exploring">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          Discover
-        </button>
-        <button class="toolbar-btn" id="nearMeBtn" onclick="findNearMe()" title="Find firms near your current location">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg>
-          Near Me
-        </button>
-        <button class="toolbar-btn" id="darkModeBtn" onclick="toggleDarkMode()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <span id="darkModeLabel">Dark</span>
-        </button>
+        <button class="toolbar-link" id="discoverBtn" onclick="discoverFirm()" title="Jump to a random firm. Great for exploring">Discover</button>
+        <button class="toolbar-link" id="nearMeBtn" onclick="findNearMe()" title="Find firms near your current location">Near Me</button>
+        <button class="toolbar-link" id="darkModeBtn" onclick="toggleDarkMode()"><span id="darkModeLabel">Dark</span></button>
       </div>
     </div>
     <div class="search-section">
@@ -756,11 +740,6 @@
         </button>
         <button onclick="applySearch()">Search</button>
         <div class="autocomplete-dropdown" id="acDropdown"></div>
-      </div>
-
-      <div class="welcome-tip" id="welcomeTip" style="display:none">
-        <div><strong>Welcome!</strong> Explore 2,000+ firms across the U.S. Try the <strong style="color:#2e7d32;cursor:pointer" onclick="document.querySelector('[data-refine=internships]').click(); dismissTip();">Internships</strong> filter to find programs near you.</div>
-        <button class="tip-close" onclick="dismissTip()" title="Dismiss">&times;</button>
       </div>
 
       <div class="filter-group">
@@ -1002,19 +981,7 @@ let activeState = 'all';
 let activeSpecialty = '';
 let searchDebounce = null;
 
-function dismissTip() {
-  document.getElementById('welcomeTip').style.display = 'none';
-  try { sessionStorage.setItem('tipDismissed', '1'); } catch(e) {}
-}
-
 async function init() {
-  // Show welcome tip for first-time visitors
-  try {
-    if (!sessionStorage.getItem('tipDismissed')) {
-      document.getElementById('welcomeTip').style.display = '';
-    }
-  } catch(e) { document.getElementById('welcomeTip').style.display = ''; }
-
   populateStates();
   updateStats();
   updateChipCounts();
