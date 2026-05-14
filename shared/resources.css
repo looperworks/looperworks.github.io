@@ -250,13 +250,15 @@
   color: #444;
 }
 
-/* Footer alignment — match main content margin */
-.site-footer {
+/* Footer alignment for sidebar layout — only applies when a .sidebar is
+   present on the page (top-20 grad programs). Divider line extends back
+   under the fixed sidebar so it spans the full page width visually. */
+body:has(.sidebar) .site-footer {
   margin-left: 660px;
 }
 
-.site-footer::before {
-  left: 0;
+body:has(.sidebar) .site-footer::before {
+  left: -660px;
 }
 
 /* Responsive Design */
@@ -271,8 +273,12 @@
     margin-left: 0;
   }
 
-  .site-footer {
+  body:has(.sidebar) .site-footer {
     margin-left: 0;
+  }
+
+  body:has(.sidebar) .site-footer::before {
+    left: 0;
   }
 
   .mobile-menu-toggle {
