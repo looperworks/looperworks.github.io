@@ -108,7 +108,7 @@
   modal.className = 'diagram-modal';
   // Use a 1x1 transparent placeholder so the <img> isn't flagged as broken
   // before a real diagram is clicked. The real src is set on click below.
-  modal.innerHTML = '<span class="diagram-modal-close">&times;</span><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">';
+  modal.innerHTML = '<span class="diagram-modal-close">&times;</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">';
   document.body.appendChild(modal);
 
   var modalImg = modal.querySelector('img');
