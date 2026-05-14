@@ -305,21 +305,23 @@
  const shareEmail = document.querySelector('.share-email');
  const shareCopy = document.querySelector('.share-copy');
 
- const pageUrl = encodeURIComponent(window.location.href);
- const pageTitle = encodeURIComponent(document.title);
+ if (shareLinkedin || shareEmail || shareCopy) {
+   const pageUrl = encodeURIComponent(window.location.href);
+   const pageTitle = encodeURIComponent(document.title);
 
- shareLinkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
- shareEmail.href = `mailto:?subject=${pageTitle}&body=${pageUrl}`;
+   if (shareLinkedin) shareLinkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+   if (shareEmail) shareEmail.href = `mailto:?subject=${pageTitle}&body=${pageUrl}`;
 
- shareCopy.addEventListener('click', function(e) {
- e.preventDefault();
- navigator.clipboard.writeText(window.location.href).then(() => {
- shareCopy.classList.add('copied');
- setTimeout(() => {
- shareCopy.classList.remove('copied');
- }, 2000);
- });
- });
+   if (shareCopy) {
+     shareCopy.addEventListener('click', function(e) {
+       e.preventDefault();
+       navigator.clipboard.writeText(window.location.href).then(() => {
+         shareCopy.classList.add('copied');
+         setTimeout(() => { shareCopy.classList.remove('copied'); }, 2000);
+       });
+     });
+   }
+ }
  });
  </script>
 </body>
