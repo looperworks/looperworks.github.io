@@ -192,8 +192,11 @@
   .filter-group-label.collapsible::after { content: '\25B8'; font-size: 10px; color: var(--text-muted); transition: transform 0.2s; }
   .filter-group-label.collapsible.open::after { transform: rotate(90deg); }
   .filter-group .filters.collapsed { display: none; }
-  .filters { display: flex; flex-wrap: wrap; gap: 5px; }
-  .filter-chip { padding: 4px 11px; border: 1.5px solid var(--border); border-radius: 20px; font-size: 11px; cursor: pointer; background: #fff; color: var(--text-dim); transition: all 0.15s; user-select: none; font-family: inherit; font-weight: 500; }
+  .filter-group .filters-more.collapsed { display: none; }
+  .filters-more { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+  .filter-subgroup-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; }
+  .filters { display: flex; flex-wrap: wrap; gap: 4px; }
+  .filter-chip { padding: 3px 9px; border: 1px solid var(--border); border-radius: 14px; font-size: 11px; cursor: pointer; background: #fff; color: var(--text-dim); transition: all 0.15s; user-select: none; font-family: inherit; font-weight: 500; }
   .filter-chip:hover { border-color: var(--border-hover); color: var(--text); }
   .filter-chip.active { background: var(--text); color: #fff; border-color: var(--text); }
 
@@ -764,44 +767,44 @@
       </div>
 
       <div class="filter-group">
-        <div class="filter-group-label collapsible" onclick="toggleFilterGroup(this)">Refine</div>
-        <div class="filters collapsed" id="refineChips">
-          <div class="filter-chip" data-refine="large" onclick="toggleRefine(this)">100+ Employees</div>
-          <div class="filter-chip" data-refine="small" onclick="toggleRefine(this)">Boutique (&lt;20)</div>
-          <div class="filter-chip" data-refine="sustainable" onclick="toggleRefine(this)">Sustainable</div>
-          <div class="filter-chip" data-refine="healthcare" onclick="toggleRefine(this)">Healthcare</div>
-          <div class="filter-chip" data-refine="residential" onclick="toggleRefine(this)">Residential</div>
-          <div class="filter-chip" data-refine="parks" onclick="toggleRefine(this)">Parks & Public</div>
-          <div class="filter-chip" data-refine="planning" onclick="toggleRefine(this)">Planning</div>
-        </div>
-      </div>
-      <div class="filter-group">
-        <div class="filter-group-label collapsible" onclick="toggleFilterGroup(this)">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;vertical-align:-2px;margin-right:3px;color:#2e7d32"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
-          Student Opportunities</span>
-        </div>
-        <div class="filters collapsed" id="studentChips">
-          <div class="filter-chip student-chip" data-refine="internships" onclick="toggleRefine(this)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;vertical-align:-1px;margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
-            Internships <span class="chip-count" id="countInternships"></span>
+        <div class="filter-group-label collapsible" onclick="toggleFilterGroup(this)">More filters</div>
+        <div class="filters-more collapsed">
+          <div class="filter-subgroup">
+            <div class="filter-subgroup-label">Size &amp; specialty</div>
+            <div class="filters" id="refineChips">
+              <div class="filter-chip" data-refine="large" onclick="toggleRefine(this)">100+ Employees</div>
+              <div class="filter-chip" data-refine="small" onclick="toggleRefine(this)">Boutique (&lt;20)</div>
+              <div class="filter-chip" data-refine="sustainable" onclick="toggleRefine(this)">Sustainable</div>
+              <div class="filter-chip" data-refine="healthcare" onclick="toggleRefine(this)">Healthcare</div>
+              <div class="filter-chip" data-refine="residential" onclick="toggleRefine(this)">Residential</div>
+              <div class="filter-chip" data-refine="parks" onclick="toggleRefine(this)">Parks &amp; Public</div>
+              <div class="filter-chip" data-refine="planning" onclick="toggleRefine(this)">Planning</div>
+            </div>
           </div>
-          <div class="filter-chip student-chip" data-refine="fellowship" onclick="toggleRefine(this)">Fellowship <span class="chip-count" id="countFellowship"></span></div>
-          <div class="filter-chip student-chip" data-refine="entry-level" onclick="toggleRefine(this)">Entry-Level <span class="chip-count" id="countEntryLevel"></span></div>
-          <div class="filter-chip student-chip" data-refine="mentorship" onclick="toggleRefine(this)">Mentorship <span class="chip-count" id="countMentorship"></span></div>
-        </div>
-      </div>
 
-      <div class="filter-group">
-        <div class="filter-group-label collapsible" onclick="toggleFilterGroup(this)">Explore by Specialty</div>
-        <div class="filters collapsed" id="specialtyChips">
-          <div class="filter-chip" data-specialty="education" onclick="toggleSpecialty(this)">Education</div>
-          <div class="filter-chip" data-specialty="cultural" onclick="toggleSpecialty(this)">Cultural</div>
-          <div class="filter-chip" data-specialty="mixed-use" onclick="toggleSpecialty(this)">Mixed-Use</div>
-          <div class="filter-chip" data-specialty="civic" onclick="toggleSpecialty(this)">Civic</div>
-          <div class="filter-chip" data-specialty="adaptive reuse" onclick="toggleSpecialty(this)">Adaptive Reuse</div>
-          <div class="filter-chip" data-specialty="sports" onclick="toggleSpecialty(this)">Sports</div>
-          <div class="filter-chip" data-specialty="hospitality" onclick="toggleSpecialty(this)">Hospitality</div>
-          <div class="filter-chip" data-specialty="affordable housing" onclick="toggleSpecialty(this)">Affordable Housing</div>
+          <div class="filter-subgroup">
+            <div class="filter-subgroup-label">Student opportunities</div>
+            <div class="filters" id="studentChips">
+              <div class="filter-chip" data-refine="internships" onclick="toggleRefine(this)">Internships <span class="chip-count" id="countInternships"></span></div>
+              <div class="filter-chip" data-refine="fellowship" onclick="toggleRefine(this)">Fellowship <span class="chip-count" id="countFellowship"></span></div>
+              <div class="filter-chip" data-refine="entry-level" onclick="toggleRefine(this)">Entry-Level <span class="chip-count" id="countEntryLevel"></span></div>
+              <div class="filter-chip" data-refine="mentorship" onclick="toggleRefine(this)">Mentorship <span class="chip-count" id="countMentorship"></span></div>
+            </div>
+          </div>
+
+          <div class="filter-subgroup">
+            <div class="filter-subgroup-label">Project type</div>
+            <div class="filters" id="specialtyChips">
+              <div class="filter-chip" data-specialty="education" onclick="toggleSpecialty(this)">Education</div>
+              <div class="filter-chip" data-specialty="cultural" onclick="toggleSpecialty(this)">Cultural</div>
+              <div class="filter-chip" data-specialty="mixed-use" onclick="toggleSpecialty(this)">Mixed-Use</div>
+              <div class="filter-chip" data-specialty="civic" onclick="toggleSpecialty(this)">Civic</div>
+              <div class="filter-chip" data-specialty="adaptive reuse" onclick="toggleSpecialty(this)">Adaptive Reuse</div>
+              <div class="filter-chip" data-specialty="sports" onclick="toggleSpecialty(this)">Sports</div>
+              <div class="filter-chip" data-specialty="hospitality" onclick="toggleSpecialty(this)">Hospitality</div>
+              <div class="filter-chip" data-specialty="affordable housing" onclick="toggleSpecialty(this)">Affordable Housing</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
