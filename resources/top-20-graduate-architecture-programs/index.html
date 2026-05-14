@@ -271,6 +271,60 @@
  @media (max-width: 560px) {
    .kanban-grid { grid-template-columns: 1fr; }
  }
+
+ /* ─── Advising pop-up (bottom-right slide-in card) ────────────────
+    Appears after 45s on page; dismissable; suppressed for 14 days
+    after dismiss via localStorage. Quiet styling — academic palette,
+    no aggressive CTAs. */
+ .advise-popup {
+   position: fixed; right: 20px; bottom: 20px;
+   max-width: 320px; width: calc(100vw - 40px);
+   background: #fff; color: #222;
+   border: 1px solid #e0e0e0;
+   border-radius: 8px;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+   font-size: 12px; line-height: 1.55;
+   padding: 16px 18px 14px;
+   z-index: 1500;
+   opacity: 0; transform: translateY(20px);
+   transition: opacity 0.35s ease, transform 0.35s ease;
+   pointer-events: none;
+ }
+ .advise-popup.visible {
+   opacity: 1; transform: translateY(0);
+   pointer-events: auto;
+ }
+ .advise-popup-title {
+   font-size: 13px; font-weight: 700; color: #111;
+   margin-bottom: 6px; letter-spacing: -0.01em;
+ }
+ .advise-popup-body {
+   color: #444; margin-bottom: 12px;
+ }
+ .advise-popup-cta {
+   display: inline-block; padding: 7px 14px;
+   background: #111; color: #fff;
+   border-radius: 4px; text-decoration: none;
+   font-size: 11px; font-weight: 600;
+   letter-spacing: 0.02em;
+   transition: background 0.15s;
+ }
+ .advise-popup-cta:hover { background: #333; }
+ .advise-popup-close {
+   position: absolute; top: 8px; right: 10px;
+   background: none; border: none; cursor: pointer;
+   font-size: 18px; color: #aaa; line-height: 1;
+   padding: 4px; transition: color 0.15s;
+ }
+ .advise-popup-close:hover { color: #333; }
+ .advise-popup-signoff {
+   font-size: 10px; color: #888;
+   margin-top: 8px; font-style: italic;
+ }
+ @media (max-width: 480px) {
+   .advise-popup { right: 12px; bottom: 12px; left: 12px; width: auto; }
+ }
  </style>
 </head>
 <body>
@@ -664,6 +718,54 @@
  rankedBtn.addEventListener('click', function() { applyMode('ranked'); });
  alphaBtn.addEventListener('click', function() { applyMode('alpha'); });
  applyMode('alpha');
+ })();
+ </script>
+
+ <!-- Advising offer pop-up: appears after 45s; dismissable; suppressed
+      14 days after dismiss via localStorage. -->
+ <div class="advise-popup" id="advisePopup" role="dialog" aria-labelledby="adviseTitle" aria-hidden="true">
+   <button class="advise-popup-close" id="adviseClose" aria-label="Dismiss">&times;</button>
+   <div class="advise-popup-title" id="adviseTitle">Need help with grad school applications?</div>
+   <div class="advise-popup-body">
+     If you're working on your portfolio, statement, or school list for M.Arch, M.L.A., or post-professional programs, I'm happy to offer one-on-one guidance.
+   </div>
+   <a class="advise-popup-cta" href="mailto:seth@looperworks.com?subject=Grad%20School%20Advising">Get in touch →</a>
+   <div class="advise-popup-signoff">— Seth, Threshold</div>
+ </div>
+
+ <script>
+ (function() {
+   const DELAY_MS    = 45000;          // show after 45 seconds on page
+   const SUPPRESS_MS = 14 * 24 * 3600 * 1000;  // 14 days suppression after dismiss
+   const KEY         = 'threshold_advise_dismissed_until';
+
+   // Skip if dismissed recently
+   const until = parseInt(localStorage.getItem(KEY) || '0', 10);
+   if (until && Date.now() < until) return;
+
+   const popup = document.getElementById('advisePopup');
+   const close = document.getElementById('adviseClose');
+   if (!popup || !close) return;
+
+   function show() {
+     popup.classList.add('visible');
+     popup.setAttribute('aria-hidden', 'false');
+   }
+   function dismiss(persist) {
+     popup.classList.remove('visible');
+     popup.setAttribute('aria-hidden', 'true');
+     if (persist) {
+       try {
+         localStorage.setItem(KEY, String(Date.now() + SUPPRESS_MS));
+       } catch (e) { /* localStorage unavailable; just hide for this session */ }
+     }
+   }
+
+   close.addEventListener('click', () => dismiss(true));
+   // Clicking the CTA also counts as "dismissed" so it doesn't re-appear next visit
+   popup.querySelector('.advise-popup-cta').addEventListener('click', () => dismiss(true));
+
+   setTimeout(show, DELAY_MS);
  })();
  </script>
 </body>
