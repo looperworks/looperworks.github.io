@@ -1,1 +1,4 @@
 probe-output.log
+
+# Local backups (don't commit)
+mapvoid/firms.js.backup-*
