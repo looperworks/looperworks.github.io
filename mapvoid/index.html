@@ -373,6 +373,11 @@
     animation: marker-hover-pulse 0.8s ease-in-out infinite;
     z-index: 999 !important;
   }
+  /* When the firm is inside a cluster, pulse the cluster bubble instead */
+  .cluster-hover-pulse {
+    animation: marker-hover-pulse 0.8s ease-in-out infinite;
+    z-index: 999 !important;
+  }
   .legend-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
 
   /* ── Detail Panel ── */
@@ -383,8 +388,8 @@
   .detail-header.land { background: linear-gradient(135deg, #2e7d32, #43a047); }
   .detail-header.urban { background: linear-gradient(135deg, #e65100, #f57c00); }
   .detail-header.multi { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
-  .detail-close { position: absolute; top: 12px; right: 14px; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; opacity: 0.7; }
-  .detail-close:hover { opacity: 1; }
+  .detail-close { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.15); border: none; color: #fff; font-size: 18px; line-height: 1; cursor: pointer; opacity: 0.85; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 0; z-index: 10; transition: background 0.15s, opacity 0.15s; }
+  .detail-close:hover { opacity: 1; background: rgba(0,0,0,0.3); }
   .detail-firm-name { font-size: 18px; font-weight: 700; margin-bottom: 2px; }
   .detail-firm-disc { font-size: 11px; opacity: 0.85; margin-bottom: 4px; }
   .detail-firm-loc { font-size: 13px; opacity: 0.9; }
@@ -1763,23 +1768,36 @@ function shareSearch() {
 }
 
 // ─── Hover link: card → map pin ───────────────────────────────────────
-// When a student hovers a firm card, pulse its marker on the map so the
-// card-pin association is visually obvious.
+// When a student hovers a firm card, pulse its marker so the card-pin
+// association is visually obvious. When the marker is inside a cluster
+// (no individual DOM element), pulse the cluster icon instead so the
+// student can still see which region the firm is in.
 function pulseMarker(id) {
   const m = markers[id];
-  if (!m) return;
+  if (!m || !markerCluster) return;
   const el = m.getElement();
-  if (!el) return;
-  const dot = el.querySelector('.custom-marker');
-  if (dot) dot.classList.add('hover-pulse');
+  if (el) {
+    const dot = el.querySelector('.custom-marker');
+    if (dot) dot.classList.add('hover-pulse');
+    return;
+  }
+  // Marker is clustered — pulse its parent cluster
+  const parent = markerCluster.getVisibleParent(m);
+  if (parent && parent !== m && parent.getElement) {
+    const pel = parent.getElement();
+    if (pel) pel.classList.add('cluster-hover-pulse');
+  }
 }
 function unpulseMarker(id) {
   const m = markers[id];
-  if (!m) return;
+  if (!m || !markerCluster) return;
   const el = m.getElement();
-  if (!el) return;
-  const dot = el.querySelector('.custom-marker');
-  if (dot) dot.classList.remove('hover-pulse');
+  if (el) {
+    const dot = el.querySelector('.custom-marker');
+    if (dot) dot.classList.remove('hover-pulse');
+  }
+  // Clear any cluster-level pulses too
+  document.querySelectorAll('.cluster-hover-pulse').forEach(e => e.classList.remove('cluster-hover-pulse'));
 }
 
 // ─── Print saved firms as a checklist ────────────────────────────────
