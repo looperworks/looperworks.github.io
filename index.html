@@ -27,6 +27,43 @@
  <meta name="twitter:description" content="A free career toolkit for architecture students and young professionals. Interactive job search map, cover letter, resume, and portfolio guides.">
  <meta name="twitter:image" content="https://thresholdarch.com/shared/og-image.png">
  <meta http-equiv="refresh" content="0;url=mapvoid/">
+ <style>
+  html, body { margin: 0; padding: 0; background: #fdfbf6; }
+  body {
+   color: #1a1a1a;
+   font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   text-align: center;
+   padding: 24px;
+   box-sizing: border-box;
+  }
+  .splash img { width: 32px; height: 32px; margin-bottom: 14px; opacity: 0.85; }
+  .splash .brand {
+   font-size: 24px;
+   font-weight: 600;
+   letter-spacing: -0.01em;
+   margin-bottom: 6px;
+  }
+  .splash .hint { font-size: 14px; color: #6b6b6b; }
+  .sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap;
+   border: 0;
+  }
+ </style>
+ <script>
+  // Instant redirect (fires before body paints). Meta-refresh is the no-JS fallback.
+  try { window.location.replace('mapvoid/'); } catch (e) {}
+ </script>
  <script type="application/ld+json">
  {
  "@context": "https://schema.org",
@@ -53,8 +90,16 @@
  </script>
 </head>
 <body>
- <h1>Threshold — A Free Career Toolkit for Architecture Students</h1>
- <p>Threshold helps architecture students and emerging professionals find firms, prepare applications, and navigate the profession. Browse 2,143 firms across all 50 states, then use the cover letter, resume, and portfolio guides to apply.</p>
- <p>Redirecting to <a href="mapvoid/">Firm Search</a>...</p>
+ <div class="splash">
+  <img src="/favicon.svg" alt="">
+  <div class="brand">Threshold</div>
+  <div class="hint">Loading firm search...</div>
+ </div>
+
+ <div class="sr-only">
+  <h1>Threshold — A Free Career Toolkit for Architecture Students</h1>
+  <p>Threshold helps architecture students and emerging professionals find firms, prepare applications, and navigate the profession. Browse 2,143 firms across all 50 states, then use the cover letter, resume, and portfolio guides to apply.</p>
+  <p>Redirecting to <a href="mapvoid/">Firm Search</a>.</p>
+ </div>
 </body>
 </html>
