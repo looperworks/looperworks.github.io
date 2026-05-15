@@ -23,6 +23,8 @@ REPO = Path(__file__).resolve().parent.parent
 FIRMS_JS = REPO / "mapvoid" / "firms.js"
 MAPVOID = REPO / "mapvoid" / "index.html"
 HOMEPAGE = REPO / "index.html"
+ABOUT = REPO / "about" / "index.html"
+CHEAT_SHEET = REPO / "application-timeline" / "cheat-sheet" / "index.html"
 
 
 def load_firms() -> list[dict]:
@@ -49,6 +51,12 @@ def main() -> int:
     n_urban = disc.get("urban", 0)
 
     fmt_total = f"{total:,}"
+    # Rounded for body copy that doesn't need exact counts. Floors to the
+    # nearest 100. fmt_rounded_bare for "over X,X00" patterns; fmt_rounded
+    # for "X,X00+" patterns. e.g. 2,187 -> "2,100" or "2,100+".
+    rounded_total = (total // 100) * 100
+    fmt_rounded_bare = f"{rounded_total:,}"
+    fmt_rounded = f"{rounded_total:,}+"
 
     print(f"Firm counts:")
     print(f"  total:          {fmt_total}")
@@ -118,6 +126,36 @@ def main() -> int:
         print(f"✓ updated {HOMEPAGE.relative_to(REPO)}")
     else:
         print(f"  no changes needed in {HOMEPAGE.relative_to(REPO)}")
+
+    # ── About page body copy: "over X,X00 verified firms" ──
+    if ABOUT.exists():
+        about_html = ABOUT.read_text(encoding="utf-8")
+        about_original = about_html
+        about_html = re.sub(
+            r"(with over )[\d,]+\+?( verified firms across all 50 states)",
+            rf"\g<1>{fmt_rounded_bare}\g<2>",
+            about_html, count=1,
+        )
+        if about_html != about_original:
+            ABOUT.write_text(about_html, encoding="utf-8")
+            print(f"✓ updated {ABOUT.relative_to(REPO)}")
+        else:
+            print(f"  no changes needed in {ABOUT.relative_to(REPO)}")
+
+    # ── Application timeline cheat sheet: "Explore X,X00+ firms" ──
+    if CHEAT_SHEET.exists():
+        cheat_html = CHEAT_SHEET.read_text(encoding="utf-8")
+        cheat_original = cheat_html
+        cheat_html = re.sub(
+            r"(Explore )[\d,]+\+( firms on our)",
+            rf"\g<1>{fmt_rounded}\g<2>",
+            cheat_html, count=1,
+        )
+        if cheat_html != cheat_original:
+            CHEAT_SHEET.write_text(cheat_html, encoding="utf-8")
+            print(f"✓ updated {CHEAT_SHEET.relative_to(REPO)}")
+        else:
+            print(f"  no changes needed in {CHEAT_SHEET.relative_to(REPO)}")
     return 0
 
 
