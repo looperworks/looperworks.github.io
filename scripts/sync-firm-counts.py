@@ -22,6 +22,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 FIRMS_JS = REPO / "mapvoid" / "firms.js"
 MAPVOID = REPO / "mapvoid" / "index.html"
+HOMEPAGE = REPO / "index.html"
 
 
 def load_firms() -> list[dict]:
@@ -103,6 +104,20 @@ def main() -> int:
         print(f"✓ updated {MAPVOID.relative_to(REPO)}")
     else:
         print(f"  no changes needed in {MAPVOID.relative_to(REPO)}")
+
+    # ── Homepage SEO paragraph (hidden inside .sr-only block) ──
+    home_html = HOMEPAGE.read_text(encoding="utf-8")
+    home_original = home_html
+    home_html = re.sub(
+        r"(Browse )[\d,]+( firms across all 50 states)",
+        rf"\g<1>{fmt_total}\g<2>",
+        home_html, count=1,
+    )
+    if home_html != home_original:
+        HOMEPAGE.write_text(home_html, encoding="utf-8")
+        print(f"✓ updated {HOMEPAGE.relative_to(REPO)}")
+    else:
+        print(f"  no changes needed in {HOMEPAGE.relative_to(REPO)}")
     return 0
 
 
