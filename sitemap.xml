@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://thresholdarch.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://thresholdarch.com/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thresholdarch.com/mapvoid/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://thresholdarch.com/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thresholdarch.com/resume-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thresholdarch.com/cover-letter-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thresholdarch.com/portfolio-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thresholdarch.com/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thresholdarch.com/application-timeline/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thresholdarch.com/resources/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thresholdarch.com/resources/top-20-graduate-architecture-programs/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thresholdarch.com/blog/posts/the-perfection-paradox/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/after-the-offer/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/by-firm-size/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/cheat-sheet/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/cold-email/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/hiring-process/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/month-by-month/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/what-to-prepare/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/application-timeline/why-timing-matters/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thresholdarch.com/blog/posts/architecture-education-beyond-architecture/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thresholdarch.com/blog/posts/clarity/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thresholdarch.com/blog/posts/why-architects-cant-tell-their-story/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thresholdarch.com/blog/posts/what-firms-actually-look-for/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thresholdarch.com/blog/posts/what-they-dont-teach-you/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thresholdarch.com/blog/posts/the-licensure-path/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thresholdarch.com/blog/posts/cold-email-that-works/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thresholdarch.com/blog/posts/portfolio-mistakes/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thresholdarch.com/blog/posts/side-projects-and-visibility/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thresholdarch.com/blog/posts/architecture-education-beyond-architecture/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thresholdarch.com/terms/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://thresholdarch.com/blog/posts/the-licensure-path/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/blog/posts/the-perfection-paradox/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/blog/posts/what-firms-actually-look-for/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/blog/posts/what-they-dont-teach-you/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/blog/posts/why-architects-cant-tell-their-story/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/ai-tells/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/annotated-examples/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/closing/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/collaboration-soft-skills/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/common-mistakes/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/design-philosophy/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/digital-pipeline/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/five-paragraph-structure/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/opening-hook/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/quantifying-impact/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/quick-reference/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/referrals/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/revision-case-study/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/salutation/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/self-editing-checklist/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/tailoring/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/technical-skills-in-context/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/visual-design/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/cover-letter-guide/why-it-matters/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/audience-tailoring/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/cover-table-of-contents/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/grid-layout/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/narrative-arc/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/photography-representation/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/project-statement/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/self-editing-checklist/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/software-ai-digital/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/storyboarding-sequencing/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/strategic-curation/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/technical-production/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/typography/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/visual-design-color/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/portfolio-guide/why-it-matters/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thresholdarch.com/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://thresholdarch.com/resources/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thresholdarch.com/resources/architectural-representation/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thresholdarch.com/resources/graphic-design-visual-culture/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thresholdarch.com/resources/jobs-career-boards/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thresholdarch.com/resources/ten-sites-to-follow/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thresholdarch.com/resources/top-20-graduate-architecture-programs/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thresholdarch.com/resources/typography-type-foundries/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/academic-studio-projects/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/activities-leadership-awards/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/ats-digital-formatting/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/common-mistakes/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/education/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/format-structure/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/header-contact/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/professional-experience/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/quantifying-impact/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/quick-reference/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/self-editing-checklist/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/tailoring-firm-type/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/technical-skills/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/resume-guide/why-it-matters/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thresholdarch.com/terms/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
