@@ -1189,6 +1189,8 @@
         <span id="statCities">0</span> cities
         <span class="sep">&middot;</span>
         <span id="statStates">0</span> states
+        <span class="sep">&middot;</span>
+        <span id="statCountries">0</span> countries
       </div>
       <div class="sidebar-toolbar">
         <button class="toolbar-link" id="discoverBtn" onclick="discoverFirm()" title="Jump to a random firm. Great for exploring">Discover</button>
@@ -1244,6 +1246,12 @@
           <label>State</label>
           <select id="stateSelect" onchange="applyFilters()">
             <option value="all">All States</option>
+          </select>
+        </div>
+        <div class="state-filter">
+          <label>Country</label>
+          <select id="countrySelect" onchange="applyFilters()">
+            <option value="all">All Countries</option>
           </select>
         </div>
       </div>
@@ -1376,6 +1384,7 @@
     <div class="about-modal-body">
       <h3>What this is</h3>
       <p>Threshold helps you find firms, prepare your application, and navigate the profession. Search architecture, landscape, urban-design and multidisciplinary practices across the U.S. Filter by size, internship programs, or specialty, then use the guides to apply.</p>
+      <p>New in 2026: browse 403 leading design firms across 19 countries and territories in Asia, Europe, and Canada. Use the Country filter on the map to explore them.</p>
 
       <h3>The toolkit</h3>
       <p style="margin-bottom:2px"><a href="../application-timeline/">How to Apply</a>: month-by-month hiring timeline and process</p>
@@ -1507,12 +1516,14 @@ let activeFilters = new Set();
 let activeRefines = new Set();
 let searchTerm = '';
 let activeState = 'all';
+let activeCountry = 'all';
 let activeSpecialty = '';
 let savedOnly = false;
 let searchDebounce = null;
 
 async function init() {
   populateStates();
+  populateCountries();
   updateStats();
   updateChipCounts();
 
@@ -1544,13 +1555,29 @@ async function init() {
 }
 
 function populateStates() {
-  const states = [...new Set(firms.map(f => f.state))].sort();
+  // US-only: international firms carry a `country` and are excluded so the
+  // State dropdown stays a clean list of US states.
+  const states = [...new Set(firms.filter(f => !f.country).map(f => f.state))].sort();
   const sel = document.getElementById('stateSelect');
   states.forEach(s => {
     const count = firms.filter(f => f.state === s).length;
     const opt = document.createElement('option');
     opt.value = s;
     opt.textContent = s + ' (' + count + ')';
+    sel.appendChild(opt);
+  });
+}
+
+function populateCountries() {
+  // International firms only (those with a `country`).
+  const countries = [...new Set(firms.filter(f => f.country).map(f => f.country))].sort();
+  const sel = document.getElementById('countrySelect');
+  if (!sel) return;
+  countries.forEach(c => {
+    const count = firms.filter(f => f.country === c).length;
+    const opt = document.createElement('option');
+    opt.value = c;
+    opt.textContent = c + ' (' + count + ')';
     sel.appendChild(opt);
   });
 }
@@ -1575,12 +1602,15 @@ function updateStats() {
   const cities = new Set(firms.map(f => f.city + ', ' + f.state));
   // Exclude DC + PR from the "states" count so this matches the
   // "ALL 50 STATES" marketing line and the welcome-modal stat.
-  const stateCodes = new Set(firms.map(f => f.state));
+  // International firms carry a `country`; they never count as US states.
+  const stateCodes = new Set(firms.filter(f => !f.country).map(f => f.state));
   stateCodes.delete('DC'); stateCodes.delete('PR');
+  const countryCodes = new Set(firms.filter(f => f.country).map(f => f.country));
   const el = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
   el('statFirms', firms.length);
   el('statCities', cities.size);
   el('statStates', stateCodes.size);
+  el('statCountries', countryCodes.size);
 }
 
 function getFilteredFirms() {
@@ -1612,6 +1642,11 @@ function getFilteredFirms() {
   activeState = document.getElementById('stateSelect').value;
   if (activeState !== 'all') {
     filtered = filtered.filter(f => f.state === activeState);
+  }
+  const countrySel = document.getElementById('countrySelect');
+  activeCountry = countrySel ? countrySel.value : 'all';
+  if (activeCountry !== 'all') {
+    filtered = filtered.filter(f => f.country === activeCountry);
   }
   activeRefines.forEach(refine => {
     switch(refine) {
@@ -1681,6 +1716,9 @@ function clearAllFilters() {
   // Reset state
   document.getElementById('stateSelect').value = 'all';
   activeState = 'all';
+  const countrySelReset = document.getElementById('countrySelect');
+  if (countrySelReset) countrySelReset.value = 'all';
+  activeCountry = 'all';
   // Reset refines + student chips
   document.querySelectorAll('#refineChips .filter-chip, #studentChips .filter-chip').forEach(c => c.classList.remove('active'));
   activeRefines.clear();
@@ -1705,13 +1743,13 @@ function applyFilters() {
   plotMarkers(filtered);
   document.getElementById('resultsCount').textContent = filtered.length + ' firm' + (filtered.length !== 1 ? 's' : '') + ' found';
   // Show/hide clear filters button
-  const hasFilters = activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0 || activeSpecialty || savedOnly;
+  const hasFilters = activeFilters.size > 0 || activeState !== 'all' || activeCountry !== 'all' || searchTerm || activeRefines.size > 0 || activeSpecialty || savedOnly;
   const clearBtn = document.getElementById('clearAllBtn');
   if (clearBtn) clearBtn.classList.toggle('visible', hasFilters);
   renderActiveFilterPills();
   syncUrlState();
   // Auto-zoom to show filtered results
-  if (filtered.length > 0 && (activeFilters.size > 0 || activeState !== 'all' || searchTerm || activeRefines.size > 0)) {
+  if (filtered.length > 0 && (activeFilters.size > 0 || activeState !== 'all' || activeCountry !== 'all' || searchTerm || activeRefines.size > 0)) {
     const lats = filtered.map(f => f.lat);
     const lngs = filtered.map(f => f.lng);
     const bounds = L.latLngBounds(
@@ -1808,6 +1846,7 @@ function syncUrlState() {
   const params = new URLSearchParams();
   if (activeFilters.size > 0) params.set('d', [...activeFilters].join(','));
   if (activeState && activeState !== 'all') params.set('s', activeState);
+  if (activeCountry && activeCountry !== 'all') params.set('c', activeCountry);
   if (searchTerm) params.set('q', searchTerm);
   if (activeRefines.size > 0) params.set('r', [...activeRefines].join(','));
   if (activeSpecialty) params.set('sp', activeSpecialty);
@@ -1840,6 +1879,13 @@ function readUrlState() {
     activeState = s;
     const sel = document.getElementById('stateSelect');
     if (sel) sel.value = s;
+    touched = true;
+  }
+  const c = params.get('c');
+  if (c) {
+    activeCountry = c;
+    const csel = document.getElementById('countrySelect');
+    if (csel) csel.value = c;
     touched = true;
   }
   const q = params.get('q');
@@ -2108,6 +2154,15 @@ function renderActiveFilterPills() {
     pills.push({ label: 'State: ' + activeState, clear: () => {
       activeState = 'all';
       const sel = document.getElementById('stateSelect');
+      if (sel) sel.value = 'all';
+    }});
+  }
+
+  // Country dropdown
+  if (activeCountry && activeCountry !== 'all') {
+    pills.push({ label: 'Country: ' + activeCountry, clear: () => {
+      activeCountry = 'all';
+      const sel = document.getElementById('countrySelect');
       if (sel) sel.value = 'all';
     }});
   }

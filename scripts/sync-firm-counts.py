@@ -36,7 +36,13 @@ def load_firms() -> list[dict]:
 
 
 def main() -> int:
-    firms = load_firms()
+    all_firms = load_firms()
+    # The hardcoded marketing copy is US-only: the hero badge says "U.S.
+    # FIRMS" and the modal says "50 States". International firms carry a
+    # `country` field and must not move those numbers. They live in firms.js
+    # for the map (and get their own Country filter), but the counts below
+    # are computed from the US subset only.
+    firms = [f for f in all_firms if not f.get("country")]
     total = len(firms)
     disc = Counter(f["discipline"] for f in firms)
     # "States" count for marketing copy excludes DC + PR (which are
