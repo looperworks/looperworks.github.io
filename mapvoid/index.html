@@ -480,6 +480,17 @@
   .state-filter label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
   .state-filter select { flex: 1; padding: 5px 10px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 12px; background: #fff; color: var(--text-dim); cursor: pointer; font-family: inherit; }
   .state-filter select:focus { border-color: var(--accent); outline: none; }
+  /* International expansion announcement (slim, dismissible) */
+  .intl-banner { display: flex; align-items: flex-start; gap: 8px; margin-top: 8px; padding: 8px 10px; background: rgba(232,197,71,0.13); border: 1px solid rgba(232,197,71,0.38); border-radius: var(--radius-sm); font-size: 11px; color: var(--text-dim); line-height: 1.45; }
+  .intl-banner-tag { background: var(--accent); color: #1a1a1a; font-weight: 700; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+  .intl-banner-text { flex: 1; }
+  .intl-banner-link { background: none; border: none; padding: 0; font: inherit; color: var(--text); font-weight: 600; text-decoration: underline; cursor: pointer; }
+  .intl-banner-close { background: none; border: none; font-size: 15px; line-height: 1; color: var(--text-muted); cursor: pointer; padding: 0 2px; flex-shrink: 0; }
+  .intl-banner-close:hover { color: var(--text); }
+  [data-theme="dark"] .intl-banner { background: rgba(232,197,71,0.10); border-color: rgba(232,197,71,0.26); }
+  .filter-new-badge { background: var(--accent); color: #1a1a1a; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; padding: 1px 4px; border-radius: 3px; vertical-align: middle; margin-left: 4px; }
+  .filter-flash { animation: filterFlash 1.6s ease; }
+  @keyframes filterFlash { 0%, 100% { box-shadow: none; } 30% { box-shadow: 0 0 0 3px rgba(232,197,71,0.5); } }
 
   .chip-count { font-size: 10px; opacity: 0.7; margin-left: 2px; }
   .filter-chip.active .chip-count { opacity: 0.85; }
@@ -1192,6 +1203,11 @@
         <span class="sep">&middot;</span>
         <span id="statCountries">0</span> countries
       </div>
+      <div class="intl-banner" id="intlBanner" hidden>
+        <span class="intl-banner-tag">New</span>
+        <span class="intl-banner-text">Threshold has gone global. Explore firms across 31 countries with the <button class="intl-banner-link" onclick="focusCountryFilter()">Country filter</button>.</span>
+        <button class="intl-banner-close" onclick="dismissIntlBanner()" aria-label="Dismiss">&times;</button>
+      </div>
       <div class="sidebar-toolbar">
         <button class="toolbar-link" id="discoverBtn" onclick="discoverFirm()" title="Jump to a random firm. Great for exploring">Discover</button>
         <button class="toolbar-link" id="nearMeBtn" onclick="findNearMe()" title="Find firms near your current location">Near Me</button>
@@ -1249,7 +1265,7 @@
           </select>
         </div>
         <div class="state-filter">
-          <label>Country</label>
+          <label>Country <span class="filter-new-badge">New</span></label>
           <select id="countrySelect" onchange="applyFilters()">
             <option value="all">All Countries</option>
           </select>
@@ -1384,7 +1400,7 @@
     <div class="about-modal-body">
       <h3>What this is</h3>
       <p>Threshold helps you find firms, prepare your application, and navigate the profession. Search architecture, landscape, urban-design and multidisciplinary practices across the U.S. Filter by size, internship programs, or specialty, then use the guides to apply.</p>
-      <p>New in 2026: browse 403 leading design firms across 19 countries and territories in Asia, Europe, and Canada. Use the Country filter on the map to explore them.</p>
+      <p>New in 2026: browse 651 leading design firms across 31 countries and territories, spanning Asia, Europe, Latin America, Oceania, the Middle East, Africa, and Canada. Use the Country filter on the map to explore them.</p>
 
       <h3>The toolkit</h3>
       <p style="margin-bottom:2px"><a href="../application-timeline/">How to Apply</a>: month-by-month hiring timeline and process</p>
@@ -1526,6 +1542,7 @@ async function init() {
   populateCountries();
   updateStats();
   updateChipCounts();
+  initIntlBanner();
 
   // Apply any filter state from the URL before the first render so the page
   // arrives in the bookmarked / shared configuration.
@@ -1580,6 +1597,26 @@ function populateCountries() {
     opt.textContent = c + ' (' + count + ')';
     sel.appendChild(opt);
   });
+}
+
+// ── International expansion banner (slim, dismissible) ──
+function initIntlBanner() {
+  const b = document.getElementById('intlBanner');
+  if (b && !localStorage.getItem('threshold_intl_banner_v1')) b.hidden = false;
+}
+function dismissIntlBanner() {
+  const b = document.getElementById('intlBanner');
+  if (b) b.hidden = true;
+  localStorage.setItem('threshold_intl_banner_v1', '1');
+}
+function focusCountryFilter() {
+  dismissIntlBanner();
+  const sel = document.getElementById('countrySelect');
+  if (!sel) return;
+  sel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  sel.classList.add('filter-flash');
+  setTimeout(() => sel.classList.remove('filter-flash'), 1600);
+  setTimeout(() => sel.focus(), 400);
 }
 
 function updateChipCounts() {
